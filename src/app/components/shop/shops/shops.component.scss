@@ -44,7 +44,7 @@
 
 .atmos-shops__venue-desc {
   color: var(--atmos-text-dim);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-shops__section {
@@ -77,7 +77,7 @@
 
 .atmos-shops__igc-title {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
   font-weight: 600;
   color: var(--atmos-text);
 }

@@ -68,7 +68,7 @@
 
 .atmos-item-unlock-calc__result-detail {
   color: var(--atmos-text-dim);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
 
   button.atmos-text-link {
     background: transparent;

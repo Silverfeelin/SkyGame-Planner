@@ -28,7 +28,7 @@
   margin-bottom: var(--atmos-gap);
   color: var(--atmos-text);
 
-  &__title { margin: 0; font-size: 1rem; font-weight: 500; }
+  &__title { margin: 0; font-size: var(--atmos-fs-lg); font-weight: 500; }
   &__body { margin: 0; color: var(--atmos-text-dim); }
 
   &--danger {

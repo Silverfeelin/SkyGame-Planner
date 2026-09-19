@@ -3,7 +3,7 @@
   /* Push footer to the bottom of the flex column when content is short.
      When content overflows, it sits at the end of the content instead. */
   margin-top: auto;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   padding: var(--atmos-pad-compact) 0 4px;
   border-top: 1px solid var(--atmos-line-soft);

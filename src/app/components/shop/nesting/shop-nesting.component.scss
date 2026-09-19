@@ -23,12 +23,12 @@
 
 .atmos-shop-nesting__note {
   color: var(--atmos-text-dim);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-shop-nesting__warn {
   color: var(--atmos-accent);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-shop-nesting__rotations {
@@ -65,12 +65,12 @@
 }
 
 .atmos-shop-nesting__rotation-title {
-  font-size: 15px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 }
 
 .atmos-shop-nesting__rotation-date {
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-mute);
 }
 
@@ -115,14 +115,14 @@
 .atmos-shop-nesting__rotation-name {
   grid-area: name;
   align-self: end;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 }
 
 .atmos-shop-nesting__rotation-cost {
   grid-area: cost;
   align-self: start;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
 }
 
@@ -132,7 +132,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
 }
 
@@ -167,6 +167,6 @@
 }
 
 .atmos-shop-nesting__legacy-title {
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 }

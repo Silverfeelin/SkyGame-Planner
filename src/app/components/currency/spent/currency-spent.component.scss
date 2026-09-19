@@ -9,7 +9,7 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
 
@@ -86,7 +86,7 @@
 
 .atmos-currency-spent__breakdown-title {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   font-weight: 600;
   color: var(--atmos-text-dim);
 }
@@ -98,7 +98,7 @@
 }
 
 .atmos-currency-spent__breakdown-item {
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 }
 
@@ -133,5 +133,5 @@
 
 .atmos-currency-spent__muted {
   color: var(--atmos-text-mute);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 }

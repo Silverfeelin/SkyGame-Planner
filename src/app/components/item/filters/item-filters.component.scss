@@ -55,7 +55,7 @@
   background: transparent;
   color: var(--atmos-text);
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   font-weight: 600;
   cursor: pointer;
 
@@ -83,7 +83,7 @@
     border-bottom: 1px solid var(--atmos-line-soft);
     background: transparent;
     font: inherit;
-    font-size: 13px;
+    font-size: var(--atmos-fs-md);
   }
 }
 
@@ -110,7 +110,7 @@
   gap: 8px;
   flex-wrap: wrap;
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-item-filters__season-icon {

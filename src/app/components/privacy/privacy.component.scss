@@ -16,7 +16,7 @@
 
 .atmos-privacy__meta {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   display: inline-flex;
   flex-wrap: wrap;
@@ -38,14 +38,14 @@
   padding: 28px;
   gap: 0;
   color: var(--atmos-text-dim);
-  font-size: 15px;
+  font-size: var(--atmos-fs-lg);
   line-height: 1.65;
 }
 
 .atmos-privacy__lede {
   margin: 0;
   color: var(--atmos-text);
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
 }
 
 .atmos-privacy__section {
@@ -60,7 +60,7 @@
 
 .atmos-privacy__section-title {
   margin: 0 0 10px;
-  font-size: 17px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -68,6 +68,6 @@
 
 @media (max-width: 720px) {
   .atmos-privacy__header { --atmos-page-title-size: 26px; }
-  .atmos-privacy__body { padding: 20px; font-size: 14px; }
+  .atmos-privacy__body { padding: 20px; font-size: var(--atmos-fs-md); }
   .atmos-privacy__section { margin-top: 22px; }
 }

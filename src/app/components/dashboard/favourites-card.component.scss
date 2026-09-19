@@ -35,7 +35,7 @@
   align-items: center;
   gap: 6px;
   color: var(--atmos-favourite);
-  font-size: 0.6875rem;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -93,7 +93,7 @@
 }
 
 .atmos-favourites__source {
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   line-height: 1.3;
   text-align: center;
   color: var(--atmos-text-mute);
@@ -113,7 +113,7 @@
 }
 
 .atmos-favourites__foot-label {
-  font-size: 0.6875rem;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;

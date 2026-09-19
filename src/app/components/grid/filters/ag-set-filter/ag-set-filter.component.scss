@@ -19,7 +19,7 @@
     background: transparent;
     color: var(--atmos-accent);
     font: inherit;
-    font-size: 13px;
+    font-size: var(--atmos-fs-md);
     cursor: pointer;
 
     &:hover {

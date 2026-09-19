@@ -65,7 +65,7 @@
 }
 
 .atmos-shard__label {
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   letter-spacing: 0.2px;
   white-space: nowrap;
 }
@@ -81,11 +81,11 @@
     height: 18px;
   }
   .atmos-shard__label {
-    font-size: 11px;
+    font-size: var(--atmos-fs-sm);
   }
 }
 
-/* Tile variant — matches the /daily countdown tiles (13px caption, 22px value). */
+/* Tile variant */
 .atmos-shard-tile {
   position: relative;
   height: 100%;
@@ -123,7 +123,7 @@
   align-items: center;
   gap: 8px;
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 
   /* Keep the caption row the height of the neighbouring text-only captions. */
   .atmos-shard__glyph {
@@ -135,7 +135,7 @@
 .atmos-shard-tile__value {
   margin-top: 4px;
   font-variant-numeric: tabular-nums;
-  font-size: 22px;
+  font-size: var(--atmos-fs-2xl);
   font-weight: 600;
   color: var(--atmos-text);
 }

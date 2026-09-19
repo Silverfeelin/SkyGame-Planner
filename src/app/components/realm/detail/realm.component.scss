@@ -26,7 +26,7 @@
 
 .atmos-realm__progress-title {
   margin: 0 0 var(--atmos-gap-compact);
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
 }
@@ -42,7 +42,7 @@
 }
 
 .atmos-realm__tier-label {
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   text-align: center;
 }
@@ -88,7 +88,7 @@
   position: absolute;
   inset: 0;
   text-align: center;
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);

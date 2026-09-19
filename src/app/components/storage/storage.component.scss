@@ -58,7 +58,7 @@
 
 .atmos-storage__title {
   margin: 0;
-  font-size: 24px;
+  font-size: var(--atmos-fs-2xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow-large);
@@ -78,7 +78,7 @@
   padding: 8px 12px;
   color: var(--atmos-warm);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   white-space: pre-wrap;
   word-break: break-word;
   margin: 0;
@@ -111,14 +111,14 @@
 
 .atmos-storage__provider-title {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   flex: 1;
 }
 
 .atmos-storage__badge {
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -173,6 +173,6 @@
   }
 
   .atmos-storage__title {
-    font-size: 20px;
+    font-size: var(--atmos-fs-xl);
   }
 }

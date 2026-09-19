@@ -25,12 +25,12 @@
 
 .atmos-daily__timer-label {
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-daily__countdown {
   font-variant-numeric: tabular-nums;
-  font-size: 22px;
+  font-size: var(--atmos-fs-2xl);
   font-weight: 600;
   color: var(--atmos-text);
   margin-top: 4px;
@@ -61,7 +61,7 @@
 
 .atmos-daily__section-title {
   margin: 0;
-  font-size: 20px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -71,14 +71,14 @@
 .atmos-daily__section-meta {
   margin-left: auto;
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-daily__section-note {
   flex-basis: 100%;
   margin: 0;
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   line-height: 1.4;
 }
 

@@ -50,7 +50,7 @@
 
 .atmos-spirit-card__type {
   flex-shrink: 0;
-  font-size: 22px;
+  font-size: var(--atmos-fs-2xl);
 }
 
 .atmos-spirit-card__heading {
@@ -63,7 +63,7 @@
 
 .atmos-spirit-card__title {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -99,7 +99,7 @@
   flex-wrap: wrap;
   gap: 12px;
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-spirit-card__meta-item {
@@ -119,7 +119,7 @@
   align-items: center;
   gap: 8px;
   color: var(--atmos-text);
-  font-size: 13.5px;
+  font-size: var(--atmos-fs-md);
 
   mat-icon {
     font-size: 18px;

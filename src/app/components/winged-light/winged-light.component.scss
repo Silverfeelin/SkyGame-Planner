@@ -5,7 +5,7 @@
 }
 
 .atmos-winged-light__count {
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   color: var(--atmos-text);
 }
 
@@ -16,7 +16,7 @@
 
 .atmos-winged-light__heading {
   margin: 0;
-  font-size: 20px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
 }
 
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 
   mat-icon {

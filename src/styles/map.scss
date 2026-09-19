@@ -16,7 +16,7 @@ body > .map { display: none !important; }
   margin: 0 !important;
   padding: 0 !important;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   text-shadow: #000 1px 1px 0;
 }
 

@@ -63,7 +63,7 @@
 
 .atmos-dbx__title {
   margin: 0;
-  font-size: 24px;
+  font-size: var(--atmos-fs-2xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow-large);
@@ -95,7 +95,7 @@
 
 .atmos-dbx__code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   background: var(--atmos-chip-bg);
   border: var(--atmos-pill-border);
   border-radius: var(--atmos-radius-sm);
@@ -106,5 +106,5 @@
 @media (max-width: 720px) {
   .atmos-dbx__main { padding: var(--atmos-pad-compact); }
   .atmos-dbx__body { padding: 22px; }
-  .atmos-dbx__title { font-size: 20px; }
+  .atmos-dbx__title { font-size: var(--atmos-fs-xl); }
 }

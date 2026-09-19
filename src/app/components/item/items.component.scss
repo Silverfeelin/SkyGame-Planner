@@ -19,5 +19,5 @@
 }
 
 @media (max-width: 720px) {
-  .atmos-items__title { font-size: 26px; }
+  .atmos-items__title { font-size: var(--atmos-fs-3xl); }
 }

@@ -80,7 +80,7 @@
 }
 
 .atmos-daily-task__name {
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   /* Truncating here is what keeps the pills from being shoved onto another line. */
   overflow: hidden;
@@ -89,7 +89,7 @@
 }
 
 .atmos-daily-task__time {
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-mute);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -117,7 +117,7 @@
 .atmos-daily-task__note {
   /* Pushes right in the footer row, with or without a preceding link. */
   margin-left: auto;
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-dim);
   font-style: italic;
   text-align: right;
@@ -159,7 +159,7 @@
   align-items: center;
   gap: 6px;
   flex: 0 0 auto;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   border-bottom: 0;
 
   mat-icon {

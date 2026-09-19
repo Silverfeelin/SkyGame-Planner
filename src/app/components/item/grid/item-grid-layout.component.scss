@@ -35,7 +35,7 @@
 
 .atmos-item-grid__rail-label {
   padding: 0 10px 8px;
-  font-size: 10px;
+  font-size: var(--atmos-fs-sm);
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -53,7 +53,7 @@
   border-radius: 8px;
   background: transparent;
   color: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.7);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   text-align: left;
   cursor: pointer;
@@ -98,7 +98,7 @@
 }
 
 .atmos-item-grid__rail-count {
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   color: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.45);
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
@@ -136,7 +136,7 @@ app-item-type-nav {
 
   h2 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: var(--atmos-fs-xl);
     font-weight: 600;
   }
 }
@@ -152,7 +152,7 @@ app-item-type-nav {
 }
 
 .atmos-item-grid__count {
-  font-size: 0.9rem;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   font-variant-numeric: tabular-nums;
 

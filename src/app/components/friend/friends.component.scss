@@ -9,7 +9,7 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
 
   mat-icon {
@@ -85,7 +85,7 @@
 }
 
 .atmos-friends__item-title {
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
   font-weight: 600;
 }
 

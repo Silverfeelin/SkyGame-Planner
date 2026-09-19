@@ -10,7 +10,7 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -40,7 +40,7 @@
   background: var(--atmos-chip-bg);
   border: var(--atmos-pill-border);
   border-radius: var(--atmos-radius-pill);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 }
 
@@ -67,5 +67,5 @@
 }
 
 @media (max-width: 720px) {
-  .atmos-info__section-title { font-size: 16px; }
+  .atmos-info__section-title { font-size: var(--atmos-fs-lg); }
 }

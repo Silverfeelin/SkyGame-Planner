@@ -35,7 +35,7 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -50,7 +50,7 @@
 
 .atmos-tools__desc {
   color: var(--atmos-text-dim);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-tools__links {

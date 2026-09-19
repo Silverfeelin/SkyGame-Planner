@@ -50,7 +50,7 @@
   position: absolute;
   top: 2px;
   right: 2px;
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   padding: 1px 6px;
   border-radius: var(--atmos-radius-pill);
@@ -68,7 +68,7 @@
   background: var(--atmos-hover-bg);
   color: var(--atmos-text-dim);
   font-family: inherit;
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   line-height: 1;
   cursor: pointer;
   transition: color var(--atmos-transition), background var(--atmos-transition);

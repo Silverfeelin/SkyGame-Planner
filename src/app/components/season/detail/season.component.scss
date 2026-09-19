@@ -10,7 +10,7 @@
 
 .atmos-season__number {
   color: var(--atmos-accent);
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   text-shadow: var(--atmos-text-shadow);
 }

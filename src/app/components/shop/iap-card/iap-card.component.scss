@@ -35,7 +35,7 @@
 
 .atmos-iap-card__title {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -50,7 +50,7 @@
 
 .atmos-iap-card__price {
   color: var(--atmos-text-dim);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   font-variant-numeric: tabular-nums;
 }
 
@@ -76,7 +76,7 @@
   padding: 4px 10px;
   border-radius: var(--atmos-radius-pill);
   background: var(--atmos-chip-bg);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
 
   mat-icon {

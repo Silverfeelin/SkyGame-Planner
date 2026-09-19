@@ -14,7 +14,7 @@
   /* Which clock is which has to be readable at a glance, so the label carries
      more weight and contrast than a caption would; the tracking comes down as
      the size goes up, or the two clocks' labels run into the gap between them. */
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   letter-spacing: 1.2px;
   text-transform: uppercase;
   font-weight: 600;
@@ -35,7 +35,7 @@
 }
 
 .atmos-clock__subtle {
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   color: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.85);
   text-shadow: var(--atmos-text-shadow);
 }
@@ -45,14 +45,7 @@
     gap: 3px;
     padding: 2px 4px;
   }
-  .atmos-clock__label {
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
   .atmos-clock__time {
-    font-size: 30px;
-  }
-  .atmos-clock__subtle {
-    font-size: 12.5px;
+    font-size: 36px
   }
 }

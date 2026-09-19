@@ -41,7 +41,7 @@
 
 .atmos-spirit-tree__title {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -53,14 +53,14 @@
 }
 
 .atmos-spirit-tree__cost {
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
 }
 
 .atmos-spirit-tree__tag {
   display: inline-block;
   margin-left: 8px;
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   letter-spacing: 0.3px;
   padding: 0 8px;
@@ -73,7 +73,7 @@
 
 .atmos-spirit-tree__date {
   margin-left: 4px;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   font-weight: 400;
   color: var(--atmos-accent);
 }
@@ -160,7 +160,7 @@
 .atmos-spirit-tree__seg-name {
   display: grid;
   align-items: center;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;

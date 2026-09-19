@@ -13,7 +13,7 @@
 
 .atmos-coll__subsection-title {
   margin: 0 0 10px;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   font-weight: 600;
   color: var(--atmos-text-dim);
 }
@@ -36,14 +36,14 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   color: var(--atmos-text-dim);
 }
 
 
 .atmos-coll__input-error {
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-pink);
 }
 
@@ -83,7 +83,7 @@
 .atmos-coll__empty-hint {
   margin: 0;
   color: var(--atmos-text-mute);
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
 }
 
 /* Item picker */
@@ -127,11 +127,11 @@
 
 .atmos-coll__row-name {
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-coll__row-desc {
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   overflow: hidden;
   text-overflow: ellipsis;

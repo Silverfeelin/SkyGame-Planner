@@ -41,7 +41,7 @@
 }
 
 .atmos-season-card__kicker {
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   font-weight: 700;
@@ -52,7 +52,7 @@
 
 .atmos-season-card__title {
   margin: 0;
-  font-size: 26px;
+  font-size: var(--atmos-fs-3xl);
   font-weight: 500;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow-large);
@@ -75,7 +75,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14.5px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
 
   mat-icon {

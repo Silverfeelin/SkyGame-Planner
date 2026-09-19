@@ -37,13 +37,13 @@
 
 .atmos-fold__title {
   flex: 1;
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
   font-weight: 600;
   margin: 0;
 }
 
 .atmos-fold__count {
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   flex-shrink: 0;
 }
@@ -55,7 +55,7 @@
 .atmos-fold__desc {
   padding: 14px 20px 4px;
   margin: 0;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
   line-height: 1.6;
 }

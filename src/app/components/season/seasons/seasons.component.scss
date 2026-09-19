@@ -14,7 +14,7 @@
 }
 
 .atmos-seasons__jump-title {
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text-dim);
 }
 
@@ -57,7 +57,7 @@
 
 .atmos-seasons__year-title {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--atmos-fs-2xl);
   font-weight: 600;
   letter-spacing: -0.01em;
 }

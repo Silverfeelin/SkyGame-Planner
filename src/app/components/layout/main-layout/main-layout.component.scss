@@ -19,7 +19,7 @@
   background-image: var(--atmos-bg-image, url(/assets/game/background/isle.webp));
   background-size: cover;
   background-position: center;
-  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
+  filter: brightness(var(--atmos-bg-brightness, 100%)) blur(var(--atmos-bg-blur, 6px));
   pointer-events: none;
 }
 
@@ -163,7 +163,7 @@
   padding: var(--atmos-pad-compact);
   white-space: pre-wrap;
   margin: 0;
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   cursor: pointer;
 }
 
@@ -171,7 +171,7 @@
   color: oklch(0.80 0.14 55);
   white-space: pre-wrap;
   margin: 0;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
 }
 
 .save-error-actions {

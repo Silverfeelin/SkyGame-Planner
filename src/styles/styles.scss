@@ -149,7 +149,7 @@ h6 { font-size: var(--atmos-h6); }
   margin: 0;
   max-width: 100vw;
   padding: 4px 8px;
-  font-size: 0.875rem;
+  font-size: var(--atmos-fs-md);
   color: var(--atmos-text);
   background: var(--atmos-card-bg);
   backdrop-filter: var(--atmos-blur-soft);
@@ -234,7 +234,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   position: fixed;
   transform: translate(-50%, -50%);
   line-height: 24px;
-  font-size: 24px;
+  font-size: var(--atmos-fs-2xl);
   color: var(--atmos-on-overlay);
   text-shadow: 2px 2px 4px var(--atmos-overlay-shadow);
   pointer-events: none;
@@ -244,7 +244,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 .introjs-tooltip {
   color: var(--atmos-intro-text);
   background-color: var(--atmos-intro-bg);
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
 }
 .introjs-tooltiptext {
   padding: 10px;
@@ -360,6 +360,16 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-pill-border: 1px solid oklch(0.95 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
   --atmos-chip-bg:     oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.06);
 
+  /* Type scale. Component text sizes read these so a style can rescale the
+     whole UI; icon boxes keep literal sizes since they pair with width/height. */
+  --atmos-fs-sm:  13px;
+  --atmos-fs-md:  14px;
+  --atmos-fs-lg:  16px;
+  --atmos-fs-xl:  18px;
+  --atmos-fs-2xl: 22px;
+  --atmos-fs-3xl: 26px;
+  --atmos-fs-4xl: 32px;
+
   /* Map controls (Leaflet). */
   --atmos-map-control-bg:            var(--atmos-card-bg);
   --atmos-map-control-bg-hover:      var(--atmos-hover-bg-strong);
@@ -395,7 +405,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-btn-pad:         11px 22px;
   --atmos-btn-pad-sm:      6px 16px;
   --atmos-btn-gap:         10px;
-  --atmos-page-title-size: 32px;
+  --atmos-page-title-size: var(--atmos-fs-4xl);
   --atmos-page-header-gap: 16px;
   --atmos-card-media-h:    220px;         /* card banner/media height */
   --atmos-card-media-h-sm: 180px;         /* ...for the shorter spirit/daily cards */
@@ -411,10 +421,10 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-summary-art-h:     190px;
   --atmos-fact-min:          170px;  /* narrowest a fact column may get before dropping one */
   --atmos-fact-gap:          var(--atmos-gap-compact) var(--atmos-gap);
-  --atmos-fact-label-size:   0.72rem;
+  --atmos-fact-label-size:   var(--atmos-fs-sm);
   --atmos-fact-label-track:  0.13em;
   --atmos-fact-label-gap:    6px;
-  --atmos-fact-value-size:   1rem;
+  --atmos-fact-value-size:   var(--atmos-fs-lg);
 
   /* Item icon sizes. */
   --item-size:        64px;
@@ -424,12 +434,12 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --item-size-mini:   24px;
 
   /* Heading scale. */
-  --atmos-h1: 2rem;
-  --atmos-h2: 1.5rem;
-  --atmos-h3: 1.25rem;
-  --atmos-h4: 1.1rem;
-  --atmos-h5: 1rem;
-  --atmos-h6: 0.875rem;
+  --atmos-h1: var(--atmos-fs-4xl);
+  --atmos-h2: var(--atmos-fs-3xl);
+  --atmos-h3: var(--atmos-fs-2xl);
+  --atmos-h4: var(--atmos-fs-xl);
+  --atmos-h5: var(--atmos-fs-lg);
+  --atmos-h6: var(--atmos-fs-md);
 
   /* Background tuning */
   --atmos-bg-brightness: 70%;
@@ -525,7 +535,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   border-radius: var(--atmos-radius-pill);
   padding: var(--atmos-btn-pad);
   color: var(--atmos-text);
-  font-size: 15px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   font-family: inherit;
   line-height: 1;
@@ -550,7 +560,6 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 
   &.atmos-btn--sm {
     padding: var(--atmos-btn-pad-sm);
-    font-size: 14px;
 
     > mat-icon {
       font-size: 16px;
@@ -767,7 +776,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   gap: 7px;
   color: var(--atmos-text);
   text-decoration: none;
-  font-size: 14.5px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   opacity: 0.94;
   padding: 4px 8px;
@@ -883,7 +892,7 @@ a.atmos-link:focus-visible {
 /* Pill */
 .atmos-pill {
   display: inline-block;
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   font-weight: 600;
   letter-spacing: 0.3px;
   line-height: 20px;
@@ -904,7 +913,7 @@ a.atmos-link:focus-visible {
   margin: 0;
   color: var(--atmos-text);
   line-height: 1.5;
-  font-size: 16px;
+  font-size: var(--atmos-fs-lg);
 }
 
 /* Leaflet zoom control, atmos-themed. Scoped to `.atmospheric` (set on
@@ -1100,7 +1109,7 @@ a.atmos-link:focus-visible {
   --atmos-btn-pad: 9px 16px;
   --atmos-btn-pad-sm: 5px 12px;
   --atmos-btn-gap: 8px;
-  --atmos-page-title-size: 24px;
+  --atmos-page-title-size: var(--atmos-fs-2xl);
   --atmos-page-header-gap: 10px;
   --atmos-input-pad: 6px 10px;
   --atmos-input-pad-pill: 6px 12px;
@@ -1120,12 +1129,12 @@ a.atmos-link:focus-visible {
 
 // 1. Section title
 .atmos-section__title {
-  font-size: 1.1rem;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
   margin: 0;
 }
-.atmos-section__title--lg { font-size: 1.25rem; }
+.atmos-section__title--lg { font-size: var(--atmos-fs-2xl); }
 // 2. Text colour utilities
 // Global rather than component-scoped because AG-Grid cell renderers,
 // the Leaflet popup builders and CurrencyService build DOM outside any
@@ -1169,7 +1178,7 @@ a.atmos-link:focus-visible {
   color: var(--atmos-text);
   padding: var(--atmos-input-pad);
   font-family: inherit;
-  font-size: 14px;
+  font-size: var(--atmos-fs-md);
   outline: 0;
   transition: background var(--atmos-transition), border-color var(--atmos-transition);
 
@@ -1329,7 +1338,7 @@ a.atmos-link:focus-visible {
   position: absolute;
   inset: 0;
   text-align: center;
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
@@ -1483,7 +1492,7 @@ a.atmos-link:focus-visible {
   padding: 8px 12px;
   border-radius: var(--atmos-radius-sm);
   color: var(--atmos-text-dim);
-  font-size: 13px;
+  font-size: var(--atmos-fs-md);
   font-weight: 500;
   line-height: 1;
   text-decoration: none;
@@ -1609,7 +1618,7 @@ a.atmos-fact__value {
 
 .atmos-fact__meta {
   color: var(--atmos-text-dim);
-  font-size: 0.875rem;
+  font-size: var(--atmos-fs-md);
 }
 
 .atmos-code {

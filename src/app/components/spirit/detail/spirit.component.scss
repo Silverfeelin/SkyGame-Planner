@@ -9,7 +9,7 @@
 }
 
 .atmos-spirit__type {
-  font-size: 28px;
+  font-size: var(--atmos-fs-3xl);
 }
 
 // A spirit render is a tall portrait, so its column is a fixed width rather
@@ -31,7 +31,7 @@
 
 .atmos-spirit__trees-title {
   margin: 0 var(--atmos-pad);
-  font-size: 20px;
+  font-size: var(--atmos-fs-xl);
   font-weight: 600;
   color: var(--atmos-text);
 }
