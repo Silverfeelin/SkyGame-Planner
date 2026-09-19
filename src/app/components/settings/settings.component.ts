@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, OnDestroy, signal } from '@angular/core';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
@@ -10,7 +10,10 @@ import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
-import { densities, IDensity, setDensity } from 'src/density';
+import {
+  backgroundImages, clearThemeOverrides, densityPresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
+  IThemeOverrides, IThemeSlider, setThemeOverride, ThemeOverrideKey, themeSliders
+} from 'src/theme-overrides';
 
 interface IExport {
   version: string;
@@ -37,8 +40,13 @@ export class SettingsComponent implements OnDestroy {
   dateFormats: Array<string>;
   currentTheme: string;
   themes = themes;
-  currentDensity: string;
-  densities = densities;
+
+  readonly advancedOpen = signal(false);
+  readonly overrides = signal<IThemeOverrides>(getThemeOverrides());
+  readonly hasOverrides = computed(() => Object.keys(this.overrides()).length > 0);
+  readonly themeSliders = themeSliders;
+  readonly backgroundImages = backgroundImages;
+  readonly densityPresets = densityPresets;
   wikiNewTab = false;
   debugVisible = false;
   debugMapCopyCoordinates = false;
@@ -60,7 +68,6 @@ export class SettingsComponent implements OnDestroy {
     this.debugMapCopyCoordinates = _settingService.debugMapCopyCoordinates;
     this.dailyCandleAmount = _settingService.dailyCandleAmount;
     this.currentTheme = localStorage.getItem('theme') || '';
-    this.currentDensity = localStorage.getItem('density') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
     addEventListener('beforeinstallprompt', this.beforeInstallPrompt);
@@ -220,11 +227,46 @@ export class SettingsComponent implements OnDestroy {
   selectTheme(theme: ITheme): void {
     this.currentTheme = theme.value;
     setTheme(theme);
+    if (hasThemeOverrides() && confirm('You have advanced tweaks applied. Reset them for this theme?')) {
+      this.resetOverrides();
+    }
+    // Slider labels that follow the theme need re-reading after the preset changed.
+    this.overrides.set({ ...this.overrides() });
   }
 
-  selectDensity(density: IDensity): void {
-    this.currentDensity = density.value;
-    setDensity(density);
+  toggleAdvanced(): void {
+    this.advancedOpen.update(v => !v);
+  }
+
+  sliderValue(slider: IThemeSlider): number {
+    return this.overrides()[slider.key] ?? getEffectiveSliderValue(slider);
+  }
+
+  setSlider(slider: IThemeSlider, evt: Event): void {
+    const value = (evt.target as HTMLInputElement).valueAsNumber;
+    this.setOverride(slider.key, Math.round(value * 1000) / 1000);
+  }
+
+  setBackgroundImage(evt: Event): void {
+    this.setOverride('bgImage', (evt.target as HTMLSelectElement).value);
+  }
+
+  setOverride<K extends ThemeOverrideKey>(key: K, value: IThemeOverrides[K] | undefined): void {
+    this.overrides.set({ ...setThemeOverride(key, value) });
+  }
+
+  toggleVignette(): void {
+    this.setOverride('vignette', this.overrides().vignette === false ? undefined : false);
+  }
+
+  resetOverrides(): void {
+    clearThemeOverrides();
+    this.overrides.set({});
+  }
+
+  confirmResetOverrides(): void {
+    if (!confirm('Reset all advanced tweaks to the theme defaults?')) { return; }
+    this.resetOverrides();
   }
 
   toggleWikiTab(): void {

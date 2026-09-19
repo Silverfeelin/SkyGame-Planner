@@ -29,8 +29,8 @@
   z-index: 0;
   background: radial-gradient(
     ellipse at 50% 60%,
-    transparent 42%,
-    oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.55)
+    transparent var(--atmos-vignette-start, 42%),
+    oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / var(--atmos-vignette-alpha, 0.55))
   );
   pointer-events: none;
 }

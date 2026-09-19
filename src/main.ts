@@ -9,14 +9,13 @@ import { routes } from './app/app-routes';
 import { provideServiceWorker } from '@angular/service-worker';
 import { isDevMode } from '@angular/core';
 import { loadTheme } from './themes';
-import { loadDensity } from './density';
+import { loadThemeOverrides } from './theme-overrides';
 import { loadDataUrl } from './data-url';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 // #endregion
 
-// Load theme and density.
 loadTheme();
-loadDensity();
+loadThemeOverrides();
 
 // Load custom data.
 loadDataUrl();

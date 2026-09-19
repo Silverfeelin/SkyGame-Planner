@@ -74,6 +74,16 @@ In **new code**, use modern Angular APIs:
 
 Do not rewrite existing code to these APIs unless the task specifically asks for it—match the surrounding style when editing old files.
 
+#### Comments
+
+Only comment where the code cannot speak for itself. A comment explains *why*—a non-obvious constraint, a workaround, an ordering requirement, a game rule that isn't evident from the identifiers.
+
+- Keep comments as short as the point allows; one line is usually enough.
+- Do not restate what the code already says, and do not label sections that the structure already makes clear.
+- Never write comments about the change itself ("new", "updated", "was X before", "moved from Y", "per request"). Comments describe the code as it stands, not the session that produced it; that history belongs in the commit message.
+- Prefer clearer naming or a small extracted function over a comment that compensates for unclear code.
+- These rules take priority over adhering to the format of existing comments.
+
 ### Styling
 
 Components use **`.scss`**. `src/styles/styles.scss` is the global base + design-system sheet (`#region` markers split it into Base / Tokens / Components / Themes / Utilities); `charts.scss`, `map.scss` and `grid.scss` are separate entries in `angular.json`, loaded in that order.
@@ -87,6 +97,8 @@ Three independent axes:
 - **Density** — `:root[data-density="compact"]`, also in the Themes region. Geometry only (padding, gaps, media heights).
 
 A token that should change with screen size belongs in the `@media` block, never in the `compact` block.
+
+Per-user slider tweaks (`src/theme-overrides.ts`) are written as inline `--atmos-*` properties on `<html>`, so they sit above any `data-theme` rule; keep hue, chroma, surface lightness, background image and vignette as single tokens on `:root` for that reason.
 
 ### Scripts
 

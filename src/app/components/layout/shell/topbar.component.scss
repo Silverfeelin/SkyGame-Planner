@@ -7,7 +7,7 @@
   align-items: center;
   gap: 14px;
   padding: 12px 16px;
-  background: oklch(0.16 calc(0.025 * var(--atmos-chroma)) var(--atmos-hue) / 0.7);
+  background: var(--atmos-chrome-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--atmos-line-soft);

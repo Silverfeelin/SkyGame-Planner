@@ -17,7 +17,7 @@
   height: 100%;
   padding: 18px 6px 14px;
   gap: 18px;
-  background: oklch(0.16 calc(0.025 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
+  background: var(--atmos-chrome-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   overflow-y: auto;

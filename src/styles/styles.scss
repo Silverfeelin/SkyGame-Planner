@@ -277,13 +277,16 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
      near-greyscale without redefining each token. Theme-independent colours
      (dyes, currencies, status) are unaffected. */
   --atmos-chroma: 1;
+  /* Added to the lightness of every surface token, so the whole stack can be
+     pushed deeper or lifted without changing the steps between elevations. */
+  --atmos-surface-l: 0;
   --atmos-bg-image: url(/assets/game/background/isle.webp);
 
   /* Surfaces. */
-  --atmos-bg:        oklch(0.18 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue));
-  --atmos-bg-elev:   oklch(0.235 calc(0.028 * var(--atmos-chroma)) var(--atmos-hue));
-  --atmos-bg-elev-2: oklch(0.285 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue));
-  --atmos-bg-elev-3: oklch(0.34 calc(0.04 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg:        oklch(calc(0.18 + var(--atmos-surface-l)) calc(0.02 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg-elev:   oklch(calc(0.235 + var(--atmos-surface-l)) calc(0.028 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg-elev-2: oklch(calc(0.285 + var(--atmos-surface-l)) calc(0.035 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg-elev-3: oklch(calc(0.34 + var(--atmos-surface-l)) calc(0.04 * var(--atmos-chroma)) var(--atmos-hue));
 
   /* Text. */
   --atmos-text:      oklch(0.97 calc(0.005 * var(--atmos-chroma)) var(--atmos-hue));
@@ -292,7 +295,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 
   /* Accents. */
   --atmos-accent:   oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue));
-  --atmos-accent-2: oklch(0.74 calc(0.12 * var(--atmos-chroma)) calc(var(--atmos-hue) + 40));
+  --atmos-violet:   oklch(0.74 0.12 280);
   --atmos-warm:     oklch(0.78 0.13 65);
   --atmos-pink:     oklch(0.78 0.13 350);
   --atmos-good:     oklch(0.80 0.13 150);
@@ -312,7 +315,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-shadow:        0 0 5px 2px;
 
   /* Lines / dividers. */
-  --atmos-line:      oklch(0.32 calc(0.025 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-line:      oklch(calc(0.32 + var(--atmos-surface-l)) calc(0.025 * var(--atmos-chroma)) var(--atmos-hue));
   --atmos-line-soft: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.30);
 
   /* Interaction. */
@@ -344,8 +347,8 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-tile-ring:        2px;                           /* selection ring width */
 
   /* Cards. */
-  --atmos-card-bg:     oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);
-  --atmos-card-bg-solid: oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-card-bg:     oklch(calc(0.20 + var(--atmos-surface-l)) calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);
+  --atmos-card-bg-solid: oklch(calc(0.20 + var(--atmos-surface-l)) calc(0.035 * var(--atmos-chroma)) var(--atmos-hue));
   --atmos-card-border: 1px solid oklch(0.95 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
   --atmos-card-shadow:
     0 30px 60px -30px oklch(0.04 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.7),
@@ -353,7 +356,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-card-radius: 16px;
 
   /* Pills / chips. */
-  --atmos-pill-bg:     oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);
+  --atmos-pill-bg:     oklch(calc(0.20 + var(--atmos-surface-l)) calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);
   --atmos-pill-border: 1px solid oklch(0.95 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
   --atmos-chip-bg:     oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.06);
 
@@ -366,7 +369,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 
   /* Map popups (Leaflet). More opaque than the card bg so popup content
      stays readable over busy map tiles. */
-  --atmos-map-popup-bg:            oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.85);
+  --atmos-map-popup-bg:            oklch(calc(0.20 + var(--atmos-surface-l)) calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.85);
   --atmos-map-popup-border:        var(--atmos-card-border);
   --atmos-map-popup-text:          var(--atmos-text);
   --atmos-map-popup-item-bg:       var(--atmos-chip-bg);
@@ -431,6 +434,12 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   /* Background tuning */
   --atmos-bg-brightness: 70%;
   --atmos-bg-blur: 6px;
+  /* Shell chrome (sidebar, topbar) */
+  --atmos-chrome-bg:        oklch(calc(0.16 + var(--atmos-surface-l)) calc(0.025 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
+
+  /* Vignette over the background image */
+  --atmos-vignette-start: 42%;
+  --atmos-vignette-alpha: 0.55;
 
   /* Text shadows for type floating over the bg image. */
   --atmos-text-shadow:       0 1px 8px oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
@@ -1026,7 +1035,7 @@ a.atmos-link:focus-visible {
 
 :root[data-theme="cozy"] {
   --atmos-hue: 150;
-  --atmos-bg-image: url(/assets/game/realms/Aviary.webp);
+  --atmos-bg-image: url(/assets/game/background/aviary.webp);
 }
 
 :root[data-theme="peaks"] {
@@ -1204,6 +1213,59 @@ a.atmos-link:focus-visible {
 .atmos-input--textarea {
   resize: vertical;
   min-height: 80px;
+}
+
+/* Range slider on the chip fill, thumb in the accent. */
+.atmos-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: var(--atmos-radius-pill);
+    background: var(--atmos-hover-bg-strong);
+  }
+  &::-moz-range-track {
+    height: 6px;
+    border-radius: var(--atmos-radius-pill);
+    background: var(--atmos-hover-bg-strong);
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-top: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--atmos-bg-elev);
+    background: var(--atmos-accent);
+    transition: transform var(--atmos-transition);
+  }
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--atmos-bg-elev);
+    background: var(--atmos-accent);
+    transition: transform var(--atmos-transition);
+  }
+
+  &:hover::-webkit-slider-thumb { transform: scale(1.1); }
+  &:hover::-moz-range-thumb { transform: scale(1.1); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+    border-radius: var(--atmos-radius-pill);
+  }
 }
 
 // 7. Horizontal scroller
@@ -1557,7 +1619,7 @@ a.atmos-fact__value {
   border: var(--atmos-card-border);
   border-radius: var(--atmos-radius-sm);
   padding: 0.15em 0.4em;
-  color: var(--atmos-accent-2);
+  color: var(--atmos-violet);
 }
 
 // #endregion

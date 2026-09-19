@@ -113,21 +113,76 @@
         </button>
       }
     </div>
-  </div>
-</section>
 
-<!-- Density -->
-<section class="atmos-card">
-  <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>density_medium</mat-icon> Density</h2>
-    <p class="atmos-paragraph">Compact tightens spacing to fit more on screen. Text size is unchanged.</p>
-    <div class="atmos-settings__btn-row">
-      @for (density of densities; track density.value) {
-        <button type="button" class="atmos-btn" [class.atmos-btn--active]="currentDensity === density.value" (click)="selectDensity(density)">
-          {{ density.name }}
-        </button>
-      }
-    </div>
+    <button type="button" class="atmos-btn atmos-settings__advanced-toggle" [attr.aria-expanded]="advancedOpen()" (click)="toggleAdvanced()">
+      <mat-icon>{{ advancedOpen() ? 'expand_less' : 'expand_more' }}</mat-icon>
+      Advanced
+      @if (hasOverrides()) { <span class="atmos-settings__dot" title="Tweaks applied"></span> }
+    </button>
+
+    @if (advancedOpen()) {
+      <div class="atmos-settings__advanced">
+        <p class="atmos-paragraph">
+          Tweaks apply on top of the selected theme. Sliders you haven't moved follow the theme.
+        </p>
+
+        <div class="atmos-settings__sliders">
+          @for (slider of themeSliders; track slider.key) {
+            <label class="atmos-settings__slider">
+              <span class="atmos-settings__slider-head">
+                <span>{{ slider.name }}</span>
+                <span class="atmos-settings__slider-value" [class.is-overridden]="overrides()[slider.key] !== undefined">
+                  {{ sliderValue(slider) }}{{ slider.suffix ?? slider.unit ?? '' }}
+                </span>
+              </span>
+              <span class="atmos-settings__slider-row">
+                <input type="range" class="atmos-range"
+                  [min]="slider.min" [max]="slider.max" [step]="slider.step"
+                  [value]="sliderValue(slider)"
+                  (input)="setSlider(slider, $event)" />
+                <button type="button" class="atmos-btn atmos-settings__slider-reset"
+                  [disabled]="overrides()[slider.key] === undefined"
+                  (click)="setOverride(slider.key, undefined)" title="Follow theme">
+                  <mat-icon>undo</mat-icon>
+                </button>
+              </span>
+            </label>
+          }
+        </div>
+
+        <label class="atmos-settings__label">
+          Background image
+          <select class="atmos-input" (change)="setBackgroundImage($event)">
+            @for (img of backgroundImages; track img.value) {
+              <option [value]="img.value" [selected]="img.value === (overrides().bgImage ?? '')">{{ img.name }}</option>
+            }
+          </select>
+        </label>
+
+        <div class="atmos-settings__btn-row">
+          <button type="button" class="atmos-btn" [class.atmos-btn--active]="overrides().vignette !== false" (click)="toggleVignette()">
+            <mat-icon>{{ overrides().vignette !== false ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Vignette
+          </button>
+        </div>
+
+        <div class="atmos-settings__label">
+          Density
+          <div class="atmos-settings__btn-row">
+            @for (preset of densityPresets; track preset.value) {
+              <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().density ?? '') === preset.value" (click)="setOverride('density', preset.value)">
+                {{ preset.name }}
+              </button>
+            }
+          </div>
+        </div>
+
+        <div class="atmos-settings__btn-row">
+          <button type="button" class="atmos-btn atmos-btn--danger" [disabled]="!hasOverrides()" (click)="confirmResetOverrides()">
+            <mat-icon>restart_alt</mat-icon> Reset all tweaks
+          </button>
+        </div>
+      </div>
+    }
   </div>
 </section>
 

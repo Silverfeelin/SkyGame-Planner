@@ -35,3 +35,70 @@
   color: var(--atmos-text-dim);
 }
 
+.atmos-settings__hint {
+  font-weight: 400;
+  color: var(--atmos-text-mute);
+}
+
+.atmos-settings__advanced-toggle {
+  align-self: flex-start;
+}
+
+.atmos-settings__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--atmos-accent);
+}
+
+.atmos-settings__advanced {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+  padding-top: var(--atmos-gap-compact);
+  border-top: var(--atmos-card-border);
+}
+
+.atmos-settings__sliders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--atmos-gap-compact) var(--atmos-gap);
+}
+
+.atmos-settings__slider {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-settings__slider-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.atmos-settings__slider-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--atmos-text-mute);
+
+  &.is-overridden { color: var(--atmos-accent); }
+}
+
+.atmos-settings__slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.atmos-settings__slider-reset {
+  flex: 0 0 auto;
+  padding: 4px;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
