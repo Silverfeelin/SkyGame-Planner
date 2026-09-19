@@ -3,14 +3,6 @@
   width: 100%;
 }
 
-.atmos-news__intro {
-  margin-top: var(--atmos-gap);
-
-  .atmos-card__body {
-    padding: 22px 28px;
-  }
-}
-
 .atmos-news__list {
   list-style: none;
   margin: var(--atmos-gap) 0 0;
@@ -82,7 +74,6 @@
 }
 
 @media (max-width: 720px) {
-  .atmos-news__intro .atmos-card__body { padding: 18px 20px; }
   .atmos-news__entry-head { padding: 14px 18px; }
   .atmos-news__entry-title { font-size: var(--atmos-fs-lg); }
   .atmos-news__entry-body { padding: 0 20px 18px; font-size: var(--atmos-fs-md); }

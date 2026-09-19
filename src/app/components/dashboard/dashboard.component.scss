@@ -5,8 +5,7 @@
 .atmos-dashboard__clocks {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 10px 8px 18px;
-  border-bottom: 1px solid var(--atmos-line-soft);
+  padding: 10px 8px;
 }
 
 /* Projected into the sky clock, in place of the timezone line. The right margin
@@ -23,7 +22,7 @@
 
 @media (max-width: 639px) {
   .atmos-dashboard__clocks {
-    padding: 4px 4px 12px;
+    padding: 4px 4px;
   }
   .atmos-dashboard__shard {
     margin-right: 6px;

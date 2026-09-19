@@ -100,6 +100,12 @@ A token that should change with screen size belongs in the `@media` block, never
 
 Per-user slider tweaks (`src/theme-overrides.ts`) are written as inline `--atmos-*` properties on `<html>`, so they sit above any `data-theme` rule; keep hue, chroma, surface lightness, background image and vignette as single tokens on `:root` for that reason.
 
+### Icons
+
+Material Icons is the main icon set used. Various icons resembling in-game mechanics such as currency and winged light
+are added in SVG format from `/src/assets/icons/icons.svg`. When Material Icons are introduced or changed, the build
+script `npm run icon-names` will report necessary changes.
+
 ### Scripts
 
 - `scripts/data/` — one-off data manipulation (add events, apply GUIDs, etc.)

@@ -442,8 +442,8 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-h6: var(--atmos-fs-md);
 
   /* Background tuning */
-  --atmos-bg-brightness: 70%;
-  --atmos-bg-blur: 6px;
+  --atmos-bg-brightness: 85%;
+  --atmos-bg-blur: 0px;
   /* Shell chrome (sidebar, topbar) */
   --atmos-chrome-bg:        oklch(calc(0.16 + var(--atmos-surface-l)) calc(0.025 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
 
@@ -866,6 +866,8 @@ a.atmos-link:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
 }
 
 .atmos-page__hint {
