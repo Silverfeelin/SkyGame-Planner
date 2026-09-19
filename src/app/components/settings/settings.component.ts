@@ -12,7 +12,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
 import {
   backgroundImages, clearThemeOverrides, densityPresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
-  IThemeOverrides, IThemeSlider, setThemeOverride, ThemeOverrideKey, themeSliders
+  IThemeOverrides, IThemeSlider, menuPresets, setThemeOverride, ThemeOverrideKey, themeSliders
 } from 'src/theme-overrides';
 
 interface IExport {
@@ -47,6 +47,7 @@ export class SettingsComponent implements OnDestroy {
   readonly themeSliders = themeSliders;
   readonly backgroundImages = backgroundImages;
   readonly densityPresets = densityPresets;
+  readonly menuPresets = menuPresets;
   wikiNewTab = false;
   debugVisible = false;
   debugMapCopyCoordinates = false;

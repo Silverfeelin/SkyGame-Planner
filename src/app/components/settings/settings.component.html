@@ -176,6 +176,17 @@
           </div>
         </div>
 
+        <div class="atmos-settings__label">
+          Menu
+          <div class="atmos-settings__btn-row">
+            @for (preset of menuPresets; track preset.value) {
+              <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().menu ?? '') === preset.value" (click)="setOverride('menu', preset.value)">
+                {{ preset.name }}
+              </button>
+            }
+          </div>
+        </div>
+
         <div class="atmos-settings__btn-row">
           <button type="button" class="atmos-btn atmos-btn--danger" [disabled]="!hasOverrides()" (click)="confirmResetOverrides()">
             <mat-icon>restart_alt</mat-icon> Reset all tweaks

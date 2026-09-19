@@ -87,6 +87,21 @@
     padding: var(--atmos-main-pad-y);
     gap: var(--atmos-gap-compact);
   }
+
+  /* Opt-out: the sidebar stays at any width. Only the chrome follows the
+     desktop layout; the main area keeps its narrow-screen spacing. */
+  :host-context(html[data-menu="desktop"]) {
+    .atmos-shell {
+      flex-direction: row;
+      --atmos-sticky-top: 0px;
+    }
+    .atmos-sidebar-slot {
+      display: block;
+    }
+    .atmos-topbar-slot {
+      display: none;
+    }
+  }
 }
 
 .loader {

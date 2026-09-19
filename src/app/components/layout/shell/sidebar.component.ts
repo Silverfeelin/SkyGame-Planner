@@ -6,6 +6,8 @@ import { DataService } from '@app/services/data.service';
 import { REDESIGN_FOOT_NAV, REDESIGN_NAV, withSeasonIcon } from './nav-items';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 
+const collapsedKey = 'menu.collapsed';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -18,14 +20,16 @@ export class SidebarComponent {
   private readonly location = inject(Location);
 
   /**
-   * Desktop only — below 1024px the sidebar is hidden entirely and the topbar's
-   * drawer takes over. Expanded is the base state, so the only width transition
-   * that ever runs is one the user asked for by clicking the toggle.
+   * Below 1024px the sidebar is hidden and the topbar's drawer takes over,
+   * unless the user forced the sidebar via the menu setting. The stored state
+   * is applied on creation, so the only width transition that ever runs is one
+   * the user asked for by clicking the toggle.
    */
-  readonly collapsed = signal(false);
+  readonly collapsed = signal(localStorage.getItem(collapsedKey) === '1');
 
   toggleCollapsed(): void {
     this.collapsed.update(v => !v);
+    localStorage.setItem(collapsedKey, this.collapsed() ? '1' : '0');
   }
 
   readonly mainNav = withSeasonIcon(REDESIGN_NAV, inject(DataService).seasonConfig.items.at(-1)?.iconUrl);

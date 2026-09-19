@@ -11,6 +11,7 @@ export interface IThemeOverrides {
   bgBlur?: number;
   vignette?: boolean;
   density?: string;
+  menu?: string;
 }
 
 export type ThemeOverrideKey = keyof IThemeOverrides;
@@ -73,6 +74,11 @@ export const backgroundImages: Array<INamedOption> = [
 export const densityPresets: Array<INamedOption> = [
   { name: 'Comfortable', value: '' },
   { name: 'Compact', value: 'compact' },
+];
+
+export const menuPresets: Array<INamedOption> = [
+  { name: 'Automatic', value: '' },
+  { name: 'Always sidebar', value: 'desktop' },
 ];
 
 const storageKey = 'theme.overrides';
@@ -154,5 +160,11 @@ const applyThemeOverrides = (overrides: IThemeOverrides): void => {
     root.setAttribute('data-density', overrides.density);
   } else {
     root.removeAttribute('data-density');
+  }
+
+  if (overrides.menu) {
+    root.setAttribute('data-menu', overrides.menu);
+  } else {
+    root.removeAttribute('data-menu');
   }
 };
