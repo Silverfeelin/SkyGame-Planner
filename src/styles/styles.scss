@@ -1472,6 +1472,24 @@ a.atmos-link:focus-visible {
   grid-column: 1 / -1;
 }
 
+/* Facts that claim a row of their own. */
+.atmos-fact-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-fact-gap);
+
+  > .atmos-fact {
+    flex: 0 1 auto;
+  }
+
+  /* Inside the row, --wide means "the long value": it absorbs the width the
+     short facts leave and drops to its own line once it can't hold its minimum. */
+  > .atmos-fact--wide {
+    flex: 1 1 var(--atmos-fact-min);
+  }
+}
+
 .atmos-fact__label {
   font-size: var(--atmos-fact-label-size);
   font-weight: 500;

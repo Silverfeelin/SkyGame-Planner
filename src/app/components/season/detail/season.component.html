@@ -16,23 +16,24 @@
     <div class="atmos-summary__grid">
       <div class="atmos-card__body atmos-summary__main">
         <div class="atmos-facts">
-          <div class="atmos-fact">
-            <div class="atmos-fact__label">Year</div>
-            <div class="atmos-fact__value">
-              <mat-icon class="atmos-fact__icon">event_repeat</mat-icon>
-              <span class="atmos-fact__text">{{ s.year }}</span>
+          <div class="atmos-fact-row">
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Year</div>
+              <div class="atmos-fact__value">
+                <mat-icon class="atmos-fact__icon">event_repeat</mat-icon>
+                <span class="atmos-fact__text">{{ s.year }}</span>
+              </div>
             </div>
-          </div>
-
-          <div class="atmos-fact atmos-fact--wide">
-            <div class="atmos-fact__label">Duration</div>
-            <div class="atmos-fact__value atmos-fact__value--wrap">
-              <mat-icon class="atmos-fact__icon">calendar_month</mat-icon>
-              <span><app-date-range [start]="s.date" [end]="s.endDate"></app-date-range></span>
-              <span class="atmos-fact__meta">
-                (<app-duration [start]="s.date" [end]="s.endDate"></app-duration> ·
-                <app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
-              </span>
+            <div class="atmos-fact atmos-fact--wide">
+              <div class="atmos-fact__label">Duration</div>
+              <div class="atmos-fact__value atmos-fact__value--wrap">
+                <mat-icon class="atmos-fact__icon">calendar_month</mat-icon>
+                <span><app-date-range [start]="s.date" [end]="s.endDate"></app-date-range></span>
+                <span class="atmos-fact__meta">
+                  (<app-duration [start]="s.date" [end]="s.endDate"></app-duration> ·
+                  <app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
+                </span>
+              </div>
             </div>
           </div>
           <div class="atmos-fact">
