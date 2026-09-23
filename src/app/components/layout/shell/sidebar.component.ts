@@ -14,20 +14,24 @@ const collapsedKey = 'menu.collapsed';
   styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TooltipDirective, RouterLink, RouterLinkActive, MatIcon],
-  host: { '[class.is-collapsed]': 'collapsed()' }
+  host: {
+    '[class.is-collapsed]': 'collapsed()',
+    '[class.is-animated]': 'animated()'
+  }
 })
 export class SidebarComponent {
   private readonly location = inject(Location);
 
   /**
    * Below 1024px the sidebar is hidden and the topbar's drawer takes over,
-   * unless the user forced the sidebar via the menu setting. The stored state
-   * is applied on creation, so the only width transition that ever runs is one
-   * the user asked for by clicking the toggle.
+   * unless the user forced the sidebar via the menu setting.
    */
   readonly collapsed = signal(localStorage.getItem(collapsedKey) === '1');
+  /** The host class lands after first layout, so an always-on width transition would animate the restored state. */
+  readonly animated = signal(false);
 
   toggleCollapsed(): void {
+    this.animated.set(true);
     this.collapsed.update(v => !v);
     localStorage.setItem(collapsedKey, this.collapsed() ? '1' : '0');
   }
