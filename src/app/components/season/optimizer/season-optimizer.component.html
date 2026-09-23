@@ -78,6 +78,7 @@
           [tree]="tree"
           [enableControls]="false"
           [nodeSubIcons]="SUBICONS_NO_SEASON"
+          [nodeOverlayTemplate]="tNode"
           [highlightNode]="wantNodeGuids()"
           [forceNodeAction]="'emit'"
           (nodeClicked)="onNodeClicked($event)"></app-spirit-tree>
@@ -197,6 +198,12 @@
     </div>
   </section>
 }
+
+<ng-template #tNode let-node>
+  @if (node && !node.unlocked && !want()[node.guid] && nodeValues[node.guid]) {
+    <span class="atmos-optimizer__node-value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
+  }
+</ng-template>
 
 @if (showingFriendshipHelp()) {
   <app-overlay (close)="showingFriendshipHelp.set(false)">

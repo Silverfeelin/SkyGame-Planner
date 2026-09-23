@@ -33,6 +33,7 @@
 @if (slots.dot; as dot) {
   <span class="subicon-dot" [class.subicon-dot--self]="dot === 'self'"
     [skyTooltip]="showTooltips ? (dot === 'self' ? 'You own this item.' : 'You own this item through another source.') : undefined">
+    <svg class="subicon-dot__check" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.5l2.5 2.5L12 5"/></svg>
   </span>
 } @else if (slots.br) {
   <mat-icon [class]="'subicon subicon--br subicon-shadow ' + (slots.br.cls || '')"

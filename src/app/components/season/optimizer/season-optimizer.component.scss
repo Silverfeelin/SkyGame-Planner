@@ -105,6 +105,17 @@
   align-self: flex-start;
 }
 
+.atmos-optimizer__node-value {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: var(--atmos-fs-sm);
+  font-weight: 700;
+  color: var(--atmos-text-mute);
+  text-shadow: 1px 1px 2px black;
+  pointer-events: none;
+}
+
 // State helpers — reuse semantic accent colours from tokens.
 .is-met { color: var(--atmos-good); }
 .is-lacking { color: var(--atmos-warm); }

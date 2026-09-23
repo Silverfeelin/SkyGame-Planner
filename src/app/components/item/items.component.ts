@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridApi, GridReadyEvent } from 'ag-grid-community';
@@ -49,7 +49,7 @@ export class ItemsComponent {
     { field: 'starter', headerName: 'Starter', width: 110, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
     { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: AgSetFilterComponent, filterParams: { values: dyeSlotFilterValues } },
     { field: 'returned', headerName: 'Returned', width: 120, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
-    { field: 'spirit', headerName: 'Spirit', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'spirit', headerName: 'Spirit', width: 200, minWidth: 120, filter: 'agTextColumnFilter', filterParams: textFilterParams },
     { field: 'season', headerName: 'Season', width: 200, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
     { field: 'event', headerName: 'Event', width: 200, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
     { field: 'realm', headerName: 'Realm', width: 160, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
@@ -58,6 +58,7 @@ export class ItemsComponent {
 
   private readonly _dataService = inject(DataService);
   private readonly _route = inject(ActivatedRoute);
+  private readonly _host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   private readonly _items: IItem[];
 
@@ -85,7 +86,25 @@ export class ItemsComponent {
     this.applyQueryFilters();
   }
 
+  onFirstDataRendered(): void {
+    void document.fonts.ready.then(() => this.fitSpiritColumn());
+  }
+
   getRowHeight = (): number => 48;
+
+  /** Sizes the spirit column to the longest name in the data; the grid's own auto-size only sees rendered rows. */
+  private fitSpiritColumn(): void {
+    const cell = this._host.nativeElement.querySelector('.ag-cell');
+    const ctx = document.createElement('canvas').getContext('2d');
+    if (!this.api || !cell || !ctx) { return; }
+
+    const style = getComputedStyle(cell);
+    ctx.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    const longest = this.rowData().reduce((max, row) => Math.max(max, ctx.measureText(row.spirit).width), 0);
+    const chrome = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight)
+      + parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth);
+    this.api.setColumnWidths([{ key: 'spirit', newWidth: Math.ceil(longest + chrome) + 1 }]);
+  }
 
   /** Replaces the column filters with the ones described by the query params. */
   private applyQueryFilters(): void {

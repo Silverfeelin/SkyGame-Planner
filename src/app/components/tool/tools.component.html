@@ -7,6 +7,10 @@
 <section class="atmos-tools__grid">
   @for (card of cards; track card.title) {
     <article class="atmos-card atmos-tools__card">
+      <div class="atmos-tools__media">
+        <img class="atmos-tools__image" [src]="card.imageUrl" alt="" loading="lazy" />
+        <div class="atmos-tools__fade"></div>
+      </div>
       <div class="atmos-card__body atmos-tools__body">
         <h2 class="atmos-tools__title">
           <mat-icon class="atmos-tools__title-icon">{{ card.icon }}</mat-icon>

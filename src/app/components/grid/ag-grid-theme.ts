@@ -14,7 +14,7 @@ export const getAgTheme = (): ReturnType<typeof themeQuartz.withParams> => {
     foregroundColor: v('--atmos-text'),
     headerTextColor: v('--atmos-text'),
     backgroundColor: 'transparent',
-    oddRowBackgroundColor: 'transparent',
+    oddRowBackgroundColor: v('--atmos-grid-odd-row'),
     rowHoverColor: v('--atmos-hover-bg'),
     headerBackgroundColor: v('--atmos-card-bg'),
     headerFontWeight: 'bold',

@@ -26,8 +26,10 @@ export const SUBICONS_NONE: ReadonlyArray<ItemSubicon> = [];
 interface ISubiconTier {
   /** Favourite star. */
   sm: number;
-  /** Owned dot. */
+  /** Owned badge diameter, ring included. Even, so the ring and check centre on whole pixels. */
   dot: number;
+  /** Owned badge ring width. */
+  ring: number;
   /** Emote level text. */
   level: number;
 }
@@ -37,10 +39,10 @@ interface ISubiconTier {
  * same ratio as a 64px one would draw a 36px badge over its artwork.
  */
 const SUBICON_TIERS: { readonly [size: number]: ISubiconTier } = {
-  24: { sm: 20, dot: 12, level: 13 },
-  20: { sm: 17, dot: 10, level: 11 },
-  18: { sm: 15, dot: 9,  level: 10 },
-  13: { sm: 12, dot: 7,  level: 8 }
+  24: { sm: 20, dot: 18, ring: 2, level: 13 },
+  20: { sm: 17, dot: 16, ring: 2, level: 11 },
+  18: { sm: 15, dot: 14, ring: 1, level: 10 },
+  13: { sm: 12, dot: 10, ring: 1, level: 8 }
 };
 
 /** Below this the bottom left cannot hold the star and the level at once. */
@@ -129,7 +131,8 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
     const size = this.size || 20;
     const tier = SUBICON_TIERS[size] ?? {
       sm: Math.round(size * 0.85),
-      dot: Math.round(size * 0.5),
+      dot: 2 * Math.round(size * 0.4),
+      ring: size >= 20 ? 2 : 1,
       level: Math.round(size * 0.55)
     };
 
@@ -138,6 +141,7 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
     style.setProperty('--subicon-size', this.sizePx);
     style.setProperty('--subicon-size-sm', `${tier.sm}px`);
     style.setProperty('--subicon-dot', `${tier.dot}px`);
+    style.setProperty('--subicon-ring', `${tier.ring}px`);
     style.setProperty('--subicon-level', `${tier.level}px`);
   }
 

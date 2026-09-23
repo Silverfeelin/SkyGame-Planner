@@ -322,6 +322,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-hover-bg:        oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
   --atmos-hover-bg-strong: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.16);
   --atmos-hover-tint:      oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.06);
+  --atmos-grid-odd-row:    oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.04);
   --atmos-transition:      120ms ease;
 
   /* Toggled-on / selected state. Tinted accent fill, accent border and text —

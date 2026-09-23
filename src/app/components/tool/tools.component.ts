@@ -6,6 +6,7 @@ import { ToolQuickActionsComponent } from './quick-actions/tool-quick-actions.co
 interface IToolCard {
   readonly title: string;
   readonly icon: string;
+  readonly imageUrl: string;
   readonly description: string;
   readonly links: ReadonlyArray<IToolLink>;
 }
@@ -29,6 +30,7 @@ export class ToolsComponent {
   readonly cards: ReadonlyArray<IToolCard> = [
     {
       title: 'Outfit request',
+      imageUrl: '/assets/images/outfit-request.webp',
       icon: 'checkroom',
       description: 'Pick items from your closet, share an outfit request link or build a collage to show off your style.',
       links: [
@@ -40,6 +42,7 @@ export class ToolsComponent {
     },
     {
       title: 'Item unlock calculator',
+      imageUrl: '/assets/images/cost-calculator.webp',
       icon: 'calculate',
       description: 'Pick items to unlock and see exactly how much candle, heart and ascended-candle you still need.',
       links: [
@@ -47,47 +50,8 @@ export class ToolsComponent {
       ]
     },
     {
-      title: 'Item inflation',
-      icon: 'trending_up',
-      description: 'See how item costs have changed over time across spirits, events and seasons.',
-      links: [
-        { icon: 'trending_up', label: 'View inflation', link: '/item/inflation' }
-      ]
-    },
-    {
-      title: 'Children of Light',
-      icon: 'auto_awesome',
-      description: 'Track Children of Light collected across realms.',
-      links: [
-        { icon: 'auto_awesome', label: 'Open tracker', link: '/col' }
-      ]
-    },
-    {
-      title: 'Wing buffs',
-      icon: 'air',
-      description: 'Track wing buffs collected from spirits.',
-      links: [
-        { icon: 'air', label: 'Open tracker', link: '/wing-buff' }
-      ]
-    },
-    {
-      title: 'Currency spent',
-      icon: 'wallet',
-      description: 'Log currency you have spent outside of tracked items.',
-      links: [
-        { icon: 'wallet', label: 'View spent currencies', link: '/currency/spent' }
-      ]
-    },
-    {
-      title: 'Dye plant tracker',
-      icon: 'local_florist',
-      description: 'A collaborative tracker for dye plants in Sky.',
-      links: [
-        { icon: 'open_in_new', label: 'Go to website', href: 'https://dyes.sky-planner.com/' }
-      ]
-    },
-    {
       title: 'Sky Shards',
+      imageUrl: '/assets/images/sky-shards.webp',
       icon: 'auto_awesome_motion',
       description: 'A website by Plutoy to view the time and location of shards.',
       links: [
@@ -96,6 +60,7 @@ export class ToolsComponent {
     },
     {
       title: 'Sky Clock',
+      imageUrl: '/assets/images/sky-clock.webp',
       icon: 'schedule',
       description: 'A website by Chris Stead to view the time of events such as the geyser in Sky.',
       links: [
