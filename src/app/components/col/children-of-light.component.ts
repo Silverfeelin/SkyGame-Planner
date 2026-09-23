@@ -353,22 +353,19 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     divButtons.insertAdjacentHTML('beforeend', `
 <button type="button" class="s-leaflet-hasicon s-leaflet-found" data-action="mark" onclick="markCol(this, '${wl.guid}', false)" title="Mark as found.">
   <span class="s-leaflet-maticon">check_box_outline_blank</span>
-  <span class="s-leaflet-check-label">Found</span>
+  <span>Found</span>
 </button>`);
     divButtons.insertAdjacentHTML('beforeend', `
 <button type="button" class="s-leaflet-hasicon" data-action="mark" onclick="markCol(this, '${wl.guid}', true)" title="Mark as found and go to next light.">
   <span class="s-leaflet-maticon">done_all</span>
-  &nbsp;
 </button>`);
     divButtons.insertAdjacentHTML('beforeend', `
 <button class="s-leaflet-hasicon" data-direction="left" type="button" onclick="nextCol('${wl.guid}', -1)" title="Go to previous light.">
   <span class="s-leaflet-maticon">arrow_back</span>
-  &nbsp;
 </button>`);
     divButtons.insertAdjacentHTML('beforeend', `
 <button class="s-leaflet-hasicon" data-direction="right" type="button" onclick="nextCol('${wl.guid}', 1)" title="Go to next light.">
   <span class="s-leaflet-maticon">arrow_forward</span>
-  &nbsp;
 </button>`);
 
     if (wl._wiki?.href) {

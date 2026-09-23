@@ -183,11 +183,11 @@ p:last-child {
    raw HTML strings in TypeScript, so they cannot use .atmos-btn like the
    Angular templates do. Only the map layer may use these. */
 .s-leaflet-menu-icon {
-  position: absolute;
+  flex-shrink: 0;
 }
 
 .s-leaflet-menu-label {
-  padding-left: 32px;
+  min-width: 0;
 }
 
 // Prevent SVG icon clipping.

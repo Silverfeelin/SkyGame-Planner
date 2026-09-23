@@ -65,6 +65,13 @@ body > .map { display: none !important; }
   }
 }
 
+// After the .container rule above so flex wins over its inline-block.
+.s-leaflet-item:has(> .s-leaflet-menu-icon) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* Presentational helpers for popup content. The popups are built imperatively
    by MapInstanceService and the CoL component, so they cannot reach a
    component stylesheet and need named classes here. */
@@ -73,23 +80,19 @@ body > .map { display: none !important; }
 .s-leaflet-right { float: right; }
 
 .s-leaflet-hasicon {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   min-width: 32px;
-  .s-leaflet-maticon {
-    position: absolute;
-    left: 4px;
-  }
-}
-
-.s-leaflet-check-label {
-  margin-left: 22px;
+  vertical-align: middle;
 }
 
 .s-leaflet-maticon {
   font-family: 'Material Symbols Outlined';
   font-variation-settings: 'FILL' 1;
   font-size: 22px;
-  line-height: 17px;
+  line-height: 1;
 }
 
 /* Responsive */
@@ -98,7 +101,6 @@ body > .map { display: none !important; }
 .s-leaflet-item .s-leaflet-maticon-desktop { display: none; }
 
 @media screen and (max-width: 719px) {
-  .s-leaflet-grid .s-leaflet-menu-label { padding-left: unset !important; }
   .s-leaflet-vid { max-height: 135px; }
 }
 
