@@ -13,6 +13,7 @@ export const themes: Array<ITheme> = [
   { name: 'Days of Love', value: 'love' },
   { name: 'Moomin', value: 'moomin' },
   { name: 'Wonderland', value: 'wonderland' },
+  { name: 'Van Gogh', value: 'gogh' },
   { name: 'Void', value: 'dark' },
   { name: 'Surprise', value: 'surprise' },
 ]

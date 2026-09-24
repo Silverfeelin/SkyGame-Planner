@@ -69,6 +69,7 @@ export const backgroundImages: Array<INamedOption> = [
   { name: 'Days of Love', value: 'love2024' },
   { name: 'Fireworks', value: 'firework' },
   { name: 'Moomin', value: 'moomin' },
+  { name: 'Van Gogh', value: 'gogh' },
 ];
 
 export const densityPresets: Array<INamedOption> = [

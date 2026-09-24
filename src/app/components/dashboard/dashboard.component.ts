@@ -14,6 +14,7 @@ import { IEventInstance, IRealm, ISeason, ISpecialVisit, ISpiritTree, ITraveling
 import { ShardIndicatorComponent } from '@app/components/shared/shared-widgets';
 import { ClockComponent } from './clock.component';
 import { DashboardFavouritesComponent } from './favourites-card.component';
+import { DashboardAnnouncementComponent } from './announcement-card.component';
 import { SearchBarComponent } from './search-bar.component';
 import {
   FeatureCardComponent,
@@ -52,7 +53,7 @@ interface IEventCard {
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ClockComponent, ShardIndicatorComponent, SearchBarComponent, DashboardFavouritesComponent, FeatureCardComponent, RouterLink]
+  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, SearchBarComponent, DashboardFavouritesComponent, FeatureCardComponent, RouterLink]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);

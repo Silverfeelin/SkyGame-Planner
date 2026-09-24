@@ -1,0 +1,27 @@
+@if (isVisible()) {
+  <article class="atmos-card atmos-announcement">
+    <div class="atmos-announcement__head">
+      <h2 class="atmos-section__title">Welcome to the new design</h2>
+      @if (dismissable) {
+        <button type="button" class="atmos-btn atmos-announcement__dismiss" aria-label="Dismiss announcement" (click)="dismiss()">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </div>
+
+    <div class="atmos-announcement__body">
+      <p>
+        Thank you to everyone who tried out the preview and shared their feedback!
+        With over 50 responses, I've been able to implement a lot of improvements that shape the version you see today.
+      </p>
+      <p>
+        Not quite to your liking? I've also added a bunch of customization options to the
+        <a [routerLink]="'/settings'" class="atmos-text-link" >Settings</a>
+        page, including a compact mode for those who like more content on their screen at once.
+      </p>
+      <p>
+        It's not too late to provide feedback; just look for the "Design feedback" option in the menu!
+      </p>
+    </div>
+  </article>
+}

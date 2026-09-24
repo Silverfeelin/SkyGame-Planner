@@ -1094,6 +1094,14 @@ a.atmos-link:focus-visible {
   --atmos-bg-image: url(/assets/game/background/feast2024.webp);
 }
 
+:root[data-theme="gogh"] {
+  --atmos-hue: 255;
+  --atmos-chroma: 1.5;
+  --atmos-surface-l: 0.04;
+  --atmos-bg-brightness: 100%;
+  --atmos-bg-image: url(/assets/game/background/gogh.webp);
+}
+
 /* Compact trades spacing for content density. It is a separate axis from the
    colour themes, so `data-density` rather than `data-theme` — the two compose.
    It deliberately leaves the type scale alone, since the readers asking for it
