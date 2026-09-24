@@ -214,7 +214,7 @@
       (shownItemsChanged)="onItemsChanged($event)"/>
     <ng-template #pickTpl let-item>
       <div class="atmos-item-unlock-calc__pick atmos-tile atmos-tile--selectable"
-        [class.is-selected]="itemSet.has(item)"
+        [class.is-selected]="itemSet.has(item)" [class.is-unlocked]="item.unlocked"
         (click)="onItemClicked({ event: $event, item })">
         <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [skyTooltip]="item.name" placement="auto"></app-item-icon>
         @if (itemSet.has(item)) { <span class="atmos-tile__check">✓</span> }

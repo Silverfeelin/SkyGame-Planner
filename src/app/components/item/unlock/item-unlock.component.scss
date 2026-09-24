@@ -36,4 +36,10 @@
   display: inline-block;
   cursor: pointer;
   border-radius: var(--atmos-radius-sm);
+
+  &.is-unlocked {
+    background: var(--atmos-tile-bg-unlocked);
+
+    &:hover { background: var(--atmos-tile-bg-unlocked-hover); }
+  }
 }

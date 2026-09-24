@@ -124,6 +124,7 @@ export class ItemUnlockComponent {
       else if (item.iaps?.length) { this.unlockIAP(item.iaps.at(-1)!); }
       else if (item.listNodes?.length) { this.unlockListNode(item.listNodes.at(-1)!); }
     }
+    this._eventService.itemToggled.next(item);
   }
 
   private unlockNode(node: INode): void {

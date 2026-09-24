@@ -345,7 +345,9 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-tile-bg:          var(--atmos-chip-bg);          /* 6% resting fill */
   --atmos-tile-bg-hover:    var(--atmos-hover-bg-strong);  /* 16% hover step */
   --atmos-tile-bg-selected: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.12);
-  --atmos-tile-ring:        2px;                           /* selection ring width */
+  --atmos-tile-bg-unlocked:       oklch(0.30 0.11 150 / 0.9);
+  --atmos-tile-bg-unlocked-hover: oklch(0.38 0.11 150 / 0.9);
+  --atmos-tile-ring:       2px;                           /* selection ring width */
 
   /* Cards. */
   --atmos-card-bg:     oklch(calc(0.20 + var(--atmos-surface-l)) calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);

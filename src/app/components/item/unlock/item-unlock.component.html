@@ -28,14 +28,13 @@
       </header>
       <div class="atmos-item-unlock__grid">
         @for (item of section.items; track item.guid) {
-          <div class="atmos-item-unlock__item atmos-tile atmos-tile--selectable"
-            [class.is-selected]="item.unlocked"
+          <div class="atmos-item-unlock__item atmos-tile"
+            [class.is-unlocked]="item.unlocked"
             [skyTooltip]="item.name"
             (click)="toggleItem(item)">
             <app-item-icon [item]="item" [opaque]="true"
               [subIcons]="SUBICONS_ALL">
             </app-item-icon>
-            @if (item.unlocked) { <span class="atmos-tile__check">✓</span> }
           </div>
         }
       </div>

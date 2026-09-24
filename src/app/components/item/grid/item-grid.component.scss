@@ -12,6 +12,12 @@
   overflow: hidden;
   text-decoration: none;
 
+  &:not(.is-locked) {
+    background: var(--atmos-tile-bg-unlocked);
+
+    &:hover { background: var(--atmos-tile-bg-unlocked-hover); }
+  }
+
   // Only the artwork dims; the subicons stay readable on a locked item.
   &.is-locked .item-icon {
     opacity: 0.35;

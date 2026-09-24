@@ -95,4 +95,10 @@
   height: var(--item-size);
   border-radius: var(--atmos-radius-sm);
   cursor: pointer;
+
+  &.is-unlocked {
+    background: var(--atmos-tile-bg-unlocked);
+
+    &:hover { background: var(--atmos-tile-bg-unlocked-hover); }
+  }
 }
