@@ -160,7 +160,7 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
     const slots: ISubiconSlots = {
       tl: allowed.has('source') ? this.sourceBadge(item) : undefined,
       tr: allowed.has('season') && item.season?.iconUrl
-        ? { src: item.season.iconUrl, cls: 'subicon-shadow', tooltip: item.season.name }
+        ? { src: item.season.iconUrl, tooltip: item.season.name }
         : undefined,
       star,
       level: allowed.has('level') && !(compact && star) ? (item.level || 0) : 0

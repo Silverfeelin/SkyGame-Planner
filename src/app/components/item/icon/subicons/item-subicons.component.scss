@@ -24,6 +24,8 @@
   height: var(--subicon-size);
   font-size: var(--subicon-size);
   line-height: var(--subicon-size);
+  /* The tight layer outlines the glyph so a white badge still reads on white artwork. */
+  filter: drop-shadow(0 0 0.5px var(--atmos-overlay-shadow)) drop-shadow(1px 1px 1px color-mix(in srgb, var(--atmos-overlay-shadow) 50%, transparent));
 }
 
 .subicon--tl {
@@ -99,10 +101,6 @@
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.subicon-shadow {
-  filter: drop-shadow(1px 0px 1px var(--atmos-overlay-shadow));
 }
 
 .subicon-limited {

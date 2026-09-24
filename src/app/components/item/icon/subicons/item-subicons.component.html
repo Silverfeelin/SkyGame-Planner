@@ -36,7 +36,7 @@
     <svg class="subicon-dot__check" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.5l2.5 2.5L12 5"/></svg>
   </span>
 } @else if (slots.br) {
-  <mat-icon [class]="'subicon subicon--br subicon-shadow ' + (slots.br.cls || '')"
+  <mat-icon [class]="'subicon subicon--br ' + (slots.br.cls || '')"
     [skyTooltip]="showTooltips ? slots.br.tooltip : undefined">
     {{ slots.br.src }}
   </mat-icon>
