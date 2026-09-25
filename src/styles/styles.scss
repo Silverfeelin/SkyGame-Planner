@@ -1134,6 +1134,28 @@ a.atmos-link:focus-visible {
   --atmos-fact-gap: 6px var(--atmos-gap);
 }
 
+/* Font size only rescales the type scale, so it composes with both density
+   and the colour themes. */
+:root[data-font-size="large"] {
+  --atmos-fs-sm:  14px;
+  --atmos-fs-md:  16px;
+  --atmos-fs-lg:  18px;
+  --atmos-fs-xl:  20px;
+  --atmos-fs-2xl: 24px;
+  --atmos-fs-3xl: 28px;
+  --atmos-fs-4xl: 34px;
+}
+
+:root[data-font-size="larger"] {
+  --atmos-fs-sm:  16px;
+  --atmos-fs-md:  18px;
+  --atmos-fs-lg:  20px;
+  --atmos-fs-xl:  22px;
+  --atmos-fs-2xl: 26px;
+  --atmos-fs-3xl: 30px;
+  --atmos-fs-4xl: 36px;
+}
+
 // #endregion
 
 // #region Utilities

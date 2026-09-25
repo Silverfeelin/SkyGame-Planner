@@ -1,7 +1,7 @@
 /** Per-user tweaks layered on top of the selected theme preset. Numeric
  *  values are written as inline custom properties on <html>, which wins over
- *  the `:root[data-theme]` rules; the density preset is a data attribute
- *  so the stylesheet keeps the actual spacing values. */
+ *  the `:root[data-theme]` rules; the density and font size presets are data
+ *  attributes so the stylesheet keeps the actual values. */
 export interface IThemeOverrides {
   hue?: number;
   chroma?: number;
@@ -11,6 +11,7 @@ export interface IThemeOverrides {
   bgBlur?: number;
   vignette?: boolean;
   density?: string;
+  fontSize?: string;
   menu?: string;
 }
 
@@ -75,6 +76,12 @@ export const backgroundImages: Array<INamedOption> = [
 export const densityPresets: Array<INamedOption> = [
   { name: 'Comfortable', value: '' },
   { name: 'Compact', value: 'compact' },
+];
+
+export const fontSizePresets: Array<INamedOption> = [
+  { name: 'Default', value: '' },
+  { name: 'Large', value: 'large' },
+  { name: 'Larger', value: 'larger' },
 ];
 
 export const menuPresets: Array<INamedOption> = [
@@ -161,6 +168,12 @@ const applyThemeOverrides = (overrides: IThemeOverrides): void => {
     root.setAttribute('data-density', overrides.density);
   } else {
     root.removeAttribute('data-density');
+  }
+
+  if (overrides.fontSize) {
+    root.setAttribute('data-font-size', overrides.fontSize);
+  } else {
+    root.removeAttribute('data-font-size');
   }
 
   if (overrides.menu) {

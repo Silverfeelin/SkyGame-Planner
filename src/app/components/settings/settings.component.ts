@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
 import {
-  backgroundImages, clearThemeOverrides, densityPresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
+  backgroundImages, clearThemeOverrides, densityPresets, fontSizePresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
   IThemeOverrides, IThemeSlider, menuPresets, setThemeOverride, ThemeOverrideKey, themeSliders
 } from 'src/theme-overrides';
 
@@ -41,12 +41,13 @@ export class SettingsComponent implements OnDestroy {
   currentTheme: string;
   themes = themes;
 
-  readonly advancedOpen = signal(false);
+  readonly advancedOpen = signal(hasThemeOverrides());
   readonly overrides = signal<IThemeOverrides>(getThemeOverrides());
   readonly hasOverrides = computed(() => Object.keys(this.overrides()).length > 0);
   readonly themeSliders = themeSliders;
   readonly backgroundImages = backgroundImages;
   readonly densityPresets = densityPresets;
+  readonly fontSizePresets = fontSizePresets;
   readonly menuPresets = menuPresets;
   wikiNewTab = false;
   debugVisible = false;
@@ -228,9 +229,6 @@ export class SettingsComponent implements OnDestroy {
   selectTheme(theme: ITheme): void {
     this.currentTheme = theme.value;
     setTheme(theme);
-    if (hasThemeOverrides() && confirm('You have advanced tweaks applied. Reset them for this theme?')) {
-      this.resetOverrides();
-    }
     // Slider labels that follow the theme need re-reading after the preset changed.
     this.overrides.set({ ...this.overrides() });
   }

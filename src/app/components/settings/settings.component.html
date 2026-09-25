@@ -177,6 +177,17 @@
         </div>
 
         <div class="atmos-settings__label">
+          Font size
+          <div class="atmos-settings__btn-row">
+            @for (preset of fontSizePresets; track preset.value) {
+              <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().fontSize ?? '') === preset.value" (click)="setOverride('fontSize', preset.value)">
+                {{ preset.name }}
+              </button>
+            }
+          </div>
+        </div>
+
+        <div class="atmos-settings__label">
           Menu
           <div class="atmos-settings__btn-row">
             @for (preset of menuPresets; track preset.value) {
