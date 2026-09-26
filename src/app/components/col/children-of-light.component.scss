@@ -26,8 +26,9 @@
 
 .atmos-col__map {
   width: 100%;
-  height: 60vh;
-  min-height: 360px;
+  height: 600px;
+  min-height: 200px;
+  max-height: calc(100vh - 80px);
 }
 
 .atmos-col__map-control {

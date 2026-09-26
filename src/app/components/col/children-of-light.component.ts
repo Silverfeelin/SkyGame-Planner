@@ -340,11 +340,16 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 </div>`);
 
     let videoUrl = wl.mapData?.videoUrl;
-    if (videoUrl) {
-      if (!videoUrl.includes('youtube')) { videoUrl = `/assets/game/col/${videoUrl}`; }
+    if (videoUrl?.includes('youtube')) {
       div.insertAdjacentHTML('beforeend', `
 <div>
   <iframe class="s-leaflet-vid" width="480" height="270" src="${videoUrl}" title="CoL" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+</div>`);
+    } else if (videoUrl) {
+      // A <video> instead of an iframe, as Firefox letterboxes iframed media documents in white.
+      div.insertAdjacentHTML('beforeend', `
+<div>
+  <video class="s-leaflet-vid" width="480" height="270" src="/assets/game/col/${videoUrl}" title="CoL" controls autoplay playsinline></video>
 </div>`);
     }
 
@@ -382,6 +387,23 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     const wl = this._dataService.guidMap.get(wlGuid) as IWingedLight;
     this._lastPopup = e.popup;
     this.updatePopup(div, wl);
+    this.fitPopupToMap(e.popup);
+  }
+
+  /** Shrinks the video so the whole popup fits within the map height. */
+  private fitPopupToMap(popup: L.Popup): void {
+    const el = popup.getElement();
+    const video = el?.querySelector('.s-leaflet-vid') as HTMLElement;
+    if (!el || !video) { return; }
+
+    const marginBottom = parseInt(getComputedStyle(el).marginBottom, 10) || 0;
+    const padding = L.point(popup.options.autoPanPadding || [5, 5]).y * 2;
+    const overflow = el.offsetHeight + marginBottom + padding - this.map.getSize().y;
+    if (overflow <= 0) { return; }
+
+    video.style.height = `${Math.max(90, video.offsetHeight - overflow)}px`;
+    // Re-setting the position is the public way to make Leaflet re-run autoPan.
+    popup.setLatLng(popup.getLatLng()!);
   }
 
   private onMoveEnd(): void {
@@ -442,6 +464,11 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     light.marker?.openPopup();
     light.marker?.getElement()?.focus();
     setTimeout(() => {
+      // The fly runs after the popup's autoPan, so pan again once it lands.
+      this.map.once('moveend', () => {
+        const popup = light.marker?.getPopup();
+        if (popup?.isOpen()) { popup.setLatLng(popup.getLatLng()!); }
+      });
       this.map.flyTo([pos[0] + 20, pos[1]], 3, { animate: true, duration: 0.5 });
     }, 1);
   }
