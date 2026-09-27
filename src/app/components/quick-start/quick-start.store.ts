@@ -1,6 +1,7 @@
-import { Injectable, OnDestroy, WritableSignal, computed, inject, signal } from '@angular/core';
+import { Injectable, WritableSignal, computed, inject, signal } from '@angular/core';
 import { DateTime } from 'luxon';
 import { IItem, ISeason, ItemSubtype, ItemType } from 'skygame-data';
+import { ExportHelper } from '@app/helpers/export-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
@@ -8,7 +9,7 @@ import { ClosetImportKind, ClosetImportResult, ClosetImportService } from '@app/
 import { solveEmote } from '@app/services/quick-start/emote-levels';
 import { inferProgress } from '@app/services/quick-start/quick-start-inference';
 import {
-  EmoteEntry, EmoteSolution, QUICK_START_TABS, QuickStartAsk, QuickStartPlan, QuickStartTab, QuickStartTile, TileState
+  EmoteEntry, EmoteSolution, IapChoice, QUICK_START_TABS, QuickStartAsk, QuickStartPlan, QuickStartTab, QuickStartTile, SeasonState, TileState
 } from '@app/services/quick-start/quick-start.model';
 
 export type TabStage = 'add' | 'check' | 'matching' | 'confirm';
@@ -42,9 +43,9 @@ export interface TabStatus {
   fresh: number;
 }
 
-/** State of one quick start run. Provided by the quick start page, so leaving the page discards it. */
+/** State of one quick start run. Kept by `QuickStartSession` between visits to the page. */
 @Injectable()
-export class QuickStartStore implements OnDestroy {
+export class QuickStartStore {
   private readonly _data = inject(DataService);
   private readonly _storage = inject(StorageService);
   private readonly _closetImport = inject(ClosetImportService);
@@ -61,10 +62,14 @@ export class QuickStartStore implements OnDestroy {
     .sort((a, b) => a.date.toMillis() - b.date.toMillis());
 
   readonly step = signal(0);
+  /** Furthest step opened so far; every step up to it can be revisited from the stepper. */
+  readonly reached = signal(0);
   readonly startIndex = signal(Math.max(0, this.seasons.length - 1));
   readonly startUnsure = signal(false);
   readonly activeTab = signal(QUICK_START_TABS[0].key);
-  readonly sourceOverride = signal<ReadonlyMap<string, string>>(new Map());
+  readonly seasonStates = signal<ReadonlyMap<string, SeasonState>>(new Map());
+  readonly spiritSource = signal<ReadonlyMap<string, string>>(new Map());
+  readonly iapChoices = signal<ReadonlyMap<string, IapChoice>>(new Map());
   readonly wingBuffs = signal<ReadonlySet<string>>(new Set());
   readonly conflictHandled = signal(false);
   readonly saved = signal(false);
@@ -132,20 +137,21 @@ export class QuickStartStore implements OnDestroy {
   /** Items still marked "!" (and unanswered asks, unresolved emotes); these aren't saved. */
   readonly openCount = computed(() => Object.values(this.status()).reduce((n, s) => n + s.open, 0));
 
-  readonly plan = computed<QuickStartPlan>(() => {
-    const necklace = this.tab('Necklace')();
-    return inferProgress(this._data, {
-      owned: this.ownedNew(),
-      unlocked: this.unlockedBefore,
-      start: this.startUnsure() ? undefined : this.seasons[this.startIndex()],
-      necklaceCovered: necklace.stage === 'confirm',
-      sourceOverride: this.sourceOverride(),
-      wingBuffs: this.wingBuffs(),
-      conflictHandled: this.conflictHandled()
-    });
-  });
+  /** Without the Necklace tab a missing pendant says nothing about the season pass. */
+  readonly necklaceCovered = computed(() => this.tab('Necklace')().stage === 'confirm');
 
-  ngOnDestroy(): void {
+  readonly plan = computed<QuickStartPlan>(() => inferProgress(this._data, {
+    owned: this.ownedNew(),
+    unlocked: this.unlockedBefore,
+    start: this.startUnsure() ? undefined : this.seasons[this.startIndex()],
+    seasonStates: this.seasonStates(),
+    spiritSource: this.spiritSource(),
+    iapChoices: this.iapChoices(),
+    wingBuffs: this.wingBuffs(),
+    conflictHandled: this.conflictHandled()
+  }));
+
+  dispose(): void {
     this._tabState.forEach(s => this.revoke(s()));
   }
 
@@ -300,29 +306,45 @@ export class QuickStartStore implements OnDestroy {
 
   /* ---------- Review ---------- */
 
-  setSource(itemGuid: string, key: string | undefined): void {
-    this.sourceOverride.update(m => { const n = new Map(m); if (key === undefined) { n.delete(itemGuid); } else { n.set(itemGuid, key); } return n; });
+  setSeasonState(seasonGuid: string, state: SeasonState): void {
+    this.seasonStates.update(m => new Map(m).set(seasonGuid, state));
+  }
+
+  setSpiritSource(spiritGuid: string, key: string): void {
+    this.spiritSource.update(m => new Map(m).set(spiritGuid, key));
+  }
+
+  setIapChoice(iapGuids: Array<string>, choice: IapChoice): void {
+    this.iapChoices.update(m => { const n = new Map(m); iapGuids.forEach(g => n.set(g, choice)); return n; });
   }
 
   setWingBuff(spiritGuid: string, on: boolean): void {
     this.wingBuffs.update(s => { const n = new Set(s); if (on) { n.add(spiritGuid); } else { n.delete(spiritGuid); } return n; });
   }
 
-  /** Moves the start to the given season; attributions depend on it, so overrides are reset. */
+  /** Moves the start to the given season. Seasons from there on that were set to "Not played" fall back to played (or season pass with an ultimate gift). */
   useStart(season: ISeason): void {
     const i = this.seasons.indexOf(season);
     if (i < 0) { return; }
     this.startUnsure.set(false);
     this.startIndex.set(i);
-    this.sourceOverride.set(new Map());
+    this.seasonStates.update(m => new Map([...m].filter(([guid, state]) =>
+      state !== 'none' || this.seasons.findIndex(s => s.guid === guid) < i)));
     this.conflictHandled.set(false);
+  }
+
+  exportData(): void {
+    ExportHelper.download(this._storage);
   }
 
   /** Only adds progress: one `addUnlocked` batch plus season passes. */
   save(): void {
     const plan = this.plan();
     const unlock = plan.unlock.filter(g => !this._storage.isUnlocked(g));
-    if (unlock.length) { this._storage.addUnlocked(...unlock); }
+    if (unlock.length) {
+      this._storage.addUnlocked(...unlock);
+      this._data.refreshUnlocked({ unlocked: this._storage.getUnlocked(), gifted: this._storage.getGifted() });
+    }
     const passes = plan.seasonPasses.filter(g => !this._storage.hasSeasonPass(g));
     if (passes.length) { this._storage.addSeasonPasses(...passes); }
     this.saved.set(true);

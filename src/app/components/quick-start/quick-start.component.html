@@ -1,27 +1,43 @@
 <header #top class="atmos-page__header">
-  <h1 class="atmos-page__title">Quick start</h1>
+  <h1 class="atmos-page__title">Quick start <span class="atmos-pill atmos-qs__beta-pill">Beta</span></h1>
 </header>
 
 <div class="atmos-page__intro">
-  <p class="atmos-page__hint">
+  <p>
     Show us your closet and we'll fill in your progress. You check everything before it's saved, and you can fine-tune it afterwards.
   </p>
   <p class="atmos-qs__reassure">
     <mat-icon>lock_open</mat-icon>
     Quick start only adds progress. Anything you've already marked stays as it is.
   </p>
+  <p class="atmos-qs__beta">
+    <mat-icon>bug_report</mat-icon>
+    <span>
+      Quick start is in beta, so matching can still miss or mix up items.
+      <a class="atmos-text-link" [href]="reportUrl" target="_blank" rel="noopener">Report an issue</a>
+      with a link to your screenshots to help improve it.
+    </span>
+  </p>
 </div>
+
+@if (restarted()) {
+  <div class="atmos-qs__banner atmos-qs__banner--warn" role="status">
+    <mat-icon>restart_alt</mat-icon>
+    <p>Your progress changed since you last left the quick start, so it started over to stay up to date.</p>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="restarted.set(false)">OK</button>
+  </div>
+}
 
 @if (!store.saved()) {
   <nav class="atmos-qs__stepper atmos-scroll-x" aria-label="Quick start steps">
     @for (label of steps; track $index; let i = $index) {
       <button type="button" class="atmos-qs__stepper-btn atmos-focus-ring"
-              [class.is-done]="i < reached() && i !== store.step()"
+              [class.is-done]="i < store.reached() && i !== store.step()"
               [attr.aria-current]="i === store.step() ? 'step' : null"
-              [disabled]="i > reached()"
+              [disabled]="i > store.reached()"
               (click)="goTo(i)">
         <span class="atmos-qs__stepper-n">
-          @if (i < reached() && i !== store.step()) { <mat-icon>check</mat-icon> } @else { {{ i + 1 }} }
+          @if (i < store.reached() && i !== store.step()) { <mat-icon>check</mat-icon> } @else { {{ i + 1 }} }
         </span>
         <span class="atmos-qs__stepper-label">{{ label }}</span>
       </button>

@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, ElementRef, effect, inject, signal, untracked, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, effect, inject, untracked, viewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { QuickStartStore } from './quick-start.store';
+import { QuickStartSession } from './quick-start-session.service';
 import { StartStepComponent } from './steps/start-step.component';
 import { ClosetStepComponent } from './steps/closet-step.component';
 import { QuickStartReviewComponent } from './review/quick-start-review.component';
@@ -10,16 +11,15 @@ import { QuickStartReviewComponent } from './review/quick-start-review.component
   templateUrl: './quick-start.component.html',
   styleUrl: './quick-start.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [QuickStartStore],
+  providers: [{ provide: QuickStartStore, useFactory: () => inject(QuickStartSession).acquire() }],
   imports: [MatIcon, StartStepComponent, ClosetStepComponent, QuickStartReviewComponent]
 })
 export class QuickStartComponent {
   readonly store = inject(QuickStartStore);
+  readonly restarted = inject(QuickStartSession).restarted;
 
   readonly steps = ['When you started', 'Closet', 'Check and save'];
-
-  /** Furthest step opened so far; every step up to it can be revisited from the stepper. */
-  readonly reached = signal(0);
+  readonly reportUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSchGuK36-UMWdZYmn9BE9tpMdiHMifAkCx8EsfCnINehK6_yA/viewform?usp=header';
 
   private readonly _top = viewChild.required<ElementRef<HTMLElement>>('top');
   private _firstStep = true;
@@ -28,7 +28,7 @@ export class QuickStartComponent {
     effect(() => {
       const step = this.store.step();
       untracked(() => {
-        this.reached.update(r => Math.max(r, step));
+        this.store.reached.update(r => Math.max(r, step));
         if (this._firstStep) { this._firstStep = false; return; }
         const top = this._top().nativeElement;
         if (top.getBoundingClientRect().top < 0) { top.scrollIntoView({ block: 'start' }); }
@@ -37,7 +37,7 @@ export class QuickStartComponent {
   }
 
   goTo(step: number): void {
-    if (step > this.reached()) { return; }
+    if (step > this.store.reached()) { return; }
     this.store.step.set(step);
   }
 }

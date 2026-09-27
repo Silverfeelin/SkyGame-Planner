@@ -4,7 +4,7 @@ import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
 import { DateTime } from 'luxon';
 import { StorageService } from 'src/app/services/storage.service';
-import { IStorageExport } from 'src/app/services/storage/storage-provider.interface';
+import { ExportHelper, IExport } from 'src/app/helpers/export-helper';
 import { DateTimePipe } from '../../pipes/date-time.pipe';
 import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -14,14 +14,6 @@ import {
   backgroundImages, clearThemeOverrides, densityPresets, fontSizePresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
   IThemeOverrides, IThemeSlider, menuPresets, setThemeOverride, ThemeOverrideKey, themeSliders
 } from 'src/theme-overrides';
-
-interface IExport {
-  version: string;
-  storageData: IStorageExport;
-  closetData: {
-    hidden: Array<string>;
-  };
-}
 
 const signalPwa = signal<any>(undefined);
 
@@ -166,28 +158,7 @@ export class SettingsComponent implements OnDestroy {
   }
 
   export(): void {
-    const data: IExport = {
-      version: '1.1.0',
-      storageData: this._storageService.export(),
-      closetData: {
-        hidden: JSON.parse(localStorage.getItem('closet.hidden') || '[]'),
-      }
-    };
-
-    const jsonData = JSON.stringify(data);
-    let url = '';
-    try {
-      const blob = new Blob([jsonData], { type: 'application/json' });
-      url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `SkyPlanner_${DateTime.now().toFormat('yyyy-MM-dd')}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } finally {
-      URL.revokeObjectURL(url);
-    }
+    ExportHelper.download(this._storageService);
   }
 
   clear(): void {

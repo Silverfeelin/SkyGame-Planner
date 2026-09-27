@@ -6,7 +6,7 @@
  */
 import fs from 'fs';
 import path from 'path';
-import { IItem, INode, ISeason, ISpirit, ItemType, SkyDataResolver } from 'skygame-data';
+import { IIAP, IItem, INode, ISeason, ISpirit, ItemType, SkyDataResolver } from 'skygame-data';
 import { NodeHelper } from '../../src/app/helpers/node-helper';
 import { inferProgress, QuickStartData } from '../../src/app/services/quick-start/quick-start-inference';
 import { solveEmote } from '../../src/app/services/quick-start/emote-levels';
@@ -60,8 +60,8 @@ function emoteLevels(name: string): Array<IItem> {
 
 function run(partial: Partial<QuickStartInput>): QuickStartPlan {
   return inferProgress(data, {
-    owned: [], unlocked: new Set(), start: seasons[0], necklaceCovered: false,
-    sourceOverride: new Map(), wingBuffs: new Set(), conflictHandled: false, ...partial
+    owned: [], unlocked: new Set(), start: seasons[0], seasonStates: new Map(),
+    spiritSource: new Map(), iapChoices: new Map(), wingBuffs: new Set(), conflictHandled: false, ...partial
   });
 }
 
@@ -86,27 +86,30 @@ function visitsOf(i: IItem): Array<{ date: ISeason['date'], node: INode }> {
 scenario('Pendant owned: season pass and pass items from the season', () => {
   const pendant = item('Assembly Ultimate Pendant');
   const passItem = item('Baffled Botanist Hair');
-  const plan = run({ owned: [pendant, passItem], necklaceCovered: true });
+  const plan = run({ owned: [pendant, passItem] });
   check('season pass listed', plan.seasonPasses.includes(season('Assembly').guid), JSON.stringify(plan.seasonPasses));
   const a = plan.attributions.find(x => x.item === passItem);
   check('pass item attributed to the season', a?.source.key === 'season', `${a?.source.label} / ${a?.reason}`);
   check('reason mentions the pendant', !!a?.reason.includes('pendant'), a?.reason);
-  check('season summary has pass', !!plan.seasons.find(s => s.season === season('Assembly'))?.pass);
+  const summary = plan.seasons.find(s => s.season === season('Assembly'));
+  check('season summary has pass', summary?.state === 'pass' && summary.inferred === 'pass' && summary.pendant, JSON.stringify(summary?.state));
   check('counts.seasonPasses', plan.counts.seasonPasses === 1);
 });
 
-scenario('Pass item without pendant, Necklace tab covered: first visit after the start', () => {
+scenario('Pass item in a season played without the pass: first visit after the start', () => {
   const passItem = item('Baffled Botanist Hair');
   const visits = visitsOf(passItem).filter(v => v.date >= seasons[0].date);
   check('test item has visits', visits.length > 0);
-  const plan = run({ owned: [passItem], necklaceCovered: true });
+  const plan = run({ owned: [passItem] });
   const a = plan.attributions.find(x => x.item === passItem);
+  check('season inferred as played', plan.seasons.find(s => s.season === season('Assembly'))?.state === 'played');
   check('attributed to the first visit', a?.source.node === visits[0]?.node, `${a?.source.label} / ${a?.reason}`);
   check('no season pass', plan.seasonPasses.length === 0);
   check('options list season plus every visit', a?.options.length === 1 + visitsOf(passItem).length, a?.options.map(o => o.label).join(' | '));
 
-  const uncovered = run({ owned: [passItem], necklaceCovered: false });
-  check('without the Necklace tab it stays with the season', uncovered.attributions[0]?.source.key === 'season', uncovered.attributions[0]?.reason);
+  const pass = run({ owned: [passItem], seasonStates: new Map([[season('Assembly').guid, 'pass']]) });
+  check('season pass picked: from the season', pass.attributions[0]?.source.key === 'season', pass.attributions[0]?.reason);
+  check('season pass picked: saved', pass.seasonPasses.includes(season('Assembly').guid));
 });
 
 scenario('Season item from before the start', () => {
@@ -119,9 +122,17 @@ scenario('Season item from before the start', () => {
   check('attributed to the first visit on or after the start', a?.source.node === visit?.node, `${a?.source.label} / ${a?.reason}`);
   check('not warned', a?.warn === false);
 
-  const overridden = run({ owned: [mask], start, sourceOverride: new Map([[mask.guid, 'season']]) });
+  const overridden = run({ owned: [mask], start, spiritSource: new Map([[spirit('Baffled Botanist').guid, 'season']]) });
   const o = overridden.attributions[0];
-  check('override to the season', o?.source.key === 'season' && o.overridden);
+  check('spirit override to the season', o?.source.key === 'season' && o.overridden);
+
+  const played = run({ owned: [mask], start, seasonStates: new Map([[season('Assembly').guid, 'played']]) });
+  check('season before the start marked played: from the season', played.attributions[0]?.source.key === 'season', played.attributions[0]?.reason);
+  check('seasons before the start inferred as not played', played.seasons.filter(x => x.season.date < start.date).every(x => x.inferred === 'none'));
+  check('every started season listed', played.seasons.length === seasons.filter(x => x.date.toMillis() <= Date.now()).length);
+
+  const notPlayed = run({ owned: [mask], seasonStates: new Map([[season('Assembly').guid, 'none']]) });
+  check('season after the start marked not played: from a visit', notPlayed.attributions[0]?.source.node === visitsOf(mask)[0]?.node, notPlayed.attributions[0]?.reason);
 
   const lastVisit = visitsOf(mask).at(-1)!;
   const late = seasons.find(s => s.date > lastVisit.date);
@@ -248,7 +259,7 @@ scenario('Emote levels on an owned item\'s path follow its source', () => {
   const trees = yogaNodesOn(plan);
   check('Yoga nodes only on the cape\'s tree', trees.length === 2 && trees.every(t => t === a?.source.tree), trees.map(t => t?.guid).join(', '));
 
-  const overridden = run({ owned: [...yoga, cape], start, sourceOverride: new Map([[cape.guid, 'season']]) });
+  const overridden = run({ owned: [...yoga, cape], start, spiritSource: new Map([[spirit('Stretching Guru').guid, 'season']]) });
   const o = overridden.attributions.find(x => x.item === cape);
   const oTrees = yogaNodesOn(overridden);
   check('override moves the Yoga levels with the cape', o?.source.key === 'season' && oTrees.length === 2 && oTrees.every(t => t === o.source.tree), oTrees.map(t => t?.guid).join(', '));
@@ -262,9 +273,9 @@ scenario('Emote levels on an owned item\'s path follow its source', () => {
 
 scenario('Pass item reason uses the full season name', () => {
   const passItem = items.find(i => i.group === 'SeasonPass' && i.season?.shortName === 'The Little Prince' && visitsOf(i).length)!;
-  const plan = run({ owned: [passItem], necklaceCovered: true, start: passItem.season });
+  const plan = run({ owned: [passItem], start: passItem.season });
   const reason = plan.attributions[0]?.reason;
-  check(`${passItem.name}: "${reason}"`, reason === `It's a season pass item and your closet has no pendant from ${passItem.season!.name}.`);
+  check(`${passItem.name}: "${reason}"`, reason === `It's a season pass item and you didn't have the season pass for ${passItem.season!.name}.`);
 });
 
 scenario('Wing buff from a later visit', () => {
@@ -289,10 +300,39 @@ scenario('Wing buff from a later visit', () => {
   check('visits before the start are not offered', !lateQ || lateQ.later.every(v => v.date! >= seasons.at(-1)!.date));
 });
 
+scenario('IAPs', () => {
+  const single = item('Spooky Bat Cape');
+  const plan = run({ owned: [single] });
+  const bought = single.iaps!.filter(i => plan.unlock.includes(i.guid));
+  check('complete IAP marked as bought', bought.length === 1 && bought[0].items!.length === 1 && plan.counts.iaps === 1, bought.map(i => i.name).join(', '));
+  check('no question for a complete IAP', plan.iapQuestions.length === 0);
+  check('already bought IAP is left alone', run({ owned: [single], unlocked: new Set([single.iaps![0].guid]) }).counts.iaps === 0);
+
+  const bundle = (sky.iaps.items as Array<IIAP>).find(iap => (iap.items?.length ?? 0) > 1
+    && iap.items!.every(i => i.iaps!.every(o => o.items!.length === iap.items!.length)))!;
+  check('found a bundle only sold as a whole', !!bundle);
+  const [first, ...rest] = bundle.items!;
+  const open = run({ owned: [first] });
+  const q = open.iapQuestions[0];
+  check(`${bundle.name}: question lists the missing items`, open.iapQuestions.length === 1 && q.owned[0] === first && q.missing.length === rest.length && !q.choice);
+  check('unanswered: item saved, IAP not', open.unlock.includes(first.guid) && !first.iaps!.some(i => open.unlock.includes(i.guid)));
+
+  const unlock = run({ owned: [first], iapChoices: new Map([[q.iap.guid, 'unlock']]) });
+  check('unlock: IAP and the rest saved', unlock.unlock.includes(q.iap.guid) && rest.every(i => unlock.unlock.includes(i.guid)));
+  check('unlock: counts', unlock.counts.items === bundle.items!.length && unlock.counts.iaps === 1, JSON.stringify(unlock.counts));
+
+  const remove = run({ owned: [first], iapChoices: new Map([[q.iap.guid, 'remove']]) });
+  check('remove: nothing saved', remove.unlock.length === 0 && remove.counts.items === 0, remove.unlock.join(', '));
+  check('remove: question stays with the answer', remove.iapQuestions[0]?.choice === 'remove');
+
+  const whole = run({ owned: bundle.items! });
+  check('whole bundle owned: no question', whole.iapQuestions.length === 0 && whole.counts.iaps === 1);
+});
+
 scenario('Every item and emote', () => {
   const closet = items.filter(i => ![ItemType.Special, ItemType.WingBuff, ItemType.Quest, ItemType.Spell].includes(i.type) && !i.autoUnlocked);
   const t0 = performance.now();
-  const plan = run({ owned: closet, start: undefined, necklaceCovered: true });
+  const plan = run({ owned: closet, start: undefined });
   const ms = performance.now() - t0;
   check(`${closet.length} items infer in ${ms.toFixed(0)} ms`, ms < 1000 && plan.counts.items === closet.length);
   check('unlock has no duplicates', new Set(plan.unlock).size === plan.unlock.length);

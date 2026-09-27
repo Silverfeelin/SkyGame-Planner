@@ -1,10 +1,10 @@
 import type { DataService } from '@app/services/data.service';
 import { DateTime } from 'luxon';
-import { IItem, IItemListNode, INode, IRevisedSpiritTree, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
+import { IIAP, IItem, IItemListNode, INode, IRevisedSpiritTree, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import {
-  Attribution, OnTheWay, QuickStartInput, QuickStartPlan, SeasonSummary, SourceOption, WingBuffQuestion
+  Attribution, IapChoice, IapQuestion, OnTheWay, QuickStartInput, QuickStartPlan, SeasonState, SeasonSummary, SourceOption, WingBuffQuestion
 } from './quick-start.model';
 
 /** The data the inference reads. The store passes the DataService; scripts build it from `SkyDataResolver.resolve`. */
@@ -23,8 +23,8 @@ interface Candidate {
 interface Context {
   startDate: DateTime;
   pendants: ReadonlySet<ISeason>;
-  necklaceCovered: boolean;
-  sourceOverride: ReadonlyMap<string, string>;
+  seasonState: (season: ISeason) => SeasonState;
+  spiritSource: ReadonlyMap<string, string>;
 }
 
 export function inferProgress(data: QuickStartData, input: QuickStartInput): QuickStartPlan {
@@ -42,11 +42,20 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
     if (season && (!earliest || season.date < earliest.season.date)) { earliest = { item, season }; }
   }
 
-  const start = input.start ?? earliest?.season ?? latestStartedSeason(data);
+  const started = startedSeasons(data);
+  const start = input.start ?? earliest?.season ?? started.at(-1)!;
   const derivedStart = !input.start && !!earliest;
   const conflict = input.start && earliest && earliest.season.date < input.start.date && !input.conflictHandled ? earliest : undefined;
 
-  const ctx: Context = { startDate: start.date, pendants, necklaceCovered: input.necklaceCovered, sourceOverride: input.sourceOverride };
+  const ultimateSeasons = new Set(evidence.filter(i => i.group === 'Ultimate' && i.season).map(i => i.season!));
+  const summary = new Map<ISeason, SeasonSummary>(started.map(season => {
+    const inferred: SeasonState = season.date < start.date ? 'none' : ultimateSeasons.has(season) ? 'pass' : 'played';
+    const state = input.seasonStates.get(season.guid) ?? inferred;
+    return [season, { season, state, inferred, pendant: pendants.has(season), items: 0, ultimates: 0 }];
+  }));
+  const seasonState = (season: ISeason) => summary.get(season)?.state ?? (season.date >= start.date ? 'played' : 'none');
+
+  const ctx: Context = { startDate: start.date, pendants, seasonState, spiritSource: input.spiritSource };
 
   const unlock = new Set<string>();
   const unlockNodes = new Set<string>();
@@ -67,7 +76,11 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
   };
   before.forEach(item => countSeason(item, attribute(item, ctx)));
 
-  const resolved = owned.map(item => {
+  const iaps = resolveIaps(owned, unlocked, start.date, input.iapChoices);
+  iaps.unlock.forEach(add);
+  const kept = owned.filter(i => !iaps.removed.has(i.guid));
+
+  const resolved = kept.map(item => {
     const attribution = attribute(item, ctx);
     const node = attribution?.source.node ?? pickNode(item, ctx);
     return { item, attribution, node, path: node ? pathTo(node) : [] };
@@ -95,18 +108,11 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
     wingBuffs++;
   }
 
-  const summary = new Map<ISeason, SeasonSummary>();
-  const touch = (season: ISeason) => {
-    let s = summary.get(season);
-    if (!s) { s = { season, pass: false, items: 0, ultimates: 0 }; summary.set(season, s); }
-    return s;
-  };
-  pendants.forEach(s => { touch(s).pass = true; });
-  evidence.filter(i => i.group === 'Ultimate' && i.season && !isPendant(i)).forEach(i => touch(i.season!).ultimates++);
-  seasonItems.forEach((n, s) => { touch(s).items += n; });
-  const seasons = [...summary.values()].sort((a, b) => a.season.date.toMillis() - b.season.date.toMillis());
+  evidence.filter(i => i.group === 'Ultimate' && i.season && !isPendant(i)).forEach(i => { const s = summary.get(i.season!); if (s) { s.ultimates++; } });
+  seasonItems.forEach((n, season) => { const s = summary.get(season); if (s) { s.items += n; } });
+  const seasons = [...summary.values()];
 
-  const seasonPasses = seasons.filter(s => s.pass).map(s => s.season.guid);
+  const seasonPasses = seasons.filter(s => s.state === 'pass').map(s => s.season.guid);
 
   return {
     start,
@@ -115,10 +121,11 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
     seasons,
     attributions,
     wingBuffQuestions,
+    iapQuestions: iaps.questions,
     onTheWay,
     unlock: [...unlock],
     seasonPasses,
-    counts: { items: owned.length, nodes: unlockNodes.size, seasonPasses: seasonPasses.length, wingBuffs }
+    counts: { items: kept.length + iaps.proxied, nodes: unlockNodes.size, seasonPasses: seasonPasses.length, wingBuffs, iaps: iaps.bought }
   };
 }
 
@@ -142,11 +149,11 @@ function evidenceSeason(item: IItem): ISeason | undefined {
   return later ? undefined : itemSeason;
 }
 
-function latestStartedSeason(data: QuickStartData): ISeason {
+/** Oldest first. */
+function startedSeasons(data: QuickStartData): Array<ISeason> {
   const now = DateTime.now();
   const started = data.seasonConfig.items.filter(s => s.date <= now);
-  const seasons = started.length ? started : data.seasonConfig.items;
-  return seasons.reduce((a, b) => b.date > a.date ? b : a);
+  return [...(started.length ? started : data.seasonConfig.items)].sort((a, b) => a.date.toMillis() - b.date.toMillis());
 }
 
 /* ---------- Attribution ---------- */
@@ -165,10 +172,11 @@ function attribute(item: IItem, ctx: Context): Attribution | undefined {
     .sort((a, b) => (a.option.date?.toMillis() ?? 0) - (b.option.date?.toMillis() ?? 0))
     .map(c => c.option);
 
-  const seasonName = season?.name ?? 'The season';
+  const seasonName = season?.name ?? 'the season';
   const isPass = item.group === 'SeasonPass';
-  const noPendant = isPass && ctx.necklaceCovered && !!season && !ctx.pendants.has(season);
-  const seasonAfterStart = !!season && season.date >= ctx.startDate;
+  const state = season ? ctx.seasonState(season) : 'none';
+  const played = state !== 'none';
+  const noPass = isPass && state !== 'pass';
 
   let source: SourceOption;
   let reason: string;
@@ -176,11 +184,11 @@ function attribute(item: IItem, ctx: Context): Attribution | undefined {
   if (seasonC && item.group === 'Ultimate') {
     source = seasonC.option;
     reason = isPendant(item) ? 'The pendant comes with the season pass.' : 'Ultimate gifts are only available during the season.';
-  } else if (seasonC && seasonAfterStart && !noPendant) {
+  } else if (seasonC && played && !noPass) {
     source = seasonC.option;
-    reason = isPass && season && ctx.pendants.has(season)
-      ? `You have the pendant from ${seasonName}, so you had the season pass.`
-      : `${seasonName} was after you started.`;
+    reason = !isPass ? `You played during ${seasonName}.`
+      : season && ctx.pendants.has(season) ? `You have the pendant from ${seasonName}, so you had the season pass.`
+      : `You had the season pass for ${seasonName}.`;
   } else {
     // The tree left after the season is available from the start date onward, so it counts as the start date.
     const later = [...visits, after].filter((c): c is Candidate => !!c)
@@ -189,20 +197,20 @@ function attribute(item: IItem, ctx: Context): Attribution | undefined {
       .sort((a, b) => a.date.toMillis() - b.date.toMillis());
     if (later.length) {
       source = later[0].c.option;
-      reason = season && !seasonAfterStart ? `${seasonName} was before you started.`
-        : noPendant ? `It's a season pass item and your closet has no pendant from ${seasonName}.`
-        : 'It came with a later visit.';
+      reason = !season || !seasonC ? 'It came with a later visit.'
+        : !played ? `You didn't play during ${seasonName}.`
+        : `It's a season pass item and you didn't have the season pass for ${seasonName}.`;
     } else {
       source = (seasonC ?? visits.at(-1) ?? after)!.option;
       warn = true;
       reason = visits.length || after ? `This doesn't fit your start date. No visit after ${ctx.startDate.toFormat('LLL yyyy')} had it.`
-        : noPendant && seasonAfterStart ? `It never returned, but your closet has no pendant from ${seasonName}.`
-        : `Only available during ${seasonName}, before you started.`;
+        : played ? `It never returned, but you didn't have the season pass for ${seasonName}.`
+        : `Only available during ${seasonName}, which you didn't play.`;
     }
   }
 
   let overridden = false;
-  const override = ctx.sourceOverride.get(item.guid);
+  const override = spirit && ctx.spiritSource.get(spirit.guid);
   const picked = override !== undefined ? options.find(o => o.key === override) : undefined;
   if (picked) {
     source = picked;
@@ -282,6 +290,67 @@ function collectPaths(
 
 function isOwnedItem(item: IItem | undefined, owned: ReadonlySet<string>, unlocked: ReadonlySet<string>): boolean {
   return !!item && (!!item.autoUnlocked || owned.has(item.guid) || unlocked.has(item.guid));
+}
+
+/* ---------- IAPs ---------- */
+
+/**
+ * Picks one IAP per owned IAP item: the first sold since the start, preferring one whose items are all owned.
+ * Returning IAPs usually repeat the same items, so an incomplete pick means an item is missing or was marked by mistake.
+ */
+function resolveIaps(
+  owned: ReadonlyArray<IItem>,
+  unlocked: ReadonlySet<string>,
+  startDate: DateTime,
+  choices: ReadonlyMap<string, IapChoice>
+): { unlock: Array<string>, removed: Set<string>, questions: Array<IapQuestion>, bought: number, proxied: number } {
+  const ownedGuids = new Set(owned.map(i => i.guid));
+  const has = (item: IItem) => !!item.autoUnlocked || ownedGuids.has(item.guid) || unlocked.has(item.guid);
+  const complete = (iap: IIAP) => (iap.items ?? []).every(has);
+
+  const picked = new Map<IIAP, Array<IItem>>();
+  for (const item of owned) {
+    const iaps = item.iaps ?? [];
+    if (!iaps.length || item.nodes?.length || item.hiddenNodes?.length || item.listNodes?.length) { continue; }
+    if (iaps.some(i => unlocked.has(i.guid))) { continue; }
+    const dated = iaps.map(iap => ({ iap, date: iapDate(iap) }))
+      .sort((a, b) => (a.date?.toMillis() ?? Infinity) - (b.date?.toMillis() ?? Infinity));
+    const since = dated.filter(x => !x.date || x.date >= startDate);
+    const pool = since.length ? since : dated;
+    const iap = (pool.find(x => complete(x.iap)) ?? pool[0]).iap;
+    picked.set(iap, [...(picked.get(iap) ?? []), item]);
+  }
+
+  const unlock: Array<string> = [];
+  const removed = new Set<string>();
+  const questions: Array<IapQuestion> = [];
+  let bought = 0;
+  let proxied = 0;
+  for (const [iap, items] of picked) {
+    const missing = (iap.items ?? []).filter(i => !has(i));
+    if (!missing.length) { unlock.push(iap.guid); bought++; continue; }
+    const choice = choices.get(iap.guid);
+    questions.push({ iap, date: iapDate(iap), where: iapWhere(iap), owned: items, missing, choice });
+    if (choice === 'unlock') {
+      unlock.push(iap.guid, ...missing.map(i => i.guid));
+      bought++;
+      proxied += missing.length;
+    } else if (choice === 'remove') {
+      items.forEach(i => removed.add(i.guid));
+    }
+  }
+  questions.sort((a, b) => (a.date?.toMillis() ?? Infinity) - (b.date?.toMillis() ?? Infinity));
+  return { unlock, removed, questions, bought, proxied };
+}
+
+function iapDate(iap: IIAP): DateTime | undefined {
+  const shop = iap.shop;
+  return shop?.date ?? shop?.event?.date ?? shop?.season?.date;
+}
+
+function iapWhere(iap: IIAP): string | undefined {
+  const shop = iap.shop;
+  return shop?.event?.name ?? shop?.event?.event?.name ?? shop?.season?.name ?? shop?.spirit?.name;
 }
 
 /* ---------- Wing buffs ---------- */

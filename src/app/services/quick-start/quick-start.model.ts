@@ -1,4 +1,4 @@
-import { IItem, INode, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
+import { IIAP, IItem, INode, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
 import { DateTime } from 'luxon';
 
 export type QuickStartTabKind = 'closet' | 'emote' | 'stanceCall' | 'music';
@@ -135,6 +135,22 @@ export interface WingBuffQuestion {
   nodes: Array<INode>;
 }
 
+/** unlock: buying the IAP gave every item in it; remove: the owned items were marked by mistake and aren't saved. */
+export type IapChoice = 'unlock' | 'remove';
+
+/** An owned IAP item whose IAP has items that aren't owned. */
+export interface IapQuestion {
+  iap: IIAP;
+  date?: DateTime;
+  /** Where the IAP was sold, e.g. the event or season. */
+  where?: string;
+  /** Owned items that point to this IAP. */
+  owned: Array<IItem>;
+  /** Items in the IAP that aren't owned or unlocked. */
+  missing: Array<IItem>;
+  choice?: IapChoice;
+}
+
 export interface OnTheWay {
   spirit?: ISpirit;
   tree: ISpiritTree;
@@ -144,10 +160,18 @@ export interface OnTheWay {
   before: IItem;
 }
 
+/** none: didn't play during the season; played: played without the season pass; pass: had the season pass. */
+export type SeasonState = 'none' | 'played' | 'pass';
+
 export interface SeasonSummary {
   season: ISeason;
-  pass: boolean;
+  state: SeasonState;
+  /** From the start and ultimate gifts, before the player changed it. */
+  inferred: SeasonState;
+  pendant: boolean;
+  /** Owned items counted from the season itself. */
   items: number;
+  /** Ultimate gifts other than the pendant. */
   ultimates: number;
 }
 
@@ -158,10 +182,12 @@ export interface QuickStartInput {
   unlocked: ReadonlySet<string>;
   /** Chosen start season; undefined when the player is unsure. */
   start?: ISeason;
-  /** The Necklace tab was confirmed, so a missing pendant means no season pass. */
-  necklaceCovered: boolean;
-  /** Item GUID → SourceOption.key. */
-  sourceOverride: ReadonlyMap<string, string>;
+  /** Season GUID → state the player picked. */
+  seasonStates: ReadonlyMap<string, SeasonState>;
+  /** Spirit GUID → SourceOption.key, for every item of the spirit that was offered there. */
+  spiritSource: ReadonlyMap<string, string>;
+  /** IAP GUID → answer to its IAP question. */
+  iapChoices: ReadonlyMap<string, IapChoice>;
   /** Spirit GUIDs whose wing buff question was answered yes. */
   wingBuffs: ReadonlySet<string>;
   /** Player chose "Keep my start" on the conflict banner. */
@@ -174,14 +200,16 @@ export interface QuickStartPlan {
   derivedStart: boolean;
   /** Earliest season-only evidence before the chosen start. */
   conflict?: { item: IItem, season: ISeason };
+  /** Every season that has started, oldest first. */
   seasons: Array<SeasonSummary>;
-  /** Owned season items (and music sheets) with their source; the review lists those not from the season or with `warn`. */
+  /** Owned items from season spirits with their source. */
   attributions: Array<Attribution>;
   wingBuffQuestions: Array<WingBuffQuestion>;
+  iapQuestions: Array<IapQuestion>;
   onTheWay: Array<OnTheWay>;
   /** Everything to pass to one `addUnlocked` call: item, hidden item and node GUIDs. Excludes already unlocked GUIDs. */
   unlock: Array<string>;
   /** Season GUIDs for `addSeasonPasses`. */
   seasonPasses: Array<string>;
-  counts: { items: number, nodes: number, seasonPasses: number, wingBuffs: number };
+  counts: { items: number, nodes: number, seasonPasses: number, wingBuffs: number, iaps: number };
 }

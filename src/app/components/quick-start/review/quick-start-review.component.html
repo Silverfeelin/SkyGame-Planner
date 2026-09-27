@@ -5,6 +5,9 @@
       <h2 class="atmos-qs-done__title">Progress saved</h2>
       <p>
         We marked {{ plural(plan().counts.items, 'item') }} and {{ plural(plan().counts.nodes, 'spirit tree node') }} as unlocked.
+        @if (plan().counts.iaps; as iaps) {
+          {{ plural(iaps, 'IAP') }} {{ iaps === 1 ? 'is' : 'are' }} marked as bought.
+        }
         Items you'd already unlocked were left as they were.
         You can add more closet tabs any time from the items page.
       </p>
@@ -70,55 +73,39 @@
       <div class="atmos-qs-review__kpi"><b>{{ plan().counts.nodes }}</b><span>spirit tree nodes on the way</span></div>
       <div class="atmos-qs-review__kpi"><b>{{ plan().counts.seasonPasses }}</b><span>season passes</span></div>
       <div class="atmos-qs-review__kpi is-wing"><b>{{ plan().counts.wingBuffs }}</b><span>extra wing buffs</span></div>
+      <div class="atmos-qs-review__kpi"><b>{{ plan().counts.iaps }}</b><span>IAPs bought</span></div>
     </div>
   </section>
 
-  <section class="atmos-card atmos-card__body">
-    <div>
-      <h2 class="atmos-qs__title">Seasons</h2>
-      <p class="atmos-qs__sub">A season pendant means you had that season's pass. Ultimate gifts and items that never returned mean you played during the season.</p>
-    </div>
-    <div class="atmos-qs-review__list">
-      @for (s of seasons(); track s.guid) {
-        <div class="atmos-qs-review__li">
-          <span class="atmos-qs-review__li-title">{{ s.name }}</span>
-          <span class="atmos-qs-review__li-why">{{ s.detail }}</span>
-          <span class="atmos-qs-review__li-side">
-            @if (s.pass) {
-              <span class="atmos-pill atmos-qs-review__pill--pass">Season pass</span>
-            } @else {
-              <span class="atmos-pill atmos-qs-review__pill--played">Played</span>
-            }
-          </span>
-        </div>
-      } @empty {
-        <p class="atmos-qs__sub">No season items found yet.</p>
-      }
-    </div>
-  </section>
-
-  @if (attributions().length) {
+  @if (iapQuestions().length) {
     <section class="atmos-card atmos-card__body">
-      <div>
-        <h2 class="atmos-qs__title">Items from returning spirits</h2>
-        <p class="atmos-qs__sub">These don't fit the season, so we picked the first traveling spirit or special visit after you started. Pick another visit if you remember it differently.</p>
+      <div class="atmos-qs-review__head">
+        <div>
+          <h2 class="atmos-qs__title">In-app purchases</h2>
+          <p class="atmos-qs__sub">
+            An IAP gives every item in it, but your closet is missing some of these.
+            Unlock the rest if you bought it, or leave your item out if you marked it by mistake.
+          </p>
+        </div>
+        @if (iapOpen() > 1) {
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="unlockAllIaps()">Unlock the rest for all</button>
+        }
       </div>
       <div class="atmos-qs-review__list">
-        @for (a of attributions(); track a.item.guid) {
+        @for (q of iapQuestions(); track q.guid) {
           <div class="atmos-qs-review__li">
-            <span class="atmos-qs-review__li-title">{{ itemName(a.item) }}</span>
-            <span class="atmos-qs-review__li-why">{{ a.reason }}</span>
+            <span class="atmos-qs-review__li-title">{{ q.name }}</span>
+            <span class="atmos-qs-review__li-why">{{ q.detail }}</span>
             <span class="atmos-qs-review__li-side">
-              @if (a.warn) {
+              @if (!q.choice) {
                 <span class="atmos-pill atmos-qs-review__pill--warn">Check</span>
-              } @else {
-                <span class="atmos-pill atmos-qs-review__pill--visit">Returning spirit</span>
               }
-              <select class="atmos-input atmos-qs-review__li-select" [attr.aria-label]="'Where you got ' + itemName(a.item)" (change)="onSourceChange(a, $event)">
-                @for (o of a.options; track o.key) {
-                  <option [value]="o.key" [selected]="o.key === a.source.key">{{ o.label }}</option>
-                }
-              </select>
+              <span class="atmos-btn-group" role="group" [attr.aria-label]="q.name">
+                <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="q.choice === 'unlock'"
+                        [attr.aria-pressed]="q.choice === 'unlock'" (click)="setIapChoice(q, 'unlock')">Unlock the rest</button>
+                <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="q.choice === 'remove'"
+                        [attr.aria-pressed]="q.choice === 'remove'" (click)="setIapChoice(q, 'remove')">{{ q.removeLabel }}</button>
+              </span>
             </span>
           </div>
         }
@@ -126,70 +113,104 @@
     </section>
   }
 
-  @if (wingBuffs().length) {
-    <section class="atmos-card atmos-card__body">
-      <div class="atmos-qs-review__head">
-        <div>
-          <h2 class="atmos-qs__title">Wing buffs from later visits</h2>
-          <p class="atmos-qs__sub">Wing buffs were added when these spirits came back. Your closet can't show them, so turn on the ones you got.</p>
-        </div>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleAllWingBuffs()">{{ allWingBuffsOn() ? 'None' : 'All of them' }}</button>
-      </div>
+  <details class="atmos-card atmos-qs-fold">
+    <summary class="atmos-qs-fold__summary">
+      <mat-icon class="atmos-qs-fold__chevron">expand_more</mat-icon>
+      <span class="atmos-qs-fold__title">Seasons</span>
+      @if (seasonCounts().warn; as warn) {
+        <span class="atmos-pill atmos-qs-review__pill--warn">{{ warn }} to check</span>
+      }
+      <span class="atmos-qs-fold__count">Played {{ seasonCounts().played }} of {{ seasons().length }} · {{ seasonCounts().pass }} with season pass</span>
+    </summary>
+    <div class="atmos-qs-fold__body">
+      <p class="atmos-qs__sub">
+        Seasons from your start onward count as played, and as season pass when you have one of their ultimate gifts.
+        Items from a season you played count from the season, the rest from the first visit after it.
+        @if (!store.necklaceCovered()) {
+          Add your necklaces so season pendants can show which passes you had.
+        }
+      </p>
       <div class="atmos-qs-review__list">
-        @for (q of wingBuffs().slice(0, wingBuffsShown); track q.guid) {
-          <ng-container *ngTemplateOutlet="wingBuff; context: { $implicit: q }" />
-        }
-        @if (wingBuffs().length > wingBuffsShown) {
-          <details class="atmos-qs-review__more">
-            <summary>Show {{ wingBuffs().length - wingBuffsShown }} more</summary>
-            @for (q of wingBuffs().slice(wingBuffsShown); track q.guid) {
-              <ng-container *ngTemplateOutlet="wingBuff; context: { $implicit: q }" />
+        @for (s of seasons(); track s.guid) {
+          <div class="atmos-qs-review__season">
+            <div class="atmos-qs-review__li">
+              <span class="atmos-qs-review__li-title">{{ s.name }}</span>
+              <span class="atmos-qs-review__li-why">{{ s.detail }}</span>
+              <span class="atmos-qs-review__li-side">
+                <span class="atmos-btn-group" role="group" [attr.aria-label]="s.name">
+                  @for (o of seasonStates; track o.state) {
+                    <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="s.state === o.state"
+                            [attr.aria-pressed]="s.state === o.state" (click)="setSeasonState(s, o.state)">{{ o.label }}</button>
+                  }
+                </span>
+              </span>
+            </div>
+            @if (s.spirits.length) {
+              <details class="atmos-qs-review__spirits">
+                <summary>
+                  <mat-icon>expand_more</mat-icon>
+                  Check {{ plural(s.spirits.length, 'spirit') }}
+                  @if (s.warn) {
+                    <span class="atmos-pill atmos-qs-review__pill--warn">{{ s.warn }} to check</span>
+                  }
+                </summary>
+                <p class="atmos-qs__sub">Pick where you got each spirit's items. Items that weren't offered there keep the visit we worked out.</p>
+                @for (sp of s.spirits; track sp.guid) {
+                  <div class="atmos-qs-review__li">
+                    <span class="atmos-qs-review__li-title">{{ sp.name }}</span>
+                    <span class="atmos-qs-review__li-why">
+                      {{ sp.detail }}
+                      @if (sp.warning) {
+                        <span class="atmos-qs-review__li-warn">{{ sp.warning }}</span>
+                      }
+                    </span>
+                    <span class="atmos-qs-review__li-side">
+                      @if (sp.wingBuff; as w) {
+                        <label class="atmos-qs-review__check" [title]="w.detail">
+                          <input type="checkbox" [checked]="w.on" (change)="toggleWingBuff(w)"/> Wing buff
+                        </label>
+                      }
+                      <select class="atmos-input atmos-qs-review__li-select" [attr.aria-label]="'Where you got the items from ' + sp.name" (change)="onSourceChange(sp, $event)">
+                        @if (!sp.selected) {
+                          <option value="" disabled selected>Different visits</option>
+                        }
+                        @for (o of sp.options; track o.key) {
+                          <option [value]="o.key" [selected]="o.key === sp.selected">{{ o.label }}</option>
+                        }
+                      </select>
+                    </span>
+                  </div>
+                }
+              </details>
             }
-          </details>
+          </div>
         }
       </div>
-    </section>
-  }
+    </div>
+  </details>
 
   <section class="atmos-card atmos-card__body">
     <div>
       <h2 class="atmos-qs__title">Unlocked on the way</h2>
       <p class="atmos-qs__sub">In a spirit tree you unlock nodes in order, so everything before an item you own must be unlocked too. That includes emotes, hearts and blessings. Trees with friendship tiers are skipped.</p>
     </div>
-    <div class="atmos-qs-review__list">
-      @for (o of onTheWay().slice(0, onTheWayShown); track o.key) {
-        <ng-container *ngTemplateOutlet="onTheWayRow; context: { $implicit: o }" />
-      } @empty {
-        <p class="atmos-qs__sub">Nothing extra.</p>
-      }
-      @if (onTheWay().length > onTheWayShown) {
-        <details class="atmos-qs-review__more">
-          <summary>Show {{ onTheWay().length - onTheWayShown }} more</summary>
-          @for (o of onTheWay().slice(onTheWayShown); track o.key) {
-            <ng-container *ngTemplateOutlet="onTheWayRow; context: { $implicit: o }" />
-          }
-        </details>
-      }
+    @if (onTheWay().nodes) {
+      <div class="atmos-qs-review__kpis">
+        <div class="atmos-qs-review__kpi"><b>{{ onTheWay().nodes }}</b><span>extra nodes</span></div>
+        <div class="atmos-qs-review__kpi"><b>{{ onTheWay().spirits }}</b><span>spirit trees</span></div>
+      </div>
+    } @else {
+      <p class="atmos-qs__sub">Nothing extra.</p>
+    }
+
+    <div class="atmos-qs__banner atmos-qs__banner--info">
+      <mat-icon>upload</mat-icon>
+      <p>Saving only adds progress, but it adds a lot at once. Export your current data first if you'd like a backup you can import from the settings.</p>
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.exportData()">Export data</button>
     </div>
-    <app-quick-start-step-nav nextLabel="Save progress" nextIcon="check" [nextDisabled]="empty()" [advance]="false" (next)="save()" />
+    @if (iapOpen(); as open) {
+      <p class="atmos-qs__sub">Answer {{ open === 1 ? 'the IAP question' : 'the ' + open + ' IAP questions' }} above to save.</p>
+    }
+    <app-quick-start-step-nav nextLabel="Save progress" nextIcon="check" [nextDisabled]="!canSave()" [advance]="false" (next)="save()" />
   </section>
 }
-
-<ng-template #wingBuff let-q>
-  <div class="atmos-qs-review__li">
-    <span class="atmos-qs-review__li-title">{{ q.name }}</span>
-    <span class="atmos-qs-review__li-why">{{ q.detail }}</span>
-    <span class="atmos-qs-review__li-side">
-      <button type="button" class="atmos-qs-review__switch" role="switch" [attr.aria-checked]="q.on"
-              [attr.aria-label]="'Got the wing buff from ' + q.name" (click)="toggleWingBuff(q)"></button>
-    </span>
-  </div>
-</ng-template>
-
-<ng-template #onTheWayRow let-o>
-  <div class="atmos-qs-review__li">
-    <span class="atmos-qs-review__li-title">{{ o.name }}</span>
-    <span class="atmos-qs-review__li-why">{{ o.detail }}</span>
-    <span class="atmos-qs-review__li-side"><span class="atmos-pill">+{{ o.count }}</span></span>
-  </div>
-</ng-template>

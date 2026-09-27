@@ -1,3 +1,6 @@
+@use 'quick-start' as qs;
+@include qs.styles;
+
 :host {
   display: flex;
   flex-direction: column;
@@ -6,12 +9,24 @@
 
 .atmos-page__intro p { margin: 0; }
 
-.atmos-qs__reassure {
+// Not inside a card like the other banners, so the tint needs the card surface beneath it.
+.atmos-qs__banner--warn {
+  background: linear-gradient(var(--qs-warn-bg), var(--qs-warn-bg)), var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+}
+
+.atmos-qs__beta-pill {
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.atmos-qs__reassure,
+.atmos-qs__beta {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--atmos-fs-sm);
-  color: var(--atmos-good);
+  font-size: var(--atmos-fs-md);
 
   mat-icon {
     flex: none;
@@ -19,6 +34,9 @@
     width: 18px;
     height: 18px;
   }
+}
+
+.atmos-qs__beta {
 }
 
 .atmos-qs__stepper {
