@@ -5,3 +5,4 @@
 - Remove quick unlock (/item/unlock) entirely and replace the menu option with Quick start.
 - Inform people to try to make the screenshots against a light uniform background for better results; zooming in and facing the wall may help. Add a downscaled webp version of "C:\Users\error\Documents\ShareX\Screenshots\2026-09\Sky_8d6s0FEUfU.jpg" as an asset and show it onclick as an example using the image overlay.
 - Store the homepage quick start dismissal under a key in the storage service instead of directly in localStorage (remember it to synced save file instead of to browser).
+- Make the tutorial SVG use the theme hue for all item icon placeholders, instead of the gradient of different colors. Except for the bottom cut off (keep those orange).
