@@ -1,0 +1,209 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-qs-review__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+
+  > div { flex: 1 1 300px; }
+}
+
+.atmos-qs-review__kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.atmos-qs-review__kpi {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--atmos-chip-bg);
+
+  b {
+    font-size: var(--atmos-fs-2xl);
+    font-weight: 500;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+    color: var(--atmos-text);
+  }
+
+  span {
+    font-size: 12px;
+    color: var(--atmos-text-mute);
+  }
+}
+
+.atmos-qs-review__kpi.is-wing b { color: var(--atmos-wing-buff); }
+
+.atmos-qs-review__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-qs-review__li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-qs-review__list > .atmos-qs-review__li:first-child { border-top: 0; }
+
+.atmos-qs-review__li-title {
+  font-size: var(--atmos-fs-md);
+  font-weight: 500;
+  color: var(--atmos-text);
+}
+
+.atmos-qs-review__li-why {
+  grid-column: 1;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+}
+
+.atmos-qs-review__li-side {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.atmos-qs-review__li-select {
+  width: auto;
+  max-width: 260px;
+  height: auto;
+
+  option { background: var(--atmos-card-bg-solid); }
+}
+
+.atmos-qs-review__pill--pass {
+  background: oklch(0.78 0.14 65 / 0.16);
+  color: var(--atmos-seasonal);
+}
+
+.atmos-qs-review__pill--played {
+  background: var(--atmos-active-bg);
+  color: var(--atmos-accent);
+}
+
+.atmos-qs-review__pill--visit {
+  background: oklch(0.74 0.12 280 / 0.16);
+  color: var(--atmos-violet);
+}
+
+.atmos-qs-review__pill--warn {
+  background: var(--qs-warn-bg);
+  color: var(--qs-warn);
+}
+
+.atmos-qs-review__switch {
+  position: relative;
+  flex: none;
+  width: 38px;
+  height: 22px;
+  padding: 0;
+  border-radius: var(--atmos-radius-pill);
+  border: 1px solid var(--atmos-line-soft);
+  background: var(--atmos-chip-bg);
+  cursor: pointer;
+  transition: background var(--atmos-transition), border-color var(--atmos-transition);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--atmos-text-mute);
+    transition: transform var(--atmos-transition), background var(--atmos-transition);
+  }
+
+  &[aria-checked="true"] {
+    background: oklch(0.95 0.16 102 / 0.25);
+    border-color: oklch(0.95 0.16 102 / 0.5);
+
+    &::after {
+      transform: translateX(16px);
+      background: var(--atmos-wing-buff);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+}
+
+.atmos-qs-review__more {
+  summary {
+    padding-top: 8px;
+    font-size: var(--atmos-fs-sm);
+    color: var(--atmos-accent);
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker { display: none; }
+  }
+
+  &[open] summary { display: none; }
+}
+
+.atmos-qs-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-block: 24px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    max-width: 56ch;
+    color: var(--atmos-text-dim);
+    line-height: 1.5;
+  }
+}
+
+.atmos-qs-done__icon {
+  font-size: 44px;
+  width: 44px;
+  height: 44px;
+  color: var(--atmos-good);
+}
+
+.atmos-qs-done__title {
+  margin: 0;
+  font-size: var(--atmos-fs-2xl);
+  font-weight: 500;
+  color: var(--atmos-text);
+}
+
+.atmos-qs-done__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--atmos-btn-gap);
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .atmos-qs-review__li { grid-template-columns: 1fr; }
+  .atmos-qs-review__li-side { grid-row: auto; grid-column: 1; justify-content: flex-start; }
+}

@@ -22,13 +22,16 @@ const fixtures = args.includes('--fixtures') ? args[args.indexOf('--fixtures') +
 // the expected results were generated for this date; the ongoing set depends on it
 const DATE = DateTime.fromISO('2026-09-26T12:00:00', { zone: 'America/Los_Angeles' });
 
-const CASES: Array<{ expected: string, type: string, shots: Array<string> }> = [
+const CASES: Array<{ expected: string, type: string, shots: Array<string>, label?: string }> = [
   { expected: 'outfitshoes_pc', type: 'OutfitShoes', shots: ['shot_pc.png'] },
   { expected: 'outfit_mobile', type: 'Outfit', shots: ['shot_mobile.jpg'] },
   { expected: 'masks', type: 'Mask', shots: ['shot_masks.png'] },
   { expected: 'capes', type: 'Cape', shots: ['shot_capes.png'] },
   { expected: 'masks_stitched', type: 'Mask', shots: ['stitch_masks_a.png', 'stitch_masks_b.png'] },
-  { expected: 'masks_window', type: 'Mask', shots: ['shot_pc_window.jpg'] }
+  { expected: 'masks_stitched', type: 'Mask', shots: ['stitch_masks_b.png', 'stitch_masks_a.png'], label: 'masks_stitched_reversed' },
+  { expected: 'masks_window', type: 'Mask', shots: ['shot_pc_window.jpg'] },
+  // Wonderland Primrose Pinafore Dress sits alone between two sure matches and must not be weak
+  { expected: 'outfit_primrose', type: 'Outfit', shots: ['shot_outfit_primrose.png'] }
 ];
 
 async function decode(file: string): Promise<RgbaImage> {
@@ -46,8 +49,9 @@ function describeGrid(label: string, img: RgbaImage, ms: number, grid: ReturnTyp
   const I = [...new Set(grid.cells.map(c => c[0]))].sort((a, b) => a - b);
   const J = [...new Set(grid.cells.map(c => c[1]))].sort((a, b) => a - b);
   const view = grid.view.map((v, k) => v === [0, 0, img.width, img.height][k] ? '-' : v.toFixed(0)).join(' ');
+  const shifted = Object.entries(grid.rowOffset).map(([j, dx]) => ` row ${j} shifted ${dx.toFixed(1)}`).join('');
   return `${label.padEnd(24)} pitch ${grid.px.toFixed(1)}x${grid.py.toFixed(1)} first ${(grid.ox + I[0] * grid.px).toFixed(0)},${(grid.oy + J[0] * grid.py).toFixed(0)} ` +
-    `cells ${grid.cells.length} (${I.length}x${J.length}) view [${view}] (${ms.toFixed(0)} ms)`;
+    `cells ${grid.cells.length} (${I.length}x${J.length}) view [${view}]${shifted} (${ms.toFixed(0)} ms)`;
 }
 
 async function gridOnly(): Promise<void> {
@@ -81,8 +85,10 @@ async function main(): Promise<void> {
     travelingSpiritConfig: data.travelingSpirits, returningSpiritsConfig: data.specialVisits
   } as any, DATE);
 
-  let failed = 0;
+  let failed = 0, skipped = 0;
   for (const c of CASES) {
+    const missing = c.shots.filter(s => !fs.existsSync(path.join(fixtures, 'screenshots', s)));
+    if (missing.length) { console.log(`${c.label ?? c.expected}: skipped, missing ${missing.join(', ')}`); skipped++; continue; }
     const items = (data.items.items as Array<IItem>).filter(i => i.type === c.type && coords.has(i.icon!)).sort(ItemHelper.sorter);
     const t0 = performance.now();
     const feats = [];
@@ -92,7 +98,7 @@ async function main(): Promise<void> {
       feats.push(referenceFeatures(sheets.get(co.file)!, co.x, co.y)!);
     }
     const refs = buildReferenceSet(feats, items.map(i => !!ongoing[i.guid]));
-    console.log(`${c.expected} (${c.type}, ${items.length} items): references ${(performance.now() - t0).toFixed(0)} ms`);
+    console.log(`${c.label ?? c.expected} (${c.type}, ${items.length} items): references ${(performance.now() - t0).toFixed(0)} ms`);
 
     const results: Array<ScreenshotMatch | null> = [];
     let hint: GridHint | undefined;
@@ -104,8 +110,14 @@ async function main(): Promise<void> {
       hint = { px: res.grid.px, py: res.grid.py, ox: res.grid.ox };
       const matched = res.tiles.filter(t => t.item !== null).length;
       const forced = res.tiles.filter(t => t.forced).length;
+      const relaxed = res.tiles.filter(t => t.relaxed);
       console.log(`  ${describeGrid(shot, img, res.timing.grid, res.grid)}`);
-      console.log(`    ${res.tiles.length} tiles, ${matched} matched (${forced} forced), ${res.partial} partial, match ${res.timing.match.toFixed(0)} ms`);
+      console.log(`    ${res.tiles.length} tiles, ${matched} matched (${forced} forced, ${relaxed.length} relaxed), ${res.partial} partial, match ${res.timing.match.toFixed(0)} ms`);
+      for (const t of relaxed) {
+        const [r2, s2] = t.candidates.find(([r]) => r !== t.item) ?? [null, NaN];
+        console.log(`    relaxed ${t.cell}: ${items[t.item!].name} ${t.score.toFixed(3)}, window ${t.window[1] - t.window[0]}, `
+          + `runner-up ${r2 === null ? '-' : `${items[r2].name} ${s2.toFixed(3)}`}`);
+      }
     }
 
     const batch = combineBatch(results, refs.ongoing);
@@ -115,13 +127,15 @@ async function main(): Promise<void> {
       diff('owned', batch.owned.map(name), expected.owned),
       diff('checklist', batch.checklist.map(x => `${name(x.item)}=${x.looksOwned}`), expected.checklist.map(([n, g]: [string, boolean]) => `${n}=${g}`)),
       diff('ask', batch.ask.map(a => `${a.cell}`), expected.ask.map((a: any) => `${a.cell}`)),
-      diff('gaps', batch.gaps.map(name), expected.gaps)
+      diff('gaps', batch.gaps.map(name), expected.gaps),
+      diff('weak', batch.weak.map(name), expected.weak ?? [])
     ].every(Boolean);
-    batch.ask.forEach(a => console.log(`    ask ${a.cell}: window ${a.window[1] - a.window[0]} -> ${a.candidates.map(name).join(', ')}`));
+    batch.ask.forEach(a => console.log(`    ask ${a.cell}: window ${a.window.length} -> ${a.candidates.map(name).join(', ')}`));
     console.log(`  ${ok ? 'OK' : 'MISMATCH'}`);
     if (!ok) { failed++; }
   }
-  console.log(failed ? `${failed} of ${CASES.length} cases differ` : `All ${CASES.length} cases match`);
+  const ran = CASES.length - skipped;
+  console.log((failed ? `${failed} of ${ran} cases differ` : `All ${ran} cases match`) + (skipped ? `, ${skipped} skipped` : ''));
   process.exitCode = failed ? 1 : 0;
 }
 

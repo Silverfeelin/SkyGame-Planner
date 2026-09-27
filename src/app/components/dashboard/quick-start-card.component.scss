@@ -1,0 +1,42 @@
+/* `contents` so the dashboard's flex gap isn't claimed once the card is hidden. */
+:host {
+  display: contents;
+}
+
+.atmos-quick-start {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px var(--atmos-card-gap);
+  padding: var(--atmos-card-pad);
+}
+
+.atmos-quick-start__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--atmos-active-bg);
+  color: var(--atmos-accent);
+}
+
+.atmos-quick-start__text {
+  flex: 1 1 260px;
+  min-width: 0;
+
+  p {
+    margin: 4px 0 0;
+    color: var(--atmos-text-dim);
+    font-size: var(--atmos-fs-sm);
+    line-height: 1.5;
+  }
+}
+
+.atmos-quick-start__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--atmos-btn-gap);
+}

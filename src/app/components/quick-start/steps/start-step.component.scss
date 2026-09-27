@@ -1,0 +1,56 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+
+.atmos-qs-start {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: opacity var(--atmos-transition);
+
+  &.is-disabled { opacity: 0.5; }
+
+  .atmos-range:disabled { cursor: not-allowed; }
+}
+
+.atmos-qs-start__value {
+  font-size: var(--atmos-fs-2xl);
+  font-weight: 500;
+
+  small {
+    margin-left: 8px;
+    font-size: var(--atmos-fs-sm);
+    font-weight: 400;
+    color: var(--atmos-text-mute);
+  }
+}
+
+.atmos-qs-start__ticks {
+  position: relative;
+  height: 1.4em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  color: var(--atmos-text-mute);
+
+  span {
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+  }
+}
+
+.atmos-qs-start__unsure {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+
+  input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--atmos-accent);
+  }
+}

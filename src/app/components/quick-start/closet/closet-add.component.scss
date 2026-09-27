@@ -1,0 +1,84 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
+}
+
+.atmos-qs-howto {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atmos-qs-howto__step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--atmos-chip-bg);
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+
+  b {
+    color: var(--atmos-text);
+    font-weight: 500;
+  }
+}
+
+.atmos-qs-drop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 26px 16px;
+  border: 1.5px dashed var(--atmos-line-soft);
+  border-radius: 14px;
+  text-align: center;
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-sm);
+  cursor: pointer;
+  transition: border-color var(--atmos-transition), background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-tint); }
+
+  &.is-over {
+    border-color: var(--atmos-accent);
+    background: var(--atmos-active-bg);
+  }
+
+  > mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: var(--atmos-accent);
+  }
+
+  strong { color: var(--atmos-text); }
+  .atmos-btn { margin-top: 4px; }
+  input { position: absolute; opacity: 0; pointer-events: none; }
+}
+
+.atmos-qs-drop__hint { color: var(--atmos-text-mute); }
+
+@media (max-width: 1023px) {
+  .atmos-qs-howto { grid-template-columns: minmax(0, 1fr); }
+
+  .atmos-qs-howto__step {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .atmos-qs-howto__sketch {
+    flex: none;
+    width: 120px;
+  }
+}

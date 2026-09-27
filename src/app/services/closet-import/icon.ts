@@ -1,5 +1,5 @@
 import { LANCZOS, RgbaImage, clamp, median, resample, rint } from './image';
-import { Grid, INSIDE } from './grid';
+import { Grid, INSIDE, cellCentre } from './grid';
 
 /** Comparison resolution. */
 export const N = 64;
@@ -74,7 +74,8 @@ export function extractIcon(img: RgbaImage, grid: Grid, i: number, j: number): {
   const { px, py, view } = grid;
   const vx = rint(view[0]), vy = rint(view[1]);
   const w = rint(view[2]) - vx, h = rint(view[3]) - vy;
-  const cx = grid.ox + i * px - vx, cy = grid.oy + j * py - vy;
+  const [gx, gy] = cellCentre(grid, i, j);
+  const cx = gx - vx, cy = gy - vy;
   const x0 = rint(cx - px / 2), y0 = rint(cy - py / 2);
   const x1 = x0 + rint(px), y1 = y0 + rint(py);
   const cx0 = Math.max(0, x0), cy0 = Math.max(0, y0);

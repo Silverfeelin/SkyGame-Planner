@@ -1,0 +1,34 @@
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <div>
+      <h2 class="atmos-qs__title">When did you start playing Sky?</h2>
+      <p class="atmos-qs__sub">Pick the season that was running when you started. It doesn't need to be exact.</p>
+    </div>
+
+    <div class="atmos-qs-start" [class.is-disabled]="store.startUnsure()">
+      @if (season(); as s) {
+        <div class="atmos-qs-start__value" aria-hidden="true">
+          {{ s.name }}<small>from {{ s.date.toFormat('LLL yyyy') }}</small>
+        </div>
+      }
+      <input type="range" class="atmos-range" min="0" [max]="max" step="1"
+             [value]="store.startIndex()"
+             [disabled]="store.startUnsure()"
+             [attr.aria-valuetext]="season()?.name"
+             aria-label="Season you started in"
+             (input)="onSlide($event)"/>
+      <div class="atmos-qs-start__ticks" aria-hidden="true">
+        @for (tick of ticks; track tick.year) {
+          <span [style.left.%]="tick.pct" [style.transform]="'translateX(-' + tick.pct + '%)'">{{ tick.year }}</span>
+        }
+      </div>
+    </div>
+
+    <label class="atmos-qs-start__unsure">
+      <input type="checkbox" [checked]="store.startUnsure()" (change)="onUnsure($event)"/>
+      I'm not sure. Work it out from my closet.
+    </label>
+
+    <app-quick-start-step-nav />
+  </div>
+</section>

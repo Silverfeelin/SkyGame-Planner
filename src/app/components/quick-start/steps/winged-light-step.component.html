@@ -1,0 +1,32 @@
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <div>
+      <h2 class="atmos-qs__title">Winged light</h2>
+      <p class="atmos-qs__sub">
+        Winged light doesn't show in the closet. Tap each realm where you've collected all of it. You can mark single ones on the map later.
+      </p>
+    </div>
+
+    <div class="atmos-qs-realms">
+      @for (row of rows; track row.realm.guid) {
+        <button type="button" class="atmos-qs-realm atmos-focus-ring"
+                [attr.aria-pressed]="store.wingedLightRealms().has(row.realm.guid)"
+                (click)="store.toggleRealm(row.realm.guid)">
+          <mat-icon svgIcon="flaps"></mat-icon>
+          <span class="atmos-qs-realm__name">{{ row.realm.name }}</span>
+          <span class="atmos-qs-realm__count">{{ row.count }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="atmos-qs__row">
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleAll()">
+        {{ allSelected() ? 'Clear all' : 'All realms' }}
+      </button>
+      <span class="atmos-qs__spacer"></span>
+      <span class="atmos-qs__sub atmos-qs-realms__total">{{ selectedCount() }} of {{ total }} winged light</span>
+    </div>
+
+    <app-quick-start-step-nav />
+  </div>
+</section>

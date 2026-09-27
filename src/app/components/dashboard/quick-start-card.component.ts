@@ -1,0 +1,36 @@
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
+import { IItem } from 'skygame-data';
+import { DataService } from '@app/services/data.service';
+import { StorageService } from '@app/services/storage.service';
+
+const dismissedKey = 'dashboard.quick-start.dismissed';
+
+@Component({
+  selector: 'app-dashboard-quick-start',
+  templateUrl: './quick-start-card.component.html',
+  styleUrl: './quick-start-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatIcon, RouterLink]
+})
+export class DashboardQuickStartComponent {
+  private readonly _data = inject(DataService);
+  private readonly _storage = inject(StorageService);
+
+  readonly isVisible = signal(localStorage.getItem(dismissedKey) !== '1' && !this.hasProgress());
+
+  dismiss(): void {
+    localStorage.setItem(dismissedKey, '1');
+    this.isVisible.set(false);
+  }
+
+  /** Auto-unlocked items can end up in storage without the player doing anything, so they don't count. */
+  private hasProgress(): boolean {
+    if (this._storage.getWingedLights().size || this._storage.getSeasonPasses().size) { return true; }
+    for (const guid of this._storage.getUnlocked()) {
+      if (!(this._data.guidMap.get(guid) as IItem | undefined)?.autoUnlocked) { return true; }
+    }
+    return false;
+  }
+}

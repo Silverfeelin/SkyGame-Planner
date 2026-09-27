@@ -1,0 +1,24 @@
+<p class="atmos-qs__sub">Finding your items. This runs in your browser and can take a few seconds per screenshot.</p>
+
+<div class="atmos-progress" role="progressbar" aria-label="Matching screenshots"
+     [attr.aria-valuenow]="done()" aria-valuemin="0" [attr.aria-valuemax]="state().shots.length">
+  <div class="atmos-progress__fill" [style.width.%]="percent()"></div>
+  <div class="atmos-progress__text">{{ done() }} / {{ state().shots.length }}</div>
+</div>
+
+<ul class="atmos-qs-shots">
+  @for (shot of state().shots; track shot.url; let i = $index) {
+    <li class="atmos-qs-shot">
+      <div class="atmos-qs-shot__img"><img [src]="shot.url" alt=""/></div>
+      <div class="atmos-qs-shot__status" [class.is-ok]="i < done()">
+        @if (i < done()) {
+          <mat-icon>check</mat-icon>Matched
+        } @else if (i === done()) {
+          Matching…
+        } @else {
+          Waiting
+        }
+      </div>
+    </li>
+  }
+</ul>

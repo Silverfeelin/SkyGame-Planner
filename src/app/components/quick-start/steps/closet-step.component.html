@@ -1,0 +1,68 @@
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <div>
+      <h2 class="atmos-qs__title">Your closet and expressions</h2>
+      <p class="atmos-qs__sub">
+        Each tab is added separately. Start with the ones you've collected the most in.
+        Necklaces, capes and emotes tell us the most about your seasons and spirits.
+      </p>
+    </div>
+
+    <div class="atmos-qs-closet">
+      <div class="atmos-qs-closet__tabs atmos-scroll-x" role="tablist" aria-label="Closet tabs" aria-orientation="vertical"
+           (keydown)="onTabKeydown($event)">
+        @for (row of rows(); track row.tab.key) {
+          @if (row.tab.kind === 'emote') {
+            <div class="atmos-qs-closet__sep" role="presentation"></div>
+          }
+          <button type="button" role="tab" class="atmos-qs-closet__tab atmos-focus-ring"
+                  [id]="'qs-tab-' + row.tab.key"
+                  aria-controls="qs-tab-panel"
+                  [attr.aria-selected]="row.tab.key === store.activeTab()"
+                  [attr.tabindex]="row.tab.key === store.activeTab() ? 0 : -1"
+                  (click)="select(row.tab.key)">
+            <span class="atmos-qs-closet__tab-name">{{ row.tab.label }}</span>
+            <span class="atmos-qs-closet__tab-status" [class.is-done]="row.tone === 'done'" [class.is-warn]="row.tone === 'warn'">{{ row.status }}</span>
+          </button>
+        }
+      </div>
+
+      <div class="atmos-qs-closet__panel" id="qs-tab-panel" role="tabpanel" [attr.aria-labelledby]="'qs-tab-' + active().key">
+        <div class="atmos-qs__row">
+          <h3 class="atmos-qs-closet__panel-title">{{ active().label }}</h3>
+          <span class="atmos-qs__spacer"></span>
+          @if (active().kind !== 'music') {
+            <div class="atmos-qs-closet__substeps">
+              @if (active().kind === 'emote' || state().manual) {
+                <span class="is-on">Marking by hand</span>
+              } @else {
+                @for (s of stages; track s.stage; let i = $index) {
+                  @if (i > 0) { <i aria-hidden="true">›</i> }
+                  <span [class.is-on]="i === stageIndex()" [class.is-done]="i < stageIndex()"
+                        [attr.aria-current]="i === stageIndex() ? 'step' : null">{{ s.label }}</span>
+                }
+              }
+            </div>
+          }
+        </div>
+
+        @switch (active().kind) {
+          @case ('music') { <app-quick-start-music-panel /> }
+          @case ('emote') { <app-quick-start-emotes /> }
+          @default {
+            @switch (state().stage) {
+              @case ('add') { <app-quick-start-closet-add [tab]="active()" /> }
+              @case ('check') { <app-quick-start-closet-check [tab]="active()" /> }
+              @case ('matching') { <app-quick-start-closet-matching [tab]="active()" /> }
+              @case ('confirm') { <app-quick-start-closet-confirm [tab]="active()" /> }
+            }
+          }
+        }
+      </div>
+    </div>
+
+    <p class="atmos-qs__sub">You can skip tabs and come back to them later from the items page.</p>
+
+    <app-quick-start-step-nav [nextLabel]="anyNew() ? 'Next' : 'Skip for now'" [advance]="false" (next)="forward()" />
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<header #top class="atmos-page__header">
+  <h1 class="atmos-page__title">Quick start</h1>
+</header>
+
+<div class="atmos-page__intro">
+  <p class="atmos-page__hint">
+    Show us your closet and we'll fill in your progress. You check everything before it's saved, and you can fine-tune it afterwards.
+  </p>
+  <p class="atmos-qs__reassure">
+    <mat-icon>lock_open</mat-icon>
+    Quick start only adds progress. Anything you've already marked stays as it is.
+  </p>
+</div>
+
+@if (!store.saved()) {
+  <nav class="atmos-qs__stepper atmos-scroll-x" aria-label="Quick start steps">
+    @for (label of steps; track $index; let i = $index) {
+      <button type="button" class="atmos-qs__stepper-btn atmos-focus-ring"
+              [class.is-done]="i < reached() && i !== store.step()"
+              [attr.aria-current]="i === store.step() ? 'step' : null"
+              [disabled]="i > reached()"
+              (click)="goTo(i)">
+        <span class="atmos-qs__stepper-n">
+          @if (i < reached() && i !== store.step()) { <mat-icon>check</mat-icon> } @else { {{ i + 1 }} }
+        </span>
+        <span class="atmos-qs__stepper-label">{{ label }}</span>
+      </button>
+    }
+  </nav>
+}
+
+@switch (store.step()) {
+  @case (0) { <app-quick-start-start-step /> }
+  @case (1) { <app-quick-start-closet-step /> }
+  @case (2) { <app-quick-start-winged-light-step /> }
+  @case (3) { <app-quick-start-review /> }
+}

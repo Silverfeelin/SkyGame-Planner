@@ -1,0 +1,67 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+@include qs.shots;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
+}
+
+.atmos-qs-check__type {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+
+  select {
+    width: auto;
+    height: auto;
+    font-size: var(--atmos-fs-sm);
+    font-weight: 500;
+  }
+
+  option { background: var(--atmos-card-bg-solid); }
+}
+
+.atmos-qs-check__shot-row {
+  flex-wrap: nowrap;
+  gap: 2px;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-qs-check__add {
+  padding: 0;
+  min-height: 120px;
+}
+
+.atmos-qs-check__add-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-sm);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+
+  mat-icon { color: var(--atmos-accent); }
+}
+
+.atmos-qs-check__add input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}

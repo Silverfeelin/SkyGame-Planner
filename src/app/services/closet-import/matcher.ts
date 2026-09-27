@@ -1,14 +1,14 @@
 import { RgbaImage } from './image';
 import { GridHint, locateGrid } from './grid';
 import { IconFeatures, N, NN, extractIcon, iconFeatures } from './icon';
-import { SURE, ScreenshotMatch, TileMatch } from './batch';
+import {
+  FIT_FLOOR, RELAX_MARGIN, RELAX_MAX, SURE, ScreenshotMatch, TileMatch, align, relaxedPicks, relaxedSure, windowGroups, windows
+} from './batch';
 
-/** Score an 'unknown' tile is worth; below this a match is not trusted. */
-const TAU = 0.7;
-/** Cost per item skipped between consecutive matches. */
-const SKIP = 0.003;
 /** Quick-pass matches below SURE, or closer than this to the runner-up, get a full re-score. */
 const WEAK_MARGIN = 0.03;
+/** Candidates kept per unknown tile: more than are shown, since the batch drops items settled elsewhere. */
+const CANDIDATES = 10;
 const HN = N / 2;
 
 /** Reference features for one item type, sorted by item order. */
@@ -132,14 +132,18 @@ function roll(f: Float32Array, dx: number, dy: number): Float32Array {
 /**
  * Full resolution, best over +-1 px shifts. Any icon may differ in colour from its reference (previews,
  * variant or outdated wiki colours), so every item can also compete on shape; the penalty keeps colour
- * decisive whenever colour agrees.
+ * decisive whenever colour agrees. Items marked in `done` are skipped; scored items are marked.
  */
-function fullScores(tile: IconFeatures, refs: ReferenceSet, lo: number, hi: number, out: Float64Array): void {
+function fullScores(tile: IconFeatures, refs: ReferenceSet, lo: number, hi: number, out: Float64Array, done: Uint8Array): void {
+  while (lo < hi && done[lo]) { lo++; }
+  if (lo >= hi) { return; }
   const shifted = [];
   for (const dx of [-1, 0, 1]) {
     for (const dy of [-1, 0, 1]) { shifted.push(centre(roll(tile.f, dx, dy), NN)); }
   }
   for (let r = lo; r < hi; r++) {
+    if (done[r]) { continue; }
+    done[r] = 1;
     let colour = -9, shape = -9;
     for (const { c, ss } of shifted) {
       const s = ncc(c, ss, refs.full, refs.fullSS, r, NN);
@@ -159,60 +163,84 @@ function looksOwned(tile: IconFeatures, refs: ReferenceSet, r: number): boolean 
 
 // #endregion
 
-// #region Alignment
+// #region Order
 
-/**
- * Best strictly increasing assignment of tiles to items; a tile may be unknown (null) at score TAU.
- * Each item skipped between two consecutive matches costs SKIP: a weak match far away should not beat
- * a plausible one nearby, while a strong match easily pays for a real gap.
- */
-export function align(S: Array<Float64Array>, R: number): Array<number | null> {
-  const T = S.length;
-  const NEG = -1e9;
-  // state 0: nothing matched yet; state r+1: last match is item r
-  let f = new Float64Array(R + 1).fill(NEG);
-  f[0] = 0;
-  const choice = Array.from({ length: T }, () => new Int32Array(R + 1));
-  for (let t = 0; t < T; t++) {
-    const g = f.map(v => v + TAU);
-    const ch = choice[t].fill(-1);
-    let m = NEG, arg = 0;
-    for (let r2 = 0; r2 < R; r2++) {
-      // best previous match r < r2, paying for the items skipped in between
-      const fromPrev = m - SKIP * r2;
-      const [cand, src] = fromPrev >= f[0] ? [fromPrev, arg] : [f[0], 0];
-      if (cand + S[t][r2] > g[r2 + 1]) { g[r2 + 1] = cand + S[t][r2]; ch[r2 + 1] = src; }
-      const adj = f[r2 + 1] + SKIP * r2;
-      if (adj > m) { m = adj; arg = r2 + 1; }
-    }
-    f = g;
-  }
-  let state = 0;
-  for (let s = 1; s <= R; s++) { if (f[s] > f[state]) { state = s; } }
-  const path: Array<number | null> = new Array(T).fill(null);
-  for (let t = T - 1; t >= 0; t--) {
-    const c = choice[t][state];
-    if (c !== -1) { path[t] = state - 1; state = c; }
-  }
-  return path;
+/** Full-resolution scores for tile `n` against items [lo, hi), in place of any quick scores left there. */
+type Rescore = (n: number, lo: number, hi: number) => void;
+
+const sureByScore = (t: TileMatch) => t.item !== null && !t.forced && !t.relaxed && t.score >= SURE;
+
+/** Best items in [lo, hi) with their scores, best first. */
+function ranked(scores: Float64Array, lo: number, hi: number): Array<[number, number]> {
+  return Array.from({ length: hi - lo }, (_, k) => [lo + k, scores[lo + k]] as [number, number])
+    .sort((a, b) => b[1] - a[1]).slice(0, CANDIDATES);
 }
 
-/** For each tile, the item index range [lo, hi) allowed by its aligned neighbours. */
-export function windows(path: Array<number | null>, R: number): Array<[number, number]> {
-  return path.map((_, t) => {
-    let lo = 0, hi = R;
-    for (let k = t - 1; k >= 0; k--) { if (path[k] !== null) { lo = path[k]! + 1; break; } }
-    for (let k = t + 1; k < path.length; k++) { if (path[k] !== null) { hi = path[k]!; break; } }
-    return [lo, hi];
-  });
+/**
+ * Matches unknown tiles whose window holds at most RELAX_MAX items and lies between two matches sure by score,
+ * at a threshold lowered for the window size. Relaxed tiles don't bound other windows.
+ */
+export function relaxWindows(out: Array<TileMatch>, S: Array<Float64Array>, rescore: Rescore): void {
+  const anchor = (r: number) => out.some(t => t.item === r && sureByScore(t));
+  for (const ns of windowGroups(out)) {
+    const [lo, hi] = out[ns[0]].window;
+    const w = hi - lo;
+    // an open edge proves nothing, and a weak bound may be wrong
+    if (w < 1 || w > RELAX_MAX || !anchor(lo - 1) || !anchor(hi)) { continue; }
+    ns.forEach(n => rescore(n, lo, hi));
+    const rows = ns.map(n => S[n].subarray(lo, hi));
+    relaxedPicks(rows, w).forEach((p, k) => {
+      if (p === null) { return; }
+      const t = out[ns[k]];
+      t.item = lo + p;
+      t.score = rows[k][p];
+      t.relaxed = true;
+      t.candidates = ranked(S[ns[k]], lo, hi);
+    });
+  }
+}
+
+/**
+ * Sure: scored at least SURE, or between two such matches in a window that leaves few other items. When the window
+ * holds exactly as many items as tiles, order decides and the score only has to reach FIT_FLOOR; otherwise, up to
+ * RELAX_MAX items, the match must reach relaxedSure and beat the window's runner-up by RELAX_MARGIN. Promoted tiles
+ * don't anchor other runs.
+ */
+export function markSure(out: Array<TileMatch>, S: Array<Float64Array>, R: number, rescore: Rescore): void {
+  const anchor = out.map(sureByScore);
+  const wins = windows(out.map((t, n) => anchor[n] ? t.item : null), R);
+  for (let n = 0; n < out.length;) {
+    let e = n + 1;
+    if (anchor[n]) { out[n].sure = true; n = e; continue; }
+    while (e < out.length && !anchor[e]) { e++; }
+    const [lo, hi] = wins[n], w = hi - lo;
+    // lo > 0 and hi < R only with an anchor on both sides
+    for (let k = n; k < e && lo > 0 && hi < R; k++) {
+      const t = out[k];
+      if (t.item === null) { continue; }
+      if (w === e - n) {
+        rescore(k, t.item, t.item + 1);
+        t.score = S[k][t.item];
+        t.sure = t.item === lo + k - n && t.score >= FIT_FLOOR;
+      } else if (w <= RELAX_MAX && !t.forced) {
+        rescore(k, lo, hi);
+        t.score = S[k][t.item];
+        let rival = -Infinity;
+        for (let r = lo; r < hi; r++) { if (r !== t.item) { rival = Math.max(rival, S[k][r]); } }
+        t.sure = t.score >= relaxedSure(w) && t.score - rival >= RELAX_MARGIN;
+      }
+    }
+    n = e;
+  }
 }
 
 // #endregion
 
 /**
  * Grid -> quick scores -> order alignment -> full re-score of unknown or weak tiles within their order window
- * -> re-align -> assign runs of unknown tiles by order. Returns null when no closet grid is found.
- * `hint`: the previous screenshot's grid in the same batch.
+ * -> re-align -> assign runs of unknown tiles by order -> relax narrow windows -> confidence. Returns null when no
+ * closet grid is found.
+ * `hint`: the grid of another screenshot in the same batch.
  */
 export function matchScreenshot(img: RgbaImage, refs: ReferenceSet, hint?: GridHint): ScreenshotMatch | null {
   const t0 = performance.now();
@@ -228,13 +256,15 @@ export function matchScreenshot(img: RgbaImage, refs: ReferenceSet, hint?: GridH
     const ex = extractIcon(img, grid, i, j);
     const f = iconFeatures(ex.icon);
     if (!f) { continue; }
-    // cut-off tiles are expected to reappear in an overlapping screenshot
+    // a cut-off tile is expected to be whole in another screenshot
     if (ex.partial) { partial++; continue; }
     tiles.push({ cell: [i, j], f });
   }
 
   const R = refs.count;
   const S = tiles.map(t => quickScores(t.f, refs));
+  const done = tiles.map(() => new Uint8Array(R));
+  const rescore: Rescore = (n, lo, hi) => fullScores(tiles[n].f, refs, lo, hi, S[n], done[n]);
   let path = align(S, R);
   // full-quality re-score only where the quick pass is unsure, and only against the order window
   windows(path, R).forEach(([lo, hi], t) => {
@@ -243,7 +273,7 @@ export function matchScreenshot(img: RgbaImage, refs: ReferenceSet, hint?: GridH
     const margin = R > 1 ? sorted[R - 1] - sorted[R - 2] : Infinity;
     if (p !== null && margin >= WEAK_MARGIN && S[t][p] >= SURE) { return; }
     if (p !== null) { lo = Math.min(lo, p); hi = Math.max(hi, p + 1); }
-    if (hi > lo) { fullScores(tiles[t].f, refs, lo, hi, S[t]); }
+    rescore(t, lo, hi);
   });
   path = align(S, R);
   const wins = windows(path, R);
@@ -252,32 +282,30 @@ export function matchScreenshot(img: RgbaImage, refs: ReferenceSet, hint?: GridH
     cell: t.cell,
     item: path[n],
     score: path[n] !== null ? S[n][path[n]!] : 0,
+    sure: false,
     forced: false,
+    relaxed: false,
     window: wins[n],
     candidates: []
   }));
 
   // consecutive unknown tiles sharing a window with exactly that many items can only be those items
-  const groups = new Map<string, Array<number>>();
-  out.forEach((t, n) => {
-    if (t.item === null) {
-      const k = t.window.join();
-      groups.set(k, [...groups.get(k) ?? [], n]);
-    }
-  });
-  for (const ns of groups.values()) {
+  for (const ns of windowGroups(out)) {
     const [lo, hi] = out[ns[0]].window;
     // only between two matches: at a screenshot edge the window is open-ended and proves nothing
     const bounded = out.some(t => t.item === lo - 1) && out.some(t => t.item === hi);
     if (!bounded || hi - lo !== ns.length) { continue; }
     ns.forEach((n, k) => { out[n].item = lo + k; out[n].score = S[n][lo + k]; out[n].forced = true; });
   }
+  relaxWindows(out, S, rescore);
+  markSure(out, S, R, rescore);
 
   out.forEach((t, n) => {
     if (t.item === null) {
+      // the second alignment can widen a window past what the first re-scored
       const [lo, hi] = t.window;
-      t.candidates = Array.from({ length: hi - lo }, (_, k) => [lo + k, S[n][lo + k]] as [number, number])
-        .sort((a, b) => b[1] - a[1]).slice(0, 5);
+      rescore(n, lo, hi);
+      t.candidates = ranked(S[n], lo, hi);
     } else if (refs.ongoing[t.item]) {
       t.looksOwned = looksOwned(tiles[n].f, refs, t.item);
     }

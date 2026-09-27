@@ -1,0 +1,55 @@
+<p class="atmos-qs__sub">
+  Check that these are all from the {{ tab().label.toLowerCase() }} tab. They can be in any order.
+</p>
+
+@if (tab().kind === 'closet') {
+  <div class="atmos-qs__row atmos-qs-check__type">
+    <label for="qs-shots-type">These screenshots show</label>
+    <select id="qs-shots-type" class="atmos-input atmos-input--pill" (change)="onMove($event)">
+      @for (t of closetTabs; track t.key) {
+        <option [value]="t.key" [selected]="t.key === tab().key">{{ t.label }}</option>
+      }
+    </select>
+  </div>
+}
+
+@if (state().error; as error) {
+  <div class="atmos-qs__banner atmos-qs__banner--warn" role="alert">
+    <mat-icon>warning</mat-icon>
+    <p>{{ error }}</p>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markByHand(tab().key)">
+      <mat-icon>edit</mat-icon>Mark by hand
+    </button>
+  </div>
+}
+
+<ul class="atmos-qs-shots">
+  @for (shot of state().shots; track shot.url; let i = $index) {
+    <li class="atmos-qs-shot">
+      <div class="atmos-qs-shot__img"><img [src]="shot.url" [alt]="'Screenshot ' + (i + 1)"/></div>
+      <div class="atmos-qs__row atmos-qs-check__shot-row">
+        <span class="atmos-qs-shot__name" [attr.title]="shot.file.name">{{ shot.file.name }}</span>
+        <button type="button" class="atmos-icon-btn atmos-focus-ring" [attr.aria-label]="'Remove ' + shot.file.name"
+                (click)="store.removeShot(tab().key, i)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </li>
+  }
+  <li class="atmos-qs-shot atmos-qs-check__add">
+    <button type="button" class="atmos-qs-check__add-btn atmos-focus-ring" (click)="fileInput.click()">
+      <mat-icon>upload</mat-icon>Add more
+    </button>
+    <input #fileInput type="file" class="input-hidden" tabindex="-1" aria-hidden="true" multiple [accept]="accept"
+           (change)="onFiles(fileInput)"/>
+  </li>
+</ul>
+
+<div class="atmos-qs__row">
+  <span class="atmos-qs__spacer"></span>
+  <button type="button" class="atmos-btn" (click)="store.clearShots(tab().key)">Start over</button>
+  <button type="button" class="atmos-btn atmos-btn--active" [disabled]="!state().shots.length"
+          (click)="store.match(tab().key)">
+    Match {{ state().shots.length }} screenshot{{ state().shots.length === 1 ? '' : 's' }}<mat-icon>arrow_forward</mat-icon>
+  </button>
+</div>

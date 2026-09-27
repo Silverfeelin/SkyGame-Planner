@@ -1,7 +1,7 @@
 import { BILINEAR, Plane, RgbaImage, box5, clamp, crop, luminance, median, polyfit, quantile, resample, rint } from './image';
 
 /**
- * Full-resolution lattice: cell (i, j) is centred at (ox + i*px, oy + j*py).
+ * Full-resolution lattice: cell (i, j) is centred at (ox + i*px + rowOffset[j], oy + j*py), see `cellCentre`.
  * `view` is the visible closet area (x0, y0, x1, y1); tiles reaching past it are cut off like at an image edge.
  */
 export interface Grid {
@@ -9,11 +9,26 @@ export interface Grid {
   py: number;
   ox: number;
   oy: number;
+  /** Horizontal shift in pixels of rows that sit off the lattice: a centred short last row. Absent rows are 0. */
+  rowOffset: Record<number, number>;
   cells: Array<[number, number]>;
   view: [number, number, number, number];
 }
 
-/** Spacing and horizontal offset of an earlier screenshot in the same batch. */
+export function cellCentre(grid: Grid, i: number, j: number): [number, number] {
+  return [grid.ox + i * grid.px + (grid.rowOffset[j] ?? 0), grid.oy + j * grid.py];
+}
+
+/** One pitch square around a cell in original screenshot pixels, clipped to the view. */
+export function cellRect(grid: Grid, i: number, j: number): { x: number, y: number, width: number, height: number } {
+  const [cx, cy] = cellCentre(grid, i, j);
+  const [vx0, vy0, vx1, vy1] = grid.view;
+  const x0 = Math.max(vx0, cx - grid.px / 2), y0 = Math.max(vy0, cy - grid.py / 2);
+  const x1 = Math.min(vx1, cx + grid.px / 2), y1 = Math.min(vy1, cy + grid.py / 2);
+  return { x: x0, y: y0, width: Math.max(0, x1 - x0), height: Math.max(0, y1 - y0) };
+}
+
+/** Spacing and horizontal offset of another screenshot in the same batch (same device and UI scale). */
 export interface GridHint {
   px: number;
   py: number;
@@ -166,37 +181,39 @@ interface Contrast {
   c: Float64Array;
 }
 
-/** Per-cell tile contrast (gap minus inside luminance) for every lattice cell in the image. */
-function contrastAt(L: Plane, ox: number, oy: number, px: number, py: number): Contrast {
+function sampleMedian(L: Plane, cx: number, cy: number, px: number, py: number, pts: Pts, buf: Float64Array): number {
   const { width: w, height: h, data } = L;
+  let n = 0;
+  for (const [fx, fy] of pts) {
+    const x = rint(cx + fx * px), y = rint(cy + fy * py);
+    if (x >= 0 && x < w && y >= 0 && y < h) { buf[n++] = data[y * w + x]; }
+  }
+  // a cell hanging off the image must not pass on a single lucky sample
+  return n >= 2 ? median(buf.subarray(0, n)) : NaN;
+}
+
+/** Tile contrast (gap minus inside luminance) of one cell, or 0 when it doesn't look like a tile. */
+function tileContrast(L: Plane, cx: number, cy: number, px: number, py: number, buf: Float64Array): number {
+  const li = sampleMedian(L, cx, cy, px, py, INSIDE, buf);
+  // both the column gaps and the row gaps must be lighter; a lattice shifted along one axis fails the other
+  const lg = Math.min(sampleMedian(L, cx, cy, px, py, GAP_H, buf), sampleMedian(L, cx, cy, px, py, GAP_V, buf));
+  return lg - li > 6 && li < 0.85 * lg ? Math.min(lg - li, 40) : 0;
+}
+
+/** Per-cell tile contrast for every lattice cell in the image. */
+function contrastAt(L: Plane, ox: number, oy: number, px: number, py: number): Contrast {
+  const { width: w, height: h } = L;
   const i0 = Math.floor(-ox / px), i1 = Math.ceil((w - ox) / px);
   const j0 = Math.floor(-oy / py), j1 = Math.ceil((h - oy) / py);
   const ni = i1 - i0 + 1, nj = j1 - j0 + 1;
   const ok = new Uint8Array(ni * nj);
   const c = new Float64Array(ni * nj);
   const buf = new Float64Array(8);
-
-  const samp = (cx: number, cy: number, pts: Pts) => {
-    let n = 0;
-    for (const [fx, fy] of pts) {
-      const x = rint(cx + fx * px), y = rint(cy + fy * py);
-      if (x >= 0 && x < w && y >= 0 && y < h) { buf[n++] = data[y * w + x]; }
-    }
-    // a cell hanging off the image must not pass on a single lucky sample
-    return n >= 2 ? median(buf.subarray(0, n)) : NaN;
-  };
-
   for (let b = 0; b < nj; b++) {
     const cy = oy + (j0 + b) * py;
     for (let a = 0; a < ni; a++) {
-      const cx = ox + (i0 + a) * px;
-      const li = samp(cx, cy, INSIDE);
-      // both the column gaps and the row gaps must be lighter; a lattice shifted along one axis fails the other
-      const lg = Math.min(samp(cx, cy, GAP_H), samp(cx, cy, GAP_V));
-      if (lg - li > 6 && li < 0.85 * lg) {
-        ok[b * ni + a] = 1;
-        c[b * ni + a] = Math.min(lg - li, 40);
-      }
+      const v = tileContrast(L, ox + (i0 + a) * px, cy, px, py, buf);
+      if (v > 0) { ok[b * ni + a] = 1; c[b * ni + a] = v; }
     }
   }
   return { i0, j0, ni, nj, ok, c };
@@ -490,8 +507,9 @@ function clipEdge(G: Float64Array, lo: number, hi: number): number | null {
 /**
  * The scroll area's edges: straight lines that cross the gaps between tiles along the whole grid.
  * Tile edges stop at the gaps; a clipping edge or separator line runs through them.
+ * `centredRow`: a last row half a pitch off the lattice, whose tiles do sit on the column gap lines.
  */
-function viewport(Lraw: Plane, cells: Set<number>, [ox, oy, px, py]: Lattice): Grid['view'] {
+function viewport(Lraw: Plane, cells: Set<number>, [ox, oy, px, py]: Lattice, centredRow?: number): Grid['view'] {
   const { width: w, height: h, data } = Lraw;
   const all = [...cells].map(unkey);
   const I = all.map(c => c[0]), J = all.map(c => c[1]);
@@ -517,7 +535,8 @@ function viewport(Lraw: Plane, cells: Set<number>, [ox, oy, px, py]: Lattice): G
       G[t] = quantile(buf, 0.25);
     }
     const a = clipEdge(G, Math.trunc(o + (first - 1) * p), Math.trunc(o + (first + 0.45) * p));
-    const b = clipEdge(G, Math.trunc(o + (last - 0.45) * p), Math.trunc(o + (last + 1) * p) + 1);
+    const below = axis === 0 && last === centredRow ? 0.5 : -0.45;
+    const b = clipEdge(G, Math.trunc(o + (last + below) * p), Math.trunc(o + (last + 1) * p) + 1);
     if (a !== null) { bounds[1 - axis] = a; }
     if (b !== null) { bounds[3 - axis] = b; }
   }
@@ -552,6 +571,40 @@ function tidy(input: Set<number>): Set<number> {
   return largestGroup(cells);
 }
 
+/**
+ * A tab centres its short last row, so when the number of free columns is odd that row sits half a pitch off
+ * the lattice. Returns the row with its cells (centred at i + 0.5) when a centred run of whole tiles passes the
+ * tile test there and has its icons better centred than the cells passing on the lattice.
+ */
+function centredLastRow(L: Plane, S: Plane, cells: Array<[number, number]>, [ox, oy, px, py]: Lattice, bounds: Grid['view']): { j: number, cells: Array<[number, number]> } | null {
+  const I = cells.map(c => c[0]), J = cells.map(c => c[1]);
+  const iMin = Math.min(...I), iMax = Math.max(...I), jMax = Math.max(...J);
+  const cols = iMax - iMin + 1;
+  if (cols < 2 || new Set(J).size < 2) { return null; }
+  const whole = (cx: number, cy: number) =>
+    bounds[0] <= cx - 0.42 * px && cx + 0.42 * px <= bounds[2] && bounds[1] <= cy - 0.42 * py && cy + 0.42 * py <= bounds[3];
+  const buf = new Float64Array(8);
+  for (const j of [jMax, jMax + 1]) {
+    const onLattice = cells.filter(c => c[1] === j).map(([i]) => key(i, j));
+    if (onLattice.length === cols) { continue; }
+    const cy = oy + j * py;
+    const shifted: Array<number> = [];
+    for (let i = iMin; i < iMax; i++) {
+      const cx = ox + (i + 0.5) * px;
+      if (whole(cx, cy) && tileContrast(L, cx, cy, px, py, buf) > 0) { shifted.push(i); }
+    }
+    if (!shifted.length || shifted.length < onLattice.length) { continue; }
+    const lo = shifted[0], hi = shifted[shifted.length - 1];
+    if (hi - lo + 1 !== shifted.length || lo - iMin !== iMax - 1 - hi) { continue; }
+    // bright icons on the gap sample points can pass cells between the shifted tiles too; icon placement can't
+    const placement = centredScore(S, new Set(shifted.map(i => key(i, j))), ox + px / 2, oy, px, py) / shifted.length;
+    const latticePlacement = onLattice.length ? centredScore(S, new Set(onLattice), ox, oy, px, py) / onLattice.length : 0;
+    if (placement <= latticePlacement) { continue; }
+    return { j, cells: shifted.map(i => [i, j]) };
+  }
+  return null;
+}
+
 // #endregion
 
 function iconMask(small: Uint8ClampedArray, w: number, h: number): Uint8Array {
@@ -568,7 +621,7 @@ function iconMask(small: Uint8ClampedArray, w: number, h: number): Uint8Array {
 
 /**
  * Closet grid in full-resolution pixels, or null when no grid is found.
- * `hint` from an earlier screenshot of the same batch narrows the search to the vertical offset.
+ * `hint` from another screenshot of the same batch narrows the search to the vertical offset.
  */
 export function locateGrid(img: RgbaImage, hint?: GridHint): Grid | null {
   const { width: w, height: h } = img;
@@ -592,20 +645,29 @@ export function locateGrid(img: RgbaImage, hint?: GridHint): Grid | null {
   let [ox, oy, px, py] = best.lat;
   const tidied = tidy(best.cells);
   if (!tidied.size) { return null; }
-  const [vx0, vy0, vx1, vy1] = viewport(Lraw, tidied, best.lat);
+  const centred = centredLastRow(L, S, [...tidied].map(unkey), best.lat, [0, 0, sw, sh]);
+  const shiftOf = (j: number) => j === centred?.j ? 0.5 : 0;
+  const found = new Set(tidied);
+  if (centred) {
+    tidied.forEach(k => { if (unkey(k)[1] === centred.j) { found.delete(k); } });
+    centred.cells.forEach(([i, j]) => found.add(key(i, j)));
+  }
+  const [vx0, vy0, vx1, vy1] = viewport(Lraw, found, best.lat, centred?.j);
   // rows or columns centred outside the viewport are slivers at best
-  const cells = [...tidied].map(unkey).filter(([i, j]) => {
-    const cx = ox + i * px, cy = oy + j * py;
+  const cells = [...found].map(unkey).filter(([i, j]) => {
+    const cx = ox + (i + shiftOf(j)) * px, cy = oy + j * py;
     return vx0 <= cx && cx < vx1 && vy0 <= cy && cy < vy1;
   });
   if (!cells.length) { return null; }
   const view: Grid['view'] = [vx0 / f, vy0 / f, vx1 >= sw ? w : vx1 / f, vy1 >= sh ? h : vy1 / f];
   [ox, oy, px, py] = [ox / f, oy / f, px / f, py / f];
   // a cut-off tile's missing edge gets measured at the clip line instead
-  const whole = cells.filter(([i, j]) =>
+  const whole = cells.filter(([i, j]) => !shiftOf(j) &&
     view[0] <= ox + (i - 0.5) * px && ox + (i + 0.5) * px <= view[2] &&
     view[1] <= oy + (j - 0.5) * py && oy + (j + 0.5) * py <= view[3]);
   [ox, oy, px, py] = refineFull(box5(luminance(img)), whole, [ox, oy, px, py], view);
+  const rowOffset: Grid['rowOffset'] = {};
+  if (centred && cells.some(c => c[1] === centred.j)) { rowOffset[centred.j] = px / 2; }
   cells.sort((a, b) => a[1] - b[1] || a[0] - b[0]);
-  return { px, py, ox, oy, cells, view };
+  return { px, py, ox, oy, rowOffset, cells, view };
 }

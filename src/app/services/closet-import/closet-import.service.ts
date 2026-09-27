@@ -4,22 +4,30 @@ import { DataService } from '../data.service';
 import { IconService } from '../icon.service';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ClosetImportReference, ClosetImportRequest, ClosetImportResponse } from './messages';
-import type { GridHint } from './grid';
+import { GridHint, cellRect } from './grid';
 import { ScreenshotMatch, combineBatch } from './batch';
 
 type WorkerRequest = ClosetImportRequest extends infer R ? R extends unknown ? Omit<R, 'id'> : never : never;
 
+/** A closet tab, or the stances and calls tab of the expression menu, which lists both as one grid. */
+export type ClosetImportKind = ItemType | 'StanceCall';
+
 export interface ClosetImportResult {
-  type: ItemType;
+  type: ClosetImportKind;
   /** Items of the type in closet order; indices in `shots` refer to this list. */
   items: Array<IItem>;
   /** Per screenshot in upload order; null when no closet grid was found. */
   shots: Array<ScreenshotMatch | null>;
   /** Matched items that can't be previews. */
   owned: Array<IItem>;
+  /** Items in `owned` that no screenshot matched confidently, including those accepted because few items fit their spot. */
+  weak: Array<IItem>;
   /** Matched items the closet may show without being owned, with a guess from how the tile looks. */
   checklist: Array<{ item: IItem, looksOwned: boolean }>;
-  /** Tiles that need the user, with ranked candidates from their order window. */
+  /**
+   * Tiles that need the user, with ranked candidates from their order window. Items that another screenshot
+   * matched confidently or that were unlocked before are left out; a tile with nothing left isn't asked about.
+   */
   ask: Array<{ shot: number, cell: [number, number], window: Array<IItem>, candidates: Array<IItem> }>;
   /** Items missing between confident matches: likely not owned, offered to the user as such. */
   gaps: Array<IItem>;
@@ -36,7 +44,7 @@ export class ClosetImportService implements OnDestroy {
   private _worker?: Worker;
   private _nextId = 0;
   private readonly _pending = new Map<number, { resolve: (r: ClosetImportResponse) => void, reject: (e: Error) => void }>();
-  private _preparedType?: ItemType;
+  private _preparedType?: ClosetImportKind;
   private _items: Array<IItem> = [];
 
   static isSupported(): boolean {
@@ -47,15 +55,16 @@ export class ClosetImportService implements OnDestroy {
     this._worker?.terminate();
   }
 
-  /** Items of a type in the order the closet lists them. */
-  getItems(type: ItemType): Array<IItem> {
-    return this._data.itemConfig.items.filter(i => i.type === type && i.icon && this._icons.getIcon(i.icon)).sort(ItemHelper.sorter);
+  /** Items of a tab in the order the game lists them. */
+  getItems(kind: ClosetImportKind): Array<IItem> {
+    if (kind === 'StanceCall') { return [...this.getItems(ItemType.Stance), ...this.getItems(ItemType.Call)]; }
+    return this._data.itemConfig.items.filter(i => i.type === kind && i.icon && this._icons.getIcon(i.icon)).sort(ItemHelper.sorter);
   }
 
-  /** Builds reference features for the type in the worker; screenshots of a batch are all of one closet tab. */
-  async prepare(type: ItemType): Promise<void> {
-    if (this._preparedType === type) { return; }
-    const items = this.getItems(type);
+  /** Builds reference features for the tab in the worker; screenshots of a batch are all of one tab. */
+  async prepare(kind: ClosetImportKind): Promise<void> {
+    if (this._preparedType === kind) { return; }
+    const items = this.getItems(kind);
     const ongoing = ItemHelper.getOngoingItems(this._data);
     const references: Array<ClosetImportReference> = items.map(item => {
       const icon = this._icons.getIcon(item.icon!)!;
@@ -63,19 +72,22 @@ export class ClosetImportService implements OnDestroy {
     });
     this._preparedType = undefined;
     await this.send({ kind: 'prepare', references });
-    this._preparedType = type;
+    this._preparedType = kind;
     this._items = items;
   }
 
-  /** Matches one screenshot against the prepared type. `hint` is the grid of the previous screenshot in the batch. */
+  /** Matches one screenshot against the prepared tab. `hint` is the grid of another screenshot in the batch. */
   async process(file: Blob, hint?: GridHint): Promise<ScreenshotMatch | null> {
     const response = await this.send({ kind: 'process', file, hint });
     return response.kind === 'processed' ? response.result : null;
   }
 
-  /** Processes the screenshots of one closet tab in order and combines them. */
-  async importBatch(type: ItemType, files: Array<Blob>, onProgress?: (done: number, total: number) => void): Promise<ClosetImportResult> {
-    await this.prepare(type);
+  /**
+   * Processes the screenshots of one tab and combines them. Their order doesn't matter and they don't need to
+   * overlap, as long as every row is whole in one of them. `unlocked`: GUIDs the user owned before the import.
+   */
+  async importBatch(kind: ClosetImportKind, files: Array<Blob>, onProgress?: (done: number, total: number) => void, unlocked?: ReadonlySet<string>): Promise<ClosetImportResult> {
+    await this.prepare(kind);
     const shots: Array<ScreenshotMatch | null> = [];
     let hint: GridHint | undefined;
     for (const file of files) {
@@ -84,21 +96,27 @@ export class ClosetImportService implements OnDestroy {
       if (shot) { hint = { px: shot.grid.px, py: shot.grid.py, ox: shot.grid.ox }; }
       onProgress?.(shots.length, files.length);
     }
-    return this.combine(type, shots);
+    return this.combine(kind, shots, unlocked);
   }
 
   /** Batch result from already processed screenshots, e.g. after the user corrected a tile. */
-  combine(type: ItemType, shots: Array<ScreenshotMatch | null>): ClosetImportResult {
-    const items = this._preparedType === type ? this._items : this.getItems(type);
+  combine(kind: ClosetImportKind, shots: Array<ScreenshotMatch | null>, unlocked?: ReadonlySet<string>): ClosetImportResult {
+    const items = this._preparedType === kind ? this._items : this.getItems(kind);
     const ongoing = ItemHelper.getOngoingItems(this._data);
-    const batch = combineBatch(shots, items.map(i => !!ongoing[i.guid]));
+    const batch = combineBatch(shots, items.map(i => !!ongoing[i.guid]), items.map(i => !!unlocked?.has(i.guid)));
     return {
-      type, items, shots,
+      type: kind, items, shots,
       owned: batch.owned.map(r => items[r]),
+      weak: batch.weak.map(r => items[r]),
       checklist: batch.checklist.map(c => ({ item: items[c.item], looksOwned: c.looksOwned })),
-      ask: batch.ask.map(a => ({ shot: a.shot, cell: a.cell, window: items.slice(a.window[0], a.window[1]), candidates: a.candidates.map(r => items[r]) })),
+      ask: batch.ask.map(a => ({ shot: a.shot, cell: a.cell, window: a.window.map(r => items[r]), candidates: a.candidates.map(r => items[r]) })),
       gaps: batch.gaps.map(r => items[r])
     };
+  }
+
+  /** A tile's pitch square in the screenshot's own pixels, e.g. to crop it for the user. */
+  tileRect(match: ScreenshotMatch, cell: [number, number]): { x: number, y: number, width: number, height: number } {
+    return cellRect(match.grid, cell[0], cell[1]);
   }
 
   private send(request: WorkerRequest): Promise<ClosetImportResponse> {

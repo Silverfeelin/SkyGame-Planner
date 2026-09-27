@@ -1,0 +1,30 @@
+:host { display: block; }
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.sk-scene { fill: var(--atmos-bg-elev-3); }
+.sk-panel { fill: color-mix(in oklch, var(--atmos-bg) 88%, transparent); }
+.sk-cat { fill: var(--atmos-hover-bg-strong); }
+.sk-cat.is-lit { fill: var(--atmos-accent); }
+.sk-line { stroke: var(--atmos-line-soft); stroke-width: 1; }
+
+.sk-tile { opacity: 0.8; }
+.sk-tile.tone-0 { fill: var(--atmos-accent); }
+.sk-tile.tone-1 { fill: var(--atmos-violet); }
+.sk-tile.tone-2 { fill: var(--atmos-pink); }
+.sk-tile.tone-3 { fill: var(--atmos-warm); }
+.sk-tile.tone-4 { fill: var(--atmos-good); }
+.sk-tile.is-cut { fill: var(--atmos-warn-accent); opacity: 0.75; }
+
+.sk-mark {
+  fill: none;
+  stroke: var(--atmos-accent);
+  stroke-width: 2;
+}
+
+.sk-frame { stroke-dasharray: 4 3; }

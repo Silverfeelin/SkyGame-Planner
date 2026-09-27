@@ -7,6 +7,7 @@ import { EditorLayoutComponent } from './editor/editor-layout/editor-layout.comp
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { QuickStartComponent } from './components/quick-start/quick-start.component';
 import { ItemsComponent } from './components/item/items.component';
 import { ItemGridComponent } from './components/item/grid/item-grid.component';
 import { ItemPreviewComponent } from './components/item/preview/item-preview.component';
@@ -102,6 +103,7 @@ export const routes: Routes = [
       { path: '', component: DashboardComponent, title: 'Sky Planner' },
       { path: 'privacy', component: PrivacyComponent, title: title('Privacy Policy') },
       { path: 'settings', component: SettingsComponent, title: title('Settings') },
+      { path: 'quick-start', component: QuickStartComponent, title: title('Quick start') },
       { path: 'daily', component: DailyComponent, title: title('Daily') },
       { path: 'news', component: NewsComponent, title: title(`What's new`) },
       { path: 'info', component: InfoComponent, title: title('Info') },

@@ -1,0 +1,98 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-page__intro p { margin: 0; }
+
+.atmos-qs__reassure {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-good);
+
+  mat-icon {
+    flex: none;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-qs__stepper {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+}
+
+.atmos-qs__stepper-btn {
+  flex: 1 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 0;
+  border-radius: var(--atmos-radius-pill);
+  background: transparent;
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  &:hover:not(:disabled) {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+
+  &:disabled {
+    background: transparent;
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  &[aria-current="step"] {
+    background: var(--atmos-active-bg);
+    color: var(--atmos-accent);
+    box-shadow: inset 0 0 0 1px var(--atmos-active-border);
+  }
+}
+
+.atmos-qs__stepper-n {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  background: var(--atmos-chip-bg);
+  border: 1px solid var(--atmos-line-soft);
+
+  mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+  }
+
+  .is-done & {
+    background: var(--atmos-good);
+    border-color: transparent;
+    color: var(--atmos-bg);
+  }
+}
+
+/* Only the current step keeps its label on a phone, so the stepper fits without scrolling. */
+@media (max-width: 599px) {
+  .atmos-qs__stepper-label { display: none; }
+  [aria-current="step"] .atmos-qs__stepper-label { display: inline; }
+}
