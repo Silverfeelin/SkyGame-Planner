@@ -13,12 +13,7 @@ svg {
 .sk-cat.is-lit { fill: var(--atmos-accent); }
 .sk-line { stroke: var(--atmos-line-soft); stroke-width: 1; }
 
-.sk-tile { opacity: 0.8; }
-.sk-tile.tone-0 { fill: var(--atmos-accent); }
-.sk-tile.tone-1 { fill: var(--atmos-violet); }
-.sk-tile.tone-2 { fill: var(--atmos-pink); }
-.sk-tile.tone-3 { fill: var(--atmos-warm); }
-.sk-tile.tone-4 { fill: var(--atmos-good); }
+.sk-tile { fill: var(--atmos-accent); opacity: 0.8; }
 .sk-tile.is-cut { fill: var(--atmos-warn-accent); opacity: 0.75; }
 
 .sk-mark {

@@ -6,7 +6,6 @@ interface SketchTile {
   x: number;
   y: number;
   height: number;
-  tone: number;
   cut: boolean;
 }
 
@@ -38,7 +37,7 @@ export class ClosetSketchComponent {
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < 5; c++) {
         const cut = r === 3;
-        tiles.push({ x: PANEL_X + 7 + c * 15.5, y: 20 + r * 16, height: cut ? 6 : 12, tone: c, cut });
+        tiles.push({ x: PANEL_X + 7 + c * 15.5, y: 20 + r * 16, height: cut ? 6 : 12, cut });
       }
     }
     return tiles;

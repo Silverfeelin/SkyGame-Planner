@@ -60,7 +60,7 @@
     @if (store.openCount(); as open) {
       <div class="atmos-qs__banner atmos-qs__banner--warn">
         <mat-icon>help_outline</mat-icon>
-        <p>{{ open === 1 ? '1 item is' : open + ' items are' }} still marked with a ? and won't be saved.</p>
+        <p>{{ open === 1 ? '1 item is' : open + ' items are' }} still marked with ! or ? and won't be saved unless you mark them as owned.</p>
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="goToStep(1)">Review them</button>
       </div>
     }
@@ -69,7 +69,6 @@
       <div class="atmos-qs-review__kpi"><b>{{ plan().counts.items }}</b><span>new items</span></div>
       <div class="atmos-qs-review__kpi"><b>{{ plan().counts.nodes }}</b><span>spirit tree nodes on the way</span></div>
       <div class="atmos-qs-review__kpi"><b>{{ plan().counts.seasonPasses }}</b><span>season passes</span></div>
-      <div class="atmos-qs-review__kpi is-wing"><b>{{ plan().counts.wingedLights }}</b><span>winged light</span></div>
       <div class="atmos-qs-review__kpi is-wing"><b>{{ plan().counts.wingBuffs }}</b><span>extra wing buffs</span></div>
     </div>
   </section>

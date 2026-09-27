@@ -16,7 +16,6 @@ import { ItemHeartsComponent } from './components/item/heart/item-hearts.compone
 import { ItemCollectionComponent } from './components/item/collection/item-collection.component';
 import { ItemDetailComponent } from './components/item/detail/item-detail.component';
 import { ItemInflationComponent } from './components/item/inflation/item-inflation.component';
-import { ItemUnlockComponent } from './components/item/unlock/item-unlock.component';
 import { ItemUnlockCalculatorComponent } from './components/item/unlock-calculator/item-unlock-calculator.component';
 import { CurrencyComponent } from './components/currency/currency.component';
 import { CurrencySpentComponent } from './components/currency/spent/currency-spent.component';
@@ -155,7 +154,8 @@ export const routes: Routes = [
           /* Legacy path: the field guide was replaced by the item previews page. */
           { path: 'field-guide', redirectTo: 'preview', pathMatch: 'full' },
           { path: 'inflation',  component: ItemInflationComponent,  title: title('Item inflation') },
-          { path: 'unlock',     component: ItemUnlockComponent,     title: title('Quick unlock') },
+          /* Legacy path: quick unlock was replaced by quick start. */
+          { path: 'unlock',     redirectTo: '/quick-start', pathMatch: 'full' },
           { path: 'unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Cost calculator') },
           { path: ':guid',      component: ItemDetailComponent,    title: title('Item') },
         ]

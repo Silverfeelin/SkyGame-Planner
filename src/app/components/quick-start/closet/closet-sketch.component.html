@@ -8,7 +8,7 @@
   <svg [attr.x]="panelX" y="0" [attr.width]="panelW" height="72" overflow="hidden">
     <g [attr.transform]="panelShift">
       @for (tile of tiles(); track $index) {
-        <rect [attr.class]="tile.cut ? 'sk-tile is-cut' : 'sk-tile tone-' + tile.tone"
+        <rect class="sk-tile" [class.is-cut]="tile.cut"
               [attr.x]="tile.x" [attr.y]="tile.y" width="12" [attr.height]="tile.height" rx="3"/>
       }
     </g>

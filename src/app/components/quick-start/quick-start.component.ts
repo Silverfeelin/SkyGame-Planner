@@ -3,7 +3,6 @@ import { MatIcon } from '@angular/material/icon';
 import { QuickStartStore } from './quick-start.store';
 import { StartStepComponent } from './steps/start-step.component';
 import { ClosetStepComponent } from './steps/closet-step.component';
-import { WingedLightStepComponent } from './steps/winged-light-step.component';
 import { QuickStartReviewComponent } from './review/quick-start-review.component';
 
 @Component({
@@ -12,12 +11,12 @@ import { QuickStartReviewComponent } from './review/quick-start-review.component
   styleUrl: './quick-start.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [QuickStartStore],
-  imports: [MatIcon, StartStepComponent, ClosetStepComponent, WingedLightStepComponent, QuickStartReviewComponent]
+  imports: [MatIcon, StartStepComponent, ClosetStepComponent, QuickStartReviewComponent]
 })
 export class QuickStartComponent {
   readonly store = inject(QuickStartStore);
 
-  readonly steps = ['When you started', 'Closet', 'Winged light', 'Check and save'];
+  readonly steps = ['When you started', 'Closet', 'Check and save'];
 
   /** Furthest step opened so far; every step up to it can be revisited from the stepper. */
   readonly reached = signal(0);

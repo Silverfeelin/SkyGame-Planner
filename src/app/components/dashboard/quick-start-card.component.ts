@@ -18,10 +18,10 @@ export class DashboardQuickStartComponent {
   private readonly _data = inject(DataService);
   private readonly _storage = inject(StorageService);
 
-  readonly isVisible = signal(localStorage.getItem(dismissedKey) !== '1' && !this.hasProgress());
+  readonly isVisible = signal(!this._storage.getKey<boolean>(dismissedKey) && !this.hasProgress());
 
   dismiss(): void {
-    localStorage.setItem(dismissedKey, '1');
+    this._storage.setKey(dismissedKey, true);
     this.isVisible.set(false);
   }
 

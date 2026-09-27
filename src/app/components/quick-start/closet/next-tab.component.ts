@@ -37,7 +37,6 @@ export class NextTabComponent {
 
   /** Focus follows to the new tab, since this button goes away with the old panel. */
   open(tab: QuickStartTab): void {
-    if (!this.store.confirmUnsure([this.store.activeTab()])) { return; }
     this.store.activeTab.set(tab.key);
     document.getElementById('qs-tab-' + tab.key)?.focus();
   }

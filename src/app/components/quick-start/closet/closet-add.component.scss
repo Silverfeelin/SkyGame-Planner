@@ -32,6 +32,45 @@
   }
 }
 
+.atmos-qs-example {
+  position: relative;
+  flex: none;
+  padding: 0;
+  border: 1px solid var(--atmos-line-soft);
+  border-radius: var(--atmos-radius-sm);
+  overflow: hidden;
+  background: none;
+  cursor: zoom-in;
+
+  img {
+    display: block;
+    width: 128px;
+    height: auto;
+  }
+
+  span {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 1px 6px 1px 4px;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--atmos-bg) 80%, transparent);
+    color: var(--atmos-text);
+    font-size: 11px;
+  }
+
+  mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+  }
+
+  &:hover img { opacity: 0.85; }
+}
+
 .atmos-qs-drop {
   position: relative;
   display: flex;

@@ -60,7 +60,7 @@ function emoteLevels(name: string): Array<IItem> {
 
 function run(partial: Partial<QuickStartInput>): QuickStartPlan {
   return inferProgress(data, {
-    owned: [], unlocked: new Set(), start: seasons[0], necklaceCovered: false, wingedLightRealms: [],
+    owned: [], unlocked: new Set(), start: seasons[0], necklaceCovered: false,
     sourceOverride: new Map(), wingBuffs: new Set(), conflictHandled: false, ...partial
   });
 }
@@ -287,13 +287,6 @@ scenario('Wing buff from a later visit', () => {
   const late = run({ owned: [mask], start: seasons.at(-1) });
   const lateQ = late.wingBuffQuestions.find(x => x.spirit === botanist);
   check('visits before the start are not offered', !lateQ || lateQ.later.every(v => v.date! >= seasons.at(-1)!.date));
-});
-
-scenario('Winged light', () => {
-  const realm = (sky.realms.items as Array<any>).find(r => r.areas?.some((a: any) => a.wingedLights?.length));
-  const plan = run({ wingedLightRealms: [realm] });
-  const expected = realm.areas.flatMap((a: any) => a.wingedLights ?? []).length;
-  check(`${realm.name}: ${expected} winged light`, plan.wingedLights.length === expected && plan.counts.wingedLights === expected);
 });
 
 scenario('Every item and emote', () => {

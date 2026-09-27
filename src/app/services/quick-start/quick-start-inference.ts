@@ -107,7 +107,6 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
   const seasons = [...summary.values()].sort((a, b) => a.season.date.toMillis() - b.season.date.toMillis());
 
   const seasonPasses = seasons.filter(s => s.pass).map(s => s.season.guid);
-  const wingedLights = distinct(input.wingedLightRealms.flatMap(r => r.areas ?? []).flatMap(a => a.wingedLights ?? []).map(w => w.guid));
 
   return {
     start,
@@ -119,8 +118,7 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
     onTheWay,
     unlock: [...unlock],
     seasonPasses,
-    wingedLights,
-    counts: { items: owned.length, nodes: unlockNodes.size, seasonPasses: seasonPasses.length, wingedLights: wingedLights.length, wingBuffs }
+    counts: { items: owned.length, nodes: unlockNodes.size, seasonPasses: seasonPasses.length, wingBuffs }
   };
 }
 

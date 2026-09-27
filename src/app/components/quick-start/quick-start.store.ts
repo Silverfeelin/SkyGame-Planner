@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy, WritableSignal, computed, inject, signal } from '@angular/core';
 import { DateTime } from 'luxon';
-import { IItem, IRealm, ISeason, ItemSubtype, ItemType } from 'skygame-data';
+import { IItem, ISeason, ItemSubtype, ItemType } from 'skygame-data';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
@@ -59,18 +59,10 @@ export class QuickStartStore implements OnDestroy {
     .filter(s => s.date <= DateTime.now())
     .sort((a, b) => a.date.toMillis() - b.date.toMillis());
 
-  /** Realms with winged light, in the order the game counts them. */
-  readonly realms: Array<IRealm> = this._data.realmConfig.items
-    .filter(r => r.areas?.some(a => a.wingedLights?.length))
-    .map(r => ({ r, order: Math.min(...r.areas!.flatMap(a => a.wingedLights ?? []).map(w => w.order ?? Infinity)) }))
-    .sort((a, b) => a.order - b.order)
-    .map(x => x.r);
-
   readonly step = signal(0);
   readonly startIndex = signal(Math.max(0, this.seasons.length - 1));
   readonly startUnsure = signal(false);
-  readonly activeTab = signal('Cape');
-  readonly wingedLightRealms = signal<ReadonlySet<string>>(new Set());
+  readonly activeTab = signal(QUICK_START_TABS[0].key);
   readonly sourceOverride = signal<ReadonlyMap<string, string>>(new Map());
   readonly wingBuffs = signal<ReadonlySet<string>>(new Set());
   readonly conflictHandled = signal(false);
@@ -146,7 +138,6 @@ export class QuickStartStore implements OnDestroy {
       unlocked: this.unlockedBefore,
       start: this.startUnsure() ? undefined : this.seasons[this.startIndex()],
       necklaceCovered: necklace.stage === 'confirm',
-      wingedLightRealms: this.realms.filter(r => this.wingedLightRealms().has(r.guid)),
       sourceOverride: this.sourceOverride(),
       wingBuffs: this.wingBuffs(),
       conflictHandled: this.conflictHandled()
@@ -255,14 +246,6 @@ export class QuickStartStore implements OnDestroy {
     this.update(key, s => ({ ...s, tiles: s.tiles.map(t => t.state === 'unsure' ? { ...t, state, touched: true } : t) }));
   }
 
-  /** Asks before moving on from tiles still marked "!" or "?"; those aren't saved. */
-  confirmUnsure(keys: ReadonlyArray<string>): boolean {
-    const count = keys.reduce((n, key) => n + this.tab(key)().tiles.filter(t => t.state === 'unsure').length, 0);
-    if (!count) { return true; }
-    const items = count === 1 ? '1 item is' : `${count} items are`;
-    return window.confirm(`${items} still marked with ! or ?. These won't be added unless you mark them as owned.\n\nContinue anyway?`);
-  }
-
   /** Answers an unidentified tile; `pick` null is "None of these". */
   pickAsk(key: string, index: number, pick: IItem | null): void {
     this.update(key, s => {
@@ -302,10 +285,6 @@ export class QuickStartStore implements OnDestroy {
     this.wingBuffs.update(s => { const n = new Set(s); if (on) { n.add(spiritGuid); } else { n.delete(spiritGuid); } return n; });
   }
 
-  toggleRealm(realmGuid: string): void {
-    this.wingedLightRealms.update(s => { const n = new Set(s); if (!n.delete(realmGuid)) { n.add(realmGuid); } return n; });
-  }
-
   /** Moves the start to the given season; attributions depend on it, so overrides are reset. */
   useStart(season: ISeason): void {
     const i = this.seasons.indexOf(season);
@@ -316,15 +295,13 @@ export class QuickStartStore implements OnDestroy {
     this.conflictHandled.set(false);
   }
 
-  /** Only adds progress: one `addUnlocked` batch plus season passes and winged light. */
+  /** Only adds progress: one `addUnlocked` batch plus season passes. */
   save(): void {
     const plan = this.plan();
     const unlock = plan.unlock.filter(g => !this._storage.isUnlocked(g));
     if (unlock.length) { this._storage.addUnlocked(...unlock); }
     const passes = plan.seasonPasses.filter(g => !this._storage.hasSeasonPass(g));
     if (passes.length) { this._storage.addSeasonPasses(...passes); }
-    const lights = plan.wingedLights.filter(g => !this._storage.hasWingedLight(g));
-    if (lights.length) { this._storage.addWingedLights(...lights); }
     this.saved.set(true);
   }
 

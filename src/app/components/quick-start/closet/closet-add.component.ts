@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { QuickStartTab } from '@app/services/quick-start/quick-start.model';
+import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 import { QuickStartStore } from '../quick-start.store';
 import { ClosetSketchComponent, ClosetSketchKind } from './closet-sketch.component';
 import { SCREENSHOT_ACCEPT } from './closet-files';
@@ -17,15 +18,17 @@ interface HowtoStep {
   templateUrl: './closet-add.component.html',
   styleUrl: './closet-add.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ClosetSketchComponent]
+  imports: [MatIcon, ClosetSketchComponent, ImageOverlayComponent]
 })
 export class ClosetAddComponent {
   readonly store = inject(QuickStartStore);
   readonly accept = SCREENSHOT_ACCEPT;
+  readonly exampleSrc = 'assets/images/quick-start-closet-example.webp';
 
   readonly tab = input.required<QuickStartTab>();
 
   readonly dragging = signal(false);
+  readonly showExample = signal(false);
 
   readonly steps = computed<Array<HowtoStep>>(() => {
     const tab = this.tab();

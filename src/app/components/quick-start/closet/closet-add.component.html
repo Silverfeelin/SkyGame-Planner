@@ -7,6 +7,18 @@
     </p>
   </div>
 
+  <div class="atmos-qs__banner atmos-qs__banner--info">
+    <mat-icon>light_mode</mat-icon>
+    <p>
+      <strong>Stand in front of a light, plain background.</strong>
+      The closet is see-through, so busy or dark scenery behind it makes items harder to recognise. Zooming in and facing a wall helps.
+    </p>
+    <button type="button" class="atmos-qs-example atmos-focus-ring" aria-label="Show an example screenshot" (click)="showExample.set(true)">
+      <img [src]="exampleSrc" alt="" width="128" height="71" loading="lazy"/>
+      <span><mat-icon>zoom_in</mat-icon>Example</span>
+    </button>
+  </div>
+
   <ol class="atmos-qs-howto">
     @for (step of steps(); track step.kind) {
       <li class="atmos-qs-howto__step">
@@ -34,6 +46,10 @@
       <mat-icon>edit</mat-icon>Mark items by hand
     </button>
   </div>
+
+  @if (showExample()) {
+    <app-image-overlay [src]="exampleSrc" alt="Closet screenshot taken while facing a plain, light wall" (close)="showExample.set(false)"/>
+  }
 } @else {
   <div class="atmos-qs__banner atmos-qs__banner--info">
     <mat-icon>info</mat-icon>

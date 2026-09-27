@@ -46,7 +46,7 @@ export class QuickStartReviewComponent {
   readonly onTheWayShown = ON_THE_WAY_SHOWN;
 
   readonly plan = this.store.plan;
-  readonly empty = computed(() => this.store.ownedNew().length === 0 && this.store.wingedLightRealms().size === 0);
+  readonly empty = computed(() => this.store.ownedNew().length === 0);
 
   /** Hidden once the player chose to keep their start, even before the engine reruns. */
   readonly conflict = computed(() => this.store.conflictHandled() ? undefined : this.plan().conflict);

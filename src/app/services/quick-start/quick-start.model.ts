@@ -1,4 +1,4 @@
-import { IItem, INode, IRealm, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
+import { IItem, INode, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
 import { DateTime } from 'luxon';
 
 export type QuickStartTabKind = 'closet' | 'emote' | 'stanceCall' | 'music';
@@ -155,8 +155,6 @@ export interface QuickStartInput {
   start?: ISeason;
   /** The Necklace tab was confirmed, so a missing pendant means no season pass. */
   necklaceCovered: boolean;
-  /** Realms where the player collected all winged light. */
-  wingedLightRealms: ReadonlyArray<IRealm>;
   /** Item GUID → SourceOption.key. */
   sourceOverride: ReadonlyMap<string, string>;
   /** Spirit GUIDs whose wing buff question was answered yes. */
@@ -180,7 +178,5 @@ export interface QuickStartPlan {
   unlock: Array<string>;
   /** Season GUIDs for `addSeasonPasses`. */
   seasonPasses: Array<string>;
-  /** Winged light GUIDs for `addWingedLights`. */
-  wingedLights: Array<string>;
-  counts: { items: number, nodes: number, seasonPasses: number, wingedLights: number, wingBuffs: number };
+  counts: { items: number, nodes: number, seasonPasses: number, wingBuffs: number };
 }

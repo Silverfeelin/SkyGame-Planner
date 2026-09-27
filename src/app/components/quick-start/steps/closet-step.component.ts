@@ -62,17 +62,8 @@ export class ClosetStepComponent {
 
   readonly anyNew = computed(() => Object.values(this.store.status()).some(s => s.fresh > 0));
 
-  select(key: string): boolean {
-    const current = this.store.activeTab();
-    if (key === current) { return true; }
-    if (!this.store.confirmUnsure([current])) { return false; }
+  select(key: string): void {
     this.store.activeTab.set(key);
-    return true;
-  }
-
-  forward(): void {
-    if (!this.store.confirmUnsure(this.store.tabs.map(t => t.key))) { return; }
-    this.store.step.update(s => s + 1);
   }
 
   /** Arrow keys move between tabs; the list is vertical on desktop and a horizontal strip on smaller screens. */
@@ -88,7 +79,7 @@ export class ClosetStepComponent {
       default: return;
     }
     event.preventDefault();
-    if (!this.select(tabs[next].key)) { return; }
+    this.select(tabs[next].key);
     const buttons = (event.currentTarget as HTMLElement).querySelectorAll<HTMLElement>('[role="tab"]');
     buttons[next]?.focus();
   }
