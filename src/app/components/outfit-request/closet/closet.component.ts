@@ -6,8 +6,6 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '@app/services/data.service';
 import { IconService } from '@app/services/icon.service';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { TreeHelper } from '@app/helpers/tree-helper';
-import { DateHelper } from '@app/helpers/date-helper';
 import { IItem, ItemType, ItemSize } from 'skygame-data';
 import { ClosetStateService, RequestColor } from './closet-state.service';
 import { ClosetSerializer, IOutfitRequest } from './closet-serializer';
@@ -187,30 +185,7 @@ export class ClosetComponent implements OnDestroy {
       }
     }
 
-    // Ongoing items
-    const ongoingItems: Record<string, IItem> = {};
-    const regularSpirits = this._data.spiritConfig.items.filter(s => s.type === 'Regular' || s.type === 'Elder');
-    regularSpirits.forEach(spirit => TreeHelper.getItems(spirit.tree).forEach(item => ongoingItems[item.guid] = item));
-
-    const season = DateHelper.getActive(this._data.seasonConfig.items);
-    season?.spirits?.forEach(spirit => TreeHelper.getItems(spirit.tree).forEach(item => ongoingItems[item.guid] = item));
-    season?.shops?.forEach(shop => {
-      shop.iaps?.forEach(iap => iap.items?.forEach(item => ongoingItems[item.guid] = item));
-      shop.itemList?.items?.forEach(node => ongoingItems[node.item.guid] = node.item);
-    });
-    this._data.eventConfig.items.forEach(event => {
-      const instance = DateHelper.getActive(event.instances);
-      instance?.spirits?.forEach(spirit => TreeHelper.getItems(spirit.tree).forEach(item => ongoingItems[item.guid] = item));
-      instance?.shops?.forEach(shop => {
-        shop.iaps?.forEach(iap => iap.items?.forEach(item => ongoingItems[item.guid] = item));
-        shop.itemList?.items?.forEach(node => ongoingItems[node.item.guid] = node.item);
-      });
-    });
-    TreeHelper.getItems(DateHelper.getActive(this._data.travelingSpiritConfig.items)?.tree)
-      .forEach(item => ongoingItems[item.guid] = item);
-    DateHelper.getActive(this._data.returningSpiritsConfig.items)?.spirits?.forEach(spirit =>
-      TreeHelper.getItems(spirit.tree).forEach(item => ongoingItems[item.guid] = item)
-    );
+    const ongoingItems = ItemHelper.getOngoingItems(this._data);
 
     // Add all catalog items
     for (const item of this._data.itemConfig.items) {

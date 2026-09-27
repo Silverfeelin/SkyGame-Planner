@@ -16,6 +16,8 @@
     "sitemap-build": "node ./scripts/build/sitemap.js",
     "icon-sheet": "tsx ./scripts/icon-sheet.ts",
     "item-id": "node ./scripts/item-id.js",
+    "closet-verify": "esbuild scripts/closet-import/verify.ts --bundle --platform=node --format=esm --packages=external --log-level=warning --outfile=node_modules/.cache/closet-import/verify.mjs && node node_modules/.cache/closet-import/verify.mjs",
+    "quick-start-verify": "esbuild scripts/quick-start/verify.ts --bundle --platform=node --format=esm --packages=external --log-level=warning --outfile=node_modules/.cache/quick-start/verify.mjs && node node_modules/.cache/quick-start/verify.mjs",
     "test": "ng test"
   },
   "private": true,

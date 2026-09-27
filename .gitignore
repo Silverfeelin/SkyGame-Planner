@@ -62,6 +62,7 @@ Thumbs.db
 
 # Claude
 .claude/data/**
+.claude/handoffs/**
 
 # Other
 #/scripts
