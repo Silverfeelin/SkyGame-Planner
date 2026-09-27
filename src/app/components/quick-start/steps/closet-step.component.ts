@@ -53,6 +53,7 @@ export class ClosetStepComponent {
         if (!fresh && (tab.kind === 'music' || tab.kind === 'emote')) { return { tab, status: 'Not started', tone: 'plain' }; }
         return { tab, status: `${fresh} new`, tone: 'done' };
       }
+      if (s.stage === 'check' && s.result?.offTab.length) { return { tab, status: 'Wrong tab?', tone: 'warn' }; }
       if (s.shots.length) {
         return { tab, status: `${s.shots.length} screenshot${s.shots.length === 1 ? '' : 's'}`, tone: 'plain' };
       }

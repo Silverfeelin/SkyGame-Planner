@@ -22,6 +22,10 @@
   option { background: var(--atmos-card-bg-solid); }
 }
 
+.atmos-qs-shot.is-off { border-color: var(--qs-warn-border); }
+
+.atmos-qs-shot__status.is-warn { color: var(--qs-warn); }
+
 .atmos-qs-check__shot-row {
   flex-wrap: nowrap;
   gap: 2px;

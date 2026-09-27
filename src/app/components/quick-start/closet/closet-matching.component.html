@@ -9,7 +9,9 @@
 <ul class="atmos-qs-shots">
   @for (shot of state().shots; track shot.url; let i = $index) {
     <li class="atmos-qs-shot">
-      <div class="atmos-qs-shot__img"><img [src]="shot.url" alt=""/></div>
+      <button type="button" class="atmos-qs-shot__img atmos-focus-ring" [attr.aria-label]="'Show ' + shot.file.name" (click)="preview.set(shot)">
+        <img [src]="shot.url" alt=""/>
+      </button>
       <div class="atmos-qs-shot__status" [class.is-ok]="i < done()">
         @if (i < done()) {
           <mat-icon>check</mat-icon>Matched
@@ -22,3 +24,7 @@
     </li>
   }
 </ul>
+
+@if (preview(); as shot) {
+  <app-image-overlay [src]="shot.url" [alt]="shot.file.name" (close)="preview.set(null)"/>
+}

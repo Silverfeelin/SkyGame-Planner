@@ -30,11 +30,11 @@ export const QUICK_START_TABS: ReadonlyArray<QuickStartTab> = [
   { key: 'Music', label: 'Music sheets', kind: 'music', types: [ItemType.Music] }
 ];
 
-/** owned: accent ring + tick; unsure: orange "!" or "?"; no: not owned; lock: unlocked before quick start. */
+/** owned: accent ring + tick; unsure: orange "!"; no: not owned; lock: unlocked before quick start. */
 export type TileState = 'owned' | 'unsure' | 'no' | 'lock';
 
-/** match: low confidence match ("!"); unlock: matched, but it may only be a preview of a locked item ("?"). */
-export type UnsureReason = 'match' | 'unlock';
+/** match: low confidence match ("!"). */
+export type UnsureReason = 'match';
 
 export interface QuickStartTile {
   item: IItem;
@@ -43,6 +43,11 @@ export interface QuickStartTile {
   reason?: UnsureReason;
   /** Set once the user tapped an unsure tile; later taps switch between owned and no. */
   touched?: boolean;
+  /**
+   * Owned or not was guessed from how the tile looks ("?"): the game also shows dimmed previews of items the
+   * player doesn't own. Cleared once the user taps the tile.
+   */
+  guess?: boolean;
 }
 
 export interface QuickStartAsk {

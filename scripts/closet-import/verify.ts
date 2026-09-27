@@ -128,7 +128,8 @@ async function main(): Promise<void> {
       diff('checklist', batch.checklist.map(x => `${name(x.item)}=${x.looksOwned}`), expected.checklist.map(([n, g]: [string, boolean]) => `${n}=${g}`)),
       diff('ask', batch.ask.map(a => `${a.cell}`), expected.ask.map((a: any) => `${a.cell}`)),
       diff('gaps', batch.gaps.map(name), expected.gaps),
-      diff('weak', batch.weak.map(name), expected.weak ?? [])
+      diff('weak', batch.weak.map(name), expected.weak ?? []),
+      diff('offTab', batch.offTab.map(s => c.shots[s]), [])
     ].every(Boolean);
     batch.ask.forEach(a => console.log(`    ask ${a.cell}: window ${a.window.length} -> ${a.candidates.map(name).join(', ')}`));
     console.log(`  ${ok ? 'OK' : 'MISMATCH'}`);

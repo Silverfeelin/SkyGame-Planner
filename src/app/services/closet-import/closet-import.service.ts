@@ -31,6 +31,8 @@ export interface ClosetImportResult {
   ask: Array<{ shot: number, cell: [number, number], window: Array<IItem>, candidates: Array<IItem> }>;
   /** Items missing between confident matches: likely not owned, offered to the user as such. */
   gaps: Array<IItem>;
+  /** Screenshots, as indices in `shots`, that barely match the tab: likely of another tab. */
+  offTab: Array<number>;
 }
 
 /** Recognises owned cosmetics in closet screenshots. The image work runs in a web worker. */
@@ -110,7 +112,8 @@ export class ClosetImportService implements OnDestroy {
       weak: batch.weak.map(r => items[r]),
       checklist: batch.checklist.map(c => ({ item: items[c.item], looksOwned: c.looksOwned })),
       ask: batch.ask.map(a => ({ shot: a.shot, cell: a.cell, window: a.window.map(r => items[r]), candidates: a.candidates.map(r => items[r]) })),
-      gaps: batch.gaps.map(r => items[r])
+      gaps: batch.gaps.map(r => items[r]),
+      offTab: batch.offTab
     };
   }
 

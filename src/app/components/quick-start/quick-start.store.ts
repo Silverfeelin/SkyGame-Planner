@@ -25,6 +25,7 @@ export interface TabState {
   /** Screenshots matched so far. */
   progress: number;
   error?: string;
+  /** Set in the confirm stage, and in the check stage while held back because some screenshots barely match the tab. */
   result?: ClosetImportResult;
   /** Closet order. Empty for the emote tab. */
   tiles: Array<QuickStartTile>;
@@ -35,7 +36,7 @@ export interface TabState {
 }
 
 export interface TabStatus {
-  /** Tiles still marked "!" or "?", unanswered asks, or unresolved emotes. */
+  /** Tiles still marked "!", unanswered asks, or unresolved emotes. */
   open: number;
   /** New owned items, or emotes with new levels. */
   fresh: number;
@@ -128,7 +129,7 @@ export class QuickStartStore implements OnDestroy {
     return result;
   });
 
-  /** Items still marked "!" or "?" (and unanswered asks, unresolved emotes); these aren't saved. */
+  /** Items still marked "!" (and unanswered asks, unresolved emotes); these aren't saved. */
   readonly openCount = computed(() => Object.values(this.status()).reduce((n, s) => n + s.open, 0));
 
   readonly plan = computed<QuickStartPlan>(() => {
@@ -165,14 +166,14 @@ export class QuickStartStore implements OnDestroy {
   addFiles(key: string, files: Iterable<File>): void {
     const added = [...files].filter(f => f.type.startsWith('image/')).map(file => ({ file, url: URL.createObjectURL(file) }));
     if (!added.length) { return; }
-    this.update(key, s => ({ ...s, shots: [...s.shots, ...added], stage: 'check', manual: false, error: undefined }));
+    this.update(key, s => ({ ...s, shots: [...s.shots, ...added], stage: 'check', manual: false, error: undefined, result: undefined }));
   }
 
   removeShot(key: string, index: number): void {
     this.update(key, s => {
       URL.revokeObjectURL(s.shots[index].url);
       const shots = s.shots.filter((_, i) => i !== index);
-      return { ...s, shots, stage: shots.length ? 'check' : 'add' };
+      return { ...s, shots, stage: shots.length ? 'check' : 'add', result: undefined };
     });
   }
 
@@ -203,14 +204,36 @@ export class QuickStartStore implements OnDestroy {
       const result = await this._closetImport.importBatch(this.importKind(def), files,
         done => this.update(key, s => ({ ...s, progress: done })), this.unlockedBefore);
       if (this.tab(key)().stage !== 'matching') { return; }
-      const ask = await Promise.all(result.ask.map(async a => ({
-        shot: a.shot, cell: a.cell, candidates: a.candidates, pick: undefined, crop: await this.crop(files[a.shot], result, a.shot, a.cell)
-      } as QuickStartAsk)));
-      this.update(key, s => ({ ...s, stage: 'confirm', result, tiles: this.tilesFromResult(result), ask }));
+      // a screenshot of another tab would turn every tile into a question, so the user decides first
+      if (result.offTab.length) {
+        this.update(key, s => ({ ...s, stage: 'check', result }));
+        return;
+      }
+      await this.confirm(key, result);
     } catch (e) {
       console.error(e);
       this.update(key, s => ({ ...s, stage: 'check', error: 'Matching failed. Try again, or mark the items by hand.' }));
     }
+  }
+
+  /** "Continue anyway": uses the held back result as it is. */
+  async acceptOffTab(key: string): Promise<void> {
+    const result = this.tab(key)().result;
+    if (result) { await this.confirm(key, result); }
+  }
+
+  /** Removes the screenshots that barely match and continues with the rest, without matching them again. */
+  async removeOffTab(key: string): Promise<void> {
+    const s = this.tab(key)();
+    if (!s.result) { return; }
+    const off = new Set(s.result.offTab);
+    const keep = (_: unknown, i: number) => !off.has(i);
+    const shots = s.shots.filter(keep);
+    if (!shots.length) { this.clearShots(key); return; }
+    s.shots.forEach((x, i) => off.has(i) && URL.revokeObjectURL(x.url));
+    const result = this._closetImport.combine(s.result.type, s.result.shots.filter(keep), this.unlockedBefore);
+    this.update(key, t => ({ ...t, shots }));
+    await this.confirm(key, result);
   }
 
   /* ---------- Manual ---------- */
@@ -237,7 +260,7 @@ export class QuickStartStore implements OnDestroy {
       if (!t || t.state === 'lock') { return s; }
       const state: TileState = t.state === 'owned' ? 'no' : 'owned';
       const tiles = s.tiles.slice();
-      tiles[index] = { ...t, state, touched: true };
+      tiles[index] = { ...t, state, touched: true, guess: false };
       return { ...s, tiles };
     });
   }
@@ -254,7 +277,7 @@ export class QuickStartStore implements OnDestroy {
       ask[index] = { ...a, pick };
       const candidates = new Set(a.candidates.map(c => c.guid));
       const tiles = s.tiles.map(t => candidates.has(t.item.guid) && t.state !== 'lock'
-        ? { ...t, state: (t.item === pick ? 'owned' : 'no') as TileState, touched: true }
+        ? { ...t, state: (t.item === pick ? 'owned' : 'no') as TileState, touched: true, guess: false }
         : t);
       return { ...s, ask, tiles };
     });
@@ -323,6 +346,14 @@ export class QuickStartStore implements OnDestroy {
     return state;
   }
 
+  private async confirm(key: string, result: ClosetImportResult): Promise<void> {
+    const files = this.tab(key)().shots.map(s => s.file);
+    const ask = await Promise.all(result.ask.map(async a => ({
+      shot: a.shot, cell: a.cell, candidates: a.candidates, pick: undefined, crop: await this.crop(files[a.shot], result, a.shot, a.cell)
+    } as QuickStartAsk)));
+    this.update(key, s => ({ ...s, stage: 'confirm', result, tiles: this.tilesFromResult(result), ask }));
+  }
+
   private importKind(tab: QuickStartTab): ClosetImportKind {
     return tab.kind === 'stanceCall' ? 'StanceCall' : tab.types[0];
   }
@@ -336,10 +367,11 @@ export class QuickStartStore implements OnDestroy {
   private tilesFromResult(result: ClosetImportResult): Array<QuickStartTile> {
     const owned = new Set(result.owned.map(i => i.guid));
     const weak = new Set(result.weak.map(i => i.guid));
-    const checklist = new Set(result.checklist.map(c => c.item.guid));
+    const checklist = new Map(result.checklist.map(c => [c.item.guid, c.looksOwned]));
     return result.items.map(item => {
       if (this.isLocked(item)) { return { item, state: 'lock' }; }
-      if (checklist.has(item.guid)) { return { item, state: 'unsure', reason: 'unlock' }; }
+      const looksOwned = checklist.get(item.guid);
+      if (looksOwned !== undefined) { return { item, state: looksOwned ? 'owned' : 'no', guess: true }; }
       if (weak.has(item.guid)) { return { item, state: 'unsure', reason: 'match' }; }
       return { item, state: owned.has(item.guid) ? 'owned' : 'no' };
     });

@@ -46,8 +46,8 @@
   <span class="atmos-qs__label">{{ fresh() }} new · {{ lockCount() }} already unlocked</span>
   <span class="atmos-qs__spacer"></span>
   @if (unsureCount()) {
-    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markAllUnsure(tab().key, 'owned')">Mark all ! and ? as owned</button>
-    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markAllUnsure(tab().key, 'no')">Mark all ! and ? as not owned</button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markAllUnsure(tab().key, 'owned')">Mark all ! as owned</button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markAllUnsure(tab().key, 'no')">Mark all ! as not owned</button>
   }
 </div>
 
@@ -55,8 +55,9 @@
   <p class="atmos-qs__sub">Tap the items you own. Items with a lock are already unlocked in Sky Planner.</p>
 } @else {
   <p class="atmos-qs__sub">
-    Tap an item to change it. Items with a <strong class="atmos-qs-confirm__q">!</strong> may be matched wrong, and items with a
-    <strong class="atmos-qs-confirm__q">?</strong> may only be a preview of an item you don't have yet.
+    Tap an item to change it. Items with a <strong class="atmos-qs-confirm__q">!</strong> may be matched wrong. The game also shows
+    previews of some items you don't have yet; for those we guessed from how the tile looks and marked them with a
+    <strong class="atmos-qs-confirm__q">?</strong>.
   </p>
 }
 
@@ -79,10 +80,11 @@
           <app-item-icon [item]="e.tile.item" size="medium" [opaque]="e.tile.state !== 'no'"/>
           @switch (e.tile.state) {
             @case ('owned') { <span class="atmos-tile__check" aria-hidden="true">✓</span> }
-            @case ('unsure') {
-              <span class="atmos-qs-tile__badge" aria-hidden="true"><mat-icon>{{ e.tile.reason === 'unlock' ? 'question_mark' : 'priority_high' }}</mat-icon></span>
-            }
+            @case ('unsure') { <span class="atmos-qs-tile__badge" aria-hidden="true"><mat-icon>priority_high</mat-icon></span> }
             @case ('lock') { <span class="atmos-qs-tile__badge" aria-hidden="true"><mat-icon>lock</mat-icon></span> }
+          }
+          @if (e.tile.guess) {
+            <span class="atmos-qs-tile__badge atmos-qs-tile__badge--guess" aria-hidden="true"><mat-icon>question_mark</mat-icon></span>
           }
         </button>
       } @empty {
@@ -95,7 +97,7 @@
 <div class="atmos-qs-legend" aria-label="Legend">
   <span><i class="is-owned"></i>Owned</span>
   <span><i class="is-unsure"><mat-icon>priority_high</mat-icon></i>Low confidence match</span>
-  <span><i class="is-unsure"><mat-icon>question_mark</mat-icon></i>Might not be unlocked</span>
+  <span><i class="is-guess"><mat-icon>question_mark</mat-icon></i>Guessed, may be a preview</span>
   <span><i></i>Not owned</span>
   <span><i class="is-lock"></i>Already unlocked</span>
 </div>

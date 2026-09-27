@@ -126,6 +126,16 @@
     }
   }
 
+  button.atmos-qs-shot__img {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: zoom-in;
+
+    &:hover img { opacity: 0.85; }
+  }
+
   .atmos-qs-shot__name {
     flex: 1;
     min-width: 0;

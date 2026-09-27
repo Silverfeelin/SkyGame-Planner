@@ -27,8 +27,7 @@ const STATE_LABEL: Record<QuickStartTile['state'], string> = {
 };
 
 const UNSURE_LABEL: Record<UnsureReason, string> = {
-  match: 'low confidence match',
-  unlock: 'might not be unlocked'
+  match: 'low confidence match'
 };
 
 @Component({
@@ -51,7 +50,9 @@ export class ClosetConfirmComponent {
 
   readonly groups = computed<Array<TileGroup>>(() => {
     const entries = this.state().tiles.map((tile, index) => {
-      const status = tile.state === 'unsure' && tile.reason ? UNSURE_LABEL[tile.reason] : STATE_LABEL[tile.state];
+      const status = tile.state === 'unsure' && tile.reason ? UNSURE_LABEL[tile.reason]
+        : tile.guess ? `probably ${STATE_LABEL[tile.state]}`
+        : STATE_LABEL[tile.state];
       return { tile, index, label: `${tile.item.name}: ${status}` };
     });
     if (this.tab().kind !== 'stanceCall') { return [{ entries }]; }

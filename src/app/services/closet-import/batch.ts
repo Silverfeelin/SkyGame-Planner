@@ -16,6 +16,11 @@ export const FIT_FLOOR = 0.4;
 const SKIP = 0.003;
 /** Candidates offered per tile that needs the user. */
 const SHOWN = 5;
+/**
+ * A screenshot with a smaller share of confident tiles likely shows another tab. On the fixtures the right tab
+ * scores 0.9 or more and a wrong one at most 0.02, even outfits against outfits with shoes.
+ */
+export const OFF_TAB = 0.25;
 
 /** From `low` at 2 items to `high` at RELAX_MAX, linear in log w: each item ruled out lowers the bar. */
 function byWindow(w: number, low: number, high: number): number {
@@ -62,6 +67,8 @@ export interface BatchResult {
   /** `window`: the items the tile can still be, in order; `candidates`: the best of those. */
   ask: Array<{ shot: number, cell: [number, number], window: Array<number>, candidates: Array<number> }>;
   gaps: Array<number>;
+  /** Screenshots in which few tiles matched confidently. */
+  offTab: Array<number>;
 }
 
 // #region Alignment
@@ -207,7 +214,8 @@ export function combineBatch(shots: Array<ScreenshotMatch | null>, ongoing: Arra
   for (const [lo, hi] of merged) {
     for (let r = lo; r <= hi; r++) { if (!matched.has(r) && !unsure.has(r) && !unlocked[r]) { gaps.push(r); } }
   }
-  return { owned, weak, checklist, ask, gaps };
+  const offTab = shots.flatMap((shot, s) => shot?.tiles.length && shot.tiles.filter(t => t.sure).length < OFF_TAB * shot.tiles.length ? [s] : []);
+  return { owned, weak, checklist, ask, gaps, offTab };
 }
 
 /**

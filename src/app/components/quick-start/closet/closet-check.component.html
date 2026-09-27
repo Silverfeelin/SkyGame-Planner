@@ -2,6 +2,28 @@
   Check that these are all from the {{ tab().label.toLowerCase() }} tab. They can be in any order.
 </p>
 
+@if (offTab().size; as off) {
+  <div class="atmos-qs__banner atmos-qs__banner--warn" role="alert">
+    <mat-icon>warning</mat-icon>
+    @if (allOffTab()) {
+      <p>
+        <strong>{{ off === 1 ? "This screenshot doesn't" : "These screenshots don't" }} look like the {{ tab().label.toLowerCase() }} tab.</strong>
+        Almost none of the items in {{ off === 1 ? 'it' : 'them' }} matched.
+        @if (tab().kind === 'closet') { If {{ off === 1 ? 'it shows' : 'they show' }} another tab, pick it below. }
+      </p>
+    } @else {
+      <p>
+        <strong>{{ off }} of {{ state().shots.length }} screenshots {{ off === 1 ? "doesn't" : "don't" }} look like the {{ tab().label.toLowerCase() }} tab.</strong>
+        Almost none of the items in {{ off === 1 ? 'it' : 'them' }} matched. {{ off === 1 ? "It's" : "They're" }} marked below.
+      </p>
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--active" (click)="store.removeOffTab(tab().key)">
+        Remove {{ off === 1 ? 'it' : 'them' }} and continue
+      </button>
+    }
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.acceptOffTab(tab().key)">Continue anyway</button>
+  </div>
+}
+
 @if (tab().kind === 'closet') {
   <div class="atmos-qs__row atmos-qs-check__type">
     <label for="qs-shots-type">These screenshots show</label>
@@ -25,8 +47,13 @@
 
 <ul class="atmos-qs-shots">
   @for (shot of state().shots; track shot.url; let i = $index) {
-    <li class="atmos-qs-shot">
-      <div class="atmos-qs-shot__img"><img [src]="shot.url" [alt]="'Screenshot ' + (i + 1)"/></div>
+    <li class="atmos-qs-shot" [class.is-off]="offTab().has(i) && !allOffTab()">
+      <button type="button" class="atmos-qs-shot__img atmos-focus-ring" [attr.aria-label]="'Show ' + shot.file.name" (click)="preview.set(shot)">
+        <img [src]="shot.url" alt=""/>
+      </button>
+      @if (offTab().has(i) && !allOffTab()) {
+        <div class="atmos-qs-shot__status is-warn"><mat-icon>warning</mat-icon>Not the {{ tab().label.toLowerCase() }} tab?</div>
+      }
       <div class="atmos-qs__row atmos-qs-check__shot-row">
         <span class="atmos-qs-shot__name" [attr.title]="shot.file.name">{{ shot.file.name }}</span>
         <button type="button" class="atmos-icon-btn atmos-focus-ring" [attr.aria-label]="'Remove ' + shot.file.name"
@@ -48,8 +75,14 @@
 <div class="atmos-qs__row">
   <span class="atmos-qs__spacer"></span>
   <button type="button" class="atmos-btn" (click)="store.clearShots(tab().key)">Start over</button>
-  <button type="button" class="atmos-btn atmos-btn--active" [disabled]="!state().shots.length"
-          (click)="store.match(tab().key)">
-    Match {{ state().shots.length }} screenshot{{ state().shots.length === 1 ? '' : 's' }}<mat-icon>arrow_forward</mat-icon>
-  </button>
+  @if (!state().result) {
+    <button type="button" class="atmos-btn atmos-btn--active" [disabled]="!state().shots.length"
+            (click)="store.match(tab().key)">
+      Match {{ state().shots.length }} screenshot{{ state().shots.length === 1 ? '' : 's' }}<mat-icon>arrow_forward</mat-icon>
+    </button>
+  }
 </div>
+
+@if (preview(); as shot) {
+  <app-image-overlay [src]="shot.url" [alt]="shot.file.name" (close)="preview.set(null)"/>
+}

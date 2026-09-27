@@ -60,7 +60,7 @@
     @if (store.openCount(); as open) {
       <div class="atmos-qs__banner atmos-qs__banner--warn">
         <mat-icon>help_outline</mat-icon>
-        <p>{{ open === 1 ? '1 item is' : open + ' items are' }} still marked with ! or ? and won't be saved unless you mark them as owned.</p>
+        <p>{{ open === 1 ? '1 item is' : open + ' items are' }} still marked with ! and won't be saved unless you mark them as owned.</p>
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="goToStep(1)">Review them</button>
       </div>
     }
