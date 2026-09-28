@@ -202,7 +202,7 @@ export class QuickStartReviewComponent {
     return {
       guid: q.iap.guid,
       name: q.iap.name ?? names(q.iap.items ?? []),
-      detail: `You have ${names(q.owned)}. It also has ${names(q.missing)}.${when ? ` From ${when}.` : ''}`,
+      detail: `You have ${names(q.owned)}. You should also have ${names(q.missing)}.${when ? ` From ${when}.` : ''}`,
       removeLabel: q.owned.length === 1 ? `Leave out ${this.itemName(q.owned[0])}` : `Leave out ${q.owned.length} items`,
       choice: q.choice
     };
