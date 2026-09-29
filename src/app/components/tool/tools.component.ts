@@ -29,6 +29,15 @@ interface IToolLink {
 export class ToolsComponent {
   readonly cards: ReadonlyArray<IToolCard> = [
     {
+      title: 'Quick start',
+      imageUrl: '/assets/images/quick-start.webp',
+      icon: 'auto_awesome',
+      description: 'Add screenshots of your closet, or mark items by hand, and we\'ll work out which items, spirits and seasons you already have.',
+      links: [
+        { icon: 'auto_awesome', label: 'Set up my progress', link: '/quick-start' }
+      ]
+    },
+    {
       title: 'Outfit request',
       imageUrl: '/assets/images/outfit-request.webp',
       icon: 'checkroom',
