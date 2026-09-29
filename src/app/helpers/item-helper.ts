@@ -1,5 +1,4 @@
 import { ItemType, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason, IShop, ISpiritTree } from 'skygame-data';
-import { DateTime } from 'luxon';
 import { TreeHelper } from './tree-helper';
 import { DateHelper } from './date-helper';
 import type { DataService } from '@app/services/data.service';
@@ -81,7 +80,7 @@ export class ItemHelper {
    * Items the game can show in the closet without the player owning them, keyed by GUID:
    * regular and elder spirit trees plus everything in the active season, events, traveling spirit and returning spirits.
    */
-  static getOngoingItems(data: OngoingData, now = DateTime.now()): Record<string, IItem> {
+  static getOngoingItems(data: OngoingData): Record<string, IItem> {
     const ongoingItems: Record<string, IItem> = {};
     const addTree = (tree?: ISpiritTree) => TreeHelper.getItems(tree).forEach(item => ongoingItems[item.guid] = item);
     const addShop = (shop: IShop) => {
@@ -90,16 +89,16 @@ export class ItemHelper {
     };
 
     data.spiritConfig.items.filter(s => s.type === 'Regular' || s.type === 'Elder').forEach(spirit => addTree(spirit.tree));
-    const season = DateHelper.getActive(data.seasonConfig.items, now);
+    const season = DateHelper.getActive(data.seasonConfig.items);
     season?.spirits?.forEach(spirit => addTree(spirit.tree));
     season?.shops?.forEach(addShop);
     data.eventConfig.items.forEach(event => {
-      const instance = DateHelper.getActive(event.instances, now);
+      const instance = DateHelper.getActive(event.instances);
       instance?.spirits?.forEach(spirit => addTree(spirit.tree));
       instance?.shops?.forEach(addShop);
     });
-    addTree(DateHelper.getActive(data.travelingSpiritConfig.items, now)?.tree);
-    DateHelper.getActive(data.returningSpiritsConfig.items, now)?.spirits?.forEach(spirit => addTree(spirit.tree));
+    addTree(DateHelper.getActive(data.travelingSpiritConfig.items)?.tree);
+    DateHelper.getActive(data.returningSpiritsConfig.items)?.spirits?.forEach(spirit => addTree(spirit.tree));
     return ongoingItems;
   }
 

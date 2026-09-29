@@ -31,7 +31,7 @@
 
   &:hover { background: var(--atmos-hover-bg); }
 
-  &[aria-selected="true"] {
+  &.is-selected {
     background: var(--atmos-active-bg);
     border-color: var(--atmos-active-border);
   }
@@ -43,7 +43,7 @@
 }
 
 .atmos-qs-closet__tab-status {
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-mute);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;

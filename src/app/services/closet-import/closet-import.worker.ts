@@ -17,7 +17,7 @@ async function decode(blob: Blob): Promise<RgbaImage> {
   return ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
-async function prepare(references: Array<ClosetImportReference>): Promise<number> {
+async function prepare(references: Array<ClosetImportReference>): Promise<void> {
   const sheets = new Map<string, Promise<RgbaImage>>();
   const load = (url: string) => {
     if (!sheets.has(url)) { sheets.set(url, fetch(url).then(r => r.blob()).then(decode)); }
@@ -32,14 +32,14 @@ async function prepare(references: Array<ClosetImportReference>): Promise<number
     ongoing.push(ref.ongoing);
   }
   refs = buildReferenceSet(features, ongoing);
-  return refs.count;
 }
 
 addEventListener('message', async ({ data }: MessageEvent<ClosetImportRequest>) => {
   let response: ClosetImportResponse;
   try {
     if (data.kind === 'prepare') {
-      response = { id: data.id, kind: 'prepared', count: await prepare(data.references) };
+      await prepare(data.references);
+      response = { id: data.id, kind: 'prepared' };
     } else {
       if (!refs) { throw new Error('Worker is not prepared.'); }
       response = { id: data.id, kind: 'processed', result: matchScreenshot(await decode(data.file), refs, data.hint) };

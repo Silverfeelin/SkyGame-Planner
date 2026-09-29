@@ -5,7 +5,7 @@ import { IItem } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 
-const dismissedKey = 'dashboard.quick-start.dismissed';
+export const QUICK_START_DISMISSED_KEY = 'quick-start.dismissed';
 
 @Component({
   selector: 'app-dashboard-quick-start',
@@ -18,10 +18,10 @@ export class DashboardQuickStartComponent {
   private readonly _data = inject(DataService);
   private readonly _storage = inject(StorageService);
 
-  readonly isVisible = signal(!this._storage.getKey<boolean>(dismissedKey) && !this.hasProgress());
+  readonly isVisible = signal(!this._storage.getKey<boolean>(QUICK_START_DISMISSED_KEY) && !this.hasProgress());
 
   dismiss(): void {
-    this._storage.setKey(dismissedKey, true);
+    this._storage.setKey(QUICK_START_DISMISSED_KEY, true);
     this.isVisible.set(false);
   }
 

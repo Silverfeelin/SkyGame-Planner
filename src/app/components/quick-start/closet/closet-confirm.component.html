@@ -23,15 +23,15 @@
           <span class="atmos-qs__sub">Which item is this? From screenshot {{ ask.shot + 1 }}.</span>
           <div class="atmos-qs__row" role="group" [attr.aria-label]="'Unidentified item ' + (k + 1)">
             @for (item of ask.candidates; track item.guid) {
-              <button type="button" class="atmos-qs-cand atmos-focus-ring"
-                      [attr.aria-pressed]="ask.pick === item"
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-cand"
+                      [class.atmos-btn--active]="ask.pick === item" [attr.aria-pressed]="ask.pick === item"
                       (click)="store.pickAsk(tab().key, k, item)">
                 <app-item-icon [item]="item" size="small" [opaque]="true"/>
                 {{ item.name }}
               </button>
             }
-            <button type="button" class="atmos-qs-cand atmos-qs-cand--none atmos-focus-ring"
-                    [attr.aria-pressed]="ask.pick === null"
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-cand atmos-qs-cand--none"
+                    [class.atmos-btn--active]="ask.pick === null" [attr.aria-pressed]="ask.pick === null"
                     (click)="store.pickAsk(tab().key, k, null)">
               None of these
             </button>
@@ -80,11 +80,11 @@
           <app-item-icon [item]="e.tile.item" size="medium" [opaque]="e.tile.state !== 'no'"/>
           @switch (e.tile.state) {
             @case ('owned') { <span class="atmos-tile__check" aria-hidden="true">✓</span> }
-            @case ('unsure') { <span class="atmos-qs-tile__badge" aria-hidden="true"><mat-icon>priority_high</mat-icon></span> }
-            @case ('lock') { <span class="atmos-qs-tile__badge" aria-hidden="true"><mat-icon>lock</mat-icon></span> }
+            @case ('unsure') { <span class="atmos-tile__check atmos-qs-tile__badge" aria-hidden="true"><mat-icon>priority_high</mat-icon></span> }
+            @case ('lock') { <span class="atmos-tile__check atmos-qs-tile__badge" aria-hidden="true"><mat-icon>lock</mat-icon></span> }
           }
           @if (e.tile.guess) {
-            <span class="atmos-qs-tile__badge atmos-qs-tile__badge--guess" aria-hidden="true"><mat-icon>question_mark</mat-icon></span>
+            <span class="atmos-tile__check atmos-qs-tile__badge atmos-qs-tile__badge--guess" aria-hidden="true"><mat-icon>question_mark</mat-icon></span>
           }
         </button>
       } @empty {

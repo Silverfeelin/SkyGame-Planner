@@ -180,7 +180,7 @@ function ranked(scores: Float64Array, lo: number, hi: number): Array<[number, nu
  * Matches unknown tiles whose window holds at most RELAX_MAX items and lies between two matches sure by score,
  * at a threshold lowered for the window size. Relaxed tiles don't bound other windows.
  */
-export function relaxWindows(out: Array<TileMatch>, S: Array<Float64Array>, rescore: Rescore): void {
+function relaxWindows(out: Array<TileMatch>, S: Array<Float64Array>, rescore: Rescore): void {
   const anchor = (r: number) => out.some(t => t.item === r && sureByScore(t));
   for (const ns of windowGroups(out)) {
     const [lo, hi] = out[ns[0]].window;
@@ -206,7 +206,7 @@ export function relaxWindows(out: Array<TileMatch>, S: Array<Float64Array>, resc
  * RELAX_MAX items, the match must reach relaxedSure and beat the window's runner-up by RELAX_MARGIN. Promoted tiles
  * don't anchor other runs.
  */
-export function markSure(out: Array<TileMatch>, S: Array<Float64Array>, R: number, rescore: Rescore): void {
+function markSure(out: Array<TileMatch>, S: Array<Float64Array>, R: number, rescore: Rescore): void {
   const anchor = out.map(sureByScore);
   const wins = windows(out.map((t, n) => anchor[n] ? t.item : null), R);
   for (let n = 0; n < out.length;) {
@@ -243,21 +243,18 @@ export function markSure(out: Array<TileMatch>, S: Array<Float64Array>, R: numbe
  * `hint`: the grid of another screenshot in the same batch.
  */
 export function matchScreenshot(img: RgbaImage, refs: ReferenceSet, hint?: GridHint): ScreenshotMatch | null {
-  const t0 = performance.now();
   let grid = locateGrid(img, hint);
   // different device or UI scale: fall back to a full search
   if (hint && (!grid || grid.cells.length < 4)) { grid = locateGrid(img); }
   if (!grid) { return null; }
-  const t1 = performance.now();
 
   const tiles: Array<{ cell: [number, number], f: IconFeatures }> = [];
-  let partial = 0;
   for (const [i, j] of grid.cells) {
     const ex = extractIcon(img, grid, i, j);
     const f = iconFeatures(ex.icon);
     if (!f) { continue; }
     // a cut-off tile is expected to be whole in another screenshot
-    if (ex.partial) { partial++; continue; }
+    if (ex.partial) { continue; }
     tiles.push({ cell: [i, j], f });
   }
 
@@ -311,5 +308,5 @@ export function matchScreenshot(img: RgbaImage, refs: ReferenceSet, hint?: GridH
     }
   });
 
-  return { grid, tiles: out, partial, timing: { grid: t1 - t0, match: performance.now() - t1 } };
+  return { grid, tiles: out };
 }

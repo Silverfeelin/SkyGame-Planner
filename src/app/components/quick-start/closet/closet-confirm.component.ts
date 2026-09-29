@@ -3,7 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemType } from 'skygame-data';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
-import { QuickStartTab, QuickStartTile, UnsureReason } from '@app/services/quick-start/quick-start.model';
+import { QuickStartTab, QuickStartTile } from '@app/services/quick-start/quick-start.model';
 import { QuickStartStore } from '../quick-start.store';
 import { NextTabComponent } from './next-tab.component';
 
@@ -22,12 +22,8 @@ interface TileGroup {
 const STATE_LABEL: Record<QuickStartTile['state'], string> = {
   owned: 'owned',
   no: 'not owned',
-  unsure: 'check this one',
+  unsure: 'low confidence match',
   lock: 'already unlocked'
-};
-
-const UNSURE_LABEL: Record<UnsureReason, string> = {
-  match: 'low confidence match'
 };
 
 @Component({
@@ -50,9 +46,7 @@ export class ClosetConfirmComponent {
 
   readonly groups = computed<Array<TileGroup>>(() => {
     const entries = this.state().tiles.map((tile, index) => {
-      const status = tile.state === 'unsure' && tile.reason ? UNSURE_LABEL[tile.reason]
-        : tile.guess ? `probably ${STATE_LABEL[tile.state]}`
-        : STATE_LABEL[tile.state];
+      const status = tile.guess ? `probably ${STATE_LABEL[tile.state]}` : STATE_LABEL[tile.state];
       return { tile, index, label: `${tile.item.name}: ${status}` };
     });
     if (this.tab().kind !== 'stanceCall') { return [{ entries }]; }

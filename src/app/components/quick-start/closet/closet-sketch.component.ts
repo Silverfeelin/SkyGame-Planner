@@ -22,8 +22,6 @@ const CENTER_X = PANEL_X + PANEL_W / 2;
 })
 export class ClosetSketchComponent {
   readonly kind = input.required<ClosetSketchKind>();
-  /** Which of the three category tabs is lit in the 'tab' sketch: -1, 0 or 1. */
-  readonly highlight = input(0);
 
   readonly panelX = PANEL_X;
   readonly panelW = PANEL_W;

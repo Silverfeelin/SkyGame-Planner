@@ -3,7 +3,6 @@ import { NodeHelper } from '@app/helpers/node-helper';
 import { EmoteEntry, EmoteLevelState, EmoteSolution } from './quick-start.model';
 
 interface EmoteStructure {
-  tiered: boolean;
   /** Per level (index 0 is level 1): levels that must be unlocked first. */
   prereqs: Array<Array<number>>;
   /** Per level: items further down a tree, which can't be owned without the level. */
@@ -16,18 +15,18 @@ const STANDARD_PREREQS: Record<number, Array<number>> = { 2: [1], 3: [1], 4: [1,
 const structures = new WeakMap<IItem, EmoteStructure>();
 
 /**
- * Works out which levels of an emote are owned. The dots count owned levels, but levels can be skipped,
- * so candidate sets must have exactly `dots` levels, include level 1 and every known level, and respect the tree order.
- * Levels that are the same in every candidate set are settled.
+ * Works out which levels of an emote are owned from the levels the player picked or had unlocked, owned items further
+ * down a tree, and the tree order. Levels can be skipped, so anything else stays off.
  */
 export function solveEmote(entry: EmoteEntry, owned: ReadonlySet<string>): EmoteSolution {
-  const m = entry.levels.length;
   const s = getStructure(entry.levels);
-  const levels: Array<EmoteLevelState> = entry.levels.map((item, i) => ({ level: i + 1, item, on: false, known: false, why: '' }));
+  const levels: Array<EmoteLevelState> = entry.levels.map((item, i) => ({ level: i + 1, item, on: false, why: '' }));
+  const settled = new Set<number>();
   const set = (l: number, on: boolean, why: string): boolean => {
     const v = levels[l - 1];
-    if (!v || v.known) { return false; }
-    v.on = on; v.known = true; v.why = why;
+    if (!v || settled.has(l)) { return false; }
+    settled.add(l);
+    v.on = on; v.why = why;
     return true;
   };
 
@@ -47,36 +46,7 @@ export function solveEmote(entry: EmoteEntry, owned: ReadonlySet<string>): Emote
     });
   }
 
-  if (entry.dots === null || entry.unclear) {
-    levels.forEach(v => { v.known = true; });
-    return { levels, resolved: true, need: 0, conflict: false, tiered: s.tiered };
-  }
-
-  const dots = entry.dots;
-  const fits: Array<number> = [];
-  for (let mask = 0; mask < 1 << m; mask++) {
-    const has = (l: number) => !!(mask & (1 << (l - 1)));
-    let count = 0;
-    for (let l = 1; l <= m; l++) { if (has(l)) { count++; } }
-    if (count !== dots) { continue; }
-    if (dots > 0 && !has(1)) { continue; }
-    if (levels.some(v => v.known && v.on !== has(v.level))) { continue; }
-    if (levels.some(v => has(v.level) && s.prereqs[v.level - 1].some(k => !has(k)))) { continue; }
-    fits.push(mask);
-  }
-  if (!fits.length) { return { levels, resolved: false, need: 0, conflict: true, tiered: s.tiered }; }
-
-  levels.forEach(v => {
-    if (v.known) { return; }
-    const bit = 1 << (v.level - 1);
-    if (fits.every(f => f & bit)) {
-      set(v.level, true, v.level === 1 ? 'Level 1 always comes first' : dots === m ? `All ${m} levels (${dots} dots)` : 'The only way to fit the dots');
-    } else if (fits.every(f => !(f & bit))) {
-      set(v.level, false, 'Not one of the dots');
-    }
-  });
-  const need = dots - levels.filter(v => v.on).length;
-  return { levels, resolved: fits.length === 1, need, conflict: false, tiered: s.tiered };
+  return { levels };
 }
 
 function getStructure(levels: Array<IItem>): EmoteStructure {
@@ -92,7 +62,7 @@ function buildStructure(levels: Array<IItem>): EmoteStructure {
   const nodesOf = (item: IItem) => item.nodes?.length ? item.nodes : item.hiddenNodes ?? [];
   const primary = primaryTree(levels, nodesOf);
   if (primary?.tier) {
-    return { tiered: true, prereqs: levels.map(() => []), below: levels.map(() => []) };
+    return { prereqs: levels.map(() => []), below: levels.map(() => []) };
   }
 
   const prereqs = levels.map((item, i) => {
@@ -117,7 +87,7 @@ function buildStructure(levels: Array<IItem>): EmoteStructure {
     return [...items];
   });
 
-  return { tiered: false, prereqs, below };
+  return { prereqs, below };
 }
 
 /** The spirit's own tree (permanent or season tree), else the tree of the first level node. */

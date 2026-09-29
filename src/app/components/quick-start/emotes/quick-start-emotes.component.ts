@@ -19,7 +19,6 @@ interface LevelChip {
   level: number;
   on: boolean;
   locked: boolean;
-  open: boolean;
   title: string;
 }
 
@@ -29,12 +28,6 @@ interface EmoteRow {
   item: IItem;
   name: string;
   subtitle: string;
-  note: string;
-  flagged: boolean;
-  /** null when there's no dot count to show. */
-  dots: Array<boolean> | null;
-  unclear: boolean;
-  dotsTitle: string;
   chips: Array<LevelChip>;
 }
 
@@ -96,43 +89,23 @@ export class QuickStartEmotesComponent {
 
   private row(entry: EmoteEntry, solution: EmoteSolution, index: number, meta: EmoteMeta): EmoteRow {
     const item = entry.levels[0];
-    const max = entry.levels.length;
-    const flagged = entry.unclear || !solution.resolved;
-
-    let note = '';
-    if (entry.unclear) {
-      note = 'We couldn\'t count the dots. Pick your levels.';
-    } else if (solution.conflict) {
-      note = `More levels are needed than the ${entry.dots} dots we counted. Check your levels.`;
-    } else if (!solution.resolved) {
-      note = `Pick ${solution.need} more level${solution.need === 1 ? '' : 's'}.`;
-      if (!solution.tiered && max >= 4) { note += ' Level 4 needs level 3.'; }
-    }
-
     const chips = solution.levels.map<LevelChip>(l => {
       const locked = entry.locked.has(l.level);
-      const why = l.why || (locked ? 'already unlocked' : !l.known ? 'might be one of the dots' : '');
+      const why = l.why || (locked ? 'already unlocked' : '');
       return {
         level: l.level,
         on: l.on,
         locked,
-        open: !locked && !l.on && !l.known,
         title: `Level ${l.level}${why ? ': ' + why : ''}`
       };
     });
 
-    const dots = entry.dots === null ? null : Array.from({ length: max }, (_, i) => i < entry.dots!);
     return {
       index,
       key: item.guid,
       item,
       name: item.name,
       subtitle: meta.subtitle,
-      note,
-      flagged,
-      dots,
-      unclear: entry.unclear,
-      dotsTitle: entry.unclear ? 'The dots couldn\'t be read' : `${entry.dots} of ${max} levels`,
       chips
     };
   }

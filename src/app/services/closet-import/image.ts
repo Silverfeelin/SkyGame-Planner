@@ -12,7 +12,7 @@ export interface Plane {
   data: Float64Array;
 }
 
-/** Round half to even, like numpy's `rint` and Python's `round`. */
+/** Round half to even. */
 export function rint(x: number): number {
   const f = Math.floor(x);
   const d = x - f;
@@ -32,7 +32,7 @@ export function median(values: ArrayLike<number>): number {
   return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2;
 }
 
-/** Quantile with linear interpolation (numpy's default). */
+/** Quantile with linear interpolation between the closest ranks. */
 export function quantile(values: Float64Array, q: number): number {
   const s = Float64Array.from(values).sort();
   const pos = q * (s.length - 1);
@@ -105,7 +105,7 @@ const sinc = (x: number) => x === 0 ? 1 : Math.sin(Math.PI * x) / (Math.PI * x);
 export const BILINEAR: Filter = { support: 1, fn: x => { x = Math.abs(x); return x < 1 ? 1 - x : 0; } };
 export const LANCZOS: Filter = { support: 3, fn: x => x > -3 && x < 3 ? sinc(x) * sinc(x / 3) : 0 };
 
-/** Filter weights per output pixel, computed the way Pillow does so results match the Python spike. */
+/** Filter weights per output pixel. */
 function coefficients(inSize: number, outSize: number, filter: Filter): Array<{ start: number, weights: Float64Array }> {
   const scale = inSize / outSize;
   const filterScale = Math.max(scale, 1);
@@ -129,7 +129,7 @@ function coefficients(inSize: number, outSize: number, filter: Filter): Array<{ 
 
 /**
  * Resamples interleaved 8-bit pixels with `channels` channels.
- * Like Pillow, the horizontal pass runs first and both passes round to 8 bits.
+ * The horizontal pass runs first and both passes round to 8 bits.
  */
 export function resample(src: ArrayLike<number>, w: number, h: number, channels: number,
   outW: number, outH: number, filter: Filter): Uint8ClampedArray {

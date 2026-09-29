@@ -25,6 +25,7 @@ export const REDESIGN_NAV: ReadonlyArray<INavItem> = [
 
 export const REDESIGN_FOOT_NAV: ReadonlyArray<INavItem> = [
   { icon: 'chat', label: 'Design feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScruTqCFHUENPekcpu4BzGmBjBKrf_1CTzT9_R8Yvr7DulDmQ/viewform?usp=publish-editor', external: true },
+  { icon: 'auto_awesome', label: 'Quick start', link: '/quick-start' },
   { icon: 'new_releases', label: "What's new", link: '/news' },
   { icon: 'settings',     label: 'Settings',   link: '/settings' },
   { icon: 'info',         label: 'Info',       link: '/info' }

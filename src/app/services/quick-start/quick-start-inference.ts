@@ -10,11 +10,7 @@ import {
 /** The data the inference reads. The store passes the DataService; scripts build it from `SkyDataResolver.resolve`. */
 export type QuickStartData = Pick<DataService, 'seasonConfig' | 'itemConfig'>;
 
-/** season: the season spirit's own tree; visit: traveling spirit or special visit; after: the tree that stays after the season. */
-type Role = 'season' | 'visit' | 'after' | 'regular' | 'event' | 'other';
-
 interface Candidate {
-  role: Role;
   option: SourceOption;
   /** For season trees: the spirit's main tree rather than a revision. */
   main: boolean;
@@ -140,12 +136,12 @@ function isPendant(item: IItem): boolean {
 /** Season the item proves the player played in (E1–E3), if any. */
 function evidenceSeason(item: IItem): ISeason | undefined {
   const candidates = getCandidates(item);
-  const season = candidates.find(c => c.role === 'season');
+  const season = candidates.find(c => c.option.role === 'season');
   if (!season) { return undefined; }
   const itemSeason = item.season ?? spiritOf(season.option.tree)?.season;
   if (!itemSeason) { return undefined; }
   if (item.group === 'Ultimate') { return itemSeason; }
-  const later = candidates.some(c => c.role === 'visit' || c.role === 'after') || !!item.listNodes?.length;
+  const later = candidates.some(c => c.option.role === 'visit' || c.option.role === 'after') || !!item.listNodes?.length;
   return later ? undefined : itemSeason;
 }
 
@@ -161,9 +157,9 @@ function startedSeasons(data: QuickStartData): Array<ISeason> {
 /** Picks the source of an item from a season spirit (season tree, visits or the tree left after the season). */
 function attribute(item: IItem, ctx: Context): Attribution | undefined {
   const candidates = getCandidates(item);
-  const seasonC = candidates.filter(c => c.role === 'season').sort((a, b) => +b.main - +a.main)[0];
-  const visits = candidates.filter(c => c.role === 'visit');
-  const after = candidates.find(c => c.role === 'after');
+  const seasonC = candidates.filter(c => c.option.role === 'season').sort((a, b) => +b.main - +a.main)[0];
+  const visits = candidates.filter(c => c.option.role === 'visit');
+  const after = candidates.find(c => c.option.role === 'after');
   if (!seasonC && !visits.length && !after) { return undefined; }
 
   const spirit = spiritOf((seasonC ?? visits[0] ?? after).option.tree);
@@ -192,7 +188,7 @@ function attribute(item: IItem, ctx: Context): Attribution | undefined {
   } else {
     // The tree left after the season is available from the start date onward, so it counts as the start date.
     const later = [...visits, after].filter((c): c is Candidate => !!c)
-      .map(c => ({ c, date: c.role === 'after' ? DateTime.max(c.option.date ?? ctx.startDate, ctx.startDate) : c.option.date! }))
+      .map(c => ({ c, date: c.option.role === 'after' ? DateTime.max(c.option.date ?? ctx.startDate, ctx.startDate) : c.option.date! }))
       .filter(x => x.date >= ctx.startDate)
       .sort((a, b) => a.date.toMillis() - b.date.toMillis());
     if (later.length) {
@@ -225,9 +221,9 @@ function attribute(item: IItem, ctx: Context): Attribution | undefined {
 /** Node for items outside season attribution: the permanent tree for regular spirits, the first event instance since the start for events. */
 function pickNode(item: IItem, ctx: Context): INode | undefined {
   const candidates = getCandidates(item);
-  const regular = candidates.filter(c => c.role === 'regular').sort((a, b) => +b.main - +a.main);
+  const regular = candidates.filter(c => c.option.role === 'regular').sort((a, b) => +b.main - +a.main);
   if (regular.length) { return regular[0].option.node; }
-  const events = candidates.filter(c => c.role === 'event').sort((a, b) => (a.option.date?.toMillis() ?? 0) - (b.option.date?.toMillis() ?? 0));
+  const events = candidates.filter(c => c.option.role === 'event').sort((a, b) => (a.option.date?.toMillis() ?? 0) - (b.option.date?.toMillis() ?? 0));
   if (events.length) { return (events.find(c => c.option.date && c.option.date >= ctx.startDate) ?? events[0]).option.node; }
   return candidates[0]?.option.node;
 }
@@ -378,15 +374,14 @@ function askWingBuffs(
     const buffVisits = trees.map(tree => {
       const node = TreeHelper.getNodes(tree).find(n => n.item?.type === ItemType.WingBuff);
       const c = node && classify(node, tree);
-      return c?.role === 'visit' ? c.option : undefined;
+      return c?.option.role === 'visit' ? c.option : undefined;
     }).filter((o): o is SourceOption => !!o).sort((a, b) => a.date!.toMillis() - b.date!.toMillis());
     if (!buffVisits.length) { continue; }
 
     let question: WingBuffQuestion | undefined;
     for (const a of list) {
       const sourceDate = a.source.date ?? a.season?.date ?? ctx.startDate;
-      const isVisit = a.source.kind === 'travelingSpirit' || a.source.kind === 'specialVisit';
-      const onVisit = isVisit ? buffVisits.find(v => v.tree === a.source.tree) : undefined;
+      const onVisit = a.source.role === 'visit' ? buffVisits.find(v => v.tree === a.source.tree) : undefined;
       const later = buffVisits.filter(v => v.tree !== a.source.tree && v.date! > sourceDate && v.date! >= ctx.startDate);
       if (!onVisit && !later.length) { continue; }
       const nodes = pathTo((onVisit ?? later[0]).node).filter(n => !nodeCovered(n));
@@ -416,31 +411,31 @@ function getCandidates(item: IItem): Array<Candidate> {
 }
 
 function classify(node: INode, tree: ISpiritTree): Candidate {
-  const option = (kind: SourceOption['kind'], label: string, date?: DateTime, key = tree.guid): SourceOption => ({ key, kind, label, date, tree, node });
+  const option = (role: SourceOption['role'], label: string, date?: DateTime, key = tree.guid): SourceOption => ({ key, role, label, date, tree, node });
   if (tree.travelingSpirit) {
     const date = tree.travelingSpirit.date;
-    return { role: 'visit', main: false, option: option('travelingSpirit', `Traveling spirit, ${formatDate(date)}`, date) };
+    return { main: false, option: option('visit', `Traveling spirit, ${formatDate(date)}`, date) };
   }
   if (tree.specialVisitSpirit) {
     const date = tree.specialVisitSpirit.visit.date;
-    return { role: 'visit', main: false, option: option('specialVisit', `Special visit, ${formatDate(date)}`, date) };
+    return { main: false, option: option('visit', `Special visit, ${formatDate(date)}`, date) };
   }
   if (tree.eventInstanceSpirit) {
     const instance = tree.eventInstanceSpirit.eventInstance;
     const name = instance?.name ?? instance?.event?.name ?? 'Event';
-    return { role: 'event', main: false, option: option('event', instance ? `${name}, ${formatDate(instance.date)}` : name, instance?.date) };
+    return { main: false, option: option('event', instance ? `${name}, ${formatDate(instance.date)}` : name, instance?.date) };
   }
   const spirit = tree.spirit;
-  if (!spirit) { return { role: 'other', main: false, option: option('other', tree.name ?? 'Other') }; }
+  if (!spirit) { return { main: false, option: option('other', tree.name ?? 'Other') }; }
   const main = spirit.tree === tree;
   const revision = main ? undefined : (spirit.treeRevisions ?? []).find(t => t === tree) as IRevisedSpiritTree | undefined;
   if (spirit.season) {
     if (revision?.revisionType === 'AfterSeason') {
-      return { role: 'after', main, option: option('regular', 'After the season', spirit.season.endDate) };
+      return { main, option: option('after', 'After the season', spirit.season.endDate) };
     }
-    return { role: 'season', main, option: option('season', spirit.season.name, spirit.season.date, 'season') };
+    return { main, option: option('season', spirit.season.name, spirit.season.date, 'season') };
   }
-  return { role: 'regular', main, option: option('regular', spirit.name) };
+  return { main, option: option('regular', spirit.name) };
 }
 
 function treeOf(node: INode): ISpiritTree | undefined {

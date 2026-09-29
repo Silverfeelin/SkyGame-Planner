@@ -16,8 +16,8 @@
     <h4 class="atmos-qs__label">{{ group.label }}</h4>
     <div class="atmos-qs__row">
       @for (e of group.entries; track e.tile.item.guid) {
-        <button type="button" class="atmos-qs-sheet atmos-focus-ring"
-                [class.is-owned]="e.tile.state === 'owned'"
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-sheet"
+                [class.atmos-btn--active]="e.tile.state === 'owned'"
                 [class.is-lock]="e.tile.state === 'lock'"
                 [attr.aria-pressed]="e.tile.state !== 'no'"
                 [disabled]="e.tile.state === 'lock'"

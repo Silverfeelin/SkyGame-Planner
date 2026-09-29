@@ -211,6 +211,7 @@ export class SearchService {
       { name: 'Outfit request - Request', type: 'Page', data: '/outfit-request/request', search: 'Outfit request - Request' },
       { name: 'Outfit vault', type: 'Page', data: '/outfit-request/vault', search: 'Outfit vault' },
       { name: `What's new`, type: 'Page', data: '/news', search: `What's news` },
+      { name: 'Quick start', type: 'Page', data: '/quick-start', search: 'Quick start' },
       { name: 'Settings', type: 'Page', data: '/settings', search: 'Settings' },
       { name: 'Info', type: 'Page', data: '/credits', search: 'Info' },
       { name: 'Credits', type: 'Page', data: '/credits', search: 'Credits' },

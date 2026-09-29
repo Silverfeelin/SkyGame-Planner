@@ -13,6 +13,6 @@ export type ClosetImportRequest =
   | { id: number, kind: 'process', file: Blob, hint?: GridHint };
 
 export type ClosetImportResponse =
-  | { id: number, kind: 'prepared', count: number }
+  | { id: number, kind: 'prepared' }
   | { id: number, kind: 'processed', result: ScreenshotMatch | null }
   | { id: number, kind: 'error', message: string };

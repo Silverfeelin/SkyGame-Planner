@@ -1,10 +1,6 @@
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <div>
-      <h2 class="atmos-qs__title">Your closet and expressions</h2>
-      <p class="atmos-qs__sub">
-      </p>
-    </div>
+    <h2 class="atmos-section__title">Your closet and expressions</h2>
 
     <div class="atmos-qs-closet">
       <div class="atmos-qs-closet__tabs atmos-scroll-x" role="tablist" aria-label="Closet tabs" aria-orientation="vertical"
@@ -16,7 +12,7 @@
           <button type="button" role="tab" class="atmos-qs-closet__tab atmos-focus-ring"
                   [id]="'qs-tab-' + row.tab.key"
                   aria-controls="qs-tab-panel"
-                  [attr.aria-selected]="row.tab.key === store.activeTab()"
+                  [class.is-selected]="row.tab.key === store.activeTab()" [attr.aria-selected]="row.tab.key === store.activeTab()"
                   [attr.tabindex]="row.tab.key === store.activeTab() ? 0 : -1"
                   (click)="select(row.tab.key)">
             <span class="atmos-qs-closet__tab-name">{{ row.tab.label }}</span>

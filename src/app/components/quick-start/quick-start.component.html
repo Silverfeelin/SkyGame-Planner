@@ -29,9 +29,10 @@
 }
 
 @if (!store.saved()) {
-  <nav class="atmos-qs__stepper atmos-scroll-x" aria-label="Quick start steps">
+  <nav class="atmos-btn-group atmos-qs__stepper atmos-scroll-x" aria-label="Quick start steps">
     @for (label of steps; track $index; let i = $index) {
-      <button type="button" class="atmos-qs__stepper-btn atmos-focus-ring"
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__stepper-btn"
+              [class.atmos-btn--active]="i === store.step()"
               [class.is-done]="i < store.reached() && i !== store.step()"
               [attr.aria-current]="i === store.step() ? 'step' : null"
               [disabled]="i > store.reached()"

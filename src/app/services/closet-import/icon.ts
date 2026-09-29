@@ -147,7 +147,7 @@ export function extractIcon(img: RgbaImage, grid: Grid, i: number, j: number): {
   const keep = new Uint8Array(n);
   for (let k = 0; k < n; k++) { keep[k] = keepLabel[lab[k]]; }
 
-  // dilate by 2 px; wraps around at the crop edge like the spike's np.roll
+  // dilate by 2 px; wraps around at the crop edge
   let dil = keep;
   for (let it = 0; it < 2; it++) {
     const next = new Uint8Array(n);
@@ -179,7 +179,7 @@ export function extractIcon(img: RgbaImage, grid: Grid, i: number, j: number): {
   return { icon: { width: cw, height: ch, rgb, alpha }, partial };
 }
 
-/** Pillow-style `RGBA` -> `RGBa`. */
+/** Premultiplies a channel by alpha, rounded to 8 bits. */
 const premultiply = (v: number, a: number) => { const t = v * a + 128; return ((t >> 8) + t) >> 8; };
 
 /**

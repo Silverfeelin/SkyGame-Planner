@@ -1,8 +1,9 @@
-import { Injectable, WritableSignal, computed, inject, signal } from '@angular/core';
+import { Injectable, OnDestroy, WritableSignal, computed, inject, signal } from '@angular/core';
 import { DateTime } from 'luxon';
 import { IItem, ISeason, ItemSubtype, ItemType } from 'skygame-data';
 import { ExportHelper } from '@app/helpers/export-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
+import { QUICK_START_DISMISSED_KEY } from '@app/components/dashboard/quick-start-card.component';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { ClosetImportKind, ClosetImportResult, ClosetImportService } from '@app/services/closet-import/closet-import.service';
@@ -11,6 +12,7 @@ import { inferProgress } from '@app/services/quick-start/quick-start-inference';
 import {
   EmoteEntry, EmoteSolution, IapChoice, QUICK_START_TABS, QuickStartAsk, QuickStartPlan, QuickStartTab, QuickStartTile, SeasonState, TileState
 } from '@app/services/quick-start/quick-start.model';
+import { isScreenshotFile } from './closet/closet-files';
 
 export type TabStage = 'add' | 'check' | 'matching' | 'confirm';
 
@@ -19,7 +21,7 @@ export interface QuickStartShot {
   url: string;
 }
 
-export interface TabState {
+interface TabState {
   stage: TabStage;
   manual: boolean;
   shots: Array<QuickStartShot>;
@@ -36,8 +38,8 @@ export interface TabState {
   search: string;
 }
 
-export interface TabStatus {
-  /** Tiles still marked "!", unanswered asks, or unresolved emotes. */
+interface TabStatus {
+  /** Tiles still marked "!" or unanswered asks. */
   open: number;
   /** New owned items, or emotes with new levels. */
   fresh: number;
@@ -45,7 +47,7 @@ export interface TabStatus {
 
 /** State of one quick start run. Kept by `QuickStartSession` between visits to the page. */
 @Injectable()
-export class QuickStartStore {
+export class QuickStartStore implements OnDestroy {
   private readonly _data = inject(DataService);
   private readonly _storage = inject(StorageService);
   private readonly _closetImport = inject(ClosetImportService);
@@ -121,7 +123,7 @@ export class QuickStartStore {
       const s = this.tab(tab.key)();
       if (tab.kind === 'emote') {
         result[tab.key] = {
-          open: s.emotes.filter((e, i) => e.unclear || !solutions[i]?.resolved).length,
+          open: 0,
           fresh: s.emotes.filter((e, i) => solutions[i]?.levels.some(l => l.on && !e.locked.has(l.level))).length
         };
       } else {
@@ -134,7 +136,7 @@ export class QuickStartStore {
     return result;
   });
 
-  /** Items still marked "!" (and unanswered asks, unresolved emotes); these aren't saved. */
+  /** Items still marked "!" and unanswered asks; these aren't saved. */
   readonly openCount = computed(() => Object.values(this.status()).reduce((n, s) => n + s.open, 0));
 
   /** Without the Necklace tab a missing pendant says nothing about the season pass. */
@@ -151,7 +153,7 @@ export class QuickStartStore {
     conflictHandled: this.conflictHandled()
   }));
 
-  dispose(): void {
+  ngOnDestroy(): void {
     this._tabState.forEach(s => this.revoke(s()));
   }
 
@@ -170,7 +172,7 @@ export class QuickStartStore {
   /* ---------- Screenshots ---------- */
 
   addFiles(key: string, files: Iterable<File>): void {
-    const added = [...files].filter(f => f.type.startsWith('image/')).map(file => ({ file, url: URL.createObjectURL(file) }));
+    const added = [...files].filter(isScreenshotFile).map(file => ({ file, url: URL.createObjectURL(file) }));
     if (!added.length) { return; }
     this.update(key, s => ({ ...s, shots: [...s.shots, ...added], stage: 'check', manual: false, error: undefined, result: undefined }));
   }
@@ -249,7 +251,6 @@ export class QuickStartStore {
     this.tab(key).update(s => {
       this.revoke(s);
       const base = { ...this.initialState(def), manual: true, stage: 'confirm' as TabStage };
-      if (def.kind === 'emote') { return { ...base, emotes: this.manualEmotes() }; }
       return { ...base, tiles: this.itemsFor(def).map(item => ({ item, state: (this.isLocked(item) ? 'lock' : 'no') as TileState })) };
     });
   }
@@ -266,13 +267,13 @@ export class QuickStartStore {
       if (!t || t.state === 'lock') { return s; }
       const state: TileState = t.state === 'owned' ? 'no' : 'owned';
       const tiles = s.tiles.slice();
-      tiles[index] = { ...t, state, touched: true, guess: false };
+      tiles[index] = { ...t, state, guess: false };
       return { ...s, tiles };
     });
   }
 
   markAllUnsure(key: string, state: 'owned' | 'no'): void {
-    this.update(key, s => ({ ...s, tiles: s.tiles.map(t => t.state === 'unsure' ? { ...t, state, touched: true } : t) }));
+    this.update(key, s => ({ ...s, tiles: s.tiles.map(t => t.state === 'unsure' ? { ...t, state } : t) }));
   }
 
   /** Answers an unidentified tile; `pick` null is "None of these". */
@@ -283,7 +284,7 @@ export class QuickStartStore {
       ask[index] = { ...a, pick };
       const candidates = new Set(a.candidates.map(c => c.guid));
       const tiles = s.tiles.map(t => candidates.has(t.item.guid) && t.state !== 'lock'
-        ? { ...t, state: (t.item === pick ? 'owned' : 'no') as TileState, touched: true, guess: false }
+        ? { ...t, state: (t.item === pick ? 'owned' : 'no') as TileState, guess: false }
         : t);
       return { ...s, ask, tiles };
     });
@@ -295,7 +296,7 @@ export class QuickStartStore {
       if (!e || e.locked.has(level)) { return s; }
       const picked = new Map(e.picked).set(level, on);
       const emotes = s.emotes.slice();
-      emotes[index] = { ...e, picked, unclear: false };
+      emotes[index] = { ...e, picked };
       return { ...s, emotes };
     });
   }
@@ -347,6 +348,7 @@ export class QuickStartStore {
     }
     const passes = plan.seasonPasses.filter(g => !this._storage.hasSeasonPass(g));
     if (passes.length) { this._storage.addSeasonPasses(...passes); }
+    this._storage.setKey(QUICK_START_DISMISSED_KEY, true);
     this.saved.set(true);
   }
 
@@ -361,7 +363,6 @@ export class QuickStartStore {
     if (tab.kind === 'music') {
       return { ...state, stage: 'confirm', manual: true, tiles: this.itemsFor(tab).map(item => ({ item, state: this.isLocked(item) ? 'lock' : 'no' })) };
     }
-    // the matcher can't read emote tabs or level dots yet, so emotes start in the manual picker
     if (tab.kind === 'emote') {
       return { ...state, stage: 'confirm', manual: true, emotes: this.manualEmotes() };
     }
@@ -371,7 +372,7 @@ export class QuickStartStore {
   private async confirm(key: string, result: ClosetImportResult): Promise<void> {
     const files = this.tab(key)().shots.map(s => s.file);
     const ask = await Promise.all(result.ask.map(async a => ({
-      shot: a.shot, cell: a.cell, candidates: a.candidates, pick: undefined, crop: await this.crop(files[a.shot], result, a.shot, a.cell)
+      shot: a.shot, candidates: a.candidates, pick: undefined, crop: await this.crop(files[a.shot], result, a.shot, a.cell)
     } as QuickStartAsk)));
     this.update(key, s => ({ ...s, stage: 'confirm', result, tiles: this.tilesFromResult(result), ask }));
   }
@@ -394,7 +395,7 @@ export class QuickStartStore {
       if (this.isLocked(item)) { return { item, state: 'lock' }; }
       const looksOwned = checklist.get(item.guid);
       if (looksOwned !== undefined) { return { item, state: looksOwned ? 'owned' : 'no', guess: true }; }
-      if (weak.has(item.guid)) { return { item, state: 'unsure', reason: 'match' }; }
+      if (weak.has(item.guid)) { return { item, state: 'unsure' }; }
       return { item, state: owned.has(item.guid) ? 'owned' : 'no' };
     });
   }
@@ -409,7 +410,7 @@ export class QuickStartStore {
     return [...byName.values()].map(levels => {
       levels.sort((a, b) => (a.level ?? 1) - (b.level ?? 1));
       const locked = new Set(levels.filter(l => this.isLocked(l)).map(l => l.level ?? 1));
-      return { levels, dots: null, unclear: false, locked, picked: new Map() };
+      return { levels, locked, picked: new Map() };
     });
   }
 

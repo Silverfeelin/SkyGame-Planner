@@ -20,41 +20,10 @@
 }
 
 .atmos-qs-sheet {
-  display: inline-flex;
-  align-items: center;
   gap: 6px;
   padding: 5px 12px 5px 9px;
-  border-radius: var(--atmos-radius-pill);
-  border: 1px solid var(--atmos-line-soft);
-  background: var(--atmos-chip-bg);
-  color: var(--atmos-text);
-  font-size: var(--atmos-fs-sm);
-  cursor: pointer;
-  transition: background var(--atmos-transition), border-color var(--atmos-transition);
 
-  &:hover { background: var(--atmos-hover-bg); }
-
-  mat-icon {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
-    color: var(--atmos-text-mute);
-  }
-
-  &.is-owned {
-    background: var(--atmos-active-bg);
-    border-color: var(--atmos-active-border);
-
-    mat-icon { color: var(--atmos-accent); }
-  }
-
-  &.is-lock,
-  &.is-lock:hover {
-    cursor: default;
-    background: var(--qs-lock-bg);
-    border-color: var(--qs-lock-border);
-
-    mat-icon { color: var(--qs-lock); }
-  }
+  > mat-icon { color: var(--atmos-text-mute); }
+  &.atmos-btn--active > mat-icon { color: var(--atmos-accent); }
+  &.is-lock > mat-icon { color: var(--qs-lock); }
 }

@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 import { IItem, ISeason, ISpirit, ItemType } from 'skygame-data';
+import { FoldableCardComponent } from '@app/components/shared/foldable-card/foldable-card.component';
 import { Attribution, IapChoice, IapQuestion, SeasonState, SeasonSummary, SourceOption, WingBuffQuestion } from '@app/services/quick-start/quick-start.model';
 import { QuickStartStore } from '../quick-start.store';
 import { QuickStartStepNavComponent } from '../step-nav/quick-start-step-nav.component';
@@ -54,7 +55,7 @@ const SEASON_STATES: ReadonlyArray<{ state: SeasonState, label: string }> = [
   templateUrl: './quick-start-review.component.html',
   styleUrl: './quick-start-review.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, RouterLink, QuickStartStepNavComponent]
+  imports: [MatIcon, RouterLink, FoldableCardComponent, QuickStartStepNavComponent]
 })
 export class QuickStartReviewComponent {
   readonly store = inject(QuickStartStore);
@@ -64,8 +65,7 @@ export class QuickStartReviewComponent {
   readonly plan = this.store.plan;
   readonly empty = computed(() => this.store.ownedNew().length === 0);
 
-  /** Hidden once the player chose to keep their start, even before the engine reruns. */
-  readonly conflict = computed(() => this.store.conflictHandled() ? undefined : this.plan().conflict);
+  readonly conflict = computed(() => this.plan().conflict);
 
   readonly wingBuffs = computed<Array<WingBuffRow>>(() => {
     const on = this.store.wingBuffs();

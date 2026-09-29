@@ -28,7 +28,7 @@
   position: relative;
   height: 1.4em;
   font-family: 'Roboto Mono', monospace;
-  font-size: 11px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-mute);
 
   span {

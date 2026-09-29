@@ -1,7 +1,7 @@
 import type { Grid } from './grid';
 
 /** Score an 'unknown' tile is worth; below this a match is not trusted. */
-export const TAU = 0.7;
+const TAU = 0.7;
 /** Quick-pass matches below this get a full re-score; only matches at least this good bound a 'not owned' range. */
 export const SURE = 0.9;
 /** Order windows of up to this many items lower both thresholds. */
@@ -17,10 +17,10 @@ const SKIP = 0.003;
 /** Candidates offered per tile that needs the user. */
 const SHOWN = 5;
 /**
- * A screenshot with a smaller share of confident tiles likely shows another tab. On the fixtures the right tab
- * scores 0.9 or more and a wrong one at most 0.02, even outfits against outfits with shoes.
+ * A screenshot with a smaller share of confident tiles likely shows another tab. The right tab typically scores
+ * 0.9 or more and a wrong one at most 0.02, even outfits against outfits with shoes.
  */
-export const OFF_TAB = 0.25;
+const OFF_TAB = 0.25;
 
 /** From `low` at 2 items to `high` at RELAX_MAX, linear in log w: each item ruled out lowers the bar. */
 function byWindow(w: number, low: number, high: number): number {
@@ -28,7 +28,7 @@ function byWindow(w: number, low: number, high: number): number {
   return low + (high - low) * k;
 }
 /** Match threshold for a tile whose order window holds `w` items. */
-export const relaxedTau = (w: number) => byWindow(w, TAU_LOW, TAU);
+const relaxedTau = (w: number) => byWindow(w, TAU_LOW, TAU);
 /** Confidence threshold for a match whose order window holds `w` items. */
 export const relaxedSure = (w: number) => byWindow(w, TAU, SURE);
 
@@ -54,19 +54,15 @@ export interface TileMatch {
 export interface ScreenshotMatch {
   grid: Grid;
   tiles: Array<TileMatch>;
-  /** Tiles cut off by the image or viewport; they should be whole in another screenshot. */
-  partial: number;
-  timing: { grid: number, match: number };
 }
 
-export interface BatchResult {
+interface BatchResult {
   owned: Array<number>;
   /** Owned items that no screenshot matched confidently: forced by order, scored below SURE or accepted by a narrow window. */
   weak: Array<number>;
   checklist: Array<{ item: number, looksOwned: boolean }>;
-  /** `window`: the items the tile can still be, in order; `candidates`: the best of those. */
-  ask: Array<{ shot: number, cell: [number, number], window: Array<number>, candidates: Array<number> }>;
-  gaps: Array<number>;
+  /** `candidates`: the best of the items the tile can still be. */
+  ask: Array<{ shot: number, cell: [number, number], candidates: Array<number> }>;
   /** Screenshots in which few tiles matched confidently. */
   offTab: Array<number>;
 }
@@ -148,23 +144,18 @@ export function relaxedPicks(rows: Array<ArrayLike<number>>, w: number, rivals: 
 // #endregion
 
 /**
- * Combines the screenshots of one closet tab, in any order: owned items, the ongoing checklist, tiles to ask about,
- * and items to offer as 'not owned' because they're missing inside a range that a screenshot covers confidently.
+ * Combines the screenshots of one closet tab, in any order: owned items, the ongoing checklist and tiles to ask about.
  * Screenshots don't need to overlap; every row only has to be whole in one of them.
- * `unlocked`: items owned before the import. They're never asked about or offered as 'not owned'.
+ * `unlocked`: items owned before the import. They're never asked about.
  */
 export function combineBatch(shots: Array<ScreenshotMatch | null>, ongoing: ArrayLike<boolean | number>, unlocked: ArrayLike<boolean | number> = []): BatchResult {
   const R = ongoing.length;
   // null: matched only after narrowing across screenshots
   const matched = new Map<number, TileMatch | null>();
   const sure = new Set<number>();
-  const coverage: Array<[number, number]> = [];
   shots.forEach(shot => {
     if (!shot) { return; }
-    // 'not owned' is only inferred between confident matches: a weak end match must not stretch the range
-    const anchors = shot.tiles.filter(t => t.item !== null && t.sure).map(t => t.item!);
-    anchors.forEach(r => sure.add(r));
-    if (anchors.length) { coverage.push([Math.min(...anchors), Math.max(...anchors)]); }
+    shot.tiles.forEach(t => { if (t.item !== null && t.sure) { sure.add(t.item); } });
     for (const t of shot.tiles) {
       if (t.item !== null && !matched.has(t.item)) { matched.set(t.item, t); }
     }
@@ -187,9 +178,7 @@ export function combineBatch(shots: Array<ScreenshotMatch | null>, ongoing: Arra
         const tile = shot.tiles[n];
         const candidates = tile.candidates.map(c => c[0]).filter(r => !settled(r)).slice(0, SHOWN);
         if (!candidates.length) { return; }
-        const [lo, hi] = tile.window;
-        const window = Array.from({ length: hi - lo }, (_, i) => lo + i).filter(r => !settled(r));
-        ask.push({ shot: s, cell: tile.cell, window, candidates });
+        ask.push({ shot: s, cell: tile.cell, candidates });
       });
     }
   });
@@ -203,19 +192,8 @@ export function combineBatch(shots: Array<ScreenshotMatch | null>, ongoing: Arra
       if (!sure.has(item)) { weak.push(item); }
     }
   }
-  // ranges of different screenshots may overlap; merged, each item is still inside some screenshot's range
-  const merged: Array<[number, number]> = [];
-  for (const [lo, hi] of coverage.sort((a, b) => a[0] - b[0] || a[1] - b[1])) {
-    const last = merged[merged.length - 1];
-    if (last && lo <= last[1]) { last[1] = Math.max(last[1], hi); } else { merged.push([lo, hi]); }
-  }
-  const unsure = new Set(ask.flatMap(a => a.candidates));
-  const gaps: Array<number> = [];
-  for (const [lo, hi] of merged) {
-    for (let r = lo; r <= hi; r++) { if (!matched.has(r) && !unsure.has(r) && !unlocked[r]) { gaps.push(r); } }
-  }
   const offTab = shots.flatMap((shot, s) => shot?.tiles.length && shot.tiles.filter(t => t.sure).length < OFF_TAB * shot.tiles.length ? [s] : []);
-  return { owned, weak, checklist, ask, gaps, offTab };
+  return { owned, weak, checklist, ask, offTab };
 }
 
 /**

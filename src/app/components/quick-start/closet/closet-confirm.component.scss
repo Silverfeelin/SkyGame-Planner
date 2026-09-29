@@ -59,24 +59,8 @@
 }
 
 .atmos-qs-cand {
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
   padding: 3px 12px 3px 3px;
-  border-radius: var(--atmos-radius-pill);
-  border: 1px solid var(--atmos-line-soft);
-  background: var(--atmos-chip-bg);
-  color: var(--atmos-text);
-  font-size: var(--atmos-fs-sm);
-  cursor: pointer;
-  transition: background var(--atmos-transition), border-color var(--atmos-transition);
-
-  &:hover { background: var(--atmos-hover-bg); }
-
-  &[aria-pressed="true"] {
-    background: var(--atmos-active-bg);
-    border-color: var(--atmos-active-border);
-  }
 }
 
 .atmos-qs-cand--none {
@@ -132,19 +116,9 @@
 }
 
 .atmos-qs-tile__badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
   display: grid;
   place-items: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  font-size: 11px;
-  font-weight: 700;
   line-height: 1;
-  color: var(--atmos-bg);
-  pointer-events: none;
 
   .is-unsure & { background: var(--qs-warn); }
   .is-lock & { background: var(--qs-lock); }
@@ -168,7 +142,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 18px;
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-mute);
 
   span {

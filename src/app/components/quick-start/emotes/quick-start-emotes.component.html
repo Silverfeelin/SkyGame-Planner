@@ -1,15 +1,7 @@
-@if (state().manual) {
-  <p class="atmos-qs__sub">
-    Tap the levels you have for each emote. Levels can be skipped, so pick each one.
-    Levels with a lock are already unlocked in Sky Planner.
-  </p>
-} @else {
-  <p class="atmos-qs__sub">
-    Each dot above an emote is one level, but levels can be skipped, so the dots don't say which ones.
-    We fill in what we can: level 1 always comes first, all dots means all levels, and items you own can require a level.
-    Emotes marked in <strong class="atmos-qs-emotes__warn">orange</strong> need you to pick the rest.
-  </p>
-}
+<p class="atmos-qs__sub">
+  Tap the levels you have for each emote. Levels can be skipped, so pick each one.
+  Levels with a lock are already unlocked in Sky Planner.
+</p>
 
 <div class="atmos-qs__banner atmos-qs__banner--info">
   <mat-icon>info</mat-icon>
@@ -24,12 +16,7 @@
          placeholder="Search emotes or spirits" aria-label="Search emotes or spirits"
          [value]="state().search" (input)="onSearch($event)">
   <span class="atmos-qs__spacer"></span>
-  <span class="atmos-qs__sub">
-    {{ status().fresh }} with new levels
-    @if (status().open) {
-      · <span class="atmos-qs-emotes__warn">{{ status().open }} to check</span>
-    }
-  </span>
+  <span class="atmos-qs__sub">{{ status().fresh }} with new levels</span>
 </div>
 
 @for (group of groups(); track group.label) {
@@ -37,33 +24,18 @@
     <h4 class="atmos-qs__label">{{ group.label }}</h4>
     <div class="atmos-qs-emotes__list">
       @for (row of group.rows; track row.key) {
-        <div class="atmos-qs-emote" [class.is-flagged]="row.flagged">
+        <div class="atmos-qs-emote">
           <app-item-icon class="atmos-qs-emote__icon" [item]="row.item" size="small" [opaque]="true" />
           <div class="atmos-qs-emote__text">
-            <span class="atmos-qs-emote__name">
-              {{ row.name }}
-              @if (row.dots) {
-                <span class="atmos-qs-emote__dots" [skyTooltip]="row.dotsTitle" [attr.aria-label]="row.dotsTitle">
-                  @if (row.unclear) {
-                    ?
-                  } @else {
-                    @for (filled of row.dots; track $index) {
-                      <i [class.is-on]="filled"></i>
-                    }
-                  }
-                </span>
-              }
-            </span>
-            @if (row.note) {
-              <small class="atmos-qs-emote__note is-warn">{{ row.note }}</small>
-            } @else if (row.subtitle) {
+            <span class="atmos-qs-emote__name">{{ row.name }}</span>
+            @if (row.subtitle) {
               <small class="atmos-qs-emote__note">{{ row.subtitle }}</small>
             }
           </div>
           <div class="atmos-qs-emote__levels" role="group" [attr.aria-label]="row.name + ' levels'">
             @for (chip of row.chips; track chip.level) {
-              <button type="button" class="atmos-qs-level"
-                      [class.is-on]="chip.on" [class.is-open]="chip.open" [class.is-locked]="chip.locked"
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-level"
+                      [class.atmos-btn--active]="chip.on" [class.is-lock]="chip.locked"
                       [attr.aria-disabled]="chip.locked || null" [attr.aria-pressed]="chip.on"
                       [attr.aria-label]="chip.title" [skyTooltip]="chip.title"
                       (click)="toggle(row, chip)">

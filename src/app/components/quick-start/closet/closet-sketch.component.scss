@@ -7,19 +7,19 @@ svg {
   border-radius: var(--atmos-radius-sm);
 }
 
-.sk-scene { fill: var(--atmos-bg-elev-3); }
-.sk-panel { fill: color-mix(in oklch, var(--atmos-bg) 88%, transparent); }
-.sk-cat { fill: var(--atmos-hover-bg-strong); }
-.sk-cat.is-lit { fill: var(--atmos-accent); }
-.sk-line { stroke: var(--atmos-line-soft); stroke-width: 1; }
+.atmos-qs-sketch__scene { fill: var(--atmos-bg-elev-3); }
+.atmos-qs-sketch__panel { fill: color-mix(in oklch, var(--atmos-bg) 88%, transparent); }
+.atmos-qs-sketch__cat { fill: var(--atmos-hover-bg-strong); }
+.atmos-qs-sketch__cat.is-lit { fill: var(--atmos-accent); }
+.atmos-qs-sketch__line { stroke: var(--atmos-line-soft); stroke-width: 1; }
 
-.sk-tile { fill: var(--atmos-accent); opacity: 0.8; }
-.sk-tile.is-cut { fill: var(--atmos-warn-accent); opacity: 0.75; }
+.atmos-qs-sketch__tile { fill: var(--atmos-accent); opacity: 0.8; }
+.atmos-qs-sketch__tile.is-cut { fill: var(--atmos-warn-accent); opacity: 0.75; }
 
-.sk-mark {
+.atmos-qs-sketch__mark {
   fill: none;
   stroke: var(--atmos-accent);
   stroke-width: 2;
 }
 
-.sk-frame { stroke-dasharray: 4 3; }
+.atmos-qs-sketch__mark--frame { stroke-dasharray: 4 3; }

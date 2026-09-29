@@ -1,7 +1,7 @@
 import { IIAP, IItem, INode, ISeason, ISpirit, ISpiritTree, ItemType } from 'skygame-data';
 import { DateTime } from 'luxon';
 
-export type QuickStartTabKind = 'closet' | 'emote' | 'stanceCall' | 'music';
+type QuickStartTabKind = 'closet' | 'emote' | 'stanceCall' | 'music';
 
 export interface QuickStartTab {
   key: string;
@@ -33,16 +33,9 @@ export const QUICK_START_TABS: ReadonlyArray<QuickStartTab> = [
 /** owned: accent ring + tick; unsure: orange "!"; no: not owned; lock: unlocked before quick start. */
 export type TileState = 'owned' | 'unsure' | 'no' | 'lock';
 
-/** match: low confidence match ("!"). */
-export type UnsureReason = 'match';
-
 export interface QuickStartTile {
   item: IItem;
   state: TileState;
-  /** Why an unsure tile needs a look. */
-  reason?: UnsureReason;
-  /** Set once the user tapped an unsure tile; later taps switch between owned and no. */
-  touched?: boolean;
   /**
    * Owned or not was guessed from how the tile looks ("?"): the game also shows dimmed previews of items the
    * player doesn't own. Cleared once the user taps the tile.
@@ -52,7 +45,6 @@ export interface QuickStartTile {
 
 export interface QuickStartAsk {
   shot: number;
-  cell: [number, number];
   candidates: Array<IItem>;
   /** undefined: unanswered; null: none of these. */
   pick?: IItem | null;
@@ -65,10 +57,6 @@ export interface QuickStartAsk {
 export interface EmoteEntry {
   /** Level items of one emote; index 0 is level 1. */
   levels: Array<IItem>;
-  /** Owned level count read from the screenshot. null in manual mode or when not imported. */
-  dots: number | null;
-  /** The dots couldn't be read: every level is asked. */
-  unclear: boolean;
   /** Levels unlocked before quick start (1-based). */
   locked: ReadonlySet<number>;
   /** Levels the user toggled (1-based level → owned). */
@@ -79,33 +67,24 @@ export interface EmoteLevelState {
   level: number;
   item: IItem;
   on: boolean;
-  /** Settled by a rule or the user; false means it might be one of the dots. */
-  known: boolean;
   /** Tooltip, e.g. "Needed for Pouty Porter Cape", "Level 1 always comes first". */
   why: string;
 }
 
 export interface EmoteSolution {
   levels: Array<EmoteLevelState>;
-  /** Exactly one candidate set remains (or no dot count to satisfy). */
-  resolved: boolean;
-  /** Levels still to pick when unresolved. */
-  need: number;
-  /** No set of levels fits the dots. */
-  conflict: boolean;
-  /** Tiered tree: levels have no order. */
-  tiered: boolean;
 }
 
 /* ---------- Inference ---------- */
 
-export type SourceKind = 'season' | 'travelingSpirit' | 'specialVisit' | 'regular' | 'event' | 'other';
+/** season: the season spirit's own tree; visit: traveling spirit or special visit; after: the tree that stays after the season. */
+type SourceRole = 'season' | 'visit' | 'after' | 'regular' | 'event' | 'other';
 
 /** A tree an owned item may have come from. */
 export interface SourceOption {
   /** 'season' for a season spirit's own tree, otherwise the tree GUID. */
   key: string;
-  kind: SourceKind;
+  role: SourceRole;
   label: string;
   date?: DateTime;
   tree: ISpiritTree;

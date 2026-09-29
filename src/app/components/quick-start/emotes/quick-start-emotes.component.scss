@@ -7,10 +7,6 @@
   gap: var(--atmos-card-gap);
 }
 
-.atmos-qs-emotes__warn {
-  color: var(--qs-warn);
-}
-
 .atmos-qs-emotes__search {
   flex: 0 1 320px;
   min-width: 200px;
@@ -34,11 +30,6 @@
   gap: 10px;
   padding: 6px 8px;
   border-radius: 10px;
-
-  &.is-flagged {
-    background: var(--qs-warn-bg);
-    box-shadow: inset 0 0 0 1px var(--qs-warn-border);
-  }
 }
 
 .atmos-qs-emote__icon {
@@ -59,36 +50,11 @@
 }
 
 .atmos-qs-emote__note {
-  font-size: 12px;
+  font-size: var(--atmos-fs-sm);
   color: var(--atmos-text-mute);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
-  &.is-warn {
-    color: var(--qs-warn);
-    white-space: normal;
-  }
-}
-
-.atmos-qs-emote__dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  margin-inline-start: 6px;
-  vertical-align: middle;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--qs-warn);
-
-  i {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--atmos-hover-bg-strong);
-
-    &.is-on { background: var(--atmos-text); }
-  }
 }
 
 .atmos-qs-emote__levels {
@@ -98,51 +64,13 @@
 }
 
 .atmos-qs-level {
-  display: grid;
-  place-items: center;
   width: 28px;
   height: 28px;
   padding: 0;
   border-radius: var(--atmos-radius-sm);
-  border: 1px solid var(--atmos-line-soft);
-  background: var(--atmos-chip-bg);
-  color: var(--atmos-text-mute);
-  font: inherit;
-  font-size: 12px;
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
-  cursor: pointer;
-  transition: background var(--atmos-transition), color var(--atmos-transition), border-color var(--atmos-transition);
 
-  &:hover {
-    background: var(--atmos-hover-bg-strong);
-    color: var(--atmos-text);
-  }
-
-  &:focus-visible {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
-  }
-
-  &.is-on {
-    background: var(--atmos-active-bg);
-    border-color: var(--atmos-active-border);
-    color: var(--atmos-accent);
-  }
-
-  &.is-open {
-    border: 1.5px dashed var(--qs-warn);
-    color: var(--qs-warn);
-  }
-
-  &.is-locked {
-    cursor: default;
-    background: var(--qs-lock-bg);
-    border-color: var(--qs-lock-border);
-    color: var(--qs-lock);
-  }
-
-  mat-icon {
+  > mat-icon {
     font-size: 14px;
     width: 14px;
     height: 14px;

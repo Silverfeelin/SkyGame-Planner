@@ -685,6 +685,8 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 
 .atmos-btn[disabled],
 .atmos-btn.is-disabled {
+  /* Beats the bare `button:disabled` fill, which is far lighter than the card surface. */
+  background: var(--atmos-card-bg);
   opacity: 0.5;
   pointer-events: none;
 }
@@ -909,6 +911,11 @@ a.atmos-link:focus-visible {
   &.atmos-pill--active {
     background: oklch(0.32 0.08 145 / 0.55);
     color: oklch(0.88 0.15 145);
+  }
+
+  &.atmos-pill--warn {
+    background: color-mix(in oklch, var(--atmos-warn-accent) 12%, transparent);
+    color: var(--atmos-warn-accent);
   }
 }
 

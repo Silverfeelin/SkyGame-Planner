@@ -22,7 +22,7 @@
   <ol class="atmos-qs-howto">
     @for (step of steps(); track step.kind) {
       <li class="atmos-qs-howto__step">
-        <app-quick-start-closet-sketch class="atmos-qs-howto__sketch" [kind]="step.kind" [highlight]="step.highlight" />
+        <app-quick-start-closet-sketch class="atmos-qs-howto__sketch" [kind]="step.kind" />
         <span><b>{{ step.title }}</b> {{ step.text }}</span>
       </li>
     }

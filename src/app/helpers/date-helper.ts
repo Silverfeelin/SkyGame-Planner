@@ -15,7 +15,8 @@ export class DateHelper {
     'yyyy/MM/dd'
   ];
 
-  static isActive(start: DateTime, end: DateTime, now = DateTime.now()): boolean {
+  static isActive(start: DateTime, end: DateTime): boolean {
+    const now = DateTime.now();
     return now >= start && now <= end;
   }
 
@@ -86,11 +87,12 @@ export class DateHelper {
   }
 
   /** Returns the last active item. Assumes dates of items are sorted. */
-  static getActive<T extends IPeriod>(items?: Array<T>, now = DateTime.now()): T | undefined {
+  static getActive<T extends IPeriod>(items?: Array<T>): T | undefined {
     if (!items) { return undefined; }
+    const now = DateTime.now();
     for (let i = items.length - 1; i >= 0; i--) {
       const item = items[i];
-      if (DateHelper.isActive(item.date, item.endDate, now)) { return item; }
+      if (DateHelper.isActive(item.date, item.endDate)) { return item; }
       if (item.endDate < now) { return undefined; }
     }
     return undefined;

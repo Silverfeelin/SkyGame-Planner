@@ -2,6 +2,9 @@
 // separate components with encapsulated stylesheets, so the common text,
 // row and banner classes live here.
 //
+// `atmos-qs__*` classes come from this file and are used across quick start;
+// `atmos-qs-<component>__*` classes belong to one component. State uses `is-*`.
+//
 //   @use '../quick-start' as qs;
 //   @include qs.styles;
 
@@ -18,13 +21,6 @@
 @mixin styles {
   :host { @include tokens; }
 
-  .atmos-qs__title {
-    margin: 0;
-    font-size: var(--atmos-fs-xl);
-    font-weight: 500;
-    text-wrap: balance;
-  }
-
   .atmos-qs__sub {
     margin: 0;
     max-width: 66ch;
@@ -34,7 +30,7 @@
 
   .atmos-qs__label {
     margin: 0;
-    font-size: 11px;
+    font-size: var(--atmos-fs-sm);
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -49,6 +45,23 @@
   }
 
   .atmos-qs__spacer { flex: 1; }
+
+  // Toggle on an .atmos-btn--sm. Lists show hundreds of these, so they skip the button's own backdrop blur.
+  .atmos-qs__toggle {
+    font-size: var(--atmos-fs-sm);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    // unlocked before quick start: shown, but can't be changed
+    &.is-lock,
+    &.is-lock:hover {
+      cursor: default;
+      opacity: 1;
+      background: var(--qs-lock-bg);
+      border-color: var(--qs-lock-border);
+      color: var(--qs-lock);
+    }
+  }
 
   .atmos-qs__banner {
     display: flex;
@@ -142,7 +155,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: var(--atmos-fs-sm);
     color: var(--atmos-text-mute);
   }
 
@@ -150,7 +163,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 12px;
+    font-size: var(--atmos-fs-sm);
     color: var(--atmos-text-dim);
 
     mat-icon {

@@ -28,9 +28,7 @@ export interface ClosetImportResult {
    * Tiles that need the user, with ranked candidates from their order window. Items that another screenshot
    * matched confidently or that were unlocked before are left out; a tile with nothing left isn't asked about.
    */
-  ask: Array<{ shot: number, cell: [number, number], window: Array<IItem>, candidates: Array<IItem> }>;
-  /** Items missing between confident matches: likely not owned, offered to the user as such. */
-  gaps: Array<IItem>;
+  ask: Array<{ shot: number, cell: [number, number], candidates: Array<IItem> }>;
   /** Screenshots, as indices in `shots`, that barely match the tab: likely of another tab. */
   offTab: Array<number>;
 }
@@ -111,8 +109,7 @@ export class ClosetImportService implements OnDestroy {
       owned: batch.owned.map(r => items[r]),
       weak: batch.weak.map(r => items[r]),
       checklist: batch.checklist.map(c => ({ item: items[c.item], looksOwned: c.looksOwned })),
-      ask: batch.ask.map(a => ({ shot: a.shot, cell: a.cell, window: a.window.map(r => items[r]), candidates: a.candidates.map(r => items[r]) })),
-      gaps: batch.gaps.map(r => items[r]),
+      ask: batch.ask.map(a => ({ shot: a.shot, cell: a.cell, candidates: a.candidates.map(r => items[r]) })),
       offTab: batch.offTab
     };
   }

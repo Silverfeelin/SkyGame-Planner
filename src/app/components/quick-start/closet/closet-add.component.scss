@@ -56,10 +56,10 @@
     align-items: center;
     gap: 2px;
     padding: 1px 6px 1px 4px;
-    border-radius: 999px;
+    border-radius: var(--atmos-radius-pill);
     background: color-mix(in oklch, var(--atmos-bg) 80%, transparent);
     color: var(--atmos-text);
-    font-size: 11px;
+    font-size: var(--atmos-fs-sm);
   }
 
   mat-icon {

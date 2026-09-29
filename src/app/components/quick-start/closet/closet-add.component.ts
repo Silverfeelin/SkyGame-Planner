@@ -8,7 +8,6 @@ import { SCREENSHOT_ACCEPT } from './closet-files';
 
 interface HowtoStep {
   kind: ClosetSketchKind;
-  highlight: number;
   title: string;
   text: string;
 }
@@ -34,16 +33,16 @@ export class ClosetAddComponent {
     const tab = this.tab();
     if (tab.kind === 'stanceCall') {
       return [
-        { kind: 'tab', highlight: 0, title: '1. Open your stances.', text: 'Open the expression menu on the stance tab. Calls are listed below the stances.' },
-        { kind: 'whole', highlight: 0, title: '2. Screenshot the whole screen.', text: `Don't crop it.` },
-        { kind: 'scroll', highlight: 0, title: '3. Scroll if needed.', text: 'On a small screen, scroll down and take another screenshot so every call is fully visible.' }
+        { kind: 'tab', title: '1. Open your stances.', text: 'Open the expression menu on the stance tab. Calls are listed below the stances.' },
+        { kind: 'whole', title: '2. Screenshot the whole screen.', text: `Don't crop it.` },
+        { kind: 'scroll', title: '3. Scroll if needed.', text: 'On a small screen, scroll down and take another screenshot so every call is fully visible.' }
       ];
     }
     const label = tab.label.toLowerCase();
     return [
-      { kind: 'tab', highlight: 0, title: '1. Open the tab.', text: `In the game, open your closet on the ${label} tab and scroll to the top.` },
-      { kind: 'whole', highlight: 0, title: '2. Screenshot the whole screen.', text: `Don't crop it. Items marked as new or equipped are fine.` },
-      { kind: 'scroll', highlight: 0, title: '3. Scroll and repeat.', text: `Rows that are cut off are skipped, so scroll until they're fully visible. Keep going to the end of the tab.` }
+      { kind: 'tab', title: '1. Open the tab.', text: `In the game, open your closet on the ${label} tab and scroll to the top.` },
+      { kind: 'whole', title: '2. Screenshot the whole screen.', text: `Don't crop it. Items marked as new or equipped are fine.` },
+      { kind: 'scroll', title: '3. Scroll and repeat.', text: `Rows that are cut off are skipped, so scroll until they're fully visible. Keep going to the end of the tab.` }
     ];
   });
 
