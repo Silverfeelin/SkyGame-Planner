@@ -24,6 +24,10 @@ export class NewsComponent {
           <li>The field guide has been moved to the <a class="atmos-text-link" href="/item/preview">Item previews</a> page.</li>
           <li>Added the permanent <a class="atmos-text-link" href="/shop/prairieheights">Prairie Heights</a> shop page for kites.</li>
           <li>The map has been updated for the Van Gogh season, and several realms and areas received new maps and images.</li>
+          <li>New <a class="atmos-text-link" href="/quick-start">Quick start</a> (beta) to set up your progress from screenshots of your closet, or by marking items by hand. It can also be found on the <a class="atmos-text-link" href="/tool">Tools</a> page.</li>
+          <li>New <a class="atmos-text-link" href="/item/goals">Goals</a> planner (beta). Put the items you're saving for in order and see when you can afford each one.</li>
+          <li>The <a class="atmos-text-link" href="/currency">Currency</a> page can now track your dyes.</li>
+          <li>Memories, messages and spaces on the <a class="atmos-text-link" href="/realm/shared-creations">Shared Creations</a> map now expire after 14 days instead of 7.</li>
         </ul>`
     },
     {

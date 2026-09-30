@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostListener, inject, isDevMode, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { MatIcon } from '@angular/material/icon';
 import { DecimalPipe, LowerCasePipe } from '@angular/common';
@@ -58,6 +58,7 @@ interface IItemResult {
     TooltipDirective, MatIcon, DecimalPipe, LowerCasePipe,
     ItemIconComponent, CostComponent, ItemTypePipe,
     ItemGridLayoutComponent, SpiritTreeComponent,
+    RouterLink,
     ItemQuickActionsComponent,
     ItemUnlockCalculatorFavouritesComponent,
     ItemUnlockCalculatorSpiritsComponent,
