@@ -68,14 +68,18 @@ export class SeasonOptimizerComponent {
   readonly candlesLeft = computed(() => this.hasSeasonPass() ? this.daysLeft() * 6 : this.daysLeft() * 5);
   readonly candlesRequired = signal(0);
   readonly candlesFinal = computed(() => (this.candlesOwned() ?? 0) + this.candlesLeft() - this.candlesRequired());
+  readonly candlesFinalWithSuggestions = computed(() => this.candlesFinal() - this.knapsackTotalSc());
 
   readonly friendshipControls: ReadonlyArray<FormControl<number | null>> = this.trees.map(() => new FormControl(0));
   readonly friendshipValues = this.friendshipControls.map(c => toSignal(c.valueChanges, { initialValue: c.value }));
+  /** Lowest friendship per tree that the unlocked items allow, rounded up. */
+  readonly minimumFriendship: Array<number> = this.trees.map(() => 0);
 
   readonly missingFriendship = signal<ReadonlyArray<ReadonlyArray<number>>>([]);
   readonly missingFriendshipTotals = signal<ReadonlyArray<number>>([]);
   readonly missingFriendshipTotal = signal(0);
   readonly knapsackNodes = signal<ReadonlyArray<INode>>([]);
+  readonly knapsackReachesTarget = signal(true);
   readonly knapsackTotalSc = signal(0);
   readonly knapsackTotalPoints = signal(0);
 
@@ -101,12 +105,11 @@ export class SeasonOptimizerComponent {
       const tiers = TreeHelper.getTiers(tree);
       let currentFriendship = 0;
       tiers.forEach((tier, iTier) => {
-        if (iTier === tiers.length - 1) { return; }
-
         const tierNodes = tier.rows.flatMap(r => r).filter(n => n) as INode[];
         if (currentFriendship < this.tierUnlockCostCumulative[iTier] && tierNodes.some(n => n.unlocked)) {
           currentFriendship = this.tierUnlockCostCumulative[iTier];
         }
+        if (iTier === tiers.length - 1) { return; }
 
         const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
@@ -116,8 +119,9 @@ export class SeasonOptimizerComponent {
         });
       });
 
+      this.minimumFriendship[iTree] = Math.ceil(currentFriendship - EPSILON);
       if (currentFriendship > 0) {
-        this.friendshipControls[iTree].setValue(Math.round(currentFriendship), { emitEvent: true });
+        this.friendshipControls[iTree].setValue(this.minimumFriendship[iTree], { emitEvent: true });
       }
     });
 
@@ -210,7 +214,7 @@ export class SeasonOptimizerComponent {
 
   calculate(): void {
     const wantNodeGuids = this.wantNodeGuids();
-    const knapsackPool: Array<INode> = [];
+    const knapsackPools: INode[][][] = this.trees.map(() => []);
     const totals: number[] = Array(this.trees.length).fill(0);
     const missing: number[][] = Array(this.trees.length).fill([]).map(() => []);
 
@@ -240,14 +244,16 @@ export class SeasonOptimizerComponent {
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
 
+        const tierPool: INode[] = [];
         tierAvailableNodes.forEach(node => {
           if (wantNodeGuids.includes(node.guid)) {
             currentFriendship += friendshipPerNode;
             candlesRequired += (node.sc ?? 0);
           } else {
-            knapsackPool.push(node);
+            tierPool.push(node);
           }
         });
+        knapsackPools[iTree].push(tierPool);
 
         if (currentFriendship >= requiredFriendship) {
           missing[iTree].push(0);
@@ -267,43 +273,93 @@ export class SeasonOptimizerComponent {
     this.missingFriendshipTotal.set(total);
 
     const knapsackFriendship = total - this.daysFriendshipLeft();
-    const ks = this.knapsack(knapsackPool, knapsackFriendship) ?? [];
+    const option = this.knapsack(knapsackPools, missing, knapsackFriendship);
+    const ks = option?.nodes ?? [];
     this.knapsackNodes.set(ks);
+    this.knapsackReachesTarget.set(!option || option.points >= knapsackFriendship - EPSILON);
     this.knapsackTotalSc.set(ks.reduce((sum, n) => sum + (n.sc ?? 0), 0));
     this.knapsackTotalPoints.set(ks.reduce((sum, n) => sum + this.nodeValues[n.guid], 0));
   }
 
-  private knapsack(nodes: Array<INode>, target: number): Array<INode> | undefined {
-    if (target <= 0 || nodes.length === 0) { return undefined; }
+  /**
+   * Finds the cheapest set of unwanted nodes that covers at least `target` of the missing friendship,
+   * or the cheapest set that covers the most when no set covers it.
+   * Friendship only counts towards its own tree, so each tree contributes at most its own missing friendship.
+   */
+  private knapsack(
+    pools: ReadonlyArray<ReadonlyArray<ReadonlyArray<INode>>>,
+    missing: ReadonlyArray<ReadonlyArray<number>>,
+    target: number
+  ): KnapsackOption | undefined {
+    if (target <= 0) { return undefined; }
 
-    const points = (node: INode) => Math.round(this.nodeValues[node.guid]);
-    const roundedTarget = Math.ceil(target);
-    const max = nodes.reduce((sum, n) => sum + points(n), 0);
-    const dp = Array(max + 1).fill(null) as Array<INode>[] | null[];
-    dp[0] = [];
+    let combined: Array<KnapsackOption> = [{ points: 0, cost: 0, nodes: [] }];
+    pools.forEach((tierPools, iTree) => {
+      const treeOptions = this.treeKnapsackOptions(tierPools, missing[iTree]);
+      combined = paretoFront(combined.flatMap(a => treeOptions.map(b => ({
+        points: a.points + b.points,
+        cost: a.cost + b.cost,
+        nodes: [...a.nodes, ...b.nodes]
+      }))));
+    });
 
-    for (const node of nodes) {
-      const value = points(node);
-      for (let p = max; p >= value; p--) {
-        const prev = dp[p - value];
-        if (prev !== null) {
-          const newSet = [...prev, node];
-          const newCost = newSet.reduce((sum, n) => sum + (n.sc ?? 0), 0);
-          const oldCost = dp[p]?.reduce((sum, n) => sum + (n.sc ?? 0), 0) ?? Infinity;
-          if (newCost < oldCost) { dp[p] = newSet; }
-        }
-      }
-    }
-
-    let best: Array<INode> | undefined;
-    let bestCost = Infinity;
-    for (let p = roundedTarget; p <= max; p++) {
-      const set = dp[p];
-      if (set) {
-        const cost = set.reduce((sum, n) => sum + (n.sc ?? 0), 0);
-        if (cost < bestCost) { best = set; bestCost = cost; }
-      }
-    }
-    return best;
+    return combined.find(o => o.points >= target - EPSILON) ?? combined[combined.length - 1];
   }
+
+  /** Lists the cheapest ways to cover each amount of missing friendship within a single tree. */
+  private treeKnapsackOptions(
+    tierPools: ReadonlyArray<ReadonlyArray<INode>>,
+    tierMissing: ReadonlyArray<number>
+  ): Array<KnapsackOption> {
+    // A node can only be bought once its tier is unlocked, so its friendship covers that tier or above.
+    // `carry` holds friendship bought in lower tiers that hasn't been needed yet.
+    let states = new Map<string, KnapsackState>();
+    addState(states, { points: 0, carry: 0, cost: 0, nodes: [] });
+
+    let remaining = tierMissing.reduce((a, b) => a + b, 0);
+    for (let iTier = 0; iTier < tierPools.length && remaining > EPSILON; iTier++) {
+      for (const node of tierPools[iTier]) {
+        const next = new Map(states);
+        states.forEach(s => addState(next, {
+          points: s.points,
+          carry: Math.min(remaining, s.carry + this.nodeValues[node.guid]),
+          cost: s.cost + (node.sc ?? 0),
+          nodes: [...s.nodes, node]
+        }));
+        states = next;
+      }
+
+      const served = new Map<string, KnapsackState>();
+      states.forEach(s => {
+        const used = Math.min(s.carry, tierMissing[iTier]);
+        addState(served, { ...s, points: s.points + used, carry: s.carry - used });
+      });
+      states = served;
+      remaining -= tierMissing[iTier];
+    }
+
+    return paretoFront([...states.values()]);
+  }
+}
+
+type KnapsackOption = { points: number; cost: number; nodes: Array<INode> };
+type KnapsackState = KnapsackOption & { carry: number };
+
+/** Friendship per node is fractional (e.g. 40 / 3), so sums need a tolerance. */
+const EPSILON = 0.01;
+
+function addState(states: Map<string, KnapsackState>, state: KnapsackState): void {
+  const key = `${state.points.toFixed(2)}|${state.carry.toFixed(2)}`;
+  const existing = states.get(key);
+  if (!existing || state.cost < existing.cost) { states.set(key, state); }
+}
+
+/** Keeps only options that aren't beaten on both cost and points, sorted by ascending cost and points. */
+function paretoFront<T extends KnapsackOption>(options: Array<T>): Array<T> {
+  const sorted = [...options].sort((a, b) => a.cost - b.cost || b.points - a.points);
+  const front: Array<T> = [];
+  for (const option of sorted) {
+    if (!front.length || option.points > front[front.length - 1].points + EPSILON) { front.push(option); }
+  }
+  return front;
 }

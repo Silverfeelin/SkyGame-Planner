@@ -99,6 +99,8 @@
   position: absolute;
   inset: 0;
   cursor: pointer;
+  // The spirit-tree node overlay wrapper disables pointer events for pass-through overlays.
+  pointer-events: auto;
 }
 
 .atmos-event-calc__overlay.is-have::after,
@@ -130,9 +132,21 @@
   border-radius: var(--atmos-radius-sm);
 }
 
-.atmos-event-calc__overlay:hover .atmos-event-calc__overlay-inner,
 .atmos-event-calc__overlay-inner.is-active {
   opacity: 1;
+}
+
+@media (hover: hover) {
+  .atmos-event-calc__overlay:hover .atmos-event-calc__overlay-inner {
+    opacity: 1;
+  }
+}
+
+// Without hover the first tap must reveal the buttons instead of pressing an invisible one.
+@media (hover: none) {
+  .atmos-event-calc__overlay-inner:not(.is-active) {
+    pointer-events: none;
+  }
 }
 
 .atmos-event-calc__overlay-buttons {

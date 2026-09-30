@@ -90,6 +90,11 @@
             </div>
             <input class="atmos-input" type="number" min="0" max="280" step="10"
                    [formControl]="friendshipControls[iTree]"/>
+            @if ((friendshipValues[iTree]() ?? 0) < minimumFriendship[iTree]) {
+              <div class="atmos-optimizer__friendship-warning is-lacking">
+                The items you've unlocked add up to at least {{ minimumFriendship[iTree] }} friendship points.
+              </div>
+            }
             <div><b>Missing points per level</b></div>
             @for (points of missingFriendship()[iTree]; track $index) {
               <div>
@@ -148,7 +153,10 @@
         <b [class.is-met]="candlesFinal() >= 0" [class.is-lacking]="candlesFinal() < 0">{{ candlesFinal() }}</b>
         <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>.
         @if (candlesFinal() < 0) {
-          <div><b class="is-lacking">You don't have enough seasonal candles to buy all of the items you've highlighted.</b></div>
+          <div>
+            <b class="is-lacking">You don't have enough seasonal candles to buy all of the items you've highlighted.</b><br/>
+            You would need {{ -candlesFinal() }} more from the Premium Candle Shop.
+          </div>
         } @else {
           <div><b class="is-met">You will have enough seasonal candles to buy all of the items you've highlighted.</b></div>
         }
@@ -169,9 +177,16 @@
           <b class="is-lacking">You can't get all of the items you've highlighted through daily spirit adventures.</b>
         </p>
         @if (knapsackNodes().length > 0) {
-          <p class="atmos-paragraph">
-            To reach all of the items you've highlighted, consider adding the following additional items.
-          </p>
+          @if (knapsackReachesTarget()) {
+            <p class="atmos-paragraph">
+              To reach all of the items you've highlighted, consider adding the following additional items.
+            </p>
+          } @else {
+            <p class="atmos-paragraph">
+              <b class="is-lacking">Even buying every remaining item won't give you enough friendship points to reach all of the items you've highlighted.</b><br/>
+              These items get you as close as possible.
+            </p>
+          }
           <ul class="atmos-optimizer__knapsack">
             @for (node of knapsackNodes(); track node.guid) {
               <li>
@@ -188,6 +203,13 @@
             <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>.<br/>
             Please highlight the items you'd like to add to update the calculation!
           </p>
+          @if (candlesFinalWithSuggestions() < 0) {
+            <p class="atmos-paragraph">
+              <b class="is-lacking">Together with the items you've highlighted, you would be {{ -candlesFinalWithSuggestions() }}
+              <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon> short.</b><br/>
+              You can't get everything without buying season candles from the Premium Candle Shop.
+            </p>
+          }
           <button type="button" class="atmos-btn atmos-optimizer__knapsack-action" (click)="highlightKnapsack()">Highlight suggested items</button>
         } @else {
           <p class="atmos-paragraph">Look for the largest grey numbers to prioritize which items to buy!</p>

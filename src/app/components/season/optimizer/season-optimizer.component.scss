@@ -65,6 +65,13 @@
 }
 
 
+// Trees size to their node grid; zero width keeps the warning from widening the column.
+.atmos-optimizer__friendship-warning {
+  width: 0;
+  min-width: 100%;
+  font-size: var(--atmos-fs-sm);
+}
+
 .atmos-optimizer__candles-row {
   display: flex;
   align-items: center;
