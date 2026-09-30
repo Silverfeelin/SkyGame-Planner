@@ -275,9 +275,9 @@ export class GoalHelper {
     return count;
   }
 
-  /** Flags limited goals that leave before a limited goal placed above them. */
+  /** Flags limited goals that leave before a limited goal placed above them. IAPs don't compete for currency. */
   private static flagOrder(goals: Array<IGoalProjection>): void {
-    const ends = goals.map(g => g.status !== 'owned' && g.status !== 'unavailable' && g.source
+    const ends = goals.map(g => g.status !== 'owned' && g.status !== 'unavailable' && g.source && g.source.type !== 'iap'
       ? this.windowEnd(g.source.window) : undefined);
     goals.forEach((goal, i) => {
       const end = ends[i];
