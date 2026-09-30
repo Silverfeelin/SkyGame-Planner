@@ -11,23 +11,125 @@
   </p>
 </div>
 
-<ol class="atmos-news__list">
-  @for (entry of entries(); track entry.title; let i = $index) {
-    <li class="atmos-card atmos-news__entry" [class.atmos-news__entry--open]="isOpen(i)">
-      <button
-        type="button"
-        class="atmos-news__entry-head"
-        [attr.aria-expanded]="isOpen(i)"
-        [attr.aria-controls]="'atmos-news-body-' + i"
-        (click)="toggle(i)">
-        <h2 class="atmos-news__entry-title">{{ entry.title }}</h2>
-        <mat-icon class="atmos-news__entry-chev" aria-hidden="true">
-          {{ isOpen(i) ? 'expand_less' : 'expand_more' }}
-        </mat-icon>
-      </button>
-      @if (isOpen(i)) {
-        <div class="atmos-news__entry-body" [id]="'atmos-news-body-' + i" [innerHTML]="entry.bodyHtml"></div>
-      }
-    </li>
-  }
-</ol>
+<div class="atmos-news__list">
+  <app-foldable-card [title]="'June - September 2026'">
+    <ul class="atmos-news__changes">
+      <li>Sky Planner has a brand new look!</li>
+      <li>The items overview has been split into an <a class="atmos-text-link" routerLink="/item/grid">Item grid</a> and a sortable <a class="atmos-text-link" routerLink="/item/table">Item table</a>.</li>
+      <li>The field guide has been moved to the <a class="atmos-text-link" routerLink="/item/preview">Item previews</a> page.</li>
+      <li>Added the permanent <a class="atmos-text-link" routerLink="/shop/prairieheights">Prairie Heights</a> shop page for kites.</li>
+      <li>The map has been updated for the Van Gogh season, and several realms and areas received new maps and images.</li>
+      <li>New <a class="atmos-text-link" routerLink="/quick-start">Quick start</a> (beta) to set up your progress from screenshots of your closet, or by marking items by hand. It can also be found on the <a class="atmos-text-link" routerLink="/tool">Tools</a> page.</li>
+      <li>New <a class="atmos-text-link" routerLink="/item/goals">Goals</a> planner (beta). Put the items you're saving for in order and see when you can afford each one.</li>
+      <li>The <a class="atmos-text-link" routerLink="/currency">Currency</a> page can now track your dyes.</li>
+      <li>Memories, messages and spaces on the <a class="atmos-text-link" routerLink="/realm/shared-creations">Shared Creations</a> map now expire after 14 days instead of 7.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'March - May 2026'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>A new <a class="atmos-text-link" routerLink="/settings">Setting</a> has been introduced to add regular candles automatically when you check in your dailies.</li>
+      <li>The <a class="atmos-text-link" routerLink="/cr-tracker">Candle Run Tracker</a> now includes data for every realm.</li>
+      <li>Favourited items can now be quickly added on the <a class="atmos-text-link" routerLink="/item/unlock-calculator">Item cost calculator</a> page.</li>
+      <li>The <a class="atmos-text-link" routerLink="/currency">Currency</a> page now shows the currencies you've gained or spent today. Keep in mind that unlocking items automatically deducts your currencies!</li>
+      <li>Added a new <a class="atmos-text-link" routerLink="/realm/shared-creations">Shared Creations</a> map to the Realms page.</li>
+      <li>Moved the <a class="atmos-text-link" routerLink="/cr-tracker">Candle Run Tracker</a> and <a class="atmos-text-link" routerLink="/pnr-tracker">Eden Statue Tracker</a> to the Realms page.</li>
+      <li>Added a new <a class="atmos-text-link" routerLink="/daily">Daily</a> page to track your daily activities in one place.</li>
+      <li>In-game currency shop items can now be navigated to by clicking on them. To unlock, click on the price below the item. This better matches the behaviour of in-app purchase items.</li>
+      <li>A new table format has been applied to all the spirits on the <a class="atmos-text-link" routerLink="/spirit">Spirits</a> page. More pages will follow.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'December 2025'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>New <a class="atmos-text-link" routerLink="/friend">Friends</a> page to manage your friendship trees.</li>
+      <li>Added the permanent <a class="atmos-text-link" routerLink="/shop/wonderland-cafe">Wonderland Cafe</a> shop page.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'November 2025'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>Outfit closet split into <a class="atmos-text-link" routerLink="/item" [queryParams]="{ type: 'Outfit' }">Outfits</a> and <a class="atmos-text-link" routerLink="/item" [queryParams]="{ type: 'OutfitShoes' }">Outfits with shoes</a> to match the in-game closets.</li>
+      <li>Data has been moved to a separate repository: <a class="atmos-text-link" href="https://github.com/Silverfeelin/SkyGame-Data" target="_blank" rel="noopener">https://github.com/SkyPlanner/SkyPlanner-Data</a></li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'October 2025'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>New <a class="atmos-text-link" routerLink="/season/optimizer">Migration Friendship Point Optimizer</a> page. Similar to a season calculator, but for the new friendship level system.</li>
+      <li><a class="atmos-text-link" routerLink="/cr-tracker">Candle Run Tracker</a> now includes data for Valley of Triumph.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'August 2025'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>New <a class="atmos-text-link" routerLink="/cr-tracker">Candle Run Tracker</a> with data for Home, Isle, Prairie and Forest.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'May 2025'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>New <a class="atmos-text-link" routerLink="/pnr-tracker">Eden Statue Tracker</a> based on a suggestion by Harriett.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'January 2025'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>New dye plant tracker available from the <a class="atmos-text-link" routerLink="/tool">Tools page</a>.</li>
+      <li>New dye filter for items.</li>
+      <li>Dye previews, with many screenshots provided by cysketch, kotoeri and JustAMoff.</li>
+      <li>New Outfit Request changes to support requests with dyes.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'December 2024'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>The season and event calculators now have a short description for bonus currency (i.e. daily light).</li>
+      <li>The Course Creation Prop is now available from the Equipment Rack "Spirit Tree". For tracking spent currencies, please unlock it again on the <a class="atmos-text-link" routerLink="/shop/event">Aviary Event Store</a> page.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'November 2024'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>The <a class="atmos-text-link" routerLink="/shop/nesting">Nesting Workshop</a> shows the permanent items and an expected date for all rotations.</li>
+      <li>When editing a spirit tree, you can now choose between modifying or creating a copy (for data contributors).</li>
+      <li>Keyboard shortcuts, which can be viewed with Ctrl+Shift+?, or from the settings page.</li>
+      <li>The new <a class="atmos-text-link" routerLink="/item/heart">Hearts</a> page helps you find any regular hearts you can get from spirits around Sky.</li>
+      <li>Fixed the <a class="atmos-text-link" routerLink="/outfit-request/vault">Outfit Vault</a> for the Sky closet changes in update 0.27.0.</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'October 2024'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>A daily quest card is now available on the dashboard between seasons.</li>
+      <li>Item icon loading has been optimized, which should speed up loading pages such as <a class="atmos-text-link" routerLink="/item">Items</a> and <a class="atmos-text-link" routerLink="/outfit-request/request">Outfit Request</a>.</li>
+      <li>The Realm filters on the <a class="atmos-text-link" routerLink="/item">Items</a> page now only target items from Regular and Elder Spirits.</li>
+      <li>Added a button to add +1 event currency / season candles to the calculators.</li>
+      <li>Added button to quickly adjust currency to the <a class="atmos-text-link" routerLink="/currency">Currency</a> page.</li>
+      <li>The <a class="atmos-text-link" routerLink="/realm">Realms</a> and individual Realm pages offer quick access to the realm's areas.</li>
+      <li>The Shard indicator on the dashboard clock will now also be visible when a shard is going to land today. For more detailed information, you can always click on the shard icon to visit the <a class="atmos-text-link" href="https://sky-shards.pages.dev/" target="_blank" rel="noopener">Sky Shards</a> website by Plutoy.</li>
+      <li>You can now share any Spirit Tree as an image.</li>
+      <li>Site load speed improved between frequent visits when using Dropbox.</li>
+      <li>Added a <a class="atmos-text-link" routerLink="/spirit-tree/editor">Spirit Tree Editor</a> to make your own spirit trees.</li>
+      <li>The new <a class="atmos-text-link" routerLink="/event/history">Events - History</a> page shows a full list of the events throughout the years.</li>
+      <li>You can now quickly create an <a class="atmos-text-link" routerLink="/item/collection">Item collection</a> from the <a class="atmos-text-link" routerLink="/item/unlock-calculator">Item cost calculator</a>, or calculate the costs from an item collection.</li>
+      <li>Reworked the Nesting Workshop page for patch 0.27.0. Thank you cozuki for testing!</li>
+    </ul>
+  </app-foldable-card>
+
+  <app-foldable-card [title]="'September 2024'" [folded]="true">
+    <ul class="atmos-news__changes">
+      <li>The item list has received <i>a lot</i> of new filters.</li>
+      <li>The dashboard shows a shard icon next to the Sky time whenever a shard has landed. Clicking on it will open the <a class="atmos-text-link" href="https://sky-shards.pages.dev/" target="_blank" rel="noopener">Sky Shards</a> website by Plutoy.</li>
+      <li>A link to the <a class="atmos-text-link" href="https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d" target="_blank" rel="noopener">Sky Event Calendar | FM</a> website has been added to seasons and events.</li>
+      <li>The <a class="atmos-text-link" routerLink="/item/unlock-calculator">Unlock cost calculator</a> allows you to calculate how many candles you need to unlock items of your choosing.</li>
+      <li>Various new spirit graphs can be found on the <a class="atmos-text-link" routerLink="/graph/spirit">Graphs - Spirits</a> page.</li>
+      <li>You can now indicate you own a season pass or an in-app purchase as a gift. The prices will in turn be excluded from the Currency page.</li>
+      <li>The website theme is now truly random when you choose 'Surprise'.</li>
+      <li>Launched a survey to collect feedback.</li>
+      <li>This page! Any changes before September have not been listed.</li>
+      <li>You can now create and manage item collections on the <a class="atmos-text-link" routerLink="/item/collection">Items - Collections</a> page.</li>
+      <li>The <a class="atmos-text-link" routerLink="/shop/nesting">Nesting Workshop</a> page now lists props in their store rotations and highlights the current rotation.</li>
+    </ul>
+  </app-foldable-card>
+</div>
