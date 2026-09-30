@@ -102,6 +102,23 @@
   </div>
 </section>
 
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-currency__section-title"><mat-icon>palette</mat-icon> Dyes</h2>
+    <div class="atmos-currency__dyes">
+      @for (dye of dyes; track dye.color) {
+        <div class="atmos-currency__field">
+          <mat-icon [class]="'dye-' + dye.color" [svgIcon]="'dye-' + dye.color" [skyTooltip]="dye.name + ' dye'"></mat-icon>
+          <span class="atmos-currency__times">x</span>
+          <input class="atmos-input atmos-input--narrow" type="number" min="0" max="99999" step="1"
+            [value]="inpCurrencies.dyes![dye.color] ?? 0"
+            (input)="onDyeInput(dye.color, $event)" (blur)="onDyeInputBlur(dye.color, $event)"/>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
 @if (ongoingSeason) {
   <section class="atmos-card">
     <div class="atmos-card__body">

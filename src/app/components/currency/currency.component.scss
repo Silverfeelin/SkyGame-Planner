@@ -34,6 +34,16 @@
   gap: 12px;
 }
 
+.atmos-currency__dyes {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 12px 24px;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
 .atmos-currency__btn-row {
   display: flex;
   flex-wrap: wrap;

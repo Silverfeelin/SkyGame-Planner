@@ -11,6 +11,7 @@ import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
 import { DateHelper } from '@app/helpers/date-helper';
 import { CurrencyQuickActionsComponent } from './quick-actions/currency-quick-actions.component';
+import { DyeColor } from '@app/components/outfit-request/closet/closet-state.service';
 
 interface IGains {
   candles: string;
@@ -41,6 +42,17 @@ export class CurrencyComponent implements OnDestroy {
   ongoingSeason?: ISeason;
   ongoingEventInstances: Array<IEventInstance>;
 
+  readonly dyes: Array<{ color: DyeColor; name: string }> = [
+    { color: 'red', name: 'Red' },
+    { color: 'yellow', name: 'Yellow' },
+    { color: 'green', name: 'Green' },
+    { color: 'cyan', name: 'Cyan' },
+    { color: 'blue', name: 'Blue' },
+    { color: 'purple', name: 'Purple' },
+    { color: 'black', name: 'Black' },
+    { color: 'white', name: 'White' }
+  ];
+
   dailySeasonCandles = 5;
   dailyEventCurrency: { [guid: string]: number } = {};
 
@@ -57,6 +69,8 @@ export class CurrencyComponent implements OnDestroy {
   ) {
     this.inpCurrencies = this._storageService.getCurrencies();
     this.currencies = this._storageService.getCurrencies();
+    this.inpCurrencies.dyes ??= {};
+    this.currencies.dyes ??= {};
     let changed = false;
 
     this.ongoingSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
@@ -240,6 +254,16 @@ export class CurrencyComponent implements OnDestroy {
     }
 
     this._storageService.setCurrencies(this.currencies);
+  }
+
+  onDyeInput(color: DyeColor, evt: Event): void {
+    const target = evt.target as HTMLInputElement;
+    this.currencies.dyes![color] = Math.min(99999, Math.max(this.parseInt(target.value), 0));
+    this._storageService.setCurrencies(this.currencies);
+  }
+
+  onDyeInputBlur(color: DyeColor, evt: Event): void {
+    (evt.target as HTMLInputElement).value = (this.currencies.dyes![color] ?? 0).toString();
   }
 
   dismissConverted(): void {
