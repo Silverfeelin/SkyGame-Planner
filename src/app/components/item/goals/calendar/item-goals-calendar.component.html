@@ -1,0 +1,151 @@
+<div class="atmos-goals-cal__toolbar">
+  <div class="atmos-goals-cal__nav">
+    <button type="button" class="atmos-icon-btn" (click)="shiftMonth(-1)" aria-label="Previous month" [skyTooltip]="'Previous month'">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <h3 class="atmos-goals-cal__month">{{ month().toFormat('LLLL yyyy') }}</h3>
+    <button type="button" class="atmos-icon-btn" (click)="shiftMonth(1)" aria-label="Next month" [skyTooltip]="'Next month'">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="goToToday()"><mat-icon>today</mat-icon> Today</button>
+  </div>
+
+  <div class="atmos-goals-cal__legend">
+    @for (k of ACTIVITY_KINDS; track k.kind) {
+      <button type="button" class="atmos-goals-cal__kind" [attr.data-kind]="k.kind"
+        [class.is-off]="!shownKinds().has(k.kind)" [attr.aria-pressed]="shownKinds().has(k.kind)" (click)="toggleKind(k.kind)">
+        <span class="atmos-goals-cal__swatch"></span> {{ k.label }}
+      </button>
+    }
+  </div>
+</div>
+
+<div class="atmos-goals-cal__layout">
+  <div class="atmos-goals-cal__grid" role="grid">
+    @for (w of WEEKDAYS; track w) {
+      <div class="atmos-goals-cal__weekday" role="columnheader">{{ w }}</div>
+    }
+    @for (day of days(); track day.key) {
+      <button type="button" class="atmos-goals-cal__day" role="gridcell"
+        [class.is-outside]="!day.inMonth" [class.is-today]="day.isToday" [class.is-past]="day.isPast"
+        [class.is-skipped]="day.skipped" [class.is-collecting]="day.collecting"
+        [class.is-selected]="day.key === selectedKey()"
+        [attr.aria-label]="dayLabel(day)" [attr.aria-selected]="day.key === selectedKey()"
+        (click)="select(day)" (dblclick)="toggleSkip(day.date)">
+        <span class="atmos-goals-cal__date">
+          {{ day.date.day }}
+          @if (day.skipped) { <mat-icon class="atmos-goals-cal__mark">block</mat-icon> }
+          @if (day.leaving.length) { <mat-icon class="atmos-goals-cal__mark is-leaving">flag</mat-icon> }
+        </span>
+
+        @if (day.affordable.length) {
+          <span class="atmos-goals-cal__items">
+            @for (goal of day.affordable.slice(0, 2); track goal.item.guid) {
+              <span class="atmos-goals-cal__item" [class.is-late]="goal.late">
+                <app-item-icon [item]="goal.item" size="small" [opaque]="true" />
+              </span>
+            }
+            @if (day.affordable.length > 2) { <span class="atmos-goals-cal__more">+{{ day.affordable.length - 2 }}</span> }
+          </span>
+        }
+
+        <span class="atmos-goals-cal__lanes">
+          @for (lane of day.lanes; track lane.kind) {
+            <span class="atmos-goals-cal__lane" [attr.data-kind]="lane.kind"
+              [class.is-active]="lane.active" [class.is-start]="lane.start" [class.is-end]="lane.end"></span>
+          }
+        </span>
+      </button>
+    }
+  </div>
+
+  <aside class="atmos-goals-cal__detail">
+    <div class="atmos-goals-cal__detail-head">
+      <h3 class="atmos-goals-cal__detail-title">{{ selected().toFormat('cccc d LLLL yyyy') }}</h3>
+      @if (selectedIsToday()) { <span class="atmos-pill">Today</span> }
+      @if (selectedSkipped()) { <span class="atmos-pill">Skipped</span> }
+    </div>
+
+    @if (selectedIsFuture()) {
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleSkip(selected())">
+        <mat-icon>{{ selectedSkipped() ? 'undo' : 'block' }}</mat-icon>
+        {{ selectedSkipped() ? 'Collect on this day' : 'Skip this day' }}
+      </button>
+    }
+
+    <section class="atmos-goals-cal__block">
+      <h4 class="atmos-goals-cal__block-title">To collect</h4>
+      @if (selectedIsToday()) {
+        <p class="atmos-goals-cal__hint">Today's currencies count once you update your balance.</p>
+      } @else if (!selectedIsFuture()) {
+        <p class="atmos-goals-cal__hint">This day has passed.</p>
+      } @else if (!selectedCollections().length) {
+        <p class="atmos-goals-cal__hint">Nothing left to save for on this day.</p>
+      } @else {
+        <ul class="atmos-goals-cal__collect">
+          @for (c of selectedCollections(); track c.plan.key) {
+            <li class="atmos-goals-cal__collect-row">
+              <mat-icon [svgIcon]="c.icon" [skyTooltip]="c.label"></mat-icon>
+              <span class="atmos-goals-cal__collect-amount" [class.is-none]="!c.collect">
+                {{ c.collect ? '+' + c.collect : '—' }}
+              </span>
+              <div class="atmos-progress" [class.is-full]="c.saved >= c.plan.needed">
+                <div class="atmos-progress__fill" [style.width.%]="c.saved / c.plan.needed * 100"></div>
+                <div class="atmos-progress__text">{{ c.saved }} / {{ c.plan.needed }}</div>
+              </div>
+            </li>
+          }
+        </ul>
+      }
+    </section>
+
+    @if (selectedAffordable().length) {
+      <section class="atmos-goals-cal__block">
+        <h4 class="atmos-goals-cal__block-title">Affordable from this day</h4>
+        <ul class="atmos-goals-cal__goal-list">
+          @for (goal of selectedAffordable(); track goal.item.guid) {
+            <li>
+              <a class="atmos-text-link" (click)="goalClicked.emit(goal)">{{ goal.item.name }}</a>
+              @if (goal.late) { <mat-icon class="atmos-goals-cal__warn" [skyTooltip]="'Only affordable after it is gone'">warning</mat-icon> }
+            </li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (selectedLeaving().length) {
+      <section class="atmos-goals-cal__block">
+        <h4 class="atmos-goals-cal__block-title">Last day to buy</h4>
+        <ul class="atmos-goals-cal__goal-list">
+          @for (goal of selectedLeaving(); track goal.item.guid) {
+            <li [class.is-late]="goal.late">
+              <a class="atmos-text-link" (click)="goalClicked.emit(goal)">{{ goal.item.name }}</a>
+              @if (goal.late) { <mat-icon class="atmos-goals-cal__warn" [skyTooltip]="'You will not have saved enough by then'">warning</mat-icon> }
+            </li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (selectedActivities().length) {
+      <section class="atmos-goals-cal__block">
+        <h4 class="atmos-goals-cal__block-title">Ongoing</h4>
+        <ul class="atmos-goals-cal__activities">
+          @for (a of selectedActivities(); track a.name + a.date.toMillis()) {
+            <li class="atmos-goals-cal__activity" [attr.data-kind]="a.kind">
+              <span class="atmos-goals-cal__swatch"></span>
+              <a class="atmos-text-link" [routerLink]="a.link">{{ a.name }}</a>
+              <span class="atmos-goals-cal__hint">{{ activityDates(a) }}</span>
+            </li>
+          }
+        </ul>
+      </section>
+    }
+  </aside>
+</div>
+
+<p class="atmos-goals-cal__hint">
+  @if (skippedCount()) {
+    <a class="atmos-text-link" (click)="clearSkipped()">Clear {{ skippedCount() }} skipped {{ skippedCount() === 1 ? 'day' : 'days' }}</a>
+  }
+</p>

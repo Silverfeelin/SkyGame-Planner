@@ -16,6 +16,7 @@ import { ItemCollectionComponent } from './components/item/collection/item-colle
 import { ItemDetailComponent } from './components/item/detail/item-detail.component';
 import { ItemInflationComponent } from './components/item/inflation/item-inflation.component';
 import { ItemUnlockCalculatorComponent } from './components/item/unlock-calculator/item-unlock-calculator.component';
+import { ItemGoalsComponent } from './components/item/goals/item-goals.component';
 import { CurrencyComponent } from './components/currency/currency.component';
 import { CurrencySpentComponent } from './components/currency/spent/currency-spent.component';
 import { SeasonCalculatorComponent } from './components/season/calculator/season-calculator.component';
@@ -156,6 +157,7 @@ export const routes: Routes = [
           /* Legacy path: quick unlock was replaced by quick start. */
           { path: 'unlock',     redirectTo: '/quick-start', pathMatch: 'full' },
           { path: 'unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Cost calculator') },
+          { path: 'goals',      component: ItemGoalsComponent,      title: title('Goals') },
           { path: ':guid',      component: ItemDetailComponent,    title: title('Item') },
         ]
       },

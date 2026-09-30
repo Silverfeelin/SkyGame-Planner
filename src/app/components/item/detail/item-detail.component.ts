@@ -8,6 +8,7 @@ import { INavigationTarget, NavigationHelper } from '@app/helpers/navigation-hel
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
+import { GoalService } from '@app/services/goal.service';
 import { StorageService } from '@app/services/storage.service';
 import { TitleService } from '@app/services/title.service';
 import { SettingService } from '@app/services/setting.service';
@@ -42,6 +43,7 @@ export class ItemDetailComponent {
   private readonly _dataService = inject(DataService);
   private readonly _eventService = inject(EventService);
   private readonly _storageService = inject(StorageService);
+  private readonly _goalService = inject(GoalService);
   private readonly _titleService = inject(TitleService);
   private readonly _settingService = inject(SettingService);
   private readonly _destroyRef = inject(DestroyRef);
@@ -51,6 +53,10 @@ export class ItemDetailComponent {
   readonly navList = signal<INavigationTarget | undefined>(undefined);
   readonly favourited = signal(false);
   readonly unlocked = signal(false);
+  readonly isGoal = computed(() => {
+    const guid = this.item()?.guid;
+    return !!guid && this._goalService.items().includes(guid);
+  });
   readonly dyePreviewMode = signal<0 | 1 | 2>(0);
   readonly showPreview = signal(false);
   readonly showTipUnlock = signal(false);
@@ -134,6 +140,11 @@ export class ItemDetailComponent {
     this.navSource.set(item ? NavigationHelper.getItemSource(item) : undefined);
     this.navList.set(item ? NavigationHelper.getItemListLink(item) : undefined);
     this._titleService.setTitle(item?.name ?? 'Item');
+  }
+
+  toggleGoal(): void {
+    const item = this.item();
+    if (item) { this._goalService.toggle(item.guid); }
   }
 
   toggleFavourite(): void {

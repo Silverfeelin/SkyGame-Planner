@@ -1,0 +1,225 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-goals__beta-pill {
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.atmos-goals__beta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: var(--atmos-fs-md);
+
+  mat-icon {
+    flex: none;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-goals__savings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap) calc(var(--atmos-gap) * 3);
+}
+
+.atmos-goals__savings-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.atmos-goals__income {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.atmos-goals__income-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.atmos-goals__hint {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+  margin: 0;
+}
+
+.atmos-goals__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.atmos-goals__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-goals__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-goals__row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto minmax(10em, auto) auto;
+  align-items: center;
+  gap: 12px;
+  padding: var(--atmos-pad-compact);
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+
+  &.is-owned { opacity: 0.6; }
+  &.is-late { border-color: var(--atmos-warn-accent); }
+  &.is-focused { animation: atmos-goals-focus 1.6s ease-out; }
+}
+
+@keyframes atmos-goals-focus {
+  0%, 40% { box-shadow: 0 0 0 2px var(--atmos-highlight); }
+  100% { box-shadow: 0 0 0 2px transparent; }
+}
+
+.atmos-goals__icon {
+  display: inline-flex;
+  width: var(--item-size-medium);
+  height: var(--item-size-medium);
+}
+
+.atmos-goals__row--simple {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+
+  .atmos-goals__name { justify-self: start; }
+}
+
+.atmos-goals__fold {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: var(--atmos-card-header-pad);
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  .atmos-section__title { margin: 0; }
+}
+
+.atmos-goals__disclaimer {
+  margin-bottom: 12px;
+}
+
+.atmos-goals__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.atmos-goals__name {
+  align-self: flex-start;
+  max-width: 100%;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.atmos-goals__window,
+.atmos-goals__days {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+}
+
+.atmos-goals__days { margin-left: 6px; }
+
+.atmos-goals__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+
+  mat-icon { flex-shrink: 0; }
+}
+
+.atmos-goals__late {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--atmos-warn-accent);
+  font-size: var(--atmos-fs-sm);
+
+  mat-icon { font-size: 18px; width: 18px; height: 18px; }
+}
+
+.atmos-goals__actions {
+  display: flex;
+  gap: 2px;
+
+  // Hidden rather than removed so the remaining buttons keep their position.
+  .is-hidden { visibility: hidden; }
+}
+
+.atmos-goals__total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: 12px 0 4px;
+}
+
+.atmos-goals__total-label {
+  color: var(--atmos-text-dim);
+}
+
+.atmos-goals__pick {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .atmos-goals__row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "icon info actions"
+      "icon cost cost"
+      "icon status status";
+  }
+  .atmos-goals__icon { grid-area: icon; align-self: start; }
+  .atmos-goals__info { grid-area: info; }
+  .atmos-goals__cost { grid-area: cost; }
+  .atmos-goals__status { grid-area: status; }
+  .atmos-goals__actions { grid-area: actions; }
+  .atmos-goals__row--simple {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: none;
+    > * { grid-area: auto; align-self: center; }
+  }
+}

@@ -11,6 +11,7 @@ import {
   IItemListNode, ISpecialVisitSpirit
 } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
+import { GoalService } from '@app/services/goal.service';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
@@ -74,6 +75,7 @@ export class ItemUnlockCalculatorComponent {
 
   private readonly _dataService = inject(DataService);
   private readonly _router = inject(Router);
+  private readonly _goalService = inject(GoalService);
 
   itemType: ItemType = ItemType.Outfit;
   private readonly _itemTypeSet = ITEM_GRID_TYPES;
@@ -135,6 +137,13 @@ export class ItemUnlockCalculatorComponent {
     if (!this.items.length) { return alert('No items selected.'); }
     const queryParams = { items: ItemHelper.serializeQuery(this.items) };
     this._router.navigate(['/item/collection'], { queryParams });
+  }
+
+  saveAsGoals(): void {
+    const guids = this.items.filter(i => !i.unlocked).map(i => i.guid);
+    if (!guids.length) { return alert('All selected items are already owned.'); }
+    this._goalService.add(...guids);
+    this._router.navigate(['/item/goals']);
   }
 
   showCostBreakdown(result: IItemResult): void {
