@@ -12,7 +12,7 @@
         (input)="onInput()"
         (keydown.escape)="clear()" />
       @if (query()) {
-        <button type="button" class="atmos-search__clear" (click)="clear()" aria-label="Clear search">
+        <button type="button" class="atmos-search__clear" tabindex="-1" (click)="clear()" aria-label="Clear search">
           <mat-icon>close</mat-icon>
         </button>
       }
@@ -22,7 +22,7 @@
   @if (results(); as r) {
     <div class="atmos-search__panel">
       @if (r.length) {
-        <ul class="atmos-search__list">
+        <ul class="atmos-search__list" tabindex="-1">
           @for (row of r; track $index) {
             <li>
               <a class="atmos-search__result" [routerLink]="row.route" [queryParams]="row.queryParams">

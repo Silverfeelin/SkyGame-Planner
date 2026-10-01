@@ -62,6 +62,16 @@
               @if (cLeft()) { <span class="atmos-fact__meta">({{ cLeft() }} needed)</span> }
             </div>
           </div>
+          @if (h()) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Hearts</div>
+              <div class="atmos-fact__value">
+                <mat-icon svgIcon="heart" class="currency"></mat-icon>
+                <span>{{ h() }}</span>
+                @if (hLeft()) { <span class="atmos-fact__meta">({{ hLeft() }} needed)</span> }
+              </div>
+            </div>
+          }
         </div>
       </div>
 
