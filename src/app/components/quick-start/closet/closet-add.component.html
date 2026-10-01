@@ -35,6 +35,7 @@
     <mat-icon>upload</mat-icon>
     <span><strong>Drop screenshots here</strong> or choose files</span>
     <span class="atmos-qs-drop__hint">PNG, JPG or WebP. Everything stays on your device.</span>
+    <span class="atmos-qs__paste">You can also paste screenshots with <kbd>{{ pasteKey }}</kbd>.</span>
     <button type="button" class="atmos-btn atmos-btn--sm" (click)="$event.stopPropagation(); fileInput.click()">Choose files</button>
     <input #fileInput type="file" class="input-hidden" tabindex="-1" aria-hidden="true" multiple [accept]="accept"
            (click)="$event.stopPropagation()" (change)="onFiles(fileInput)"/>

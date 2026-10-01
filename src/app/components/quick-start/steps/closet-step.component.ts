@@ -8,6 +8,7 @@ import { ClosetMatchingComponent } from '../closet/closet-matching.component';
 import { ClosetConfirmComponent } from '../closet/closet-confirm.component';
 import { MusicPanelComponent } from '../closet/music-panel.component';
 import { QuickStartEmotesComponent } from '../emotes/quick-start-emotes.component';
+import { isEditableTarget, screenshotsFromClipboard } from '../closet/closet-files';
 
 type StatusTone = 'plain' | 'done' | 'warn';
 
@@ -32,11 +33,14 @@ const STAGES: ReadonlyArray<{ stage: TabStage, label: string }> = [
   imports: [
     QuickStartStepNavComponent, ClosetAddComponent, ClosetCheckComponent, ClosetMatchingComponent, ClosetConfirmComponent,
     MusicPanelComponent, QuickStartEmotesComponent
-  ]
+  ],
+  host: { '(document:paste)': 'onPaste($event)' }
 })
 export class ClosetStepComponent {
   readonly store = inject(QuickStartStore);
   readonly stages = STAGES;
+
+  private _pasteCount = 0;
 
   readonly active = computed(() => this.store.tabDef(this.store.activeTab()));
   readonly state = computed(() => this.store.tab(this.store.activeTab())());
@@ -65,6 +69,22 @@ export class ClosetStepComponent {
 
   select(key: string): void {
     this.store.activeTab.set(key);
+  }
+
+  onPaste(event: ClipboardEvent): void {
+    const tab = this.active();
+    const { stage } = this.state();
+    if (!this.store.screenshotsSupported || (tab.kind !== 'closet' && tab.kind !== 'stanceCall')) { return; }
+    // Adding screenshots later on resets the match, which would discard the confirm grid.
+    if (stage !== 'add' && stage !== 'check') { return; }
+    if (isEditableTarget(event.target)) { return; }
+
+    const files = screenshotsFromClipboard(event);
+    if (!files.length) { return; }
+    event.preventDefault();
+    // Clipboard images all arrive as "image.png".
+    const named = files.map(f => new File([f], `Pasted image ${++this._pasteCount}.${f.type.split('/')[1]}`, { type: f.type }));
+    this.store.addFiles(tab.key, named);
   }
 
   /** Arrow keys move between tabs; the list is vertical on desktop and a horizontal strip on smaller screens. */

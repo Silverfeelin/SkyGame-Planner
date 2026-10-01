@@ -4,7 +4,7 @@ import { QuickStartTab } from '@app/services/quick-start/quick-start.model';
 import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 import { QuickStartStore } from '../quick-start.store';
 import { ClosetSketchComponent, ClosetSketchKind } from './closet-sketch.component';
-import { SCREENSHOT_ACCEPT } from './closet-files';
+import { PASTE_KEY, SCREENSHOT_ACCEPT } from './closet-files';
 
 interface HowtoStep {
   kind: ClosetSketchKind;
@@ -23,6 +23,7 @@ export class ClosetAddComponent {
   readonly store = inject(QuickStartStore);
   readonly accept = SCREENSHOT_ACCEPT;
   readonly exampleSrc = 'assets/images/quick-start-closet-example.webp';
+  readonly pasteKey = PASTE_KEY;
 
   readonly tab = input.required<QuickStartTab>();
 

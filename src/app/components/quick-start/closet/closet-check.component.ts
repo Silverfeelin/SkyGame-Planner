@@ -3,7 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { QuickStartTab } from '@app/services/quick-start/quick-start.model';
 import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 import { QuickStartShot, QuickStartStore } from '../quick-start.store';
-import { SCREENSHOT_ACCEPT } from './closet-files';
+import { PASTE_KEY, SCREENSHOT_ACCEPT } from './closet-files';
 
 @Component({
   selector: 'app-quick-start-closet-check',
@@ -15,6 +15,7 @@ import { SCREENSHOT_ACCEPT } from './closet-files';
 export class ClosetCheckComponent {
   readonly store = inject(QuickStartStore);
   readonly accept = SCREENSHOT_ACCEPT;
+  readonly pasteKey = PASTE_KEY;
 
   readonly tab = input.required<QuickStartTab>();
 

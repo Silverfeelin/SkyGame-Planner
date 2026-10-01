@@ -100,6 +100,25 @@
 
     > mat-icon { color: var(--qs-warn); }
   }
+
+  // Pasting a screenshot is a keyboard-and-mouse workflow; touch devices keep the picker and drop zone.
+  .atmos-qs__paste {
+    display: none;
+    color: var(--atmos-text-mute);
+
+    kbd {
+      padding: 1px 5px;
+      border-radius: 4px;
+      border: 1px solid var(--atmos-line);
+      background: var(--atmos-bg-elev);
+      color: var(--atmos-text-dim);
+      font-family: inherit;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .atmos-qs__paste { display: inline; }
+  }
 }
 
 // Screenshot thumbnails, shared by the check and matching panels.

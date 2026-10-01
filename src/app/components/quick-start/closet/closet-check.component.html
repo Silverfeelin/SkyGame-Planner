@@ -66,6 +66,7 @@
   <li class="atmos-qs-shot atmos-qs-check__add">
     <button type="button" class="atmos-qs-check__add-btn atmos-focus-ring" (click)="fileInput.click()">
       <mat-icon>upload</mat-icon>Add more
+      <span class="atmos-qs__paste">or paste with <kbd>{{ pasteKey }}</kbd></span>
     </button>
     <input #fileInput type="file" class="input-hidden" tabindex="-1" aria-hidden="true" multiple [accept]="accept"
            (change)="onFiles(fileInput)"/>
