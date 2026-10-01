@@ -4,7 +4,7 @@ import { Chart } from 'chart.js/auto';
 import { IItem, ItemType } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { ChartHelper } from '@app/helpers/chart-helper';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ItemTypeNavComponent } from '../type-nav/item-type-nav.component';
 import { ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
 
@@ -23,7 +23,7 @@ interface IChartItem {
   templateUrl: './item-inflation.component.html',
   styleUrl: './item-inflation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ItemQuickActionsComponent, ItemTypeNavComponent]
+  imports: [SectionQuickActionsComponent, ItemTypeNavComponent]
 })
 export class ItemInflationComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartDiv!: ElementRef<HTMLCanvasElement>;

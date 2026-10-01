@@ -21,7 +21,7 @@ import {
   SeasonCardComponent,
   ShardIndicatorComponent
 } from '@app/components/shared/shared-widgets';
-import { DailyQuickActionsComponent } from './quick-actions/daily-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 interface IDailyTaskState {
@@ -57,7 +57,7 @@ function getWeeklyAnchor(today: DateTime): string {
     EventCardComponent,
     SeasonCardComponent,
     ShardIndicatorComponent,
-    DailyQuickActionsComponent
+    SectionQuickActionsComponent
   ]
 })
 export class DailyComponent implements OnInit, OnDestroy {

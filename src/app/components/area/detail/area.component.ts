@@ -5,14 +5,14 @@ import { DataService } from '@app/services/data.service';
 import { TitleService } from '@app/services/title.service';
 import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit-type-icon.component';
 import { IArea, IRealm } from 'skygame-data';
-import { RealmQuickActionsComponent } from '../../realm/quick-actions/realm-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
   selector: 'app-area',
   templateUrl: './area.component.html',
   styleUrl: './area.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, SpiritTypeIconComponent, RealmQuickActionsComponent]
+  imports: [RouterLink, MatIcon, SpiritTypeIconComponent, SectionQuickActionsComponent]
 })
 export class AreaComponent {
   area!: IArea;

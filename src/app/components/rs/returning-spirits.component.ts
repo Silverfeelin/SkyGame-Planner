@@ -8,7 +8,7 @@ import { getAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { AgSpiritsRendererComponent } from '@app/components/grid/renderers/ag-spirits-renderer/ag-spirits-renderer.component';
-import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-actions/spirit-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 /**
  * Returning-spirits (Special Visits) list.
@@ -18,7 +18,7 @@ import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-action
   templateUrl: './returning-spirits.component.html',
   styleUrl: './returning-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, SpiritQuickActionsComponent]
+  imports: [AgGridAngular, SectionQuickActionsComponent]
 })
 export class ReturningSpiritsComponent {
   private readonly _dataService = inject(DataService);

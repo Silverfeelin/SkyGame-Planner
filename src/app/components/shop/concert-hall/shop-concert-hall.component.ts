@@ -4,14 +4,14 @@ import { MatIcon } from '@angular/material/icon';
 import { ISpirit, ISpiritTree } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { SpiritTreeComponent } from '@app/components/shared/shared-widgets';
-import { ShopQuickActionsComponent } from '../quick-actions/shop-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
   selector: 'app-shop-concert-hall',
   templateUrl: './shop-concert-hall.component.html',
   styleUrl: './shop-concert-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, SpiritTreeComponent, ShopQuickActionsComponent]
+  imports: [MatIcon, SpiritTreeComponent, SectionQuickActionsComponent]
 })
 export class ShopConcertHallComponent {
   readonly tree: ISpiritTree;

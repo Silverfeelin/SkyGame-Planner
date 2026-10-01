@@ -11,7 +11,7 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { IItem, ItemType } from 'skygame-data';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
-import { ItemQuickActionsComponent } from './quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 const itemTypePipe = new ItemTypePipe();
 const typeFilterValues = Object.values(ItemType).map(t => ({ value: t, label: itemTypePipe.transform(t) }));
@@ -31,7 +31,7 @@ const textFilterParams = {
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, ItemQuickActionsComponent]
+  imports: [AgGridAngular, SectionQuickActionsComponent]
 })
 export class ItemsComponent {
   theme = getAgTheme();

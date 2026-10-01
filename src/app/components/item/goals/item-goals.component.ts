@@ -18,7 +18,7 @@ import { CostComponent } from '@app/components/util/cost/cost.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { ItemGridLayoutComponent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ItemGoalsCalendarComponent } from './calendar/item-goals-calendar.component';
 
 const CURRENCY_NAMES: Record<GoalBucketKey, string> = {
@@ -30,7 +30,7 @@ const CURRENCY_NAMES: Record<GoalBucketKey, string> = {
   templateUrl: './item-goals.component.html',
   styleUrl: './item-goals.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, RouterLink, MatIcon, TooltipDirective, DateTimePipe, CostComponent, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent, ItemGoalsCalendarComponent]
+  imports: [NgTemplateOutlet, RouterLink, MatIcon, TooltipDirective, DateTimePipe, CostComponent, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent, ItemGoalsCalendarComponent]
 })
 export class ItemGoalsComponent {
   private readonly _dataService = inject(DataService);

@@ -9,7 +9,7 @@ import { VaultApiService, IApiOutfits, IApiOutfit } from './vault-api.service';
 import { VaultItemPickerComponent, ItemSelection } from './vault-item-picker.component';
 import { VaultResultsComponent, IVaultResult } from './vault-results.component';
 import { VaultSubmitComponent } from './vault-submit.component';
-import { ToolQuickActionsComponent } from '@app/components/tool/quick-actions/tool-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 export type VaultMode = 'selection' | 'picking' | 'results' | 'submit';
 
@@ -24,7 +24,7 @@ export type VaultMode = 'selection' | 'picking' | 'results' | 'submit';
     VaultItemPickerComponent,
     VaultResultsComponent,
     VaultSubmitComponent,
-    ToolQuickActionsComponent
+    SectionQuickActionsComponent
   ]
 })
 export class OutfitVaultComponent implements OnInit {

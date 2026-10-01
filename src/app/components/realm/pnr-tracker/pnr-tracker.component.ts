@@ -3,7 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import L from 'leaflet';
 import { pnrMarkers } from '@app/components/realm/pnr-tracker/pnr-tracker-markers';
-import { RealmQuickActionsComponent } from '@app/components/realm/quick-actions/realm-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 const markerIcon = L.icon({
   iconUrl: 'assets/icons/symbols/location_on_orange.svg',
@@ -30,7 +30,7 @@ interface IStatueMarker {
   templateUrl: './pnr-tracker.component.html',
   styleUrl: './pnr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, MatIcon, RealmQuickActionsComponent]
+  imports: [TooltipDirective, MatIcon, SectionQuickActionsComponent]
 })
 export class PnrTrackerComponent implements AfterViewInit {
   @ViewChild('map', { static: true }) private mapDiv!: ElementRef<HTMLDivElement>;

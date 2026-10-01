@@ -4,7 +4,7 @@ import { ItemIconComponent } from '../icon/item-icon.component';
 import { SUBICONS_ALL } from '../icon/subicons/item-subicons.component';
 import { DataService } from '@app/services/data.service';
 import { ItemGridLayoutComponent } from './item-grid-layout.component';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { IItem } from 'skygame-data';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 
@@ -13,7 +13,7 @@ import { TooltipDirective } from '@app/directives/tooltip.directive';
   templateUrl: './item-grid.component.html',
   styleUrl: './item-grid.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, RouterLink, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [TooltipDirective, RouterLink, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent]
 })
 export class ItemGridComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

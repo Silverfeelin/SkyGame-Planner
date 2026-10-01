@@ -4,7 +4,7 @@ import { IEvent, IEventInstance } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { EventCardComponent } from '@app/components/shared/shared-widgets';
-import { EventQuickActionsComponent } from '../quick-actions/event-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IEventRow {
   event: IEvent;
@@ -16,7 +16,7 @@ interface IEventRow {
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [EventCardComponent, EventQuickActionsComponent]
+  imports: [EventCardComponent, SectionQuickActionsComponent]
 })
 export class EventsComponent {
   private readonly _dataService = inject(DataService);

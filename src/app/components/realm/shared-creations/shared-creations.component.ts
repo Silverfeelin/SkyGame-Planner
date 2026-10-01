@@ -9,7 +9,7 @@ import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { BroadcastService } from '@app/services/broadcast.service';
 import { MapService } from '@app/services/map.service';
 import { StorageService } from '@app/services/storage.service';
-import { RealmQuickActionsComponent } from '../quick-actions/realm-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 type SharedCreationType = 'message' | 'memory' | 'space';
 
@@ -42,7 +42,7 @@ const TYPE_LABELS: Record<SharedCreationType, string> = {
   templateUrl: './shared-creations.component.html',
   styleUrl: './shared-creations.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, RealmQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent]
 })
 export class SharedCreationsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLElement>;

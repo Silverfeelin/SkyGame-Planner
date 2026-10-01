@@ -21,7 +21,7 @@ import { StorageService } from '@app/services/storage.service';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateComponent } from '@app/components/util/date/date.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
-import { ShopQuickActionsComponent } from '../quick-actions/shop-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import {
   ItemListComponent,
   ItemListNodeClickEvent,
@@ -143,7 +143,7 @@ const rotations: IRotations = [
     ItemIconComponent,
     ItemListComponent,
     SpiritTreeComponent,
-    ShopQuickActionsComponent
+    SectionQuickActionsComponent
   ]
 })
 export class ShopNestingComponent {

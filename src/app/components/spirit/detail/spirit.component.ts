@@ -9,7 +9,7 @@ import { SpiritTypePipe } from '@app/pipes/spirit-type.pipe';
 import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit-type-icon.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { SpiritTreeComponent } from '@app/components/shared/shared-widgets';
-import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-actions/spirit-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 
 interface ITree {
@@ -32,7 +32,7 @@ interface ITree {
   imports: [
     RouterLink, MatIcon,
     SpiritTypeIconComponent, WikiLinkComponent,
-    SpiritTreeComponent, SpiritQuickActionsComponent, ImageOverlayComponent
+    SpiritTreeComponent, SectionQuickActionsComponent, ImageOverlayComponent
   ]
 })
 export class SpiritComponent {

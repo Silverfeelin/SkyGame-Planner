@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { ItemIconComponent } from '../icon/item-icon.component';
 import { SUBICONS_ALL } from '../icon/subicons/item-subicons.component';
 import { ItemGridLayoutComponent } from '../grid/item-grid-layout.component';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemHelper } from '@app/helpers/item-helper';
@@ -32,7 +32,7 @@ interface IStorageData {
   templateUrl: './item-collection.component.html',
   styleUrl: './item-collection.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, RouterLink, MatIcon, ReactiveFormsModule, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [TooltipDirective, RouterLink, MatIcon, ReactiveFormsModule, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent]
 })
 export class ItemCollectionComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

@@ -11,7 +11,7 @@ import { DateRangeComponent } from '@app/components/util/date-range/date-range.c
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import { DraftWarningComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
-import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-actions/spirit-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 /**
  * Returning-spirit (Special Visit) detail. Renders the visit metadata + each
@@ -27,7 +27,7 @@ import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-action
     WikiLinkComponent, CalendarLinkComponent,
     DateRangeComponent, DaysLeftComponent, DurationComponent,
     SpiritTreeComponent, DraftWarningComponent,
-    SpiritQuickActionsComponent
+    SectionQuickActionsComponent
   ]
 })
 export class ReturningSpiritComponent {

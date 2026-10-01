@@ -5,14 +5,14 @@ import { IIAP, IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { IapCardComponent, ItemListComponent } from '@app/components/shared/shared-widgets';
-import { ShopQuickActionsComponent } from '../quick-actions/shop-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
   selector: 'app-shop-cinema',
   templateUrl: './shop-cinema.component.html',
   styleUrl: './shop-cinema.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, IapCardComponent, ItemListComponent, ShopQuickActionsComponent]
+  imports: [MatIcon, IapCardComponent, ItemListComponent, SectionQuickActionsComponent]
 })
 export class ShopCinemaComponent {
   private readonly _iapService = inject(IAPService);

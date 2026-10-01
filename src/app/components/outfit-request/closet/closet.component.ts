@@ -17,7 +17,7 @@ import { ClosetBackgroundPickerComponent } from './closet-background-picker.comp
 import { ClosetModifyPanelComponent } from './closet-modify-panel.component';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
 import { drawFingerprint } from '@app/components/outfit-request/closet-fingerprint';
-import { ToolQuickActionsComponent } from '@app/components/tool/quick-actions/tool-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { startClosetTour } from './closet-tour';
 
@@ -38,7 +38,7 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
     ClosetDyePickerComponent,
     ClosetBackgroundPickerComponent,
     ClosetModifyPanelComponent,
-    ToolQuickActionsComponent,
+    SectionQuickActionsComponent,
     TooltipDirective
   ]
 })

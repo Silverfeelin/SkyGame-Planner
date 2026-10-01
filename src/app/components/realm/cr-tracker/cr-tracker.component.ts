@@ -11,7 +11,7 @@ import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.serv
 import { SettingService } from '@app/services/setting.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { environment } from 'src/environments/environment';
-import { RealmQuickActionsComponent } from '@app/components/realm/quick-actions/realm-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface ICandlesData { items: Array<ICandleArea>; }
 interface ICandleArea {
@@ -67,7 +67,7 @@ export const canDeactivateCrTracker: CanDeactivateFn<CrTrackerComponent> = compo
   templateUrl: './cr-tracker.component.html',
   styleUrl: './cr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, MatIcon, OverlayComponent, RealmQuickActionsComponent]
+  imports: [TooltipDirective, MatIcon, OverlayComponent, SectionQuickActionsComponent]
 })
 export class CrTrackerComponent implements AfterViewInit {
   @HostListener('window:beforeunload', ['$event'])

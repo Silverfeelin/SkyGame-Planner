@@ -1,3 +1,5 @@
+import { FOOTER_PAGES, SECTIONS, getPage } from '@app/navigation/pages';
+
 export interface INavItem {
   icon: string;
   svgIcon?: string;
@@ -8,27 +10,12 @@ export interface INavItem {
   external?: boolean;
 }
 
-export const REDESIGN_NAV: ReadonlyArray<INavItem> = [
-  { icon: 'home',                            label: 'Sky Planner',  link: '/',              exact: true },
-  { icon: 'today',                           label: 'Daily',        link: '/daily' },
-  { icon: 'wallet',       svgIcon: 'candle', label: 'Currencies',   link: '/currency' },
-  { icon: 'checkroom',                       label: 'Items',        link: '/item' },
-  { icon: 'person',                          label: 'Spirits',      link: '/spirit' },
-  { icon: 'air',          svgIcon: 'flaps',  label: 'Winged Light', link: '/winged-light' },
-  { icon: 'map',                             label: 'Realms',       link: '/realm' },
-  { icon: 'ac_unit',                         label: 'Seasons',      link: '/season' },
-  { icon: 'celebration',                     label: 'Events',       link: '/event' },
-  { icon: 'shopping_cart',                   label: 'Shops',        link: '/shop' },
-  { icon: 'people',                          label: 'Friends',      link: '/friend' },
-  { icon: 'build',                           label: 'Tools',        link: '/tool' }
-];
+export const REDESIGN_NAV: ReadonlyArray<INavItem> = Object.values(SECTIONS).map(({ pages, ...item }) => item);
 
-export const REDESIGN_FOOT_NAV: ReadonlyArray<INavItem> = [
-  { icon: 'chat', label: 'Design feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScruTqCFHUENPekcpu4BzGmBjBKrf_1CTzT9_R8Yvr7DulDmQ/viewform?usp=publish-editor', external: true },
-  { icon: 'new_releases', label: "What's new", link: '/news' },
-  { icon: 'settings',     label: 'Settings',   link: '/settings' },
-  { icon: 'info',         label: 'Info',       link: '/info' }
-];
+export const REDESIGN_FOOT_NAV: ReadonlyArray<INavItem> = FOOTER_PAGES.map(id => {
+  const { icon, svgIcon, label, link, external } = getPage(id);
+  return { icon, svgIcon, label, link, external };
+});
 
 export function withSeasonIcon(items: ReadonlyArray<INavItem>, seasonIconUrl: string | undefined): ReadonlyArray<INavItem> {
   if (!seasonIconUrl) return items;

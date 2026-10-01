@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemType } from 'skygame-data';
-import { WingedLightQuickActionsComponent } from './quick-actions/winged-light-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IBreakdown {
   label: string;
@@ -21,7 +21,7 @@ interface IBreakdown {
   templateUrl: './winged-light.component.html',
   styleUrl: './winged-light.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, WingedLightQuickActionsComponent]
+  imports: [RouterLink, MatIcon, SectionQuickActionsComponent]
 })
 export class WingedLightComponent {
   readonly wedges: ReadonlyArray<number> = [1, 2, 5, 10, 20, 35, 55, 75, 100, 120, 150, 200, 250, 300];

@@ -17,7 +17,7 @@ import { ItemSubIconsComponent, SUBICONS_ALL } from '@app/components/item/icon/s
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
 
 interface IItemGroupFact { label: string; icon: string; note: string; }
@@ -34,7 +34,7 @@ const GROUP_FACTS: { [key in ItemGroup]: IItemGroupFact } = {
   templateUrl: './item-detail.component.html',
   styleUrl: './item-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, ImageOverlayComponent, ItemTypePipe, ItemQuickActionsComponent]
+  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, ImageOverlayComponent, ItemTypePipe, SectionQuickActionsComponent]
 })
 export class ItemDetailComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

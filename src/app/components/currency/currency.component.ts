@@ -10,7 +10,7 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
 import { DateHelper } from '@app/helpers/date-helper';
-import { CurrencyQuickActionsComponent } from './quick-actions/currency-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { DyeColor } from '@app/components/outfit-request/closet/closet-state.service';
 
 interface IGains {
@@ -27,7 +27,7 @@ interface IGains {
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, CurrencyQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, SectionQuickActionsComponent]
 })
 export class CurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;

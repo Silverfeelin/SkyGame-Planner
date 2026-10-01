@@ -14,7 +14,7 @@ import { INavigationTarget, NavigationHelper } from '@app/helpers/navigation-hel
 import { ItemHelper } from '@app/helpers/item-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DataService } from '@app/services/data.service';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { IItem, ISpiritTree } from 'skygame-data';
 
 interface IRow {
@@ -26,7 +26,7 @@ interface IRow {
   templateUrl: './item-hearts.component.html',
   styleUrl: './item-hearts.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AgGridAngular, ItemQuickActionsComponent]
+  imports: [RouterLink, MatIcon, AgGridAngular, SectionQuickActionsComponent]
 })
 export class ItemHeartsComponent {
   readonly theme = getAgTheme();

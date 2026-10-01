@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DataService } from '@app/services/data.service';
 import { IArea } from 'skygame-data';
-import { RealmQuickActionsComponent } from '../realm/quick-actions/realm-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { FeatureCardComponent, IFeatureLink } from '../dashboard/feature-card.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { FeatureCardComponent, IFeatureLink } from '../dashboard/feature-card.co
   templateUrl: './areas.component.html',
   styleUrl: './areas.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RealmQuickActionsComponent, FeatureCardComponent]
+  imports: [SectionQuickActionsComponent, FeatureCardComponent]
 })
 export class AreasComponent {
   readonly areas: ReadonlyArray<IArea> = inject(DataService).areaConfig.items;

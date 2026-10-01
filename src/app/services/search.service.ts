@@ -3,6 +3,7 @@ import { Params } from '@angular/router';
 import fuzzysort from 'fuzzysort';
 import { DataService } from './data.service';
 import { NavigationHelper } from '../helpers/navigation-helper';
+import { IPage, PAGES } from '../navigation/pages';
 import { IItem, ItemType, IGuid, ISpirit, ISeason, IEvent, IRealm, IArea } from 'skygame-data';
 
 export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area' | 'Page';
@@ -178,46 +179,11 @@ export class SearchService {
     }));
 
     // Add pages
-    items.push(
-      { name: 'Currencies', type: 'Page', data: '/currency', search: 'Currencies' },
-      { name: 'Spent currency', type: 'Page', data: '/currency/spent', search: 'Spent currency' },
-      { name: 'Events', type: 'Page', data: '/event', search: 'Events' },
-      { name: 'Event history', type: 'Page', data: '/event/history', search: 'Event history' },
-      { name: 'Event calculator', type: 'Page', data: '/event/calculator', search: 'Event calculator' },
-      { name: 'Items', type: 'Page', data: '/item', search: 'Items' },
-      { name: 'Item collections', type: 'Page', data: '/item/collection', search: 'Item collections' },
-      { name: 'Item inflation', type: 'Page', data: '/item/inflation', search: 'Item inflation' },
-      { name: 'Item unlock calculator', type: 'Page', data: '/item/unlock-calculator', search: 'Item unlock calculator' },
-      { name: 'Goals', type: 'Page', data: '/item/goals', search: 'Goals saving planner' },
-      { name: 'Hearts', type: 'Page', data: '/item/heart', search: 'Hearts' },
-      { name: 'Realms', type: 'Page', data: '/realm', search: 'Realms' },
-      { name: 'Areas', type: 'Page', data: '/area', search: 'Areas' },
-      { name: 'Seasons', type: 'Page', data: '/season', search: 'Seasons' },
-      { name: 'Season calculator', type: 'Page', data: '/season/calculator', search: 'Season calculator' },
-      { name: 'Permanent shops', type: 'Page', data: '/shop', search: 'Permanent shops' },
-      { name: 'Shops - Aviary Event Store', type: 'Page', data: '/shop/event', search: 'Aviary Event Store' },
-      { name: 'Shops - Concert Hall', type: 'Page', data: '/shop/concert-hall', search: 'Concert Hall' },
-      { name: 'Shops - Harmony Hall', type: 'Page', data: '/shop/harmony', search: 'Harmony Hall' },
-      { name: 'Shops - Nesting Workshop', type: 'Page', data: '/shop/nesting', search: 'Nesting Workshop' },
-      { name: 'Shops - Office', type: 'Page', data: '/shop/office', search: 'Office' },
-      { name: 'Shops - Prairie Heights', type: 'Page', data: '/shop/prairieheights', search: 'Prairie Heights' },
-      { name: 'Spirits', type: 'Page', data: '/spirits', search: 'Spirits' },
-      { name: 'Elusive spirits', type: 'Page', data: '/spirit/elusive', search: 'Elusive spirits' },
-      { name: 'Traveling spirits', type: 'Page', data: '/ts', search: 'Traveling spirits' },
-      { name: 'Special visits', type: 'Page', data: '/rs', search: 'Special visits' },
-      { name: 'Winged light', type: 'Page', data: '/winged-light', search: 'Winged light' },
-      { name: 'Wing buffs', type: 'Page', data: '/wing-buff', search: 'Wing buffs' },
-      { name: 'Children of Light', type: 'Page', data: '/col', search: 'Children of Light' },
-      { name: 'Outfit request - Closet', type: 'Page', data: '/outfit-request/closet', search: 'Outfit request - Closet' },
-      { name: 'Outfit request - Request', type: 'Page', data: '/outfit-request/request', search: 'Outfit request - Request' },
-      { name: 'Outfit vault', type: 'Page', data: '/outfit-request/vault', search: 'Outfit vault' },
-      { name: `What's new`, type: 'Page', data: '/news', search: `What's news` },
-      { name: 'Quick start', type: 'Page', data: '/quick-start', search: 'Quick start' },
-      { name: 'Settings', type: 'Page', data: '/settings', search: 'Settings' },
-      { name: 'Info', type: 'Page', data: '/credits', search: 'Info' },
-      { name: 'Credits', type: 'Page', data: '/credits', search: 'Credits' },
-      { name: 'Privacy Policy', type: 'Page', data: '/privacy', search: 'Privacy Policy' }
-    );
+    for (const page of Object.values(PAGES) as Array<IPage>) {
+      if (page.search === false || page.external || page.queryParams) { continue; }
+      const name = page.search?.name ?? page.label;
+      items.push({ name, type: 'Page', data: page.link, search: page.search?.text ?? name } as ISearchItem<string>);
+    }
 
     // Prepare search strings.
     items.forEach(item => {

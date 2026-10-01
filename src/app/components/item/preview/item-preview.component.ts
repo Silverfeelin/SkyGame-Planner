@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { IconComponent } from '@app/components/icon/icon.component';
 import { DataService } from '@app/services/data.service';
 import { ItemGridLayoutComponent, ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ItemSubIconsComponent, SUBICONS_ALL } from '../icon/subicons/item-subicons.component';
 import { IItem, ItemType } from 'skygame-data';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
@@ -13,7 +13,7 @@ import { TooltipDirective } from '@app/directives/tooltip.directive';
   templateUrl: './item-preview.component.html',
   styleUrl: './item-preview.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, RouterLink, IconComponent, ItemSubIconsComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [TooltipDirective, RouterLink, IconComponent, ItemSubIconsComponent, ItemGridLayoutComponent, SectionQuickActionsComponent]
 })
 export class ItemPreviewComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

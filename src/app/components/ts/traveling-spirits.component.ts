@@ -10,7 +10,7 @@ import { getAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgImageRendererComponent } from '@app/components/grid/renderers/ag-image-renderer/ag-image-renderer.component';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
-import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-actions/spirit-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 /**
  * Traveling spirits list.
@@ -20,7 +20,7 @@ import { SpiritQuickActionsComponent } from '@app/components/spirit/quick-action
   templateUrl: './traveling-spirits.component.html',
   styleUrl: './traveling-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, SpiritQuickActionsComponent]
+  imports: [AgGridAngular, SectionQuickActionsComponent]
 })
 export class TravelingSpiritsComponent {
   private readonly _dataService = inject(DataService);

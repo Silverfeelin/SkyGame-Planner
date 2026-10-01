@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
-import { ToolQuickActionsComponent } from '@app/components/tool/quick-actions/tool-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { CollageSlotComponent } from './collage-slot.component';
 
 /** Largest collage the page offers; the visible size is picked within these bounds. */
@@ -31,7 +31,7 @@ interface ICoord { x: number; y: number; }
   templateUrl: './collage.component.html',
   styleUrl: './collage.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, ToolQuickActionsComponent, CollageSlotComponent],
+  imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent, CollageSlotComponent],
 })
 export class CollageComponent {
   readonly blockCols = BLOCK_COLS;

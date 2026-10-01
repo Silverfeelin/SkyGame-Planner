@@ -9,7 +9,7 @@ import { AgSpiritTypeRendererComponent } from '@app/components/grid/renderers/ag
 import { AgSpiritLinkRendererComponent } from '@app/components/grid/renderers/ag-spirit-link-renderer/ag-spirit-link-renderer.component';
 import { DataService } from '@app/services/data.service';
 import { IItem, ISpirit, ItemType, SpiritType } from 'skygame-data';
-import { WingedLightQuickActionsComponent } from '../winged-light/quick-actions/winged-light-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IOriginLink { name: string; route: Array<string>; }
 
@@ -38,7 +38,7 @@ class AgWingBuffOriginRendererComponent implements ICellRendererAngularComp {
   templateUrl: './wing-buffs.component.html',
   styleUrl: './wing-buffs.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, WingedLightQuickActionsComponent]
+  imports: [AgGridAngular, SectionQuickActionsComponent]
 })
 export class WingBuffsComponent {
   readonly theme = getAgTheme();

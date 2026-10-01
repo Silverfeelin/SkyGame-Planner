@@ -22,7 +22,7 @@ import { ItemIconComponent } from '@app/components/item/icon/item-icon.component
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
 import { SpiritTreeComponent } from '@app/components/shared/shared-widgets';
-import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ItemUnlockCalculatorFavouritesComponent } from './item-unlock-calculator-favourites.component';
 import { ItemUnlockCalculatorSpiritsComponent } from './item-unlock-calculator-spirits.component';
 import { ItemUnlockCalculatorSeasonsComponent } from './item-unlock-calculator-seasons.component';
@@ -59,7 +59,7 @@ interface IItemResult {
     ItemIconComponent, CostComponent, ItemTypePipe,
     ItemGridLayoutComponent, SpiritTreeComponent,
     RouterLink,
-    ItemQuickActionsComponent,
+    SectionQuickActionsComponent,
     ItemUnlockCalculatorFavouritesComponent,
     ItemUnlockCalculatorSpiritsComponent,
     ItemUnlockCalculatorSeasonsComponent,

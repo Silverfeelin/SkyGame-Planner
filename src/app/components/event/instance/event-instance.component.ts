@@ -14,7 +14,7 @@ import { DateRangeComponent } from '@app/components/util/date-range/date-range.c
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import { DraftWarningComponent, IapCardComponent, ItemListComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
-import { EventQuickActionsComponent } from '../quick-actions/event-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
   selector: 'app-event-instance',
@@ -31,7 +31,7 @@ import { EventQuickActionsComponent } from '../quick-actions/event-quick-actions
     ItemListComponent,
     IapCardComponent,
     DraftWarningComponent,
-    EventQuickActionsComponent
+    SectionQuickActionsComponent
   ]
 })
 export class EventInstanceComponent implements OnDestroy {

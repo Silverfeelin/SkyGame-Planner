@@ -7,7 +7,7 @@ import { DataService } from '@app/services/data.service';
 import { getAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgEventLinkRendererComponent } from '@app/components/grid/renderers/ag-event-link-renderer/ag-event-link-renderer.component';
-import { EventQuickActionsComponent } from '../quick-actions/event-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IRow {
   event: IEvent;
@@ -38,7 +38,7 @@ const numFilterParams = {
   templateUrl: './event-history.component.html',
   styleUrl: './event-history.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, EventQuickActionsComponent]
+  imports: [AgGridAngular, SectionQuickActionsComponent]
 })
 export class EventHistoryComponent {
   private readonly _dataService = inject(DataService);

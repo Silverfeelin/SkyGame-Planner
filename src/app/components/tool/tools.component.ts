@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { ToolQuickActionsComponent } from './quick-actions/tool-quick-actions.component';
+import { PAGES } from '@app/navigation/pages';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IToolCard {
   readonly title: string;
@@ -24,7 +25,7 @@ interface IToolLink {
   templateUrl: './tools.component.html',
   styleUrl: './tools.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ToolQuickActionsComponent]
+  imports: [RouterLink, MatIcon, SectionQuickActionsComponent]
 })
 export class ToolsComponent {
   readonly cards: ReadonlyArray<IToolCard> = [
@@ -34,7 +35,7 @@ export class ToolsComponent {
       icon: 'auto_awesome',
       description: 'Add screenshots of your closet, or mark items by hand, and we\'ll work out which items, spirits and seasons you already have.',
       links: [
-        { icon: 'auto_awesome', label: 'Set up my progress', link: '/quick-start' }
+        { icon: 'auto_awesome', label: 'Set up my progress', link: PAGES.quickStart.link }
       ]
     },
     {
@@ -43,10 +44,10 @@ export class ToolsComponent {
       icon: 'checkroom',
       description: 'Pick items from your closet, share an outfit request link or build a collage to show off your style.',
       links: [
-        { icon: 'checkroom', label: 'Sky closet',     link: '/outfit-request/closet' },
-        { icon: 'add',       label: 'Create request', link: '/outfit-request/request' },
-        { icon: 'image',     label: 'Create collage', link: '/outfit-request/collage' },
-        { icon: 'link',      label: 'Outfit vault',   link: '/outfit-request/vault' }
+        { icon: 'checkroom', label: 'Sky closet',     link: PAGES.closet.link },
+        { icon: 'add',       label: 'Create request', link: PAGES.outfitRequest.link },
+        { icon: 'image',     label: 'Create collage', link: PAGES.collage.link },
+        { icon: 'link',      label: 'Outfit vault',   link: PAGES.outfitVault.link }
       ]
     },
     {
@@ -55,7 +56,7 @@ export class ToolsComponent {
       icon: 'calculate',
       description: 'Pick items to unlock and see exactly how much candle, heart and ascended-candle you still need.',
       links: [
-        { icon: 'calculate', label: 'Open calculator', link: '/item/unlock-calculator' }
+        { icon: 'calculate', label: 'Open calculator', link: PAGES.itemCost.link }
       ]
     },
     {

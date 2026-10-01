@@ -11,7 +11,7 @@ import { PercentagePipe } from '@app/pipes/percentage.pipe';
 import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit-type-icon.component';
 import { SpiritTreeComponent } from '@app/components/spirit/spirit-tree/spirit-tree.component';
 import { RealmConstellationComponent } from '../constellation/realm-constellation.component';
-import { RealmQuickActionsComponent } from '../quick-actions/realm-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { FeatureCardComponent, IFeatureLink } from '../../dashboard/feature-card.component';
 import { IArea, ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
 
@@ -27,7 +27,7 @@ interface ISpiritEntry {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink, MatIcon, SpiritTypeIconComponent, SpiritTreeComponent,
-    RealmConstellationComponent, RealmQuickActionsComponent, PercentagePipe,
+    RealmConstellationComponent, SectionQuickActionsComponent, PercentagePipe,
     FeatureCardComponent
   ]
 })

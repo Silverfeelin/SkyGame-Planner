@@ -45,6 +45,8 @@ Routes live in `src/app/app-routes.ts`. The UI is built on the `--atmos-*` token
 - `MainLayoutComponent` — bootstrap gate; runs `forkJoin(canActivateData, canActivateIcons, canActivateStorage)` and shows loading/error/save-state overlays. Sits *above* all routes so editor and graph are also gated. It also composes the visible chrome inline from `components/layout/shell/{topbar,sidebar,footer}`, and carries the `atmospheric` host class that scopes the global Leaflet overrides.
 - Routes with `data: { chrome: false }` (`outfit-request/request`, `dropbox-auth`) render inside the gate without that chrome.
 
+The sidebar, footer nav, per-section quick actions (`<app-section-quick-actions section="…" />`) and page search results are all generated from `src/app/navigation/pages.ts`. Add new routes there too; in dev mode, `checkPages` logs a warning for routes and page links that are out of sync.
+
 Two lazy-loaded sections sit inside the gate as well:
 - `/editor` — data-entry editor for contributors (spirit trees, outfit shrines, items, dyes)
 - `/graph` — analytics/graphs

@@ -7,7 +7,7 @@ import { DataService } from '@app/services/data.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { IconComponent } from '@app/components/icon/icon.component';
 import { SeasonCardComponent } from '@app/components/shared/shared-widgets';
-import { SeasonQuickActionsComponent } from '../quick-actions/season-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IYearGroup {
   readonly year: number;
@@ -19,7 +19,7 @@ interface IYearGroup {
   templateUrl: './seasons.component.html',
   styleUrl: './seasons.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, TooltipDirective, IconComponent, SeasonCardComponent, SeasonQuickActionsComponent]
+  imports: [RouterLink, TooltipDirective, IconComponent, SeasonCardComponent, SectionQuickActionsComponent]
 })
 export class SeasonsComponent {
   private readonly _dataService = inject(DataService);

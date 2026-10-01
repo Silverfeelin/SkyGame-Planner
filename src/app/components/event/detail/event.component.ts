@@ -9,7 +9,7 @@ import { TitleService } from '@app/services/title.service';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { getAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgEventLinkRendererComponent } from '@app/components/grid/renderers/ag-event-link-renderer/ag-event-link-renderer.component';
-import { EventQuickActionsComponent } from '../quick-actions/event-quick-actions.component';
+import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IRow {
   event: IEvent;
@@ -45,7 +45,7 @@ const numFilterParams = {
   templateUrl: './event.component.html',
   styleUrl: './event.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, AgGridAngular, EventQuickActionsComponent]
+  imports: [RouterLink, AgGridAngular, SectionQuickActionsComponent]
 })
 export class EventComponent {
   private readonly _dataService = inject(DataService);
