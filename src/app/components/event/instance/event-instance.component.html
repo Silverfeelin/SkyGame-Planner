@@ -72,6 +72,16 @@
               </div>
             </div>
           }
+          @if (ac()) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Ascended candles</div>
+              <div class="atmos-fact__value">
+                <mat-icon svgIcon="ascended-candle" class="currency"></mat-icon>
+                <span>{{ ac() }}</span>
+                @if (acLeft()) { <span class="atmos-fact__meta">({{ acLeft() }} needed)</span> }
+              </div>
+            </div>
+          }
         </div>
       </div>
 

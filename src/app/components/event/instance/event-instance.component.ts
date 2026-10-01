@@ -54,6 +54,8 @@ export class EventInstanceComponent implements OnDestroy {
   readonly cLeft = signal(0);
   readonly h = signal(0);
   readonly hLeft = signal(0);
+  readonly ac = signal(0);
+  readonly acLeft = signal(0);
   readonly ec = signal(0);
   readonly ecLeft = signal(0);
 
@@ -111,17 +113,19 @@ export class EventInstanceComponent implements OnDestroy {
   private _calculateCandles(): void {
     const instance = this.instance();
     if (!instance) { return; }
-    let c = 0, cLeft = 0, h = 0, hLeft = 0, ec = 0, ecLeft = 0;
+    let c = 0, cLeft = 0, h = 0, hLeft = 0, ac = 0, acLeft = 0, ec = 0, ecLeft = 0;
 
     instance.spirits?.map(s => s.tree).forEach(tree => {
       if (!tree) { return; }
       TreeHelper.getNodes(tree).forEach(n => {
         c += n.c || 0;
         h += n.h || 0;
+        ac += n.ac || 0;
         ec += n.ec || 0;
         if (!n.unlocked && !n.item?.unlocked) {
           cLeft += n.c || 0;
           hLeft += n.h || 0;
+          acLeft += n.ac || 0;
           ecLeft += n.ec || 0;
         }
       });
@@ -131,15 +135,17 @@ export class EventInstanceComponent implements OnDestroy {
       shop.itemList?.items.forEach(i => {
         c += i.c || 0;
         h += i.h || 0;
+        ac += i.ac || 0;
         ec += i.ec || 0;
         if (i.item && !i.item.unlocked) {
           cLeft += i.c || 0;
           hLeft += i.h || 0;
+          acLeft += i.ac || 0;
           ecLeft += i.ec || 0;
         }
       });
     });
 
-    this.c.set(c); this.cLeft.set(cLeft); this.h.set(h); this.hLeft.set(hLeft); this.ec.set(ec); this.ecLeft.set(ecLeft);
+    this.c.set(c); this.cLeft.set(cLeft); this.h.set(h); this.hLeft.set(hLeft); this.ac.set(ac); this.acLeft.set(acLeft); this.ec.set(ec); this.ecLeft.set(ecLeft);
   }
 }
