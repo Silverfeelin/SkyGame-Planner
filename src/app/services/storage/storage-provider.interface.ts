@@ -17,7 +17,7 @@ export interface IStorageCurrencies {
   giftPasses: number;
   eventCurrencies: { [key: string]: { tickets: number } };
   seasonCurrencies: { [key: string]: { candles: number } };
-  dyes?: { [color: string]: number };
+  dyes?: { [color: string]: number | undefined };
 }
 
 export interface IDailyCurrencies {
