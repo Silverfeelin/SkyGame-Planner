@@ -45,7 +45,7 @@ export const PAGES = {
   itemCost:         { label: 'Cost calculator', link: '/item/unlock-calculator', icon: 'calculate', search: { name: 'Item unlock calculator' } },
   itemGoals:        { label: 'Goals', link: '/item/goals', icon: 'savings', search: { text: 'Goals saving planner' } },
   itemInflation:    { label: 'Item inflation', link: '/item/inflation', icon: 'trending_up' },
-  suggestItem:      { label: 'Suggest new item', link: 'https://github.com/Silverfeelin/SkyGame-Planner/issues', icon: 'add_circle', external: true, search: false },
+  suggestItem:      { label: 'Suggest new item', link: '/editor/item/add', icon: 'add_circle', search: false },
   wikiCosmetics:    { label: 'Wiki - Cosmetics', link: `${WIKI}/Cosmetics`, icon: 'open_in_new', external: true, search: false },
 
   spirits:          { label: 'All spirits', link: '/spirit', icon: 'person', exact: 'withQuery', search: { name: 'Spirits' } },

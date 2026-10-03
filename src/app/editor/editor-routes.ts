@@ -8,7 +8,8 @@ import { EditorItemPageComponent } from './components/editor-item/editor-item-pa
 export const routes: Routes = [
   { path: '', redirectTo: 'spirit-tree', pathMatch: 'full' },
   { path: 'dye', component: EditorDyesComponent },
-  { path: 'item/:guid', component: EditorItemPageComponent },
+  { path: 'item/add', component: EditorItemPageComponent, title: 'Add item' },
+  { path: 'item/:guid', component: EditorItemPageComponent, title: 'Edit item' },
   { path: 'todo', component: EditorTodoComponent },
   { path: 'spirit-tree', component: SpiritTreeEditorComponent, title: 'Spirit Tree Editor' },
   { path: 'outfit-shrine', component: EditorOutfitShrineComponent },

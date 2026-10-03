@@ -1,48 +1,41 @@
-import { Component, ChangeDetectionStrategy, output, input, effect, inject } from '@angular/core';
-import { nanoid } from 'nanoid';
+import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { map } from 'rxjs';
+import { MatIcon } from '@angular/material/icon';
 import { EditorItemComponent } from './editor-item.component';
+import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { DataService } from '@app/services/data.service';
-import { ActivatedRoute } from '@angular/router';
-import { IItem, ItemType } from 'skygame-data';
+import { IItem } from 'skygame-data';
 
 @Component({
   selector: 'app-editor-item-page',
   templateUrl: './editor-item-page.component.html',
   styleUrl: './editor-item-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [EditorItemComponent],
+  imports: [EditorItemComponent, ItemIconComponent, MatIcon, RouterLink],
 })
 export class EditorItemPageComponent {
-  item?: IItem;
+  private readonly _dataService = inject(DataService);
+  private readonly _route = inject(ActivatedRoute);
 
-  _dataService = inject(DataService);
-  _route = inject(ActivatedRoute);
+  readonly guid = toSignal(this._route.paramMap.pipe(map(params => params.get('guid'))), { requireSync: true });
 
-  constructor() {
-    const guid = this._route.snapshot.paramMap.get('guid');
-    if (guid === '0') {
-      this.item = {
-        id: 0,
-        guid: nanoid(10),
-        type: ItemType.Mask,
-        name: ''
-      };
-    } else {
-      this.item = guid ? this._dataService.guidMap.get(guid) as IItem : undefined;
-    }
+  readonly isNew = computed(() => !this.guid());
 
-    if (!this.item) {
-      alert('Invalid URL; item not found.');
-      return;
-    }
-  }
+  readonly item = computed(() => {
+    const guid = this.guid();
+    return guid ? this._dataService.itemConfig.items.find(item => item.guid === guid) : undefined;
+  });
+
+  readonly notFound = computed(() => !this.isNew() && !this.item());
 
   navigateBack(): void {
     history.back();
   }
 
   save(evt: IItem) {
-    evt.id = this.item?.id;
+    evt.id = this.item()?.id ?? 0;
     const json = JSON.stringify(evt, undefined, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const a = document.createElement('a');

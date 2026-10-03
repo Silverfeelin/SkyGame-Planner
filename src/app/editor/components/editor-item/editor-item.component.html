@@ -1,102 +1,136 @@
-<form [formGroup]="form" class="editor-item-form" (ngSubmit)="save()">
-  <div>
-    <label for="name">Item name</label>
-    <input id="name" formControlName="name" placeholder="Name">
-    @if (form.get('name')?.hasError('required')) {
-      <span class="error">Name is required</span>
-    }
-  </div>
-  <div>
-    <label for="type">Item type</label>
-    <select id="type" formControlName="type">
-      @for (type of typeOptions; track $index) {
-        <option [value]="type">{{ type | itemType }}</option>
-      }
-    </select>
-    @if (form.get('type')?.hasError('required')) {
-      <span class="error">Type is required</span>
-    }
-  </div>
-  @if (form.get('type')?.value === typeEmote) {
-    <div>
-      <label for="level">Emote level</label>
-      <div>
-        <label><input type="radio" formControlName="level" value="1" />1</label>
-        <label><input type="radio" formControlName="level" value="2" />2</label>
-        <label><input type="radio" formControlName="level" value="3" />3</label>
-        <label><input type="radio" formControlName="level" value="4" />4</label>
-      </div>
-    </div>
-  }
-  <div>
-    <label for="subtype">Item subtype</label>
-    <select id="subtype" formControlName="subtype">
-      @for (subtype of subtypeOptions; track $index) {
-        <option [value]="subtype">{{ subtype }}</option>
-      }
-    </select>
-  </div>
-  <div>
-    <label for="group">Item group</label>
-    <select id="group" formControlName="group">
-      @for (group of groupOptions; track $index) {
-        <option [value]="group">{{ group }}</option>
-      }
-    </select>
-  </div>
-  <div>
-    <label for="icon">Icon link</label>
-    <input id="icon" formControlName="icon"/>
-    @let icon = form.get('icon')?.value;
-    @if (icon) {
-      <img [src]="icon" class="img-preview"/>
-    }
-  </div>
-  <div>
-    <label for="previewUrl">Preview image link</label>
-    <input id="previewUrl" formControlName="previewUrl"/>
-    @let previewUrl = form.get('previewUrl')?.value;
-    @if (previewUrl) {
-      <img [src]="previewUrl" class="img-preview"/>
-    }
-  </div>
-  <div>
-    <label for="description">Dye slots</label>
-    <div>
-      <label><input type="radio" formControlName="dyes" value="0" />0</label>
-      <label><input type="radio" formControlName="dyes" value="1" />1</label>
-      <label><input type="radio" formControlName="dyes" value="2" />2</label>
-    </div>
-    @let dyes = form.get('dyes')?.value;
-    @if (dyes === '1' || dyes === '2') {
-      <div>
-        <label for="dyePreview">Dye preview link</label>
-        <input id="dyePreview" formControlName="dyePreview" placeholder="Dye preview link">
-        @let dyePreview = form.get('dyePreview')?.value;
-        @if (dyePreview) {
-          <img [src]="dyePreview" class="img-preview"/>
+<form [formGroup]="form" class="editor-item-form" (ngSubmit)="save()" novalidate>
+  <section class="editor-item-form__section">
+    <h3 class="editor-item-form__heading">Details</h3>
+    <div class="editor-item-form__grid">
+      <div class="editor-item-form__field editor-item-form__field--wide">
+        <label class="editor-item-form__label" for="item-name">Name</label>
+        <input id="item-name" class="atmos-input" formControlName="name" placeholder="Item name" autocomplete="off" />
+        @if (hasError(form.controls.name)) {
+          <span class="editor-item-form__error">Name is required.</span>
         }
       </div>
-      <div>
-        <label for="dyeInfo">Dye info link</label>
-        <input id="dyeInfo" formControlName="dyeInfo" placeholder="Dye info link">
-        @let dyeInfo = form.get('dyeInfo')?.value;
-        @if (dyeInfo) {
-          <img [src]="dyeInfo" class="img-preview"/>
+
+      <div class="editor-item-form__field">
+        <label class="editor-item-form__label" for="item-type">Type</label>
+        <select id="item-type" class="atmos-input" formControlName="type">
+          <option value="" disabled>Select a type</option>
+          @for (type of typeOptions; track type) {
+            <option [value]="type">{{ type | itemType }}</option>
+          }
+        </select>
+        @if (hasError(form.controls.type)) {
+          <span class="editor-item-form__error">Type is required.</span>
         }
       </div>
+
+      <div class="editor-item-form__field">
+        <label class="editor-item-form__label" for="item-subtype">Subtype</label>
+        <select id="item-subtype" class="atmos-input" formControlName="subtype">
+          <option value="">None</option>
+          @for (subtype of subtypeOptions; track subtype.value) {
+            <option [value]="subtype.value">{{ subtype.label }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="editor-item-form__field">
+        <label class="editor-item-form__label" for="item-group">Group</label>
+        <select id="item-group" class="atmos-input" formControlName="group">
+          <option value="">None</option>
+          @for (group of groupOptions; track group.value) {
+            <option [value]="group.value">{{ group.label }}</option>
+          }
+        </select>
+      </div>
+
+      @if (form.controls.type.value === typeEmote) {
+        <fieldset class="editor-item-form__field">
+          <legend class="editor-item-form__label">Emote level</legend>
+          <div class="atmos-btn-group">
+            @for (level of levelOptions; track level) {
+              <label class="atmos-btn atmos-btn--sm editor-item-form__choice" [class.atmos-btn--active]="form.controls.level.value === level">
+                <input type="radio" formControlName="level" [value]="level" />{{ level }}
+              </label>
+            }
+          </div>
+        </fieldset>
+      }
+    </div>
+  </section>
+
+  <section class="editor-item-form__section">
+    <h3 class="editor-item-form__heading">Images</h3>
+    <div class="editor-item-form__grid editor-item-form__grid--media">
+      <div class="editor-item-form__field">
+        <label class="editor-item-form__label" for="item-icon">Icon link</label>
+        <input id="item-icon" class="atmos-input" formControlName="icon" placeholder="https://" autocomplete="off" />
+        <ng-container *ngTemplateOutlet="previewTpl; context: { $implicit: form.controls.icon.value, icon: true }" />
+      </div>
+
+      <div class="editor-item-form__field">
+        <label class="editor-item-form__label" for="item-preview">Preview image link</label>
+        <input id="item-preview" class="atmos-input" formControlName="previewUrl" placeholder="https://" autocomplete="off" />
+        <ng-container *ngTemplateOutlet="previewTpl; context: { $implicit: form.controls.previewUrl.value }" />
+      </div>
+    </div>
+  </section>
+
+  <section class="editor-item-form__section">
+    <h3 class="editor-item-form__heading">Dyes</h3>
+    <fieldset class="editor-item-form__field">
+      <legend class="editor-item-form__label">Dye slots</legend>
+      <div class="atmos-btn-group">
+        @for (option of dyeOptions; track option.value) {
+          <label class="atmos-btn atmos-btn--sm editor-item-form__choice" [class.atmos-btn--active]="form.controls.dyes.value === option.value">
+            <input type="radio" formControlName="dyes" [value]="option.value" />{{ option.label }}
+          </label>
+        }
+      </div>
+    </fieldset>
+
+    @if (form.controls.dyes.value !== '0') {
+      <div class="editor-item-form__grid editor-item-form__grid--media">
+        <div class="editor-item-form__field">
+          <label class="editor-item-form__label" for="item-dye-preview">Dye preview link</label>
+          <input id="item-dye-preview" class="atmos-input" formControlName="dyePreview" placeholder="assets/..." autocomplete="off" />
+          <ng-container *ngTemplateOutlet="previewTpl; context: { $implicit: form.controls.dyePreview.value }" />
+        </div>
+
+        <div class="editor-item-form__field">
+          <label class="editor-item-form__label" for="item-dye-info">Dye info link</label>
+          <input id="item-dye-info" class="atmos-input" formControlName="dyeInfo" placeholder="assets/..." autocomplete="off" />
+          <ng-container *ngTemplateOutlet="previewTpl; context: { $implicit: form.controls.dyeInfo.value }" />
+        </div>
+      </div>
     }
-  </div>
-  <div>
-    <label for="wiki">Wiki link</label>
-    <input id="wiki" formControlName="wiki" placeholder="Wiki link"/>
-    @let wiki = form.get('wiki')?.value;
-    @if (wiki) {
-      <a [href]="wiki" target="_blank" rel="noopener" class="atmos-text-link">Open Wiki</a>
-    }
-  </div>
+  </section>
+
+  <section class="editor-item-form__section">
+    <h3 class="editor-item-form__heading">Links</h3>
+    <div class="editor-item-form__field">
+      <label class="editor-item-form__label" for="item-wiki">Wiki link</label>
+      <div class="editor-item-form__inline">
+        <input id="item-wiki" class="atmos-input" formControlName="wiki" placeholder="https://sky-children-of-the-light.fandom.com/wiki/..." autocomplete="off" />
+        @let wiki = form.controls.wiki.value;
+        @if (wiki) {
+          <a class="atmos-btn atmos-btn--sm" [href]="wiki" target="_blank" rel="noopener"><mat-icon>open_in_new</mat-icon> Open</a>
+        }
+      </div>
+    </div>
+  </section>
+
   <div class="editor-item-form__actions">
-    <button type="submit" class="atmos-btn">Save</button>
-    <button type="button" class="atmos-btn atmos-btn--danger" (click)="cancel()">Cancel</button>
+    <button type="button" class="atmos-btn" (click)="cancel()"><mat-icon>close</mat-icon> Cancel</button>
+    <button type="submit" class="atmos-btn atmos-btn--active"><mat-icon>save</mat-icon> Save</button>
   </div>
 </form>
+
+<ng-template #previewTpl let-src let-icon="icon">
+  <div class="editor-item-form__preview" [class.editor-item-form__preview--icon]="icon">
+    @if (src) {
+      <img [src]="src" alt="" />
+    } @else {
+      <mat-icon class="editor-item-form__preview-empty">image</mat-icon>
+    }
+  </div>
+</ng-template>
