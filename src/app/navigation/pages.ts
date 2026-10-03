@@ -119,6 +119,8 @@ export interface ISection {
   icon: string;
   svgIcon?: string;
   exact?: boolean;
+  /** Extra path prefixes that belong to this section but don't sit under its link. */
+  match?: ReadonlyArray<string>;
   /** Quick actions, in display order. */
   pages: ReadonlyArray<PageId>;
 }
@@ -132,14 +134,14 @@ export const SECTIONS = {
     'itemGrid', 'itemTable', 'itemPreview', 'itemDye', 'itemCollection', 'itemHearts', 'itemCost', 'itemGoals', 'itemInflation',
     'suggestItem', 'wikiCosmetics'
   ] },
-  spirit:      { label: 'Spirits', link: '/spirit', icon: 'person', pages: [
+  spirit:      { label: 'Spirits', link: '/spirit', icon: 'person', match: ['/spirit-tree'], pages: [
     'spirits', 'regularSpirits', 'elderSpirits', 'seasonSpirits', 'seasonGuides',
-    'travelingSpirits', 'specialVisits', 'elusiveSpirits', 'wikiSpirits', 'spiritTreeEditor'
+    'travelingSpirits', 'specialVisits', 'elusiveSpirits', 'wikiSpirits', 'spiritGraphs', 'spiritTreeEditor'
   ] },
   wingedLight: { label: 'Winged Light', link: '/winged-light', icon: 'air', svgIcon: 'flaps', pages: ['wingedLight', 'childrenOfLight', 'wingBuffs', 'wikiWingedLight'] },
   realm:       { label: 'Realms', link: '/realm', icon: 'map', pages: ['realms', 'areas', 'sharedCreations', 'crTracker', 'pnrTracker', 'wikiRealms'] },
   season:      { label: 'Seasons', link: '/season', icon: 'ac_unit', pages: ['seasons', 'seasonOptimizer', 'seasonCalculator', 'wikiSeasons', 'eventCalendar'] },
-  event:       { label: 'Events', link: '/event', icon: 'celebration', pages: ['events', 'eventHistory', 'eventCalculator', 'wikiEvents', 'eventCalendar'] },
+  event:       { label: 'Events', link: '/event', icon: 'celebration', match: ['/event-instance'], pages: ['events', 'eventHistory', 'eventCalculator', 'wikiEvents', 'eventCalendar'] },
   shop:        { label: 'Shops', link: '/shop', icon: 'shopping_cart', pages: [
     'shops', 'shopEvent', 'shopCinema', 'shopConcertHall', 'shopHarmonyHall', 'shopNesting', 'shopOffice', 'shopPrairie', 'shopWonderland',
     'wikiShops'

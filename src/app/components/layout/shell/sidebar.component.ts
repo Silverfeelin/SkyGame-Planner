@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { Location } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { DataService } from '@app/services/data.service';
-import { REDESIGN_FOOT_NAV, REDESIGN_NAV, withSeasonIcon } from './nav-items';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { NavigationService } from '@app/navigation/navigation.service';
+import { NavTreeComponent } from './nav-tree.component';
 
 const collapsedKey = 'menu.collapsed';
 
@@ -13,7 +13,7 @@ const collapsedKey = 'menu.collapsed';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, RouterLink, RouterLinkActive, MatIcon],
+  imports: [TooltipDirective, RouterLink, RouterLinkActive, MatIcon, NavTreeComponent],
   host: {
     '[class.is-collapsed]': 'collapsed()',
     '[class.is-animated]': 'animated()'
@@ -21,6 +21,7 @@ const collapsedKey = 'menu.collapsed';
 })
 export class SidebarComponent {
   private readonly location = inject(Location);
+  readonly nav = inject(NavigationService);
 
   /**
    * Below 1024px the sidebar is hidden and the topbar's drawer takes over,
@@ -35,9 +36,6 @@ export class SidebarComponent {
     this.collapsed.update(v => !v);
     localStorage.setItem(collapsedKey, this.collapsed() ? '1' : '0');
   }
-
-  readonly mainNav = withSeasonIcon(REDESIGN_NAV, inject(DataService).seasonConfig.items.at(-1)?.iconUrl);
-  readonly footNav = REDESIGN_FOOT_NAV;
 
   goBack(): void {
     this.location.back();
