@@ -23,7 +23,7 @@ Run a single test file by adding `--include` to the karma config or filtering vi
 
 ### Data layer
 
-All game data comes from the [`skygame-data`](https://github.com/Silverfeelin/SkyGame-Data) npm package. On startup, `DataService` fetches `/assets/skygame-data/everything.json`, parses it with `SkyDataResolver.parse/resolve`, and populates typed config arrays (`spiritConfig`, `itemConfig`, `seasonConfig`, etc.). A `guidMap: Map<string, IGuid>` is the central registry for all entities—every entity has a 10-character GUID.
+All game data comes from the [`skygame-data`](https://github.com/Silverfeelin/SkyGame-Data) npm package. On startup, `DataService` fetches `https://data.sky-planner.com/<major>.<minor>/everything.json` (the minor of the installed package, see `src/environments/environment.ts`; patches go live there without a Planner deploy), parses it with `SkyDataResolver.parse/resolve`, and populates typed config arrays (`spiritConfig`, `itemConfig`, `seasonConfig`, etc.). A `guidMap: Map<string, IGuid>` is the central registry for all entities—every entity has a 10-character GUID.
 
 After data loads, helpers and raw configs are exposed on `window.skyData` / `window.NodeHelper` etc. for browser-console debugging.
 

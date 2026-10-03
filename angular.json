@@ -32,12 +32,7 @@
               "src/robots.txt",
               "src/sitemap.xml",
               "src/assets",
-              "src/manifest.webmanifest",
-              {
-                "glob": "**/*",
-                "input": "node_modules/skygame-data/assets",
-                "output": "/assets/skygame-data/"
-              }
+              "src/manifest.webmanifest"
             ],
             "styles": [
               {
