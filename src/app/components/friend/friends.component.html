@@ -14,9 +14,9 @@
 
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-friends__section-title"><mat-icon>group</mat-icon> Friendship trees</h2>
+    <h2 class="atmos-friends__section-title"><mat-icon>group</mat-icon> Friends</h2>
     <div class="atmos-friends__toolbar">
-      <label class="atmos-friends__search atmos-focus-ring">
+      <label class="atmos-friends__search">
         <mat-icon>search</mat-icon>
         <input #input type="search" class="atmos-input atmos-input--pill atmos-friends__search-input"
           (input)="search()" placeholder="Search">
@@ -45,17 +45,12 @@
               <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptRename(friend)">
                 <mat-icon>edit</mat-icon> Rename
               </button>
-              <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptDelete(friend)">
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="promptDelete(friend)">
                 <mat-icon>delete</mat-icon> Delete
               </button>
             </div>
             @if (friend.loaded) {
-              <app-spirit-tree
-                [tree]="friend.tree"
-                [forceNodeAction]="'emit'"
-                [enableControls]="false"
-                (nodeClicked)="nodeClicked(friend, $event)">
-              </app-spirit-tree>
+              <app-friend-tiers [nodes]="friend.nodes" (changed)="save()" />
             }
           </div>
         }
