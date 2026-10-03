@@ -1,17 +1,10 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { IItem, ItemType, ItemSize } from 'skygame-data';
+import { IDye } from '@app/interfaces/dye.interface';
 
 export type RequestColor = 'r' | 'y' | 'g' | 'b';
 export type ClosetMode = 'all' | 'closet';
 export type CopyImageMode = 'request' | 'square' | 'closet' | 'template';
-export type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
-export const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
-
-export interface IDye {
-  primary?: DyeColor;
-  secondary?: DyeColor;
-}
-
 export interface ISelection {
   [guid: string]: IItem;
 }

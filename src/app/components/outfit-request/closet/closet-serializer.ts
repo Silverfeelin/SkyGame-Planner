@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { IItem } from 'skygame-data';
-import { IDye, DyeColor, ISelection } from './closet-state.service';
+import { IDye, DyeColor } from '@app/interfaces/dye.interface';
+import { ISelection } from './closet-state.service';
 
 export interface IOutfitRequest {
   a?: string;

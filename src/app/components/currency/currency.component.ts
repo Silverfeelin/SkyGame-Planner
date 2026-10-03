@@ -11,7 +11,7 @@ import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
 import { DateHelper } from '@app/helpers/date-helper';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
-import { DyeColor } from '@app/components/outfit-request/closet/closet-state.service';
+import { DyeColor } from '@app/interfaces/dye.interface';
 
 interface IGains {
   candles: string;

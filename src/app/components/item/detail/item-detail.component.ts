@@ -9,6 +9,7 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { GoalService } from '@app/services/goal.service';
+import { ItemDyeVersionService } from '@app/services/item-dye-version.service';
 import { StorageService } from '@app/services/storage.service';
 import { TitleService } from '@app/services/title.service';
 import { SettingService } from '@app/services/setting.service';
@@ -19,6 +20,7 @@ import { ImageOverlayComponent } from '@app/components/layout/image-overlay/imag
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
+import { ItemDyeVersionsComponent } from '../dye-versions/item-dye-versions.component';
 
 interface IItemGroupFact { label: string; icon: string; note: string; }
 
@@ -34,7 +36,7 @@ const GROUP_FACTS: { [key in ItemGroup]: IItemGroupFact } = {
   templateUrl: './item-detail.component.html',
   styleUrl: './item-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, ImageOverlayComponent, ItemTypePipe, SectionQuickActionsComponent]
+  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, ImageOverlayComponent, ItemTypePipe, SectionQuickActionsComponent, ItemDyeVersionsComponent]
 })
 export class ItemDetailComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;
@@ -44,6 +46,7 @@ export class ItemDetailComponent {
   private readonly _eventService = inject(EventService);
   private readonly _storageService = inject(StorageService);
   private readonly _goalService = inject(GoalService);
+  private readonly _dyeVersionService = inject(ItemDyeVersionService);
   private readonly _titleService = inject(TitleService);
   private readonly _settingService = inject(SettingService);
   private readonly _destroyRef = inject(DestroyRef);
@@ -110,6 +113,11 @@ export class ItemDetailComponent {
     return costs.length ? `(${costs.join(' · ')})` : '';
   });
 
+  readonly dyeVersionCount = computed(() => {
+    const guid = this.item()?.guid;
+    return guid ? this._dyeVersionService.count(guid) : 0;
+  });
+
   constructor() {
     this._route.paramMap.pipe(takeUntilDestroyed(this._destroyRef)).subscribe(params => {
       this.resolveItem(params.get('guid') ?? '');
@@ -156,6 +164,10 @@ export class ItemDetailComponent {
       ? this._storageService.addFavourites(item.guid)
       : this._storageService.removeFavourites(item.guid);
     this._eventService.itemFavourited.next(item);
+  }
+
+  scrollToDyeVersions(): void {
+    document.getElementById('dye-versions')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   copy(text: string | number | undefined): void {

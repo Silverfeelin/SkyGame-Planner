@@ -9,6 +9,7 @@ import { AgItemLinkRendererComponent } from '@app/components/grid/renderers/ag-i
 import { AgUnlockedRendererComponent } from '@app/components/grid/renderers/ag-unlocked-renderer/ag-unlocked-renderer.component';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
+import { ItemDyeVersionService } from '@app/services/item-dye-version.service';
 import { IItem, ItemType } from 'skygame-data';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
@@ -17,6 +18,7 @@ const itemTypePipe = new ItemTypePipe();
 const typeFilterValues = Object.values(ItemType).map(t => ({ value: t, label: itemTypePipe.transform(t) }));
 const boolFilterValues = ['Yes', 'No'];
 const dyeSlotFilterValues = ['0', '1', '2'];
+const dyeVersionFilterValues = ['0', '1', '2'];
 const groupLabels: { [group: string]: string } = { Elder: 'Elder', SeasonPass: 'Season Pass', Ultimate: 'Ultimate', Limited: 'Limited' };
 const groupFilterValues = ['Elder', 'SeasonPass', 'Ultimate', 'Limited'].map(v => ({ value: v, label: groupLabels[v] }));
 
@@ -48,6 +50,7 @@ export class ItemsComponent {
     { field: 'favourited', headerName: 'Favourited', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
     { field: 'starter', headerName: 'Starter', width: 110, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
     { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: AgSetFilterComponent, filterParams: { values: dyeSlotFilterValues } },
+    { field: 'dyeVersions', headerName: 'Dye versions', width: 130, filter: AgSetFilterComponent, filterParams: { values: dyeVersionFilterValues, includeBlanks: true, blanksLabel: 'Not dyeable' } },
     { field: 'returned', headerName: 'Returned', width: 120, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
     { field: 'spirit', headerName: 'Spirit', width: 200, minWidth: 120, filter: 'agTextColumnFilter', filterParams: textFilterParams },
     { field: 'season', headerName: 'Season', width: 200, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
@@ -57,6 +60,7 @@ export class ItemsComponent {
   ];
 
   private readonly _dataService = inject(DataService);
+  private readonly _dyeVersionService = inject(ItemDyeVersionService);
   private readonly _route = inject(ActivatedRoute);
   private readonly _host = inject<ElementRef<HTMLElement>>(ElementRef);
 
@@ -194,6 +198,7 @@ export class ItemsComponent {
       favourited: !!item.favourited,
       starter: !!item.autoUnlocked,
       dyeSlots: item.dye?.secondary ? 2 : item.dye?.primary ? 1 : 0,
+      dyeVersions: item.dye ? this._dyeVersionService.count(item.guid) : undefined,
       returned,
       spirit,
       season,

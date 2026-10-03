@@ -116,6 +116,14 @@
                 @if (dyeCost(); as cost) { <span class="atmos-fact__meta">{{ cost }}</span> }
               </div>
             </div>
+
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Dye versions</div>
+              <div class="atmos-fact__value">
+                <mat-icon class="atmos-fact__icon">palette</mat-icon>
+                <a class="atmos-fact__text atmos-text-link" (click)="scrollToDyeVersions()">{{ dyeVersionCount() }} of 2 saved</a>
+              </div>
+            </div>
           }
 
           @if (debugVisible) {
@@ -170,6 +178,10 @@
       </a>
     </div>
   </section>
+
+  @if (itm.dye) {
+    <app-item-dye-versions [item]="itm" />
+  }
 } @else {
   <section class="atmos-card">
     <div class="atmos-card__body">

@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, inject, output } from '@angular/cor
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
-import { ClosetStateService, DYE_COLORS, DyeColor } from './closet-state.service';
+import { DYE_COLORS, DyeColor } from '@app/interfaces/dye.interface';
+import { ClosetStateService } from './closet-state.service';
 
 @Component({
   selector: 'app-closet-dye-picker',

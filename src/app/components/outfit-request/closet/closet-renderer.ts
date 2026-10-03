@@ -1,5 +1,6 @@
 import { IItem, ItemType } from 'skygame-data';
-import { IDye, DyeColor, ISelection } from './closet-state.service';
+import { IDye, DyeColor } from '@app/interfaces/dye.interface';
+import { ISelection } from './closet-state.service';
 
 /** Size of padding from edge. */
 const _wPad = 20;
