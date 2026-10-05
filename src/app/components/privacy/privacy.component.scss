@@ -17,16 +17,11 @@
 .atmos-privacy__meta {
   margin: 0;
   font-size: var(--atmos-fs-md);
-  color: var(--atmos-text-dim);
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   text-shadow: var(--atmos-text-shadow);
-}
-
-.atmos-privacy__meta-sep {
-  color: var(--atmos-text-mute);
 }
 
 .atmos-privacy__card {
