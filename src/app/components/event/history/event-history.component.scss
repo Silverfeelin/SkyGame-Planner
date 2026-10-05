@@ -1,0 +1,7 @@
+:host { display: contents; }
+
+.atmos-event-history__grid-card {
+  flex: 1;
+  min-height: var(--atmos-grid-min-h);
+  overflow: hidden;
+}

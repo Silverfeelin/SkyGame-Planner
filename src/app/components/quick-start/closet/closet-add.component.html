@@ -1,0 +1,65 @@
+@if (store.screenshotsSupported) {
+  <div class="atmos-qs__banner atmos-qs__banner--info">
+    <mat-icon>info</mat-icon>
+    <p>
+      <strong>Use a tablet or computer if you can.</strong>
+      A larger screen fits more items in each screenshot.
+    </p>
+  </div>
+
+  <div class="atmos-qs__banner atmos-qs__banner--info">
+    <mat-icon>light_mode</mat-icon>
+    <p>
+      <strong>Stand in front of a light, plain background.</strong>
+      Zooming in and facing a wall helps.
+    </p>
+    <button type="button" class="atmos-qs-example atmos-focus-ring" aria-label="Show an example screenshot" (click)="showExample.set(true)">
+      <img [src]="exampleSrc" alt="" width="128" height="71" loading="lazy"/>
+      <span><mat-icon>zoom_in</mat-icon>Example</span>
+    </button>
+  </div>
+
+  <ol class="atmos-qs-howto">
+    @for (step of steps(); track step.kind) {
+      <li class="atmos-qs-howto__step">
+        <app-quick-start-closet-sketch class="atmos-qs-howto__sketch" [kind]="step.kind" />
+        <span><b>{{ step.title }}</b> {{ step.text }}</span>
+      </li>
+    }
+  </ol>
+
+  <div class="atmos-qs-drop" [class.is-over]="dragging()"
+       (click)="fileInput.click()"
+       (dragenter)="onDragOver($event)" (dragover)="onDragOver($event)"
+       (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+    <mat-icon>upload</mat-icon>
+    <span><strong>Drop screenshots here</strong> or choose files</span>
+    <span class="atmos-qs-drop__hint">PNG, JPG or WebP. Everything stays on your device.</span>
+    <span class="atmos-qs__paste">You can also paste screenshots with <kbd>{{ pasteKey }}</kbd>.</span>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="$event.stopPropagation(); fileInput.click()">Choose files</button>
+    <input #fileInput type="file" class="input-hidden" tabindex="-1" aria-hidden="true" multiple [accept]="accept"
+           (click)="$event.stopPropagation()" (change)="onFiles(fileInput)"/>
+  </div>
+
+  <div class="atmos-qs__row">
+    <span class="atmos-qs__sub">No screenshots?</span>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markByHand(tab().key)">
+      <mat-icon>edit</mat-icon>Mark items by hand
+    </button>
+  </div>
+
+  @if (showExample()) {
+    <app-image-overlay [src]="exampleSrc" alt="Closet screenshot taken while facing a plain, light wall" (close)="showExample.set(false)"/>
+  }
+} @else {
+  <div class="atmos-qs__banner atmos-qs__banner--info">
+    <mat-icon>info</mat-icon>
+    <p>
+      <strong>This browser can't read screenshots.</strong>
+      Matching needs a recent browser with web worker and offscreen canvas support. You can still mark your items by hand.
+    </p>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markByHand(tab().key)">
+      <mat-icon>edit</mat-icon>Mark items by hand
+    </button>
+  </div>
+}

@@ -1,0 +1,56 @@
+<p class="atmos-qs__sub">
+  Tap the levels you have for each emote. Levels can be skipped, so pick each one.
+  Levels with a lock are already unlocked in Sky Planner.
+</p>
+
+<div class="atmos-qs__banner atmos-qs__banner--info">
+  <mat-icon>info</mat-icon>
+  <p>
+    <strong>Not sure which level you have?</strong>
+    Levels 1 and 2 are usually one animation and levels 3 and 4 another. Levels 2 and 4 add particle effects to 1 and 3.
+  </p>
+</div>
+
+<div class="atmos-qs__row">
+  <input class="atmos-input atmos-input--pill atmos-qs-emotes__search" type="search"
+         placeholder="Search emotes or spirits" aria-label="Search emotes or spirits"
+         [value]="state().search" (input)="onSearch($event)">
+  <span class="atmos-qs__spacer"></span>
+  <span class="atmos-qs__sub">{{ status().fresh }} with new levels</span>
+</div>
+
+@for (group of groups(); track group.label) {
+  <section class="atmos-qs-emotes__group">
+    <h4 class="atmos-qs__label">{{ group.label }}</h4>
+    <div class="atmos-qs-emotes__list">
+      @for (row of group.rows; track row.key) {
+        <div class="atmos-qs-emote">
+          <app-item-icon class="atmos-qs-emote__icon" [item]="row.item" size="small" [opaque]="true" />
+          <div class="atmos-qs-emote__text">
+            <span class="atmos-qs-emote__name">{{ row.name }}</span>
+            @if (row.subtitle) {
+              <small class="atmos-qs-emote__note">{{ row.subtitle }}</small>
+            }
+          </div>
+          <div class="atmos-qs-emote__levels" role="group" [attr.aria-label]="row.name + ' levels'">
+            @for (chip of row.chips; track chip.level) {
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-level"
+                      [class.atmos-btn--active]="chip.on" [class.is-lock]="chip.locked"
+                      [attr.aria-disabled]="chip.locked || null" [attr.aria-pressed]="chip.on"
+                      [attr.aria-label]="chip.title" [skyTooltip]="chip.title"
+                      (click)="toggle(row, chip)">
+                @if (chip.locked) {
+                  <mat-icon>lock</mat-icon>
+                } @else {
+                  {{ chip.level }}
+                }
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+} @empty {
+  <p class="atmos-qs__sub">No emotes match your search.</p>
+}

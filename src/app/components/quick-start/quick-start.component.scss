@@ -1,0 +1,76 @@
+@use 'quick-start' as qs;
+@include qs.styles;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-page__intro p { margin: 0; }
+
+// Not inside a card like the other banners, so the tint needs the card surface beneath it.
+.atmos-qs__banner--warn {
+  background: linear-gradient(var(--qs-warn-bg), var(--qs-warn-bg)), var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+}
+
+.atmos-qs__beta-pill {
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.atmos-qs__reassure,
+.atmos-qs__beta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--atmos-fs-md);
+
+  mat-icon {
+    flex: none;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-qs__stepper { display: flex; }
+
+.atmos-qs__stepper-btn {
+  flex: 1 0 auto;
+  gap: 8px;
+  font-size: var(--atmos-fs-sm);
+  white-space: nowrap;
+}
+
+.atmos-qs__stepper-n {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: var(--atmos-fs-sm);
+  background: var(--atmos-chip-bg);
+  border: 1px solid var(--atmos-line-soft);
+
+  mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+  }
+
+  .is-done & {
+    background: var(--atmos-good);
+    border-color: transparent;
+    color: var(--atmos-bg);
+  }
+}
+
+/* Only the current step keeps its label on a phone, so the stepper fits without scrolling. */
+@media (max-width: 599px) {
+  .atmos-qs__stepper-label { display: none; }
+  .atmos-btn--active .atmos-qs__stepper-label { display: inline; }
+}

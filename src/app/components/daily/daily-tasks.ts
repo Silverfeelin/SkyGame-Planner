@@ -1,4 +1,5 @@
 import { DateHelper } from '@app/helpers/date-helper';
+import { getShardInfo } from '@app/helpers/shard-helper';
 import { DateTime } from 'luxon';
 
 export type DailyCadence = 'daily' | 'daily-variable' | 'timed' | 'weekly';
@@ -24,6 +25,8 @@ export interface IDailyTask {
   /** Short hint shown next to the task. */
   note?: string;
   noteFn?: () => string;
+  /** Returns a reason when the task cannot be done today; the task is then shown inactive. */
+  disabledFn?: (now: DateTime) => string | undefined;
 }
 
 export const DAILY_TASKS: ReadonlyArray<IDailyTask> = [
@@ -44,7 +47,7 @@ export const DAILY_TASKS: ReadonlyArray<IDailyTask> = [
   { id: 'treasure-reef-clams', name: 'Treasure Reef Clams', cadence: 'daily-variable', location: 'Treasure Reef', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Treasure_Reef', lightRange: [159, 245] },
   { id: 'village-theater-bouquets', name: 'Village Theater Bouquets', cadence: 'daily-variable', location: 'Village Theatre', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Village_Theater', lightRange: [21, 44] },
   { id: 'yeti-race', name: 'Yeti Race', cadence: 'daily-variable', location: 'Hermit Valley', note: 'Fragments increase light', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Yeti_Race', lightRange: [150, 300] },
-  { id: 'shards', name: 'Black shard eruptions', cadence: 'daily-variable', note: 'Location and time varies', externalLink: 'https://sky-shards.pages.dev/en', light: 200 },
+  { id: 'shards', name: 'Black shard eruptions', cadence: 'daily-variable', note: 'Location and time varies', externalLink: 'https://sky-shards.pages.dev/en', light: 200, disabledFn: blackShardDisabledReason },
 
   // Timed
   { id: 'geyser', name: 'Polluted Geyser', cadence: 'timed', nextFn: nextGeyser, location: 'Sanctuary Island', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Polluted_Geyser', light: 1000 },
@@ -85,4 +88,12 @@ function nextSkater(): DateTime {
   return candidate.weekday >= 5
     ? candidate
     : candidate.plus({ days: 5 - candidate.weekday }).startOf('day').plus({ hours: 1 });
+}
+
+/** Black shards drop wax; red shard days and shardless days leave nothing to collect here. */
+function blackShardDisabledReason(now: DateTime): string | undefined {
+  const info = getShardInfo(now.setZone(DateHelper.skyTimeZone));
+  if (!info.hasShard) { return 'No shard falls today.'; }
+  if (info.isRed) { return 'Today is a red shard'; }
+  return undefined;
 }

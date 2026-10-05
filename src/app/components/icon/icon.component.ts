@@ -8,7 +8,7 @@ import { IconService } from '@app/services/icon.service';
 @Component({
     selector: 'app-icon',
     templateUrl: './icon.component.html',
-    styleUrls: ['./icon.component.less'],
+    styleUrl: './icon.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [MatIcon]
 })

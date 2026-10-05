@@ -1,32 +1,28 @@
-import { ChangeDetectorRef, Component, effect, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, OnDestroy, signal } from '@angular/core';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
 import { DateTime } from 'luxon';
 import { StorageService } from 'src/app/services/storage.service';
-import { IStorageExport } from 'src/app/services/storage/storage-provider.interface';
+import { ExportHelper, IExport } from 'src/app/helpers/export-helper';
 import { DateTimePipe } from '../../pipes/date-time.pipe';
-import { NgFor, LowerCasePipe } from '@angular/common';
+import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
-import { CardComponent } from "../layout/card/card.component";
-
-interface IExport {
-  version: string;
-  storageData: IStorageExport;
-  closetData: {
-    hidden: Array<string>;
-  };
-}
+import {
+  backgroundImages, clearThemeOverrides, densityPresets, fontSizePresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
+  IThemeOverrides, IThemeSlider, menuPresets, setThemeOverride, ThemeOverrideKey, themeSliders
+} from 'src/theme-overrides';
 
 const signalPwa = signal<any>(undefined);
 
 @Component({
-    selector: 'app-settings',
-    templateUrl: './settings.component.html',
-    styleUrls: ['./settings.component.less'],
-    imports: [MatIcon, RouterLink, NgFor, LowerCasePipe, DateTimePipe, CardComponent]
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrl: './settings.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatIcon, RouterLink, LowerCasePipe, DateTimePipe]
 })
 export class SettingsComponent implements OnDestroy {
   storageProviderName: string;
@@ -36,6 +32,15 @@ export class SettingsComponent implements OnDestroy {
   dateFormats: Array<string>;
   currentTheme: string;
   themes = themes;
+
+  readonly advancedOpen = signal(hasThemeOverrides());
+  readonly overrides = signal<IThemeOverrides>(getThemeOverrides());
+  readonly hasOverrides = computed(() => Object.keys(this.overrides()).length > 0);
+  readonly themeSliders = themeSliders;
+  readonly backgroundImages = backgroundImages;
+  readonly densityPresets = densityPresets;
+  readonly fontSizePresets = fontSizePresets;
+  readonly menuPresets = menuPresets;
   wikiNewTab = false;
   debugVisible = false;
   debugMapCopyCoordinates = false;
@@ -91,7 +96,7 @@ export class SettingsComponent implements OnDestroy {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (!file) { return; }
       const reader = new FileReader();
-      reader.onload = (e) => {
+      reader.onload = () => {
         try {
           const data = JSON.parse(reader.result as string);
           this.handleImportJson(data);
@@ -103,7 +108,7 @@ export class SettingsComponent implements OnDestroy {
       reader.onerror = (e) => {
         console.error(e);
         alert('Failed to read file. If the selected file was exported by Sky Planner, please report this.');
-      }
+      };
       reader.readAsText(file);
     };
     input.click();
@@ -139,7 +144,7 @@ export class SettingsComponent implements OnDestroy {
 
     if (data.closetData) {
       localStorage.setItem('closet.hidden', JSON.stringify(data.closetData.hidden));
-      localStorage.setItem('closet.sync', '0')
+      localStorage.setItem('closet.sync', '0');
     }
 
     const trackables: ITrackables = {
@@ -153,28 +158,7 @@ export class SettingsComponent implements OnDestroy {
   }
 
   export(): void {
-    const data: IExport = {
-      version: '1.1.0',
-      storageData: this._storageService.export(),
-      closetData: {
-        hidden: JSON.parse(localStorage.getItem('closet.hidden') || '[]'),
-      }
-    };
-
-    const jsonData = JSON.stringify(data);
-    let url = '';
-    try {
-      const blob = new Blob([jsonData], { type: 'application/json' });
-      url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `SkyPlanner_${DateTime.now().toFormat('yyyy-MM-dd')}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } finally {
-      URL.revokeObjectURL(url);
-    }
+    ExportHelper.download(this._storageService);
   }
 
   clear(): void {
@@ -213,9 +197,46 @@ export class SettingsComponent implements OnDestroy {
     localStorage.setItem('date.format', format);
   }
 
-  setTheme(theme: ITheme): void {
+  selectTheme(theme: ITheme): void {
     this.currentTheme = theme.value;
     setTheme(theme);
+    // Slider labels that follow the theme need re-reading after the preset changed.
+    this.overrides.set({ ...this.overrides() });
+  }
+
+  toggleAdvanced(): void {
+    this.advancedOpen.update(v => !v);
+  }
+
+  sliderValue(slider: IThemeSlider): number {
+    return this.overrides()[slider.key] ?? getEffectiveSliderValue(slider);
+  }
+
+  setSlider(slider: IThemeSlider, evt: Event): void {
+    const value = (evt.target as HTMLInputElement).valueAsNumber;
+    this.setOverride(slider.key, Math.round(value * 1000) / 1000);
+  }
+
+  setBackgroundImage(evt: Event): void {
+    this.setOverride('bgImage', (evt.target as HTMLSelectElement).value);
+  }
+
+  setOverride<K extends ThemeOverrideKey>(key: K, value: IThemeOverrides[K] | undefined): void {
+    this.overrides.set({ ...setThemeOverride(key, value) });
+  }
+
+  toggleVignette(): void {
+    this.setOverride('vignette', this.overrides().vignette === false ? undefined : false);
+  }
+
+  resetOverrides(): void {
+    clearThemeOverrides();
+    this.overrides.set({});
+  }
+
+  confirmResetOverrides(): void {
+    if (!confirm('Reset all advanced tweaks to the theme defaults?')) { return; }
+    this.resetOverrides();
   }
 
   toggleWikiTab(): void {

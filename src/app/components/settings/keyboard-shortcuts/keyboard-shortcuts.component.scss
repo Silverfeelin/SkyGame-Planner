@@ -1,19 +1,49 @@
 .keyboard-grid {
   display: grid;
-  grid-template-columns: 1 1fr;
-  gap: var(--padding-content-half);
-
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: var(--atmos-gap-compact) var(--atmos-gap);
   text-align: left;
-
-  > * {
-    padding: var(--padding-content-half) var(--padding-content);
-    border: 1px solid var(--color-input-border);
-    border-radius: var(--border-radius);
-    background-color: var(--color-card-solid-background);
-  }
+  text-wrap: initial;
 }
 
 .keyboard-section {
-  grid-column: span 2;
-  font-weight: bold;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-bottom: var(--atmos-gap-compact);
+  border-bottom: 1px solid var(--atmos-line);
+  font-size: var(--atmos-h5);
+  color: var(--atmos-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  &:not(:first-child) {
+    margin-top: var(--atmos-gap);
+  }
+}
+
+.keyboard-key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+
+  kbd {
+    display: inline-block;
+    min-width: 1.75em;
+    padding: 2px 6px;
+    border: 1px solid var(--atmos-line);
+    border-radius: var(--atmos-radius-sm);
+    background: var(--atmos-bg-elev);
+    box-shadow: 0 1px 0 var(--atmos-line);
+    color: var(--atmos-text);
+    font-size: 0.85em;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.keyboard-description {
+  color: var(--atmos-text-dim);
 }

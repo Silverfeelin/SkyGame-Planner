@@ -1,0 +1,245 @@
+<app-section-quick-actions section="item" />
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Goals <span class="atmos-pill atmos-goals__beta-pill">Beta</span></h1>
+</header>
+
+<div class="atmos-page__intro">
+  <p class="atmos-paragraph">
+    Pick the items you are saving for and put them in the order you want to buy them.
+    Based on your <a class="atmos-text-link" routerLink="/currency">current currencies</a> and what you earn per day,
+    each goal shows when you can afford it and warns you if the item leaves before then.
+  </p>
+  <p class="atmos-goals__beta">
+    <mat-icon>bug_report</mat-icon>
+    <span>
+      Goals is in beta, so dates and warnings can still be off.
+      <a class="atmos-text-link" [href]="reportUrl" target="_blank" rel="noopener">Report an issue</a>
+      to help improve it.
+    </span>
+  </p>
+</div>
+
+<section class="atmos-card">
+  <div class="atmos-card__body atmos-goals__savings">
+    <div class="atmos-goals__savings-col">
+      <h2 class="atmos-section__title">Balance</h2>
+      <app-cost [cost]="balanceCost()" [showZeroes]="true" />
+      <a class="atmos-text-link atmos-goals__hint" routerLink="/currency">Update currencies</a>
+    </div>
+
+    <div class="atmos-goals__savings-col">
+      <h2 class="atmos-section__title">Earned per day</h2>
+      <div class="atmos-goals__income">
+        <label class="atmos-goals__income-field" [skyTooltip]="'Candles per day'">
+          <mat-icon svgIcon="candle"></mat-icon>
+          <input class="atmos-input atmos-input--narrow" type="number" min="0" step="1"
+            [value]="income().c" (change)="setIncome('c', $event)" />
+        </label>
+        <label class="atmos-goals__income-field" [skyTooltip]="'Hearts per day'">
+          <mat-icon svgIcon="heart"></mat-icon>
+          <input class="atmos-input atmos-input--narrow" type="number" min="0" step="0.1"
+            [value]="income().h" (change)="setIncome('h', $event)" />
+        </label>
+        <label class="atmos-goals__income-field" [skyTooltip]="'Ascended candles per day'">
+          <mat-icon svgIcon="ascended-candle"></mat-icon>
+          <input class="atmos-input atmos-input--narrow" type="number" min="0" step="0.1"
+            [value]="income().ac" (change)="setIncome('ac', $event)" />
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <div class="atmos-goals__head">
+      <h2 class="atmos-section__title">Goals</h2>
+      <div class="atmos-goals__buttons">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addFavourites()">
+          <mat-icon>star</mat-icon> Add favourites
+        </button>
+        @if (ownedCount()) {
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="clearOwned()">
+            <mat-icon>done_all</mat-icon> Clear owned ({{ ownedCount() }})
+          </button>
+        }
+        @if (goals().length) {
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="askClearAll()">
+            <mat-icon>delete</mat-icon> Clear
+          </button>
+        }
+      </div>
+    </div>
+
+    @if (!goals().length) {
+      <p class="atmos-paragraph">You have no goals yet. Add items below, or start from your favourites.</p>
+    } @else {
+      <ol class="atmos-goals__list">
+        @for (goal of goals(); track goal.item.guid; let first = $first; let last = $last) {
+          <li class="atmos-goals__row" [attr.data-goal]="goal.item.guid" [class.is-owned]="goal.status === 'owned'" [class.is-late]="goal.late"
+            [class.is-focused]="focusedGoal() === goal.item.guid">
+            <a class="atmos-goals__icon" [routerLink]="['/item', goal.item.guid]">
+              <app-item-icon [item]="goal.item" size="medium" [opaque]="true" [subIcons]="SUBICONS_ALL" />
+            </a>
+
+            <div class="atmos-goals__info">
+              <a class="atmos-goals__name atmos-text-link" [routerLink]="['/item', goal.item.guid]">{{ goal.item.name }}</a>
+              @if (windowLabel(goal); as label) {
+                <span class="atmos-goals__window">{{ label }}</span>
+              }
+            </div>
+
+            <div class="atmos-goals__cost">
+              @if (goal.status !== 'owned') {
+                <app-cost [cost]="goal.cost" [price]="goal.price" [showZeroes]="false" />
+              }
+            </div>
+
+            <div class="atmos-goals__status">
+              @switch (goal.status) {
+                @case ('owned') { <mat-icon>check_circle</mat-icon> Owned }
+                @case ('included') { <mat-icon>link</mat-icon> Unlocked with {{ goal.includedIn!.item.name }} }
+                @case ('affordable') { <mat-icon>savings</mat-icon> Affordable now }
+                @case ('projected') {
+                  <mat-icon>event</mat-icon>
+                  <span>
+                    <a class="atmos-text-link" (click)="showInCalendar(goal)" [skyTooltip]="'Show in calendar'">{{ goal.date! | datetime }}</a>
+                    <span class="atmos-goals__days">
+                      in {{ goal.days }} {{ goal.days === 1 ? 'day' : 'days' }}{{ goal.waitsForStart ? ', when it becomes available' : '' }}
+                    </span>
+                  </span>
+                }
+                @case ('never') { <mat-icon>block</mat-icon> {{ blockedLabel(goal) }} }
+                @case ('purchase') { <mat-icon>shopping_cart</mat-icon> Purchase }
+                @case ('unavailable') { <mat-icon>schedule</mat-icon> Not available right now }
+                @case ('unknown') { <mat-icon>help_outline</mat-icon> No source found }
+              }
+              @if (goal.late) {
+                <span class="atmos-goals__late">
+                  <mat-icon>warning</mat-icon> {{ daysLate(goal) }} {{ daysLate(goal) === 1 ? 'day' : 'days' }} too late
+                </span>
+              }
+              @if (goal.requiresEventCurrency) {
+                <span class="atmos-goals__late" [skyTooltip]="'This item is locked behind another item that requires event currency.\nPlease check carefully if you can still get the required event currency.'">
+                  <mat-icon>warning</mat-icon> Requires event currency
+                </span>
+              }
+              @if (goal.beforeHigher) {
+                <span class="atmos-goals__late" [skyTooltip]="beforeHigherLabel(goal)">
+                  <mat-icon>priority_high</mat-icon> Leaves before a higher goal
+                </span>
+              }
+            </div>
+
+            <div class="atmos-goals__actions">
+              @if (itemSources().get(goal.item.guid); as src) {
+                <a class="atmos-icon-btn" [routerLink]="src.route" [queryParams]="src.extras?.queryParams"
+                  [attr.aria-label]="'Find ' + goal.item.name" [skyTooltip]="'Find item'"><mat-icon>search</mat-icon></a>
+              }
+              <button type="button" class="atmos-icon-btn" [class.is-hidden]="first" [disabled]="first" (click)="moveUp(goal)"
+                aria-label="Move up" [skyTooltip]="'Move up'"><mat-icon>arrow_upward</mat-icon></button>
+              <button type="button" class="atmos-icon-btn" [class.is-hidden]="last" [disabled]="last" (click)="moveDown(goal)"
+                aria-label="Move down" [skyTooltip]="'Move down'"><mat-icon>arrow_downward</mat-icon></button>
+              <button type="button" class="atmos-icon-btn" (click)="remove(goal)"
+                [attr.aria-label]="'Remove ' + goal.item.name" [skyTooltip]="'Remove'"><mat-icon>close</mat-icon></button>
+            </div>
+          </li>
+        }
+      </ol>
+
+      <div class="atmos-goals__total">
+        <span class="atmos-goals__total-label">Total still needed</span>
+        <app-cost [cost]="totalCost()" [price]="totalPrice()" [showZeroes]="false" />
+      </div>
+      <p class="atmos-goals__hint">
+        Goals are paid for from top to bottom, so each date includes the goals above it.
+      </p>
+    }
+  </div>
+</section>
+
+@if (seasonItems().length) {
+  <section class="atmos-card">
+    <button type="button" class="atmos-goals__fold" [attr.aria-expanded]="showSeasonItems()" (click)="showSeasonItems.set(!showSeasonItems())">
+      <mat-icon>{{ showSeasonItems() ? 'expand_less' : 'expand_more' }}</mat-icon>
+      <h2 class="atmos-section__title">Season items ({{ seasonItems().length }})</h2>
+    </button>
+    @if (showSeasonItems()) {
+      <div class="atmos-card__body">
+        <p class="atmos-goals__hint atmos-goals__disclaimer">
+          These items cost season candles or season hearts, or come from a season spirit that may need the season pass or earlier tiers.
+          They are not included in the goals and calendar.
+          Plan them with the <a class="atmos-text-link" routerLink="/season/calculator">season calculator</a>
+          or the <a class="atmos-text-link" routerLink="/season/optimizer">season optimizer</a>.
+        </p>
+        <ng-container [ngTemplateOutlet]="simpleList" [ngTemplateOutletContext]="{ $implicit: seasonItems() }" />
+      </div>
+    }
+  </section>
+}
+
+@if (eventItems().length) {
+  <section class="atmos-card">
+    <button type="button" class="atmos-goals__fold" [attr.aria-expanded]="showEventItems()" (click)="showEventItems.set(!showEventItems())">
+      <mat-icon>{{ showEventItems() ? 'expand_less' : 'expand_more' }}</mat-icon>
+      <h2 class="atmos-section__title">Event items ({{ eventItems().length }})</h2>
+    </button>
+    @if (showEventItems()) {
+      <div class="atmos-card__body">
+        <p class="atmos-goals__hint atmos-goals__disclaimer">
+          These items cost event tickets, which are not included in the goals and calendar.
+          Plan them with the event calculator{{ eventInstances().length ? ':' : '.' }}
+          @for (instance of eventInstances(); track instance.guid; let lastInstance = $last) {
+            <a class="atmos-text-link" routerLink="/event/calculator" [queryParams]="{ guid: instance.guid }">{{ instance.name ?? instance.event.name }}</a>{{ lastInstance ? '.' : ',' }}
+          }
+        </p>
+        <ng-container [ngTemplateOutlet]="simpleList" [ngTemplateOutletContext]="{ $implicit: eventItems() }" />
+      </div>
+    }
+  </section>
+}
+
+<ng-template #simpleList let-items>
+  <ul class="atmos-goals__list">
+    @for (item of items; track item.guid) {
+      <li class="atmos-goals__row atmos-goals__row--simple">
+        <a class="atmos-goals__icon" [routerLink]="['/item', item.guid]">
+          <app-item-icon [item]="item" size="medium" [opaque]="true" [subIcons]="SUBICONS_ALL" />
+        </a>
+        <a class="atmos-goals__name atmos-text-link" [routerLink]="['/item', item.guid]">{{ item.name }}</a>
+        <button type="button" class="atmos-icon-btn" (click)="removeItem(item)"
+          [attr.aria-label]="'Remove ' + item.name" [skyTooltip]="'Remove'"><mat-icon>close</mat-icon></button>
+      </li>
+    }
+  </ul>
+</ng-template>
+
+<section class="atmos-card" #calendar>
+  <div class="atmos-card__body">
+    <h2 class="atmos-section__title">Calendar</h2>
+    <app-item-goals-calendar [goals]="goals()" [buckets]="plan().buckets" [today]="today" [(selected)]="selectedDay" (goalClicked)="showInList($event)" />
+  </div>
+</section>
+
+<div class="atmos-goals__buttons">
+  <button type="button" class="atmos-btn" (click)="toggleAddItems()">
+    <mat-icon>{{ showAddItems() ? 'expand_less' : 'add' }}</mat-icon> Add items
+  </button>
+</div>
+
+@if (showAddItems()) {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [syncCategoryToUrl]="false" />
+      <ng-template #pickTpl let-item>
+        <div class="atmos-goals__pick atmos-tile atmos-tile--selectable"
+          [class.is-selected]="goalSet().has(item.guid)"
+          (click)="onPickerItemClicked(item)">
+          <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [skyTooltip]="item.name" placement="auto" />
+          @if (goalSet().has(item.guid)) { <span class="atmos-tile__check">✓</span> }
+        </div>
+      </ng-template>
+    </div>
+  </section>
+}

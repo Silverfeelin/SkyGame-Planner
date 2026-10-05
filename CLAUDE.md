@@ -23,7 +23,7 @@ Run a single test file by adding `--include` to the karma config or filtering vi
 
 ### Data layer
 
-All game data comes from the [`skygame-data`](https://github.com/Silverfeelin/SkyGame-Data) npm package. On startup, `DataService` fetches `/assets/skygame-data/everything.json`, parses it with `SkyDataResolver.parse/resolve`, and populates typed config arrays (`spiritConfig`, `itemConfig`, `seasonConfig`, etc.). A `guidMap: Map<string, IGuid>` is the central registry for all entities—every entity has a 10-character GUID.
+All game data comes from the [`skygame-data`](https://github.com/Silverfeelin/SkyGame-Data) npm package. On startup, `DataService` fetches `https://data.sky-planner.com/<major>.<minor>/everything.json` (the minor of the installed package, see `src/environments/environment.ts`; patches go live there without a Planner deploy), parses it with `SkyDataResolver.parse/resolve`, and populates typed config arrays (`spiritConfig`, `itemConfig`, `seasonConfig`, etc.). A `guidMap: Map<string, IGuid>` is the central registry for all entities—every entity has a 10-character GUID.
 
 After data loads, helpers and raw configs are exposed on `window.skyData` / `window.NodeHelper` etc. for browser-console debugging.
 
@@ -40,15 +40,16 @@ Tracked data is keyed by GUID: unlocked nodes/items, winged lights, favourites, 
 
 ### Routing / layout
 
-Two nested layout shells:
+Routes live in `src/app/app-routes.ts`. The UI is built on the `--atmos-*` token system in `src/styles/styles.scss`:
 
-1. `MainLayoutComponent` — outer shell, enforces data-loaded and storage-ready guards
-2. `MenuLayoutComponent` — adds the side navigation menu
+- `MainLayoutComponent` — bootstrap gate; runs `forkJoin(canActivateData, canActivateIcons, canActivateStorage)` and shows loading/error/save-state overlays. Sits *above* all routes so editor and graph are also gated. It also composes the visible chrome inline from `components/layout/shell/{topbar,sidebar,footer}`, and carries the `atmospheric` host class that scopes the global Leaflet overrides.
+- Routes with `data: { chrome: false }` (`outfit-request/request`, `dropbox-auth`) render inside the gate without that chrome.
 
-Three lazy-loaded sections live outside the main component tree:
-- `/editor` — data-entry editor for contributors (spirit trees, traveling spirits, shops, etc.)
+The sidebar, footer nav, per-section quick actions (`<app-section-quick-actions section="…" />`) and page search results are all generated from `src/app/navigation/pages.ts`. Add new routes there too; in dev mode, `checkPages` logs a warning for routes and page links that are out of sync.
+
+Two lazy-loaded sections sit inside the gate as well:
+- `/editor` — data-entry editor for contributors (spirit trees, outfit shrines, items, dyes)
 - `/graph` — analytics/graphs
-- `/experiment` — experimental features
 
 ### Key services
 
@@ -75,9 +76,37 @@ In **new code**, use modern Angular APIs:
 
 Do not rewrite existing code to these APIs unless the task specifically asks for it—match the surrounding style when editing old files.
 
+#### Comments
+
+Only comment where the code cannot speak for itself. A comment explains *why*—a non-obvious constraint, a workaround, an ordering requirement, a game rule that isn't evident from the identifiers.
+
+- Keep comments as short as the point allows; one line is usually enough.
+- Do not restate what the code already says, and do not label sections that the structure already makes clear.
+- Never write comments about the change itself ("new", "updated", "was X before", "moved from Y", "per request"). Comments describe the code as it stands, not the session that produced it; that history belongs in the commit message.
+- Prefer clearer naming or a small extracted function over a comment that compensates for unclear code.
+- These rules take priority over adhering to the format of existing comments.
+
 ### Styling
 
-Components use either `.less` or `.scss` (inconsistent across the codebase—use scss for new code, do not rewrite less to scss unless the task specifically asks for it).
+Components use **`.scss`**. `src/styles/styles.scss` is the global base + design-system sheet (`#region` markers split it into Base / Tokens / Components / Themes / Utilities); `charts.scss`, `map.scss` and `grid.scss` are separate entries in `angular.json`, loaded in that order.
+
+#### Breakpoints vs. themes vs. density
+
+Three independent axes:
+
+- **Responsive breakpoint** — `@media (max-width: 1023px)` is the tablet/mobile layout, `min-width: 1024px` desktop.
+- **Colour theme** — `:root[data-theme="..."]` in the Themes region (default, sandy, dark, love, moomin, wonderland). Colour only.
+- **Density** — `:root[data-density="compact"]`, also in the Themes region. Geometry only (padding, gaps, media heights).
+
+A token that should change with screen size belongs in the `@media` block, never in the `compact` block.
+
+Per-user slider tweaks (`src/theme-overrides.ts`) are written as inline `--atmos-*` properties on `<html>`, so they sit above any `data-theme` rule; keep hue, chroma, surface lightness, background image and vignette as single tokens on `:root` for that reason.
+
+### Icons
+
+Material Icons is the main icon set used. Various icons resembling in-game mechanics such as currency and winged light
+are added in SVG format from `/src/assets/icons/icons.svg`. When Material Icons are introduced or changed, the build
+script `npm run icon-names` will report necessary changes.
 
 ### Scripts
 

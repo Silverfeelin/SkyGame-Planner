@@ -1,0 +1,117 @@
+@if (missedShots(); as missed) {
+  <div class="atmos-qs__banner atmos-qs__banner--warn" role="alert">
+    <mat-icon>warning</mat-icon>
+    <p>We couldn't find the closet in {{ missed === 1 ? '1 screenshot' : missed + ' screenshots' }}. Check that they show the whole screen on the {{ tab().label.toLowerCase() }} tab.</p>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.changeShots(tab().key)">Change screenshots</button>
+  </div>
+}
+@if (state().ask.length) {
+  <section class="atmos-qs-ask" aria-labelledby="qs-ask-title">
+    <h4 id="qs-ask-title" class="atmos-qs__label">
+      We couldn't identify {{ state().ask.length }} item{{ state().ask.length === 1 ? '' : 's' }}
+    </h4>
+    @for (ask of state().ask; track $index; let k = $index) {
+      <div class="atmos-qs-ask__item" [class.is-answered]="ask.pick !== undefined">
+        <div class="atmos-qs-ask__crop">
+          @if (ask.crop) {
+            <img [src]="ask.crop" alt="The unidentified tile from your screenshot"/>
+          } @else {
+            <mat-icon aria-hidden="true">question_mark</mat-icon>
+          }
+        </div>
+        <div class="atmos-qs-ask__body">
+          <span class="atmos-qs__sub">Which item is this? From screenshot {{ ask.shot + 1 }}.</span>
+          <div class="atmos-qs__row" role="group" [attr.aria-label]="'Unidentified item ' + (k + 1)">
+            @for (item of ask.candidates; track item.guid) {
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-cand"
+                      [class.atmos-btn--active]="ask.pick === item" [attr.aria-pressed]="ask.pick === item"
+                      (click)="store.pickAsk(tab().key, k, item)">
+                <app-item-icon [item]="item" size="small" [opaque]="true"/>
+                {{ item.name }}
+              </button>
+            }
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-cand atmos-qs-cand--none"
+                    [class.atmos-btn--active]="ask.pick === null" [attr.aria-pressed]="ask.pick === null"
+                    (click)="store.pickAsk(tab().key, k, null)">
+              None of these
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+}
+
+<div class="atmos-qs__row">
+  <span class="atmos-qs__label">{{ fresh() }} new · {{ lockCount() }} already unlocked</span>
+  <span class="atmos-qs__spacer"></span>
+  @if (unsureCount()) {
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markAllUnsure(tab().key, 'owned')">Mark all ! as owned</button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markAllUnsure(tab().key, 'no')">Mark all ! as not owned</button>
+  }
+</div>
+
+@if (state().manual) {
+  <p class="atmos-qs__sub">Tap the items you own. Items with a lock are already unlocked in Sky Planner.</p>
+} @else {
+  <p class="atmos-qs__sub">
+    Tap an item to change it. Items with a <strong class="atmos-qs-confirm__q">!</strong> may be matched wrong. The game also shows
+    previews of some items you don't have yet; for those we guessed from how the tile looks and marked them with a
+    <strong class="atmos-qs-confirm__q">?</strong>.
+  </p>
+}
+
+<div class="atmos-qs-confirm__grids">
+  @for (group of groups(); track $index) {
+    @if (group.label) {
+      <h4 class="atmos-qs__label atmos-qs-confirm__group-label">{{ group.label }}</h4>
+    }
+    <div class="atmos-qs-grid" [class.atmos-qs-grid--centered]="!!group.label">
+      @for (e of group.entries; track e.tile.item.guid) {
+        <button type="button" class="atmos-qs-tile atmos-tile atmos-tile--selectable atmos-focus-ring"
+                [class.is-selected]="e.tile.state === 'owned'"
+                [class.is-unsure]="e.tile.state === 'unsure'"
+                [class.is-lock]="e.tile.state === 'lock'"
+                [skyTooltip]="e.tile.item.name"
+                [attr.aria-label]="e.label"
+                [attr.aria-pressed]="e.tile.state === 'lock' ? null : e.tile.state === 'unsure' ? 'mixed' : e.tile.state === 'owned'"
+                [attr.aria-disabled]="e.tile.state === 'lock' ? 'true' : null"
+                (click)="store.tapTile(tab().key, e.index)">
+          <app-item-icon [item]="e.tile.item" size="medium" [opaque]="e.tile.state !== 'no'"/>
+          @switch (e.tile.state) {
+            @case ('owned') { <span class="atmos-tile__check" aria-hidden="true">✓</span> }
+            @case ('unsure') { <span class="atmos-tile__check atmos-qs-tile__badge" aria-hidden="true"><mat-icon>priority_high</mat-icon></span> }
+            @case ('lock') { <span class="atmos-tile__check atmos-qs-tile__badge" aria-hidden="true"><mat-icon>lock</mat-icon></span> }
+          }
+          @if (e.tile.guess) {
+            <span class="atmos-tile__check atmos-qs-tile__badge atmos-qs-tile__badge--guess" aria-hidden="true"><mat-icon>question_mark</mat-icon></span>
+          }
+        </button>
+      } @empty {
+        <p class="atmos-qs__sub">Nothing to show here.</p>
+      }
+    </div>
+  }
+</div>
+
+<div class="atmos-qs-legend" aria-label="Legend">
+  <span><i class="is-owned"></i>Owned</span>
+  <span><i class="is-unsure"><mat-icon>priority_high</mat-icon></i>Low confidence match</span>
+  <span><i class="is-guess"><mat-icon>question_mark</mat-icon></i>Guessed, may be a preview</span>
+  <span><i></i>Not owned</span>
+  <span><i class="is-lock"></i>Already unlocked</span>
+</div>
+
+<div class="atmos-qs__row">
+  @if (state().manual) {
+    @if (store.screenshotsSupported) {
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.useScreenshots(tab().key)">
+        <mat-icon>upload</mat-icon>Use screenshots instead
+      </button>
+    }
+  } @else {
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.changeShots(tab().key)">Change screenshots</button>
+  }
+  <span class="atmos-qs__spacer"></span>
+  <app-quick-start-next-tab />
+</div>

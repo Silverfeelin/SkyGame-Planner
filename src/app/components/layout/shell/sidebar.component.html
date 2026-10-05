@@ -1,0 +1,50 @@
+<nav class="atmos-sidebar" aria-label="Primary">
+  <div class="atmos-sidebar__group">
+    <button
+      class="atmos-nav-item atmos-nav-item--toggle"
+      type="button"
+      (click)="toggleCollapsed()"
+      [attr.aria-expanded]="!collapsed()"
+      [attr.aria-label]="collapsed() ? 'Expand menu' : 'Collapse menu'"
+      [skyTooltip]="collapsed() ? 'Expand menu' : ''">
+      <mat-icon>{{ collapsed() ? 'menu' : 'menu_open' }}</mat-icon>
+      <span class="atmos-nav-item__label">Collapse menu</span>
+    </button>
+    <button
+      class="atmos-nav-item atmos-nav-item--back"
+      type="button"
+      (click)="goBack()"
+      [skyTooltip]="collapsed() ? 'Go back' : ''">
+      <mat-icon>arrow_back</mat-icon>
+      <span class="atmos-nav-item__label">Back</span>
+    </button>
+    <app-nav-tree [mode]="collapsed() ? 'rail' : 'full'" />
+  </div>
+
+  <div class="atmos-sidebar__spacer"></div>
+
+  <div class="atmos-sidebar__group atmos-sidebar__group--foot">
+    @for (item of nav.footer; track item.id) {
+      @if (item.external) {
+        <a
+          class="atmos-nav-item atmos-nav-item--small"
+          [href]="item.link"
+          target="_blank"
+          rel="noopener"
+          [skyTooltip]="collapsed() ? item.label : ''">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span class="atmos-nav-item__label">{{ item.label }}</span>
+        </a>
+      } @else {
+        <a
+          class="atmos-nav-item atmos-nav-item--small"
+          [routerLink]="item.link"
+          routerLinkActive="is-active"
+          [skyTooltip]="collapsed() ? item.label : ''">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span class="atmos-nav-item__label">{{ item.label }}</span>
+        </a>
+      }
+    }
+  </div>
+</nav>

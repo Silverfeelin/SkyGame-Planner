@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.atmos-news__list {
+  margin-top: var(--atmos-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-news__changes {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-lg);
+  line-height: 1.65;
+
+  li + li { margin-top: 6px; }
+}
+
+@media (max-width: 720px) {
+  .atmos-news__changes { font-size: var(--atmos-fs-md); }
+}

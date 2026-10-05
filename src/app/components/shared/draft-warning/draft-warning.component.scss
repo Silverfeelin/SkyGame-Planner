@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.atmos-draft-warning {
+  display: flex;
+}
+
+.atmos-draft-warning__body {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  color: var(--atmos-warm);
+
+  mat-icon { color: var(--atmos-warm); }
+}

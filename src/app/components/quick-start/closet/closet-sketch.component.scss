@@ -1,0 +1,25 @@
+:host { display: block; }
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.atmos-qs-sketch__scene { fill: var(--atmos-bg-elev-3); }
+.atmos-qs-sketch__panel { fill: color-mix(in oklch, var(--atmos-bg) 88%, transparent); }
+.atmos-qs-sketch__cat { fill: var(--atmos-hover-bg-strong); }
+.atmos-qs-sketch__cat.is-lit { fill: var(--atmos-accent); }
+.atmos-qs-sketch__line { stroke: var(--atmos-line-soft); stroke-width: 1; }
+
+.atmos-qs-sketch__tile { fill: var(--atmos-accent); opacity: 0.8; }
+.atmos-qs-sketch__tile.is-cut { fill: var(--atmos-warn-accent); opacity: 0.75; }
+
+.atmos-qs-sketch__mark {
+  fill: none;
+  stroke: var(--atmos-accent);
+  stroke-width: 2;
+}
+
+.atmos-qs-sketch__mark--frame { stroke-dasharray: 4 3; }

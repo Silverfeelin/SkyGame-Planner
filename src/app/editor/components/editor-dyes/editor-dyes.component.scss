@@ -1,8 +1,32 @@
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dye-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.picker {
+  flex: 0 0 1000px;
+  max-width: 1000px;
+  position: sticky;
+  top: 0;
+}
+
+.preview-grid--unmapped {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .preview {
   position: relative;
   width: 300px;
   height: 300px;
-  background: #0008;
+  background: var(--atmos-preview-bg);
   cursor: pointer;
 
   img {
@@ -26,4 +50,12 @@
     width: 128px;
     height: 128px;
   }
+}
+
+.picker-item {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
 }

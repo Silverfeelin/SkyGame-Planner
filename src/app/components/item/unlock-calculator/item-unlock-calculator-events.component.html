@@ -1,0 +1,17 @@
+<app-foldable-card [folded]="true">
+  <div header>
+    <h2 class="atmos-item-unlock-calc-sub__title">
+      <mat-icon>celebration</mat-icon> Add event items
+    </h2>
+  </div>
+  <p class="atmos-paragraph">
+    Select an event to quickly add all items from that event to the calculator.
+  </p>
+  <div class="atmos-item-unlock-calc-sub__buttons">
+    @for (event of events; track event.guid) {
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="onEventSelected(event)">
+        {{ event.name }}
+      </button>
+    }
+  </div>
+</app-foldable-card>

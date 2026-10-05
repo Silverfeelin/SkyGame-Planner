@@ -1,0 +1,29 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
+}
+
+.atmos-qs-music__search {
+  flex: 1 1 220px;
+  max-width: 320px;
+  font-size: var(--atmos-fs-sm);
+}
+
+.atmos-qs-music__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atmos-qs-sheet {
+  gap: 6px;
+  padding: 5px 12px 5px 9px;
+
+  > mat-icon { color: var(--atmos-text-mute); }
+  &.atmos-btn--active > mat-icon { color: var(--atmos-accent); }
+  &.is-lock > mat-icon { color: var(--qs-lock); }
+}

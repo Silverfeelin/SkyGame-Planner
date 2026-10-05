@@ -6,7 +6,7 @@ import { EventService } from './services/event.service';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { BroadcastService } from './services/broadcast.service';
-import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CanonicalService } from './services/canonical.service';
 import { OverlayComponent } from "./components/layout/overlay/overlay.component";
 import { KeyboardShortcutsComponent } from "./components/settings/keyboard-shortcuts/keyboard-shortcuts.component";
@@ -16,8 +16,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less'],
-    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, KeyboardShortcutsComponent]
+    styleUrls: ['./app.component.scss'],
+    imports: [MatIcon, RouterOutlet, OverlayComponent, KeyboardShortcutsComponent]
 })
 export class AppComponent {
   showDataLoss = false;
@@ -80,7 +80,10 @@ export class AppComponent {
   private onKeydown(evt: KeyboardEvent): void {
     if (this._eventService.keyboardShortcutDisabledCount > 0) { return; }
     if (evt.ctrlKey && evt.shiftKey && evt.key.toUpperCase() === 'F') {
+      // On the dashboard the search bar focuses itself; elsewhere navigate there
+      // and let it pick up the focus flag.
       if ((this._router.url.split('?')[0] || '/') === '/') { return; }
+      evt.preventDefault();
       void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });
       return;
     }

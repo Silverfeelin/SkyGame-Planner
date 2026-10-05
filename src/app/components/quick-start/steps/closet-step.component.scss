@@ -1,0 +1,105 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+
+.atmos-qs-closet {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--atmos-gap);
+  align-items: start;
+}
+
+.atmos-qs-closet__tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.atmos-qs-closet__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--atmos-text);
+  font-size: var(--atmos-fs-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--atmos-transition), border-color var(--atmos-transition);
+  --atmos-focus-offset: -2px;
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  &.is-selected {
+    background: var(--atmos-active-bg);
+    border-color: var(--atmos-active-border);
+  }
+}
+
+.atmos-qs-closet__tab-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.atmos-qs-closet__tab-status {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+
+  &.is-done { color: var(--qs-lock); }
+  &.is-warn { color: var(--qs-warn); }
+}
+
+.atmos-qs-closet__sep {
+  flex: none;
+  height: 1px;
+  margin: 6px 10px;
+  background: var(--atmos-line-soft);
+}
+
+.atmos-qs-closet__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
+  min-width: 0;
+}
+
+.atmos-qs-closet__panel-title {
+  margin: 0;
+  font-size: var(--atmos-fs-lg);
+  font-weight: 500;
+}
+
+.atmos-qs-closet__substeps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+
+  .is-on { color: var(--atmos-accent); font-weight: 500; }
+  .is-done { color: var(--atmos-text-dim); }
+  i { font-style: normal; opacity: 0.5; }
+}
+
+@media (max-width: 1023px) {
+  .atmos-qs-closet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .atmos-qs-closet__tabs {
+    flex-direction: row;
+    padding-bottom: 4px;
+  }
+
+  .atmos-qs-closet__tab { flex: none; }
+
+  .atmos-qs-closet__sep {
+    width: 1px;
+    height: auto;
+    margin: 6px 4px;
+  }
+}

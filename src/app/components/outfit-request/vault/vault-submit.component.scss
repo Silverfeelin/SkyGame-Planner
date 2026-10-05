@@ -1,0 +1,51 @@
+@use 'vault-selection' as vault-selection;
+
+@include vault-selection.styles;
+
+.vault-submit__warning {
+  padding: var(--atmos-gap-compact);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-danger-bg);
+  border: 1px solid var(--atmos-danger-accent);
+}
+
+.vault-submit__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.vault-submit__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.vault-submit__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.vault-submit__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-start;
+
+  > .atmos-input { width: 100%; }
+}
+
+.vault-submit__verify {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.vault-submit__verify-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}

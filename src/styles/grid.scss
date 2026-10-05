@@ -1,0 +1,69 @@
+/* Shared AG-Grid styling for the atmospheric redesign.
+   Global (not component-scoped) because AG-Grid renders most of its DOM
+   outside the component that hosts <ag-grid-angular>. */
+
+/* Host sizing.
+   The atmos shell is a row flex on desktop, where the main column is stretched
+   and therefore has a definite height, so `height: 100%` on the grid host
+   resolves. Below 1023px the shell becomes a column flex and every ancestor
+   height is only resolved by flexing, which leaves it indefinite: `height: 100%`
+   then resolves to 0 and the grid renders blank. Sizing the host by flexing it
+   inside its card works in both layouts. */
+.atmos-card > ag-grid-angular {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: auto;
+  width: 100%;
+
+  /* AG-Grid sizes its own root with `height: 100%`, which hits the same
+     indefinite-height problem one level down. */
+  > .ag-root-wrapper {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+  }
+}
+
+/* Cell content alignment.
+   AG-Grid lays cells out as blocks and relies on line-height for vertical
+   rhythm, so in tall rows the text sits in the first line box at the top of the
+   cell while icons and images drift elsewhere. Cells that contain such content
+   are flexed and aligned to that same first line box, so an icon reads as part
+   of the text line instead of floating above or below it. Text-only cells stay
+   blocks so AG-Grid's own ellipsis on the cell box keeps working. */
+.ag-theme-quartz,
+.ag-root-wrapper {
+  .ag-cell:not(.ag-cell-wrap-text):has(mat-icon, img, svg, app-icon) {
+    display: flex;
+    align-items: flex-start;
+
+    > * {
+      display: flex;
+      align-items: center;
+      min-height: 1lh;
+    }
+
+    > .ag-cell-wrapper {
+      min-width: 0;
+      max-width: 100%;
+    }
+  }
+
+  /* Inline icons in cells that are not flexed (wrapped text, mixed content). */
+  .ag-cell mat-icon,
+  .ag-cell .maticon,
+  .ag-cell img {
+    vertical-align: middle;
+  }
+
+  .ag-header-cell-label {
+    align-items: center;
+  }
+}
+
+/* Emphasis for values produced by string cell renderers, which cannot use a
+   component stylesheet. */
+.ag-atmos-strong {
+  font-weight: 600;
+}

@@ -1,15 +1,118 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
 .item-icon {
   position: relative;
   width: var(--item-size);
   height: var(--item-size);
-  background: var(--color-background);
-  border-radius: var(--border-radius)
+  background: var(--atmos-card-bg);
+  border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-tile-bg-hover);
+  }
+
+  app-item-icon {
+    cursor: pointer;
+  }
+}
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.accent {
+  color: var(--atmos-accent);
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+
+  &--compact {
+    gap: var(--atmos-gap-compact);
+  }
+}
+
+/* Button + amount + cost type + apply, joined into one segmented control.
+   Not .atmos-btn-group: two of the four children are form fields, which are
+   display: block; width: 100% globally and need explicit widths here. */
+.cost-row {
+  display: flex;
+  align-items: stretch;
+  max-width: 100%;
+
+  > * {
+    border-radius: 0;
+
+    &:not(:first-child) { margin-left: -1px; }
+    &:first-child {
+      border-top-left-radius: var(--atmos-radius-sm);
+      border-bottom-left-radius: var(--atmos-radius-sm);
+    }
+    &:last-child {
+      border-top-right-radius: var(--atmos-radius-sm);
+      border-bottom-right-radius: var(--atmos-radius-sm);
+    }
+  }
+
+  > .atmos-btn { flex: 0 0 auto; }
+
+  &__amount { flex: 0 0 80px; width: 80px; height: auto; }
+  &__type { flex: 0 1 176px; width: 176px; min-width: 0; height: auto; }
+}
+
+.save-fields {
+  display: grid;
+  grid-template-columns: auto minmax(0, 200px);
+  gap: var(--atmos-gap-compact) 8px;
+  align-items: center;
+}
+
+.save-input {
+  display: inline-block;
+  width: 100%;
+}
+
+.save-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--atmos-gap);
+}
+
+.custom-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--atmos-gap);
+}
+
+h2.atmos-section__title {
+  margin-bottom: var(--atmos-gap);
+}
+
+.overlay-help {
+  margin-bottom: var(--atmos-gap);
+}
+
+.spirit-tree-row {
+  display: flex;
+  overflow-x: auto;
+  margin-top: var(--atmos-gap);
 }
 
 .editor-grid {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--padding-content);
+  gap: var(--atmos-gap);
   align-items: end;
 }
 
@@ -26,4 +129,127 @@
     left: 0;
     align-self: start;
   }
+}
+
+.picker-item {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+}
+
+.mode-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tier editor: fixed 3-column rows stacked per tier, highest tier on top. */
+.tier-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: var(--atmos-card-pad);
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur);
+  -webkit-backdrop-filter: var(--atmos-blur);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  box-shadow: var(--atmos-card-shadow);
+  touch-action: none;
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  &__label {
+    color: var(--atmos-accent);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  &__cell {
+    display: flex;
+    /* Top aligned so a node's icon lands where the empty slot's box was. */
+    align-items: flex-start;
+    justify-content: center;
+    /* A node is its icon plus 6px padding, the 4px gap and its 18px cost line;
+       reserving that keeps the row from growing when the first node lands in it. */
+    min-height: calc(var(--item-size) + 34px);
+    border-radius: var(--atmos-radius-sm);
+
+    &.is-selected {
+      outline: 2px solid var(--atmos-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--item-size);
+    height: var(--item-size);
+    /* Matches the node's own padding, so the dashed box and the icon line up. */
+    margin-top: 6px;
+    padding: 0;
+    color: var(--atmos-text-dim);
+    background: var(--atmos-card-bg);
+    border: 1px dashed var(--atmos-line-soft);
+    border-radius: var(--atmos-radius-sm);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--atmos-tile-bg-hover);
+    }
+  }
+
+  &__separator {
+    width: 100%;
+    max-width: 320px;
+    height: 1px;
+    background: var(--atmos-line-soft);
+  }
+
+  &__actions {
+    margin-top: var(--atmos-gap);
+  }
+}
+
+/* The tree being edited always shows its items at full strength, unlocked or not. */
+.editor-grid-tree ::ng-deep .atmos-node.is-opaque .atmos-node__icon {
+  opacity: 1;
+}
+
+/* Inline icons in the hint text. */
+.hint-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
 }

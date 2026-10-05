@@ -1,46 +1,45 @@
-import { ChangeDetectionStrategy, Component, Injector, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { StorageService } from 'src/app/services/storage.service';
-import { StorageProviderFactory } from 'src/app/services/storage/storage-provider-factory';
 import { MatIcon } from '@angular/material/icon';
+import { StorageService } from '@app/services/storage.service';
+import { StorageProviderFactory } from '@app/services/storage/storage-provider-factory';
 
 @Component({
-    selector: 'app-storage',
-    templateUrl: './storage.component.html',
-    styleUrl: './storage.component.less',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [MatIcon, RouterLink]
+  selector: 'app-storage',
+  templateUrl: './storage.component.html',
+  styleUrl: './storage.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { 'class': 'atmospheric' },
+  imports: [RouterLink, MatIcon]
 })
-export class StorageComponent {
-  errorMessage?: string;
-  storageType: string;
-  hasDbx = false;
+export class StorageComponent implements OnInit {
+  private readonly _route = inject(ActivatedRoute);
+  private readonly _router = inject(Router);
+  private readonly _storageService = inject(StorageService);
+  private readonly _storageProviderFactory = inject(StorageProviderFactory);
 
-  constructor(
-    private readonly _route: ActivatedRoute,
-    private readonly _router: Router,
-    private readonly _storageService: StorageService,
-    private readonly _storageProviderFactory: StorageProviderFactory
-  ) {
-    const query = _route.snapshot.queryParamMap;
-    this.errorMessage = query.get('error') || undefined;
-    this.storageType = localStorage.getItem('storage.type') || '';
+  readonly errorParam = signal<string | undefined>(undefined);
+  readonly storageType = signal<string>(localStorage.getItem('storage.type') || '');
+  readonly hasDbx = signal<boolean>(!!localStorage.getItem('dbx-accessToken'));
 
-    if (this.errorMessage) {
-      history.replaceState(null, '', _router.url.split('?')[0]);
+  ngOnInit(): void {
+    const query = this._route.snapshot.queryParamMap;
+    const error = query.get('error') || undefined;
+    this.errorParam.set(error);
+    if (error) {
+      history.replaceState(null, '', this._router.url.split('?')[0]);
     }
-    this.hasDbx = !!localStorage.getItem('dbx-accessToken');
   }
 
   useLocalStorage(): void {
-    if (this.storageType === '') { return; }
+    if (this.storageType() === '') { return; }
     if (!confirm('Are you sure you want to use local storage?')) { return; }
     this.setStorageType('');
   }
 
   useDropbox(): void {
-    if (this.storageType === 'dropbox') { return; }
-    if (!this.hasDbx) { return this.linkDropbox(); }
+    if (this.storageType() === 'dropbox') { return; }
+    if (!this.hasDbx()) { return this.linkDropbox(); }
     if (!confirm('Are you sure you want to use Dropbox?')) { return; }
     this.setStorageType('dropbox');
   }
@@ -50,7 +49,7 @@ export class StorageComponent {
   }
 
   private setStorageType(type: string): void {
-    this.storageType = type;
+    this.storageType.set(type);
     localStorage.setItem('storage.type', type);
     this._storageService.setStorageProvider(this._storageProviderFactory.get());
   }

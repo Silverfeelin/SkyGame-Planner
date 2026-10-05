@@ -1,0 +1,60 @@
+/* The host owns the width so the shell's flex row follows it; the slot in
+   main-layout is sized `auto` for exactly this reason. */
+:host {
+  display: block;
+  height: 100%;
+  width: 220px;
+}
+
+:host(.is-animated) {
+  transition: width var(--atmos-transition);
+}
+
+:host(.is-collapsed) {
+  width: 48px;
+}
+
+.atmos-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 18px 6px 14px;
+  gap: 18px;
+  background: var(--atmos-chrome-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.atmos-sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.atmos-sidebar__group--foot {
+  opacity: 0.85;
+}
+
+.atmos-sidebar__spacer {
+  flex: 1;
+}
+
+.atmos-nav-item--back {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-nav-item--small {
+  padding: 7px 6px;
+  color: var(--atmos-text-mute);
+}
+
+.atmos-nav-item--toggle {
+  color: var(--atmos-text-mute);
+}
+
+:host(.is-collapsed) .atmos-nav-item__label {
+  display: none;
+}
+

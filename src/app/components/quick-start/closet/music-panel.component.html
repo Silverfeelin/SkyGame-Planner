@@ -1,0 +1,39 @@
+<p class="atmos-qs__sub">
+  Music sheets aren't in the closet. Tap the ones you have in your music sheet collection.
+  Like season items, they tell us which seasons and spirits you played.
+</p>
+
+<div class="atmos-qs__row">
+  <input type="search" class="atmos-input atmos-input--pill atmos-qs-music__search"
+         placeholder="Search music sheets" aria-label="Search music sheets"
+         [value]="state().search" (input)="onSearch($event)"/>
+  <span class="atmos-qs__spacer"></span>
+  <span class="atmos-qs__sub" aria-live="polite">{{ selected() }} selected</span>
+</div>
+
+@for (group of groups(); track group.label) {
+  <section class="atmos-qs-music__group">
+    <h4 class="atmos-qs__label">{{ group.label }}</h4>
+    <div class="atmos-qs__row">
+      @for (e of group.entries; track e.tile.item.guid) {
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-qs__toggle atmos-qs-sheet"
+                [class.atmos-btn--active]="e.tile.state === 'owned'"
+                [class.is-lock]="e.tile.state === 'lock'"
+                [attr.aria-pressed]="e.tile.state !== 'no'"
+                [disabled]="e.tile.state === 'lock'"
+                [attr.title]="e.tile.state === 'lock' ? 'Already unlocked' : null"
+                (click)="store.tapTile(key, e.index)">
+          <mat-icon aria-hidden="true">{{ e.tile.state === 'lock' ? 'lock' : e.tile.state === 'owned' ? 'check' : 'music_note' }}</mat-icon>
+          {{ e.tile.item.name }}
+        </button>
+      }
+    </div>
+  </section>
+} @empty {
+  <p class="atmos-qs__sub">No music sheets match your search.</p>
+}
+
+<div class="atmos-qs__row">
+  <span class="atmos-qs__spacer"></span>
+  <app-quick-start-next-tab />
+</div>

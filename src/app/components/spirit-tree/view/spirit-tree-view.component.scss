@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-tree-view__card {
+  align-items: stretch;
+}
+
+.atmos-tree-view__inner {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: var(--atmos-pad);
+  overflow-x: auto;
+}

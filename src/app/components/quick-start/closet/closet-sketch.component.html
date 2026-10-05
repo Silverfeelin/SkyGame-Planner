@@ -1,0 +1,22 @@
+<svg viewBox="0 0 168 72" aria-hidden="true" focusable="false">
+  <rect class="atmos-qs-sketch__scene" width="168" height="72"/>
+  <rect class="atmos-qs-sketch__panel" [attr.x]="panelX" y="0" [attr.width]="panelW" height="72"/>
+  @for (t of categoryTabs; track t.k) {
+    <rect class="atmos-qs-sketch__cat" [class.is-lit]="kind() === 'tab' && t.k === 0" [attr.x]="t.x" y="4" width="12" height="8" rx="2"/>
+  }
+  <line class="atmos-qs-sketch__line" [attr.x1]="panelX + 3" y1="15" [attr.x2]="panelX + panelW - 3" y2="15"/>
+  <svg [attr.x]="panelX" y="0" [attr.width]="panelW" height="72" overflow="hidden">
+    <g [attr.transform]="panelShift">
+      @for (tile of tiles(); track $index) {
+        <rect class="atmos-qs-sketch__tile" [class.is-cut]="tile.cut"
+              [attr.x]="tile.x" [attr.y]="tile.y" width="12" [attr.height]="tile.height" rx="3"/>
+      }
+    </g>
+  </svg>
+  @if (kind() === 'scroll') {
+    <path class="atmos-qs-sketch__mark" d="M60 58 V26 M54 32 L60 26 L66 32"/>
+  }
+  @if (kind() === 'whole') {
+    <rect class="atmos-qs-sketch__mark atmos-qs-sketch__mark--frame" x="2" y="2" width="164" height="68" rx="6"/>
+  }
+</svg>

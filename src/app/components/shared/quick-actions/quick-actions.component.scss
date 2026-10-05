@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Wide windows fit the whole row on one line, so the disclosure is never shown
+   and the projected row renders exactly as it did before this wrapper. */
+.atmos-quick-actions__toggle {
+  display: none;
+}
+
+.atmos-quick-actions__caret {
+  transition: transform var(--atmos-transition);
+}
+
+.atmos-quick-actions__toggle[aria-expanded='true'] .atmos-quick-actions__caret {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 720px) {
+  .atmos-quick-actions__toggle {
+    display: inline-flex;
+  }
+
+  .atmos-page__quick-actions.is-collapsed {
+    display: none;
+  }
+}

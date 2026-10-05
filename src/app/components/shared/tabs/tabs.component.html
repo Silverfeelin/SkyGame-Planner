@@ -1,0 +1,19 @@
+<div class="atmos-tabs" [class.atmos-card]="card()">
+  <div class="atmos-tabs__nav" role="tablist" (keydown)="onKeydown($event)">
+    @for (tab of tabs(); track tab; let i = $index) {
+      <button #tabButton type="button" role="tab" class="atmos-tabs__tab atmos-focus-ring"
+        [id]="tabId(i)" [attr.aria-controls]="panelId(i)" [attr.aria-selected]="i === activeIndex()"
+        [disabled]="tab.disabled()" [tabIndex]="i === activeIndex() ? 0 : -1"
+        [class.is-active]="i === activeIndex()" (click)="select(i)">
+        {{ tab.title() }}
+      </button>
+    }
+  </div>
+  <div class="atmos-tabs__body">
+    @for (tab of tabs(); track tab; let i = $index) {
+      <div role="tabpanel" [id]="panelId(i)" [attr.aria-labelledby]="tabId(i)" [hidden]="i !== activeIndex()">
+        <ng-container [ngTemplateOutlet]="tab.template"></ng-container>
+      </div>
+    }
+  </div>
+</div>

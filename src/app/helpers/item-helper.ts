@@ -1,5 +1,9 @@
-import { ItemType, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason } from 'skygame-data';
+import { ItemType, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason, IShop, ISpiritTree } from 'skygame-data';
 import { TreeHelper } from './tree-helper';
+import { DateHelper } from './date-helper';
+import type { DataService } from '@app/services/data.service';
+
+type OngoingData = Pick<DataService, 'spiritConfig' | 'seasonConfig' | 'eventConfig' | 'travelingSpiritConfig' | 'returningSpiritsConfig'>;
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([
   [ItemType.Outfit, 1], [ItemType.Shoes, 2], [ItemType.OutfitShoes, 3], [ItemType.Mask, 4], [ItemType.FaceAccessory, 5],
@@ -70,6 +74,32 @@ export class ItemHelper {
     if (eventInstance) { return { type: 'event', source: eventInstance }; }
     if (season) { return { type: 'season', source: season }; }
     return undefined;
+  }
+
+  /**
+   * Items the game can show in the closet without the player owning them, keyed by GUID:
+   * regular and elder spirit trees plus everything in the active season, events, traveling spirit and returning spirits.
+   */
+  static getOngoingItems(data: OngoingData): Record<string, IItem> {
+    const ongoingItems: Record<string, IItem> = {};
+    const addTree = (tree?: ISpiritTree) => TreeHelper.getItems(tree).forEach(item => ongoingItems[item.guid] = item);
+    const addShop = (shop: IShop) => {
+      shop.iaps?.forEach(iap => iap.items?.forEach(item => ongoingItems[item.guid] = item));
+      shop.itemList?.items?.forEach(node => ongoingItems[node.item.guid] = node.item);
+    };
+
+    data.spiritConfig.items.filter(s => s.type === 'Regular' || s.type === 'Elder').forEach(spirit => addTree(spirit.tree));
+    const season = DateHelper.getActive(data.seasonConfig.items);
+    season?.spirits?.forEach(spirit => addTree(spirit.tree));
+    season?.shops?.forEach(addShop);
+    data.eventConfig.items.forEach(event => {
+      const instance = DateHelper.getActive(event.instances);
+      instance?.spirits?.forEach(spirit => addTree(spirit.tree));
+      instance?.shops?.forEach(addShop);
+    });
+    addTree(DateHelper.getActive(data.travelingSpiritConfig.items)?.tree);
+    DateHelper.getActive(data.returningSpiritsConfig.items)?.spirits?.forEach(spirit => addTree(spirit.tree));
+    return ongoingItems;
   }
 
   /** Sorts items by their order. The array is sorted in-place and returned. */

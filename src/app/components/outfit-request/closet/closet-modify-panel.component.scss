@@ -1,0 +1,20 @@
+/* The panel only renders while it is open. `contents` keeps the empty host
+   from taking part in the page's flex gap the rest of the time. */
+:host { display: contents; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+
+  p {
+    margin: 0;
+  }
+}
+
+.field__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+}
