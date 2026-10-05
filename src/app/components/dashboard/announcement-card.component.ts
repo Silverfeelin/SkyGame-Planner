@@ -4,8 +4,8 @@ import { DateTime } from 'luxon';
 import { RouterLink } from '@angular/router';
 
 const announcement = {
-  guid: 'vmZiPjlEXK',
-  endDate: DateTime.local(2026, 10, 11),
+  guid: 'p4exRjdm7R',
+  endDate: DateTime.local(2027, 1, 1),
   dismissable: true
 };
 
