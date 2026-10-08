@@ -79,10 +79,13 @@ function encodeVersion(version: ItemDyeVersion | undefined): string {
   return slot(version?.[0]) + slot(version?.[1]);
 }
 
+/** A blend without a main color is undyed in-game, so it's dropped here; older saves may contain one. */
+function decodeSlot(primary: string | undefined, secondary: string | undefined): IDye {
+  const main = decodeDye(primary);
+  return main ? { primary: main, secondary: decodeDye(secondary) } : {};
+}
+
 function decodeVersion(value: string): ItemDyeVersion | undefined {
-  if (!/[^0]/.test(value)) { return undefined; }
-  return [
-    { primary: decodeDye(value[0]), secondary: decodeDye(value[1]) },
-    { primary: decodeDye(value[2]), secondary: decodeDye(value[3]) }
-  ];
+  const version = [decodeSlot(value[0], value[1]), decodeSlot(value[2], value[3])];
+  return version.some(d => d.primary) ? version : undefined;
 }

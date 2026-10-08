@@ -132,4 +132,13 @@
   border: 0;
   border-radius: var(--atmos-radius-sm);
   cursor: pointer;
+
+  &:disabled {
+    background: var(--atmos-tile-bg);
+  }
+}
+
+.atmos-item-dye-versions__row.is-disabled .atmos-item-dye-versions__grid {
+  opacity: 0.4;
+  pointer-events: none;
 }

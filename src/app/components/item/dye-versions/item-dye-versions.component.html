@@ -20,10 +20,11 @@
 
       @for (v of CUSTOM_VERSIONS; track v) {
         @let version = versions()[v - 1];
+        @let swatch = swatches()[v - 1];
         <button type="button" class="atmos-item-dye-versions__tile atmos-tile atmos-tile--selectable"
           [class.is-selected]="selected() === v" [attr.aria-pressed]="selected() === v"
           (click)="selected.set(v)">
-          @if (versionSwatch(version); as swatch) {
+          @if (swatch) {
             <span class="atmos-item-dye-versions__swatch-circle" [style.background]="swatch"></span>
           }
           <span class="atmos-item-dye-versions__tile-name">
@@ -36,7 +37,7 @@
               <span class="atmos-item-dye-versions__slot-label">{{ slot }}</span>
               @if (!version) {
                 <span class="atmos-text-mute">–</span>
-              } @else if (dye?.primary || dye?.secondary) {
+              } @else if (dye?.primary) {
                 <span class="atmos-item-dye-versions__blend">
                   @for (row of DYE_ROWS; track row.type) {
                     @let color = dye?.[row.type];
@@ -66,17 +67,21 @@
             <h3 class="atmos-item-dye-versions__picker-title">{{ slot }} dye</h3>
             @for (row of DYE_ROWS; track row.type) {
               @let current = dye?.[row.type];
-              <div class="atmos-item-dye-versions__row">
-                <span class="atmos-item-dye-versions__row-label">{{ row.label }}</span>
+              @let disabled = row.requiresMain && !dye?.primary;
+              <div class="atmos-item-dye-versions__row" [class.is-disabled]="disabled">
+                <span class="atmos-item-dye-versions__row-label">
+                  {{ row.label }}
+                  @if (disabled) { <span class="atmos-text-mute">· pick a main color first</span> }
+                </span>
                 <div class="atmos-item-dye-versions__grid" role="group" [attr.aria-label]="slot + ' dye ' + row.label">
                   <button type="button" class="atmos-item-dye-versions__swatch atmos-tile atmos-tile--selectable"
-                    [class.is-selected]="!current" [attr.aria-pressed]="!current"
+                    [class.is-selected]="!current" [attr.aria-pressed]="!current" [disabled]="disabled"
                     skyTooltip="No dye" aria-label="No dye" (click)="selectDye(slotIndex, row.type, undefined)">
                     <mat-icon svgIcon="none"></mat-icon>
                   </button>
                   @for (color of DYE_COLORS; track color) {
                     <button type="button" class="atmos-item-dye-versions__swatch atmos-tile atmos-tile--selectable"
-                      [class.is-selected]="current === color" [attr.aria-pressed]="current === color"
+                      [class.is-selected]="current === color" [attr.aria-pressed]="current === color" [disabled]="disabled"
                       [skyTooltip]="color | titlecase" [attr.aria-label]="color | titlecase"
                       (click)="selectDye(slotIndex, row.type, color)">
                       <mat-icon [class]="'dye-' + color" [svgIcon]="'dye-' + color"></mat-icon>
