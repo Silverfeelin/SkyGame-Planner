@@ -25,6 +25,7 @@
   @if (mode === 'node') {
     <app-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
       (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
+      (pointercancel)="onTreePointerCancel()" (lostpointercapture)="onTreePointerCancel()"
       [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
       [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
       [highlightNode]="selectedTreeNode.node.guid"
@@ -33,7 +34,8 @@
   } @else {
     <div class="editor-grid-tree tier-grid"
       (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)"
-      (pointerup)="onTreePointerUp($event)" (touchstart)="onTreeTouchStart($event)">
+      (pointerup)="onTreePointerUp($event)" (pointercancel)="onTreePointerCancel()"
+      (lostpointercapture)="onTreePointerCancel()" (touchstart)="onTreeTouchStart($event)">
       @for (tier of tierView; track tier.tierIndex) {
         <div class="tier">
           <div class="tier__header">

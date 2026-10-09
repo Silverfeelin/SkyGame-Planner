@@ -876,6 +876,7 @@ export class SpiritTreeEditorComponent {
     const nodeEl = target.closest('app-node') as HTMLElement;
     if (!nodeEl) { return; }
 
+    this.endDrag();
     this.draggingNode = nodeEl;
     target.setPointerCapture(event.pointerId);
 
@@ -886,10 +887,10 @@ export class SpiritTreeEditorComponent {
       this.draggingPreview.width = 64;
       this.draggingPreview.height = 64;
       document.body.appendChild(this.draggingPreview);
-      this.draggingPreview.style.position = 'absolute';
+      this.draggingPreview.style.position = 'fixed';
       this.draggingPreview.style.zIndex = '1000';
-      this.draggingPreview.style.top = `${event.clientY - 32 + window.scrollY}px`;
-      this.draggingPreview.style.left = `${event.clientX - 32 + window.scrollX}px`;
+      this.draggingPreview.style.pointerEvents = 'none';
+      this.moveDragPreview(event);
     }
 
     event.preventDefault();
@@ -897,21 +898,16 @@ export class SpiritTreeEditorComponent {
   }
 
   onTreePointerMove(event: PointerEvent): void {
-    if (!this.draggingNode || !this.draggingPreview) { return; }
-    this.draggingPreview.style.top = `${event.clientY - 32 + window.scrollY}px`;
-    this.draggingPreview.style.left = `${event.clientX - 32 + window.scrollX}px`;
+    if (!this.draggingNode) { return; }
+    this.moveDragPreview(event);
   }
 
   onTreePointerUp(event: PointerEvent): void {
-    if (this.draggingPreview) {
-      document.body.removeChild(this.draggingPreview);
-      this.draggingPreview = undefined;
-    }
-
-    if (!this.draggingNode) { return; }
     const draggingNode = this.draggingNode;
-    this.draggingNode = undefined;
-    const target = document.elementsFromPoint(event.clientX, event.clientY).find(e => e.tagName === 'APP-ATMOS-NODE');
+    this.endDrag();
+    if (!draggingNode) { return; }
+
+    const target = document.elementsFromPoint(event.clientX, event.clientY).find(e => e.tagName === 'APP-NODE');
     if (!target || target === draggingNode) { return; }
 
     // Swap nodes.
@@ -949,6 +945,23 @@ export class SpiritTreeEditorComponent {
 
     this.reloadTierTree();
     this.selectCell(second);
+  }
+
+  /** The browser cancels the pointer when it takes a touch over as a scroll; no pointerup follows. */
+  onTreePointerCancel(): void {
+    this.endDrag();
+  }
+
+  private moveDragPreview(event: PointerEvent): void {
+    if (!this.draggingPreview) { return; }
+    this.draggingPreview.style.top = `${event.clientY - 32}px`;
+    this.draggingPreview.style.left = `${event.clientX - 32}px`;
+  }
+
+  private endDrag(): void {
+    this.draggingPreview?.remove();
+    this.draggingPreview = undefined;
+    this.draggingNode = undefined;
   }
 
   private getDraggedNode(guid: string): INode | undefined {
