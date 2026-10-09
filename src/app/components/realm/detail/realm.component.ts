@@ -33,6 +33,7 @@ interface ISpiritEntry {
 })
 export class RealmComponent implements OnInit, OnDestroy {
   @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef<HTMLElement>;
+  @ViewChild('sectionAreas', { static: false }) sectionAreas?: ElementRef<HTMLElement>;
 
   realm!: IRealm;
   highlightTree?: string;
@@ -92,6 +93,10 @@ export class RealmComponent implements OnInit, OnDestroy {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.initializeRealm(guid!);
+  }
+
+  scrollToAreas(): void {
+    this.sectionAreas?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   constellationSpiritClicked(spirit: ISpirit): void {

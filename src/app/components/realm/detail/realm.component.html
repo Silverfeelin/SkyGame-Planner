@@ -12,10 +12,10 @@
         @if (realm.areas?.length) {
           <div class="atmos-fact">
             <div class="atmos-fact__label">Areas</div>
-            <div class="atmos-fact__value">
+            <a class="atmos-fact__value" (click)="scrollToAreas()">
               <mat-icon class="atmos-fact__icon">location_on</mat-icon>
-              <span class="atmos-fact__text">{{ realm.areas!.length }}</span>
-            </div>
+              <span class="atmos-fact__text atmos-text-link">{{ realm.areas!.length }}</span>
+            </a>
           </div>
         }
 
@@ -154,23 +154,6 @@
   </section>
 }
 
-
-@if (realm.areas?.length) {
-  <section class="atmos-page__section">
-    <h2 class="atmos-section__title">Areas</h2>
-    <div class="atmos-realm__areas">
-      @for (area of realm.areas; track area.guid) {
-        <app-feature-card
-          [title]="area.name"
-          [titleLink]="'/area/' + area.guid"
-          [bannerUrl]="area.imageUrl"
-          [bannerPosition]="area.imagePosition"
-          [links]="areaLinks(area)" />
-      }
-    </div>
-  </section>
-}
-
 @if (spirits.length) {
   <section class="atmos-card atmos-realm__trees" #divSpiritTrees>
     <div class="atmos-card__body atmos-realm__trees-body">
@@ -184,6 +167,22 @@
           </div>
         }
       </div>
+    </div>
+  </section>
+}
+
+@if (realm.areas?.length) {
+  <section class="atmos-page__section atmos-realm__areas-section" #sectionAreas>
+    <h2 class="atmos-section__title">Areas</h2>
+    <div class="atmos-realm__areas">
+      @for (area of realm.areas; track area.guid) {
+        <app-feature-card
+          [title]="area.name"
+          [titleLink]="'/area/' + area.guid"
+          [bannerUrl]="area.imageUrl"
+          [bannerPosition]="area.imagePosition"
+          [links]="areaLinks(area)" />
+      }
     </div>
   </section>
 }

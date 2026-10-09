@@ -114,6 +114,11 @@
   flex: 0 0 auto;
 }
 
+// Keeps the title clear of the pinned mobile topbar when scrolled into view.
+.atmos-realm__areas-section {
+  scroll-margin-top: calc(var(--atmos-sticky-top, 0px) + var(--atmos-gap));
+}
+
 .atmos-realm__areas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
