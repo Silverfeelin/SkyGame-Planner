@@ -61,8 +61,9 @@ export class NavigationService {
     this.path.set(toPath(this._router.url));
 
     // Only a change of section opens it, so a section the user closed stays closed while they browse inside it.
+    // It also closes every other section, so the tree doesn't keep growing.
     const current = this.currentSection();
-    if (current && current !== previous) { this.expand(current); }
+    if (current && current !== previous) { this._expanded.set(new Set([current])); }
 
     const active = new Set<PageId>();
     for (const page of this.sections.flatMap(s => s.pages)) {

@@ -41,6 +41,7 @@ export const PAGES = {
   itemPreview:      { label: 'Item previews', link: '/item/preview', icon: 'image' },
   itemDye:          { label: 'Dye previews', link: '/item/dye', icon: 'palette' },
   itemCollection:   { label: 'Collections', link: '/item/collection', icon: 'collections', search: { name: 'Item collections' } },
+  itemQuickUnlock:  { label: 'Quick unlock', link: '/quick-start', icon: 'lock_open', search: false },
   itemHearts:       { label: 'Hearts', link: '/item/heart', icon: 'favorite' },
   itemCost:         { label: 'Cost calculator', link: '/item/unlock-calculator', icon: 'calculate', search: { name: 'Item unlock calculator' } },
   itemGoals:        { label: 'Goals', link: '/item/goals', icon: 'savings', search: { text: 'Goals saving planner' } },
@@ -131,7 +132,7 @@ export const SECTIONS = {
   daily:       { label: 'Daily', link: '/daily', icon: 'today', pages: ['daily', 'crTracker', 'pnrTracker'] },
   currency:    { label: 'Currencies', link: '/currency', icon: 'wallet', svgIcon: 'candle', pages: ['currency', 'currencySpent', 'wikiCurrency'] },
   item:        { label: 'Items', link: '/item', icon: 'checkroom', pages: [
-    'itemGrid', 'itemTable', 'itemPreview', 'itemDye', 'itemCollection', 'itemHearts', 'itemCost', 'itemGoals', 'itemInflation',
+    'itemGrid', 'itemTable', 'itemPreview', 'itemDye', 'itemCollection', 'itemQuickUnlock', 'itemHearts', 'itemCost', 'itemGoals', 'itemInflation',
     'suggestItem', 'wikiCosmetics'
   ] },
   spirit:      { label: 'Spirits', link: '/spirit', icon: 'person', match: ['/spirit-tree'], pages: [
@@ -147,7 +148,7 @@ export const SECTIONS = {
     'wikiShops'
   ] },
   friend:      { label: 'Friends', link: '/friend', icon: 'people', pages: [] },
-  tool:        { label: 'Tools', link: '/tool', icon: 'build', pages: ['tools', 'quickStart', 'closet', 'collage', 'outfitVault'] },
+  tool:        { label: 'Tools', link: '/tool', icon: 'build', match: ['/quick-start'], pages: ['tools', 'quickStart', 'closet', 'collage', 'outfitVault'] },
 } satisfies Record<string, ISection>;
 
 export type SectionId = keyof typeof SECTIONS;

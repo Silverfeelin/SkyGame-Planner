@@ -27,6 +27,15 @@
   overscroll-behavior: contain;
 }
 
+/* A scrollbar would take its width out of the 36px rows and push the icons and active highlight off-centre. */
+:host(.is-collapsed) .atmos-sidebar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .atmos-sidebar__group {
   display: flex;
   flex-direction: column;

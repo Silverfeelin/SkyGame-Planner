@@ -1,0 +1,12 @@
+@if (isVisible()) {
+  <aside class="atmos-card atmos-browser-notice" role="status">
+    <mat-icon class="atmos-browser-notice__icon">warning</mat-icon>
+    <p class="atmos-browser-notice__text">
+      Your browser is too old to show tables, so pages like Spirits and Items may look empty.
+      Please update to iOS 16.5 or later, or use a recent browser.
+    </p>
+    <button type="button" class="atmos-icon-btn atmos-browser-notice__dismiss" aria-label="Dismiss browser notice" (click)="dismiss()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </aside>
+}
