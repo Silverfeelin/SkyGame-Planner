@@ -108,11 +108,7 @@
               <div class="atmos-fact__label">Dyes</div>
               <div class="atmos-fact__value atmos-fact__value--wrap">
                 <mat-icon svgIcon="dye"></mat-icon>
-                @if (itm.dye.previewUrl || itm.dye.infoUrl) {
-                  <a class="atmos-fact__text atmos-text-link" (click)="dyePreviewMode.set(1)">{{ dyeSlots() }}</a>
-                } @else {
-                  <span class="atmos-fact__text">{{ dyeSlots() }}</span>
-                }
+                <span class="atmos-fact__text">{{ dyeSlots() }}</span>
                 @if (dyeCost(); as cost) { <span class="atmos-fact__meta">{{ cost }}</span> }
               </div>
             </div>
@@ -193,22 +189,4 @@
 @if (showPreview()) {
   @let itm = item()!;
   <app-image-overlay [src]="itm.previewUrl!" [alt]="itm.name" (close)="showPreview.set(false)"/>
-}
-
-@if (dyePreviewMode() > 0) {
-  @let itm = item()!;
-  @let dyeSrc = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
-  <app-image-overlay [src]="dyeSrc!" [alt]="itm.name" (close)="dyePreviewMode.set(0)">
-    @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
-      <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
-        (click)="preventDefault($event); dyePreviewMode.set(2)">
-        <mat-icon>palette</mat-icon> Show dyeable parts
-      </button>
-    } @else if (dyePreviewMode() === 2) {
-      <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
-        (click)="preventDefault($event); dyePreviewMode.set(1)">
-        <mat-icon>image</mat-icon> Show preview
-      </button>
-    }
-  </app-image-overlay>
 }

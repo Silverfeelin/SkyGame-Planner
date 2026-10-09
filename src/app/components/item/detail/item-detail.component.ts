@@ -60,7 +60,6 @@ export class ItemDetailComponent {
     const guid = this.item()?.guid;
     return !!guid && this._goalService.items().includes(guid);
   });
-  readonly dyePreviewMode = signal<0 | 1 | 2>(0);
   readonly showPreview = signal(false);
   readonly showTipUnlock = signal(false);
   readonly debugVisible = this._settingService.debugVisible;
@@ -177,10 +176,5 @@ export class ItemDetailComponent {
 
   goBack(): void {
     window.history.back();
-  }
-
-  preventDefault(event: Event): void {
-    event.preventDefault();
-    event.stopImmediatePropagation();
   }
 }

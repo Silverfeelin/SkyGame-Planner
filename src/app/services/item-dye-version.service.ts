@@ -47,6 +47,15 @@ export class ItemDyeVersionService {
   set(guid: string, index: 0 | 1, version: ItemDyeVersion | undefined): void {
     const versions = this.get(guid);
     versions[index] = version;
+    this.store(guid, versions);
+  }
+
+  swap(guid: string): void {
+    const [first, second] = this.get(guid);
+    this.store(guid, [second, first]);
+  }
+
+  private store(guid: string, versions: ItemDyeVersions): void {
     const value = versions.map(encodeVersion).join('');
 
     const stored = { ...this._stored() };

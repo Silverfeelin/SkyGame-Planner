@@ -1,8 +1,20 @@
 <section class="atmos-card" id="dye-versions">
   <div class="atmos-card__body">
-    <div>
-      <h2 class="atmos-section__title">Dye versions</h2>
-      <p class="atmos-item-dye-versions__hint">Record your dyed versions of this {{ item().type | itemType | lowercase }}.</p>
+    <div class="atmos-item-dye-versions__header">
+      <div>
+        <h2 class="atmos-section__title">Dye versions</h2>
+        <p class="atmos-item-dye-versions__hint">Record your dyed versions of this {{ item().type | itemType | lowercase }}.</p>
+      </div>
+      <div class="atmos-item-dye-versions__actions">
+        <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="!versions()[0] && !versions()[1]" (click)="swapVersions()">
+          <mat-icon>swap_horiz</mat-icon> Swap versions
+        </button>
+        @if (item().dye?.previewUrl || item().dye?.infoUrl) {
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="previewImage.set(item().dye?.previewUrl ? 'preview' : 'info')">
+            <mat-icon>image</mat-icon> Dye preview
+          </button>
+        }
+      </div>
     </div>
 
     <div class="atmos-item-dye-versions__tiles">
@@ -96,3 +108,18 @@
     }
   </div>
 </section>
+
+@if (previewImage(); as image) {
+  @let dye = item().dye!;
+  <app-image-overlay [src]="(image === 'info' ? dye.infoUrl : dye.previewUrl)!" [alt]="item().name" (close)="previewImage.set(undefined)">
+    @if (image === 'preview' && dye.infoUrl) {
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm" (click)="previewImage.set('info')">
+        <mat-icon>palette</mat-icon> Show dyeable parts
+      </button>
+    } @else if (image === 'info' && dye.previewUrl) {
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm" (click)="previewImage.set('preview')">
+        <mat-icon>image</mat-icon> Show preview
+      </button>
+    }
+  </app-image-overlay>
+}

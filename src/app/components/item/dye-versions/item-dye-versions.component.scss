@@ -11,6 +11,20 @@
   }
 }
 
+.atmos-item-dye-versions__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-dye-versions__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .atmos-item-dye-versions__hint {
   margin: 4px 0 0;
   color: var(--atmos-text-dim);
