@@ -13,6 +13,7 @@ import { ItemDyeVersionService } from '@app/services/item-dye-version.service';
 import { IItem, ItemType } from 'skygame-data';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
 
 const itemTypePipe = new ItemTypePipe();
 const typeFilterValues = Object.values(ItemType).map(t => ({ value: t, label: itemTypePipe.transform(t) }));
@@ -33,7 +34,7 @@ const textFilterParams = {
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent]
 })
 export class ItemsComponent {
   theme = getAgTheme();
@@ -43,7 +44,7 @@ export class ItemsComponent {
   colDefs: ColDef[] = [
     { field: 'nr', headerName: '#', width: 90, filter: 'agNumberColumnFilter', initialSort: 'asc', sortingOrder: ['asc', 'desc'] },
     { field: 'item', headerName: 'Image', width: 80, sortable: false, filter: false, cellRenderer: AgItemIconRendererComponent },
-    { field: 'name', headerName: 'Name', filter: 'agTextColumnFilter', filterParams: textFilterParams, flex: 1, minWidth: 200, cellRenderer: AgItemLinkRendererComponent },
+    { field: 'name', headerName: 'Name', filter: 'agTextColumnFilter', filterParams: { ...textFilterParams, defaultOption: 'contains' }, flex: 1, minWidth: 200, cellRenderer: AgItemLinkRendererComponent },
     { field: 'type', headerName: 'Type', width: 160, filter: AgSetFilterComponent, filterParams: { values: typeFilterValues }, valueFormatter: p => itemTypePipe.transform(p.value) },
     { field: 'group', headerName: 'Group', width: 130, filter: AgSetFilterComponent, filterParams: { values: groupFilterValues, includeBlanks: true }, valueFormatter: p => groupLabels[p.value] ?? p.value },
     { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },

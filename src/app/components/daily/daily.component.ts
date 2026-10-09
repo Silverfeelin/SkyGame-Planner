@@ -13,7 +13,7 @@ import { StorageService } from '@app/services/storage.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { EventCheckinService } from '@app/services/event-checkin.service';
 import { DAILY_TASKS, IDailyTask } from '@app/components/daily/daily-tasks';
-import { DateTimePipe } from '@app/pipes/date-time.pipe';
+import { TimePipe } from '@app/pipes/time.pipe';
 import {
   DailyCardComponent,
   DailyTaskComponent,
@@ -51,7 +51,7 @@ function getWeeklyAnchor(today: DateTime): string {
   imports: [TooltipDirective, 
     RouterLink,
     MatIcon,
-    DateTimePipe,
+    TimePipe,
     DailyCardComponent,
     DailyTaskComponent,
     EventCardComponent,

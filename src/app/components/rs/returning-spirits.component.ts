@@ -9,6 +9,7 @@ import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-rout
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { AgSpiritsRendererComponent } from '@app/components/grid/renderers/ag-spirits-renderer/ag-spirits-renderer.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
 
 /**
  * Returning-spirits (Special Visits) list.
@@ -18,7 +19,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './returning-spirits.component.html',
   styleUrl: './returning-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent]
 })
 export class ReturningSpiritsComponent {
   private readonly _dataService = inject(DataService);
@@ -40,7 +41,8 @@ export class ReturningSpiritsComponent {
     {
       field: 'spirits', headerName: 'Spirits',
       flex: 1, minWidth: 200,
-      sortable: false, filter: false,
+      sortable: false, filter: 'agTextColumnFilter',
+      filterValueGetter: (p: ValueGetterParams) => p.data.spirits.map((s: { label: string }) => s.label).join(', '),
       cellRenderer: AgSpiritsRendererComponent
     },
     {

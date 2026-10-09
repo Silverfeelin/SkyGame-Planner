@@ -75,6 +75,7 @@ export class AppComponent {
     if (!DateHelper.displayFormat || !DateHelper.displayFormats.includes(DateHelper.displayFormat)) {
       DateHelper.displayFormat = DateHelper.displayFormats[0];
     }
+    DateHelper.hour12 = localStorage.getItem('time.format') === '12';
   }
 
   private onKeydown(evt: KeyboardEvent): void {

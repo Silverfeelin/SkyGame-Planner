@@ -17,6 +17,7 @@ import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-rout
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { AgSpiritTypeRendererComponent } from '@app/components/grid/renderers/ag-spirit-type-renderer/ag-spirit-type-renderer.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
 
 /**
  * Spirits list (AG-Grid).
@@ -26,7 +27,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './spirits.component.html',
   styleUrl: './spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent]
 })
 export class SpiritsComponent {
   private readonly _dataService = inject(DataService);

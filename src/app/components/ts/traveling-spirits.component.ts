@@ -11,6 +11,7 @@ import { AgImageRendererComponent } from '@app/components/grid/renderers/ag-imag
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
 
 /**
  * Traveling spirits list.
@@ -20,7 +21,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './traveling-spirits.component.html',
   styleUrl: './traveling-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent]
 })
 export class TravelingSpiritsComponent {
   private readonly _dataService = inject(DataService);

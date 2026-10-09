@@ -14,6 +14,7 @@ import { AgImageRendererComponent } from '@app/components/grid/renderers/ag-imag
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
 
 interface ILastVisit {
   spirit: ISpirit;
@@ -31,7 +32,7 @@ interface ILastVisit {
   templateUrl: './elusive-spirits.component.html',
   styleUrl: './elusive-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, RouterLink, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, RouterLink, SectionQuickActionsComponent]
 })
 export class ElusiveSpiritsComponent {
   private readonly _dataService = inject(DataService);

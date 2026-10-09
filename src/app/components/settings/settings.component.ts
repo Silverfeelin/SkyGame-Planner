@@ -33,6 +33,8 @@ export class SettingsComponent implements OnDestroy {
   currentTheme: string;
   themes = themes;
 
+  readonly hour12 = signal(DateHelper.hour12);
+  readonly timeNow = computed(() => this.today.toFormat(this.hour12() ? 'h:mm a' : 'HH:mm'));
   readonly advancedOpen = signal(hasThemeOverrides());
   readonly overrides = signal<IThemeOverrides>(getThemeOverrides());
   readonly hasOverrides = computed(() => Object.keys(this.overrides()).length > 0);
@@ -195,6 +197,12 @@ export class SettingsComponent implements OnDestroy {
     this.dateFormat = format;
     DateHelper.displayFormat = format;
     localStorage.setItem('date.format', format);
+  }
+
+  setHour12(hour12: boolean): void {
+    this.hour12.set(hour12);
+    DateHelper.hour12 = hour12;
+    localStorage.setItem('time.format', hour12 ? '12' : '24');
   }
 
   selectTheme(theme: ITheme): void {

@@ -173,7 +173,7 @@ export class SharedCreationsComponent implements AfterViewInit, OnDestroy {
       ? rtf.format(-Math.floor(hoursOld), 'hour')
       : rtf.format(-Math.floor(hoursOld / 24), 'day');
     age.innerText = expired ? 'Expired' : `Placed ${relTime}`;
-    age.title = this._parseCreatedAt(creation.createdAt).toLocal().toFormat(`${DateHelper.displayFormat} HH:mm`);
+    age.title = this._parseCreatedAt(creation.createdAt).toLocal().toFormat(`${DateHelper.displayFormat} ${DateHelper.timeFormat()}`);
     if (expired) { age.style.color = '#f87171'; }
     wrap.appendChild(age);
 

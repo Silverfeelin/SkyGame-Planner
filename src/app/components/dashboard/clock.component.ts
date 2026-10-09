@@ -14,6 +14,7 @@ export class ClockComponent implements OnInit, OnDestroy {
   readonly rightAlign = input<boolean>(false);
 
   readonly time = signal('00:00:00');
+  readonly meridiem = signal('');
   readonly subtle = signal('');
 
   private _interval?: number;
@@ -30,7 +31,8 @@ export class ClockComponent implements OnInit, OnDestroy {
   private update(): void {
     const local = DateTime.now();
     const now = this.zone() === 'sky' ? local.setZone(DateHelper.skyTimeZone) : local;
-    this.time.set(now.toFormat('HH:mm:ss'));
+    this.time.set(now.toFormat(DateHelper.timeFormat(true, false)));
+    this.meridiem.set(DateHelper.hour12 ? now.toFormat('a') : '');
 
     this.subtle.set(this.zone() === 'sky' ? '' : now.toFormat('cccc · dd LLLL yyyy'));
   }

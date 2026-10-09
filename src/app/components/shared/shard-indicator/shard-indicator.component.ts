@@ -109,8 +109,8 @@ export class ShardIndicatorComponent implements OnInit, OnDestroy {
     const relevant = this._relevant();
     switch (this.state()) {
       case 'none': return 'No shard eruption today. Open Sky Shards for the full schedule.';
-      case 'active': return `A ${this.shardName().toLowerCase()} shard is active until ${relevant!.end.toFormat('HH:mm')}. Open Sky Shards for the location.`;
-      case 'upcoming': return `Next ${this.shardName().toLowerCase()} shard lands at ${relevant!.land.toFormat('HH:mm')}. Open Sky Shards for the location.`;
+      case 'active': return `A ${this.shardName().toLowerCase()} shard is active until ${DateHelper.formatTime(relevant!.end)}. Open Sky Shards for the location.`;
+      case 'upcoming': return `Next ${this.shardName().toLowerCase()} shard lands at ${DateHelper.formatTime(relevant!.land)}. Open Sky Shards for the location.`;
       case 'over': return 'Today\'s shards have all ended. Open Sky Shards for the full schedule.';
     }
   });

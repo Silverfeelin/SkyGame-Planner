@@ -34,6 +34,13 @@
     0 0 24px oklch(0.7 calc(0.12 * var(--atmos-chroma)) var(--atmos-hue) / 0.2);
 }
 
+/* Kept small so a 12-hour clock is no wider than a 24-hour one; the two clocks share a row on phones. */
+.atmos-clock__meridiem {
+  margin-left: 0.15em;
+  font-size: 0.4em;
+  letter-spacing: 0.5px;
+}
+
 .atmos-clock__subtle {
   font-size: var(--atmos-fs-md);
   color: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.85);

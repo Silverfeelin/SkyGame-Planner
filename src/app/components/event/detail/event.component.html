@@ -8,6 +8,7 @@
   <div class="atmos-card atmos-event__grid-card">
     <ag-grid-angular [rowData]="rowData()" [columnDefs]="colDefs" [theme]="theme"
       [getRowHeight]="getRowHeight" [suppressDragLeaveHidesColumns]="true"
+      [suppressRowVirtualisation]="true" [suppressColumnVirtualisation]="true"
       (gridReady)="onGridReady($event)" />
   </div>
 } @else {

@@ -10,7 +10,7 @@
     <div class="atmos-daily-task__heading">
       <span class="atmos-daily-task__name">{{ task().name }}</span>
       @if (task().nextTime) {
-        <span class="atmos-daily-task__time">{{ task().nextTime! | datetime:'HH:mm' }}</span>
+        <span class="atmos-daily-task__time">{{ task().nextTime! | time }}</span>
       }
     </div>
 
