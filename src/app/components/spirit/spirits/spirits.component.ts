@@ -94,12 +94,16 @@ export class SpiritsComponent {
       }
     },
     {
-      field: 'unlocked', headerName: 'Unlocked', width: 150,
+      field: 'unlockedPct', headerName: 'Unlocked', width: 170,
       filter: 'agNumberColumnFilter',
+      filterValueGetter: (p: ValueGetterParams) => p.data.unlockedPct == null ? null : Math.floor(p.data.unlockedPct),
+      // Equal percentages rank the bigger tree higher, so 10/10 sorts above 1/1.
+      comparator: (a: number | null, b: number | null, nodeA: any, nodeB: any) =>
+        (a ?? -1) - (b ?? -1) || nodeA.data.unlocked - nodeB.data.unlocked,
       cellRenderer: (p: any) => {
         if (!p.data.total) { return ''; }
         const cls = p.data.completed ? 'completed' : p.data.partial ? 'partial' : '';
-        return `<span class="${cls}">${p.value} / ${p.data.total}</span>`;
+        return `<span class="${cls}">${p.data.unlocked} / ${p.data.total} · ${Math.floor(p.value)}%</span>`;
       },
       tooltipValueGetter: (p: any) => p.data.unlockTooltip
     }
@@ -317,6 +321,7 @@ export class SpiritsComponent {
         area: s.area ? { label: s.area.name, route: ['/area', s.area.guid] } : undefined,
         date: this.getSpiritDate(s),
         unlocked: unlockedItems,
+        unlockedPct: totalItems ? unlockedItems / totalItems * 100 : null,
         total: totalItems,
         completed,
         partial,
