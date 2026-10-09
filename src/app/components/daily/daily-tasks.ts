@@ -42,6 +42,8 @@ export const DAILY_TASKS: ReadonlyArray<IDailyTask> = [
   { id: 'passage-coordination', name: 'Passage of Coordination', cadence: 'daily', location: 'Butterfly Fields', light: 128 },
   { id: 'passage-alignment', name: 'Passage of Alignment', cadence: 'daily', location: 'Boneyard', light: 200 },
   { id: 'cloud-tunnel', name: 'Cloud Tunnel', cadence: 'daily', location: 'Wind Paths', light: 250 },
+  { id: 'music-sheet-challenge', name: 'Music Sheet Challenge', cadence: 'daily', location: 'Harmony Hall', light: 100 },
+  { id: 'lightmending', name: 'Lightmending', cadence: 'daily', light: 400 },
 
   // Daily, variable reward
   { id: 'treasure-reef-clams', name: 'Treasure Reef Clams', cadence: 'daily-variable', location: 'Treasure Reef', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Treasure_Reef', lightRange: [159, 245] },
