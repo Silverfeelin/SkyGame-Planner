@@ -82,7 +82,7 @@
 
 .atmos-goals__row {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto minmax(10em, auto) auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto minmax(10em, auto) auto;
   align-items: center;
   gap: 12px;
   padding: var(--atmos-pad-compact);
@@ -93,6 +93,28 @@
   &.is-owned { opacity: 0.6; }
   &.is-late { border-color: var(--atmos-warn-accent); }
   &.is-focused { animation: atmos-goals-focus 1.6s ease-out; }
+}
+
+.atmos-goals__handle {
+  display: inline-flex;
+  margin-right: -6px;
+  color: var(--atmos-text-mute);
+  cursor: grab;
+  touch-action: none;
+
+  &:hover { color: var(--atmos-text); }
+}
+
+.atmos-goals__row.cdk-drag-preview {
+  box-shadow: var(--atmos-card-shadow);
+  cursor: grabbing;
+}
+
+.atmos-goals__row.cdk-drag-placeholder { opacity: 0.3; }
+
+.atmos-goals__list.cdk-drop-list-dragging .atmos-goals__row:not(.cdk-drag-placeholder),
+.atmos-goals__row.cdk-drag-animating {
+  transition: transform 200ms ease;
 }
 
 @keyframes atmos-goals-focus {
@@ -209,9 +231,10 @@
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas:
       "icon info actions"
-      "icon cost cost"
-      "icon status status";
+      "handle cost cost"
+      "handle status status";
   }
+  .atmos-goals__handle { grid-area: handle; justify-self: center; align-self: start; margin-right: 0; }
   .atmos-goals__icon { grid-area: icon; align-self: start; }
   .atmos-goals__info { grid-area: info; }
   .atmos-goals__cost { grid-area: cost; }

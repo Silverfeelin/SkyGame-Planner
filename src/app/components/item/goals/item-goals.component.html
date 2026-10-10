@@ -75,10 +75,11 @@
     @if (!goals().length) {
       <p class="atmos-paragraph">You have no goals yet. Add items below, or start from your wishlist.</p>
     } @else {
-      <ol class="atmos-goals__list">
+      <ol class="atmos-goals__list" cdkDropList cdkDropListLockAxis="y" (cdkDropListDropped)="onGoalDropped($event)">
         @for (goal of goals(); track goal.item.guid; let first = $first; let last = $last) {
-          <li class="atmos-goals__row" [attr.data-goal]="goal.item.guid" [class.is-owned]="goal.status === 'owned'" [class.is-late]="goal.late"
+          <li class="atmos-goals__row" cdkDrag [cdkDragData]="goal" [attr.data-goal]="goal.item.guid" [class.is-owned]="goal.status === 'owned'" [class.is-late]="goal.late"
             [class.is-focused]="focusedGoal() === goal.item.guid">
+            <span class="atmos-goals__handle" cdkDragHandle aria-hidden="true" [skyTooltip]="'Drag to reorder'"><mat-icon>drag_indicator</mat-icon></span>
             <a class="atmos-goals__icon" [routerLink]="['/item', goal.item.guid]">
               <app-item-icon [item]="goal.item" size="medium" [opaque]="true" [subIcons]="SUBICONS_ALL" />
             </a>
@@ -112,7 +113,12 @@
                 }
                 @case ('never') { <mat-icon>block</mat-icon> {{ blockedLabel(goal) }} }
                 @case ('purchase') { <mat-icon>shopping_cart</mat-icon> Purchase }
-                @case ('unavailable') { <mat-icon>schedule</mat-icon> Not available right now }
+                @case ('unavailable') {
+                  <mat-icon>schedule</mat-icon> Not available right now
+                  @if (holdsBack(goal)) {
+                    <span class="atmos-goals__days" [skyTooltip]="'Goals below this one wait until its cost is saved.'">· saving for it</span>
+                  }
+                }
                 @case ('unknown') { <mat-icon>help_outline</mat-icon> No source found }
               }
               @if (goal.late) {
@@ -153,7 +159,7 @@
         <app-cost [cost]="totalCost()" [price]="totalPrice()" [showZeroes]="false" />
       </div>
       <p class="atmos-goals__hint">
-        Goals are paid for from top to bottom, so each date includes the goals above it.
+        Goals are paid for from top to bottom, so each date includes the goals above it, even those that are not available right now.
       </p>
     }
   </div>

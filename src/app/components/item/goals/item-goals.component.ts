@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, signal, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NgTemplateOutlet } from '@angular/common';
+import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList } from '@angular/cdk/drag-drop';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ICost, IEventInstance, IItem } from 'skygame-data';
@@ -30,7 +31,7 @@ const CURRENCY_NAMES: Record<GoalBucketKey, string> = {
   templateUrl: './item-goals.component.html',
   styleUrl: './item-goals.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, RouterLink, MatIcon, TooltipDirective, DateTimePipe, CostComponent, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent, ItemGoalsCalendarComponent]
+  imports: [NgTemplateOutlet, CdkDropList, CdkDrag, CdkDragHandle, RouterLink, MatIcon, TooltipDirective, DateTimePipe, CostComponent, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent, ItemGoalsCalendarComponent]
 })
 export class ItemGoalsComponent {
   private readonly _dataService = inject(DataService);
@@ -108,7 +109,7 @@ export class ItemGoalsComponent {
 
   readonly totalCost = computed<ICost>(() => {
     const total = CostHelper.create();
-    this.goals().filter(g => g.status !== 'unavailable').forEach(g => CostHelper.add(total, g.cost));
+    this.goals().forEach(g => CostHelper.add(total, g.cost));
     return total;
   });
 
@@ -141,16 +142,16 @@ export class ItemGoalsComponent {
     this._goalService.add(...guids);
   }
 
-  moveUp(goal: IGoalProjection): void { this.move(goal, -1); }
-  moveDown(goal: IGoalProjection): void { this.move(goal, 1); }
+  moveUp(goal: IGoalProjection): void { this.moveTo(goal, this.goals().indexOf(goal) - 1); }
+  moveDown(goal: IGoalProjection): void { this.moveTo(goal, this.goals().indexOf(goal) + 1); }
+  onGoalDropped(evt: CdkDragDrop<unknown, unknown, IGoalProjection>): void { this.moveTo(evt.item.data, evt.currentIndex); }
   remove(goal: IGoalProjection): void { this._goalService.remove(goal.item.guid); }
   removeItem(item: IItem): void { this._goalService.remove(item.guid); }
 
-  /** Steps over season and event items, which sit in the same stored list but are not shown between goals. */
-  private move(goal: IGoalProjection, direction: -1 | 1): void {
-    const goals = this.goals();
-    const neighbour = goals[goals.indexOf(goal) + direction];
-    if (!neighbour) { return; }
+  /** Moves the goal to a position in the shown list, stepping over the season and event items stored between goals. */
+  private moveTo(goal: IGoalProjection, index: number): void {
+    const neighbour = this.goals()[index];
+    if (!neighbour || neighbour === goal) { return; }
     const stored = this._goalService.items();
     this._goalService.move(goal.item.guid, stored.indexOf(neighbour.item.guid) - stored.indexOf(goal.item.guid));
   }
@@ -203,6 +204,11 @@ export class ItemGoalsComponent {
     // Reset first so clicking the same goal again replays the highlight.
     this.focusedGoal.set(undefined);
     requestAnimationFrame(() => this.focusedGoal.set(goal.item.guid));
+  }
+
+  /** Only candles, hearts and ascended candles are saved up; other currencies don't delay the goals below. */
+  holdsBack(goal: IGoalProjection): boolean {
+    return !!(goal.cost.c || goal.cost.h || goal.cost.ac);
   }
 
   /** Whole days the goal overshoots its availability window by. */

@@ -169,6 +169,7 @@ export class GoalHelper {
   /**
    * Projects when each goal can be afforded. Goals are paid for in order, so a goal's date includes
    * the costs of every goal above it; spirit-tree nodes shared between goals are only paid once.
+   * Goals that are not available still hold back their cost, so the goals below them wait for it.
    * Nothing is collected today or on skipped days.
    */
   static project(
@@ -196,7 +197,7 @@ export class GoalHelper {
             if (n.unlocked || n.item?.unlocked) { continue; }
             if (n !== source.node && n.ec) { result.requiresEventCurrency = true; }
             if (paidNodes.has(n)) { continue; }
-            if (source.window.kind !== 'unavailable') { paidNodes.set(n, result); }
+            paidNodes.set(n, result);
             CostHelper.add(result.cost, n);
           }
           break;
@@ -205,13 +206,17 @@ export class GoalHelper {
           break;
         case 'iap':
           if (!paidIaps.has(source.iap) && !source.iap.bought) {
-            if (source.window.kind !== 'unavailable') { paidIaps.add(source.iap); }
+            paidIaps.add(source.iap);
             result.price = source.iap.price ?? 0;
           }
           break;
       }
 
-      if (source.window.kind === 'unavailable') { result.status = 'unavailable'; return result; }
+      if (source.window.kind === 'unavailable') {
+        for (const [key, amount] of this.costToBuckets(result.cost)) { needed.set(key, (needed.get(key) ?? 0) + amount); }
+        result.status = 'unavailable';
+        return result;
+      }
       if (source.type === 'iap') { result.status = 'purchase'; return result; }
       if (result.includedIn) { result.status = 'included'; return result; }
 
