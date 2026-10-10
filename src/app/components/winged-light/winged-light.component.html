@@ -36,7 +36,7 @@
     <div class="atmos-winged-light__group">
       <div class="atmos-winged-light__group-head">
         @if (b.svgIcon) {
-          <mat-icon [svgIcon]="b.svgIcon"></mat-icon>
+          <mat-icon [svgIcon]="b.svgIcon" [class]="b.iconClass ?? ''"></mat-icon>
         } @else if (b.icon) {
           <mat-icon>{{ b.icon }}</mat-icon>
         }

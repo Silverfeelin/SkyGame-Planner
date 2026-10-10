@@ -12,6 +12,7 @@ interface IBreakdown {
   total: number;
   icon?: string;
   svgIcon?: string;
+  iconClass?: 'currency' | 'seasonal';
   link?: string;
   linkQuery?: Params;
 }
@@ -56,7 +57,8 @@ export class WingedLightComponent {
       label: 'Wing buffs from regular spirits',
       unlocked: this.regularUnlocked(),
       total: this.regularCount(),
-      icon: 'person',
+      svgIcon: 'candle',
+      iconClass: 'currency',
       link: '/wing-buff',
       linkQuery: { type: 'Regular' }
     },
@@ -64,7 +66,8 @@ export class WingedLightComponent {
       label: 'Wing buffs from seasonal spirits',
       unlocked: this.seasonUnlocked(),
       total: this.seasonCount(),
-      icon: 'event',
+      svgIcon: 'season-candle',
+      iconClass: 'seasonal',
       link: '/wing-buff',
       linkQuery: { type: 'Season' }
     }

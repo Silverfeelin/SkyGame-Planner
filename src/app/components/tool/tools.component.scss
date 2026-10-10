@@ -75,6 +75,11 @@
   color: var(--atmos-accent);
 }
 
+.atmos-tools__title-img {
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
 .atmos-tools__desc {
   color: var(--atmos-text-dim);
   font-size: var(--atmos-fs-md);

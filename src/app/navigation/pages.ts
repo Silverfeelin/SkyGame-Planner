@@ -63,7 +63,7 @@ export const PAGES = {
 
   wingedLight:      { label: 'Winged Light', link: '/winged-light', icon: 'air', svgIcon: 'flaps', exact: true },
   childrenOfLight:  { label: 'Children of Light', link: '/col', icon: 'light_mode' },
-  wingBuffs:        { label: 'Wing buffs', link: '/wing-buff', icon: 'air' },
+  wingBuffs:        { label: 'Wing buffs', link: '/wing-buff', icon: 'air', svgIcon: 'wb' },
   wikiWingedLight:  { label: 'Wiki - Winged Light', link: `${WIKI}/Winged_Light`, icon: 'open_in_new', external: true, search: false },
 
   realms:           { label: 'Realms', link: '/realm', icon: 'map', exact: true },

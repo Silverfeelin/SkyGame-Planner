@@ -13,7 +13,11 @@
       </div>
       <div class="atmos-card__body atmos-tools__body">
         <h2 class="atmos-tools__title">
-          <mat-icon class="atmos-tools__title-icon">{{ card.icon }}</mat-icon>
+          @if (card.iconUrl) {
+            <img class="atmos-tools__title-icon atmos-tools__title-img" [src]="card.iconUrl" alt="" />
+          } @else {
+            <mat-icon class="atmos-tools__title-icon">{{ card.icon }}</mat-icon>
+          }
           <span>{{ card.title }}</span>
         </h2>
         <p class="atmos-paragraph atmos-tools__desc">{{ card.description }}</p>

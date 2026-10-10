@@ -7,6 +7,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
 interface IToolCard {
   readonly title: string;
   readonly icon: string;
+  readonly iconUrl?: string;
   readonly imageUrl: string;
   readonly description: string;
   readonly links: ReadonlyArray<IToolLink>;
@@ -63,6 +64,7 @@ export class ToolsComponent {
       title: 'Sky Shards',
       imageUrl: '/assets/images/sky-shards.webp',
       icon: 'auto_awesome_motion',
+      iconUrl: '/assets/external/wiki-shard-red.webp',
       description: 'A website by Plutoy to view the time and location of shards.',
       links: [
         { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-shards.pages.dev/' }
