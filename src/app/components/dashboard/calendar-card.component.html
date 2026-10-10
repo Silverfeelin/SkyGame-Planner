@@ -32,6 +32,7 @@
               <img class="atmos-calendar__shard" [class.is-ended]="shard.status === 'ended'" [src]="SHARD_IMAGES[shard.color]" alt="">
             }
             @if (day.leaving) { <mat-icon class="atmos-calendar__flag">flag</mat-icon> }
+            @if (day.goal) { <mat-icon class="atmos-calendar__goal">savings</mat-icon> }
           </span>
         </button>
       }
@@ -45,7 +46,7 @@
           [style.grid-column]="bar.colStart + ' / ' + bar.colEnd" [style.grid-row]="bar.row"
           [routerLink]="bar.activity.link" [skyTooltip]="barTooltip(bar)">
           <span class="atmos-calendar__bar-name">{{ bar.activity.name }}</span>
-          <span class="atmos-calendar__bar-hint">{{ bar.hint }}</span>
+          @if (bar.hint) { <span class="atmos-calendar__bar-hint">{{ bar.hint }}</span> }
         </a>
       } @empty {
         <p class="atmos-calendar__empty">Nothing scheduled in these weeks yet.</p>
@@ -75,47 +76,63 @@
       }
     </section>
 
-    <section class="atmos-calendar__section">
-      <h4 class="atmos-calendar__block-title">Ongoing</h4>
-      @if (detail().activities.length) {
+    @if (detail().activities.length) {
+      <section class="atmos-calendar__section atmos-calendar__section--ongoing">
+        <h4 class="atmos-calendar__block-title">Ongoing</h4>
         <ul class="atmos-calendar__list">
           @for (row of detail().activities; track row.activity.title + row.activity.date.toMillis()) {
             <li class="atmos-calendar__activity" [attr.data-kind]="row.activity.kind">
               <span class="atmos-calendar__swatch"></span>
               <a class="atmos-text-link atmos-calendar__activity-name" [routerLink]="row.activity.link">{{ row.activity.name }}</a>
               @if (row.tag) {
-                <span class="atmos-calendar__tag" [class.is-expected]="row.activity.expected">{{ row.tag }}</span>
+                <span class="atmos-calendar__tag">{{ row.tag }}</span>
               }
-              <span class="atmos-calendar__hint atmos-calendar__activity-sub">{{ row.activity.detail }} · {{ row.dates }}</span>
+              <span class="atmos-calendar__hint atmos-calendar__activity-sub">{{ row.sub }}</span>
             </li>
           }
         </ul>
-      } @else {
-        <p class="atmos-calendar__hint">Nothing running on this day.</p>
-      }
-    </section>
+      </section>
+    }
 
-    <section class="atmos-calendar__section">
-      <h4 class="atmos-calendar__block-title">Wishlist · last day</h4>
-      @if (detail().leaving.length) {
-        <ul class="atmos-calendar__list">
-          @for (group of detail().leaving; track group.source) {
-            <li class="atmos-calendar__leaving">
-              <span class="atmos-calendar__hint">{{ group.source }}</span>
-              <span class="atmos-calendar__items">
-                @for (item of group.items; track item.guid) {
-                  <a [routerLink]="['/item', item.guid]" [skyTooltip]="item.name">
-                    <app-item-icon [item]="item" size="small" [opaque]="true" />
-                  </a>
-                }
-              </span>
-            </li>
-          }
-        </ul>
-      } @else {
-        <p class="atmos-calendar__hint">No wishlist items leave on this day.</p>
-      }
-    </section>
+    @if (detail().leaving.length || detail().goals.length) {
+      <div class="atmos-calendar__stack">
+        @if (detail().leaving.length) {
+          <section class="atmos-calendar__section">
+            <h4 class="atmos-calendar__block-title">Wishlist · last day</h4>
+            <ul class="atmos-calendar__list">
+              @for (group of detail().leaving; track group.source) {
+                <li class="atmos-calendar__leaving">
+                  <span class="atmos-calendar__hint">{{ group.source }}</span>
+                  <span class="atmos-calendar__items">
+                    @for (item of group.items; track item.guid) {
+                      <a [routerLink]="['/item', item.guid]" [skyTooltip]="item.name">
+                        <app-item-icon [item]="item" size="small" [opaque]="true" />
+                      </a>
+                    }
+                  </span>
+                </li>
+              }
+            </ul>
+          </section>
+        }
+
+        @if (detail().goals.length) {
+          <section class="atmos-calendar__section">
+            <h4 class="atmos-calendar__block-title">
+              <a class="atmos-calendar__block-link" routerLink="/item/goals">Goals · affordable</a>
+            </h4>
+            <span class="atmos-calendar__items">
+              @for (goal of detail().goals; track goal.item.guid) {
+                <a class="atmos-calendar__goal-item" [class.is-late]="goal.late"
+                  [routerLink]="['/item', goal.item.guid]" [skyTooltip]="goalTooltip(goal)">
+                  <app-item-icon [item]="goal.item" size="small" [opaque]="true" />
+                </a>
+              }
+            </span>
+          </section>
+        }
+      </div>
+    }
   </div>
   </div>
 </app-foldable-card>

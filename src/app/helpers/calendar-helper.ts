@@ -11,7 +11,7 @@ export interface ICalendarActivity {
   name: string;
   /** Label that stands on its own, e.g. "Traveling Spirit #176: Talented Builder". */
   title: string;
-  /** Secondary line, e.g. "Traveling Spirit #176" or the spirits of a special visit. */
+  /** Secondary line, e.g. "Traveling Spirit #176" or the spirits of a special visit. Empty for seasons, whose names already say so. */
   detail: string;
   date: DateTime;
   endDate: DateTime;
@@ -40,7 +40,7 @@ export class CalendarHelper {
     const activities: Array<ICalendarActivity> = [];
     for (const season of data.seasonConfig.items) {
       activities.push({
-        kind: 'season', name: season.name, title: season.name, detail: 'Season',
+        kind: 'season', name: season.name, title: season.name, detail: '',
         date: season.date, endDate: season.endDate, link: ['/season', season.guid]
       });
     }

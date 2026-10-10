@@ -146,6 +146,13 @@
   color: var(--atmos-warn-accent);
 }
 
+.atmos-calendar__goal {
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  color: var(--atmos-accent);
+}
+
 .atmos-calendar__bars {
   position: relative;
   grid-auto-rows: 30px;
@@ -266,6 +273,24 @@
   color: var(--atmos-text-dim);
 }
 
+.atmos-calendar__block-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover { color: var(--atmos-text); }
+}
+
+// Fixed columns keep each section in place when the ones before it are hidden for the selected day.
+.atmos-calendar__section--ongoing { grid-column: 2; }
+
+.atmos-calendar__stack {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
 .atmos-calendar__hint {
   margin: 0;
   font-size: var(--atmos-fs-sm);
@@ -313,12 +338,6 @@
   border-radius: var(--atmos-radius-pill);
   background: color-mix(in oklch, var(--kind-color) 22%, transparent);
   color: var(--kind-color);
-
-  &.is-expected {
-    border: 1px dashed var(--atmos-text-mute);
-    background: transparent;
-    color: var(--atmos-text-dim);
-  }
 }
 
 .atmos-calendar__leaving {
@@ -333,8 +352,32 @@
   gap: 4px;
 }
 
+.atmos-calendar__goal-item {
+  position: relative;
+  display: inline-flex;
+
+  // Crossed out: the item is only affordable after it has left.
+  &.is-late {
+    opacity: 0.7;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -2px;
+      right: -2px;
+      height: 2px;
+      background: var(--atmos-warn-accent);
+      transform: rotate(-45deg);
+      pointer-events: none;
+    }
+  }
+}
+
 @media (max-width: 1023px) {
   .atmos-calendar__detail { grid-template-columns: minmax(0, 1fr); }
+  .atmos-calendar__section--ongoing,
+  .atmos-calendar__stack { grid-column: auto; }
 }
 
 @media (max-width: 639px) {

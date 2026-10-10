@@ -283,6 +283,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!p?.date || !p?.endDate) { return ''; }
     const start = p.date.toFormat('dd LLL');
     const end = p.endDate.toFormat('dd LLL');
+    if (p.date.diffNow().toMillis() > 0) {
+      const days = Math.ceil(p.date.diffNow('days').days);
+      return `${start} → ${end} · starts in ${days} day${days === 1 ? '' : 's'}`;
+    }
     const days = Math.max(0, Math.ceil(p.endDate.diffNow('days').days));
     return `${start} → ${end} · ${days} day${days === 1 ? '' : 's'} remaining`;
   }

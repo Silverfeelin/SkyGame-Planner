@@ -8,11 +8,12 @@ import { DateTime } from 'luxon';
 import { IItem } from 'skygame-data';
 import { CALENDAR_ACTIVITY_KINDS, CalendarHelper, ICalendarActivity } from '@app/helpers/calendar-helper';
 import { DateHelper } from '@app/helpers/date-helper';
-import { GoalHelper } from '@app/helpers/goal-helper';
+import { GoalHelper, IGoalProjection } from '@app/helpers/goal-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ShardInfo, getShardInfo } from '@app/helpers/shard-helper';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
+import { GoalService } from '@app/services/goal.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { FoldableCardComponent } from '@app/components/shared/foldable-card/foldable-card.component';
@@ -35,6 +36,7 @@ interface ICalendarDay {
   isSelected: boolean;
   shard?: ICalendarDayShard;
   leaving: boolean;
+  goal: boolean;
   label: string;
 }
 
@@ -84,6 +86,7 @@ export class DashboardCalendarComponent {
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
   private readonly _eventService = inject(EventService);
+  private readonly _goalService = inject(GoalService);
   private readonly _breakpointObserver = inject(BreakpointObserver);
   private readonly _zone = inject(NgZone);
 
@@ -120,7 +123,7 @@ export class DashboardCalendarComponent {
 
   private readonly _activities = CalendarHelper.getActivities(this._dataService);
 
-  /** Bumped whenever an item is favourited or (un)locked, to re-run the wishlist computeds. */
+  /** Bumped whenever items or currencies change, to re-run the wishlist and goal computeds. */
   private readonly _revision = signal(0);
 
   /** Unowned favourites keyed by the sky day they can last be obtained. */
@@ -148,18 +151,37 @@ export class DashboardCalendarComponent {
     return result;
   });
 
+  /** Goals keyed by the sky day on which they are projected to become affordable. */
+  private readonly _goalTargets = computed(() => {
+    this._revision();
+    const items = this._goalService.items()
+      .map(guid => this._dataService.guidMap.get(guid) as IItem | undefined)
+      .filter((item): item is IItem => !!item && !GoalHelper.limitedCurrency(item));
+
+    const result = new Map<string, Array<IGoalProjection>>();
+    for (const goal of this._goalService.project(items, this.today).goals) {
+      if (!goal.date) { continue; }
+      const key = goal.date.toISODate()!;
+      result.set(key, [...(result.get(key) ?? []), goal]);
+    }
+    return result;
+  });
+
   readonly days = computed<Array<ICalendarDay>>(() => {
     const start = this.start();
     const selected = this.selected();
     const leaving = this._leaving();
+    const goalTargets = this._goalTargets();
     const now = this._now();
     return Array.from({ length: this.span() }, (_, i) => {
       const date = start.plus({ days: i });
       const key = date.toISODate()!;
       const shard = this.getShard(date, now);
       const isLeaving = leaving.has(key);
+      const hasGoal = goalTargets.has(key);
       const label = [date.toFormat('cccc d LLLL'), shard ? `${shard.color} shard ${shard.status}` : 'no shard'];
       if (isLeaving) { label.push('wishlist items leave'); }
+      if (hasGoal) { label.push('goals affordable'); }
       return {
         date, key,
         isToday: date.hasSame(this.today, 'day'),
@@ -168,6 +190,7 @@ export class DashboardCalendarComponent {
         isSelected: date.hasSame(selected, 'day'),
         shard,
         leaving: isLeaving,
+        goal: hasGoal,
         label: label.join(', ')
       };
     });
@@ -193,7 +216,7 @@ export class DashboardCalendarComponent {
         colEnd: Math.min(to, span - 1) + 2,
         clippedStart: from < 0,
         clippedEnd: to >= span,
-        hint: to >= span ? `${activity.detail} · until ${activity.endDate.toFormat('d LLL')}` : activity.detail
+        hint: [activity.detail, to >= span ? `until ${activity.endDate.toFormat('d LLL')}` : ''].filter(Boolean).join(' · ')
       };
     });
   });
@@ -206,9 +229,8 @@ export class DashboardCalendarComponent {
       .sort((a, b) => KIND_ORDER.get(a.kind)! - KIND_ORDER.get(b.kind)! || a.date.toMillis() - b.date.toMillis())
       .map(activity => ({
         activity,
-        dates: `${activity.date.toFormat(DateHelper.displayFormat)} – ${activity.endDate.toFormat(DateHelper.displayFormat)}`,
-        tag: activity.expected ? 'Expected'
-          : activity.date.hasSame(date, 'day') ? 'Starts'
+        sub: [activity.detail, `${activity.date.toFormat(DateHelper.displayFormat)} – ${activity.endDate.toFormat(DateHelper.displayFormat)}`].filter(Boolean).join(' · '),
+        tag: activity.date.hasSame(date, 'day') ? 'Starts'
           : activity.endDate.hasSame(date, 'day') ? 'Last day' : ''
       }));
     return {
@@ -216,7 +238,8 @@ export class DashboardCalendarComponent {
       isToday: date.hasSame(this.today, 'day'),
       shard: this.getShard(date, this._now()),
       activities,
-      leaving: this._leaving().get(date.toISODate()!) ?? []
+      leaving: this._leaving().get(date.toISODate()!) ?? [],
+      goals: this._goalTargets().get(date.toISODate()!) ?? []
     };
   });
 
@@ -229,6 +252,7 @@ export class DashboardCalendarComponent {
     });
     this._eventService.itemToggled.pipe(takeUntilDestroyed()).subscribe(() => this._revision.update(v => v + 1));
     this._eventService.itemFavourited.pipe(takeUntilDestroyed()).subscribe(() => this._revision.update(v => v + 1));
+    this._storageService.events.pipe(takeUntilDestroyed()).subscribe(() => this._revision.update(v => v + 1));
 
     // Pointer moves would otherwise run change detection on every frame of a drag.
     afterNextRender(() => this._zone.runOutsideAngular(() => this.bindSwipe(listeners.signal)));
@@ -247,6 +271,10 @@ export class DashboardCalendarComponent {
   onFoldedChange(folded: boolean): void {
     this.folded.set(folded);
     localStorage.setItem(FOLDED_KEY, folded ? '1' : '0');
+  }
+
+  goalTooltip(goal: IGoalProjection): string {
+    return goal.late ? `${goal.item.name} · only affordable after it is gone` : goal.item.name;
   }
 
   barTooltip(bar: ICalendarBar): string {

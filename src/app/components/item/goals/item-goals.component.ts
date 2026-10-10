@@ -7,7 +7,7 @@ import { ICost, IEventInstance, IItem } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { INavigationTarget, NavigationHelper } from '@app/helpers/navigation-helper';
-import { GoalBucketKey, GoalHelper, IGoalBucket, IGoalPlan, IGoalProjection } from '@app/helpers/goal-helper';
+import { GoalBucketKey, GoalHelper, IGoalPlan, IGoalProjection } from '@app/helpers/goal-helper';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { GoalService, IGoalIncome } from '@app/services/goal.service';
@@ -101,7 +101,7 @@ export class ItemGoalsComponent {
 
   readonly plan = computed<IGoalPlan>(() => {
     this._revision();
-    return GoalHelper.project(this._split().regular, this.buckets(), this.today, this._goalService.skipped());
+    return this._goalService.project(this._split().regular, this.today);
   });
 
   readonly goals = computed<ReadonlyArray<IGoalProjection>>(() => this.plan().goals);
@@ -117,16 +117,6 @@ export class ItemGoalsComponent {
     .reduce((sum, g) => sum + g.price, 0));
 
   readonly ownedCount = computed(() => this.goals().filter(g => g.status === 'owned').length);
-
-  private readonly buckets = computed(() => {
-    const balance = this.balance();
-    const income = this.income();
-    return new Map<GoalBucketKey, IGoalBucket>([
-      ['c', { balance: balance.candles, perDay: income.c }],
-      ['h', { balance: balance.hearts, perDay: income.h }],
-      ['ac', { balance: balance.ascendedCandles, perDay: income.ac }]
-    ]);
-  });
 
   constructor() {
     const bump = () => this._revision.update(v => v + 1);

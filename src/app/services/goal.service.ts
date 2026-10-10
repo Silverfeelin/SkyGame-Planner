@@ -1,8 +1,10 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { DateTime } from 'luxon';
+import { IItem } from 'skygame-data';
 import { StorageService } from './storage.service';
 import { DateHelper } from '@app/helpers/date-helper';
-import { GOAL_DAY_FORMAT } from '@app/helpers/goal-helper';
+import { GOAL_DAY_FORMAT, GoalBucketKey, GoalHelper, IGoalBucket, IGoalPlan } from '@app/helpers/goal-helper';
 
 export interface IGoalIncome {
   c: number;
@@ -77,6 +79,18 @@ export class GoalService {
 
   clearSkipped(): void {
     this.save([...this.items()], this.income(), new Set());
+  }
+
+  /** Projects goals against the stored balance. Items with a {@link GoalHelper.limitedCurrency} should be left out. */
+  project(items: ReadonlyArray<IItem>, today: DateTime): IGoalPlan {
+    const balance = this._storageService.getCurrencies();
+    const income = this.income();
+    const buckets = new Map<GoalBucketKey, IGoalBucket>([
+      ['c', { balance: balance.candles, perDay: income.c }],
+      ['h', { balance: balance.hearts, perDay: income.h }],
+      ['ac', { balance: balance.ascendedCandles, perDay: income.ac }]
+    ]);
+    return GoalHelper.project(items, buckets, today, this.skipped());
   }
 
   private load(): void {
