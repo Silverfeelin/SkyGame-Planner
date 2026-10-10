@@ -147,7 +147,7 @@ export class ItemGoalsComponent {
       const item = this._dataService.guidMap.get(guid) as IItem | undefined;
       return item && !item.unlocked;
     });
-    if (!guids.length) { return alert('You have no favourite items that you do not own yet.'); }
+    if (!guids.length) { return alert('You have no wishlist items that you do not own yet.'); }
     this._goalService.add(...guids);
   }
 

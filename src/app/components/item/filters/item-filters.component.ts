@@ -43,7 +43,7 @@ const defaultFilters = {
 
 const generalFilters = [
   { key: 'owned', label: 'Owned' },
-  { key: 'favourite', label: 'Favourited' },
+  { key: 'favourite', label: 'Wishlist' },
   { key: 'starter', label: 'Starter' },
   { key: 'limited', label: 'Limited' },
   { key: 'returned', label: 'Has returned' },

@@ -38,20 +38,20 @@
           </div>
 
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Favourite</div>
+            <div class="atmos-fact__label">Wishlist</div>
             <div class="atmos-fact__value">
               <mat-icon class="atmos-fact__icon" [class.is-favourited]="favourited()">{{ favourited() ? 'star' : 'star_outline' }}</mat-icon>
-              <a class="atmos-fact__text atmos-text-link" (click)="toggleFavourite()">{{ favourited() ? 'Favourited' : 'Not favourited' }}</a>
+              <a class="atmos-fact__text atmos-text-link" (click)="toggleFavourite()">{{ favourited() ? 'On wishlist' : 'Not on wishlist' }}</a>
             </div>
           </div>
 
           @if (!unlocked() || isGoal()) {
             <div class="atmos-fact">
               <div class="atmos-fact__label">Goal</div>
-              <div class="atmos-fact__value">
+              <div class="atmos-fact__value atmos-fact__value--wrap">
                 <mat-icon class="atmos-fact__icon">savings</mat-icon>
-                <a class="atmos-fact__text atmos-text-link" (click)="toggleGoal()">{{ isGoal() ? 'Saving for this' : 'Add to goals' }}</a>
-                @if (isGoal()) { <a class="atmos-fact__meta atmos-text-link" routerLink="/item/goals">View goals</a> }
+                <a class="atmos-fact__text atmos-text-link" (click)="toggleGoal()">{{ isGoal() ? 'Saved as goal' : 'Add to goals' }}</a>
+                @if (isGoal()) { <a class="atmos-fact__meta atmos-text-link atmos-item-detail__goal-link" routerLink="/item/goals">View goals</a> }
               </div>
             </div>
           }

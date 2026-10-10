@@ -1,11 +1,11 @@
 <app-foldable-card [folded]="true" [lazy]="true">
   <div header>
     <h2 class="atmos-item-unlock-calc-sub__title">
-      <mat-icon>favorite</mat-icon> Add favourite items
+      <mat-icon>star</mat-icon> Add wishlist items
     </h2>
   </div>
   <p class="atmos-paragraph">
-    Select an item from your favourites to add it to the calculator. Only items you don't already have are displayed below.
+    Select an item from your wishlist to add it to the calculator. Only items you don't already have are displayed below.
   </p>
   @if (items.length) {
     <div class="atmos-item-unlock-calc-sub__buttons">
@@ -23,6 +23,6 @@
       }
     </div>
   } @else {
-    <p class="atmos-paragraph">You haven't favourited any items yet, or you already own them all.</p>
+    <p class="atmos-paragraph">Your wishlist is empty, or you already own everything on it.</p>
   }
 </app-foldable-card>

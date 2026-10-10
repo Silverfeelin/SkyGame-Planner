@@ -143,9 +143,9 @@ export class DashboardFavouritesComponent {
 
   showHelp(): void {
     window.alert(
-      'This section your favourite items that are available right now, '
+      'This section shows the items on your wishlist that are available right now, '
       + 'for a limited time: from the season, an event, the traveling spirit or a special visit.'
-      + '\n\nUse "View favourites" to see all of your favourite items.'
+      + '\n\nUse "View wishlist" to see all of your wishlist items.'
     );
   }
 

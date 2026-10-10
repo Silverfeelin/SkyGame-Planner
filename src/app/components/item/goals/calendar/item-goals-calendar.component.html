@@ -131,10 +131,10 @@
       <section class="atmos-goals-cal__block">
         <h4 class="atmos-goals-cal__block-title">Ongoing</h4>
         <ul class="atmos-goals-cal__activities">
-          @for (a of selectedActivities(); track a.name + a.date.toMillis()) {
+          @for (a of selectedActivities(); track a.title + a.date.toMillis()) {
             <li class="atmos-goals-cal__activity" [attr.data-kind]="a.kind">
               <span class="atmos-goals-cal__swatch"></span>
-              <a class="atmos-text-link" [routerLink]="a.link">{{ a.name }}</a>
+              <a class="atmos-text-link" [routerLink]="a.link">{{ a.title }}</a>
               <span class="atmos-goals-cal__hint">{{ activityDates(a) }}</span>
             </li>
           }

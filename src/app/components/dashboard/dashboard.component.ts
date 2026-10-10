@@ -16,6 +16,7 @@ import { ClockComponent } from './clock.component';
 import { DashboardFavouritesComponent } from './favourites-card.component';
 import { DashboardAnnouncementComponent } from './announcement-card.component';
 import { DashboardQuickStartComponent } from './quick-start-card.component';
+import { DashboardCalendarComponent } from './calendar-card.component';
 import { SearchBarComponent } from './search-bar.component';
 import {
   FeatureCardComponent,
@@ -54,7 +55,7 @@ interface IEventCard {
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, DashboardQuickStartComponent, SearchBarComponent, DashboardFavouritesComponent, FeatureCardComponent, RouterLink]
+  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, DashboardQuickStartComponent, SearchBarComponent, DashboardFavouritesComponent, DashboardCalendarComponent, FeatureCardComponent, RouterLink]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);

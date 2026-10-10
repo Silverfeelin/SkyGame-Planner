@@ -1,0 +1,123 @@
+<article class="atmos-card atmos-calendar">
+  <div class="atmos-calendar__head">
+    <div class="atmos-calendar__nav">
+      <h2 class="atmos-calendar__title">Calendar</h2>
+      <button type="button" class="atmos-icon-btn" (click)="shiftPage(-1)" aria-label="Previous weeks" [skyTooltip]="'Previous weeks'">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <span class="atmos-calendar__range">{{ rangeLabel() }}</span>
+      <button type="button" class="atmos-icon-btn" (click)="shiftPage(1)" aria-label="Next weeks" [skyTooltip]="'Next weeks'">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="goToToday()"><mat-icon>today</mat-icon> Today</button>
+    </div>
+
+    <div class="atmos-calendar__legend">
+      @for (k of KINDS; track k.kind) {
+        <button type="button" class="atmos-calendar__kind" [attr.data-kind]="k.kind"
+          [class.is-off]="!shownKinds().has(k.kind)" [attr.aria-pressed]="shownKinds().has(k.kind)" (click)="toggleKind(k.kind)">
+          <span class="atmos-calendar__swatch"></span> {{ k.label }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="atmos-calendar__timeline" [style.--days]="span()">
+    <div class="atmos-calendar__cols">
+      @for (day of days(); track day.key) {
+        <button type="button" class="atmos-calendar__col"
+          [class.is-weekend]="day.isWeekend" [class.is-past]="day.isPast"
+          [class.is-today]="day.isToday" [class.is-selected]="day.isSelected"
+          [attr.aria-label]="day.label" [attr.aria-pressed]="day.isSelected" (click)="selected.set(day.date)">
+          <span class="atmos-calendar__weekday">{{ day.date.toFormat('ccc') }}</span>
+          <span class="atmos-calendar__date">{{ day.date.day }}</span>
+          <span class="atmos-calendar__marks">
+            @if (day.shard; as shard) {
+              <img class="atmos-calendar__shard" [class.is-ended]="shard.status === 'ended'" [src]="SHARD_IMAGES[shard.color]" alt="">
+            }
+            @if (day.leaving) { <mat-icon class="atmos-calendar__flag">flag</mat-icon> }
+          </span>
+        </button>
+      }
+    </div>
+
+    <div class="atmos-calendar__bars">
+      @for (bar of bars(); track bar.activity.title + bar.activity.date.toMillis()) {
+        <a class="atmos-calendar__bar" [attr.data-kind]="bar.activity.kind"
+          [class.is-expected]="bar.activity.expected"
+          [class.is-clipped-start]="bar.clippedStart" [class.is-clipped-end]="bar.clippedEnd"
+          [style.grid-column]="bar.colStart + ' / ' + bar.colEnd" [style.grid-row]="bar.row"
+          [routerLink]="bar.activity.link" [skyTooltip]="barTooltip(bar)">
+          <span class="atmos-calendar__bar-name">{{ bar.activity.name }}</span>
+          <span class="atmos-calendar__bar-hint">{{ bar.hint }}</span>
+        </a>
+      } @empty {
+        <p class="atmos-calendar__empty">Nothing scheduled in these weeks yet.</p>
+      }
+    </div>
+  </div>
+
+  <div class="atmos-calendar__detail">
+    <section class="atmos-calendar__section">
+      <h3 class="atmos-calendar__detail-title">
+        {{ detail().date.toFormat('cccc d LLLL') }}
+        @if (detail().isToday) { <span class="atmos-pill">Today</span> }
+      </h3>
+      @if (detail().shard; as shard) {
+        <div class="atmos-calendar__shard-row">
+          <img class="atmos-calendar__shard atmos-calendar__shard--lg" [class.is-ended]="shard.status === 'ended'" [src]="SHARD_IMAGES[shard.color]" alt="">
+          <div>
+            <div>{{ shard.color === 'red' ? 'Red' : 'Black' }} shard · <span class="atmos-calendar__shard-status">{{ shard.status }}</span></div>
+            <div class="atmos-calendar__hint">
+              <a class="atmos-text-link" [href]="SKY_SHARDS_URL" target="_blank" rel="noopener">Location on Sky Shards</a>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <p class="atmos-calendar__hint">No shard eruption on this day.</p>
+      }
+    </section>
+
+    <section class="atmos-calendar__section">
+      <h4 class="atmos-calendar__block-title">Ongoing</h4>
+      @if (detail().activities.length) {
+        <ul class="atmos-calendar__list">
+          @for (row of detail().activities; track row.activity.title + row.activity.date.toMillis()) {
+            <li class="atmos-calendar__activity" [attr.data-kind]="row.activity.kind">
+              <span class="atmos-calendar__swatch"></span>
+              <a class="atmos-text-link atmos-calendar__activity-name" [routerLink]="row.activity.link">{{ row.activity.name }}</a>
+              @if (row.tag) {
+                <span class="atmos-calendar__tag" [class.is-expected]="row.activity.expected">{{ row.tag }}</span>
+              }
+              <span class="atmos-calendar__hint atmos-calendar__activity-sub">{{ row.activity.detail }} · {{ row.dates }}</span>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="atmos-calendar__hint">Nothing running on this day.</p>
+      }
+    </section>
+
+    <section class="atmos-calendar__section">
+      <h4 class="atmos-calendar__block-title">Wishlist · last day</h4>
+      @if (detail().leaving.length) {
+        <ul class="atmos-calendar__list">
+          @for (group of detail().leaving; track group.source) {
+            <li class="atmos-calendar__leaving">
+              <span class="atmos-calendar__hint">{{ group.source }}</span>
+              <span class="atmos-calendar__items">
+                @for (item of group.items; track item.guid) {
+                  <a [routerLink]="['/item', item.guid]" [skyTooltip]="item.name">
+                    <app-item-icon [item]="item" size="small" [opaque]="true" />
+                  </a>
+                }
+              </span>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="atmos-calendar__hint">No wishlist items leave on this day.</p>
+      }
+    </section>
+  </div>
+</article>

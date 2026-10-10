@@ -57,7 +57,7 @@
       <h2 class="atmos-section__title">Goals</h2>
       <div class="atmos-goals__buttons">
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="addFavourites()">
-          <mat-icon>star</mat-icon> Add favourites
+          <mat-icon>star</mat-icon> Add wishlist
         </button>
         @if (ownedCount()) {
           <button type="button" class="atmos-btn atmos-btn--sm" (click)="clearOwned()">
@@ -73,7 +73,7 @@
     </div>
 
     @if (!goals().length) {
-      <p class="atmos-paragraph">You have no goals yet. Add items below, or start from your favourites.</p>
+      <p class="atmos-paragraph">You have no goals yet. Add items below, or start from your wishlist.</p>
     } @else {
       <ol class="atmos-goals__list">
         @for (goal of goals(); track goal.item.guid; let first = $first; let last = $last) {

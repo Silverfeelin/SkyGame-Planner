@@ -43,3 +43,8 @@
     opacity: 0.7;
   }
 }
+
+// Wraps onto its own line as a whole rather than breaking between its words.
+.atmos-item-detail__goal-link {
+  white-space: nowrap;
+}

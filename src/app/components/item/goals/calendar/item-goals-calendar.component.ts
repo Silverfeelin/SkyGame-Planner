@@ -2,23 +2,13 @@ import { ChangeDetectionStrategy, Component, computed, inject, input, model, out
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
-import { ITravelingSpirit } from 'skygame-data';
+import { CALENDAR_ACTIVITY_KINDS, CalendarActivityKind, CalendarHelper, ICalendarActivity } from '@app/helpers/calendar-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { GOAL_DAY_FORMAT, GoalBucketKey, GoalHelper, IGoalBucketPlan, IGoalProjection } from '@app/helpers/goal-helper';
 import { DataService } from '@app/services/data.service';
 import { GoalService } from '@app/services/goal.service';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
-
-export type GoalActivityKind = 'season' | 'event' | 'ts' | 'sv';
-
-interface IGoalActivity {
-  kind: GoalActivityKind;
-  name: string;
-  date: DateTime;
-  endDate: DateTime;
-  link: Array<string>;
-}
 
 interface ICalendarDay {
   date: DateTime;
@@ -31,7 +21,7 @@ interface ICalendarDay {
   affordable: Array<IGoalProjection>;
   leaving: Array<IGoalProjection>;
   /** Per lane: whether an activity covers the day, and whether one starts or ends on it. */
-  lanes: Array<{ kind: GoalActivityKind; active: boolean; start: boolean; end: boolean }>;
+  lanes: Array<{ kind: CalendarActivityKind; active: boolean; start: boolean; end: boolean }>;
 }
 
 interface IDayCollection {
@@ -42,13 +32,6 @@ interface IDayCollection {
   saved: number;
 }
 
-const ACTIVITY_KINDS: ReadonlyArray<{ kind: GoalActivityKind; label: string }> = [
-  { kind: 'season', label: 'Seasons' },
-  { kind: 'event', label: 'Events' },
-  { kind: 'ts', label: 'Traveling Spirits' },
-  { kind: 'sv', label: 'Special Visits' }
-];
-
 const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const BUCKET_LABELS: Record<GoalBucketKey, { label: string; icon: string }> = {
@@ -56,11 +39,6 @@ const BUCKET_LABELS: Record<GoalBucketKey, { label: string; icon: string }> = {
   h: { label: 'Hearts', icon: 'heart' },
   ac: { label: 'Ascended candles', icon: 'ascended-candle' }
 };
-
-/** Traveling Spirits arrive on a Thursday every other week and stay for four days. */
-const TS_INTERVAL_DAYS = 14;
-const TS_DURATION_DAYS = 4;
-const TS_WEEKDAY = 4;
 
 @Component({
   selector: 'app-item-goals-calendar',
@@ -79,20 +57,20 @@ export class ItemGoalsCalendarComponent {
   readonly selected = model.required<DateTime>();
   readonly goalClicked = output<IGoalProjection>();
 
-  readonly ACTIVITY_KINDS = ACTIVITY_KINDS;
+  readonly ACTIVITY_KINDS = CALENDAR_ACTIVITY_KINDS;
   readonly WEEKDAYS = WEEKDAYS;
   readonly skipped = this._goalService.skipped;
-  readonly shownKinds = signal<ReadonlySet<GoalActivityKind>>(new Set(ACTIVITY_KINDS.map(k => k.kind)));
+  readonly shownKinds = signal<ReadonlySet<CalendarActivityKind>>(new Set(CALENDAR_ACTIVITY_KINDS.map(k => k.kind)));
 
   readonly month = computed(() => this.selected().startOf('month'));
 
-  private readonly _activities: ReadonlyArray<IGoalActivity> = this.loadActivities();
+  private readonly _activities: ReadonlyArray<ICalendarActivity> = CalendarHelper.getActivities(this._dataService);
 
   private readonly _monthActivities = computed(() => {
     const start = this.month().startOf('week');
     const end = this.month().endOf('month').endOf('week');
     const shown = this.shownKinds();
-    return [...this._activities, ...this.expectedTravelingSpirits(end)]
+    return [...this._activities, ...CalendarHelper.getExpectedTravelingSpirits(this._dataService, end)]
       .filter(a => shown.has(a.kind) && a.date <= end && a.endDate >= start);
   });
 
@@ -149,7 +127,7 @@ export class ItemGoalsCalendarComponent {
         collecting: !isSkipped && date > today && !!lastCollect && date <= lastCollect,
         affordable: affordable.get(key) ?? [],
         leaving: leaving.get(key) ?? [],
-        lanes: ACTIVITY_KINDS.filter(k => shown.has(k.kind)).map(({ kind }) => {
+        lanes: CALENDAR_ACTIVITY_KINDS.filter(k => shown.has(k.kind)).map(({ kind }) => {
           const covering = activities.filter(a => a.kind === kind && a.date <= dayEnd && a.endDate >= date);
           return {
             kind,
@@ -195,7 +173,7 @@ export class ItemGoalsCalendarComponent {
   readonly selectedActivities = computed(() => {
     const date = this.selected();
     const dayEnd = date.endOf('day');
-    return [...this._activities, ...this.expectedTravelingSpirits(dayEnd)]
+    return [...this._activities, ...CalendarHelper.getExpectedTravelingSpirits(this._dataService, dayEnd)]
       .filter(a => a.date <= dayEnd && a.endDate >= date);
   });
 
@@ -225,7 +203,7 @@ export class ItemGoalsCalendarComponent {
     this.selected.set(this.today());
   }
 
-  toggleKind(kind: GoalActivityKind): void {
+  toggleKind(kind: CalendarActivityKind): void {
     this.shownKinds.update(kinds => {
       const next = new Set(kinds);
       next.has(kind) ? next.delete(kind) : next.add(kind);
@@ -233,7 +211,7 @@ export class ItemGoalsCalendarComponent {
     });
   }
 
-  activityDates(activity: IGoalActivity): string {
+  activityDates(activity: ICalendarActivity): string {
     return `${activity.date.toFormat(DateHelper.displayFormat)} – ${activity.endDate.toFormat(DateHelper.displayFormat)}`;
   }
 
@@ -250,48 +228,7 @@ export class ItemGoalsCalendarComponent {
     return plan.doneDate;
   }
 
-  /** Traveling Spirits after the last one in the data, following the usual schedule up to the given date. */
-  private expectedTravelingSpirits(until: DateTime): Array<IGoalActivity> {
-    const last = this._dataService.travelingSpiritConfig.items
-      .reduce<ITravelingSpirit | undefined>((latest, ts) => !latest || ts.date > latest.date ? ts : latest, undefined);
-    if (!last) { return []; }
-
-    const expected: Array<IGoalActivity> = [];
-    let number = last.number;
-    const lastStart = last.date.setZone(DateHelper.skyTimeZone).startOf('day');
-    // Snap to Thursday in case the last visit in the data was shifted.
-    let date = lastStart.plus({ days: TS_INTERVAL_DAYS }).set({ weekday: TS_WEEKDAY });
-    while (date <= until) {
-      number++;
-      expected.push({
-        kind: 'ts', name: `Traveling Spirit #${number}`, link: ['/ts'],
-        date, endDate: date.plus({ days: TS_DURATION_DAYS - 1 }).endOf('day')
-      });
-      date = date.plus({ days: TS_INTERVAL_DAYS });
-    }
-    return expected;
-  }
-
   private round(value: number): number {
     return Math.round(value * 10) / 10;
-  }
-
-  private loadActivities(): Array<IGoalActivity> {
-    const activities: Array<IGoalActivity> = [];
-    for (const season of this._dataService.seasonConfig.items) {
-      activities.push({ kind: 'season', name: season.name, date: season.date, endDate: season.endDate, link: ['/season', season.guid] });
-    }
-    for (const event of this._dataService.eventConfig.items) {
-      for (const instance of event.instances ?? []) {
-        activities.push({ kind: 'event', name: instance.name ?? event.name, date: instance.date, endDate: instance.endDate, link: ['/event-instance', instance.guid] });
-      }
-    }
-    for (const ts of this._dataService.travelingSpiritConfig.items) {
-      activities.push({ kind: 'ts', name: `Traveling Spirit #${ts.number}: ${ts.spirit.name}`, date: ts.date, endDate: ts.endDate, link: ['/spirit', ts.spirit.guid] });
-    }
-    for (const visit of this._dataService.returningSpiritsConfig.items) {
-      activities.push({ kind: 'sv', name: visit.name || 'Special Visit', date: visit.date, endDate: visit.endDate, link: ['/rs', visit.guid] });
-    }
-    return activities;
   }
 }

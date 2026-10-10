@@ -48,7 +48,7 @@ export class ItemsComponent {
     { field: 'type', headerName: 'Type', width: 160, filter: AgSetFilterComponent, filterParams: { values: typeFilterValues }, valueFormatter: p => itemTypePipe.transform(p.value) },
     { field: 'group', headerName: 'Group', width: 130, filter: AgSetFilterComponent, filterParams: { values: groupFilterValues, includeBlanks: true }, valueFormatter: p => groupLabels[p.value] ?? p.value },
     { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },
-    { field: 'favourited', headerName: 'Favourited', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
+    { field: 'favourited', headerName: 'Wishlist', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
     { field: 'starter', headerName: 'Starter', width: 110, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
     { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: AgSetFilterComponent, filterParams: { values: dyeSlotFilterValues } },
     { field: 'dyeVersions', headerName: 'Dye versions', width: 130, filter: AgSetFilterComponent, filterParams: { values: dyeVersionFilterValues, includeBlanks: true, blanksLabel: 'Not dyeable' } },
