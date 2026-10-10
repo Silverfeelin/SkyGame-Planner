@@ -1,28 +1,24 @@
-<article class="atmos-card atmos-calendar">
-  <div class="atmos-calendar__head">
-    <div class="atmos-calendar__nav">
-      <h2 class="atmos-calendar__title">Calendar</h2>
-      <button type="button" class="atmos-icon-btn" (click)="shiftPage(-1)" aria-label="Previous weeks" [skyTooltip]="'Previous weeks'">
-        <mat-icon>chevron_left</mat-icon>
+<app-foldable-card title="Calendar" [folded]="folded()" (foldedChange)="onFoldedChange($event)">
+  <div header class="atmos-calendar__nav" [class.is-hidden]="folded()" (click)="$event.stopPropagation()">
+    <button type="button" class="atmos-icon-btn" (click)="shiftPage(-1)" aria-label="Previous week">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <span class="atmos-calendar__range">{{ rangeLabel() }}</span>
+    <button type="button" class="atmos-icon-btn" (click)="shiftPage(1)" aria-label="Next week">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+    @if (narrow()) {
+      <button type="button" class="atmos-icon-btn" (click)="goToToday()" aria-label="Today" [skyTooltip]="'Today'">
+        <mat-icon>today</mat-icon>
       </button>
-      <span class="atmos-calendar__range">{{ rangeLabel() }}</span>
-      <button type="button" class="atmos-icon-btn" (click)="shiftPage(1)" aria-label="Next weeks" [skyTooltip]="'Next weeks'">
-        <mat-icon>chevron_right</mat-icon>
-      </button>
-      <button type="button" class="atmos-btn atmos-btn--sm" (click)="goToToday()"><mat-icon>today</mat-icon> Today</button>
-    </div>
-
-    <div class="atmos-calendar__legend">
-      @for (k of KINDS; track k.kind) {
-        <button type="button" class="atmos-calendar__kind" [attr.data-kind]="k.kind"
-          [class.is-off]="!shownKinds().has(k.kind)" [attr.aria-pressed]="shownKinds().has(k.kind)" (click)="toggleKind(k.kind)">
-          <span class="atmos-calendar__swatch"></span> {{ k.label }}
-        </button>
-      }
-    </div>
+    } @else {
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-calendar__today" (click)="goToToday()"><mat-icon>today</mat-icon> Today</button>
+    }
   </div>
 
-  <div class="atmos-calendar__timeline" [style.--days]="span()">
+  <div class="atmos-calendar">
+  <div class="atmos-calendar__timeline" #timeline [style.--days]="span()">
+    <div class="atmos-calendar__track" #track>
     <div class="atmos-calendar__cols">
       @for (day of days(); track day.key) {
         <button type="button" class="atmos-calendar__col"
@@ -54,6 +50,7 @@
       } @empty {
         <p class="atmos-calendar__empty">Nothing scheduled in these weeks yet.</p>
       }
+    </div>
     </div>
   </div>
 
@@ -120,4 +117,5 @@
       }
     </section>
   </div>
-</article>
+  </div>
+</app-foldable-card>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, NgZone, afterNextRender, computed, inject, signal, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
@@ -6,7 +6,7 @@ import { MatIcon } from '@angular/material/icon';
 import { map } from 'rxjs';
 import { DateTime } from 'luxon';
 import { IItem } from 'skygame-data';
-import { CALENDAR_ACTIVITY_KINDS, CalendarActivityKind, CalendarHelper, ICalendarActivity } from '@app/helpers/calendar-helper';
+import { CALENDAR_ACTIVITY_KINDS, CalendarHelper, ICalendarActivity } from '@app/helpers/calendar-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { GoalHelper } from '@app/helpers/goal-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
@@ -15,6 +15,7 @@ import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
+import { FoldableCardComponent } from '@app/components/shared/foldable-card/foldable-card.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 type ShardColor = 'red' | 'black';
@@ -61,23 +62,34 @@ const SHARD_IMAGES: Record<ShardColor, string> = {
 };
 /** Shard status only changes at a landing or an end, so a coarse tick is enough. */
 const NOW_TICK_MS = 30_000;
+const FOLDED_KEY = 'dashboard.calendar.folded';
 /** Below this width two weeks no longer fit; matches where the dashboard drops to one column. */
 const NARROW_QUERY = '(max-width: 639px)';
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
+/** Horizontal travel before a touch drag counts as a swipe rather than a tap. */
+const SWIPE_SLOP = 10;
+/** Swipe distance past which releasing moves to the adjacent weeks instead of snapping back. */
+const SWIPE_COMMIT = 48;
+const SLIDE_IN_PX = 40;
+const SLIDE_MS = 200;
 
 @Component({
   selector: 'app-dashboard-calendar',
   templateUrl: './calendar-card.component.html',
   styleUrl: './calendar-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ItemIconComponent, TooltipDirective]
+  imports: [RouterLink, MatIcon, ItemIconComponent, TooltipDirective, FoldableCardComponent]
 })
 export class DashboardCalendarComponent {
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
   private readonly _eventService = inject(EventService);
   private readonly _breakpointObserver = inject(BreakpointObserver);
+  private readonly _zone = inject(NgZone);
 
-  readonly KINDS = CALENDAR_ACTIVITY_KINDS;
+  private readonly _timeline = viewChild.required<ElementRef<HTMLElement>>('timeline');
+  private readonly _track = viewChild.required<ElementRef<HTMLElement>>('track');
+
   readonly SHARD_IMAGES = SHARD_IMAGES;
   readonly SKY_SHARDS_URL = SKY_SHARDS_URL;
 
@@ -85,19 +97,22 @@ export class DashboardCalendarComponent {
   private readonly _now = signal(DateTime.now());
   readonly page = signal(0);
   readonly selected = signal(this.today);
-  readonly shownKinds = signal<ReadonlySet<CalendarActivityKind>>(new Set(CALENDAR_ACTIVITY_KINDS.map(k => k.kind)));
+  readonly folded = signal(localStorage.getItem(FOLDED_KEY) === '1');
 
-  private readonly _narrow = toSignal(
+  readonly narrow = toSignal(
     this._breakpointObserver.observe(NARROW_QUERY).pipe(map(s => s.matches)),
     { initialValue: this._breakpointObserver.isMatched(NARROW_QUERY) }
   );
-  readonly span = computed(() => this._narrow() ? 7 : 14);
+  readonly span = computed(() => this.narrow() ? 7 : 14);
 
   readonly start = computed(() => this.today.startOf('week').plus({ days: this.page() * this.span() }));
   readonly end = computed(() => this.start().plus({ days: this.span() - 1 }));
   readonly rangeLabel = computed(() => {
     const start = this.start();
     const end = this.end();
+    if (this.narrow()) {
+      return `${start.toFormat(start.hasSame(end, 'month') ? 'd' : 'd LLL')} – ${end.toFormat('d LLL')}`;
+    }
     return start.hasSame(end, 'year')
       ? `${start.toFormat('d LLL')} – ${end.toFormat('d LLL yyyy')}`
       : `${start.toFormat('d LLL yyyy')} – ${end.toFormat('d LLL yyyy')}`;
@@ -162,9 +177,7 @@ export class DashboardCalendarComponent {
   readonly bars = computed<Array<ICalendarBar>>(() => {
     const start = this.start();
     const span = this.span();
-    const shown = this.shownKinds();
     const visible = this.activitiesUntil(this.end().endOf('day'))
-      .filter(a => shown.has(a.kind))
       .map(activity => ({ activity, from: this.dayIndex(activity.date, start), to: this.dayIndex(activity.endDate, start) }))
       .filter(b => b.to >= 0 && b.from < span)
       .sort((a, b) => KIND_ORDER.get(a.activity.kind)! - KIND_ORDER.get(b.activity.kind)! || a.from - b.from);
@@ -188,9 +201,8 @@ export class DashboardCalendarComponent {
   readonly detail = computed(() => {
     const date = this.selected();
     const dayEnd = date.endOf('day');
-    const shown = this.shownKinds();
     const activities = this.activitiesUntil(dayEnd)
-      .filter(a => shown.has(a.kind) && a.date <= dayEnd && a.endDate >= date)
+      .filter(a => a.date <= dayEnd && a.endDate >= date)
       .sort((a, b) => KIND_ORDER.get(a.kind)! - KIND_ORDER.get(b.kind)! || a.date.toMillis() - b.date.toMillis())
       .map(activity => ({
         activity,
@@ -210,13 +222,21 @@ export class DashboardCalendarComponent {
 
   constructor() {
     const tick = window.setInterval(() => this._now.set(DateTime.now()), NOW_TICK_MS);
-    inject(DestroyRef).onDestroy(() => window.clearInterval(tick));
+    const listeners = new AbortController();
+    inject(DestroyRef).onDestroy(() => {
+      window.clearInterval(tick);
+      listeners.abort();
+    });
     this._eventService.itemToggled.pipe(takeUntilDestroyed()).subscribe(() => this._revision.update(v => v + 1));
     this._eventService.itemFavourited.pipe(takeUntilDestroyed()).subscribe(() => this._revision.update(v => v + 1));
+
+    // Pointer moves would otherwise run change detection on every frame of a drag.
+    afterNextRender(() => this._zone.runOutsideAngular(() => this.bindSwipe(listeners.signal)));
   }
 
   shiftPage(offset: number): void {
     this.page.update(page => page + offset);
+    this.animateTrack([{ translate: `${Math.sign(offset) * SLIDE_IN_PX}px 0`, opacity: 0 }, { translate: '0 0', opacity: 1 }]);
   }
 
   goToToday(): void {
@@ -224,17 +244,70 @@ export class DashboardCalendarComponent {
     this.selected.set(this.today);
   }
 
-  toggleKind(kind: CalendarActivityKind): void {
-    this.shownKinds.update(kinds => {
-      const next = new Set(kinds);
-      next.has(kind) ? next.delete(kind) : next.add(kind);
-      return next;
-    });
+  onFoldedChange(folded: boolean): void {
+    this.folded.set(folded);
+    localStorage.setItem(FOLDED_KEY, folded ? '1' : '0');
   }
 
   barTooltip(bar: ICalendarBar): string {
     const a = bar.activity;
     return `${a.title} · ${a.date.toFormat(DateHelper.displayFormat)} – ${a.endDate.toFormat(DateHelper.displayFormat)}`;
+  }
+
+  /** Touch drags across the timeline move it with the finger and page through the weeks on release. */
+  private bindSwipe(signal: AbortSignal): void {
+    const timeline = this._timeline().nativeElement;
+    const track = this._track().nativeElement;
+    let drag: { id: number; x: number; y: number; dx: number; swiping: boolean } | undefined;
+    // Browsers may still fire a click when a swipe is released, which would select a day or open a bar.
+    let swallowClick = false;
+
+    const release = (commit: boolean) => {
+      const dx = drag?.swiping ? drag.dx : 0;
+      drag = undefined;
+      if (!dx) { return; }
+
+      swallowClick = true;
+      track.style.translate = '';
+      if (commit && Math.abs(dx) >= SWIPE_COMMIT) {
+        this._zone.run(() => this.shiftPage(dx < 0 ? 1 : -1));
+      } else {
+        this.animateTrack([{ translate: `${dx}px 0` }, { translate: '0 0' }]);
+      }
+    };
+
+    timeline.addEventListener('pointerdown', e => {
+      swallowClick = false;
+      if (e.pointerType === 'mouse' || drag) { return; }
+      drag = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, swiping: false };
+    }, { signal });
+
+    timeline.addEventListener('pointermove', e => {
+      if (e.pointerId !== drag?.id) { return; }
+      const dx = e.clientX - drag.x;
+      if (!drag.swiping) {
+        if (Math.abs(dx) < SWIPE_SLOP) { return; }
+        if (Math.abs(dx) < Math.abs(e.clientY - drag.y)) { drag = undefined; return; }
+        drag.swiping = true;
+        timeline.setPointerCapture(e.pointerId);
+      }
+      drag.dx = dx;
+      track.style.translate = `${dx}px 0`;
+    }, { signal });
+
+    timeline.addEventListener('pointerup', e => { if (e.pointerId === drag?.id) { release(true); } }, { signal });
+    timeline.addEventListener('pointercancel', e => { if (e.pointerId === drag?.id) { release(false); } }, { signal });
+    timeline.addEventListener('click', e => {
+      if (!swallowClick) { return; }
+      swallowClick = false;
+      e.preventDefault();
+      e.stopPropagation();
+    }, { signal, capture: true });
+  }
+
+  private animateTrack(keyframes: Array<Keyframe>): void {
+    if (window.matchMedia(REDUCED_MOTION_QUERY).matches) { return; }
+    this._track().nativeElement.animate(keyframes, { duration: SLIDE_MS, easing: 'ease-out' });
   }
 
   private activitiesUntil(until: DateTime): Array<ICalendarActivity> {

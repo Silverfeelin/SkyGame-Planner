@@ -8,29 +8,22 @@
 [data-kind="sv"]     { --kind-color: var(--atmos-violet); }
 
 .atmos-calendar {
-  gap: var(--atmos-card-gap);
-  padding: var(--atmos-card-pad);
-}
-
-.atmos-calendar__head {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 16px;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
 }
 
 .atmos-calendar__nav {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
+
+  &.is-hidden { display: none; }
 }
 
-.atmos-calendar__title {
-  margin: 0 12px 0 0;
-  font-size: var(--atmos-fs-xl);
-  font-weight: 500;
+.atmos-calendar__today {
+  margin-left: 8px;
 }
 
 .atmos-calendar__range {
@@ -38,31 +31,6 @@
   text-align: center;
   font-size: var(--atmos-fs-lg);
   font-weight: 500;
-}
-
-.atmos-calendar__legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.atmos-calendar__kind {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px 10px;
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-pill);
-  background: var(--atmos-chip-bg);
-  color: var(--atmos-text-dim);
-  font: inherit;
-  font-size: var(--atmos-fs-sm);
-  cursor: pointer;
-
-  &.is-off {
-    opacity: 0.45;
-    .atmos-calendar__swatch { background: transparent; }
-  }
 }
 
 .atmos-calendar__swatch {
@@ -80,6 +48,12 @@
   overflow: hidden;
   border: 1px solid var(--atmos-line-soft);
   border-radius: var(--atmos-radius-sm);
+  // Vertical drags keep scrolling the page; horizontal ones swipe between weeks.
+  touch-action: pan-y;
+}
+
+.atmos-calendar__track {
+  position: relative;
 }
 
 .atmos-calendar__cols,
@@ -364,6 +338,11 @@
 }
 
 @media (max-width: 639px) {
-  .atmos-calendar__range { min-width: 0; }
+  // Tightened so the widest ranges (e.g. "30 Nov – 6 Dec") still share a row with the title at 360px.
+  :host ::ng-deep .atmos-foldable-card__header { column-gap: 8px; }
+  .atmos-calendar__nav { margin-left: auto; gap: 0; }
+  .atmos-calendar__nav .atmos-icon-btn { padding: 0; }
+  .atmos-calendar__nav .atmos-icon-btn:last-child { margin-left: 6px; }
+  .atmos-calendar__range { min-width: 0; font-size: var(--atmos-fs-md); }
   .atmos-calendar__bar-hint { display: none; }
 }
