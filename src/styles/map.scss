@@ -100,6 +100,27 @@ body > .map { display: none !important; }
   line-height: 1;
 }
 
+/* Candle Run Tracker group areas. CSS beats the stroke/fill attributes Leaflet writes. */
+.s-leaflet-group-area.is-complete {
+  stroke: var(--atmos-good);
+  fill: var(--atmos-good);
+}
+
+.s-leaflet-group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--atmos-card-bg-solid);
+  border: var(--atmos-card-border);
+  color: orange;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.5);
+
+  &.is-complete { color: var(--atmos-good); }
+  &:hover { border-color: currentColor; }
+}
+
 /* Responsive */
 
 .s-leaflet-vid { max-width: 100%; background: #000; }

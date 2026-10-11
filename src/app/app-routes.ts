@@ -43,7 +43,7 @@ import { RealmsComponent } from './components/realm/realms.component';
 import { RealmComponent } from './components/realm/detail/realm.component';
 import { SharedCreationsComponent } from './components/realm/shared-creations/shared-creations.component';
 import { PnrTrackerComponent } from './components/realm/pnr-tracker/pnr-tracker.component';
-import { CrTrackerComponent, canDeactivateCrTracker } from './components/realm/cr-tracker/cr-tracker.component';
+import { CrTrackerComponent } from './components/realm/cr-tracker/cr-tracker.component';
 import { AreasComponent } from './components/area/areas.component';
 import { AreaComponent } from './components/area/detail/area.component';
 import { ShopsComponent } from './components/shop/shops/shops.component';
@@ -186,7 +186,7 @@ export const routes: Routes = [
           { path: '',                 component: RealmsComponent,          title: title('Realms') },
           { path: 'shared-creations', component: SharedCreationsComponent, title: title('Shared Creations') },
           { path: 'pnr-tracker',      component: PnrTrackerComponent,      title: title('Eden Statue Tracker') },
-          { path: 'cr-tracker',       component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
+          { path: 'cr-tracker',       component: CrTrackerComponent, title: title('Candle Run Tracker') },
           { path: ':guid',            component: RealmComponent,           title: title('Realm') },
         ]
       },

@@ -7,8 +7,8 @@
 <div class="atmos-cr-tracker__container">
   <div class="atmos-cr-tracker__controls">
     <button type="button" class="atmos-btn atmos-btn--sm"
-      [skyTooltip]="'Return to Aviary Village'" placement="bottom-start"
-      (click)="navigateToArea(defaultArea)">
+      [skyTooltip]="'Return to ' + (defaultArea()?.name ?? 'start')" placement="bottom-start"
+      (click)="goHome()">
       <mat-icon>house</mat-icon>
     </button>
     <button type="button" class="atmos-btn atmos-btn--sm"
@@ -17,14 +17,45 @@
       <mat-icon>globe</mat-icon>
     </button>
     <button type="button" class="atmos-btn atmos-btn--sm"
-      [skyTooltip]="'Restart'" placement="bottom-start"
-      (click)="promptRestart()">
-      <mat-icon>restart_alt</mat-icon>
+      [skyTooltip]="'Undo'" placement="bottom-start"
+      [disabled]="!canUndo()"
+      (click)="undo()">
+      <mat-icon>undo</mat-icon>
     </button>
   </div>
 
-  <div class="atmos-cr-tracker__wax">
-    {{ waxInAreaFound() }} / {{ waxInArea() }} wax
+  <div class="atmos-cr-tracker__corner">
+    @if (isAreaComplete()) {
+      @if (nextArea(); as next) {
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-cr-tracker__next" (click)="navigateToArea(next)">
+          <span>Next: {{ next.name }}</span>
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      }
+    }
+    @if (isNewDayNoticeVisible()) {
+      <div class="atmos-cr-tracker__notice" role="status">
+        <span>A new Sky day has started, so your collected wax was cleared.</span>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="isNewDayNoticeVisible.set(false)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    }
+  </div>
+
+  <div class="atmos-cr-tracker__status">
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-cr-tracker__mark-area" #areaConfirm="skyConfirmClick"
+      [class.atmos-btn--active]="isAreaComplete()"
+      [skyTooltip]="areaConfirm.armed() ? 'Press again to clear this map' : isAreaComplete() ? 'Clear this map' : 'Mark all wax on this map'"
+      [confirmSkip]="!isAreaComplete()"
+      (skyConfirmClick)="toggleArea(area())">
+      <mat-icon>{{ areaConfirm.armed() ? 'priority_high' : 'done_all' }}</mat-icon>
+    </button>
+    <div class="atmos-cr-tracker__wax" [class.is-complete]="isAreaComplete()">
+      @if (isAreaComplete()) { <mat-icon>check_circle</mat-icon> }
+      <span>{{ currentProgress().found }} / {{ currentProgress().total }} wax</span>
+      <span class="atmos-cr-tracker__wax-total">{{ totalProgress().found }} / {{ totalProgress().total }} total</span>
+    </div>
   </div>
 
   <div #map id="atmos-cr-map" class="atmos-cr-tracker__map"></div>
@@ -33,24 +64,48 @@
 @if (isAreaOverlayVisible()) {
   <app-overlay (close)="isAreaOverlayVisible.set(false)" [title]="'Choose map'">
     <div class="atmos-cr-tracker__overlay">
-      <h3 class="atmos-cr-tracker__overlay-section">Maps</h3>
-      @for (item of areaOverlayData().areas; track item.area.guid) {
-        <button type="button" class="atmos-cr-tracker__overlay-row"
-          (click)="navigateToArea(item.area); isAreaOverlayVisible.set(false)">
-          <span class="atmos-cr-tracker__overlay-name">{{ item.area.name }}</span>
-          @let completed = item.found === item.total;
-          <span class="atmos-cr-tracker__overlay-wax" [class.is-complete]="completed">
-            {{ item.found }} / {{ item.total }}
-          </span>
+      <div class="atmos-cr-tracker__overlay-section atmos-cr-tracker__overlay-section--rail">
+        <h3>Maps</h3>
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="promptRestart()">
+          <mat-icon>restart_alt</mat-icon>
+          <span>Restart</span>
         </button>
+      </div>
+      @for (item of areaProgress(); track item.area.guid) {
+        @let completed = item.total > 0 && item.found === item.total;
+        <button type="button" class="atmos-cr-tracker__overlay-name atmos-cr-tracker__overlay-link"
+          [class.is-current]="item.area === area()"
+          (click)="selectAreaFromOverlay(item.area)">
+          {{ item.area.name }}
+        </button>
+        <span class="atmos-cr-tracker__overlay-wax" [class.is-complete]="completed">
+          @if (completed) { <mat-icon>check</mat-icon> }
+          {{ item.found }} / {{ item.total }}
+        </span>
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-cr-tracker__overlay-toggle" #areaToggle="skyConfirmClick"
+          [skyTooltip]="areaToggle.armed() ? 'Press again to confirm' : completed ? 'Clear ' + item.area.name : 'Mark all of ' + item.area.name + ' as collected'"
+          (skyConfirmClick)="toggleArea(item.area)">
+          <mat-icon>{{ areaToggle.armed() ? 'priority_high' : completed ? 'clear' : 'done_all' }}</mat-icon>
+        </button>
+        <span class="atmos-cr-tracker__overlay-bar" [class.is-complete]="completed"
+          [style.--progress]="item.total ? item.found / item.total : 0"></span>
       }
 
       <h3 class="atmos-cr-tracker__overlay-section">Total</h3>
+      @let total = totalProgress();
+      @let allCompleted = total.total > 0 && total.found === total.total;
       <span class="atmos-cr-tracker__overlay-name">All maps</span>
-      <span class="atmos-cr-tracker__overlay-wax"
-        [class.is-complete]="areaOverlayData().total.found === areaOverlayData().total.total">
-        {{ areaOverlayData().total.found }} / {{ areaOverlayData().total.total }}
+      <span class="atmos-cr-tracker__overlay-wax" [class.is-complete]="allCompleted">
+        @if (allCompleted) { <mat-icon>check</mat-icon> }
+        {{ total.found }} / {{ total.total }}
       </span>
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-cr-tracker__overlay-toggle" #allToggle="skyConfirmClick"
+        [skyTooltip]="allToggle.armed() ? 'Press again to confirm' : allCompleted ? 'Clear all maps' : 'Mark all maps as collected'"
+        (skyConfirmClick)="toggleAllAreas()">
+        <mat-icon>{{ allToggle.armed() ? 'priority_high' : allCompleted ? 'clear' : 'done_all' }}</mat-icon>
+      </button>
+      <span class="atmos-cr-tracker__overlay-bar" [class.is-complete]="allCompleted"
+        [style.--progress]="total.total ? total.found / total.total : 0"></span>
     </div>
   </app-overlay>
 }

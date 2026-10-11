@@ -721,6 +721,13 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   }
 }
 
+/* Armed by skyConfirmClick: the next press confirms. */
+.atmos-btn.is-confirming {
+  color: var(--atmos-text);
+  background: var(--atmos-danger-accent);
+  border-color: var(--atmos-danger);
+}
+
 /* Round floating action button. Pair with .atmos-btn. */
 .atmos-btn--fab {
   width: 3rem;
