@@ -57,7 +57,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 6px 6px 14px;
-  border-radius: var(--atmos-radius-pill);
+  border-radius: var(--atmos-radius-lg);
   background: var(--atmos-card-bg);
   backdrop-filter: var(--atmos-blur-pill);
   -webkit-backdrop-filter: var(--atmos-blur-pill);
@@ -92,8 +92,10 @@
   padding: 0 18px;
 }
 
+/* Rounds like a pill on one line without bulging once the text wraps. */
 .atmos-cr-tracker__next,
 .atmos-cr-tracker__mark-area {
+  border-radius: var(--atmos-radius-lg);
   backdrop-filter: var(--atmos-blur-pill);
   -webkit-backdrop-filter: var(--atmos-blur-pill);
 }
@@ -105,7 +107,7 @@
   align-items: center;
   column-gap: 10px;
   padding: 6px 14px;
-  border-radius: var(--atmos-radius-pill);
+  border-radius: var(--atmos-radius-lg);
   background: var(--atmos-card-bg);
   backdrop-filter: var(--atmos-blur-pill);
   -webkit-backdrop-filter: var(--atmos-blur-pill);
