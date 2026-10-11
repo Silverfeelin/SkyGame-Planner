@@ -77,3 +77,40 @@
   flex: 0 0 auto;
   color: var(--atmos-danger);
 }
+
+// One-fit image result
+.closet-image-read__body {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+}
+
+.closet-image-read__preview {
+  flex: 0 0 auto;
+  max-width: min(160px, 35%);
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.closet-image-read__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.closet-image-read__unsure {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--atmos-warn-accent);
+
+  mat-icon { flex: 0 0 auto; }
+}
+
+.closet-image-read__close {
+  flex: 0 0 auto;
+  align-self: flex-start;
+}

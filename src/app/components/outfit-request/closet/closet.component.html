@@ -11,6 +11,9 @@
       <a class="atmos-text-link" [routerLink]="'/outfit-request/request'">Request</a>
       page if you want to create an outfit request.
     </p>
+    <p class="atmos-paragraph atmos-page__hint">
+      Got a one-fit image from a request? Paste it ({{ pasteKey }}) or drop it here to highlight its items.
+    </p>
   </div>
 
   <!-- Toolbar -->
@@ -20,7 +23,39 @@
     (randomRequest)="randomSelection()"
     (copyLinkRequest)="copyLink()"
     (calculateCostRequest)="calculateCost()"
-    (startTourRequest)="startTour()" />
+    (startTourRequest)="startTour()"
+    (imageRequest)="readImage($event)" />
+
+  <!-- Result of reading a one-fit image -->
+  @if (imageRead(); as read) {
+    <div class="atmos-card closet-image-read">
+      <div class="atmos-card__body closet-image-read__body">
+        <img class="closet-image-read__preview" [src]="read.preview" alt="One-fit image" />
+        <div class="closet-image-read__text">
+          @switch (read.status) {
+            @case ('reading') {
+              <span>Reading the image…</span>
+            }
+            @case ('failed') {
+              <span>Image not recognised. Make sure the 'one fit' image is not cropped.</span>
+            }
+            @case ('done') {
+              <span>Highlighted {{ read.matched }} {{ read.matched === 1 ? 'item' : 'items' }} from the image in red.</span>
+              @if (read.unsure?.length) {
+                <span class="closet-image-read__unsure">
+                  <mat-icon>priority_high</mat-icon>
+                  Please double-check: {{ read.unsure!.join(', ') }}.
+                </span>
+              }
+            }
+          }
+        </div>
+        <button type="button" class="atmos-btn atmos-btn--sm closet-image-read__close" (click)="dismissImageRead()" title="Dismiss">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  }
 
   <!-- Background picker -->
   <app-closet-background-picker />

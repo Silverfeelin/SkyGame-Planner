@@ -3,6 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ClosetStateService, RequestColor } from './closet-state.service';
 import { SearchService } from '@app/services/search.service';
 import { IItem } from 'skygame-data';
+import { PASTE_KEY, SCREENSHOT_ACCEPT } from '@app/components/quick-start/closet/closet-files';
 
 @Component({
   selector: 'app-closet-toolbar',
@@ -17,6 +18,8 @@ export class ClosetToolbarComponent {
   private readonly _search = inject(SearchService);
 
   readonly isRequesting = input(false);
+  readonly pasteKey = PASTE_KEY;
+  readonly imageAccept = SCREENSHOT_ACCEPT;
 
   readonly resetRequest = output<void>();
   readonly randomRequest = output<void>();
@@ -25,6 +28,7 @@ export class ClosetToolbarComponent {
   readonly shareImageRequest = output<string>();
   readonly calculateCostRequest = output<void>();
   readonly startTourRequest = output<void>();
+  readonly imageRequest = output<File>();
 
   search(text: string): void {
     if (!text || text.length < 3) {
@@ -34,6 +38,12 @@ export class ClosetToolbarComponent {
     const results = this._search.searchItems(text, { limit: 100, hasIcon: true });
     const map = results.reduce((m, r) => (m[r.data.guid] = r.data, m), {} as Record<string, IItem>);
     this.state.searchResults.set(map);
+  }
+
+  pickImage(input: HTMLInputElement): void {
+    const file = input.files?.[0];
+    input.value = '';
+    if (file) { this.imageRequest.emit(file); }
   }
 
   setColor(color: RequestColor | undefined): void {

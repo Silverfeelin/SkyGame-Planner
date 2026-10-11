@@ -38,6 +38,15 @@
     <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="randomRequest.emit()" data-step="125" data-position="bottom-left-aligned">
       <mat-icon>shuffle</mat-icon>
     </button>
+    @if (!isRequesting()) {
+      <!-- Highlight items from a one-fit image -->
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="imageInput.click()"
+        [title]="'Highlight the items of a one-fit image. You can also paste (' + pasteKey + ') or drop the image on this page.'">
+        <mat-icon>image_search</mat-icon>
+        <span>From image</span>
+      </button>
+      <input #imageInput type="file" hidden [accept]="imageAccept" (change)="pickImage(imageInput)" />
+    }
     <!-- Calculate cost -->
     <button type="button" class="atmos-btn atmos-btn--sm" (click)="calculateCostRequest.emit()" data-step="127" data-position="bottom-left-aligned">
       <mat-icon>calculate</mat-icon>

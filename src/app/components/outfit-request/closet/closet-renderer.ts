@@ -22,6 +22,9 @@ const _hFooter = 30;
 const _aHide = 0.1;
 const _aHalfHide = 0.4;
 
+/** Horizontal offsets of the two dye droplets under an icon. */
+const _xDyes = [2, _wItem - _wDye - 2];
+
 const _rPanel = 14;
 const _rTile = 10;
 
@@ -100,6 +103,64 @@ const _columns: Array<{ cols: number; types: ItemType[] }> = [
 ];
 
 /**
+ * Slots of the one-fit render in drawing order, five per row. An empty slot
+ * shows its placeholder item faintly behind a question mark, and the "None"
+ * cross is drawn over it.
+ */
+export const SQUARE_SLOTS: ReadonlyArray<{ types: ItemType[]; placeholder: string }> = [
+  { types: [ItemType.Outfit, ItemType.OutfitShoes], placeholder: 'EEQZwFIJRs' },
+  { types: [ItemType.Shoes], placeholder: '_k3jPMWKOY' },
+  { types: [ItemType.Mask], placeholder: 'Em7ZxGZAN5' },
+  { types: [ItemType.FaceAccessory], placeholder: 'fR9CRzzD25' },
+  { types: [ItemType.Necklace], placeholder: '_5IHtakDvf' },
+  { types: [ItemType.Hair], placeholder: 'QmNo-bmeLi' },
+  { types: [ItemType.HairAccessory], placeholder: 'E_yfCZYU5C' },
+  { types: [ItemType.HeadAccessory], placeholder: 'f-X2dDeB9w' },
+  { types: [ItemType.Cape], placeholder: 'ec8jU3Gerw' },
+  { types: [ItemType.Prop, ItemType.Held, ItemType.Furniture], placeholder: 'biKOov4qJQ' }
+];
+export const SQUARE_PLACEHOLDER_ALPHA = 0.22;
+export const SQUARE_UNKNOWN_ALPHA = 0.85;
+
+export interface ISquareLayout {
+  width: number;
+  height: number;
+  cardW: number;
+  cardH: number;
+  /** Icon size. */
+  item: number;
+  /** Dye droplet size. */
+  dye: number;
+  /** Horizontal offsets of the dye droplets from the icon. */
+  dyeX: ReadonlyArray<number>;
+  card(slot: number): { x: number; y: number };
+  icon(slot: number): { x: number; y: number };
+}
+
+/** Geometry of the one-fit render; the cards grow by a droplet row per dye slot shown. */
+export function squareLayout(dyeRows: number): ISquareLayout {
+  const cardW = _wItem + _wPanel;
+  const cardH = _wItem + _wDye * dyeRows + _wPanel;
+  const card = (slot: number) => ({
+    x: _wPad + (slot % 5) * (cardW + _wGap),
+    y: _wPad + Math.floor(slot / 5) * (cardH + _wGap)
+  });
+  return {
+    width: cardW * 5 + _wGap * 4 + _wPad * 2,
+    height: cardH * 2 + _wGap + _wPad * 2 + _hFooter,
+    cardW, cardH,
+    item: _wItem,
+    dye: _wDye,
+    dyeX: _xDyes,
+    card,
+    icon: (slot: number) => {
+      const c = card(slot);
+      return { x: c.x + _wPanel / 2, y: c.y + _wPanel / 2 };
+    }
+  };
+}
+
+/**
  * Encodes a canvas, preferring WebP where the target accepts it. A closet is
  * mostly flat colour over a soft background, so WebP lands far below the PNG
  * for the same picture; PNG stays the fallback, and the only format browsers
@@ -147,30 +208,23 @@ export class ClosetRenderer {
   renderSquare(): HTMLCanvasElement {
     const { selected, dyes, imgNone, imgUnknown, imageLookup, itemMap, iconLookup, imgSheets } = this.opts;
 
-    const getSelectedPerType = (selection: ISelection) =>
+    const slotOf = (type: ItemType) => SQUARE_SLOTS.findIndex(slot => slot.types.includes(type));
+    const getSelectedPerSlot = (selection: ISelection) =>
       Object.values(selection).reduce((map, item) => {
-        let type = item.type;
-        if (type === ItemType.Furniture || type === ItemType.Held) { type = ItemType.Prop; }
-        if (type === ItemType.OutfitShoes) { type = ItemType.Outfit; }
-        if (!map[type]) { map[type] = item; }
+        const slot = slotOf(item.type);
+        if (slot >= 0 && !map[slot]) { map[slot] = item; }
         return map;
-      }, {} as Record<string, IItem>);
+      }, {} as Record<number, IItem>);
 
-    const selectedByType = [
-      getSelectedPerType(selected.r),
-      getSelectedPerType(selected.y),
-      getSelectedPerType(selected.g),
-      getSelectedPerType(selected.b)
+    const selectedBySlot = [
+      getSelectedPerSlot(selected.r),
+      getSelectedPerSlot(selected.y),
+      getSelectedPerSlot(selected.g),
+      getSelectedPerSlot(selected.b)
     ];
-    selectedByType.sort((a, b) => Object.keys(b).length - Object.keys(a).length);
+    selectedBySlot.sort((a, b) => Object.keys(b).length - Object.keys(a).length);
 
-    const getItemByType = (type: ItemType) => selectedByType.find(m => m[type])?.[type];
-    const itemTypes = [
-      ItemType.Outfit, ItemType.Shoes, ItemType.Mask,
-      ItemType.FaceAccessory, ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory,
-      ItemType.HeadAccessory, ItemType.Cape, ItemType.Prop
-    ];
-    const items = itemTypes.map(getItemByType);
+    const items = SQUARE_SLOTS.map((_, slot) => selectedBySlot.find(m => m[slot])?.[slot]);
 
     const dyeRowsOf = (item: IItem | undefined) => {
       if (!item) { return 0; }
@@ -180,27 +234,20 @@ export class ClosetRenderer {
     };
     const dyeRows = items.reduce((rows, item) => Math.max(rows, dyeRowsOf(item)), 0);
 
-    const cardW = _wItem + _wPanel;
-    const cardH = _wItem + _wDye * dyeRows + _wPanel;
+    const layout = squareLayout(dyeRows);
+    const { cardW, cardH } = layout;
     const canvas = document.createElement('canvas');
-    canvas.width = cardW * 5 + _wGap * 4 + _wPad * 2;
-    canvas.height = cardH * 2 + _wGap + _wPad * 2 + _hFooter;
+    canvas.width = layout.width;
+    canvas.height = layout.height;
     const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
 
     this._drawBackground(ctx);
 
-    const placeholders = [
-      'EEQZwFIJRs', '_k3jPMWKOY', 'Em7ZxGZAN5',
-      'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi', 'E_yfCZYU5C',
-      'f-X2dDeB9w', 'ec8jU3Gerw', 'biKOov4qJQ'
-    ];
-    const placeholderItems = placeholders.map(guid => itemMap[guid]);
+    const placeholderItems = SQUARE_SLOTS.map(slot => itemMap[slot.placeholder]);
 
     items.forEach((item, i) => {
-      const cx = _wPad + (i % 5) * (cardW + _wGap);
-      const cy = _wPad + Math.floor(i / 5) * (cardH + _wGap);
-      const x = cx + _wPanel / 2;
-      const y = cy + _wPanel / 2;
+      const { x: cx, y: cy } = layout.card(i);
+      const { x, y } = layout.icon(i);
 
       this._panel(ctx, cx, cy, cardW, cardH, _rPanel);
 
@@ -208,9 +255,9 @@ export class ClosetRenderer {
         const pi = placeholderItems[i];
         if (!pi) { return; }
         const mappedIcon = pi.icon ? iconLookup(pi.icon) : undefined;
-        const placeholderImg = imageLookup(placeholders[i]);
+        const placeholderImg = imageLookup(pi.guid);
         if (!placeholderImg && !mappedIcon) { return; }
-        ctx.globalAlpha = 0.22;
+        ctx.globalAlpha = SQUARE_PLACEHOLDER_ALPHA;
         if (mappedIcon) {
           const sheet = imgSheets[mappedIcon.file];
           ctx.drawImage(sheet, mappedIcon.x, mappedIcon.y, 128, 128, x, y, _wItem, _wItem);
@@ -242,7 +289,7 @@ export class ClosetRenderer {
         }
       } else {
         drawPlaceholder();
-        ctx.globalAlpha = 0.85;
+        ctx.globalAlpha = SQUARE_UNKNOWN_ALPHA;
         ctx.drawImage(imgUnknown, x, y, _wItem, _wItem);
         ctx.globalAlpha = 1;
       }
@@ -401,8 +448,8 @@ export class ClosetRenderer {
   // ── Items ─────────────────────────────────────────────────────────────────
 
   private _drawDyeRow(ctx: CanvasRenderingContext2D, x: number, y: number, dye: IDye): void {
-    this._drawDye(ctx, dye.primary, x + 2, y);
-    this._drawDye(ctx, dye.secondary, x + _wItem - _wDye - 2, y);
+    this._drawDye(ctx, dye.primary, x + _xDyes[0], y);
+    this._drawDye(ctx, dye.secondary, x + _xDyes[1], y);
   }
 
   private _drawDye(ctx: CanvasRenderingContext2D, dye: DyeColor | undefined, dx: number, dy: number): void {

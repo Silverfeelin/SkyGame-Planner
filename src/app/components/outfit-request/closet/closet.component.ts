@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { MatIcon, MatIconRegistry } from '@angular/material/icon';
@@ -20,9 +20,19 @@ import { drawFingerprint } from '@app/components/outfit-request/closet-fingerpri
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { startClosetTour } from './closet-tour';
+import { ClosetSquareReader } from './closet-square-reader';
+import { isEditableTarget, isScreenshotFile, PASTE_KEY, screenshotsFromClipboard } from '@app/components/quick-start/closet/closet-files';
+import { IDye } from '@app/interfaces/dye.interface';
 
 type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
 const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
+
+interface IImageRead {
+  status: 'reading' | 'failed' | 'done';
+  preview: string;
+  matched?: number;
+  unsure?: string[];
+}
 
 @Component({
   selector: 'app-closet',
@@ -31,6 +41,11 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   providers: [ClosetStateService],
+  host: {
+    '(document:paste)': 'onPaste($event)',
+    '(dragover)': 'onDragOver($event)',
+    '(drop)': 'onDrop($event)'
+  },
   imports: [
     RouterLink, MatIcon,
     ClosetToolbarComponent,
@@ -63,6 +78,11 @@ export class ClosetComponent implements OnDestroy {
 
   private _serializer!: ClosetSerializer;
   private _bgListener: ((e: Event) => void) | null = null;
+
+  readonly pasteKey = PASTE_KEY;
+  readonly imageRead = signal<IImageRead | undefined>(undefined);
+  private _squareReader?: ClosetSquareReader;
+  private _imageReadId = 0;
 
   // Mode from route data (closet mode host only shows closet; request mode shows both)
   readonly requesting = false;
@@ -126,6 +146,7 @@ export class ClosetComponent implements OnDestroy {
     if (this._bgListener) {
       document.removeEventListener('atmos-bg-change', this._bgListener);
     }
+    this.dismissImageRead();
   }
 
   // ── Background ────────────────────────────────────────────────────────────
@@ -276,6 +297,97 @@ export class ClosetComponent implements OnDestroy {
     });
     state.dyes.set(dyeMap);
     state.dyeClasses.set(dyeClasses);
+  }
+
+  // ── Read one-fit image ────────────────────────────────────────────────────
+
+  onPaste(event: ClipboardEvent): void {
+    if (isEditableTarget(event.target)) { return; }
+    const file = screenshotsFromClipboard(event)[0];
+    if (!file) { return; }
+    event.preventDefault();
+    this.readImage(file);
+  }
+
+  onDragOver(event: DragEvent): void {
+    if (!event.dataTransfer?.types.includes('Files')) { return; }
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'copy';
+  }
+
+  onDrop(event: DragEvent): void {
+    const file = Array.from(event.dataTransfer?.files ?? []).find(isScreenshotFile);
+    if (!file) { return; }
+    event.preventDefault();
+    this.readImage(file);
+  }
+
+  /** Replaces the selection with the items shown in a "one fit" image. */
+  async readImage(file: File): Promise<void> {
+    if (!isScreenshotFile(file)) { alert('Please use a PNG, JPEG or WebP image.'); return; }
+    this.dismissImageRead();
+    const id = ++this._imageReadId;
+    const preview = URL.createObjectURL(file);
+    this.imageRead.set({ status: 'reading', preview });
+
+    try {
+      this._squareReader ??= this._createSquareReader();
+      const slots = await this._squareReader.read(file);
+      if (id !== this._imageReadId) { return; }
+      if (!slots) { this.imageRead.set({ status: 'failed', preview }); return; }
+
+      const found = slots.filter(slot => slot.item);
+      const items = found.map(slot => slot.item!);
+      const dyes = found.reduce((m, slot) => {
+        if (slot.dyes) { m[slot.item!.guid] = slot.dyes; }
+        return m;
+      }, {} as Record<string, IDye[]>);
+
+      const s = this._serializer;
+      const r = items.reduce((m, item) => (m[item.guid] = item, m), {} as Record<string, IItem>);
+      const available = this.state.available();
+      this._loadFromObj({
+        a: available ? s.serializeItems(Object.values(available)) : '',
+        r: s.serializeItems(items), y: '', g: '', b: '',
+        d: s.serializeDyes({ r, y: {}, g: {}, b: {} }, dyes)
+      });
+      this._updateUrl();
+
+      this.imageRead.set({
+        status: 'done', preview,
+        matched: items.filter(item => item.order !== -1).length,
+        unsure: slots.filter(slot => !slot.sure).map(slot => slot.label)
+      });
+    } catch (e) {
+      console.error(e);
+      if (id === this._imageReadId) { this.imageRead.set({ status: 'failed', preview }); }
+    }
+  }
+
+  dismissImageRead(): void {
+    const read = this.imageRead();
+    if (read) { URL.revokeObjectURL(read.preview); }
+    this.imageRead.set(undefined);
+  }
+
+  private _createSquareReader(): ClosetSquareReader {
+    const markerHost = this._el.nativeElement.querySelector('.atmos-closet-item') ?? document.body;
+    const style = getComputedStyle(markerHost);
+    const dyeColors = DYE_COLORS.reduce((m, dye) => {
+      m[dye] = style.getPropertyValue(`--atmos-dye-${dye}`).trim();
+      return m;
+    }, {} as Record<string, string>);
+
+    return new ClosetSquareReader({
+      items: this.state.items(),
+      itemMap: this.state.itemMap(),
+      imgSheets: this._imgSheets,
+      iconLookup: (icon) => this._iconService.getIcon(icon),
+      imgNone: this._imgNone,
+      imgUnknown: this._imgUnknown,
+      svgDyes: this._svgDyes,
+      dyeColors
+    });
   }
 
   // ── Toggle item ───────────────────────────────────────────────────────────
