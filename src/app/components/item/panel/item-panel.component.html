@@ -1,0 +1,30 @@
+@let itm = item();
+
+<aside class="atmos-card atmos-item-panel" [attr.aria-label]="itm.name" (keydown)="onKeydown($event)">
+  <div #body class="atmos-item-panel__body" tabindex="-1">
+    <h2 class="atmos-item-panel__title">{{ itm.name }}</h2>
+
+    <div class="atmos-item-panel__actions">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/item', itm.guid]">
+        <span>Open item page</span>
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+      <div class="atmos-item-panel__steps">
+        <button type="button" class="atmos-icon-btn" [disabled]="!previous()" (click)="select(previous())"
+          aria-label="Previous item" [skyTooltip]="previous()?.name">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button type="button" class="atmos-icon-btn" [disabled]="!next()" (click)="select(next())"
+          aria-label="Next item" [skyTooltip]="next()?.name">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <app-item-summary [item]="itm" />
+
+    @if (itm.dye) {
+      <app-item-dye-versions [item]="itm" />
+    }
+  </div>
+</aside>

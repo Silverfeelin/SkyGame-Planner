@@ -4,12 +4,21 @@
   <h1 class="atmos-page__title">Items</h1>
 </header>
 
-<app-item-grid-layout [items]="items" [itemTemplate]="iconTpl"/>
+<div class="atmos-item-grid__split" [class.has-panel]="panelLayout()">
+  <app-item-grid-layout [items]="items" [itemTemplate]="iconTpl" [narrow]="panelLayout()"
+    (shownItemsChanged)="shownItems.set($event)"/>
+
+  @if (selected(); as item) {
+    <app-item-panel [item]="item" [items]="shownItems()" (itemSelected)="selectItem($event)" />
+  }
+</div>
+
 <ng-template #iconTpl let-item>
   <a class="atmos-item-grid__item atmos-tile"
      [class.is-locked]="!item.unlocked"
-     [routerLink]="['/item', item.guid]"
-     [skyTooltip]="item.name" [attr.aria-label]="item.name">
+     [href]="'/item/' + item.guid"
+     (click)="tip.close(); openItem($event, item)"
+     [skyTooltip]="item.name" #tip="skyTooltip" [attr.aria-label]="item.name">
     <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [opaque]="true" size="default"/>
   </a>
 </ng-template>

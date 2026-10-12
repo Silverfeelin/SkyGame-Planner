@@ -87,6 +87,22 @@
   </div>
 </section>
 
+<!-- Items -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>checkroom</mat-icon> Items</h2>
+    <p class="atmos-paragraph">
+      The <a class="atmos-text-link" routerLink="/item">Items</a> page shows item details in a panel beside the list.
+      Clicking an item shows it there instead of opening the item page. Only available on screens at least 1280 pixels wide.
+    </p>
+    <div class="atmos-settings__btn-row">
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="itemPanel" (click)="toggleItemPanel()">
+        <mat-icon>{{ itemPanel ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show item details in a side panel
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- Date -->
 <section class="atmos-card">
   <div class="atmos-card__body">

@@ -39,7 +39,10 @@ export const ITEM_GRID_TYPES: ReadonlySet<ItemType> = new Set(ITEM_GRID_CATEGORI
   templateUrl: './item-grid-layout.component.html',
   styleUrl: './item-grid-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, LowerCasePipe, MatIcon, ItemTypePipe, ItemTypeNavComponent, ItemFiltersComponent]
+  imports: [NgTemplateOutlet, LowerCasePipe, MatIcon, ItemTypePipe, ItemTypeNavComponent, ItemFiltersComponent],
+  host: {
+    '[class.is-narrow]': 'narrow()'
+  }
 })
 export class ItemGridLayoutComponent implements OnInit {
   readonly categories = ITEM_GRID_CATEGORIES;
@@ -51,6 +54,8 @@ export class ItemGridLayoutComponent implements OnInit {
   readonly filterable = input<boolean>(true);
   /*** Mirror the active category in the `type` query parameter. */
   readonly syncCategoryToUrl = input<boolean>(true);
+  /** Use the tablet layout regardless of the window, for hosts that share their width with a side panel. */
+  readonly narrow = input<boolean>(false);
 
   readonly categoryChanged = output<ItemType>();
   /** The items of the active category that survive the filters, in display order. */

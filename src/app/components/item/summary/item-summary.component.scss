@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  container-type: inline-size;
+}
+
+// An item preview is a character render in portrait, so its column is a fixed
+// width rather than the fraction wide key art gets on the season and event pages.
+.atmos-item-summary__card {
+  --atmos-summary-media: 200px;
+}
+
+// The shared grid only stacks on narrow windows; the item panel is narrow on a
+// wide window, so the card stacks on its own width as well.
+@container (max-width: 520px) {
+  .atmos-summary__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// Items without a preview fall back to the icon, which is far smaller than a
+// render and would otherwise leave the tile looking empty.
+.atmos-item-summary__art {
+  position: relative;
+  min-height: var(--atmos-summary-art-h);
+}
+
+// A preview shows the item worn rather than the inventory icon, so the icon is
+// pinned to the corner of the render to identify it.
+.atmos-item-summary__art-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.atmos-fact__icon.is-favourited {
+  color: var(--atmos-warm);
+}
+
+.atmos-item-summary__season-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.atmos-item-summary__code {
+  cursor: pointer;
+  transition: opacity var(--atmos-transition);
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// Wraps onto its own line as a whole rather than breaking between its words.
+.atmos-item-summary__goal-link {
+  white-space: nowrap;
+}

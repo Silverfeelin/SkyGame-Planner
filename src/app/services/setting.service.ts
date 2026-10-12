@@ -11,12 +11,14 @@ export class SettingService {
   _debugVisible = false;
   _debugMapCopyCoordinates = false;
   _dailyCandleAmount = 0;
+  _itemPanel = false;
 
   constructor() {
     this._wikiNewTab = localStorage.getItem('wiki.newtab') !== '0';
     this._debugVisible = localStorage.getItem('debug.visible') === '1';
     this._debugMapCopyCoordinates = localStorage.getItem('debug.map-copy-coordinates') === '1';
     this._dailyCandleAmount = parseInt(localStorage.getItem('setting.daily-candle-amount') || '0', 10) || 0;
+    this._itemPanel = localStorage.getItem('setting.item-panel') === '1';
   }
 
   get wikiNewTab(): boolean {
@@ -56,6 +58,16 @@ export class SettingService {
   set dailyCandleAmount(value: number) {
     this._dailyCandleAmount = Math.max(0, value);
     localStorage.setItem('setting.daily-candle-amount', String(this._dailyCandleAmount));
+    this.settingChanged.next();
+  }
+
+  get itemPanel(): boolean {
+    return this._itemPanel;
+  }
+
+  set itemPanel(value: boolean) {
+    this._itemPanel = value;
+    localStorage.setItem('setting.item-panel', value ? '1' : '0');
     this.settingChanged.next();
   }
 }

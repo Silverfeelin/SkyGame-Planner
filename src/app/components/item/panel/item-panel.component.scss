@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  position: sticky;
+  top: calc(var(--atmos-sticky-top) + var(--atmos-main-pad-y, 0px));
+}
+
+.atmos-item-panel {
+  max-height: calc(100dvh - var(--atmos-sticky-top) - 2 * var(--atmos-main-pad-y, 0px));
+  background: var(--atmos-card-bg-solid);
+  animation: atmos-item-panel-in 180ms ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes atmos-item-panel-in {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.atmos-item-panel__body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--atmos-pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+
+  &:focus { outline: none; }
+}
+
+.atmos-item-panel__title {
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.atmos-item-panel__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.atmos-item-panel__steps {
+  display: flex;
+  gap: 4px;
+
+  .atmos-icon-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    background: none;
+  }
+}

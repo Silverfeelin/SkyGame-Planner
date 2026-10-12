@@ -47,6 +47,7 @@ export class SettingsComponent implements OnDestroy {
   debugVisible = false;
   debugMapCopyCoordinates = false;
   dailyCandleAmount: number;
+  itemPanel = false;
 
   pwaInstallPrompt?: any = (window as any).pwaInstallPrompt;
 
@@ -63,6 +64,7 @@ export class SettingsComponent implements OnDestroy {
     this.debugVisible = _settingService.debugVisible;
     this.debugMapCopyCoordinates = _settingService.debugMapCopyCoordinates;
     this.dailyCandleAmount = _settingService.dailyCandleAmount;
+    this.itemPanel = _settingService.itemPanel;
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
@@ -250,6 +252,11 @@ export class SettingsComponent implements OnDestroy {
   toggleWikiTab(): void {
     this.wikiNewTab = !this.wikiNewTab;
     this._settingService.wikiNewTab = this.wikiNewTab;
+  }
+
+  toggleItemPanel(): void {
+    this.itemPanel = !this.itemPanel;
+    this._settingService.itemPanel = this.itemPanel;
   }
 
   viewKeyboardShortcuts(): void {

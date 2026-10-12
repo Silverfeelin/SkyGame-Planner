@@ -23,3 +23,14 @@
     opacity: 0.35;
   }
 }
+
+.atmos-item-grid__split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--atmos-gap);
+  align-items: start;
+
+  &.has-panel {
+    grid-template-columns: minmax(0, 1fr) clamp(360px, 30vw, 480px);
+  }
+}

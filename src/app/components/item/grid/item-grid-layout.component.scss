@@ -177,7 +177,7 @@ app-item-type-nav {
 }
 
 /* Tablet & mobile: hide rail, switch card to column flow, show pill strip. */
-@media (max-width: 1023px) {
+@mixin narrow-layout {
   .atmos-item-grid__card {
     flex-direction: column;
   }
@@ -193,4 +193,12 @@ app-item-type-nav {
   app-item-type-nav {
     display: block;
   }
+}
+
+@media (max-width: 1023px) {
+  @include narrow-layout;
+}
+
+:host(.is-narrow) {
+  @include narrow-layout;
 }
