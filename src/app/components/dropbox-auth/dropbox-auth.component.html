@@ -1,0 +1,71 @@
+<div class="atmos-dbx__bg" aria-hidden="true"></div>
+<div class="atmos-dbx__vignette" aria-hidden="true"></div>
+
+<main class="atmos-dbx__main">
+  <article class="atmos-card atmos-dbx__card">
+    <div class="atmos-card__body atmos-dbx__body">
+      <header class="atmos-dbx__header">
+        <h1 class="atmos-dbx__title">Connect to Dropbox</h1>
+      </header>
+
+      <a class="atmos-text-link atmos-dbx__back" routerLink="/storage">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Return to Storage</span>
+      </a>
+
+      <p class="atmos-paragraph">
+        Please click on the Link to Dropbox button below to connect through the Dropbox website.
+      </p>
+      <p class="atmos-paragraph">
+        You are currently
+        @if (isAuthenticated()) {
+          <strong class="atmos-dbx__state atmos-dbx__state--on">connected</strong>
+        } @else {
+          <strong class="atmos-dbx__state atmos-dbx__state--off">not connected</strong>
+        }
+        to Dropbox.
+      </p>
+      <p class="atmos-paragraph">
+        You can make the website forget the credentials by clicking the reset button.
+        You should also revoke access from the Dropbox page that opens.
+      </p>
+
+      <div class="atmos-dbx__actions">
+        <button type="button" class="atmos-btn" (click)="login()">
+          <mat-icon>link</mat-icon>
+          <span>Link to Dropbox</span>
+        </button>
+        <button type="button" class="atmos-btn" (click)="reset()">
+          <mat-icon>link_off</mat-icon>
+          <span>Unlink Dropbox</span>
+        </button>
+        <a class="atmos-btn" target="_blank" rel="noopener" href="https://www.dropbox.com/account/connected_apps">
+          <mat-icon>open_in_new</mat-icon>
+          <span>View connected apps on Dropbox</span>
+        </a>
+      </div>
+
+      @if (isAuthenticated() && isUsingDropbox()) {
+        <a class="atmos-text-link atmos-dbx__home" routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Go to dashboard</span>
+        </a>
+      }
+    </div>
+  </article>
+
+  @if (error()) {
+    <article class="atmos-card atmos-dbx__card atmos-dbx__error">
+      <div class="atmos-card__body atmos-dbx__body">
+        <header class="atmos-dbx__header">
+          <h2 class="atmos-dbx__title">Authorization failed</h2>
+        </header>
+        <p class="atmos-paragraph">Dropbox reported the following. Please try again or report this issue.</p>
+        <p class="atmos-paragraph">
+          Error: <code class="atmos-dbx__code">{{ error() }}</code><br/>
+          Description: <code class="atmos-dbx__code">{{ errorDescription() }}</code>
+        </p>
+      </div>
+    </article>
+  }
+</main>

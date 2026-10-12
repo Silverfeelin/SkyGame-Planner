@@ -1,0 +1,57 @@
+<header class="atmos-topbar">
+  <button class="atmos-topbar__button atmos-focus-ring" type="button" (click)="toggleDrawer()" aria-label="Menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button
+    class="atmos-topbar__button atmos-focus-ring"
+    type="button"
+    (click)="goBack()"
+    aria-label="Go back">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <a class="atmos-topbar__title atmos-focus-ring" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+    <span>Sky Planner</span>
+  </a>
+</header>
+
+@if (drawerOpen()) {
+  <div class="atmos-drawer" (click)="closeDrawer()">
+    <nav class="atmos-drawer__panel" (click)="$event.stopPropagation()" aria-label="Primary">
+      <button class="atmos-drawer__item atmos-drawer__close" type="button" (click)="closeDrawer()">
+        <mat-icon>close</mat-icon>
+        <span>Close menu</span>
+      </button>
+
+      <app-nav-tree mode="full" (navigate)="closeDrawer()" />
+
+      <hr class="atmos-drawer__divider" />
+
+      @for (item of nav.footer; track item.id) {
+        @if (item.external) {
+          <a
+            class="atmos-drawer__item"
+            [href]="item.link"
+            target="_blank"
+            rel="noopener"
+            (click)="closeDrawer()">
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span>{{ item.label }}</span>
+          </a>
+        } @else {
+          <a
+            class="atmos-drawer__item"
+            [routerLink]="item.link"
+            routerLinkActive="is-active"
+            (click)="closeDrawer()">
+            @if (item.svgIcon) {
+              <mat-icon [svgIcon]="item.svgIcon"></mat-icon>
+            } @else {
+              <mat-icon>{{ item.icon }}</mat-icon>
+            }
+            <span>{{ item.label }}</span>
+          </a>
+        }
+      }
+    </nav>
+  </div>
+}

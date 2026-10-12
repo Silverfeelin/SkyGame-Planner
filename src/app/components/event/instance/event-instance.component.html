@@ -1,0 +1,183 @@
+@if (instance(); as inst) {
+  <app-section-quick-actions section="event" />
+
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">
+      {{ inst.name ?? inst.event.name }}
+      <span class="atmos-event-instance__year"><app-date [date]="inst.date" [format]="'yyyy'"></app-date></span>
+    </h1>
+  </header>
+
+  @if (inst.draft) {
+    <app-draft-warning />
+  }
+
+  <section class="atmos-card atmos-event-instance__summary">
+    <div class="atmos-summary__grid">
+      <div class="atmos-card__body atmos-summary__main">
+        <div class="atmos-facts">
+          <div class="atmos-fact-row">
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Year</div>
+              <div class="atmos-fact__value">
+                <mat-icon class="atmos-fact__icon">event_repeat</mat-icon>
+                <span class="atmos-fact__text"><app-date [date]="inst.date" [format]="'yyyy'"></app-date></span>
+              </div>
+            </div>
+            <div class="atmos-fact atmos-fact--wide">
+              <div class="atmos-fact__label">Duration</div>
+              <div class="atmos-fact__value atmos-fact__value--wrap">
+                <mat-icon class="atmos-fact__icon">calendar_month</mat-icon>
+                <span><app-date-range [start]="inst.date" [end]="inst.endDate"></app-date-range></span>
+                <span class="atmos-fact__meta">
+                  (<app-duration [start]="inst.date" [end]="inst.endDate"></app-duration> ·
+                  <app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
+                </span>
+              </div>
+            </div>
+          </div>
+          @if (inst.event) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Event</div>
+              <a class="atmos-fact__value" [routerLink]="['/event', inst.event.guid]">
+                <mat-icon class="atmos-fact__icon">event</mat-icon>
+                <span class="atmos-fact__text atmos-text-link">{{ inst.event.name }}</span>
+              </a>
+            </div>
+          }
+
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Event currency</div>
+            <div class="atmos-fact__value">
+              <mat-icon svgIcon="ticket" class="currency"></mat-icon>
+              <span>{{ ec() }}</span>
+              @if (ecLeft()) { <span class="atmos-fact__meta">({{ ecLeft() }} needed)</span> }
+            </div>
+          </div>
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Candles</div>
+            <div class="atmos-fact__value">
+              <mat-icon svgIcon="candle" class="currency"></mat-icon>
+              <span>{{ c() }}</span>
+              @if (cLeft()) { <span class="atmos-fact__meta">({{ cLeft() }} needed)</span> }
+            </div>
+          </div>
+          @if (h()) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Hearts</div>
+              <div class="atmos-fact__value">
+                <mat-icon svgIcon="heart" class="currency"></mat-icon>
+                <span>{{ h() }}</span>
+                @if (hLeft()) { <span class="atmos-fact__meta">({{ hLeft() }} needed)</span> }
+              </div>
+            </div>
+          }
+          @if (ac()) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Ascended candles</div>
+              <div class="atmos-fact__value">
+                <mat-icon svgIcon="ascended-candle" class="currency"></mat-icon>
+                <span>{{ ac() }}</span>
+                @if (acLeft()) { <span class="atmos-fact__meta">({{ acLeft() }} needed)</span> }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      @if (inst.event.imageUrl) {
+        <div class="atmos-summary__preview" [style.background-image]="imageStyle()"></div>
+      }
+    </div>
+
+    @if (previousInstance() || nextInstance() || (inst.calculatorData && (state() === 'active' || state() === 'future')) || inst.event._wiki?.href || inst._calendar?.href) {
+      <div class="atmos-summary__actions">
+        @if (previousInstance(); as prev) {
+          <a class="atmos-summary__action" [routerLink]="['/event-instance', prev.guid]">
+            <mat-icon>arrow_back</mat-icon> Previous year
+          </a>
+        }
+        @if (nextInstance(); as nxt) {
+          <a class="atmos-summary__action" [routerLink]="['/event-instance', nxt.guid]">
+            <mat-icon>arrow_forward</mat-icon> Next year
+          </a>
+        }
+        @if (inst.calculatorData && (state() === 'active' || state() === 'future')) {
+          <a class="atmos-summary__action" routerLink="/event/calculator" [queryParams]="{ guid: inst.guid }">
+            <mat-icon>calculate</mat-icon> Event Calculator
+          </a>
+        }
+        @if (inst.event._wiki?.href; as wikiHref) {
+          <a class="atmos-summary__action atmos-summary__action--end" [href]="wikiHref" target="_blank" rel="noopener">
+            <mat-icon>open_in_new</mat-icon> Wiki
+          </a>
+        }
+        @if (inst._calendar?.href; as calendarHref) {
+          <a class="atmos-summary__action" [class.atmos-summary__action--end]="!inst.event._wiki?.href"
+             [href]="calendarHref" target="_blank" rel="noopener">
+            <mat-icon>open_in_new</mat-icon> Sky Event Calendar | FM
+          </a>
+        }
+      </div>
+    }
+  </section>
+
+  @if (inst.spirits?.length) {
+    <section class="atmos-card atmos-event-instance__section">
+      <header class="atmos-event-instance__section-header">
+        <h2 class="atmos-section__title atmos-section__title--lg">Spirits</h2>
+      </header>
+      <div class="atmos-card__body atmos-event-instance__section-body">
+        <div class="atmos-spirit-trees atmos-event-instance__trees">
+          @for (spirit of inst.spirits; track spirit.guid) {
+            <div class="atmos-event-instance__tree">
+              <app-spirit-tree
+                [tree]="spirit.tree"
+                [name]="spirit.name || spirit.tree.name || spirit.spirit.name"
+                [highlightItem]="highlightItem()"></app-spirit-tree>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  @if (shops().length) {
+    <section class="atmos-card atmos-event-instance__section">
+      <header class="atmos-event-instance__section-header">
+        <h2 class="atmos-section__title atmos-section__title--lg">Shops</h2>
+      </header>
+      <div class="atmos-card__body atmos-event-instance__section-body">
+        @for (shop of shops(); track shop.guid) {
+          <app-item-list [itemList]="shop.itemList!"></app-item-list>
+        }
+      </div>
+    </section>
+  }
+
+  @if (iapShops().length) {
+    <section class="atmos-card atmos-event-instance__section">
+      <header class="atmos-event-instance__section-header">
+        <h2 class="atmos-section__title atmos-section__title--lg">In-App Purchases</h2>
+      </header>
+      <div class="atmos-card__body atmos-event-instance__section-body">
+        <div class="atmos-event-instance__iap-grid">
+          @for (shop of iapShops(); track shop.guid) {
+            @for (iap of shop.iaps; track iap.guid) {
+              <app-iap-card
+                [iap]="iap"
+                [highlightIap]="highlightIap()"
+                (purchasedToggle)="togglePurchased(iap)"
+                (giftedToggle)="toggleGifted(iap)"></app-iap-card>
+            }
+          }
+        </div>
+      </div>
+    </section>
+  }
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Event instance</h1>
+  </header>
+  <p class="atmos-paragraph">Event instance not found. <a class="atmos-text-link" routerLink="/event">Back to events</a></p>
+}

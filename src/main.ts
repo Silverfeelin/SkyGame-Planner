@@ -9,19 +9,26 @@ import { routes } from './app/app-routes';
 import { provideServiceWorker } from '@angular/service-worker';
 import { isDevMode } from '@angular/core';
 import { loadTheme } from './themes';
+import { loadThemeOverrides } from './theme-overrides';
 import { loadDataUrl } from './data-url';
+import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
+import { checkPages } from './app/navigation/check-pages';
 // #endregion
 
-// Load theme.
 loadTheme();
+loadThemeOverrides();
 
 // Load custom data.
 loadDataUrl();
+
+if (isDevMode()) { checkPages(routes); }
 
 addEventListener('beforeinstallprompt', evt => {
   evt.preventDefault();
   (window as any).pwaInstallPrompt = evt;
 });
+
+ModuleRegistry.registerModules([ AllCommunityModule ]);
 
 bootstrapApplication(AppComponent, {
   providers: [

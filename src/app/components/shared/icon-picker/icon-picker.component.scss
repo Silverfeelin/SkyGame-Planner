@@ -1,0 +1,58 @@
+:host {
+  position: relative;
+  display: inline-block;
+}
+
+.atmos-icon-picker {
+  position: relative;
+  /* Lifts the overlay above siblings that come after it in the document. */
+  z-index: 5;
+  width: fit-content;
+  gap: var(--atmos-gap-compact);
+  padding: var(--atmos-pad-compact);
+}
+
+.atmos-icon-picker__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1;
+}
+
+.atmos-icon-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(5, var(--item-size));
+  grid-auto-rows: var(--item-size);
+  min-height: calc(var(--item-size) * 3 + 8px);
+  gap: 4px;
+  /* Keep the first row clear of the absolutely positioned close button. */
+  padding-right: 28px;
+  overflow-y: auto;
+}
+
+.atmos-icon-picker__icon {
+  cursor: pointer;
+  border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-tile-bg-hover);
+  }
+}
+
+.atmos-icon-picker__search {
+  position: relative;
+
+  mat-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .atmos-input {
+    width: 100%;
+    padding-left: 36px;
+  }
+}

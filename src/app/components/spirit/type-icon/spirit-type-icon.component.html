@@ -1,0 +1,18 @@
+<ng-container [ngSwitch]="type">
+  <mat-icon *ngSwitchCase="'Regular'" [svgIcon]="'candle'"
+    [skyTooltip]="'Regular Spirit'" placement="bottom">
+  </mat-icon>
+  <mat-icon *ngSwitchCase="'Special'" [svgIcon]="'candle'"
+    [skyTooltip]="'Special Spirit'" placement="bottom">
+  </mat-icon>
+  <mat-icon *ngSwitchCase="'Elder'" [svgIcon]="'ascended-candle'"
+    [skyTooltip]="'Elder Spirit'" placement="bottom">
+  </mat-icon>
+  <mat-icon *ngSwitchCase="'Guide'" [svgIcon]="'season-heart'"
+    [skyTooltip]="'Season Guide'" placement="bottom">
+  </mat-icon>
+  <mat-icon *ngSwitchCase="'Season'" [svgIcon]="'season-candle'"
+    [skyTooltip]="'Seasonal Spirit'" placement="bottom">
+  </mat-icon>
+  <span *ngSwitchDefault></span>
+</ng-container>

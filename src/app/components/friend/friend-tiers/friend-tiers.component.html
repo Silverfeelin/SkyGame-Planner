@@ -1,0 +1,72 @@
+<div class="atmos-friend-tiers">
+  @for (tier of tiers(); track tier.tier) {
+    <section class="atmos-friend-tiers__tier" [attr.aria-label]="'Tier ' + tier.tier">
+      <div class="atmos-friend-tiers__label">
+        <span class="atmos-friend-tiers__label-name">Tier {{ tier.tier }}</span>
+        <span class="atmos-friend-tiers__label-count">{{ tier.owned }}/{{ tier.total }}</span>
+      </div>
+
+      <div class="atmos-friend-tiers__body">
+        <div class="atmos-friend-tiers__grid">
+          @for (row of tier.rows; track $index) {
+            <div class="atmos-friend-tiers__row">
+              @for (view of row; track view.entry.key) {
+                <div class="atmos-friend-tiers__tile"
+                     [attr.data-entry]="view.entry.key"
+                     [attr.data-state]="view.state"
+                     [class.is-flashed]="flashedKey() === view.entry.key">
+                  <app-node
+                    [node]="view.node"
+                    [action]="'emit'"
+                    [drawConnectors]="false"
+                    (nodeClicked)="tileClicked(view)"></app-node>
+
+                  @if (view.rail.length) {
+                    <div class="atmos-friend-tiers__rail">
+                      @for (rail of view.rail; track rail.group.from) {
+                        <div class="atmos-friend-tiers__rail-group" [style.flex-grow]="rail.pips.length">
+                          @for (pip of rail.pips; track pip.level) {
+                            <div class="atmos-friend-tiers__level">
+                              <span class="atmos-friend-tiers__level-cost">{{ pip.cost?.amount }}</span>
+                              <button type="button" class="atmos-friend-tiers__pip"
+                                      [class.is-on]="pip.on"
+                                      [attr.aria-pressed]="pip.on"
+                                      [attr.aria-label]="'Set ' + view.entry.name + ' to level ' + pip.level"
+                                      [skyTooltip]="pip.tooltip"
+                                      (click)="pipClicked(view, pip.level)">{{ pip.level }}</button>
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+
+        @if (tier.hints.length) {
+          <div class="atmos-friend-tiers__hints">
+            @for (hint of tier.hints; track hint.entry.key + hint.group.from) {
+              <button type="button" class="atmos-friend-tiers__hint atmos-focus-ring"
+                      [class.is-done]="hint.done"
+                      [skyTooltip]="'Unlocks in this tier. Set it on ' + hint.entry.name + ' in tier ' + hint.entry.tier + '.'"
+                      (click)="hintClicked(hint)">
+                <mat-icon>arrow_downward</mat-icon>
+                {{ hint.entry.name }} {{ hint.levels }}
+                @if (hint.group.cost; as cost) {
+                  <span class="atmos-friend-tiers__hint-cost"><mat-icon [svgIcon]="cost.icon"></mat-icon>{{ cost.amount }}</span>
+                }
+              </button>
+            }
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  <footer class="atmos-friend-tiers__footer">
+    <app-cost class="atmos-friend-tiers__cost" [cost]="totalCost()" [remaining]="remainingCost()"></app-cost>
+  </footer>
+</div>

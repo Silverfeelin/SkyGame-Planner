@@ -1,0 +1,10 @@
+<div class="atmos-qs-nav">
+  @if (store.step() > 0) {
+    <button type="button" class="atmos-btn" (click)="back()">
+      <mat-icon>arrow_back</mat-icon>Back
+    </button>
+  }
+  <button type="button" class="atmos-btn atmos-btn--active" [disabled]="nextDisabled()" (click)="forward()">
+    {{ nextLabel() }}<mat-icon>{{ nextIcon() }}</mat-icon>
+  </button>
+</div>

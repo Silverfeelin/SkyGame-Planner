@@ -128,7 +128,7 @@ export class CurrencyService {
     }
     span.style.top = `${evt.clientY}px`;
     span.style.left = `${evt.clientX}px`;
-    span.classList.add(value < 0 ? 'c-old' : 'c-new');
+    span.classList.add(value < 0 ? 'atmos-text-warm' : 'atmos-text-good');
     document.body.appendChild(span);
     const interval = setInterval(() => {
       const top = parseInt(span.style.top, 10);

@@ -1,0 +1,11 @@
+<button
+  type="button"
+  class="atmos-daily-checkin"
+  [class.is-checked]="checkedIn()"
+  [attr.aria-pressed]="checkedIn()"
+  (click)="onClick($event)">
+  <span class="atmos-daily-checkin__box">
+    @if (checkedIn()) { <mat-icon>check</mat-icon> }
+  </span>
+  <span class="atmos-daily-checkin__label">{{ label() }}</span>
+</button>

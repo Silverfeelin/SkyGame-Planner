@@ -1,0 +1,125 @@
+<section class="atmos-card" id="dye-versions">
+  <div class="atmos-card__body">
+    <div class="atmos-item-dye-versions__header">
+      <div>
+        <h2 class="atmos-section__title">Dye versions</h2>
+        <p class="atmos-item-dye-versions__hint">Record your dyed versions of this {{ item().type | itemType | lowercase }}.</p>
+      </div>
+      <div class="atmos-item-dye-versions__actions">
+        <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="!versions()[0] && !versions()[1]" (click)="swapVersions()">
+          <mat-icon>swap_horiz</mat-icon> Swap versions
+        </button>
+        @if (item().dye?.previewUrl || item().dye?.infoUrl) {
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="previewImage.set(item().dye?.previewUrl ? 'preview' : 'info')">
+            <mat-icon>image</mat-icon> Dye preview
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="atmos-item-dye-versions__tiles">
+      <button type="button" class="atmos-item-dye-versions__tile atmos-tile atmos-tile--selectable"
+        [class.is-selected]="selected() === 0" [attr.aria-pressed]="selected() === 0"
+        (click)="selected.set(0)">
+        <span class="atmos-item-dye-versions__tile-name"><mat-icon>lock</mat-icon> Default</span>
+        @for (slot of slots(); track slot) {
+          <span class="atmos-item-dye-versions__slot">
+            <span class="atmos-item-dye-versions__slot-label">{{ slot }}</span>
+            <span class="atmos-text-mute">Original colors</span>
+          </span>
+        }
+      </button>
+
+      @for (v of CUSTOM_VERSIONS; track v) {
+        @let version = versions()[v - 1];
+        @let swatch = swatches()[v - 1];
+        <button type="button" class="atmos-item-dye-versions__tile atmos-tile atmos-tile--selectable"
+          [class.is-selected]="selected() === v" [attr.aria-pressed]="selected() === v"
+          (click)="selected.set(v)">
+          @if (swatch) {
+            <span class="atmos-item-dye-versions__swatch-circle" [style.background]="swatch"></span>
+          }
+          <span class="atmos-item-dye-versions__tile-name">
+            Version {{ v }}
+            @if (!version) { <span class="atmos-item-dye-versions__unset">Not set</span> }
+          </span>
+          @for (slot of slots(); track slot; let slotIndex = $index) {
+            @let dye = version?.[slotIndex];
+            <span class="atmos-item-dye-versions__slot">
+              <span class="atmos-item-dye-versions__slot-label">{{ slot }}</span>
+              @if (!version) {
+                <span class="atmos-text-mute">–</span>
+              } @else if (dye?.primary) {
+                <span class="atmos-item-dye-versions__blend">
+                  @for (row of DYE_ROWS; track row.type) {
+                    @let color = dye?.[row.type];
+                    <mat-icon [class]="color ? 'dye-' + color : ''" [svgIcon]="color ? 'dye-' + color : 'none'"
+                      [skyTooltip]="color ? (color | titlecase) : 'No dye'"
+                      [attr.aria-label]="row.label + ': ' + (color ?? 'none')"></mat-icon>
+                  }
+                </span>
+              } @else {
+                <span class="atmos-text-mute">Undyed</span>
+              }
+            </span>
+          }
+        </button>
+      }
+    </div>
+
+    @if (selected() === 0) {
+      <p class="atmos-item-dye-versions__hint">
+        The default version uses the original colors and can't be changed.
+      </p>
+    } @else {
+      <div class="atmos-item-dye-versions__pickers">
+        @for (slot of slots(); track slot; let slotIndex = $index) {
+          @let dye = selectedVersion()?.[slotIndex];
+          <div class="atmos-item-dye-versions__picker">
+            <h3 class="atmos-item-dye-versions__picker-title">{{ slot }} dye</h3>
+            @for (row of DYE_ROWS; track row.type) {
+              @let current = dye?.[row.type];
+              @let disabled = row.requiresMain && !dye?.primary;
+              <div class="atmos-item-dye-versions__row" [class.is-disabled]="disabled">
+                <span class="atmos-item-dye-versions__row-label">
+                  {{ row.label }}
+                  @if (disabled) { <span class="atmos-text-mute">· pick a main color first</span> }
+                </span>
+                <div class="atmos-item-dye-versions__grid" role="group" [attr.aria-label]="slot + ' dye ' + row.label">
+                  <button type="button" class="atmos-item-dye-versions__swatch atmos-tile atmos-tile--selectable"
+                    [class.is-selected]="!current" [attr.aria-pressed]="!current" [disabled]="disabled"
+                    skyTooltip="No dye" aria-label="No dye" (click)="selectDye(slotIndex, row.type, undefined)">
+                    <mat-icon svgIcon="none"></mat-icon>
+                  </button>
+                  @for (color of DYE_COLORS; track color) {
+                    <button type="button" class="atmos-item-dye-versions__swatch atmos-tile atmos-tile--selectable"
+                      [class.is-selected]="current === color" [attr.aria-pressed]="current === color" [disabled]="disabled"
+                      [skyTooltip]="color | titlecase" [attr.aria-label]="color | titlecase"
+                      (click)="selectDye(slotIndex, row.type, color)">
+                      <mat-icon [class]="'dye-' + color" [svgIcon]="'dye-' + color"></mat-icon>
+                    </button>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+@if (previewImage(); as image) {
+  @let dye = item().dye!;
+  <app-image-overlay [src]="(image === 'info' ? dye.infoUrl : dye.previewUrl)!" [alt]="item().name" (close)="previewImage.set(undefined)">
+    @if (image === 'preview' && dye.infoUrl) {
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm" (click)="previewImage.set('info')">
+        <mat-icon>palette</mat-icon> Show dyeable parts
+      </button>
+    } @else if (image === 'info' && dye.previewUrl) {
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm" (click)="previewImage.set('preview')">
+        <mat-icon>image</mat-icon> Show preview
+      </button>
+    }
+  </app-image-overlay>
+}

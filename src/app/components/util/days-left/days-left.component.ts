@@ -5,7 +5,7 @@ import { DateHelper } from 'src/app/helpers/date-helper';
 @Component({
     selector: 'app-days-left',
     templateUrl: './days-left.component.html',
-    styleUrls: ['./days-left.component.less'],
+
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true
 })

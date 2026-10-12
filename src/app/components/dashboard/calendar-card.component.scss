@@ -1,0 +1,391 @@
+:host {
+  display: block;
+}
+
+[data-kind="season"] { --kind-color: var(--atmos-seasonal); }
+[data-kind="event"]  { --kind-color: var(--atmos-pink); }
+[data-kind="ts"]     { --kind-color: var(--atmos-good); }
+[data-kind="sv"]     { --kind-color: var(--atmos-violet); }
+
+.atmos-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
+}
+
+.atmos-calendar__nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+
+  &.is-hidden { display: none; }
+}
+
+.atmos-calendar__today {
+  margin-left: 8px;
+}
+
+.atmos-calendar__range {
+  min-width: 10.5em;
+  text-align: center;
+  font-size: var(--atmos-fs-lg);
+  font-weight: 500;
+}
+
+.atmos-calendar__swatch {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  border: 1px solid var(--kind-color);
+  background: var(--kind-color);
+}
+
+/* Day columns sit behind the bars and span the full height, so a click anywhere in a column selects that day. */
+.atmos-calendar__timeline {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--atmos-line-soft);
+  border-radius: var(--atmos-radius-sm);
+  // Vertical drags keep scrolling the page; horizontal ones swipe between weeks.
+  touch-action: pan-y;
+}
+
+.atmos-calendar__track {
+  position: relative;
+}
+
+.atmos-calendar__cols,
+.atmos-calendar__bars {
+  display: grid;
+  grid-template-columns: repeat(var(--days), minmax(0, 1fr));
+}
+
+.atmos-calendar__cols {
+  position: absolute;
+  inset: 0;
+}
+
+.atmos-calendar__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0 0;
+  border: 0;
+  border-left: 1px solid var(--atmos-hover-tint);
+  background: transparent;
+  color: var(--atmos-text);
+  font: inherit;
+  cursor: pointer;
+
+  &:first-child { border-left: 0; }
+  &.is-weekend { background: var(--atmos-hover-tint); }
+  &:hover { background: var(--atmos-hover-bg); }
+  &.is-today { background: color-mix(in oklch, var(--atmos-accent) 12%, transparent); }
+  &.is-selected { box-shadow: inset 0 0 0 2px var(--atmos-text); }
+  &:focus-visible { outline: var(--atmos-focus-width) solid var(--atmos-focus-color); outline-offset: calc(-1 * var(--atmos-focus-width)); }
+}
+
+.atmos-calendar__weekday {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-calendar__date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: var(--atmos-radius-pill);
+  font-weight: 600;
+
+  .is-today & {
+    background: var(--atmos-accent);
+    color: var(--atmos-bg);
+  }
+}
+
+.atmos-calendar__col.is-past {
+  .atmos-calendar__weekday,
+  .atmos-calendar__date { color: var(--atmos-text-mute); }
+}
+
+.atmos-calendar__marks {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 16px;
+}
+
+.atmos-calendar__shard {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+
+  &.is-ended { opacity: 0.5; }
+}
+
+.atmos-calendar__shard-status {
+  color: var(--atmos-accent);
+}
+
+.atmos-calendar__shard--lg {
+  width: 28px;
+  height: 28px;
+}
+
+.atmos-calendar__flag {
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  color: var(--atmos-warn-accent);
+}
+
+.atmos-calendar__goal {
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  color: var(--atmos-accent);
+}
+
+.atmos-calendar__bars {
+  position: relative;
+  grid-auto-rows: 30px;
+  row-gap: 6px;
+  min-height: 170px;
+  padding: 82px 0 14px;
+  // Lets clicks through to the day columns everywhere except on the bars themselves.
+  pointer-events: none;
+}
+
+.atmos-calendar__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin: 0 3px;
+  padding: 0 10px 0 6px;
+  border: 1px solid color-mix(in oklch, var(--kind-color) 70%, transparent);
+  border-radius: var(--atmos-radius-sm);
+  background: color-mix(in oklch, var(--kind-color) 24%, var(--atmos-card-bg-solid));
+  color: var(--atmos-text);
+  font-size: var(--atmos-fs-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: auto;
+
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 4px;
+    margin: 6px 0;
+    border-radius: 2px;
+    background: var(--kind-color);
+  }
+
+  &:hover { background: color-mix(in oklch, var(--kind-color) 36%, var(--atmos-card-bg-solid)); }
+  &:focus-visible { outline: var(--atmos-focus-width) solid var(--atmos-focus-color); outline-offset: var(--atmos-focus-offset); }
+
+  &.is-expected {
+    border-style: dashed;
+    background: color-mix(in oklch, var(--atmos-card-bg-solid) 60%, transparent);
+  }
+
+  // Dashed, square edge: the activity continues beyond the visible weeks.
+  &.is-clipped-start {
+    margin-left: 0;
+    border-left-style: dashed;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.is-clipped-end {
+    margin-right: 0;
+    border-right-style: dashed;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.atmos-calendar__bar-name {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atmos-calendar__bar-hint {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-calendar__empty {
+  grid-column: 1 / -1;
+  align-self: center;
+  margin: 0;
+  text-align: center;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+}
+
+.atmos-calendar__detail {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 16px 24px;
+  padding: var(--atmos-pad-compact);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+}
+
+.atmos-calendar__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.atmos-calendar__detail-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: var(--atmos-fs-md);
+  font-weight: 500;
+}
+
+.atmos-calendar__block-title {
+  margin: 0;
+  font-size: var(--atmos-fs-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-calendar__block-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover { color: var(--atmos-text); }
+}
+
+// Fixed columns keep each section in place when the ones before it are hidden for the selected day.
+.atmos-calendar__section--ongoing { grid-column: 2; }
+
+.atmos-calendar__stack {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.atmos-calendar__hint {
+  margin: 0;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+}
+
+.atmos-calendar__shard-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.atmos-calendar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atmos-calendar__activity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.atmos-calendar__activity-name {
+  justify-self: start;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.atmos-calendar__activity-sub {
+  grid-column: 2 / -1;
+}
+
+.atmos-calendar__tag {
+  font-size: 11px;
+  line-height: 16px;
+  padding: 0 7px;
+  border-radius: var(--atmos-radius-pill);
+  background: color-mix(in oklch, var(--kind-color) 22%, transparent);
+  color: var(--kind-color);
+}
+
+.atmos-calendar__leaving {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.atmos-calendar__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.atmos-calendar__goal-item {
+  position: relative;
+  display: inline-flex;
+
+  // Crossed out: the item is only affordable after it has left.
+  &.is-late {
+    opacity: 0.7;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -2px;
+      right: -2px;
+      height: 2px;
+      background: var(--atmos-warn-accent);
+      transform: rotate(-45deg);
+      pointer-events: none;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .atmos-calendar__detail { grid-template-columns: minmax(0, 1fr); }
+  .atmos-calendar__section--ongoing,
+  .atmos-calendar__stack { grid-column: auto; }
+}
+
+@media (max-width: 639px) {
+  // Tightened so the widest ranges (e.g. "30 Nov – 6 Dec") still share a row with the title at 360px.
+  :host ::ng-deep .atmos-foldable-card__header { column-gap: 8px; }
+  .atmos-calendar__nav { margin-left: auto; gap: 0; }
+  .atmos-calendar__nav .atmos-icon-btn { padding: 0; }
+  .atmos-calendar__nav .atmos-icon-btn:last-child { margin-left: 6px; }
+  .atmos-calendar__range { min-width: 0; font-size: var(--atmos-fs-md); }
+  .atmos-calendar__bar-hint { display: none; }
+}

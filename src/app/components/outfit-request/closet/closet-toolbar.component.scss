@@ -1,0 +1,92 @@
+@use 'closet-markers' as markers;
+
+:host { @include markers.tokens; }
+
+.atmos-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact, 12px);
+}
+
+.atmos-toolbar__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.atmos-search {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+
+  &__icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--atmos-text-mute);
+  }
+
+  &__field {
+    width: 100%;
+    padding-left: 36px; // clears the absolutely positioned search icon
+    background: transparent;
+    border: 0;
+
+    &:hover { background: transparent; }
+  }
+}
+
+// Color picker
+.atmos-color-picker {
+  position: relative;
+}
+
+.atmos-color-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 2px solid transparent;
+
+  mat-icon {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+
+  &--active { }
+  &--fill { }
+  &--r { background: var(--closet-marker-r); }
+  &--y { background: var(--closet-marker-y); }
+  &--g { background: var(--closet-marker-g); }
+  &--b { background: var(--closet-marker-b); }
+}
+
+.atmos-color-btn--active {
+  &.atmos-color-btn--r { border-color: var(--closet-marker-r); }
+  &.atmos-color-btn--y { border-color: var(--closet-marker-y); }
+  &.atmos-color-btn--g { border-color: var(--closet-marker-g); }
+  &.atmos-color-btn--b { border-color: var(--closet-marker-b); }
+}
+
+.atmos-color-picker__dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}

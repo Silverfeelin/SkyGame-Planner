@@ -60,7 +60,15 @@ Thumbs.db
 /src/assets/data/everything.json
 /src/assets/data/x.json
 
+# Claude
+.claude/data/**
+.claude/handoffs/**
+
 # Other
 #/scripts
 /scripts/temp/**
 /scripts/data/temp/**
+
+# Agent worktrees
+.worktrees/
+.claude/worktrees/

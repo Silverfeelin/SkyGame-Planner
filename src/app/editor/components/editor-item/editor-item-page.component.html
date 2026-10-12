@@ -1,9 +1,43 @@
-<div class="container mb">
-  Not quite sure what to do here? Please have a look at the wiki page
-  <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Items" target="_blank" class="text-link">Contributing: Items</a>.
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">{{ isNew() ? 'Add item' : 'Edit item' }}</h1>
+</header>
+
+<div class="atmos-page__intro">
+  <p class="atmos-paragraph">
+    @if (isNew()) {
+      Know of an item that isn't on Sky Planner yet? Fill in what you know and save to download it as a file.
+    } @else {
+      Spotted a mistake? Correct the details below and save to download the updated item as a file.
+    }
+  </p>
+  <p class="atmos-paragraph atmos-page__hint">
+    Not sure what to do with the file? Have a look at the wiki page
+    <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing-%E2%80%90-Items" target="_blank" rel="noopener" class="atmos-text-link">Contributing: Items</a>.
+  </p>
 </div>
-@if (item) {
-  <app-card [title]="'Edit item'">
-    <app-editor-item [item]="item" (saved)="save($event)" (cancelled)="navigateBack()"></app-editor-item>
-  </app-card>
+
+@if (notFound()) {
+  <div class="atmos-card">
+    <div class="atmos-card__body">
+      <p class="atmos-paragraph">This item could not be found.</p>
+      <div>
+        <a class="atmos-btn" routerLink="/editor/item/add"><mat-icon>add_circle</mat-icon> Add a new item instead</a>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="atmos-card">
+    <div class="atmos-card__header">
+      @if (item(); as itm) {
+        <app-item-icon [item]="itm" size="small" [opaque]="true" />
+        <span class="editor-item-page__name">{{ itm.name }}</span>
+        <a class="atmos-btn atmos-btn--sm" [routerLink]="['/item', itm.guid]"><mat-icon>visibility</mat-icon> View item</a>
+      } @else {
+        <span class="editor-item-page__name">New item</span>
+      }
+    </div>
+    <div class="atmos-card__body">
+      <app-editor-item [item]="item()" (saved)="save($event)" (cancelled)="navigateBack()" />
+    </div>
+  </div>
 }

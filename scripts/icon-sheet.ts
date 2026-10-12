@@ -3,8 +3,8 @@ import * as path from 'path';
 import * as util from 'util';
 import * as jsonc from 'jsonc-parser';
 import * as Spritesmith from 'spritesmith';
+import { chromium } from 'playwright';
 const sharp = require('sharp');
-const CWebp = require('cwebp').CWebp;
 
 const runSpritesmithAsync = util.promisify(Spritesmith.run);
 
@@ -13,9 +13,12 @@ const iconsPerSheet = 16 * 16;
 const sheetWidth = iconSize * 16;
 
 interface IItem { guid: string, id: number, icon?: string };
-const itemsPath = path.resolve(__dirname, '../src/assets/data/items.json');
+const itemsPath = path.resolve(__dirname, '../node_modules/skygame-data/assets/items.json');
 const itemData: { items: Array<IItem> } = jsonc.parse(fs.readFileSync(itemsPath, 'utf8'));
 itemData.items.sort((a: IItem, b: IItem) => a.id - b.id);
+
+/** Re-download every icon instead of only those missing from the temp folder. */
+const overwrite = process.argv.includes('--overwrite');
 
 const tempPath = path.resolve(__dirname, 'temp');
 if (!fs.existsSync(tempPath)) { fs.mkdirSync(tempPath); }
@@ -24,30 +27,44 @@ if (!fs.existsSync(tempPath)) { fs.mkdirSync(tempPath); }
 const urlIconMap = new Map<string, number>();
 const iconUrlMap = new Map<number, string>();
 (async () => {
+  // Fandom's CDN serves a Cloudflare challenge to plain HTTP clients and to the "HeadlessChrome" user agent.
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage({
+    userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`
+  });
+
   for (const item of itemData.items) {
     // Skip items without icon URL.
     if (!item.id) { continue; }
     if (!item.icon || !item.icon.startsWith('http')) { continue; }
-
-    // Check if icon already exists.
-    const outputPath = path.resolve(tempPath, `${item.id}.png`);
-    if (fs.existsSync(outputPath)) {
-      urlIconMap.set(item.icon, item.id);
-      iconUrlMap.set(item.id, item.icon);
-    }
     if (urlIconMap.has(item.icon)) { continue; }
 
+    const outputPath = path.resolve(tempPath, `${item.id}.png`);
+    const isCached = fs.existsSync(outputPath);
+    if (isCached && !overwrite) {
+      urlIconMap.set(item.icon, item.id);
+      iconUrlMap.set(item.id, item.icon);
+      continue;
+    }
+
     const url = item.icon;
-    const response = await fetch(url, {
-      headers: { 'Accept': 'image/png' }
-    });
-    const buffer = await response.arrayBuffer();
+    const response = await page.goto(url);
+    if (!response?.ok() || !response.headers()['content-type']?.startsWith('image/')) {
+      console.warn(`${isCached ? 'Keeping cached icon for' : 'Skipping'} ${item.id}: ${response?.status()} ${url}`);
+      if (isCached) {
+        urlIconMap.set(item.icon, item.id);
+        iconUrlMap.set(item.id, item.icon);
+      }
+      continue;
+    }
+    const buffer = await response.body();
     await sharp(buffer).resize(iconSize, iconSize).toFile(outputPath);
     // await fs.promises.writeFile(outputPath, Buffer.from(buffer));
 
     urlIconMap.set(item.icon, item.id);
     iconUrlMap.set(item.id, item.icon);
   }
+  await browser.close();
 
   const coordinatePath = path.resolve(__dirname, '../src/assets/game/icons.json');
   const coordinateData: any = { files: [] };
@@ -77,17 +94,10 @@ const iconUrlMap = new Map<number, string>();
     }
 
     const iFile = coordinateData.files.length;
-    const spritePath = path.resolve(__dirname, `../src/assets/game/icons_${iFile}.png`);
-    console.log(spritePath);
-    fs.writeFileSync(spritePath, result.image, { flag: 'w'});
-
     const webpPath = path.resolve(__dirname, `../src/assets/game/icons_${iFile}.webp`);
-    const webp = new CWebp(spritePath);
-    console.log(`Converting ${spritePath} to ${webpPath} asynchronously...`);
-    webp.write(webpPath, (err) => {
-      if (err) { console.error(`Failed to save ${webpPath}: `, err); }
-      fs.unlinkSync(spritePath);
-    });
+    console.log(webpPath);
+    // Quality 75 matches the cwebp CLI default the existing sheets were encoded with.
+    await sharp(result.image).webp({ quality: 75 }).toFile(webpPath);
 
     coordinateData.files.push({
       file: `icons_${iFile}.webp`,

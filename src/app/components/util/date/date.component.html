@@ -1,1 +1,3 @@
-<ng-container *ngIf="_date">{{ _date | datetime:format }}</ng-container>
+@if (_date) {
+  {{ _date | datetime:format }}
+}

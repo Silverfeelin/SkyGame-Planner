@@ -1,0 +1,342 @@
+/**
+ * Runs the quick start inference and emote level solver against the real game data and checks a set of scenarios.
+ *
+ * npm run quick-start-verify
+ */
+import fs from 'fs';
+import path from 'path';
+import { IIAP, IItem, INode, ISeason, ISpirit, ItemType, SkyDataResolver } from 'skygame-data';
+import { NodeHelper } from '../../src/app/helpers/node-helper';
+import { inferProgress, QuickStartData } from '../../src/app/services/quick-start/quick-start-inference';
+import { solveEmote } from '../../src/app/services/quick-start/emote-levels';
+import { EmoteEntry, QuickStartInput, QuickStartPlan } from '../../src/app/services/quick-start/quick-start.model';
+
+const ROOT = process.cwd();
+const text = fs.readFileSync(path.join(ROOT, 'node_modules/skygame-data/assets/everything.json'), 'utf8');
+const sky = SkyDataResolver.resolve(SkyDataResolver.parse(text as any));
+const data = { seasonConfig: sky.seasons, itemConfig: sky.items } as unknown as QuickStartData;
+
+const items = sky.items.items as Array<IItem>;
+const seasons = (sky.seasons.items as Array<ISeason>).slice().sort((a, b) => a.date.toMillis() - b.date.toMillis());
+
+let passed = 0;
+let failed = 0;
+const results: Array<string> = [];
+
+function check(label: string, ok: boolean, detail?: string): void {
+  if (ok) { passed++; results.push(`  ok    ${label}`); return; }
+  failed++;
+  results.push(`  FAIL  ${label}${detail ? `\n        ${detail}` : ''}`);
+}
+
+function scenario(name: string, fn: () => void): void {
+  results.push(name);
+  try { fn(); } catch (e) { failed++; results.push(`  FAIL  threw: ${(e as Error).stack ?? e}`); }
+}
+
+function byGuid<T>(guid: string): T {
+  const found = sky.guids.get(guid);
+  if (!found) { throw new Error(`GUID not found: ${guid}`); }
+  return found as T;
+}
+
+/** Every level of the emote the item is a level of, lowest first. */
+function emoteLevels(level: IItem): Array<IItem> {
+  return items.filter(i => i.type === ItemType.Emote && i.name === level.name).sort((a, b) => (a.level ?? 1) - (b.level ?? 1));
+}
+
+function run(partial: Partial<QuickStartInput>): QuickStartPlan {
+  return inferProgress(data, {
+    owned: [], unlocked: new Set(), start: seasons[0], seasonStates: new Map(),
+    spiritSource: new Map(), iapChoices: new Map(), wingBuffs: new Set(), conflictHandled: false, ...partial
+  });
+}
+
+function entry(levels: Array<IItem>, picked: Array<[number, boolean]> = [], locked: Array<number> = []): EmoteEntry {
+  return { levels, locked: new Set(locked), picked: new Map(picked) };
+}
+
+const onLevels = (sol: ReturnType<typeof solveEmote>) => sol.levels.filter(l => l.on).map(l => l.level).join(',');
+
+/** Visits of an item's nodes, oldest first. */
+function visitsOf(i: IItem): Array<{ date: ISeason['date'], node: INode }> {
+  return (i.nodes ?? []).map(node => {
+    const tree = node.tree ?? node.root?.tree;
+    const date = tree?.travelingSpirit?.date ?? tree?.specialVisitSpirit?.visit.date;
+    return date ? { date, node } : undefined;
+  }).filter((v): v is { date: ISeason['date'], node: INode } => !!v).sort((a, b) => a.date.toMillis() - b.date.toMillis());
+}
+
+/* ---------- Test data, by GUID so renames in data updates don't break it ---------- */
+
+const assembly = byGuid<ISeason>('kQLraEsT-1');
+const shattering = byGuid<ISeason>('L1q_rU86hu');
+const littlePrince = byGuid<ISeason>('CuK1lMQzge');
+
+const baffledBotanist = byGuid<ISpirit>('94UEgV7ic1');
+const poutyPorter = byGuid<ISpirit>('waSFuoNQsR');
+const stretchingGuru = byGuid<ISpirit>('Q-N8n-0b8O');
+
+const assemblyPendant = byGuid<IItem>('Hfu-dI_t7e');
+const assemblyUltimateCape = byGuid<IItem>('ZdKPdWs2xL');
+const shatteringPendant = byGuid<IItem>('bpUKMY2cpm');
+const botanistHair = byGuid<IItem>('mDc9qQKCBy');
+const botanistMask = byGuid<IItem>('JQSXDCKUPE');
+const poutyCape = byGuid<IItem>('7Mh9pQzRHj');
+const poutyHair = byGuid<IItem>('UX_lsf-RuX');
+const guruCape = byGuid<IItem>('k9UvQv3vi0');
+const spookyBatCape = byGuid<IItem>('4D33RG4tNB');
+
+const angry = emoteLevels(byGuid<IItem>('tNluEK79s-'));
+const yoga = emoteLevels(byGuid<IItem>('bXiNLPtQyh'));
+const breakDance = emoteLevels(byGuid<IItem>('okqH0w4T5G'));
+const wave = emoteLevels(byGuid<IItem>('xbObJc9i-R'));
+
+/* ---------- Scenarios ---------- */
+
+scenario('Pendant owned: season pass and pass items from the season', () => {
+  const passItem = botanistHair;
+  const plan = run({ owned: [assemblyPendant, passItem] });
+  check('season pass listed', plan.seasonPasses.includes(assembly.guid), JSON.stringify(plan.seasonPasses));
+  const a = plan.attributions.find(x => x.item === passItem);
+  check('pass item attributed to the season', a?.source.key === 'season', `${a?.source.label} / ${a?.reason}`);
+  check('reason mentions the pendant', !!a?.reason.includes('pendant'), a?.reason);
+  const summary = plan.seasons.find(s => s.season === assembly);
+  check('season summary has pass', summary?.state === 'pass' && summary.inferred === 'pass' && summary.pendant, JSON.stringify(summary?.state));
+  check('counts.seasonPasses', plan.counts.seasonPasses === 1);
+});
+
+scenario('Pass item in a season played without the pass: first visit after the start', () => {
+  const passItem = botanistHair;
+  const visits = visitsOf(passItem).filter(v => v.date >= seasons[0].date);
+  check('test item has visits', visits.length > 0);
+  const plan = run({ owned: [passItem] });
+  const a = plan.attributions.find(x => x.item === passItem);
+  check('season inferred as played', plan.seasons.find(s => s.season === assembly)?.state === 'played');
+  check('attributed to the first visit', a?.source.node === visits[0]?.node, `${a?.source.label} / ${a?.reason}`);
+  check('no season pass', plan.seasonPasses.length === 0);
+  check('options list season plus every visit', a?.options.length === 1 + visitsOf(passItem).length, a?.options.map(o => o.label).join(' | '));
+
+  const pass = run({ owned: [passItem], seasonStates: new Map([[assembly.guid, 'pass']]) });
+  check('season pass picked: from the season', pass.attributions[0]?.source.key === 'season', pass.attributions[0]?.reason);
+  check('season pass picked: saved', pass.seasonPasses.includes(assembly.guid));
+});
+
+scenario('Season item from before the start', () => {
+  const mask = botanistMask;
+  const start = shattering;
+  const visit = visitsOf(mask).find(v => v.date >= start.date);
+  check('test item returned after the start', !!visit);
+  const plan = run({ owned: [mask], start });
+  const a = plan.attributions.find(x => x.item === mask);
+  check('attributed to the first visit on or after the start', a?.source.node === visit?.node, `${a?.source.label} / ${a?.reason}`);
+  check('not warned', a?.warn === false);
+
+  const overridden = run({ owned: [mask], start, spiritSource: new Map([[baffledBotanist.guid, 'season']]) });
+  const o = overridden.attributions[0];
+  check('spirit override to the season', o?.source.key === 'season' && o.overridden);
+
+  const played = run({ owned: [mask], start, seasonStates: new Map([[assembly.guid, 'played']]) });
+  check('season before the start marked played: from the season', played.attributions[0]?.source.key === 'season', played.attributions[0]?.reason);
+  check('seasons before the start inferred as not played', played.seasons.filter(x => x.season.date < start.date).every(x => x.inferred === 'none'));
+  check('every started season listed', played.seasons.length === seasons.filter(x => x.date.toMillis() <= Date.now()).length);
+
+  const notPlayed = run({ owned: [mask], seasonStates: new Map([[assembly.guid, 'none']]) });
+  check('season after the start marked not played: from a visit', notPlayed.attributions[0]?.source.node === visitsOf(mask)[0]?.node, notPlayed.attributions[0]?.reason);
+
+  const lastVisit = visitsOf(mask).at(-1)!;
+  const late = seasons.find(s => s.date > lastVisit.date);
+  if (late) {
+    const none = run({ owned: [mask], start: late });
+    check('no visit after the start: season with warn', none.attributions[0]?.source.key === 'season' && none.attributions[0].warn, none.attributions[0]?.reason);
+  }
+
+  const lastStart = seasons.filter(x => x.date.toMillis() <= Date.now()).at(-1)!;
+  const neverReturned = items.find(i => i.season && i.season.date < lastStart.date && i.group !== 'Ultimate' && i.group !== 'SeasonPass'
+    && ![ItemType.Special, ItemType.WingBuff, ItemType.Quest, ItemType.Spell].includes(i.type)
+    && i.nodes?.length && !visitsOf(i).length && !i.listNodes?.length
+    && i.nodes.every(n => { const t = n.tree ?? n.root?.tree; return t?.spirit?.tree === t && t?.spirit?.type === 'Season'; }));
+  check('found an item that never returned', !!neverReturned);
+  if (neverReturned) {
+    const plan2 = run({ owned: [neverReturned], start: lastStart });
+    const a2 = plan2.attributions[0];
+    check(`never returned (${neverReturned.name}): season with warn`, a2?.source.key === 'season' && a2.warn, a2?.reason);
+    check('and it is a start conflict', plan2.conflict?.item === neverReturned);
+  }
+});
+
+scenario('Ultimate gift before the start', () => {
+  const ultimate = assemblyUltimateCape;
+  const start = shattering;
+  const plan = run({ owned: [ultimate], start });
+  check('conflict with Assembly', plan.conflict?.season === assembly, plan.conflict?.season.name);
+  check('ultimate stays with the season', plan.attributions[0]?.source.key === 'season');
+  check('summary counts the ultimate', plan.seasons.find(s => s.season === assembly)?.ultimates === 1);
+  check('conflict suppressed when handled', run({ owned: [ultimate], start, conflictHandled: true }).conflict === undefined);
+
+  const unsure = run({ owned: [ultimate, shatteringPendant], start: undefined });
+  check('unsure start: derived from the earliest evidence', unsure.start === assembly && unsure.derivedStart, unsure.start.name);
+  check('unsure start: no conflict', unsure.conflict === undefined);
+
+  const nothing = run({ owned: [], start: undefined });
+  check('nothing to derive from: latest started season', nothing.start === seasons.filter(s => s.date.toMillis() <= Date.now()).at(-1) && !nothing.derivedStart, nothing.start.name);
+});
+
+scenario('Regular spirit item deep in the tree: Pouty Porter Cape', () => {
+  const cape = poutyCape;
+  const pouty = poutyPorter;
+  const plan = run({ owned: [cape] });
+  const trace = NodeHelper.trace(cape.nodes!.find(n => n.root?.tree === pouty.tree || n.tree === pouty.tree));
+  check('every node up to the root', trace.every(n => plan.unlock.includes(n.guid)), `${trace.length} nodes`);
+  check('Angry 1 and 3 unlocked', plan.unlock.includes(angry[0].guid) && plan.unlock.includes(angry[2].guid));
+  check('Angry 2 and 4 not unlocked', !plan.unlock.includes(angry[1].guid) && !plan.unlock.includes(angry[3].guid));
+  check('Pouty Porter Hair not unlocked', !plan.unlock.includes(poutyHair.guid));
+  const way = plan.onTheWay.find(w => w.tree === pouty.tree);
+  check('on the way lists the prerequisites', way?.nodes.length === trace.length - 1 && way.before === cape, way?.nodes.map(n => n.item?.name).join(', '));
+  check('no attribution for a regular spirit item', plan.attributions.length === 0);
+  check('counts', plan.counts.items === 1 && plan.counts.nodes === trace.length, JSON.stringify(plan.counts));
+  check('no duplicates', new Set(plan.unlock).size === plan.unlock.length);
+});
+
+scenario('Already unlocked GUIDs never appear in unlock', () => {
+  const cape = poutyCape;
+  const trace = NodeHelper.trace(cape.nodes![0]);
+  const unlocked = new Set([trace[0].guid, trace[0].item!.guid, trace[2].guid]);
+  const plan = run({ owned: [cape, angry[0]], unlocked });
+  check('none of them in unlock', ![...unlocked].some(g => plan.unlock.includes(g)));
+  check('the rest of the path is still unlocked', trace.slice(3).every(n => plan.unlock.includes(n.guid)));
+  check('the unlocked emote is not counted as new', plan.counts.items === 1, JSON.stringify(plan.counts));
+  const capeBefore = run({ owned: [cape], unlocked: new Set([cape.guid]) });
+  check('an unlocked item is not re-saved', capeBefore.unlock.length === 0 && capeBefore.counts.items === 0);
+});
+
+scenario('Emote levels', () => {
+  const none = solveEmote(entry(angry), new Set());
+  check('nothing picked: none', onLevels(none) === '', onLevels(none));
+
+  const byItem = solveEmote(entry(angry), new Set([poutyCape.guid]));
+  check('owned item below level 3 forces 1 and 3', onLevels(byItem) === '1,3', onLevels(byItem));
+  check('why: needed for the cape', byItem.levels[2].why === `Needed for ${poutyCape.name}`, byItem.levels.map(l => l.why).join(' | '));
+  const byLevel = solveEmote(entry(angry, [[3, true]]), new Set());
+  check('why: needed for level 3', byLevel.levels[0].why === 'Needed for level 3', byLevel.levels[0].why);
+
+  const manual = solveEmote(entry(angry, [[4, true]]), new Set());
+  check('manual pick of 4 turns on 1 and 3', onLevels(manual) === '1,3,4', onLevels(manual));
+
+  const locked = solveEmote(entry(angry, [], [3]), new Set());
+  check('locked level 3 turns on 1', onLevels(locked) === '1,3' && locked.levels[2].why === 'Already unlocked');
+
+  const tiered = solveEmote(entry(breakDance, [[4, true]]), new Set());
+  check('tiered emote: no prerequisites', onLevels(tiered) === '4', onLevels(tiered));
+
+  const wave6 = solveEmote(entry(wave, [[6, true]]), new Set());
+  check('Wave: level 6 needs 1, 3 and 5', wave6.levels.length === 6 && onLevels(wave6) === '1,3,5,6', onLevels(wave6));
+});
+
+scenario('Emote levels on an owned item\'s path follow its source', () => {
+  const cape = guruCape;
+  const yogaOwned = [yoga[0], yoga[2]];
+  const capeSeason = cape.season ?? stretchingGuru.season!;
+  const start = seasons.find(s => s.date > capeSeason.date && visitsOf(cape).some(v => v.date >= s.date))!;
+  const treeOfNode = (n: INode) => n.tree ?? n.root?.tree;
+  const yogaNodesOn = (plan: QuickStartPlan) => yogaOwned.flatMap(y => y.nodes ?? []).filter(n => plan.unlock.includes(n.guid)).map(treeOfNode);
+
+  const plan = run({ owned: [...yogaOwned, cape], start });
+  const a = plan.attributions.find(x => x.item === cape);
+  check('cape attributed to a visit', !!a && a.source.key !== 'season', a?.source.label);
+  check('no attribution for Yoga', !plan.attributions.some(x => yoga.includes(x.item)), plan.attributions.map(x => x.item.name).join(', '));
+  const trees = yogaNodesOn(plan);
+  check('Yoga nodes only on the cape\'s tree', trees.length === 2 && trees.every(t => t === a?.source.tree), trees.map(t => t?.guid).join(', '));
+
+  const overridden = run({ owned: [...yogaOwned, cape], start, spiritSource: new Map([[stretchingGuru.guid, 'season']]) });
+  const o = overridden.attributions.find(x => x.item === cape);
+  const oTrees = yogaNodesOn(overridden);
+  check('override moves the Yoga levels with the cape', o?.source.key === 'season' && oTrees.length === 2 && oTrees.every(t => t === o.source.tree), oTrees.map(t => t?.guid).join(', '));
+
+  const alone = run({ owned: yogaOwned, start });
+  const aloneYoga = alone.attributions.filter(x => yoga.includes(x.item));
+  const aloneTrees = yogaNodesOn(alone);
+  check('Yoga picked alone: level 3 attributed, level 1 follows it', aloneYoga.length === 1 && aloneYoga[0].item === yogaOwned[1]
+    && aloneTrees.length === 2 && aloneTrees.every(t => t === aloneYoga[0].source.tree), aloneYoga.map(x => `${x.item.level} ${x.source.label}`).join(', '));
+});
+
+scenario('Pass item reason uses the full season name', () => {
+  const passItem = items.find(i => i.group === 'SeasonPass' && i.season === littlePrince && visitsOf(i).length)!;
+  const plan = run({ owned: [passItem], start: passItem.season });
+  const reason = plan.attributions[0]?.reason;
+  check(`${passItem.name}: "${reason}"`, reason === `It's a season pass item and you didn't have the season pass for ${passItem.season!.name}.`);
+});
+
+scenario('Wing buff from a later visit', () => {
+  const mask = botanistMask;
+  const botanist = baffledBotanist;
+  const plan = run({ owned: [mask] });
+  const q = plan.wingBuffQuestions.find(x => x.spirit === botanist);
+  check('question for Baffled Botanist', !!q && q.later.length > 0, plan.wingBuffQuestions.map(x => x.spirit.name).join(', '));
+  check('question nodes end in the wing buff', q?.nodes.at(-1)?.item?.type === ItemType.WingBuff);
+  check('not counted when unanswered', plan.counts.wingBuffs === 0 && !q?.nodes.some(n => plan.unlock.includes(n.guid)));
+
+  const yes = run({ owned: [mask], wingBuffs: new Set([botanist.guid]) });
+  check('yes adds the nodes', !!q && q.nodes.every(n => yes.unlock.includes(n.guid)) && yes.counts.wingBuffs === 1);
+  check('yes adds the wing buff item', yes.unlock.includes(q!.nodes.at(-1)!.item!.guid));
+
+  const wingBuff = q!.nodes.at(-1)!.item!;
+  const already = run({ owned: [mask], unlocked: new Set([wingBuff.guid]) });
+  check('no question once the wing buff is unlocked', !already.wingBuffQuestions.some(x => x.spirit === botanist));
+
+  const late = run({ owned: [mask], start: seasons.at(-1) });
+  const lateQ = late.wingBuffQuestions.find(x => x.spirit === botanist);
+  check('visits before the start are not offered', !lateQ || lateQ.later.every(v => v.date! >= seasons.at(-1)!.date));
+});
+
+scenario('IAPs', () => {
+  const single = spookyBatCape;
+  const plan = run({ owned: [single] });
+  const bought = single.iaps!.filter(i => plan.unlock.includes(i.guid));
+  check('complete IAP marked as bought', bought.length === 1 && bought[0].items!.length === 1 && plan.counts.iaps === 1, bought.map(i => i.name).join(', '));
+  check('no question for a complete IAP', plan.iapQuestions.length === 0);
+  check('already bought IAP is left alone', run({ owned: [single], unlocked: new Set([single.iaps![0].guid]) }).counts.iaps === 0);
+
+  const bundle = (sky.iaps.items as Array<IIAP>).find(iap => (iap.items?.length ?? 0) > 1
+    && iap.items!.every(i => i.iaps!.every(o => o.items!.length === iap.items!.length)))!;
+  check('found a bundle only sold as a whole', !!bundle);
+  const [first, ...rest] = bundle.items!;
+  const open = run({ owned: [first] });
+  const q = open.iapQuestions[0];
+  check(`${bundle.name}: question lists the missing items`, open.iapQuestions.length === 1 && q.owned[0] === first && q.missing.length === rest.length && !q.choice);
+  check('unanswered: item saved, IAP not', open.unlock.includes(first.guid) && !first.iaps!.some(i => open.unlock.includes(i.guid)));
+
+  const unlock = run({ owned: [first], iapChoices: new Map([[q.iap.guid, 'unlock']]) });
+  check('unlock: IAP and the rest saved', unlock.unlock.includes(q.iap.guid) && rest.every(i => unlock.unlock.includes(i.guid)));
+  check('unlock: counts', unlock.counts.items === bundle.items!.length && unlock.counts.iaps === 1, JSON.stringify(unlock.counts));
+
+  const remove = run({ owned: [first], iapChoices: new Map([[q.iap.guid, 'remove']]) });
+  check('remove: nothing saved', remove.unlock.length === 0 && remove.counts.items === 0, remove.unlock.join(', '));
+  check('remove: question stays with the answer', remove.iapQuestions[0]?.choice === 'remove');
+
+  const whole = run({ owned: bundle.items! });
+  check('whole bundle owned: no question', whole.iapQuestions.length === 0 && whole.counts.iaps === 1);
+});
+
+scenario('Every item and emote', () => {
+  const closet = items.filter(i => ![ItemType.Special, ItemType.WingBuff, ItemType.Quest, ItemType.Spell].includes(i.type) && !i.autoUnlocked);
+  const t0 = performance.now();
+  const plan = run({ owned: closet, start: undefined });
+  const ms = performance.now() - t0;
+  check(`${closet.length} items infer in ${ms.toFixed(0)} ms`, ms < 1000 && plan.counts.items === closet.length);
+  check('unlock has no duplicates', new Set(plan.unlock).size === plan.unlock.length);
+  check('derived start is the first season', plan.start === seasons[0] && plan.derivedStart, plan.start.name);
+
+  const emotes = new Map(items.filter(i => i.type === ItemType.Emote && i.subtype !== 'FriendEmote').map(i => [i.name, i]));
+  const t1 = performance.now();
+  const failures = [...emotes.values()].filter(level => {
+    const levels = emoteLevels(level);
+    const sol = solveEmote(entry(levels, [[levels.length, true]]), new Set());
+    return !sol.levels.at(-1)?.on;
+  }).map(level => level.name);
+  check(`${emotes.size} emotes keep a picked top level on (${(performance.now() - t1).toFixed(0)} ms)`, !failures.length, failures.join(', '));
+});
+
+console.log(results.join('\n'));
+console.log(`\n${passed} passed, ${failed} failed`);
+if (failed) { process.exit(1); }

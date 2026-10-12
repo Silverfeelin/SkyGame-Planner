@@ -1,6 +1,124 @@
-.img-preview {
-  width: 300px;
-  height: 200px;
-  object-fit: contain;
-  background-color: #0006;
+.editor-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: min(300px, 100%);
+}
+
+.editor-item-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & + & {
+    padding-top: 20px;
+    border-top: 1px solid var(--atmos-line-soft);
+  }
+}
+
+.editor-item-form__heading {
+  margin: 0;
+  font-size: var(--atmos-fs-lg);
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.editor-item-form__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px 16px;
+}
+
+.editor-item-form__grid--media {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.editor-item-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.editor-item-form__field--wide {
+  grid-column: 1 / -1;
+}
+
+.editor-item-form__label {
+  padding: 0;
+  font-size: var(--atmos-fact-label-size);
+  font-weight: 500;
+  letter-spacing: var(--atmos-fact-label-track);
+  text-transform: uppercase;
+  color: var(--atmos-text-mute);
+}
+
+.editor-item-form__error {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-warn-accent);
+}
+
+.editor-item-form__choice {
+  position: relative;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &:has(input:focus-visible) {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+}
+
+.editor-item-form__inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  input { flex: 1; min-width: 0; }
+  .atmos-btn { flex-shrink: 0; }
+}
+
+.editor-item-form__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  background-color: var(--atmos-preview-bg);
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.editor-item-form__preview--icon {
+  width: 96px;
+  height: 96px;
+}
+
+.editor-item-form__preview-empty {
+  color: var(--atmos-text-mute);
+  opacity: 0.5;
+}
+
+.editor-item-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--atmos-gap);
 }

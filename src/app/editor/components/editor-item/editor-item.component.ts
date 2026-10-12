@@ -1,15 +1,19 @@
 import { Component, ChangeDetectionStrategy, output, input, effect } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgTemplateOutlet } from '@angular/common';
+import { AbstractControl, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatIcon } from '@angular/material/icon';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { nanoid } from 'nanoid';
 import { IItem, ItemType, ItemSubtype, ItemGroup } from 'skygame-data';
+
+interface IOption<T> { value: T; label: string; }
 
 @Component({
   selector: 'app-editor-item',
   templateUrl: './editor-item.component.html',
   styleUrl: './editor-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ReactiveFormsModule, ItemTypePipe],
+  imports: [ReactiveFormsModule, NgTemplateOutlet, ItemTypePipe, MatIcon],
 })
 export class EditorItemComponent {
   item = input<IItem>();
@@ -18,9 +22,26 @@ export class EditorItemComponent {
   cancelled = output<void>();
 
   typeEmote = ItemType.Emote;
-  typeOptions = ['', ...Object.values(ItemType)];
-  subtypeOptions = ['', ...Object.values(ItemSubtype)];
-  groupOptions = ['', 'Elder', 'SeasonPass', 'Ultimate', 'Limited'];
+  typeOptions = Object.values(ItemType);
+  subtypeOptions: Array<IOption<ItemSubtype>> = [
+    { value: ItemSubtype.Instrument, label: 'Instrument' },
+    { value: ItemSubtype.FriendEmote, label: 'Friend emote' },
+  ];
+  groupOptions: Array<IOption<ItemGroup>> = [
+    { value: 'Elder', label: 'Elder' },
+    { value: 'SeasonPass', label: 'Season Pass' },
+    { value: 'Ultimate', label: 'Ultimate' },
+    { value: 'Limited', label: 'Limited' },
+  ];
+  levelOptions = ['1', '2', '3', '4'];
+  dyeOptions: Array<IOption<string>> = [
+    { value: '0', label: 'None' },
+    { value: '1', label: '1 slot' },
+    { value: '2', label: '2 slots' },
+  ];
+
+  /** Kept per form so repeated saves of a new item produce the same GUID. */
+  private readonly _newGuid = nanoid(10);
 
   form = new FormGroup({
     name: new FormControl('', { validators: [ Validators.required]}),
@@ -39,7 +60,7 @@ export class EditorItemComponent {
   constructor() {
     effect(() => {
       const item = this.item();
-      this.form.patchValue({
+      this.form.reset({
         name: item?.name || '',
         type: item?.type || '',
         subtype: item?.subtype || '',
@@ -49,7 +70,7 @@ export class EditorItemComponent {
         dyes: item?.dye?.secondary ? '2' : item?.dye?.primary ? '1' : '0',
         dyePreview: item?.dye?.previewUrl || '',
         dyeInfo: item?.dye?.infoUrl || '',
-        level: item?.level ? `${item.level}` : undefined,
+        level: item?.level ? `${item.level}` : '1',
         wiki: item?._wiki?.href || '',
       });
     });
@@ -65,9 +86,13 @@ export class EditorItemComponent {
     });
   }
 
+  hasError(control: AbstractControl): boolean {
+    return control.invalid && control.touched;
+  }
+
   save(): void {
     if (this.form.invalid) {
-      alert('Please check all fields before saving.');
+      this.form.markAllAsTouched();
       return;
     }
 
@@ -81,25 +106,23 @@ export class EditorItemComponent {
 
     const item: IItem = {
       id: -1,
-      guid: this.item()?.guid || nanoid(10),
+      guid: this.item()?.guid || this._newGuid,
       name: value.name || '',
       type: value.type as ItemType,
       subtype: value.subtype as ItemSubtype || undefined,
       group: value.group as ItemGroup || undefined,
       icon,
       previewUrl: previewUrl || undefined,
-      dye: {}
     };
 
     switch (value.dyes) {
       case '1': item.dye = { primary: {} }; break;
       case '2': item.dye = { primary: {}, secondary: {} }; break;
-      default: delete item.dye; break;
     }
 
-    if (value.dyes) {
-      if (value.dyePreview) item.dye!.previewUrl = value.dyePreview;
-      if (value.dyeInfo) item.dye!.infoUrl = value.dyeInfo;
+    if (item.dye) {
+      if (value.dyePreview) item.dye.previewUrl = value.dyePreview;
+      if (value.dyeInfo) item.dye.infoUrl = value.dyeInfo;
     }
 
     if (item.type === ItemType.Emote && value.level) {
@@ -115,7 +138,7 @@ export class EditorItemComponent {
   }
 
   cancel(): void {
-    if (!confirm('Are you sure you want to cancel these changes?')) { return; }
+    if (this.form.dirty && !confirm('Are you sure you want to discard these changes?')) { return; }
     this.cancelled.emit();
   }
 }

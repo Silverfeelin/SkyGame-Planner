@@ -444,12 +444,12 @@ export class MapInstanceService implements OnDestroy {
 
   ttFound(guid: string, marker: L.Marker): HTMLElement {
     const div = document.createElement('div');
-    div.classList.add('container', 'point', 's-leaflet-item');
+    div.classList.add('container', 's-leaflet-clickable', 's-leaflet-item');
     const divIcon = document.createElement('div');
-    divIcon.classList.add('menu-icon', 's-leaflet-maticon');
+    divIcon.classList.add('s-leaflet-menu-icon', 's-leaflet-maticon');
     divIcon.innerText = this._storageService.hasMapMarker(guid) ? 'check_box' : 'check_box_outline_blank';
     div.appendChild(divIcon);
-    div.insertAdjacentHTML('beforeend', `<div class="menu-label">Found</div>`);
+    div.insertAdjacentHTML('beforeend', `<div class="s-leaflet-menu-label">Found</div>`);
 
     div.addEventListener('click', () => {
       const found = !this._storageService.hasMapMarker(guid);
@@ -473,7 +473,7 @@ export class MapInstanceService implements OnDestroy {
     div.addEventListener('click', () => { click(); });
 
     const divLabel = document.createElement('div');
-    divLabel.classList.add('ws-nw');
+    divLabel.classList.add('s-leaflet-nowrap');
     divLabel.innerText = `${spirits.length} ${spirits.length === 1 ? 'spirit' : 'spirits'}`;
     div.appendChild(divLabel);
 
@@ -486,7 +486,7 @@ export class MapInstanceService implements OnDestroy {
     div.addEventListener('click', () => { click(); });
 
     const divLabel = document.createElement('div');
-    divLabel.classList.add('ws-nw');
+    divLabel.classList.add('s-leaflet-nowrap');
     divLabel.innerText = `${wls.length} winged light`;
     div.appendChild(divLabel);
 
@@ -497,7 +497,7 @@ export class MapInstanceService implements OnDestroy {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { this._router.navigate(['/col'], { queryParams: { wl: wl.guid }}); });
-    div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">arrow_forward</div><div class="menu-label">Go to tracker</div>`);
+    div.insertAdjacentHTML('beforeend', `<div class="s-leaflet-menu-icon s-leaflet-maticon">arrow_forward</div><div class="s-leaflet-menu-label">Go to tracker</div>`);
     return div;
   }
 
@@ -505,7 +505,7 @@ export class MapInstanceService implements OnDestroy {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { this._router.navigate(['/realm', realm.guid]); });
-    div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">map</div><div class="menu-label">${realm.name || ''}</div>`);
+    div.insertAdjacentHTML('beforeend', `<div class="s-leaflet-menu-icon s-leaflet-maticon">map</div><div class="s-leaflet-menu-label">${realm.name || ''}</div>`);
     return div;
   }
 
@@ -513,7 +513,7 @@ export class MapInstanceService implements OnDestroy {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { this._router.navigate(['/area', area.guid]); });
-    div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div>`);
+    div.insertAdjacentHTML('beforeend', `<div class="s-leaflet-menu-icon s-leaflet-maticon">location_on</div><div class="s-leaflet-menu-label">${area.name || ''}</div>`);
     return div;
   }
 

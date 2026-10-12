@@ -16,14 +16,12 @@ export class NavigationHelper {
     };
   }
 
-  /** Gets a link to navigate to the items page with the item selected. */
+  /** Gets a link to navigate to the item table, filtered to the given item. */
   static getItemListLink(item: IItem): INavigationTarget | undefined {
-    if (item.type === 'Special' || item.type ==='Spell') { return undefined; }
     return {
-      route: ['/item'],
+      route: ['/item/table'],
       extras: {
         queryParams: {
-          type: item.type,
           item: item.guid
         }
       }

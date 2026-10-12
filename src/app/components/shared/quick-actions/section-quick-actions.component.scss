@@ -1,0 +1,9 @@
+@media (min-width: 1024px) {
+  :host {
+    display: none;
+  }
+}
+
+:host-context(html[data-menu="desktop"]) {
+  display: none;
+}

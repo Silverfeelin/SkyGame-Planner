@@ -1,0 +1,14 @@
+@if (isVisible()) {
+  <section class="atmos-card atmos-quick-start" aria-label="Quick start">
+    <div class="atmos-quick-start__icon"><mat-icon>auto_awesome</mat-icon></div>
+    <div class="atmos-quick-start__text">
+      <h2 class="atmos-section__title">New to Sky Planner?</h2>
+      <p>Add screenshots of your closet, or mark items by hand, and we'll work out which items, spirits and seasons you already have.</p>
+      <p>You can always find this option in Tools -> Quick start.</p>
+    </div>
+    <div class="atmos-quick-start__actions">
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="dismiss()">Dismiss</button>
+      <a class="atmos-btn atmos-btn--active" routerLink="/quick-start">Set up my progress <mat-icon>arrow_forward</mat-icon></a>
+    </div>
+  </section>
+}

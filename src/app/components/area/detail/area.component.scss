@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-area__summary {
+  // Area screenshots are wide, so they get more of the card than a portrait render.
+  --atmos-summary-media: minmax(0, 0.7fr);
+}
+
+.atmos-area__summary--no-media {
+  grid-template-columns: minmax(0, 1fr);
+}

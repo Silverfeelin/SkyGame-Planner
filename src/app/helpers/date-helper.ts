@@ -14,6 +14,17 @@ export class DateHelper {
     'yyyy-MM-dd',
     'yyyy/MM/dd'
   ];
+  static hour12 = false;
+
+  /** Luxon format for a time of day. Without `meridiem`, AM/PM is left for the caller to render. */
+  static timeFormat(seconds = false, meridiem = true): string {
+    const format = (this.hour12 ? 'h:mm' : 'HH:mm') + (seconds ? ':ss' : '');
+    return this.hour12 && meridiem ? `${format} a` : format;
+  }
+
+  static formatTime(date: DateTime, seconds = false): string {
+    return date.toFormat(this.timeFormat(seconds));
+  }
 
   static isActive(start: DateTime, end: DateTime): boolean {
     const now = DateTime.now();

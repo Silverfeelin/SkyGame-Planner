@@ -1,23 +1,125 @@
-.daily-status {
-  gap: 0.5rem;
-}
-
-.daily-countdown {
-  font-variant-numeric: tabular-nums;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.header-right {
-  margin-left: auto;
-  font-size: 0.9rem;
-}
-
-.btn-show-hidden {
-  padding: 2px;
+:host {
   display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
 
-  mat-icon { font-size: 16px; line-height: 16px; width: 16px; height: 16px; }
+.atmos-daily__intro {
+  text-shadow: var(--atmos-text-shadow);
+}
+
+// Timer trio
+.atmos-daily__timers {
+  display: grid;
+  gap: var(--atmos-gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atmos-daily__timer {
+  display: block;
+}
+
+.atmos-daily__timer-label {
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-md);
+}
+
+.atmos-daily__countdown {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--atmos-fs-2xl);
+  font-weight: 600;
+  color: var(--atmos-text);
+  margin-top: 4px;
+}
+
+// Summary card slot
+.atmos-daily__summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+// Section cards
+.atmos-daily__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-daily__section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: var(--atmos-pad);
+  padding-bottom: 0;
+  color: var(--atmos-text);
+}
+
+.atmos-daily__section-title {
+  margin: 0;
+  font-size: var(--atmos-fs-xl);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.atmos-daily__section-meta {
+  margin-left: auto;
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-md);
+}
+
+.atmos-daily__section-note {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-md);
+  line-height: 1.4;
+}
+
+.atmos-daily__section-body {
+  // Inherits .atmos-card__body padding
+}
+
+.atmos-daily__toggle-hidden {
+  background: transparent;
+  border: 0;
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--atmos-radius-pill, 999px);
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: var(--atmos-hover-tint);
+    color: var(--atmos-text);
+  }
+}
+
+// Task grid
+.atmos-daily__grid {
+  display: grid;
+  gap: var(--atmos-gap);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+
+  &--single {
+    grid-template-columns: 1fr;
+  }
 }

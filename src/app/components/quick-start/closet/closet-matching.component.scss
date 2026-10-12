@@ -1,0 +1,9 @@
+@use '../quick-start' as qs;
+@include qs.styles;
+@include qs.shots;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-card-gap);
+}

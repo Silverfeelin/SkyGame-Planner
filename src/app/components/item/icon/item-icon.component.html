@@ -1,0 +1,9 @@
+<app-icon
+  class="img item-icon" [src]="item.icon || '/assets/icons/question.webp'"
+  [width]="iconWidth" [height]="iconHeight"
+  [opacity]="(item.unlocked || opaque) ? undefined : 0.5"
+  [draggable]="false" [lazy]="lazy"
+  (click)="iconClick($event)">
+</app-icon>
+<app-item-subicons [item]="item" [node]="node" [iap]="iap" [listNode]="listNode"
+  [icons]="subIcons" [size]="subIconSize"></app-item-subicons>

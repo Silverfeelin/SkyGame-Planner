@@ -1,0 +1,98 @@
+<ul class="nav-tree">
+  @for (section of nav.sections; track section.id) {
+    @let expanded = isExpanded(section);
+    @let hasPages = section.pages.length > 0;
+    <li
+      #item
+      class="nav-tree__section"
+      (mouseenter)="openFlyout(section, row, flyout)"
+      (mouseleave)="scheduleClose()"
+      (focusin)="openFlyout(section, row, flyout)"
+      (focusout)="onFocusOut($event, item)"
+      (keydown.escape)="onEscape(sectionLink)">
+      <div #row class="nav-tree__row" [class.is-flyout-open]="flyoutSection() === section.id">
+        <a
+          #sectionLink
+          class="atmos-nav-item"
+          [class.is-active]="isSectionActive(section)"
+          [attr.aria-current]="nav.currentSection() === section.id ? 'location' : null"
+          [routerLink]="section.link"
+          (click)="onSectionClick(section)"
+          [skyTooltip]="mode() === 'rail' && !hasPages ? section.label : ''">
+          @if (section.iconUrl) {
+            <img class="atmos-nav-item__img" [src]="section.iconUrl" alt="" />
+          } @else if (section.svgIcon) {
+            <mat-icon [svgIcon]="section.svgIcon"></mat-icon>
+          } @else {
+            <mat-icon>{{ section.icon }}</mat-icon>
+          }
+          <span class="atmos-nav-item__label">{{ section.label }}</span>
+        </a>
+        @if (hasPages && mode() === 'full') {
+          <button
+            class="nav-tree__chevron"
+            type="button"
+            [class.is-open]="expanded"
+            [attr.aria-expanded]="expanded"
+            [attr.aria-controls]="'nav-tree-' + section.id"
+            [attr.aria-label]="(expanded ? 'Hide ' : 'Show ') + section.label + ' pages'"
+            (click)="nav.toggle(section.id)">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+        }
+      </div>
+
+      @if (hasPages && mode() === 'full') {
+        <ul class="nav-tree__pages" [id]="'nav-tree-' + section.id" [hidden]="!expanded">
+          <ng-container *ngTemplateOutlet="pageList; context: { $implicit: section }" />
+        </ul>
+      }
+      <!-- A top-layer popover escapes the sidebar's clipping; it stays beside its row so Tab reaches it next. -->
+      <div
+        #flyout
+        class="nav-tree__flyout"
+        popover="manual"
+        role="group"
+        [attr.aria-label]="section.label + ' pages'">
+        @if (hasPages && mode() === 'rail') {
+          <div class="nav-tree__flyout-title">{{ section.label }}</div>
+          <ul class="nav-tree__pages">
+            <ng-container *ngTemplateOutlet="pageList; context: { $implicit: section }" />
+          </ul>
+        }
+      </div>
+    </li>
+  }
+</ul>
+
+<ng-template #pageList let-section>
+  @for (page of section.pages; track page.id) {
+    <li>
+      @if (page.external) {
+        <a
+          class="nav-tree__page"
+          [href]="page.link"
+          target="_blank"
+          rel="noopener"
+          (mouseenter)="showTitleIfTruncated($event, page.label)"
+          (click)="onPageClick()">
+          <span class="nav-tree__page-label">{{ page.label }}</span>
+          <mat-icon class="nav-tree__external">open_in_new</mat-icon>
+        </a>
+      } @else {
+        @let active = nav.activePages().has(page.id);
+        <a
+          class="nav-tree__page"
+          [class.nav-tree__page--filter]="!!page.queryParams"
+          [class.is-active]="active"
+          [attr.aria-current]="active ? 'page' : null"
+          [routerLink]="page.link"
+          [queryParams]="page.queryParams"
+          (mouseenter)="showTitleIfTruncated($event, page.label)"
+          (click)="onPageClick()">
+          <span class="nav-tree__page-label">{{ page.label }}</span>
+        </a>
+      }
+    </li>
+  }
+</ng-template>

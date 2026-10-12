@@ -1,0 +1,26 @@
+/**
+ * Selection-marker palette for the closet / outfit-request pages.
+ *
+ * These are page-specific on purpose and are NOT part of the global atmos token
+ * set. They are not swatches — they identify which of up to four people claimed
+ * an item, drawn as a 3px border (and as conic-gradient slices when several
+ * people claim the same item). That needs maximum hue separation at small size,
+ * so they stay brighter and more saturated than the muted `--atmos-dye-*` tokens.
+ *
+ * Apply to any host that renders closet items or the colour picker:
+ *
+ *   @use '../closet-markers' as markers;
+ *   :host { @include markers.tokens; }
+ */
+@mixin tokens {
+  --closet-marker-r: #f00;
+  --closet-marker-y: #ff0;
+  --closet-marker-g: #0f0;
+  --closet-marker-b: #0aa0ff;
+
+  /* Translucent variants, used for the hover hint in the active colour mode. */
+  --closet-marker-r-soft: #f006;
+  --closet-marker-y-soft: #ff06;
+  --closet-marker-g-soft: #0f06;
+  --closet-marker-b-soft: #0aa0ff66;
+}

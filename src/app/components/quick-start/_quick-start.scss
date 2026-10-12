@@ -1,0 +1,196 @@
+// Shared styling for the quick start page. The steps and closet panels are
+// separate components with encapsulated stylesheets, so the common text,
+// row and banner classes live here.
+//
+// `atmos-qs__*` classes come from this file and are used across quick start;
+// `atmos-qs-<component>__*` classes belong to one component. State uses `is-*`.
+//
+//   @use '../quick-start' as qs;
+//   @include qs.styles;
+
+// Status colours of the quick start tiles, chips and banners.
+@mixin tokens {
+  --qs-warn:        var(--atmos-warn-accent);
+  --qs-warn-bg:     color-mix(in oklch, var(--atmos-warn-accent) 12%, transparent);
+  --qs-warn-border: color-mix(in oklch, var(--atmos-warn-accent) 45%, transparent);
+  --qs-lock:        var(--atmos-good);
+  --qs-lock-bg:     color-mix(in oklch, var(--atmos-good) 12%, transparent);
+  --qs-lock-border: color-mix(in oklch, var(--atmos-good) 55%, transparent);
+}
+
+@mixin styles {
+  :host { @include tokens; }
+
+  .atmos-qs__sub {
+    margin: 0;
+    max-width: 66ch;
+    color: var(--atmos-text-dim);
+    font-size: var(--atmos-fs-sm);
+  }
+
+  .atmos-qs__label {
+    margin: 0;
+    font-size: var(--atmos-fs-sm);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--atmos-text-mute);
+  }
+
+  .atmos-qs__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .atmos-qs__spacer { flex: 1; }
+
+  // Toggle on an .atmos-btn--sm. Lists show hundreds of these, so they skip the button's own backdrop blur.
+  .atmos-qs__toggle {
+    font-size: var(--atmos-fs-sm);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    // unlocked before quick start: shown, but can't be changed
+    &.is-lock,
+    &.is-lock:hover {
+      cursor: default;
+      opacity: 1;
+      background: var(--qs-lock-bg);
+      border-color: var(--qs-lock-border);
+      color: var(--qs-lock);
+    }
+  }
+
+  .atmos-qs__banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: var(--atmos-fs-sm);
+
+    p {
+      flex: 1 1 280px;
+      margin: 0;
+    }
+
+    > mat-icon {
+      flex: none;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .atmos-qs__banner--info {
+    background: var(--atmos-chip-bg);
+    border: 1px solid var(--atmos-line-soft);
+    color: var(--atmos-text-dim);
+
+    > mat-icon { color: var(--atmos-accent); }
+    strong { color: var(--atmos-text); }
+  }
+
+  .atmos-qs__banner--warn {
+    background: var(--qs-warn-bg);
+    border: 1px solid var(--qs-warn-border);
+
+    > mat-icon { color: var(--qs-warn); }
+  }
+
+  // Pasting a screenshot is a keyboard-and-mouse workflow; touch devices keep the picker and drop zone.
+  .atmos-qs__paste {
+    display: none;
+    color: var(--atmos-text-mute);
+
+    kbd {
+      padding: 1px 5px;
+      border-radius: 4px;
+      border: 1px solid var(--atmos-line);
+      background: var(--atmos-bg-elev);
+      color: var(--atmos-text-dim);
+      font-family: inherit;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .atmos-qs__paste { display: inline; }
+  }
+}
+
+// Screenshot thumbnails, shared by the check and matching panels.
+@mixin shots {
+  .atmos-qs-shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .atmos-qs-shot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    padding: 8px;
+    border-radius: 12px;
+    background: var(--atmos-chip-bg);
+    border: 1px solid var(--atmos-line-soft);
+  }
+
+  .atmos-qs-shot__img {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--atmos-radius-sm);
+    overflow: hidden;
+    background: var(--atmos-bg);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  button.atmos-qs-shot__img {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: zoom-in;
+
+    &:hover img { opacity: 0.85; }
+  }
+
+  .atmos-qs-shot__name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: var(--atmos-fs-sm);
+    color: var(--atmos-text-mute);
+  }
+
+  .atmos-qs-shot__status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--atmos-fs-sm);
+    color: var(--atmos-text-dim);
+
+    mat-icon {
+      font-size: 15px;
+      width: 15px;
+      height: 15px;
+    }
+
+    &.is-ok { color: var(--qs-lock); }
+  }
+}
