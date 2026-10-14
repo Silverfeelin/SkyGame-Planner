@@ -29,7 +29,7 @@
       }
     }
 
-    @if (realms().length > 1) {
+    @if (constellationRealms().length > 1) {
       <button
         type="button"
         class="atmos-realm-constellation__scroll atmos-realm-constellation__scroll--left"
@@ -47,9 +47,9 @@
     }
   </div>
 
-  @if (realms().length > 1) {
+  @if (constellationRealms().length > 1) {
     <div class="atmos-realm-constellation__dots">
-      @for (r of realms(); track r.guid; let i = $index) {
+      @for (r of constellationRealms(); track r.guid; let i = $index) {
         <button
           type="button"
           class="atmos-realm-constellation__dot"

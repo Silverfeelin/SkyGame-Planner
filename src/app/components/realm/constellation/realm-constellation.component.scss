@@ -89,6 +89,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   cursor: pointer;
   backdrop-filter: var(--atmos-blur-soft);
   -webkit-backdrop-filter: var(--atmos-blur-soft);
@@ -105,29 +106,47 @@
 
   &[hidden] { display: none; }
 
-  &--left { left: 8px; }
-  &--right { right: 8px; }
+  // The chevron glyphs carry their visual weight off-centre; nudge them back optically.
+  &--left { left: 8px; mat-icon { transform: translateX(-2px); } }
+  &--right { right: 8px; mat-icon { transform: translateX(2px); } }
 }
 
 .atmos-realm-constellation__dots {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
 
+// The button is the click target; the visible dot is drawn inside it.
 .atmos-realm-constellation__dot {
-  width: 8px;
-  height: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   border: 0;
   border-radius: 50%;
-  background: var(--atmos-text-mute);
+  background: transparent;
   cursor: pointer;
   padding: 0;
-  transition: background var(--atmos-transition), transform var(--atmos-transition);
 
-  &.is-active {
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--atmos-text-mute);
+    transition: background var(--atmos-transition), transform var(--atmos-transition);
+  }
+
+  &:hover::before { background: var(--atmos-text-dim); }
+
+  &.is-active::before {
     background: var(--atmos-accent);
     transform: scale(1.3);
   }
 
-  &:hover { background: var(--atmos-text-dim); }
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: calc(var(--atmos-focus-offset) - 6px);
+  }
 }
