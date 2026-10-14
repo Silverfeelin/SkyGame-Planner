@@ -13,6 +13,7 @@ import { loadThemeOverrides } from './theme-overrides';
 import { loadDataUrl } from './data-url';
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 import { checkPages } from './app/navigation/check-pages';
+import { initGridDebug } from './app/debug/grid-debug';
 // #endregion
 
 loadTheme();
@@ -20,6 +21,7 @@ loadThemeOverrides();
 
 // Load custom data.
 loadDataUrl();
+initGridDebug();
 
 if (isDevMode()) { checkPages(routes); }
 
