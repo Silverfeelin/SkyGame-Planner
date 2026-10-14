@@ -25,6 +25,12 @@
   }
 }
 
+/* Safari 26 never paints the absolutely positioned header and rows inside a
+   flex container that `content-visibility: auto` skipped, so the grid stays empty. */
+ag-grid-angular .ag-root-wrapper.ag-layout-normal {
+  content-visibility: visible;
+}
+
 /* Cell content alignment.
    AG-Grid lays cells out as blocks and relies on line-height for vertical
    rhythm, so in tall rows the text sits in the first line box at the top of the
