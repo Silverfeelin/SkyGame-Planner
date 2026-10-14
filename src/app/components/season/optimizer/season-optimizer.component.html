@@ -12,17 +12,17 @@
   </section>
 } @else {
   <header class="atmos-page__header">
-    <h1 class="atmos-page__title">{{ season.name }} Optimizer</h1>
+    <h1 class="atmos-page__title">{{ season.name }} optimizer</h1>
   </header>
 
   @if (isDraft) {
     <app-draft-warning />
   }
 
-  <section class="atmos-card atmos-optimizer__intro">
+  <section class="atmos-card">
     <div class="atmos-card__body">
       <p class="atmos-paragraph">
-        This tool helps you plan ahead for the {{ season.name }}.
+        Plan the items you want from the {{ season.name }}, and keep track of what you unlock as the season goes.
         It was inspired by StrangeStiffy's
         <a href="https://reddit.com/r/SkyGame/comments/1oc7s0a/psa_spirit_friendship_minmaxing/" target="_blank" rel="noopener" class="atmos-text-link">post on Reddit</a>.<br/>
         You can also have a look at
@@ -31,207 +31,424 @@
         <a href="https://korea-sky-planner.com/sky/candlecalculator" target="_blank" rel="noopener" class="atmos-text-link">Realdeer's Season Calculator</a>
         (in Korean and English).
       </p>
-      <hr class="atmos-rule"/>
       <p class="atmos-paragraph">
-        To enter the items you already own, please go back to the
-        <a class="atmos-text-link" [routerLink]="['/season', season.guid]">{{ season.name }}</a> page.<br/>
-        There you can click on the items and track your progress as usual.
+        Click an item to mark it, click it again once you've bought it in-game, and once more to lock it again.<br/>
+        You can quickly mark which items you want with the buttons below.
       </p>
-      <hr class="atmos-rule"/>
-      <p class="atmos-paragraph">
-        This page refers to friendship points in the form of numbers. What does that mean?
-        <a class="atmos-text-link atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">Click here</a> for more information.
-      </p>
-      <p class="atmos-paragraph">
-        A daily spirit adventure gives you 10 friendship points in their spirit tree.<br/>
-        The grey number <span class="atmos-optimizer__value">(30)</span> next to each item shows the total friendship points you get from buying the item.<br/>
-        If you can't unlock all the items you want during the season the calculator will help you figure out which items are most efficient to buy.
-      </p>
-      <p class="atmos-paragraph">
-        A simple example: buying a
-        4 <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(60)</span>
-        blessing is twice as efficient as buying a
-        4 <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(30)</span>
-        blessing — same cost, double the friendship.
-      </p>
-      <hr class="atmos-rule"/>
-      <p class="atmos-paragraph">
-        You can click on the items that you want to highlight them.<br/>
-        Below each spirit tree you will then see the remaining friendship points that you need to gain through daily adventures or by buying items you are not interested in.
-      </p>
+
       <div class="atmos-optimizer__filters">
-        <button type="button" class="atmos-btn" (click)="highlightEverything()">Everything</button>
-        <button type="button" class="atmos-btn" (click)="highlightCosmetics()">Cosmetics</button>
-        <button type="button" class="atmos-btn" (click)="highlightEmotes()">Emotes</button>
-        <button type="button" class="atmos-btn" (click)="highlightMusic()">Music</button>
-        <button type="button" class="atmos-btn" (click)="highlightSeasonHearts()">Season hearts</button>
-        <button type="button" class="atmos-btn" (click)="highlightSeasonPass()">Season pass</button>
-        <button type="button" class="atmos-btn atmos-btn--danger" (click)="promptResetHighlight()">Reset highlighted</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightEverything()">I want everything</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightCosmetics()">I want cosmetics</button>
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetHighlight()">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <details class="atmos-card atmos-optimizer__explainer">
+    <summary class="atmos-optimizer__explainer-summary">
+      <mat-icon>expand_more</mat-icon>
+      <h2 class="atmos-optimizer__heading">Explainer</h2>
+    </summary>
+    <div class="atmos-card__body">
+      <h3 class="atmos-optimizer__subheading">Items</h3>
+      <div class="atmos-optimizer__explainer-grid">
+        <div class="atmos-optimizer__explainer-item">
+          <span class="atmos-optimizer__demo">@if (demoItems.regular; as item) {<app-item-icon [item]="item" [opaque]="true" [subIcons]="SUBICONS_NO_SEASON" size="medium"></app-item-icon>}<span class="atmos-optimizer__node-value">+30</span></span>
+          <div><b>Not marked</b> The number is the friendship you get by buying the item. Click to mark it.</div>
+        </div>
+        <div class="atmos-optimizer__explainer-item">
+          <span class="atmos-optimizer__demo is-marked">@if (demoItems.regular; as item) {<app-item-icon [item]="item" [opaque]="true" [subIcons]="SUBICONS_NO_SEASON" size="medium"></app-item-icon>}<span class="atmos-optimizer__node-value is-selected">+30</span></span>
+          <div><b>Marked</b> You want it and your friendship reaches its level. Click again once you've bought it.</div>
+        </div>
+        <div class="atmos-optimizer__explainer-item">
+          <span class="atmos-optimizer__demo is-marked is-awaiting">@if (demoItems.regular; as item) {<app-item-icon [item]="item" [opaque]="true" [subIcons]="SUBICONS_NO_SEASON" size="medium"></app-item-icon>}<span class="atmos-optimizer__node-value is-selected">+30</span></span>
+          <div><b>Marked, level not reached</b> You want it, but need more friendship before you can buy it.</div>
+        </div>
+        <div class="atmos-optimizer__explainer-item">
+          <span class="atmos-optimizer__demo is-owned">@if (demoItems.owned; as item) {<app-item-icon [item]="item" [opaque]="true" [subIcons]="SUBICONS_NO_SEASON" size="medium"></app-item-icon>}</span>
+          <div><b>Owned</b> The tick shows it is unlocked. Click to lock it again.</div>
+        </div>
+        <div class="atmos-optimizer__explainer-item">
+          <span class="atmos-optimizer__demo">@if (demoItems.pass; as item) {<app-item-icon [item]="item" [opaque]="true" [subIcons]="SUBICONS_NO_SEASON" size="medium"></app-item-icon>}</span>
+          <div><b>Season Pass</b> The corner icon marks Season Pass items.</div>
+        </div>
+        <div class="atmos-optimizer__explainer-item">
+          <span class="atmos-optimizer__demo">@if (demoItems.accompany; as item) {<app-item-icon [item]="item" [opaque]="true" [subIcons]="SUBICONS_NO_SEASON" size="medium"></app-item-icon>}<span class="atmos-optimizer__accompany-badge">×3</span></span>
+          <div><b>Accompany</b> Click it to set where you are on the friendship line, or use - and +.</div>
+        </div>
+      </div>
+
+      <h3 class="atmos-optimizer__subheading">Friendship rail</h3>
+      <p class="atmos-paragraph">
+        The rail beside each tree fills up towards the star above each level. Unlock items or accompany spirits to increase your friendship.
+        <a class="atmos-text-link atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">How do I read it in-game?</a>
+      </p>
+      <div class="atmos-optimizer__legend">
+        <span><i class="atmos-optimizer__swatch is-items"></i>From owned items</span>
+        <span><i class="atmos-optimizer__swatch is-accompany"></i>From accompanying</span>
+        <span><i class="atmos-optimizer__swatch is-selected"></i>From marked items</span>
+        <span><i class="atmos-optimizer__swatch is-needed"></i>Still to accompany</span>
+      </div>
+      <div class="atmos-optimizer__legend">
+        <span class="atmos-optimizer__legend-star" data-state="reached"><mat-icon>star</mat-icon>Reached</span>
+        <span class="atmos-optimizer__legend-star" data-state="selected"><mat-icon>star</mat-icon>Reached once you buy your marked items</span>
+        <span class="atmos-optimizer__legend-star" data-state="short"><mat-icon>star</mat-icon>Short: accompany the spirit on this many days to get there</span>
+      </div>
+    </div>
+  </details>
+
+  <section class="atmos-card">
+    <div class="atmos-card__body atmos-optimizer__today">
+      <h2 class="atmos-optimizer__heading">Today</h2>
+      <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="checkedIn()" [attr.aria-pressed]="checkedIn()"
+              (click)="toggleCheckin($event)">
+        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
+        {{ checkedIn() ? 'Collected +' + candlesPerDay() : 'Collect ' + candlesPerDay() + ' season candles' }}
+      </button>
+      <div class="atmos-optimizer__today-group">
+        <span class="atmos-optimizer__control-label">Spirit adventure with</span>
+        @for (tree of trees; track tree.guid; let iTree = $index) {
+          <button type="button" class="atmos-btn atmos-btn--sm atmos-optimizer__adventure"
+                  [class.is-active]="isAdventure(iTree)" [attr.aria-pressed]="isAdventure(iTree)"
+                  [disabled]="!isAdventure(iTree) && isReached(calcs()[iTree].friendship, MAX_FRIENDSHIP)"
+                  (click)="toggleAdventure(iTree)">
+            {{ spiritName(iTree) }}{{ isAdventure(iTree) ? ' +10' : '' }}
+          </button>
+        }
       </div>
     </div>
   </section>
 
   <div class="atmos-optimizer__trees">
     @for (tree of trees; track tree.guid; let iTree = $index) {
-      <div class="atmos-optimizer__tree">
-        <app-spirit-tree
-          [tree]="tree"
-          [enableControls]="false"
-          [nodeSubIcons]="SUBICONS_NO_SEASON"
-          [nodeOverlayTemplate]="tNode"
-          [highlightNode]="wantNodeGuids()"
-          [forceNodeAction]="'emit'"
-          (nodeClicked)="onNodeClicked($event)"></app-spirit-tree>
-        <div class="atmos-card atmos-optimizer__tree-stats">
-          <div class="atmos-card__body atmos-optimizer__tree-stats-body">
-            <div class="atmos-optimizer__stat-label">
-              <b>Current friendship points</b>
-              <mat-icon class="atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">question_mark</mat-icon>
-            </div>
-            <input class="atmos-input" type="number" min="0" max="280" step="10"
-                   [formControl]="friendshipControls[iTree]"/>
-            @if ((friendshipValues[iTree]() ?? 0) < minimumFriendship[iTree]) {
-              <div class="atmos-optimizer__friendship-warning is-lacking">
-                The items you've unlocked add up to at least {{ minimumFriendship[iTree] }} friendship points.
-              </div>
-            }
-            <div><b>Missing points per level</b></div>
-            @for (points of missingFriendship()[iTree]; track $index) {
-              <div>
-                Level {{ $index + 1 }}:
-                <b [class.is-met]="points === 0" [class.is-lacking]="points > 0">{{ points | number:'1.0-0' }}</b>
-              </div>
-            }
-            <div>
-              <b>Missing total:</b>
-              <b [class.is-met]="missingFriendshipTotals()[iTree] === 0"
-                 [class.is-lacking]="missingFriendshipTotals()[iTree] > 0">
-                {{ missingFriendshipTotals()[iTree] | number:'1.0-0' }}
-              </b>
-            </div>
+      @let calc = calcs()[iTree];
+      <article class="atmos-card atmos-optimizer__tree">
+        <header class="atmos-optimizer__tree-head">
+          <h3 class="atmos-optimizer__tree-name">{{ spiritName(iTree) }}</h3>
+          <span class="atmos-optimizer__tree-total"><b>{{ roundPoints(calc.friendship) }}</b> / {{ MAX_FRIENDSHIP }}</span>
+        </header>
+
+        <nav class="atmos-optimizer__tree-actions" aria-label="Item click action">
+          <div class="atmos-optimizer__seg" role="group">
+            <button type="button" class="atmos-optimizer__seg-btn"
+                    [class.is-active]="nodeAction() === 'plan'" [attr.aria-pressed]="nodeAction() === 'plan'"
+                    (click)="nodeAction.set('plan')" aria-label="Mark and unlock items" skyTooltip="Mark and unlock items">
+              <mat-icon>lock_open</mat-icon>
+            </button>
+            <button type="button" class="atmos-optimizer__seg-btn"
+                    [class.is-active]="nodeAction() === 'navigate'" [attr.aria-pressed]="nodeAction() === 'navigate'"
+                    (click)="nodeAction.set('navigate')" aria-label="Open item page" skyTooltip="Open item page">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button type="button" class="atmos-optimizer__seg-btn"
+                    [class.is-active]="nodeAction() === 'favourite'" [attr.aria-pressed]="nodeAction() === 'favourite'"
+                    (click)="nodeAction.set('favourite')" aria-label="Wishlist item" skyTooltip="Wishlist item">
+              <mat-icon>star</mat-icon>
+            </button>
           </div>
+          <!-- Every label is rendered, stacked in one grid cell, so switching modes moves nothing. -->
+          <span class="atmos-optimizer__seg-name" aria-hidden="true">
+            <span [class.is-shown]="nodeAction() === 'plan'">Plan</span>
+            <span [class.is-shown]="nodeAction() === 'navigate'">Navigate</span>
+            <span [class.is-shown]="nodeAction() === 'favourite'">Wishlist</span>
+          </span>
+        </nav>
+
+        <div class="atmos-optimizer__tree-grid">
+          @for (tier of treeTiers[iTree]; track tier.index) {
+            @if (calc.stars[tier.index]; as star) {
+              <div class="atmos-optimizer__star" [attr.data-state]="star.state">
+                <button type="button" class="atmos-optimizer__star-icon" (click)="openMeter(iTree)"
+                        [attr.aria-label]="'Set friendship for ' + spiritName(iTree)">
+                  <mat-icon>star</mat-icon>
+                </button>
+                <div class="atmos-optimizer__star-label">
+                  <span class="atmos-optimizer__star-text">
+                    <b>{{ star.points }}</b>
+                    @switch (star.state) {
+                      @case ('reached') { · reached }
+                      @case ('selected') { · reached with marked items }
+                      @case ('short') {
+                        · <b>{{ roundPoints(star.short) }} short</b> · accompany {{ star.days }} {{ star.days === 1 ? 'day' : 'days' }}
+                      }
+                    }
+                  </span>
+                </div>
+              </div>
+            }
+            <div class="atmos-optimizer__tier">
+              @if (calc.stars[tier.index]; as star) {
+                <button type="button" class="atmos-optimizer__rail" [class.is-first]="tier.index === 0"
+                        (click)="openMeter(iTree)"
+                        [attr.aria-label]="'Friendship towards ' + star.points + ' for ' + spiritName(iTree)">
+                  @for (layer of calc.rails[tier.index]; track $index) {
+                    <i class="atmos-optimizer__rail-layer" [attr.data-kind]="layer.kind"
+                       [style.bottom.%]="layer.bottom" [style.height.%]="layer.height"></i>
+                  }
+                </button>
+              } @else {
+                <span></span>
+              }
+              <div class="atmos-optimizer__tier-nodes">
+                @for (row of tier.rows; track $index) {
+                  <div class="atmos-optimizer__row">
+                    @for (node of row; track $index) {
+                      <div class="atmos-optimizer__cell">
+                        @if (node) {
+                          @if (isAccompanyNode(node)) {
+                            <app-node class="atmos-optimizer__node is-accompany"
+                                      [node]="node" action="emit" [subIcons]="SUBICONS_NO_SEASON" [opaque]="true"
+                                      [showTooltips]="false" [overlayTemplate]="tAccompany"
+                                      [attr.title]="'Set friendship for ' + spiritName(iTree)"
+                                      (nodeClicked)="onNodeClicked(node, iTree)"></app-node>
+                            <span class="atmos-optimizer__accompany-controls">
+                              <button type="button" class="atmos-optimizer__mini" aria-label="Remove one accompany"
+                                      [disabled]="calc.accompany <= 0" (click)="addAccompany(iTree, -10)">
+                                <mat-icon>remove</mat-icon>
+                              </button>
+                              <span class="atmos-optimizer__accompany-value">+{{ calc.accompany }}</span>
+                              <button type="button" class="atmos-optimizer__mini" aria-label="Add one accompany"
+                                      [disabled]="isReached(calc.friendship, MAX_FRIENDSHIP)" (click)="addAccompany(iTree, 10)">
+                                <mat-icon>add</mat-icon>
+                              </button>
+                            </span>
+                          } @else {
+                            <app-node class="atmos-optimizer__node" [class.is-owned]="node.unlocked"
+                                      [class.is-awaiting]="isAwaitingTier(node, iTree)"
+                                      [node]="node" action="emit" [subIcons]="SUBICONS_NO_SEASON"
+                                      [highlight]="isSelected(node)" [opaque]="true"
+                                      [showTooltips]="false" [overlayTemplate]="tNode"
+                                      [attr.title]="nodeTitle(node, iTree)"
+                                      (nodeClicked)="onNodeClicked(node, iTree)"></app-node>
+                          }
+                        }
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            </div>
+          }
         </div>
-      </div>
+
+        <footer class="atmos-optimizer__tree-foot">
+          <div class="atmos-optimizer__foot-row">
+            <span>Friendship</span>
+            <span><span class="atmos-optimizer__items">{{ roundPoints(calc.itemPoints) }}</span> items +
+              <span class="atmos-optimizer__accompany">{{ calc.accompany }}</span> accompany</span>
+          </div>
+          <div class="atmos-optimizer__foot-row">
+            <span>Candles spent</span>
+            <span>{{ calc.candlesSpent }} / {{ calc.candlesSpent + calc.candlesSelected }} marked</span>
+          </div>
+          <div class="atmos-optimizer__foot-row">
+            <span>Total candles</span>
+            <span>{{ calc.candlesTotal }}</span>
+          </div>
+        </footer>
+      </article>
     }
   </div>
 
-  <section class="atmos-card atmos-optimizer__results">
-    <header class="atmos-optimizer__results-header">
-      <h2 class="atmos-optimizer__results-title">Results</h2>
-    </header>
+  <section class="atmos-card">
     <div class="atmos-card__body">
-      <div class="atmos-optimizer__toggles">
-        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="hasSeasonPass()" (click)="toggleHaveSeasonPass()">
-          <app-checkbox [state]="hasSeasonPass()" [useColors]="true"></app-checkbox>
-          Have Season Pass
+      <h2 class="atmos-optimizer__heading">
+        Your plan
+      </h2>
+
+      <div class="atmos-optimizer__filters">
+        <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="seasonPass().bought" (click)="toggleSeasonPass(false)">
+          <mat-icon>{{ seasonPass().bought ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          Bought Season Pass
         </button>
-        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="hasDoneDailiesToday()" (click)="toggleToday()">
-          <app-checkbox [state]="hasDoneDailiesToday()" [useColors]="true"></app-checkbox>
-          Have done dailies today
+        <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="seasonPass().gifted" (click)="toggleSeasonPass(true)">
+          <mat-icon>{{ seasonPass().gifted ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          Received Season Pass
         </button>
       </div>
 
-      <p class="atmos-paragraph">
-        There are <b class="is-met">{{ daysLeft() }}</b> dailies left in this season.
-      </p>
-
-      <hr class="atmos-rule"/>
-
-      <div class="atmos-paragraph">
-        <div class="atmos-optimizer__candles-row">
-          Your current season candles:
-          <input class="atmos-input atmos-input--inline" type="number"
-                 step="1" min="-999" max="999" [formControl]="candleControl"/>
-        </div>
-        You can get <b class="is-met">{{ candlesLeft() }}</b>
-        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
-        more during the season (not including double light events).<br/>
-        It will cost a total of <b class="is-lacking">{{ candlesRequired() }}</b>
-        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
-        to buy the items you highlighted.<br/>
-        If you don't miss any day you should end with
-        <b [class.is-met]="candlesFinal() >= 0" [class.is-lacking]="candlesFinal() < 0">{{ candlesFinal() }}</b>
-        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>.
-        @if (candlesFinal() < 0) {
-          <div>
-            <b class="is-lacking">You don't have enough seasonal candles to buy all of the items you've highlighted.</b><br/>
-            You would need {{ -candlesFinal() }} more from the Premium Candle Shop.
+      <div class="atmos-optimizer__tiles">
+        <div class="atmos-optimizer__tile">
+          <span class="atmos-optimizer__tile-label">Season candles at the end</span>
+          <span class="atmos-optimizer__tile-value" [class.is-met]="candlesFinal() >= 0" [class.is-lacking]="candlesFinal() < 0">
+            {{ candlesFinal() }}
+            <mat-icon class="seasonal" svgIcon="season-candle"></mat-icon>
+          </span>
+          <div class="atmos-optimizer__equation">
+            <span>You have</span>
+            <span><input class="atmos-input atmos-input--inline" type="number" min="0" max="999" step="1"
+                         aria-label="Season candles you have" [value]="candles()" (change)="setCandles($event)"/></span>
+            <span>Dailies until the end</span><span>+{{ candlesToEarn() }}</span>
+            <span>Marked items</span><span>−{{ candlesRequired() }}</span>
+            <span class="is-sum">Balance</span><span class="is-sum">{{ candlesFinal() }}</span>
           </div>
-        } @else {
-          <div><b class="is-met">You will have enough seasonal candles to buy all of the items you've highlighted.</b></div>
-        }
+          <span class="atmos-optimizer__tile-note">
+            @if (candlesFinal() >= 0) {
+              Enough for everything you marked, not counting double light events.
+            } @else {
+              {{ -candlesFinal() }} short. You would need season candles from the Premium Candle Shop.
+            }
+          </span>
+        </div>
+
+        <div class="atmos-optimizer__tile">
+          <span class="atmos-optimizer__tile-label">Days of accompanying needed</span>
+          <span class="atmos-optimizer__tile-value" [class.is-met]="accompanyDaysFit()" [class.is-lacking]="!accompanyDaysFit()">
+            {{ accompanyDays() }} <small>of {{ accompanyDaysLeft() }} days</small>
+          </span>
+          <div class="atmos-optimizer__allocation">
+            @for (tree of trees; track tree.guid; let iTree = $index) {
+              <span>{{ spiritName(iTree) }}</span>@let days = calcs()[iTree].accompanyDays;
+              <span>{{ days }} {{ days === 1 ? 'day' : 'days' }}</span>
+            }
+          </div>
+          <span class="atmos-optimizer__tile-note">One spirit adventure a day gives one spirit 10 friendship.</span>
+          @if (adventure()) {
+            <span class="atmos-optimizer__tile-note">You accompanied a spirit today. These numbers exclude today.</span>
+          }
+          @if (accompanyDays() < accompanyDaysLeft()) {
+            <span class="atmos-optimizer__tile-note">
+              @let spare = accompanyDaysLeft() - accompanyDays();
+              Since you have {{ spare }} spare {{ spare === 1 ? 'day' : 'days' }} available to accompany spirits, feel free to check if there are any items you'd like to skip to save candles.
+            </span>
+          }
+        </div>
       </div>
 
-      <hr class="atmos-rule"/>
-
-      <p class="atmos-paragraph">
-        If you complete daily spirit adventures you can get a total of
-        <b class="is-met">{{ daysFriendshipLeft() }}</b>
-        friendship points without spending candles.<br/>
-        You still need <b class="is-lacking">{{ missingFriendshipTotal() | number:'1.0-0' }}</b> friendship points to reach all of the items you've highlighted.
-      </p>
-
-      @if (missingFriendshipTotal() > daysFriendshipLeft()) {
-        <p class="atmos-paragraph">
-          You've selected items that require <b class="is-lacking">{{ missingFriendshipTotal() - daysFriendshipLeft() | number:'1.0-0' }}</b> more friendship points than you can get through daily adventures.<br/>
-          <b class="is-lacking">You can't get all of the items you've highlighted through daily spirit adventures.</b>
+      @if (markedNeedingPass(); as count) {
+        <p class="atmos-optimizer__verdict is-lacking">
+          <mat-icon>warning</mat-icon>
+          <span>
+            {{ count }} marked {{ count === 1 ? 'item needs' : 'items need' }} the Season Pass, which you haven't marked as bought or received.
+          </span>
         </p>
-        @if (knapsackNodes().length > 0) {
-          @if (knapsackReachesTarget()) {
-            <p class="atmos-paragraph">
-              To reach all of the items you've highlighted, consider adding the following additional items.
-            </p>
-          } @else {
-            <p class="atmos-paragraph">
-              <b class="is-lacking">Even buying every remaining item won't give you enough friendship points to reach all of the items you've highlighted.</b><br/>
-              These items get you as close as possible.
-            </p>
-          }
+      }
+      @let passItems = unmarkedPassItems();
+      @if (passItems.length) {
+        <div class="atmos-optimizer__verdict is-lacking">
+          <mat-icon>warning</mat-icon>
+          <span>
+            Your plan reaches {{ passItems.length }} Season Pass {{ passItems.length === 1 ? 'item' : 'items' }} you haven't marked.
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-optimizer__verdict-action" (click)="highlightPassItems()">Mark them</button>
+          </span>
+        </div>
+      }
+      @if (accompanyDaysFit() && candlesFinal() >= 0) {
+        <p class="atmos-optimizer__verdict is-met">
+          <mat-icon>check</mat-icon>
+          <span>
+            You can get every item you marked with this plan.
+          </span>
+        </p>
+      } @else if (accompanyDaysFit()) {
+        <p class="atmos-optimizer__verdict is-lacking">
+          <mat-icon>savings</mat-icon>
+          <span>
+            You can't get every item you marked with this plan. You'll be {{ -candlesFinal() }} season candles short.
+          </span>
+        </p>
+      } @else {
+        <p class="atmos-optimizer__verdict is-lacking">
+          <mat-icon>schedule</mat-icon>
+          <span>
+            Your marked items need {{ accompanyDays() - accompanyDaysLeft() }} more days of accompanying than the season has left.
+            @if (candlesFinal() < 0) {
+              You'll also be {{ -candlesFinal() }} season candles short.
+            }
+          </span>
+        </p>
+        @let ks = knapsack();
+        @if (ks.nodes.length) {
+          <p class="atmos-paragraph">
+            @if (ks.reachesTarget) {
+              Buying these items covers the gap for the fewest season candles:
+            } @else {
+              Even buying every remaining item falls short. These get you closest:
+            }
+          </p>
           <ul class="atmos-optimizer__knapsack">
-            @for (node of knapsackNodes(); track node.guid) {
+            @for (node of ks.nodes; track node.guid) {
               <li>
-                {{ node.root?.tree?.spirit?.name }} – {{ node.item!.name }} –
-                {{ node.sc }}
-                <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
-                <span class="atmos-optimizer__value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
+                {{ node.item!.name }} <span class="atmos-optimizer__value">{{ spiritName(treeOf(node)) }}</span>
+                <span>{{ node.sc }} <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon></span>
+                <span class="atmos-optimizer__accompany">+{{ formatPoints(nodeValues[node.guid]) }}</span>
               </li>
             }
           </ul>
-          <p class="atmos-paragraph">
-            These items would give you an additional <b class="is-met">{{ knapsackTotalPoints() | number:'1.0-0' }}</b> friendship points for
-            <b class="is-lacking">{{ knapsackTotalSc() }}</b>
-            <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>.<br/>
-            Please highlight the items you'd like to add to update the calculation!
-          </p>
-          @if (candlesFinalWithSuggestions() < 0) {
-            <p class="atmos-paragraph">
-              <b class="is-lacking">Together with the items you've highlighted, you would be {{ -candlesFinalWithSuggestions() }}
-              <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon> short.</b><br/>
-              You can't get everything without buying season candles from the Premium Candle Shop.
-            </p>
-          }
-          <button type="button" class="atmos-btn atmos-optimizer__knapsack-action" (click)="highlightKnapsack()">Highlight suggested items</button>
-        } @else {
-          <p class="atmos-paragraph">Look for the largest grey numbers to prioritize which items to buy!</p>
+          <button type="button" class="atmos-btn atmos-optimizer__knapsack-action" (click)="highlightKnapsack()">
+            Mark these ({{ ks.candles }} season candles)
+          </button>
         }
-      } @else {
-        <p class="atmos-paragraph"><b class="is-met">You can reach all of the items you've highlighted through daily spirit adventures alone!</b></p>
       }
     </div>
   </section>
 }
 
 <ng-template #tNode let-node>
-  @if (node && !node.unlocked && !want()[node.guid] && nodeValues[node.guid]) {
-    <span class="atmos-optimizer__node-value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
+  @if (node && !node.unlocked && nodeValues[node.guid]) {
+    <span class="atmos-optimizer__node-value" [class.is-selected]="want().has(node.guid)">+{{ roundPoints(nodeValues[node.guid]) }}</span>
   }
 </ng-template>
+
+<ng-template #tAccompany let-node>
+  @let iTree = treeOf(node);
+  @if (calcs()[iTree].accompany) {
+    <span class="atmos-optimizer__accompany-badge">×{{ calcs()[iTree].accompany / 10 }}</span>
+  }
+</ng-template>
+
+@if (meterTree() !== undefined) {
+  @let iTree = meterTree()!;
+  @let calc = calcs()[iTree];
+  <app-overlay [title]="spiritName(iTree) + ' friendship'" closeText="Done" (close)="closeMeter()">
+    <div class="atmos-optimizer__meter-dialog">
+      <p class="atmos-paragraph">Click or drag to where your friendship line is in-game. Each star is a friendship level.</p>
+      <div class="atmos-optimizer__readout">
+        <b>{{ roundPoints(calc.friendship) }}</b> / {{ MAX_FRIENDSHIP }}
+        <span class="atmos-optimizer__value">
+          <span class="atmos-optimizer__items">{{ roundPoints(calc.itemPoints) }}</span> from items you own ·
+          <span class="atmos-optimizer__accompany">{{ calc.accompany }}</span> from accompanying
+        </span>
+      </div>
+      <div class="atmos-optimizer__meter-track">
+        <div class="atmos-optimizer__meter" tabindex="0" role="slider" aria-label="Friendship points"
+             [attr.aria-valuemin]="0" [attr.aria-valuemax]="MAX_FRIENDSHIP" [attr.aria-valuenow]="calc.friendship"
+             (pointerdown)="onMeterPointer($event, iTree)" (pointermove)="onMeterPointer($event, iTree)"
+             (keydown)="onMeterKey($event, iTree)">
+          @for (layer of meterLayers(iTree); track $index) {
+            <i class="atmos-optimizer__meter-layer" [attr.data-kind]="layer.kind" [style.left.%]="layer.left" [style.width.%]="layer.width"></i>
+          }
+          @for (points of TIER_CUMULATIVE; track points; let i = $index) {
+            @if (i > 0) {
+              <mat-icon class="atmos-optimizer__meter-star" [class.is-on]="isReached(calc.friendship, points)" [style.left.%]="meterPosition(points)">star</mat-icon>
+            }
+            <span class="atmos-optimizer__meter-label" [class.is-first]="i === 0" [class.is-last]="$last" [style.left.%]="meterPosition(points)">{{ points }}</span>
+          }
+          <i class="atmos-optimizer__meter-thumb" [style.left.%]="meterPosition(calc.friendship)"></i>
+        </div>
+      </div>
+      <div class="atmos-optimizer__accompany-controls">
+        <button type="button" class="atmos-optimizer__mini" aria-label="Remove one accompany"
+                [disabled]="calc.accompany <= 0" (click)="addAccompany(iTree, -10)">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span>Accompanied <b>{{ calc.accompany / 10 }}</b> {{ calc.accompany === 10 ? 'time' : 'times' }}
+          <span class="atmos-optimizer__accompany">(+{{ calc.accompany }})</span></span>
+        <button type="button" class="atmos-optimizer__mini" aria-label="Add one accompany"
+                [disabled]="isReached(calc.friendship, MAX_FRIENDSHIP)" (click)="addAccompany(iTree, 10)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+  </app-overlay>
+}
 
 @if (showingFriendshipHelp()) {
   <app-overlay (close)="showingFriendshipHelp.set(false)">
     <p>
       Friendship with spirits can be represented by a numerical value, which we label as "friendship points" on this page.<br/>
       Each friendship level requires a specific amount of friendship points.
+      Buying an item gives the points shown on it, like <b>+30</b>, and a daily spirit adventure gives 10.
     </p>
     <p>
       Here's how to read your friendship points in-game.
@@ -239,9 +456,7 @@
       In the below screenshot I have 30 points because my line is filled three quarters towards the first star.
     </p>
     <p>
-      The 'current friendship points' value below each spirit tree is based on the items you've unlocked on the Sky Planner.<br/>
-      You can manually adjust this number to match your actual in-game friendship points.<br/>
-      The calculation will update accordingly.
+      Click on Accompany or the rail beside the tree to set your friendship to match the game.
     </p>
     <p>
       <img style="margin-left: 10px;" src="/assets/game/seasons/migration/friendship-guide.webp" />

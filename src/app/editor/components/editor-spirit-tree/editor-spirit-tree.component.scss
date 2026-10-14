@@ -241,11 +241,6 @@ h2.atmos-section__title {
   }
 }
 
-/* The tree being edited always shows its items at full strength, unlocked or not. */
-.editor-grid-tree ::ng-deep .atmos-node.is-opaque .atmos-node__icon {
-  opacity: 1;
-}
-
 /* Inline icons in the hint text. */
 .hint-icon {
   font-size: 16px;

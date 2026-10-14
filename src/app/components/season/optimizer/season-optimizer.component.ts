@@ -1,42 +1,90 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { RouterLink } from '@angular/router';
-import { DecimalPipe } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { INode, ISpiritTree, ItemType } from 'skygame-data';
+import { IItem, INode, ISpiritTree, ItemType } from 'skygame-data';
+import { CostHelper } from '@app/helpers/cost-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { CurrencyService } from '@app/services/currency.service';
+import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { DataService } from '@app/services/data.service';
+import { EventService } from '@app/services/event.service';
+import { NodeService } from '@app/services/node.service';
 import { StorageService } from '@app/services/storage.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
-import { CheckboxComponent } from '@app/components/shared/checkbox/checkbox.component';
 import { SUBICONS_NO_SEASON } from '@app/components/item/icon/subicons/item-subicons.component';
-import {
-  DraftWarningComponent,
-  SpiritTreeComponent,
-  SpiritTreeNodeClickEvent
-} from '@app/components/shared/shared-widgets';
+import { NodeComponent } from '@app/components/spirit/node/node.component';
+import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { DraftWarningComponent } from '@app/components/shared/shared-widgets';
+
+const TIER_COST: ReadonlyArray<number> = [0, 40, 60, 80, 100];
+const TIER_CUMULATIVE: ReadonlyArray<number> = [0, 40, 100, 180, 280];
+const MAX_FRIENDSHIP = 280;
+/** A spirit adventure (accompanying a spirit) always gives 10 friendship. */
+const ACCOMPANY_POINTS = 10;
+
+const WANT_KEY = 'migration.optimizer';
+const ACCOMPANY_KEY = 'optimizer.accompany';
+const ADVENTURE_KEY = 'optimizer.adventure';
+
+/** `plan` cycles an item through unmarked, marked and owned. */
+type NodeAction = 'plan' | 'navigate' | 'favourite';
+type RailKind = 'items' | 'accompany' | 'selected' | 'needed';
+type StarState = 'reached' | 'selected' | 'short' | 'none';
+
+interface FriendshipLayer { kind: RailKind; from: number; to: number; }
+interface RailLayer { kind: RailKind; bottom: number; height: number; }
+interface Star { points: number; state: StarState; short: number; days: number; }
+interface TierView { index: number; rows: ReadonlyArray<ReadonlyArray<INode | undefined>>; }
+
+interface TreeCalc {
+  itemPoints: number;
+  accompany: number;
+  /** Lowest accompany points that still reach the highest tier with an unlocked item. */
+  friendship: number;
+  /** Friendship needed to reach the highest tier with a selected item. */
+  required: number;
+  /** Friendship once every marked item is bought and the shortfall is accompanied. */
+  planned: number;
+  missing: ReadonlyArray<number>;
+  missingTotal: number;
+  accompanyDays: number;
+  /** Friendship in the order it is earned, from 0 up to the highest selected tier. */
+  layers: ReadonlyArray<FriendshipLayer>;
+  /** Rail layers clipped to each tier's own stretch, indexed by tier. */
+  rails: ReadonlyArray<ReadonlyArray<RailLayer>>;
+  /** Star above each tier, indexed by tier; the top tier has none. */
+  stars: ReadonlyArray<Star | undefined>;
+  candlesSelected: number;
+  candlesSpent: number;
+  candlesTotal: number;
+  pools: ReadonlyArray<ReadonlyArray<INode>>;
+}
+
+interface Adventure { date: string; tree: string; }
 
 @Component({
   selector: 'app-season-optimizer',
   templateUrl: './season-optimizer.component.html',
   styleUrl: './season-optimizer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    RouterLink, ReactiveFormsModule, MatIcon, DecimalPipe,
-    OverlayComponent, CheckboxComponent, SpiritTreeComponent,
-    DraftWarningComponent
-  ]
+  imports: [MatIcon, OverlayComponent, NodeComponent, DraftWarningComponent, TooltipDirective, ItemIconComponent]
 })
 export class SeasonOptimizerComponent {
   /** Every tree here belongs to the season being optimized, so the season badge is noise. */
   readonly SUBICONS_NO_SEASON = SUBICONS_NO_SEASON;
+  readonly MAX_FRIENDSHIP = MAX_FRIENDSHIP;
+  readonly TIER_CUMULATIVE = TIER_CUMULATIVE;
 
+  private readonly _router = inject(Router);
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
   private readonly _currencyService = inject(CurrencyService);
+  private readonly _nodeService = inject(NodeService);
+  private readonly _eventService = inject(EventService);
+  private readonly _dailyCheckinService = inject(DailyCheckinService);
 
   readonly season = DateHelper.getActive(this._dataService.seasonConfig.items);
   readonly trees: ReadonlyArray<ISpiritTree> =
@@ -44,103 +92,310 @@ export class SeasonOptimizerComponent {
   readonly nodes: ReadonlyArray<INode> = this.trees.flatMap(t => TreeHelper.getNodes(t)).filter(n => n) as INode[];
   readonly nodeGuids = new Set(this.nodes.map(n => n.guid));
 
-  readonly hasSeasonPass = signal(!!this.season && this._storageService.hasSeasonPass(this.season.guid));
-  readonly hasDoneDailiesToday = signal(false);
-
-  readonly want = signal<{ [guid: string]: INode }>({});
-  readonly wantNodeGuids = computed(() => Object.values(this.want()).map(n => n.guid));
-
-  // Hardcoded tier costs (mirrors legacy).
-  readonly tierUnlockCost: ReadonlyArray<number> = [0, 40, 60, 80, 100];
-  readonly tierUnlockCostCumulative: ReadonlyArray<number> = [0, 40, 100, 180, 280];
+  /** Tiers top to bottom with rows top to bottom, the order they are drawn in. */
+  readonly treeTiers: ReadonlyArray<ReadonlyArray<TierView>> = this.trees.map(tree =>
+    TreeHelper.getTiers(tree)
+      .map((tier, index) => ({ index, rows: tier.rows.map(r => [r[0] ?? undefined, r[1] ?? undefined, r[2] ?? undefined]).reverse() }))
+      .reverse()
+  );
+  private readonly _tierNodes: ReadonlyArray<ReadonlyArray<ReadonlyArray<INode>>> = this.trees.map(tree =>
+    TreeHelper.getTiers(tree).map(tier => tier.rows.flat().filter(n => n) as INode[])
+  );
+  private readonly _nodeTier = new Map<string, number>();
+  private readonly _nodeTree = new Map<string, number>();
 
   readonly isDraft = !!this.season?.draft;
-
   readonly today = DateHelper.todaySky();
+  private readonly _todayKey = this.today.toFormat('yyyy-MM-dd');
   readonly daysLeftSeason = this.season ? DateHelper.daysBetween(this.today, this.season.endDate!) : 0;
-  readonly daysLeft = signal(this.daysLeftSeason);
-  readonly daysFriendshipLeft = computed(() => this.daysLeft() * 10);
 
-  readonly candleControl = new FormControl(
-    this._storageService.getCurrencies().seasonCurrencies[this.season?.guid ?? '']?.candles || 0
-  );
-  readonly candlesOwned = toSignal(this.candleControl.valueChanges, { initialValue: this.candleControl.value });
-  readonly candlesLeft = computed(() => this.hasSeasonPass() ? this.daysLeft() * 6 : this.daysLeft() * 5);
-  readonly candlesRequired = signal(0);
-  readonly candlesFinal = computed(() => (this.candlesOwned() ?? 0) + this.candlesLeft() - this.candlesRequired());
-  readonly candlesFinalWithSuggestions = computed(() => this.candlesFinal() - this.knapsackTotalSc());
+  /** Bumped whenever unlocks or currencies change, since nodes are mutated in place. */
+  private readonly _refresh = signal(0);
 
-  readonly friendshipControls: ReadonlyArray<FormControl<number | null>> = this.trees.map(() => new FormControl(0));
-  readonly friendshipValues = this.friendshipControls.map(c => toSignal(c.valueChanges, { initialValue: c.value }));
-  /** Lowest friendship per tree that the unlocked items allow, rounded up. */
-  readonly minimumFriendship: Array<number> = this.trees.map(() => 0);
+  readonly seasonPass = computed(() => {
+    this._refresh();
+    const guid = this.season?.guid ?? '';
+    const gifted = this._storageService.hasGifted(guid);
+    return { bought: !gifted && this._storageService.hasSeasonPass(guid), gifted };
+  });
+  readonly hasSeasonPass = computed(() => this.seasonPass().bought || this.seasonPass().gifted);
+  readonly checkedIn = signal(this._dailyCheckinService.isCheckedIn());
+  readonly adventure = signal<Adventure | undefined>(undefined);
+  readonly accompanyStored = signal<{ [treeGuid: string]: number }>({});
+  readonly want = signal<ReadonlySet<string>>(new Set());
+  readonly wantNodeGuids = computed(() => [...this.want()]);
 
-  readonly missingFriendship = signal<ReadonlyArray<ReadonlyArray<number>>>([]);
-  readonly missingFriendshipTotals = signal<ReadonlyArray<number>>([]);
-  readonly missingFriendshipTotal = signal(0);
-  readonly knapsackNodes = signal<ReadonlyArray<INode>>([]);
-  readonly knapsackReachesTarget = signal(true);
-  readonly knapsackTotalSc = signal(0);
-  readonly knapsackTotalPoints = signal(0);
-
-  readonly nodeValues: { [guid: string]: number } = {};
+  readonly nodeAction = signal<NodeAction>('plan');
+  readonly meterTree = signal<number | undefined>(undefined);
   readonly showingFriendshipHelp = signal(false);
 
+  /** Copies of items from this season, so the explainer shows each state regardless of what the user owns. */
+  readonly demoItems = this.createDemoItems();
+
+  /** Friendship per node; nodes in a tier share the cost of the next tier. */
+  readonly nodeValues: { [guid: string]: number } = {};
+
+  readonly candles = computed(() => {
+    this._refresh();
+    return this._storageService.getCurrencies().seasonCurrencies[this.season?.guid ?? '']?.candles || 0;
+  });
+
+  /** Today's season candles and today's spirit adventure are logged separately, so each counts its own days. */
+  readonly candleDaysLeft = computed(() => Math.max(0, this.daysLeftSeason - (this.checkedIn() ? 1 : 0)));
+  readonly accompanyDaysLeft = computed(() => Math.max(0, this.daysLeftSeason - (this.adventure()?.date === this._todayKey ? 1 : 0)));
+  readonly candlesPerDay = computed(() => this.hasSeasonPass() ? 6 : 5);
+  readonly candlesToEarn = computed(() => this.candleDaysLeft() * this.candlesPerDay());
+
+  readonly calcs = computed<ReadonlyArray<TreeCalc>>(() => {
+    this._refresh();
+    const want = this.want();
+    const stored = this.accompanyStored();
+    this.hasSeasonPass();
+    return this.trees.map((tree, iTree) => this.calculateTree(iTree, want, stored[tree.guid] ?? 0));
+  });
+
+  readonly candlesRequired = computed(() => this.calcs().reduce((sum, c) => sum + c.candlesSelected, 0));
+  readonly candlesFinal = computed(() => this.candles() + this.candlesToEarn() - this.candlesRequired());
+  readonly missingTotal = computed(() => this.calcs().reduce((sum, c) => sum + c.missingTotal, 0));
+  readonly accompanyDays = computed(() => this.calcs().reduce((sum, c) => sum + c.accompanyDays, 0));
+  readonly accompanyDaysFit = computed(() => this.accompanyDays() <= this.accompanyDaysLeft());
+  readonly markedNeedingPass = computed(() => {
+    this._refresh();
+    return this.nodes.filter(n => this.isSelected(n) && this.needsPass(n)).length;
+  });
+  /** Season Pass items in tiers the plan reaches that are neither marked nor owned. */
+  readonly unmarkedPassItems = computed(() => {
+    if (!this.hasSeasonPass()) { return []; }
+    const want = this.want();
+    const calcs = this.calcs();
+    return this.nodes.filter(n => {
+      if (!isPassItem(n) || n.unlocked || want.has(n.guid)) { return false; }
+      return calcs[this.treeOf(n)].planned >= TIER_CUMULATIVE[this._nodeTier.get(n.guid) ?? 0] - EPSILON;
+    });
+  });
+
+  readonly knapsack = computed(() => {
+    const calcs = this.calcs();
+    const target = this.missingTotal() - this.accompanyDaysLeft() * ACCOMPANY_POINTS;
+    const option = this.findKnapsack(calcs.map(c => c.pools), calcs.map(c => c.missing), target);
+    const nodes = option?.nodes ?? [];
+    return {
+      nodes,
+      reachesTarget: !option || option.points >= target - EPSILON,
+      candles: nodes.reduce((sum, n) => sum + (n.sc ?? 0), 0),
+      points: nodes.reduce((sum, n) => sum + this.nodeValues[n.guid], 0)
+    };
+  });
+
   constructor() {
-    this.candleControl.valueChanges.subscribe(c => {
-      if (!this.season || typeof c !== 'number' || isNaN(c) || c < 0) { return; }
-      this._currencyService.setSeasonCurrency(this.season.guid, c);
+    this.trees.forEach((tree, iTree) => {
+      this._tierNodes[iTree].forEach((tierNodes, iTier) => {
+        tierNodes.forEach(n => { this._nodeTier.set(n.guid, iTier); this._nodeTree.set(n.guid, iTree); });
+        if (iTier >= TIER_COST.length - 1) { return; }
+        const paid = tierNodes.filter(n => n.sc);
+        paid.forEach(n => this.nodeValues[n.guid] = TIER_COST[iTier + 1] / paid.length);
+      });
     });
 
-    const savedWantNodes = JSON.parse(this._storageService.getKey('migration.optimizer') || '[]') as string[];
-    if (savedWantNodes.length > 0) {
-      const guids = savedWantNodes.filter(guid => this.nodeGuids.has(guid));
-      const mapped = Object.fromEntries(
-        guids.map(guid => [guid, this._dataService.guidMap.get(guid) as INode])
-      );
-      this.want.set(mapped);
+    const savedWant = JSON.parse(this._storageService.getKey<string>(WANT_KEY) || '[]') as string[];
+    this.want.set(new Set(savedWant.filter(guid => this.nodeGuids.has(guid))));
+    this.accompanyStored.set({ ...(this._storageService.getKey<{ [guid: string]: number }>(ACCOMPANY_KEY) ?? {}) });
+    const adventure = this._storageService.getKey<Adventure>(ADVENTURE_KEY);
+    if (adventure?.date === this._todayKey) { this.adventure.set(adventure); }
+
+    this._eventService.itemToggled.pipe(takeUntilDestroyed()).subscribe(() => this._refresh.update(v => v + 1));
+    this._storageService.events.pipe(takeUntilDestroyed()).subscribe(() => this._refresh.update(v => v + 1));
+    this._eventService.storageChanged.pipe(takeUntilDestroyed()).subscribe(evt => {
+      if (evt.key === DailyCheckinService.key) { this.checkedIn.set(this._dailyCheckinService.isCheckedIn()); }
+    });
+  }
+
+  // #region Node state
+
+  isAccompanyNode(node: INode): boolean {
+    return node.item?.type === ItemType.Special && !!node.item.name?.startsWith('Accompany ');
+  }
+
+  needsPass(node: INode): boolean {
+    return !this.hasSeasonPass() && isPassItem(node);
+  }
+
+  isSelected(node: INode): boolean {
+    return this.want().has(node.guid) && !node.unlocked;
+  }
+
+  /** Selected, but the tree's friendship doesn't reach the node's tier yet. */
+  isAwaitingTier(node: INode, iTree: number): boolean {
+    return this.isSelected(node) && this.calcs()[iTree].friendship < TIER_CUMULATIVE[this._nodeTier.get(node.guid) ?? 0] - EPSILON;
+  }
+
+  nodeTitle(node: INode, iTree: number): string {
+    const name = node.item?.name ?? '';
+    if (this.nodeAction() === 'navigate') { return `${name}: open the item page.`; }
+    if (this.nodeAction() === 'favourite') {
+      return node.item?.favourited ? `${name}: click to remove from your wishlist.` : `${name}: click to add to your wishlist.`;
+    }
+    const pass = this.needsPass(node) ? ' Needs the Season Pass.' : '';
+    const cost = node.sc ? ` for ${node.sc} season candles` : '';
+    const refund = node.sc ? ` and get ${node.sc} season candles back` : '';
+    if (node.unlocked) { return `${name}: owned. Click to lock it again${refund}.`; }
+    if (this.isAwaitingTier(node, iTree)) {
+      return `${name}: marked, unlocks at ${TIER_CUMULATIVE[this._nodeTier.get(node.guid) ?? 0]} friendship. Click to unlock it${cost}.${pass}`;
+    }
+    if (this.isSelected(node)) { return `${name}: marked. Click to unlock it${cost}.${pass}`; }
+    return `${name}: click to mark it.${pass}`;
+  }
+
+  // #endregion
+
+  // #region Clicks
+
+  onNodeClicked(node: INode, iTree: number): void {
+    const item = node.item;
+    if (!item) { return; }
+    switch (this.nodeAction()) {
+      case 'navigate':
+        void this._router.navigate(['/item', item.guid]);
+        return;
+      case 'favourite':
+        item.favourited = !item.favourited;
+        item.favourited ? this._storageService.addFavourites(item.guid) : this._storageService.removeFavourites(item.guid);
+        this._eventService.itemFavourited.next(item);
+        return;
     }
 
-    this.trees.forEach((tree, iTree) => {
-      const tiers = TreeHelper.getTiers(tree);
-      let currentFriendship = 0;
-      tiers.forEach((tier, iTier) => {
-        const tierNodes = tier.rows.flatMap(r => r).filter(n => n) as INode[];
-        if (currentFriendship < this.tierUnlockCostCumulative[iTier] && tierNodes.some(n => n.unlocked)) {
-          currentFriendship = this.tierUnlockCostCumulative[iTier];
-        }
-        if (iTier === tiers.length - 1) { return; }
-
-        const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
-        const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
-        tierFriendshipNodes.forEach(node => {
-          this.nodeValues[node.guid] = friendshipPerNode;
-          if (node.unlocked) { currentFriendship += friendshipPerNode; }
-        });
-      });
-
-      this.minimumFriendship[iTree] = Math.ceil(currentFriendship - EPSILON);
-      if (currentFriendship > 0) {
-        this.friendshipControls[iTree].setValue(this.minimumFriendship[iTree], { emitEvent: true });
-      }
-    });
-
-    this.friendshipControls.forEach(control => {
-      control.valueChanges.subscribe(() => this.calculate());
-    });
-    this.calculate();
+    if (this.isAccompanyNode(node)) { this.meterTree.set(iTree); return; }
+    if (node.unlocked || this.want().has(node.guid)) { this.toggleUnlock(node, iTree); return; }
+    this.setWant(new Set([...this.want(), node.guid]));
   }
 
-  onNodeClicked(evt: SpiritTreeNodeClickEvent): void {
-    this.want.update(v => {
-      const next = { ...v };
-      if (next[evt.node.guid]) { delete next[evt.node.guid]; }
-      else { next[evt.node.guid] = evt.node; }
-      return next;
-    });
-    this._storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
-    this.calculate();
+  /** Marked items become owned, owned items go back to unmarked. Costs are spent and refunded like on the season page. */
+  private toggleUnlock(node: INode, iTree: number): void {
+    const tree = this.trees[iTree];
+    const wasWanted = this.want().has(node.guid);
+    const unlock = !node.unlocked;
+    unlock ? this._nodeService.unlock(node) : this._nodeService.lock(node);
+    const cost = CostHelper.add(CostHelper.create(), node);
+    if (unlock) { CostHelper.invert(cost); }
+    this._currencyService.addTreeCost(cost, tree);
+
+    if (wasWanted) { this.setWant(new Set([...this.want()].filter(g => g !== node.guid))); }
   }
+
+  // #endregion
+
+  // #region Friendship
+
+  openMeter(iTree: number): void { this.meterTree.set(iTree); }
+  closeMeter(): void { this.meterTree.set(undefined); }
+
+  addAccompany(iTree: number, delta: number): void {
+    const calc = this.calcs()[iTree];
+    if (delta > 0 && calc.friendship >= MAX_FRIENDSHIP - EPSILON) { return; }
+    this.setAccompany(iTree, calc.accompany + delta);
+  }
+
+  /** Accompanying always gives 10, so the meter snaps the accompany points rather than the total. */
+  setFriendship(iTree: number, points: number): void {
+    const calc = this.calcs()[iTree];
+    const maxAccompany = Math.ceil((MAX_FRIENDSHIP - calc.itemPoints) / ACCOMPANY_POINTS - EPSILON) * ACCOMPANY_POINTS;
+    const accompany = Math.round((points - calc.itemPoints) / ACCOMPANY_POINTS) * ACCOMPANY_POINTS;
+    this.setAccompany(iTree, Math.min(maxAccompany, accompany));
+  }
+
+  private setAccompany(iTree: number, value: number): void {
+    const guid = this.trees[iTree].guid;
+    if (this.accompanyStored()[guid] === value) { return; }
+    this.accompanyStored.update(v => ({ ...v, [guid]: Math.max(0, value) }));
+    this._storageService.setKey(ACCOMPANY_KEY, this.accompanyStored());
+  }
+
+  onMeterPointer(event: PointerEvent, iTree: number): void {
+    const el = event.currentTarget as HTMLElement;
+    if (event.type === 'pointerdown') { el.setPointerCapture(event.pointerId); }
+    else if (!el.hasPointerCapture(event.pointerId)) { return; }
+    const rect = el.getBoundingClientRect();
+    this.setFriendship(iTree, meterPoints((event.clientX - rect.left) / rect.width));
+  }
+
+  onMeterKey(event: KeyboardEvent, iTree: number): void {
+    const delta = ({ ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1 } as { [key: string]: number })[event.key];
+    if (!delta) { return; }
+    event.preventDefault();
+    this.addAccompany(iTree, delta * ACCOMPANY_POINTS);
+  }
+
+  meterPosition(points: number): number { return meterPosition(points); }
+
+  meterLayers(iTree: number): Array<{ kind: RailKind; left: number; width: number }> {
+    const calc = this.calcs()[iTree];
+    return calc.layers.filter(l => l.to - l.from > EPSILON).map(l => {
+      const left = meterPosition(l.from);
+      return { kind: l.kind, left, width: meterPosition(Math.min(MAX_FRIENDSHIP, l.to)) - left };
+    });
+  }
+
+  // #endregion
+
+  // #region Today
+
+  toggleCheckin(event: MouseEvent): void {
+    this.checkedIn.set(this._dailyCheckinService.toggle(event, this.season));
+    this._refresh.update(v => v + 1);
+  }
+
+  /** One spirit adventure a day: picking another spirit moves today's +10 to it. */
+  toggleAdventure(iTree: number): void {
+    const current = this.adventure();
+    const guid = this.trees[iTree].guid;
+    if (current?.date === this._todayKey) {
+      const prev = this.trees.findIndex(t => t.guid === current.tree);
+      if (prev >= 0) { this.addAccompany(prev, -ACCOMPANY_POINTS); }
+    }
+
+    if (current?.date === this._todayKey && current.tree === guid) {
+      this.saveAdventure(undefined);
+      return;
+    }
+    if (this.calcs()[iTree].friendship >= MAX_FRIENDSHIP - EPSILON) {
+      this.saveAdventure(undefined);
+      return;
+    }
+    this.addAccompany(iTree, ACCOMPANY_POINTS);
+    this.saveAdventure({ date: this._todayKey, tree: guid });
+  }
+
+  isAdventure(iTree: number): boolean {
+    return this.adventure()?.tree === this.trees[iTree].guid;
+  }
+
+  private saveAdventure(adventure: Adventure | undefined): void {
+    this.adventure.set(adventure);
+    this._storageService.setKey(ADVENTURE_KEY, adventure ?? null);
+  }
+
+  // #endregion
+
+  // #region Settings
+
+  toggleSeasonPass(gifted: boolean): void {
+    if (!this.season) { return; }
+    const pass = this.seasonPass();
+    const newValue = gifted ? !pass.gifted : !pass.bought;
+    newValue && gifted ? this._storageService.addGifted(this.season.guid) : this._storageService.removeGifted(this.season.guid);
+    newValue ? this._storageService.addSeasonPasses(this.season.guid) : this._storageService.removeSeasonPasses(this.season.guid);
+  }
+
+  setCandles(event: Event): void {
+    const value = parseInt((event.target as HTMLInputElement).value, 10);
+    if (!this.season || isNaN(value) || value < 0) { return; }
+    this._currencyService.setSeasonCurrency(this.season.guid, value);
+    this._refresh.update(v => v + 1);
+  }
+
+  // #endregion
+
+  // #region Selection
 
   highlightEverything(): void { this.highlightFunc(n => !!n.item); }
   highlightCosmetics(): void {
@@ -152,133 +407,162 @@ export class SeasonOptimizerComponent {
     ]);
     this.highlightFunc(n => n.item ? itemTypeSet.has(n.item.type) : false);
   }
-  highlightEmotes(): void { this.highlightFunc(n => n.item?.type === ItemType.Emote); }
-  highlightMusic(): void { this.highlightFunc(n => n.item?.type === ItemType.Music); }
-  highlightSeasonHearts(): void { this.highlightFunc(n => n.item?.name === 'Season Heart'); }
-  highlightSeasonPass(): void { this.highlightFunc(n => n.item?.group === 'SeasonPass'); }
 
   highlightKnapsack(): void {
-    let changed = false;
-    const want = { ...this.want() };
-    this.knapsackNodes().forEach(node => {
-      if (!node?.item) { return; }
-      want[node.guid] = node;
-      changed = true;
-    });
-    if (changed) {
-      this.want.set(want);
-      this._storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
-      this.calculate();
-    }
+    this.setWant(new Set([...this.want(), ...this.knapsack().nodes.map(n => n.guid)]));
+  }
+
+  highlightPassItems(): void {
+    this.setWant(new Set([...this.want(), ...this.unmarkedPassItems().map(n => n.guid)]));
+  }
+
+  resetHighlight(): void {
+    if (!confirm('Unmark all items? Items you own stay unlocked.')) { return; }
+    this.setWant(new Set());
   }
 
   private highlightFunc(predicate: (n: INode) => boolean): void {
-    let changed = false;
-    const want = { ...this.want() };
-    this.trees.forEach(tree => {
-      const ns = TreeHelper.getNodes(tree);
-      ns.forEach(node => {
-        if (!node?.item) { return; }
-        if (predicate(node)) { want[node.guid] = node; changed = true; }
+    const want = new Set(this.want());
+    this.nodes.forEach(node => {
+      if (node.item && !node.unlocked && !this.isAccompanyNode(node) && !this.needsPass(node) && predicate(node)) { want.add(node.guid); }
+    });
+    this.setWant(want);
+  }
+
+  private setWant(want: ReadonlySet<string>): void {
+    this.want.set(want);
+    this._storageService.setKey(WANT_KEY, JSON.stringify([...want]));
+  }
+
+  // #endregion
+
+  /** Friendship per node can be a third of a tier's cost, e.g. 26⅔. */
+  formatPoints(points: number): string {
+    const whole = Math.floor(points + EPSILON);
+    const fraction = points - whole;
+    if (fraction < EPSILON) { return `${whole}`; }
+    if (Math.abs(fraction - 1 / 3) < EPSILON) { return `${whole}⅓`; }
+    if (Math.abs(fraction - 2 / 3) < EPSILON) { return `${whole}⅔`; }
+    if (Math.abs(fraction - 1 / 2) < EPSILON) { return `${whole}½`; }
+    return points.toFixed(1);
+  }
+
+  /** Whole points for the trees; a remainder below one still shows as 1 so it never reads as 0. */
+  roundPoints(points: number): number {
+    const rounded = Math.round(points);
+    return rounded === 0 && points > EPSILON ? 1 : rounded;
+  }
+
+  isReached(friendship: number, points: number): boolean {
+    return friendship >= points - EPSILON;
+  }
+
+  spiritName(iTree: number): string {
+    return this.trees[iTree].spirit?.name ?? '';
+  }
+
+  treeOf(node: INode): number {
+    return this._nodeTree.get(node.guid) ?? 0;
+  }
+
+  private createDemoItems() {
+    const demo = (item?: IItem, unlocked = false): IItem | undefined => item && { ...item, unlocked, favourited: false };
+    const items = this.nodes.map(n => n.item).filter(i => i) as IItem[];
+    const isPass = (i: IItem) => i.group === 'SeasonPass' || i.group === 'Ultimate';
+    const regular = this.nodes.find(n => n.sc && n.item && !isPass(n.item))?.item;
+    return {
+      regular: demo(regular),
+      owned: demo(regular, true),
+      pass: demo(items.find(i => i.group === 'SeasonPass') ?? items.find(isPass)),
+      accompany: demo(this.nodes.find(n => this.isAccompanyNode(n))?.item)
+    };
+  }
+
+  // #region Calculation
+
+  private calculateTree(iTree: number, want: ReadonlySet<string>, storedAccompany: number): TreeCalc {
+    const tiers = this._tierNodes[iTree];
+    const lastTier = tiers.length - 1;
+    const wanted = (n: INode) => want.has(n.guid) && !n.unlocked;
+
+    let itemPoints = 0;
+    let required = 0;
+    tiers.forEach((tierNodes, iTier) => {
+      tierNodes.forEach(n => {
+        if (n.unlocked) { itemPoints += this.nodeValues[n.guid] ?? 0; }
+        if (wanted(n)) { required = TIER_CUMULATIVE[iTier]; }
       });
     });
-    if (changed) {
-      this.want.set(want);
-      this._storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
-      this.calculate();
-    }
-  }
 
-  promptResetHighlight(): void {
-    if (!confirm('Are you sure you want to reset all highlighted items?')) { return; }
-    this.want.set({});
-    this._storageService.setKey('migration.optimizer', JSON.stringify([]));
-    this.calculate();
-  }
+    const accompany = storedAccompany;
+    const friendship = itemPoints + accompany;
 
-  toggleHaveSeasonPass(): void {
-    if (!this.season) { return; }
-    this.hasSeasonPass.update(v => !v);
-    this.hasSeasonPass()
-      ? this._storageService.addSeasonPasses(this.season.guid)
-      : this._storageService.removeSeasonPasses(this.season.guid);
-    this._storageService.removeGifted(this.season.guid);
-    this.calculate();
-  }
+    // Friendship in the order it is earned: selected items only count once their tier is open.
+    const layers: Array<FriendshipLayer> = [
+      { kind: 'items', from: 0, to: itemPoints },
+      { kind: 'accompany', from: itemPoints, to: friendship }
+    ];
+    const missing: number[] = [];
+    const pools: INode[][] = [];
+    let current = friendship;
+    let candlesSelected = 0;
+    let candlesSpent = 0;
+    let candlesTotal = 0;
 
-  toggleToday(): void {
-    this.hasDoneDailiesToday.update(v => !v);
-    this.daysLeft.set(this.hasDoneDailiesToday() ? this.daysLeftSeason - 1 : this.daysLeftSeason);
-    this.calculate();
-  }
-
-  calculate(): void {
-    const wantNodeGuids = this.wantNodeGuids();
-    const knapsackPools: INode[][][] = this.trees.map(() => []);
-    const totals: number[] = Array(this.trees.length).fill(0);
-    const missing: number[][] = Array(this.trees.length).fill([]).map(() => []);
-
-    let candlesRequired = 0;
-    this.trees.forEach((tree, iTree) => {
-      const tiers = TreeHelper.getTiers(tree);
-
-      let requiredFriendship = 0;
-      tiers.forEach((tier, iTier) => {
-        if (tier.rows.some(row => row.some(node => node && wantNodeGuids.includes(node.guid) && !node.unlocked))) {
-          requiredFriendship = this.tierUnlockCostCumulative[iTier];
-        }
+    tiers.forEach((tierNodes, iTier) => {
+      tierNodes.forEach(n => {
+        if (wanted(n)) { candlesSelected += n.sc ?? 0; }
+        if (n.unlocked) { candlesSpent += n.sc ?? 0; }
+        candlesTotal += n.sc ?? 0;
       });
+      if (iTier === lastTier) { return; }
 
-      let currentFriendship = this.friendshipValues[iTree]() ?? 0;
-      tiers.forEach((tier, iTier) => {
-        if (iTier === tiers.length - 1) {
-          tier.rows
-            .flatMap(r => r)
-            .filter(n => n && !n.unlocked && wantNodeGuids.includes(n.guid))
-            .forEach(n => { candlesRequired += (n!.sc ?? 0); });
-          return;
-        }
-
-        const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
-        const tierAvailableNodes = tierFriendshipNodes.filter(node => !node.unlocked);
-        const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
-        const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
-
-        const tierPool: INode[] = [];
-        tierAvailableNodes.forEach(node => {
-          if (wantNodeGuids.includes(node.guid)) {
-            currentFriendship += friendshipPerNode;
-            candlesRequired += (node.sc ?? 0);
-          } else {
-            tierPool.push(node);
-          }
-        });
-        knapsackPools[iTree].push(tierPool);
-
-        if (currentFriendship >= requiredFriendship) {
-          missing[iTree].push(0);
-        } else {
-          missing[iTree].push(Math.max(0, friendshipNeeded - currentFriendship));
-          if (friendshipNeeded > currentFriendship) { currentFriendship = friendshipNeeded; }
-        }
+      const before = current;
+      const pool: INode[] = [];
+      tierNodes.filter(n => n.sc && !n.unlocked).forEach(n => {
+        if (wanted(n)) { current += this.nodeValues[n.guid]; }
+        else if (!this.needsPass(n)) { pool.push(n); }
       });
+      layers.push({ kind: 'selected', from: before, to: current });
+      pools.push(pool);
 
-      totals[iTree] = missing[iTree].reduce((a, b) => a + b, 0);
+      const next = TIER_CUMULATIVE[iTier + 1];
+      if (current >= required - EPSILON) {
+        missing.push(0);
+      } else {
+        missing.push(Math.max(0, next - current));
+        layers.push({ kind: 'needed', from: current, to: next });
+        current = Math.max(current, next);
+      }
     });
 
-    this.candlesRequired.set(candlesRequired);
-    this.missingFriendship.set(missing);
-    this.missingFriendshipTotals.set(totals);
-    const total = totals.reduce((a, b) => a + b, 0);
-    this.missingFriendshipTotal.set(total);
+    const missingTotal = missing.reduce((a, b) => a + b, 0);
 
-    const knapsackFriendship = total - this.daysFriendshipLeft();
-    const option = this.knapsack(knapsackPools, missing, knapsackFriendship);
-    const ks = option?.nodes ?? [];
-    this.knapsackNodes.set(ks);
-    this.knapsackReachesTarget.set(!option || option.points >= knapsackFriendship - EPSILON);
-    this.knapsackTotalSc.set(ks.reduce((sum, n) => sum + (n.sc ?? 0), 0));
-    this.knapsackTotalPoints.set(ks.reduce((sum, n) => sum + this.nodeValues[n.guid], 0));
+    const rails = tiers.map((_, iTier) => {
+      if (iTier === lastTier) { return []; }
+      const lo = TIER_CUMULATIVE[iTier], hi = TIER_CUMULATIVE[iTier + 1];
+      return layers.flatMap(l => {
+        const a = Math.max(l.from, lo), b = Math.min(l.to, hi);
+        return b - a > EPSILON ? [{ kind: l.kind, bottom: (a - lo) / (hi - lo) * 100, height: (b - a) / (hi - lo) * 100 }] : [];
+      });
+    });
+
+    let shortBy = 0;
+    const stars = tiers.map((_, iTier): Star | undefined => {
+      if (iTier === lastTier) { return undefined; }
+      shortBy += missing[iTier];
+      const points = TIER_CUMULATIVE[iTier + 1];
+      let state: StarState;
+      if (friendship >= points - EPSILON) { state = 'reached'; }
+      else if (points > required) { state = current >= points - EPSILON ? 'selected' : 'none'; }
+      else { state = shortBy > EPSILON ? 'short' : 'selected'; }
+      return { points, state, short: shortBy, days: daysFor(shortBy) };
+    });
+
+    return {
+      itemPoints, accompany, friendship, required, planned: current, missing, missingTotal,
+      accompanyDays: daysFor(missingTotal), layers, rails, stars, candlesSelected, candlesSpent, candlesTotal, pools
+    };
   }
 
   /**
@@ -286,12 +570,12 @@ export class SeasonOptimizerComponent {
    * or the cheapest set that covers the most when no set covers it.
    * Friendship only counts towards its own tree, so each tree contributes at most its own missing friendship.
    */
-  private knapsack(
+  private findKnapsack(
     pools: ReadonlyArray<ReadonlyArray<ReadonlyArray<INode>>>,
     missing: ReadonlyArray<ReadonlyArray<number>>,
     target: number
   ): KnapsackOption | undefined {
-    if (target <= 0) { return undefined; }
+    if (target <= EPSILON) { return undefined; }
 
     let combined: Array<KnapsackOption> = [{ points: 0, cost: 0, nodes: [] }];
     pools.forEach((tierPools, iTree) => {
@@ -340,6 +624,8 @@ export class SeasonOptimizerComponent {
 
     return paretoFront([...states.values()]);
   }
+
+  // #endregion
 }
 
 type KnapsackOption = { points: number; cost: number; nodes: Array<INode> };
@@ -347,6 +633,29 @@ type KnapsackState = KnapsackOption & { carry: number };
 
 /** Friendship per node is fractional (e.g. 40 / 3), so sums need a tolerance. */
 const EPSILON = 0.01;
+
+function isPassItem(node: INode): boolean {
+  return node.item?.group === 'SeasonPass' || node.item?.group === 'Ultimate';
+}
+
+function daysFor(points: number): number {
+  return Math.max(0, Math.ceil(points / ACCOMPANY_POINTS - EPSILON));
+}
+
+/** Stars sit at equal distances on the in-game line, regardless of how many points each level needs. */
+function meterPosition(points: number): number {
+  const p = Math.max(0, Math.min(MAX_FRIENDSHIP, points));
+  let i = 0;
+  while (i < TIER_COST.length - 2 && p > TIER_CUMULATIVE[i + 1]) { i++; }
+  return (i + (p - TIER_CUMULATIVE[i]) / TIER_COST[i + 1]) / (TIER_COST.length - 1) * 100;
+}
+
+function meterPoints(fraction: number): number {
+  const tiers = TIER_COST.length - 1;
+  const f = Math.max(0, Math.min(1, fraction)) * tiers;
+  const i = Math.min(tiers - 1, Math.floor(f));
+  return TIER_CUMULATIVE[i] + (f - i) * TIER_COST[i + 1];
+}
 
 function addState(states: Map<string, KnapsackState>, state: KnapsackState): void {
   const key = `${state.points.toFixed(2)}|${state.carry.toFixed(2)}`;

@@ -2,6 +2,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap);
+
+  // Friendship sources, shared by the rails, the meter and the explainer.
+  --optimizer-items: var(--atmos-accent);
+  --optimizer-accompany: var(--atmos-favourite);
+  --optimizer-selected: repeating-linear-gradient(135deg,
+    oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.6) 0 3px,
+    oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.2) 3px 6px);
+  --optimizer-needed: repeating-linear-gradient(135deg,
+    oklch(0.78 0.13 65 / 0.75) 0 3px,
+    oklch(0.78 0.13 65 / 0.2) 3px 6px);
+  --optimizer-track: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.08);
+  --optimizer-marked-bg: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.16);
+  --optimizer-marked-border: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.4);
+  --optimizer-owned-bg: oklch(0.80 0.13 150 / 0.14);
+  --optimizer-owned-border: oklch(0.80 0.13 150 / 0.55);
 }
 
 .atmos-optimizer__inline-icon {
@@ -18,15 +33,166 @@
 
 .atmos-optimizer__value {
   color: var(--atmos-text-mute);
+}
+
+.atmos-optimizer__items { color: var(--optimizer-items); }
+.atmos-optimizer__accompany { color: var(--optimizer-accompany); }
+
+.atmos-optimizer__heading {
+  margin: 0;
+  font-size: var(--atmos-fs-xl);
+  font-weight: 600;
+  color: var(--atmos-text);
+
+  small {
+    margin-left: 8px;
+    font-size: var(--atmos-fs-md);
+    font-weight: 400;
+    color: var(--atmos-text-mute);
+  }
+}
+
+.atmos-optimizer__subheading {
+  margin: 0;
+  font-size: var(--atmos-fs-lg);
   font-weight: 600;
 }
 
-.atmos-optimizer__filters {
+// #region Controls
+
+.atmos-optimizer__filters,
+.atmos-optimizer__today-group {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--atmos-gap-compact);
-  margin-top: 12px;
 }
+
+.atmos-optimizer__control-label {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+}
+
+.atmos-optimizer__today {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.atmos-optimizer__adventure.is-active {
+  background: oklch(0.87 0.18 93 / 0.16);
+  border-color: oklch(0.87 0.18 93 / 0.5);
+  color: var(--optimizer-accompany);
+}
+
+// #endregion
+
+// #region Explainer
+
+.atmos-optimizer__explainer-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--atmos-pad);
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker { display: none; }
+
+  mat-icon { transition: transform var(--atmos-transition); }
+}
+
+.atmos-optimizer__explainer:not([open]) .atmos-optimizer__explainer-summary mat-icon {
+  transform: rotate(-90deg);
+}
+
+.atmos-optimizer__explainer > .atmos-card__body {
+  padding-top: 0;
+}
+
+.atmos-optimizer__explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px 20px;
+}
+
+.atmos-optimizer__explainer-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+
+  b {
+    display: block;
+    color: var(--atmos-text);
+  }
+}
+
+// Node states drawn with the same colours as the real nodes.
+.atmos-optimizer__demo {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--atmos-radius-sm);
+  outline: 2px dashed transparent;
+  outline-offset: -2px;
+
+  &.is-marked {
+    background: var(--optimizer-marked-bg);
+    box-shadow: inset 0 0 0 1px var(--optimizer-marked-border);
+  }
+
+  &.is-awaiting { outline-color: var(--atmos-accent); }
+
+  &.is-owned {
+    background: var(--optimizer-owned-bg);
+    box-shadow: inset 0 0 0 1px var(--optimizer-owned-border);
+  }
+}
+
+.atmos-optimizer__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+
+  > span { display: inline-flex; align-items: center; gap: 6px; }
+}
+
+.atmos-optimizer__swatch {
+  display: inline-block;
+  width: 14px;
+  height: 8px;
+  border-radius: 3px;
+
+  &.is-items { background: var(--optimizer-items); }
+  &.is-accompany { background: var(--optimizer-accompany); }
+  &.is-selected { background: var(--optimizer-selected); }
+  &.is-needed { background: var(--optimizer-needed); }
+}
+
+.atmos-optimizer__legend-star {
+  &[data-state="reached"] { color: var(--optimizer-accompany); }
+  &[data-state="selected"] { color: var(--atmos-accent); }
+  &[data-state="short"] { color: var(--atmos-warm); }
+
+  mat-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
+}
+
+// #endregion
+
+// #region Trees
 
 .atmos-optimizer__trees {
   display: flex;
@@ -38,64 +204,432 @@
 .atmos-optimizer__tree {
   display: flex;
   flex-direction: column;
-  gap: var(--atmos-gap-compact);
   // Trees have an intrinsic node-grid width; letting flex shrink them below it
   // overlaps the nodes. Keep natural width and let the row scroll instead.
   flex: 0 0 auto;
+  width: 300px;
 }
 
-.atmos-optimizer__tree-stats {
+.atmos-optimizer__tree-head {
   display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: var(--atmos-pad) var(--atmos-pad) 4px;
 }
 
-.atmos-optimizer__tree-stats-body {
-  gap: 6px;
+.atmos-optimizer__tree-name {
+  margin: 0;
+  font-size: var(--atmos-fs-lg);
+  font-weight: 600;
 }
 
-.atmos-optimizer__stat-label {
+.atmos-optimizer__tree-total {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+
+  b { color: var(--atmos-text); }
+}
+
+// Mirrors the spirit tree's control bar.
+.atmos-optimizer__tree-actions {
   display: flex;
   align-items: center;
   gap: 6px;
+  padding: 4px var(--atmos-pad) 0;
+}
 
-  mat-icon {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
+.atmos-optimizer__seg {
+  display: inline-flex;
+  align-items: stretch;
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+  overflow: hidden;
+
+  > .atmos-optimizer__seg-btn + .atmos-optimizer__seg-btn {
+    border-left: 1px solid var(--atmos-line-soft);
   }
 }
 
+.atmos-optimizer__seg-btn {
+  // Inset, or the pill group's rounded clip cuts the ring's corners.
+  --atmos-focus-offset: -2px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--atmos-text-dim);
+  line-height: 1;
+  cursor: pointer;
+  outline: 0;
+  transition: background var(--atmos-transition), color var(--atmos-transition);
 
-// Trees size to their node grid; zero width keeps the warning from widening the column.
-.atmos-optimizer__friendship-warning {
-  width: 0;
-  min-width: 100%;
+  > mat-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+
+  &.is-active {
+    background: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.18);
+    color: var(--atmos-accent);
+  }
+}
+
+// All names share one grid cell, so the cell is as wide as the longest.
+.atmos-optimizer__seg-name {
+  display: grid;
+  font-size: var(--atmos-fs-md);
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--atmos-accent);
+
+  > span {
+    grid-area: 1 / 1;
+    visibility: hidden;
+  }
+
+  > span.is-shown { visibility: visible; }
+}
+
+.atmos-optimizer__tree-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 4px var(--atmos-pad) 12px 8px;
+}
+
+.atmos-optimizer__tier,
+.atmos-optimizer__star {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  column-gap: 8px;
+}
+
+.atmos-optimizer__tier-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-block: 6px;
+  min-width: 0;
+}
+
+.atmos-optimizer__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.atmos-optimizer__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: 64px;
+}
+
+// Each tier owns the stretch of rail between the star below it and the star above it.
+.atmos-optimizer__rail {
+  position: relative;
+  justify-self: center;
+  width: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--optimizer-track);
+  cursor: pointer;
+  overflow: hidden;
+
+  &.is-first { border-radius: 0 0 999px 999px; }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: 2px;
+  }
+}
+
+.atmos-optimizer__rail-layer,
+.atmos-optimizer__meter-layer {
+  position: absolute;
+
+  &[data-kind="items"] { background: var(--optimizer-items); }
+  &[data-kind="accompany"] { background: var(--optimizer-accompany); }
+  &[data-kind="selected"] { background: var(--optimizer-selected); }
+  &[data-kind="needed"] { background: var(--optimizer-needed); }
+}
+
+.atmos-optimizer__rail-layer {
+  left: 0;
+  right: 0;
+}
+
+.atmos-optimizer__star {
+  align-items: center;
+  min-height: 28px;
+  --star-color: var(--atmos-text-mute);
+
+  &[data-state="reached"] { --star-color: var(--optimizer-accompany); }
+  &[data-state="selected"] { --star-color: var(--atmos-accent); }
+  &[data-state="short"] { --star-color: var(--atmos-warm); }
+}
+
+.atmos-optimizer__star-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--star-color);
+  cursor: pointer;
+
+  // Keeps the empty track continuous behind the star; fills stop at the tier edge.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto;
+    left: 50%;
+    width: 10px;
+    transform: translateX(-50%);
+    background: var(--optimizer-track);
+  }
+
+  mat-icon {
+    position: relative;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// One line per label, so a tree doesn't grow when a label changes.
+.atmos-optimizer__star-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: var(--atmos-fs-sm);
+  color: var(--star-color);
+
+  &::after {
+    content: "";
+    flex: 1 1 12px;
+    height: 1px;
+    background: var(--atmos-line-soft);
+  }
+}
+
+.atmos-optimizer__star-text {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.atmos-optimizer__star:is([data-state="selected"], [data-state="short"]) .atmos-optimizer__star-label::after {
+  background: repeating-linear-gradient(90deg, var(--star-color) 0 4px, transparent 4px 8px);
+  opacity: 0.6;
+}
+
+// Every node reserves the outline, so marking one only changes its colour.
+.atmos-optimizer__node {
+  border-radius: var(--atmos-radius-sm);
+  outline: 2px dashed transparent;
+  outline-offset: -2px;
+
+  &.is-awaiting { outline-color: var(--atmos-accent); }
+
+  &.is-owned {
+    background: var(--optimizer-owned-bg);
+    box-shadow: inset 0 0 0 1px var(--optimizer-owned-border);
+  }
+}
+
+.atmos-optimizer__node-value,
+.atmos-optimizer__accompany-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  padding: 0 5px;
+  border-radius: var(--atmos-radius-pill);
+  font-size: var(--atmos-fs-sm);
+  font-weight: 700;
+  line-height: 16px;
+  pointer-events: none;
+}
+
+.atmos-optimizer__node-value {
+  background: oklch(0.16 0.03 var(--atmos-hue) / 0.92);
+  color: var(--atmos-text-dim);
+
+  &.is-selected { color: var(--atmos-accent); }
+}
+
+.atmos-optimizer__accompany-badge {
+  background: var(--optimizer-accompany);
+  color: oklch(0.25 0.05 93);
+}
+
+
+.atmos-optimizer__accompany-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: var(--atmos-fs-sm);
 }
 
-.atmos-optimizer__candles-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-}
-
-.atmos-optimizer__results-header {
-  padding: var(--atmos-pad);
-  padding-bottom: 0;
-}
-
-.atmos-optimizer__results-title {
-  margin: 0;
-  font-size: var(--atmos-fs-xl);
+.atmos-optimizer__accompany-value {
+  color: var(--optimizer-accompany);
   font-weight: 600;
+}
+
+.atmos-optimizer__mini {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid oklch(0.87 0.18 93 / 0.4);
+  border-radius: 50%;
+  background: none;
+  color: var(--optimizer-accompany);
+  cursor: pointer;
+
+  &:hover { background: oklch(0.87 0.18 93 / 0.15); }
+  &:disabled { opacity: 0.3; cursor: default; }
+
+  mat-icon {
+    font-size: 15px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.atmos-optimizer__tree-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding: 12px var(--atmos-pad) var(--atmos-pad);
+  border-top: 1px solid var(--atmos-line-soft);
+  font-size: var(--atmos-fs-sm);
+}
+
+.atmos-optimizer__foot-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+
+  > span:first-child { color: var(--atmos-text-dim); }
+}
+
+// #endregion
+
+// #region Plan
+
+.atmos-optimizer__tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.atmos-optimizer__tile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 14px 16px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-chip-bg);
+}
+
+.atmos-optimizer__tile-label {
+  font-size: var(--atmos-fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--atmos-text);
 }
 
-.atmos-optimizer__toggles {
+.atmos-optimizer__tile-value {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--atmos-gap-compact);
+  align-items: baseline;
+  gap: 6px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+
+  small {
+    font-size: var(--atmos-fs-md);
+    font-weight: 400;
+    color: var(--atmos-text-dim);
+  }
+
+  mat-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.atmos-optimizer__tile-note {
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+}
+
+.atmos-optimizer__equation,
+.atmos-optimizer__allocation {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 12px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+  font-variant-numeric: tabular-nums;
+
+  > span:nth-child(even) { text-align: right; color: var(--atmos-text); }
+}
+
+.atmos-optimizer__equation .is-sum {
+  margin-top: 2px;
+  padding-top: 4px;
+  border-top: 1px solid var(--atmos-line-soft);
+  font-weight: 700;
+  color: var(--atmos-text);
+}
+
+.atmos-optimizer__verdict {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--atmos-radius-sm);
+
+  &.is-met { background: oklch(0.80 0.13 150 / 0.10); }
+  &.is-lacking { background: oklch(0.78 0.13 65 / 0.12); }
+
+  > mat-icon { flex: none; }
+  > span { color: var(--atmos-text); }
+}
+
+.atmos-optimizer__verdict-action {
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 .atmos-optimizer__knapsack {
@@ -103,25 +637,115 @@
   padding-left: 22px;
   color: var(--atmos-text);
 
-  li { margin-bottom: 4px; }
+  li {
+    margin-bottom: 4px;
+
+    > span + span { margin-left: 8px; }
+  }
 }
 
-/* The results card body is a column flex, which would otherwise stretch a
+/* The plan card body is a column flex, which would otherwise stretch a
    lone button to the full card width. */
 .atmos-optimizer__knapsack-action {
   align-self: flex-start;
 }
 
-.atmos-optimizer__node-value {
-  position: absolute;
-  top: 2px;
-  right: 4px;
-  font-size: var(--atmos-fs-sm);
-  font-weight: 700;
-  color: var(--atmos-text-mute);
-  text-shadow: 1px 1px 2px black;
-  pointer-events: none;
+// #endregion
+
+// #region Meter
+
+.atmos-optimizer__meter-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
 }
+
+.atmos-optimizer__readout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+
+  > b { font-size: 28px; }
+}
+
+// The overlay content scrolls on overflow, so this padding has to hold the stars, thumb and labels.
+.atmos-optimizer__meter-track {
+  padding: 12px 16px 36px;
+}
+
+// Stars sit at equal distances, like the in-game friendship line.
+.atmos-optimizer__meter {
+  position: relative;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--optimizer-track);
+  cursor: pointer;
+  touch-action: none;
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: 6px;
+  }
+}
+
+// Muted so the stars on top stay readable.
+.atmos-optimizer__meter-layer {
+  top: 0;
+  bottom: 0;
+  opacity: 0.6;
+
+  &:first-child { border-radius: 999px 0 0 999px; }
+}
+
+.atmos-optimizer__meter-star,
+.atmos-optimizer__meter-label,
+.atmos-optimizer__meter-thumb {
+  position: absolute;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.atmos-optimizer__meter-star {
+  top: 50%;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+  font-size: 26px;
+  transform: translate(-50%, -50%);
+  color: var(--atmos-text);
+  text-shadow: 0 1px 3px oklch(0 0 0 / 0.55);
+
+  &.is-on {
+    color: var(--optimizer-accompany);
+  }
+}
+
+.atmos-optimizer__meter-label {
+  top: 100%;
+  margin-top: 12px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-mute);
+  white-space: nowrap;
+
+  &.is-first { transform: none; }
+  &.is-last { transform: translateX(-100%); }
+}
+
+.atmos-optimizer__meter-thumb {
+  top: 50%;
+  z-index: 3;
+  width: 5px;
+  height: 34px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  background: var(--atmos-text);
+  box-shadow: 0 0 0 2px var(--atmos-card-bg);
+}
+
+// #endregion
+
 
 // State helpers — reuse semantic accent colours from tokens.
 .is-met { color: var(--atmos-good); }
