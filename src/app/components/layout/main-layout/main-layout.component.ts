@@ -13,7 +13,6 @@ import { OverlayComponent } from "../overlay/overlay.component";
 import { TopbarComponent } from '@app/components/layout/shell/topbar.component';
 import { SidebarComponent } from '@app/components/layout/shell/sidebar.component';
 import { FooterComponent } from '@app/components/layout/shell/footer.component';
-import { BrowserNoticeComponent } from '@app/components/layout/browser-notice/browser-notice.component';
 
 @Component({
     selector: 'app-main-layout',
@@ -21,7 +20,7 @@ import { BrowserNoticeComponent } from '@app/components/layout/browser-notice/br
     styleUrl: './main-layout.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: { class: 'atmospheric' },
-    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, TopbarComponent, SidebarComponent, FooterComponent, BrowserNoticeComponent]
+    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, TopbarComponent, SidebarComponent, FooterComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 
