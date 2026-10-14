@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
@@ -11,6 +11,8 @@ import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { NodeService } from '@app/services/node.service';
+import { SeasonPlan, SeasonPlanNode, SeasonPlanRenderService } from '@app/services/season-plan-render.service';
+import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
 import { StorageService } from '@app/services/storage.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { SUBICONS_NO_SEASON } from '@app/components/item/icon/subicons/item-subicons.component';
@@ -31,6 +33,7 @@ const ADVENTURE_KEY = 'optimizer.adventure';
 
 /** `plan` cycles an item through unmarked, marked and owned. */
 type NodeAction = 'plan' | 'navigate' | 'favourite';
+type ExportMode = 'clipboard' | 'share' | 'download';
 type RailKind = 'items' | 'accompany' | 'selected' | 'needed';
 type StarState = 'reached' | 'selected' | 'short' | 'none';
 
@@ -78,6 +81,7 @@ export class SeasonOptimizerComponent {
   readonly MAX_FRIENDSHIP = MAX_FRIENDSHIP;
   readonly TIER_CUMULATIVE = TIER_CUMULATIVE;
 
+  private readonly _elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly _router = inject(Router);
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
@@ -85,6 +89,8 @@ export class SeasonOptimizerComponent {
   private readonly _nodeService = inject(NodeService);
   private readonly _eventService = inject(EventService);
   private readonly _dailyCheckinService = inject(DailyCheckinService);
+  private readonly _planRenderService = inject(SeasonPlanRenderService);
+  private readonly _treeRenderService = inject(SpiritTreeRenderService);
 
   readonly season = DateHelper.getActive(this._dataService.seasonConfig.items);
   readonly trees: ReadonlyArray<ISpiritTree> =
@@ -432,6 +438,81 @@ export class SeasonOptimizerComponent {
   private setWant(want: ReadonlySet<string>): void {
     this.want.set(want);
     this._storageService.setKey(WANT_KEY, JSON.stringify([...want]));
+  }
+
+  // #endregion
+
+  // #region Export
+
+  readonly exporting = signal(false);
+  readonly canShare = typeof navigator.share === 'function';
+
+  async exportPlan(mode: ExportMode, tooltip?: TooltipDirective): Promise<void> {
+    if (!this.season || this.exporting()) { return; }
+    if (mode === 'clipboard' && typeof ClipboardItem === 'undefined') {
+      alert('Copying to clipboard is not supported by this browser.');
+      return;
+    }
+
+    this.exporting.set(true);
+    try {
+      const canvas = await this._planRenderService.render(this.createPlan(), this._elementRef.nativeElement);
+      const fileName = `${this.season.shortName}-plan.png`.replace(/\s+/g, '-').toLowerCase();
+      switch (mode) {
+        case 'clipboard':
+          await this._treeRenderService.copyCanvas(canvas);
+          tooltip?.open();
+          break;
+        case 'share':
+          this._treeRenderService.shareCanvas(canvas, fileName);
+          break;
+        case 'download':
+          this._planRenderService.downloadCanvas(canvas, fileName);
+          break;
+      }
+    } catch (e: any) {
+      alert(`Failed to export your plan: ${e?.message ?? e}`);
+    } finally {
+      this.exporting.set(false);
+    }
+  }
+
+  private createPlan(): SeasonPlan {
+    const calcs = this.calcs();
+    const trees = this.trees.map((_, iTree) => {
+      const calc = calcs[iTree];
+      return {
+        name: this.spiritName(iTree),
+        friendship: this.roundPoints(calc.friendship),
+        candlesMarked: calc.candlesSelected,
+        accompanyDays: calc.accompanyDays,
+        tiers: this.treeTiers[iTree].map(tier => ({
+          rows: tier.rows.map(row => row.map(node => node && this.createPlanNode(node, iTree))),
+          rail: calc.rails[tier.index],
+          star: calc.stars[tier.index]
+        }))
+      };
+    });
+
+    return {
+      season: this.season!.name,
+      seasonIcon: this.season!.iconUrl,
+      daysLeft: this.daysLeftSeason,
+      seasonPass: this.hasSeasonPass(),
+      trees,
+      candlesSpent: calcs.reduce((sum, c) => sum + c.candlesSpent, 0),
+      candlesRequired: this.candlesRequired(),
+      candlesFinal: this.candlesFinal(),
+      accompanyDays: this.accompanyDays(),
+      accompanyDaysLeft: this.accompanyDaysLeft()
+    };
+  }
+
+  private createPlanNode(node: INode, iTree: number): SeasonPlanNode {
+    if (this.isAccompanyNode(node)) { return { node, state: 'none', accompany: this.calcs()[iTree].accompany }; }
+    const state = node.unlocked ? 'owned' : this.isAwaitingTier(node, iTree) ? 'awaiting' : this.isSelected(node) ? 'marked' : 'none';
+    const value = !node.unlocked && this.nodeValues[node.guid] ? this.roundPoints(this.nodeValues[node.guid]) : undefined;
+    return { node, state, value, valueMarked: this.want().has(node.guid) };
   }
 
   // #endregion

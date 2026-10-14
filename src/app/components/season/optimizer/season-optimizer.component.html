@@ -178,7 +178,7 @@
             }
             <div class="atmos-optimizer__tier">
               @if (calc.stars[tier.index]; as star) {
-                <button type="button" class="atmos-optimizer__rail" [class.is-first]="tier.index === 0"
+                <button type="button" class="atmos-optimizer__rail"
                         (click)="openMeter(iTree)"
                         [attr.aria-label]="'Friendship towards ' + star.points + ' for ' + spiritName(iTree)">
                   @for (layer of calc.rails[tier.index]; track $index) {
@@ -380,6 +380,22 @@
           </button>
         }
       }
+
+      <div class="atmos-optimizer__filters atmos-optimizer__export">
+        <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="exporting()"
+                skyTooltip="Copied!" #ttCopyPlan="skyTooltip" manual placement="top" [closeDelay]="1000"
+                (click)="exportPlan('clipboard', ttCopyPlan)">
+          <mat-icon>file_copy</mat-icon> Copy image
+        </button>
+        <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="exporting()" (click)="exportPlan('download')">
+          <mat-icon>download</mat-icon> Save image
+        </button>
+        @if (canShare) {
+          <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="exporting()" (click)="exportPlan('share')">
+            <mat-icon>share</mat-icon> Share image
+          </button>
+        }
+      </div>
     </div>
   </section>
 }

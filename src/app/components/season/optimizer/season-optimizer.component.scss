@@ -4,7 +4,7 @@
   gap: var(--atmos-gap);
 
   // Friendship sources, shared by the rails, the meter and the explainer.
-  --optimizer-items: var(--atmos-accent);
+  --optimizer-items: var(--atmos-good);
   --optimizer-accompany: var(--atmos-favourite);
   --optimizer-selected: repeating-linear-gradient(135deg,
     oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.6) 0 3px,
@@ -66,6 +66,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--atmos-gap-compact);
+}
+
+.atmos-optimizer__export {
+  margin-top: var(--atmos-gap);
 }
 
 .atmos-optimizer__control-label {
@@ -346,12 +350,10 @@
   width: 10px;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: 999px;
   background: var(--optimizer-track);
   cursor: pointer;
   overflow: hidden;
-
-  &.is-first { border-radius: 0 0 999px 999px; }
 
   &:focus-visible {
     outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
@@ -385,7 +387,6 @@
 }
 
 .atmos-optimizer__star-icon {
-  position: relative;
   display: grid;
   place-items: center;
   height: 100%;
@@ -395,19 +396,7 @@
   color: var(--star-color);
   cursor: pointer;
 
-  // Keeps the empty track continuous behind the star; fills stop at the tier edge.
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto;
-    left: 50%;
-    width: 10px;
-    transform: translateX(-50%);
-    background: var(--optimizer-track);
-  }
-
   mat-icon {
-    position: relative;
     font-size: 24px;
     width: 24px;
     height: 24px;
