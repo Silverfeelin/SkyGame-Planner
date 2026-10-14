@@ -12,6 +12,7 @@ import { OverlayComponent } from "./components/layout/overlay/overlay.component"
 import { KeyboardShortcutsComponent } from "./components/settings/keyboard-shortcuts/keyboard-shortcuts.component";
 import { cancellableEvent, noInputs } from './rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { isSandboxHost } from '../data-url';
 
 @Component({
     selector: 'app-root',
@@ -23,7 +24,7 @@ export class AppComponent {
   showDataLoss = false;
   showKeyboardShortcuts = false;
   isPagesDev = location.host === 'sky-planner.pages.dev'; // only target main deployment.
-  isSandbox = location.host === 'sandbox.sky-planner.com';
+  isSandbox = isSandboxHost();
 
   constructor(
     private readonly _broadcastService: BroadcastService,
