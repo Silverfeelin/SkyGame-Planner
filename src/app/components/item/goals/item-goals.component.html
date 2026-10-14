@@ -176,8 +176,7 @@
         <p class="atmos-goals__hint atmos-goals__disclaimer">
           These items cost season candles or season hearts, or come from a season spirit that may need the season pass or earlier tiers.
           They are not included in the goals and calendar.
-          Plan them with the <a class="atmos-text-link" routerLink="/season/calculator">season calculator</a>
-          or the <a class="atmos-text-link" routerLink="/season/optimizer">season optimizer</a>.
+          Plan them with the <a class="atmos-text-link" [routerLink]="seasonPlanner.link">season {{ seasonPlanner.label | lowercase }}</a>.
         </p>
         <ng-container [ngTemplateOutlet]="simpleList" [ngTemplateOutletContext]="{ $implicit: seasonItems() }" />
       </div>

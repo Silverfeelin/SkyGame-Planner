@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, signal, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { NgTemplateOutlet } from '@angular/common';
+import { LowerCasePipe, NgTemplateOutlet } from '@angular/common';
 import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList } from '@angular/cdk/drag-drop';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ICost, IEventInstance, IItem } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { INavigationTarget, NavigationHelper } from '@app/helpers/navigation-helper';
 import { GoalBucketKey, GoalHelper, IGoalPlan, IGoalProjection } from '@app/helpers/goal-helper';
 import { DataService } from '@app/services/data.service';
@@ -31,7 +32,7 @@ const CURRENCY_NAMES: Record<GoalBucketKey, string> = {
   templateUrl: './item-goals.component.html',
   styleUrl: './item-goals.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, CdkDropList, CdkDrag, CdkDragHandle, RouterLink, MatIcon, TooltipDirective, DateTimePipe, CostComponent, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent, ItemGoalsCalendarComponent]
+  imports: [NgTemplateOutlet, LowerCasePipe, CdkDropList, CdkDrag, CdkDragHandle, RouterLink, MatIcon, TooltipDirective, DateTimePipe, CostComponent, ItemIconComponent, ItemGridLayoutComponent, SectionQuickActionsComponent, ItemGoalsCalendarComponent]
 })
 export class ItemGoalsComponent {
   private readonly _dataService = inject(DataService);
@@ -87,6 +88,7 @@ export class ItemGoalsComponent {
   });
 
   readonly seasonItems = computed(() => this._split().season);
+  readonly seasonPlanner = SeasonHelper.getPlanner(DateHelper.getActive(this._dataService.seasonConfig.items));
   readonly eventItems = computed(() => this._split().event);
   readonly eventInstances = computed(() => this._split().eventInstances);
 

@@ -163,7 +163,7 @@
         <p class="atmos-paragraph">
           The total cost includes items from the ongoing season.<br/>
           To see if you can still get these items, please refer to the
-          <a class="atmos-text-link" href="/season/calculator" target="_blank">season calculator</a>.
+          <a class="atmos-text-link" [href]="seasonPlanner.link" target="_blank">season {{ seasonPlanner.label | lowercase }}</a>.
         </p>
       }
       @if (totalCostIncludesOngoingEvent) {

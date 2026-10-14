@@ -10,6 +10,7 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
 import { DateHelper } from '@app/helpers/date-helper';
+import { ISeasonPlanner, SeasonHelper } from '@app/helpers/season-helper';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { DyeColor } from '@app/interfaces/dye.interface';
 
@@ -40,6 +41,7 @@ export class CurrencyComponent implements OnDestroy {
   inpCurrencies: IStorageCurrencies;
   currencies: IStorageCurrencies;
   ongoingSeason?: ISeason;
+  seasonPlanner?: ISeasonPlanner;
   ongoingEventInstances: Array<IEventInstance>;
 
   readonly dyes: Array<{ color: DyeColor; name: string }> = [
@@ -74,6 +76,7 @@ export class CurrencyComponent implements OnDestroy {
     let changed = false;
 
     this.ongoingSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
+    this.seasonPlanner = SeasonHelper.getPlanner(this.ongoingSeason);
     if (this.ongoingSeason) {
       this.inpCurrencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
       this.currencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };

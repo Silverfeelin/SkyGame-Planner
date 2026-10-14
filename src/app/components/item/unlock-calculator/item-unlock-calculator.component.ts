@@ -17,6 +17,7 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
@@ -100,6 +101,7 @@ export class ItemUnlockCalculatorComponent {
   totalCostIncludesEstimates = false;
   totalCostIncludesOngoingEvent = false;
   totalCostIncludesOngoingSeason = false;
+  readonly seasonPlanner = SeasonHelper.getPlanner(DateHelper.getActive(this._dataService.seasonConfig.items));
   totalPrice = 0;
   checkedTrees: { [key: string]: ISpiritTree } = {};
   checkedNodes: { [key: string]: INode } = {};

@@ -2,8 +2,10 @@ import { ChangeDetectionStrategy, Component, DestroyRef, OnInit, computed, injec
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { LowerCasePipe } from '@angular/common';
 import { IIAP, INode, IRevisedSpiritTree, ISeason, IShop, ISpirit, ISpiritTree } from 'skygame-data';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
@@ -34,7 +36,7 @@ interface ITreeEntry {
   styleUrl: './season.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    RouterLink, MatIcon, DateRangeComponent, DaysLeftComponent, DurationComponent,
+    RouterLink, MatIcon, LowerCasePipe, DateRangeComponent, DaysLeftComponent, DurationComponent,
     SpiritTreeComponent, ItemListComponent, IapCardComponent,
     SectionQuickActionsComponent, DraftWarningComponent
   ]
@@ -55,6 +57,7 @@ export class SeasonComponent implements OnInit {
   readonly previousSeason = signal<ISeason | undefined>(undefined);
   readonly nextSeason = signal<ISeason | undefined>(undefined);
   readonly state = signal<'future' | 'active' | 'ended' | undefined>(undefined);
+  readonly planner = computed(() => this.state() === 'active' ? SeasonHelper.getPlanner(this.season()) : undefined);
 
   readonly guide = signal<ISpirit | undefined>(undefined);
   readonly guideTree = signal<ISpiritTree | undefined>(undefined);

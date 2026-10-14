@@ -143,9 +143,9 @@
         <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().season }"></ng-container>
       </div>
       <div class="atmos-currency__btn-row">
-        <a class="atmos-btn" routerLink="/season/calculator">
+        <a class="atmos-btn" [routerLink]="seasonPlanner?.link">
           <mat-icon>calculate</mat-icon>
-          <span>Go to Calculator</span>
+          <span>Go to {{ seasonPlanner?.label }}</span>
         </a>
       </div>
     </div>

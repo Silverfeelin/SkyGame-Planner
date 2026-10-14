@@ -1,5 +1,6 @@
 import { Params } from '@angular/router';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import type { DataService } from '@app/services/data.service';
 
 export interface IPage {
@@ -20,11 +21,9 @@ export interface IPage {
 
 const WIKI = 'https://sky-children-of-the-light.fandom.com/wiki';
 
-/** Seasons with friendship levels are handled by the optimizer instead of the calculator. */
 const currentSeasonHasTiers = (data: DataService): boolean => {
   const seasons = data.seasonConfig.items;
-  const season = DateHelper.getActive(seasons) || seasons.at(-1);
-  return !!season?.spirits.some(s => s.tree?.tier);
+  return SeasonHelper.usesOptimizer(DateHelper.getActive(seasons) || seasons.at(-1));
 };
 
 export const PAGES = {

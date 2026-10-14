@@ -4,6 +4,7 @@ import { filter } from 'rxjs';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { DailyHelper } from '@app/helpers/daily-helper';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DataService } from '@app/services/data.service';
@@ -104,9 +105,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
   readonly seasonLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const s = this.season();
     if (!s) { return []; }
+    const planner = SeasonHelper.getPlanner(s);
     return [
       { icon: 'dashboard',  label: 'Overview',   link: `/season/${s.guid}` },
-      { icon: 'calculate', label: 'Calculator', link: '/season/calculator' },
+      { icon: 'calculate', label: planner.label, link: planner.link },
       DISCORD_DAILY_QUEST_LINK,
       THATSKY_DAILY_QUEST_LINK
     ];

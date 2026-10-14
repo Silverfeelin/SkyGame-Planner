@@ -78,8 +78,13 @@
       }
     </div>
 
-    @if (previousSeason() || nextSeason() || s._wiki?.href || s._calendar?.href) {
+    @if (planner() || previousSeason() || nextSeason() || s._wiki?.href || s._calendar?.href) {
       <div class="atmos-summary__actions">
+        @if (planner(); as pl) {
+          <a class="atmos-summary__action" [routerLink]="pl.link">
+            <mat-icon>calculate</mat-icon> Season {{ pl.label | lowercase }}
+          </a>
+        }
         @if (previousSeason(); as p) {
           <a class="atmos-summary__action" [routerLink]="['/season', p.guid]">
             <mat-icon>arrow_back</mat-icon> Previous season
