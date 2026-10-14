@@ -18,14 +18,15 @@
 }
 
 .notice-banner {
+  // The main layout's fixed background sits at z-index 0 and would paint over an unpositioned banner.
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
   background: var(--atmos-card-bg-solid);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-card-radius);
+  border-bottom: var(--atmos-card-border);
   padding: var(--atmos-pad-compact) var(--atmos-pad);
-  margin-bottom: var(--atmos-gap);
   color: var(--atmos-text);
 
   &__title { margin: 0; font-size: var(--atmos-fs-lg); font-weight: 500; }
@@ -36,14 +37,11 @@
     align-items: center;
     gap: var(--atmos-gap-compact);
     background: oklch(0.22 0.07 25 / 0.9);
-    border: none;
     border-bottom: 1px solid oklch(0.50 0.15 25 / 0.5);
-    border-radius: 0;
     color: oklch(0.88 0.10 25);
     position: sticky;
     top: 0;
     z-index: 99999;
-    margin-bottom: 0;
   }
 }
 
