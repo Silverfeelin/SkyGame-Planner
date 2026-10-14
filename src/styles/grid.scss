@@ -10,25 +10,26 @@
    then resolves to 0 and the grid renders blank. Sizing the host by flexing it
    inside its card works in both layouts. */
 .atmos-card > ag-grid-angular {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   height: auto;
   width: 100%;
 
-  /* AG-Grid sizes its own root with `height: 100%`, which hits the same
-     indefinite-height problem one level down. */
   > .ag-root-wrapper {
     flex: 1 1 auto;
     height: auto;
     min-height: 0;
   }
-}
 
-/* Safari 26 never paints the absolutely positioned header and rows inside a
-   flex container that `content-visibility: auto` skipped, so the grid stays empty. */
-ag-grid-angular .ag-root-wrapper.ag-layout-normal {
-  content-visibility: visible;
+  /* AG-Grid sizes its root with `height: 100%` below the wrapper. Safari 26 does
+     not treat a flexed height as definite there, so the root collapses to 0;
+     an absolutely positioned wrapper gets a definite height in every engine. */
+  > .ag-root-wrapper.ag-layout-normal {
+    position: absolute;
+    inset: 0;
+  }
 }
 
 /* Cell content alignment.
