@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { CostHelper } from '@app/helpers/cost-helper';
@@ -55,7 +56,7 @@ interface IEventCard {
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, DashboardQuickStartComponent, SearchBarComponent, DashboardFavouritesComponent, DashboardCalendarComponent, FeatureCardComponent, RouterLink]
+  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, DashboardQuickStartComponent, SearchBarComponent, DashboardFavouritesComponent, DashboardCalendarComponent, FeatureCardComponent, NgTemplateOutlet, RouterLink]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);
@@ -73,10 +74,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
   readonly dailyRealm = signal<IRealm | undefined>(undefined);
 
   /** Only what is obtainable today; the upcoming-event card and future TS/RS are excluded. */
+  readonly activeEventCards = computed(() => this.eventCards().filter(c => c.showCheckin));
   readonly activeEventInstances = computed<ReadonlyArray<IEventInstance>>(() =>
-    this.eventCards().filter(c => c.showCheckin).map(c => c.instance));
+    this.activeEventCards().map(c => c.instance));
   readonly activeTs = computed(() => this.tsIsFuture() ? undefined : this.ts());
   readonly activeRs = computed(() => this.rsIsFuture() ? undefined : this.rs());
+
+  readonly upcomingEventCards = computed(() => this.eventCards().filter(c => !c.showCheckin));
+  readonly upcomingTs = computed(() => this.tsIsFuture() ? this.ts() : undefined);
+  readonly upcomingRs = computed(() => this.rsIsFuture() ? this.rs() : undefined);
+  readonly hasUpcoming = computed(() => !!this.upcomingEventCards().length || !!this.upcomingTs() || !!this.upcomingRs());
 
   readonly dailyLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const links: Array<IFeatureLink> = [
