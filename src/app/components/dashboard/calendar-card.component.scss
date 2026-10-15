@@ -155,10 +155,15 @@
 
 .atmos-calendar__bars {
   position: relative;
-  grid-auto-rows: 30px;
-  row-gap: 6px;
-  min-height: 170px;
-  padding: 82px 0 14px;
+  --bar-height: 30px;
+  --bar-gap: 6px;
+  --bar-pad-top: 82px;
+  --bar-pad-bottom: 14px;
+  grid-auto-rows: var(--bar-height);
+  row-gap: var(--bar-gap);
+  // Reserves three bar rows so the card height barely shifts between weeks.
+  min-height: calc(var(--bar-pad-top) + var(--bar-pad-bottom) + 3 * var(--bar-height) + 2 * var(--bar-gap));
+  padding: var(--bar-pad-top) 0 var(--bar-pad-bottom);
   // Lets clicks through to the day columns everywhere except on the bars themselves.
   pointer-events: none;
 }

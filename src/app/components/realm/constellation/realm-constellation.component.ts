@@ -5,7 +5,9 @@ import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 const KEYFRAMES = [0, 10, 22, 34, 45, 55] as const;
 const FRAME_COUNT = (KEYFRAMES.at(-1) ?? 0) + 1;
-const FRAME_INTERVAL_MS = 20;
+const FRAME_DURATION_MS = 45;
+// Long jumps skip frames so the whole transition never exceeds this.
+const MAX_TRANSITION_MS = 1000;
 
 /**
  * Realm-constellation viewer.
@@ -50,7 +52,10 @@ export class RealmConstellationComponent implements AfterViewInit, OnDestroy {
 
   private _keyframe = 0;
   private _targetKeyframe = 0;
-  private _intervalId?: number;
+  private _rafId?: number;
+  private _tweenFrom = 0;
+  private _tweenStart = 0;
+  private _tweenDuration = 0;
   private _viewReady = false;
   private _disposed = false;
 
@@ -75,9 +80,9 @@ export class RealmConstellationComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._disposed = true;
-    if (this._intervalId !== undefined) {
-      window.clearInterval(this._intervalId);
-      this._intervalId = undefined;
+    if (this._rafId !== undefined) {
+      cancelAnimationFrame(this._rafId);
+      this._rafId = undefined;
     }
   }
 
@@ -86,7 +91,6 @@ export class RealmConstellationComponent implements AfterViewInit, OnDestroy {
   }
 
   jumpTo(index: number): void {
-    if (this.swapping()) { return; }
     const list = this.constellationRealms();
     if (!list.length) { return; }
     const next = list[Math.max(0, Math.min(index, list.length - 1))];
@@ -132,28 +136,37 @@ export class RealmConstellationComponent implements AfterViewInit, OnDestroy {
     ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
   }
 
+  /** Starts a tween from the current frame, retargeting any tween already in progress. */
   private scheduleAnimation(): void {
-    if (this._intervalId !== undefined) { return; }
     if (!RealmConstellationComponent._framesLoaded) { return; }
-    if (this._keyframe === this._targetKeyframe) { return; }
+    const distance = Math.abs(this._targetKeyframe - this._keyframe);
+    if (!distance && this._rafId === undefined) { return; }
+
+    this._tweenFrom = this._keyframe;
+    this._tweenStart = performance.now();
+    this._tweenDuration = Math.min(distance * FRAME_DURATION_MS, MAX_TRANSITION_MS);
     this.swapping.set(true);
-    this._intervalId = window.setInterval(() => this.tick(), FRAME_INTERVAL_MS);
+    this._rafId ??= requestAnimationFrame(t => this.tick(t));
   }
 
-  private tick(): void {
+  private tick(time: number): void {
+    this._rafId = undefined;
     if (this._disposed) { return; }
-    if (this._keyframe !== this._targetKeyframe) {
-      this._keyframe += this._keyframe < this._targetKeyframe ? 1 : -1;
-      this._keyframe = Math.max(0, Math.min(this._keyframe, FRAME_COUNT - 1));
+
+    // The rAF timestamp can predate the tween start by up to a frame.
+    const elapsed = Math.max(0, time - this._tweenStart);
+    const progress = this._tweenDuration ? Math.min(1, elapsed / this._tweenDuration) : 1;
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const frame = Math.round(this._tweenFrom + (this._targetKeyframe - this._tweenFrom) * eased);
+    if (frame !== this._keyframe) {
+      this._keyframe = Math.max(0, Math.min(frame, FRAME_COUNT - 1));
+      this.renderFrame(this._keyframe);
     }
-    this.renderFrame(this._keyframe);
-    if (this._keyframe === this._targetKeyframe) {
-      if (this._intervalId !== undefined) {
-        window.clearInterval(this._intervalId);
-        this._intervalId = undefined;
-      }
-      // Brief debounce before re-enabling icon clicks, mirroring legacy.
-      window.setTimeout(() => { if (!this._disposed) { this.swapping.set(false); } }, 1);
+
+    if (progress < 1) {
+      this._rafId = requestAnimationFrame(t => this.tick(t));
+      return;
     }
+    this.swapping.set(false);
   }
 }

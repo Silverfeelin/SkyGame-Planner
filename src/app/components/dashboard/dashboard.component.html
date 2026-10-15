@@ -46,57 +46,84 @@
       [checked]="checkedIn()"
       (checkToggle)="onDailyCheckinToggle($event)" />
   }
-  @for (card of eventCards(); track card.instance.guid) {
-    <app-feature-card
-      [kicker]="card.kicker"
-      kickerColor="var(--atmos-warm)"
-      [title]="card.title"
-      [bannerUrl]="card.bannerUrl"
-      [bannerHue]="card.bannerHue"
-      [timeRow]="card.timeRow"
-      [links]="card.links"
-      [currency]="card.currency"
-      [checkLabel]="card.showCheckin ? 'I have collected my daily event currency' : ''"
-      [checked]="card.checked"
-      (checkToggle)="onEventCheckinToggle(card, $event)" />
+  @for (card of activeEventCards(); track card.instance.guid) {
+    <ng-container *ngTemplateOutlet="eventCard; context: { $implicit: card }" />
   }
-  @if (ts(); as t) {
-    <app-feature-card
-      [kicker]="tsKicker()"
-      kickerColor="var(--atmos-violet)"
-      [title]="tsTitle()"
-      [bannerUrl]="tsBannerUrl()"
-      [backdropUrl]="HOME_BACKDROP"
-      [bannerContain]="true"
-      [bannerSilhouette]="tsIsFuture()"
-      [bannerHue]="170"
-      [timeRow]="tsTimeRow()"
-      [links]="tsLinks()"
-      [currency]="tsCurrency()" />
+  @if (activeTs()) {
+    <ng-container *ngTemplateOutlet="tsCard" />
   }
-  @if (rs(); as r) {
-    <app-feature-card
-      [kicker]="rsKicker()"
-      kickerColor="var(--atmos-pink)"
-      [title]="rsTitle()"
-      [bannerUrls]="rsBannerUrls()"
-      [backdropUrl]="rsBannerContain() ? HOME_BACKDROP : undefined"
-      [bannerContain]="rsBannerContain()"
-      [bannerSilhouette]="rsIsFuture()"
-      [bannerHue]="320"
-      [timeRow]="rsTimeRow()"
-      [links]="rsLinks()"
-      [currency]="rsCurrency()">
-      @if (r.spirits.length > 1) {
-        <div class="rs-spirits">
-          @for (sp of r.spirits; track sp.spirit.guid) {
-            <a class="rs-spirit" [routerLink]="'/spirit/' + sp.spirit.guid">
-              <img class="rs-spirit__img" [src]="sp.spirit.imageUrl" [alt]="sp.spirit.name">
-              <span class="rs-spirit__name">{{ sp.spirit.name }}</span>
-            </a>
-          }
-        </div>
-      }
-    </app-feature-card>
+  @if (activeRs(); as r) {
+    <ng-container *ngTemplateOutlet="rsCard; context: { $implicit: r }" />
   }
 </section>
+
+@if (hasUpcoming()) {
+  <h2 class="atmos-section__title">Upcoming</h2>
+  <section class="atmos-dashboard__features">
+    @for (card of upcomingEventCards(); track card.instance.guid) {
+      <ng-container *ngTemplateOutlet="eventCard; context: { $implicit: card }" />
+    }
+    @if (upcomingTs()) {
+      <ng-container *ngTemplateOutlet="tsCard" />
+    }
+    @if (upcomingRs(); as r) {
+      <ng-container *ngTemplateOutlet="rsCard; context: { $implicit: r }" />
+    }
+  </section>
+}
+
+<ng-template #eventCard let-card>
+  <app-feature-card
+    [kicker]="card.kicker"
+    kickerColor="var(--atmos-warm)"
+    [title]="card.title"
+    [bannerUrl]="card.bannerUrl"
+    [bannerHue]="card.bannerHue"
+    [timeRow]="card.timeRow"
+    [links]="card.links"
+    [currency]="card.currency"
+    [checkLabel]="card.showCheckin ? 'I have collected my daily event currency' : ''"
+    [checked]="card.checked"
+    (checkToggle)="onEventCheckinToggle(card, $event)" />
+</ng-template>
+
+<ng-template #tsCard>
+  <app-feature-card
+    [kicker]="tsKicker()"
+    kickerColor="var(--atmos-violet)"
+    [title]="tsTitle()"
+    [bannerUrl]="tsBannerUrl()"
+    [backdropUrl]="HOME_BACKDROP"
+    [bannerContain]="true"
+    [bannerSilhouette]="tsIsFuture()"
+    [bannerHue]="170"
+    [timeRow]="tsTimeRow()"
+    [links]="tsLinks()"
+    [currency]="tsCurrency()" />
+</ng-template>
+
+<ng-template #rsCard let-r>
+  <app-feature-card
+    [kicker]="rsKicker()"
+    kickerColor="var(--atmos-pink)"
+    [title]="rsTitle()"
+    [bannerUrls]="rsBannerUrls()"
+    [backdropUrl]="rsBannerContain() ? HOME_BACKDROP : undefined"
+    [bannerContain]="rsBannerContain()"
+    [bannerSilhouette]="rsIsFuture()"
+    [bannerHue]="320"
+    [timeRow]="rsTimeRow()"
+    [links]="rsLinks()"
+    [currency]="rsCurrency()">
+    @if (r.spirits.length > 1) {
+      <div class="rs-spirits">
+        @for (sp of r.spirits; track sp.spirit.guid) {
+          <a class="rs-spirit" [routerLink]="'/spirit/' + sp.spirit.guid">
+            <img class="rs-spirit__img" [src]="sp.spirit.imageUrl" [alt]="sp.spirit.name">
+            <span class="rs-spirit__name">{{ sp.spirit.name }}</span>
+          </a>
+        }
+      </div>
+    }
+  </app-feature-card>
+</ng-template>
