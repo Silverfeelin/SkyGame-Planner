@@ -66,6 +66,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _eventCheckinService = inject(EventCheckinService);
 
   readonly season = signal<ISeason | undefined>(undefined);
+  readonly upcomingSeason = signal<ISeason | undefined>(undefined);
   readonly ts = signal<ITravelingSpirit | undefined>(undefined);
   readonly tsIsFuture = signal(true);
   readonly rs = signal<ISpecialVisit | undefined>(undefined);
@@ -84,7 +85,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   readonly upcomingEventCards = computed(() => this.eventCards().filter(c => !c.showCheckin));
   readonly upcomingTs = computed(() => this.tsIsFuture() ? this.ts() : undefined);
   readonly upcomingRs = computed(() => this.rsIsFuture() ? this.rs() : undefined);
-  readonly hasUpcoming = computed(() => !!this.upcomingEventCards().length || !!this.upcomingTs() || !!this.upcomingRs());
+  readonly hasUpcoming = computed(() => !!this.upcomingSeason() || !!this.upcomingEventCards().length || !!this.upcomingTs() || !!this.upcomingRs());
 
   readonly dailyLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const links: Array<IFeatureLink> = [
@@ -97,10 +98,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return links;
   });
 
-  readonly seasonKicker = computed(() => {
-    const s = this.season();
-    return s ? `Season · #${s.number}` : '';
-  });
+  readonly seasonKicker = computed(() => this.formatSeasonKicker(this.season()));
 
   readonly seasonTimeRow = computed(() => this.formatPeriod(this.season()));
   readonly seasonCurrency = computed<ReadonlyArray<IFeatureCurrency>>(() => {
@@ -118,6 +116,22 @@ export class DashboardComponent implements OnInit, OnDestroy {
       { icon: 'calculate', label: planner.label, link: planner.link },
       DISCORD_DAILY_QUEST_LINK,
       THATSKY_DAILY_QUEST_LINK
+    ];
+  });
+
+  readonly upcomingSeasonKicker = computed(() => this.formatSeasonKicker(this.upcomingSeason()));
+  readonly upcomingSeasonTimeRow = computed(() => this.formatPeriod(this.upcomingSeason()));
+  readonly upcomingSeasonCurrency = computed<ReadonlyArray<IFeatureCurrency>>(() => {
+    const s = this.upcomingSeason();
+    return s ? this.deriveSeasonCurrency(s) : [];
+  });
+
+  /** The season planners only work for the active season. */
+  readonly upcomingSeasonLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
+    const s = this.upcomingSeason();
+    if (!s) { return []; }
+    return [
+      { icon: 'dashboard', label: 'Overview', link: `/season/${s.guid}` }
     ];
   });
 
@@ -195,6 +209,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const seasonDates = DateHelper.groupByPeriod(this._dataService.seasonConfig.items);
     this.season.set(seasonDates.active?.at(-1));
+    this.upcomingSeason.set(seasonDates.future?.at(0));
     this.checkedIn.set(this._dailyCheckinService.isCheckedIn());
     this.dailyRealm.set(DailyHelper.getDailyRealm(this._dataService.guidMap));
 
@@ -286,6 +301,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
       ? { ...c, checked: this._eventCheckinService.isCheckedIn(c.instance.event.guid) }
       : c);
     this.eventCards.set(updated);
+  }
+
+  private formatSeasonKicker(s: ISeason | undefined): string {
+    return s ? `Season · #${s.number}` : '';
   }
 
   private formatPeriod(p: { date?: any; endDate?: any } | undefined): string {

@@ -60,6 +60,17 @@
 @if (hasUpcoming()) {
   <h2 class="atmos-section__title">Upcoming</h2>
   <section class="atmos-dashboard__features">
+    @if (upcomingSeason(); as s) {
+      <app-feature-card
+        [kicker]="upcomingSeasonKicker()"
+        kickerColor="var(--atmos-accent)"
+        [title]="s.name"
+        [bannerUrl]="s.imageUrl"
+        [bannerHue]="20"
+        [timeRow]="upcomingSeasonTimeRow()"
+        [links]="upcomingSeasonLinks()"
+        [currency]="upcomingSeasonCurrency()" />
+    }
     @for (card of upcomingEventCards(); track card.instance.guid) {
       <ng-container *ngTemplateOutlet="eventCard; context: { $implicit: card }" />
     }
