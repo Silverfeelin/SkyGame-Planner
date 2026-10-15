@@ -11,7 +11,8 @@
     } @else {
       <img class="img" [src]="safeString" crossorigin="anonymous"
         [style.width]="width" [style.height]="height" [style.verticalAlign]="verticalAlign"
-        [attr.loading]="lazy ? 'lazy' : undefined" [attr.draggable]="draggable">
+        [attr.loading]="lazy ? 'lazy' : undefined" [attr.draggable]="draggable"
+        (error)="onImageError()">
     }
   } @else if (safeString) {
     <mat-icon [svgIcon]="safeString"

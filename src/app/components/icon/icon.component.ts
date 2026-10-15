@@ -5,6 +5,8 @@ import { ImageService } from 'src/app/services/image.service';
 import { MatIcon } from '@angular/material/icon';
 import { IconService } from '@app/services/icon.service';
 
+const MISSING_ICON = '/assets/icons/question.webp';
+
 @Component({
     selector: 'app-icon',
     templateUrl: './icon.component.html',
@@ -45,6 +47,11 @@ export class IconComponent implements OnChanges {
     if (changes['src'] || changes['width'] || changes['height']) {
       this.updateImage();
     }
+  }
+
+  onImageError(): void {
+    if (this.safeString === MISSING_ICON) { return; }
+    this.safeString = MISSING_ICON;
   }
 
   updateImage(): void {
