@@ -30,6 +30,11 @@
         <ng-container [ngTemplateOutlet]="costTemplate" [ngTemplateOutletContext]="{cost: cost.ec, remaining: remaining?.ec, icon: 'ticket', iconClass: 'currency'}"></ng-container>
       </div>
     }
+    @if (cost.lp || (showZeroes && cost.lp === 0)) {
+      <div class="cost">
+        <ng-container [ngTemplateOutlet]="costTemplate" [ngTemplateOutletContext]="{cost: cost.lp, remaining: remaining?.lp, icon: 'loyalty-point', iconClass: 'currency'}"></ng-container>
+      </div>
+    }
   }
   @if (price || (showZeroes && price !== undefined)) {
     <div class="cost">

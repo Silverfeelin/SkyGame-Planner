@@ -37,7 +37,10 @@ export class CurrencyService {
       value.ascendedCandles += cost.ac;
       value.ascendedCandles = this.clamp(value.ascendedCandles);
     }
-    let changed = !!(cost.c || cost.h || cost.ac);
+    if (cost.lp) {
+      value.loyaltyPoints = this.clamp((value.loyaltyPoints ?? 0) + cost.lp);
+    }
+    let changed = !!(cost.c || cost.h || cost.ac || cost.lp);
 
     // Event currency
     if (cost.ec && eventInstance && DateHelper.isActive(eventInstance.date, eventInstance.endDate)) {

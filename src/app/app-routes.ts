@@ -53,6 +53,7 @@ import { ShopEventStoreComponent } from './components/shop/event/shop-event-stor
 import { ShopHarmonyHallComponent } from './components/shop/harmony/shop-harmony-hall.component';
 import { ShopNestingComponent } from './components/shop/nesting/shop-nesting.component';
 import { ShopOfficeComponent } from './components/shop/office/shop-office.component';
+import { ShopLoyaltyComponent } from './components/shop/loyalty/shop-loyalty.component';
 import { ShopPrairieHeightsComponent } from './components/shop/prairie-heights/shop-prairie-heights.component';
 import { ShopWonderlandComponent } from './components/shop/wonderland-cafe/shop-wonderland.component';
 import { FriendsComponent } from './components/friend/friends.component';
@@ -205,6 +206,7 @@ export const routes: Routes = [
           { path: 'concert-hall',    component: ShopConcertHallComponent, title: title('Concert Hall') },
           { path: 'event',           component: ShopEventStoreComponent,  title: title('Aviary Event Store') },
           { path: 'harmony',         component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
+          { path: 'loyalty',         component: ShopLoyaltyComponent,     title: title('Loyalty Store') },
           { path: 'nesting',         component: ShopNestingComponent,     title: title('Nesting Workshop') },
           { path: 'office',          component: ShopOfficeComponent,      title: title('Office') },
           { path: 'prairieheights',  component: ShopPrairieHeightsComponent, title: title('Prairie Heights') },

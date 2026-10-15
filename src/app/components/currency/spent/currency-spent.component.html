@@ -30,6 +30,13 @@
         <span class="atmos-currency-spent__value">{{ data.cost.ec | number:'1.' }}</span>
       </div>
     }
+    @if (data.cost.lp) {
+      <div class="atmos-currency-spent__field">
+        <mat-icon svgIcon="loyalty-point" [skyTooltip]="'Loyalty points'"></mat-icon>
+        <span class="atmos-currency-spent__times">x</span>
+        <span class="atmos-currency-spent__value">{{ data.cost.lp | number:'1.' }}</span>
+      </div>
+    }
     @if (data.cost.sc) {
       <div class="atmos-currency-spent__field">
         <mat-icon svgIcon="candle" class="atmos-currency-spent__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
@@ -64,13 +71,14 @@
         <h3 class="atmos-currency-spent__breakdown-title">Spirit trees</h3>
         <div class="atmos-currency-spent__breakdown-grid">
           @for (node of data.nodes; track node.guid) {
-            @if (node.item && (node.c || node.h || node.ac || node.ec || node.sc || node.sh)) {
+            @if (node.item && (node.c || node.h || node.ac || node.ec || node.lp || node.sc || node.sh)) {
               <div class="atmos-currency-spent__breakdown-item">
                 <span>{{ node.item.name }}</span>
                 @if (node.c) { <span class="atmos-currency-spent__abbr">({{ node.c }}c)</span> }
                 @if (node.h) { <span class="atmos-currency-spent__abbr">({{ node.h }}h)</span> }
                 @if (node.ac) { <span class="atmos-currency-spent__abbr">({{ node.ac }}ac)</span> }
                 @if (node.ec) { <span class="atmos-currency-spent__abbr">({{ node.ec }}ec)</span> }
+                @if (node.lp) { <span class="atmos-currency-spent__abbr">({{ node.lp }}lp)</span> }
                 @if (node.sc) { <span class="atmos-currency-spent__abbr">({{ node.sc }}sc)</span> }
                 @if (node.sh) { <span class="atmos-currency-spent__abbr">({{ node.sh }}sh)</span> }
               </div>
@@ -84,7 +92,7 @@
         <h3 class="atmos-currency-spent__breakdown-title">Shops (in-game currency)</h3>
         <div class="atmos-currency-spent__breakdown-grid">
           @for (node of data.listNodes; track node.guid) {
-            @if (node.item && (node.c || node.h || node.ac || node.ec || node.sc || node.sh)) {
+            @if (node.item && (node.c || node.h || node.ac || node.ec || node.lp || node.sc || node.sh)) {
               <div class="atmos-currency-spent__breakdown-item">
                 <span>{{ node.item.name }}</span>
                 @if (node.quantity) { <span class="atmos-currency-spent__abbr">(x{{ node.quantity }})</span> }
@@ -92,6 +100,7 @@
                 @if (node.h) { <span class="atmos-currency-spent__abbr">({{ node.h }}h)</span> }
                 @if (node.ac) { <span class="atmos-currency-spent__abbr">({{ node.ac }}ac)</span> }
                 @if (node.ec) { <span class="atmos-currency-spent__abbr">({{ node.ec }}ec)</span> }
+                @if (node.lp) { <span class="atmos-currency-spent__abbr">({{ node.lp }}lp)</span> }
                 @if (node.sc) { <span class="atmos-currency-spent__abbr">({{ node.sc }}sc)</span> }
                 @if (node.sh) { <span class="atmos-currency-spent__abbr">({{ node.sh }}sh)</span> }
               </div>
@@ -125,6 +134,7 @@
                 @if (other.cost.h) { <span class="atmos-currency-spent__abbr">({{ other.cost.h }}h)</span> }
                 @if (other.cost.ac) { <span class="atmos-currency-spent__abbr">({{ other.cost.ac }}ac)</span> }
                 @if (other.cost.ec) { <span class="atmos-currency-spent__abbr">({{ other.cost.ec }}ec)</span> }
+                @if (other.cost.lp) { <span class="atmos-currency-spent__abbr">({{ other.cost.lp }}lp)</span> }
                 @if (other.cost.sc) { <span class="atmos-currency-spent__abbr">({{ other.cost.sc }}sc)</span> }
                 @if (other.cost.sh) { <span class="atmos-currency-spent__abbr">({{ other.cost.sh }}sh)</span> }
               }
@@ -150,7 +160,7 @@
   </p>
   <p class="atmos-paragraph">
     In the breakdown the following abbreviations are used:
-    (c) for candles, (h) for hearts, (ac) for ascended candles, (ec) for event currency, (sc) for season candles, and (sh) for season hearts.
+    (c) for candles, (h) for hearts, (ac) for ascended candles, (ec) for event currency, (lp) for loyalty points, (sc) for season candles, and (sh) for season hearts.
   </p>
 </div>
 

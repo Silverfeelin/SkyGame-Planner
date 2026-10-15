@@ -130,7 +130,7 @@ export function inferProgress(data: QuickStartData, input: QuickStartInput): Qui
 /** The pendant is the free Ultimate necklace; paid ones (e.g. the Remembrance sash) are Ultimate gifts. */
 function isPendant(item: IItem): boolean {
   return item.type === ItemType.Necklace && item.group === 'Ultimate' && !!item.season
-    && !!item.nodes?.length && item.nodes.every(n => !n.c && !n.h && !n.sc && !n.sh && !n.ac && !n.ec);
+    && !!item.nodes?.length && item.nodes.every(n => !n.c && !n.h && !n.sc && !n.sh && !n.ac && !n.ec && !n.lp);
 }
 
 /** Season the item proves the player played in (E1–E3), if any. */

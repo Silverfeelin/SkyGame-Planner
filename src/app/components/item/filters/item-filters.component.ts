@@ -38,7 +38,7 @@ let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
 
 const defaultFilters = {
   filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, dyeable: undefined, unsorted: undefined },
-  currencies: { free: true, candles: true, hearts: true, ascendedCandles: true, eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true }
+  currencies: { free: true, candles: true, hearts: true, ascendedCandles: true, eventCurrency: true, loyaltyPoints: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true }
 };
 
 const generalFilters = [
@@ -57,6 +57,7 @@ const currencyFilters = [
   { key: 'hearts', label: 'Hearts' },
   { key: 'ascendedCandles', label: 'Ascended candles' },
   { key: 'eventCurrency', label: 'Event currency' },
+  { key: 'loyaltyPoints', label: 'Loyalty points' },
   { key: 'seasonCandles', label: 'Season candles' },
   { key: 'seasonPass', label: 'Season pass' },
   { key: 'seasonHearts', label: 'Season hearts' },
@@ -273,6 +274,7 @@ export class ItemFiltersComponent {
         if (filters['hearts'] === false && cost?.h) { return false; }
         if (filters['ascendedCandles'] === false && cost?.ac) { return false; }
         if (filters['eventCurrency'] === false && cost?.ec) { return false; }
+        if (filters['loyaltyPoints'] === false && cost?.lp) { return false; }
         if (filters['seasonCandles'] === false && cost?.sc) { return false; }
         if (filters['seasonPass'] === false) {
           if (item.group === 'Ultimate') { return false; }

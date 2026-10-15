@@ -36,6 +36,11 @@ const VENUES: ReadonlyArray<IVenue> = [
     description: 'Introduced in the Season of Performance. Reached from Aviary Village, the Village of Dreams or the Village Theatre.'
   },
   {
+    link: '/shop/loyalty',
+    title: 'Loyalty Store',
+    description: 'The official That Sky Game Web Store offers loyalty points for In-App Purchases, which can be used to unlock exclusive rewards.'
+  },
+  {
     link: '/shop/nesting',
     title: 'Nesting Workshop',
     description: 'Introduced in the Season of Nesting. Accessed through Aviary Village.'

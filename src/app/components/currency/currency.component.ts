@@ -18,6 +18,7 @@ interface IGains {
   candles: string;
   hearts: string;
   ascendedCandles: string;
+  loyaltyPoints: string;
   giftPasses: string;
   season: string;
   events: Record<string, string>;
@@ -34,6 +35,7 @@ export class CurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;
   @ViewChild('inpH', { static: true }) inpH!: ElementRef<HTMLInputElement>;
   @ViewChild('inpAc', { static: true }) inpAc!: ElementRef<HTMLInputElement>;
+  @ViewChild('inpLp', { static: true }) inpLp!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSp', { static: true }) inpSp!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;
   @ViewChildren('inpEc') inpEc!: QueryList<ElementRef<HTMLInputElement>>;
@@ -60,7 +62,7 @@ export class CurrencyComponent implements OnDestroy {
 
   converted?: { candles: number };
 
-  readonly gains = signal<IGains>({ candles: '', hearts: '', ascendedCandles: '', giftPasses: '', season: '', events: {} });
+  readonly gains = signal<IGains>({ candles: '', hearts: '', ascendedCandles: '', loyaltyPoints: '', giftPasses: '', season: '', events: {} });
 
   private readonly _storageSub: Subscription;
 
@@ -135,7 +137,7 @@ export class CurrencyComponent implements OnDestroy {
     return value >= 0 ? '+' + s : s;
   }
 
-  addCurrency(type: 'candles' | 'hearts' | 'ascendedCandles' | 'giftPasses', amount: number): void {
+  addCurrency(type: 'candles' | 'hearts' | 'ascendedCandles' | 'loyaltyPoints' | 'giftPasses', amount: number): void {
     switch (type) {
       case 'candles': {
         const candles = this._currencyService.clamp((this.currencies.candles || 0) + amount);
@@ -153,6 +155,12 @@ export class CurrencyComponent implements OnDestroy {
         const ascendedCandles = this._currencyService.clamp((this.currencies.ascendedCandles || 0) + amount);
         this.inpAc.nativeElement.value = ascendedCandles.toString();
         this.currencies.ascendedCandles = ascendedCandles;
+        break;
+      }
+      case 'loyaltyPoints': {
+        const loyaltyPoints = this._currencyService.clamp((this.currencies.loyaltyPoints || 0) + amount);
+        this.inpLp.nativeElement.value = loyaltyPoints.toString();
+        this.currencies.loyaltyPoints = loyaltyPoints;
         break;
       }
       case 'giftPasses': {
@@ -231,6 +239,11 @@ export class CurrencyComponent implements OnDestroy {
     if (this.currencies.ascendedCandles !== this.parseDecimal(targetAc.value)) {
       targetAc.value = this.currencies.ascendedCandles.toString();
     }
+    const targetLp = this.inpLp.nativeElement;
+    this.currencies.loyaltyPoints = Math.min(99999, Math.max(this.parseInt(targetLp.value), 0));
+    if (this.currencies.loyaltyPoints !== this.parseDecimal(targetLp.value)) {
+      targetLp.value = this.currencies.loyaltyPoints.toString();
+    }
     const targetSp = this.inpSp.nativeElement;
     this.currencies.giftPasses = Math.min(99999, Math.max(this.parseInt(targetSp.value), 0));
     if (this.currencies.giftPasses !== this.parseDecimal(targetSp.value)) {
@@ -291,6 +304,7 @@ export class CurrencyComponent implements OnDestroy {
       candles: this.formatGain(currencies.candles - (baseline?.candles ?? currencies.candles)),
       hearts: this.formatGain(currencies.hearts - (baseline?.hearts ?? currencies.hearts)),
       ascendedCandles: this.formatGain(currencies.ascendedCandles - (baseline?.ascendedCandles ?? currencies.ascendedCandles)),
+      loyaltyPoints: this.formatGain((currencies.loyaltyPoints ?? 0) - (baseline ? baseline.loyaltyPoints ?? 0 : currencies.loyaltyPoints ?? 0)),
       giftPasses: this.formatGain(currencies.giftPasses - (baseline?.giftPasses ?? currencies.giftPasses)),
       season: this.formatGain(season),
       events,

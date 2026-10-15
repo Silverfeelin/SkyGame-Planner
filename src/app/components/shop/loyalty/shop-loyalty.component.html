@@ -1,0 +1,31 @@
+<app-section-quick-actions section="shop" />
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Loyalty Store</h1>
+</header>
+
+<p class="atmos-paragraph atmos-page__hint">
+  The official That Sky Game Web Store offers loyalty points for In-App Purchases, which can be used to unlock exclusive rewards.
+</p>
+
+@if (shops.length) {
+  <section class="atmos-card atmos-shop-loyalty__section">
+    <header class="atmos-shop-loyalty__section-header">
+      <h2 class="atmos-section__title">Rewards</h2>
+    </header>
+    <div class="atmos-card__body atmos-shop-loyalty__section-body">
+      <div class="atmos-shop-loyalty__grid">
+        @for (shop of shops; track shop.guid) {
+          <div class="atmos-card atmos-shop-loyalty__shop">
+            <div class="atmos-card__body">
+              <h3 class="atmos-shop-loyalty__shop-title">{{ shop.name }}</h3>
+              <app-item-list
+                [itemList]="shop.itemList!"
+                [highlightNode]="highlightNode()"></app-item-list>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

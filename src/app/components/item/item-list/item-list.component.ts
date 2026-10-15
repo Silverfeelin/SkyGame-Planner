@@ -99,6 +99,7 @@ export class ItemListComponent {
     if (node.sh) { return { icon: 'heart', amount: node.sh, kind: 'seasonal' }; }
     if (node.ac) { return { icon: 'ascended-candle', amount: node.ac, kind: 'currency' }; }
     if (node.ec) { return { icon: 'ticket', amount: node.ec, kind: 'currency' }; }
+    if (node.lp) { return { icon: 'loyalty-point', amount: node.lp, kind: 'currency' }; }
     if (node.c) { return { icon: 'candle', amount: node.c, kind: 'currency' }; }
     return undefined;
   }

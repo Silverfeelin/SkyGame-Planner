@@ -3,7 +3,7 @@ import { ICost } from 'skygame-data';
 export class CostHelper {
   /** Creates a simple Cost object with all currencies set to 0. */
   static create(): ICost {
-    return { c: 0, h: 0, sc: 0, sh: 0, ac: 0, ec: 0 };
+    return { c: 0, h: 0, sc: 0, sh: 0, ac: 0, ec: 0, lp: 0 };
   }
 
   /** Creates a clone of the provided cost. Other properties are ignored. */
@@ -15,6 +15,7 @@ export class CostHelper {
     if (typeof value.sh === 'number') { cost.sh = value.sh; }
     if (typeof value.ac === 'number') { cost.ac = value.ac; }
     if (typeof value.ec === 'number') { cost.ec = value.ec; }
+    if (typeof value.lp === 'number') { cost.lp = value.lp; }
     return cost;
   }
 
@@ -22,7 +23,8 @@ export class CostHelper {
   static isEmpty(value: ICost): boolean {
     return !value.c && !value.h
       && !value.sc && !value.sh
-      && !value.ec && !value.ac;
+      && !value.ec && !value.ac
+      && !value.lp;
   }
 
   /** Clears all cost values by deleting the keys. Returns a reference to the object. */
@@ -33,6 +35,7 @@ export class CostHelper {
     delete value.sh;
     delete value.ac;
     delete value.ec;
+    delete value.lp;
 
     return value;
   }
@@ -47,6 +50,7 @@ export class CostHelper {
       if (value.sh) { target.sh = (target.sh || 0) + value.sh; }
       if (value.ac) { target.ac = (target.ac || 0) + value.ac; }
       if (value.ec) { target.ec = (target.ec || 0) + value.ec; }
+      if (value.lp) { target.lp = (target.lp || 0) + value.lp; }
     }
 
     return target;
@@ -62,6 +66,7 @@ export class CostHelper {
       if (value.sh) { target.sh = (target.sh || 0) - value.sh; }
       if (value.ac) { target.ac = (target.ac || 0) - value.ac; }
       if (value.ec) { target.ec = (target.ec || 0) - value.ec; }
+      if (value.lp) { target.lp = (target.lp || 0) - value.lp; }
     }
 
     return target;
@@ -70,7 +75,7 @@ export class CostHelper {
   /** Multiplies costs in-place. Returns a reference to the first object. */
   static multiply(target: ICost, factor: number | ICost): ICost {
     const costFactor: ICost = typeof factor === 'number' ? {
-      c: factor, h: factor, sc: factor, sh: factor, ac: factor, ec: factor
+      c: factor, h: factor, sc: factor, sh: factor, ac: factor, ec: factor, lp: factor
     } : factor;
 
     if (target.c) target.c *= costFactor.c ?? 1;
@@ -79,6 +84,7 @@ export class CostHelper {
     if (target.sh) target.sh *= costFactor.sh ?? 1;
     if (target.ac) target.ac *= costFactor.ac ?? 1;
     if (target.ec) target.ec *= costFactor.ec ?? 1;
+    if (target.lp) target.lp *= costFactor.lp ?? 1;
     return target;
   }
 
@@ -90,6 +96,7 @@ export class CostHelper {
     if (target.sh) target.sh = -target.sh;
     if (target.ac) target.ac = -target.ac;
     if (target.ec) target.ec = -target.ec;
+    if (target.lp) target.lp = -target.lp;
 
     return target;
   }
@@ -102,7 +109,8 @@ export class CostHelper {
       sc: calc(value.sc, compare.sc),
       sh: calc(value.sh, compare.sh),
       ac: calc(value.ac, compare.ac),
-      ec: calc(value.ec, compare.ec)
+      ec: calc(value.ec, compare.ec),
+      lp: calc(value.lp, compare.lp)
     };
   }
 }

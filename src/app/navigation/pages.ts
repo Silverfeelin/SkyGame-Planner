@@ -85,6 +85,7 @@ export const PAGES = {
   shopCinema:       { label: 'Cinema', link: '/shop/cinema', icon: 'movie', search: { name: 'Shops - Cinema', text: 'Cinema' } },
   shopConcertHall:  { label: 'Concert Hall', link: '/shop/concert-hall', icon: 'music_note', search: { name: 'Shops - Concert Hall', text: 'Concert Hall' } },
   shopHarmonyHall:  { label: 'Harmony Hall', link: '/shop/harmony', icon: 'piano', search: { name: 'Shops - Harmony Hall', text: 'Harmony Hall' } },
+  shopLoyalty:      { label: 'Loyalty Store', link: '/shop/loyalty', icon: 'loyalty', search: { name: 'Shops - Loyalty Store', text: 'Loyalty Store' } },
   shopNesting:      { label: 'Nesting Workshop', link: '/shop/nesting', icon: 'chair', search: { name: 'Shops - Nesting Workshop', text: 'Nesting Workshop' } },
   shopOffice:       { label: 'Secret Area', link: '/shop/office', icon: 'business', search: { name: 'Shops - Office', text: 'Office' } },
   shopPrairie:      { label: 'Prairie Heights', link: '/shop/prairieheights', icon: 'toys', search: { name: 'Shops - Prairie Heights', text: 'Prairie Heights' } },
@@ -142,7 +143,7 @@ export const SECTIONS = {
   season:      { label: 'Seasons', link: '/season', icon: 'ac_unit', pages: ['seasons', 'seasonOptimizer', 'seasonCalculator', 'wikiSeasons', 'eventCalendar'] },
   event:       { label: 'Events', link: '/event', icon: 'celebration', match: ['/event-instance'], pages: ['events', 'eventHistory', 'eventCalculator', 'wikiEvents', 'eventCalendar'] },
   shop:        { label: 'Shops', link: '/shop', icon: 'shopping_cart', pages: [
-    'shops', 'shopEvent', 'shopCinema', 'shopConcertHall', 'shopHarmonyHall', 'shopNesting', 'shopOffice', 'shopPrairie', 'shopWonderland',
+    'shops', 'shopEvent', 'shopCinema', 'shopConcertHall', 'shopHarmonyHall', 'shopLoyalty', 'shopNesting', 'shopOffice', 'shopPrairie', 'shopWonderland',
     'wikiShops'
   ] },
   friend:      { label: 'Friends', link: '/friend', icon: 'people', pages: [] },

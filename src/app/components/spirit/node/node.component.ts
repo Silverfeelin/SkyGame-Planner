@@ -85,6 +85,7 @@ export class NodeComponent {
     if (n.sh) { return { icon: 'heart', amount: n.sh, kind: 'seasonal' }; }
     if (n.ac) { return { icon: 'ascended-candle', amount: n.ac, kind: 'currency' }; }
     if (n.ec) { return { icon: 'ticket', amount: n.ec, kind: 'currency' }; }
+    if (n.lp) { return { icon: 'loyalty-point', amount: n.lp, kind: 'currency' }; }
     if (n.c) { return { icon: 'candle', amount: n.c, kind: 'currency' }; }
     return undefined;
   });

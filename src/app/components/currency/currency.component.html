@@ -91,6 +91,22 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
+        <mat-icon svgIcon="loyalty-point" [skyTooltip]="'Loyalty points'"></mat-icon>
+        <span class="atmos-currency__times">x</span>
+        <input #inpLp class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
+          [value]="inpCurrencies.loyaltyPoints ?? 0"/>
+      </div>
+      <div class="atmos-currency__btn-group">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('loyaltyPoints', 1)">+1</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('loyaltyPoints', 5)">+5</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('loyaltyPoints', 10)">+10</button>
+      </div>
+      <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().loyaltyPoints }"></ng-container>
+    </div>
+
+    <div class="atmos-currency__row">
+      <div class="atmos-currency__field">
         <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [skyTooltip]="'Gift season passes'"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpSp class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
