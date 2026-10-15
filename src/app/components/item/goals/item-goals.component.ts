@@ -88,7 +88,7 @@ export class ItemGoalsComponent {
   });
 
   readonly seasonItems = computed(() => this._split().season);
-  readonly seasonPlanner = SeasonHelper.getPlanner(DateHelper.getActive(this._dataService.seasonConfig.items));
+  readonly seasonPlanner = SeasonHelper.getPlanner(SeasonHelper.getPlannedSeason(this._dataService.seasonConfig.items));
   readonly eventItems = computed(() => this._split().event);
   readonly eventInstances = computed(() => this._split().eventInstances);
 

@@ -34,6 +34,7 @@ export interface SeasonPlan {
   season: string;
   seasonIcon?: string;
   daysLeft: number;
+  upcoming: boolean;
   seasonPass: boolean;
   trees: ReadonlyArray<SeasonPlanTree>;
   candlesSpent: number;

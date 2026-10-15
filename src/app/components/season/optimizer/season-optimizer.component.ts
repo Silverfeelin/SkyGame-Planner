@@ -5,6 +5,7 @@ import { MatIcon } from '@angular/material/icon';
 import { IItem, INode, ISpiritTree, ItemType } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { CurrencyService } from '@app/services/currency.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
@@ -20,6 +21,7 @@ import { NodeComponent } from '@app/components/spirit/node/node.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DraftWarningComponent } from '@app/components/shared/shared-widgets';
+import { DateTimePipe } from '@app/pipes/date-time.pipe';
 
 const TIER_COST: ReadonlyArray<number> = [0, 40, 60, 80, 100];
 const TIER_CUMULATIVE: ReadonlyArray<number> = [0, 40, 100, 180, 280];
@@ -71,7 +73,7 @@ interface Adventure { date: string; tree: string; }
   templateUrl: './season-optimizer.component.html',
   styleUrl: './season-optimizer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, OverlayComponent, NodeComponent, DraftWarningComponent, TooltipDirective, ItemIconComponent]
+  imports: [MatIcon, OverlayComponent, NodeComponent, DraftWarningComponent, TooltipDirective, ItemIconComponent, DateTimePipe]
 })
 export class SeasonOptimizerComponent {
   /** Every tree here belongs to the season being optimized, so the season badge is noise. */
@@ -90,7 +92,12 @@ export class SeasonOptimizerComponent {
   private readonly _planRenderService = inject(SeasonPlanRenderService);
   private readonly _treeRenderService = inject(SpiritTreeRenderService);
 
-  readonly season = DateHelper.getActive(this._dataService.seasonConfig.items);
+  readonly today = DateHelper.todaySky();
+  private readonly _todayKey = this.today.toFormat('yyyy-MM-dd');
+
+  readonly season = SeasonHelper.getPlannedSeason(this._dataService.seasonConfig.items);
+  /** Before the season starts, today's check-in and adventure don't count towards it. */
+  readonly isUpcoming = !!this.season && this.season.date > this.today;
   readonly trees: ReadonlyArray<ISpiritTree> =
     (this.season?.spirits.filter(s => s.type === 'Season').map(s => s.tree).filter(t => t?.tier) ?? []) as ISpiritTree[];
   readonly nodes: ReadonlyArray<INode> = this.trees.flatMap(t => TreeHelper.getNodes(t)).filter(n => n) as INode[];
@@ -109,9 +116,9 @@ export class SeasonOptimizerComponent {
   private readonly _nodeTree = new Map<string, number>();
 
   readonly isDraft = !!this.season?.draft;
-  readonly today = DateHelper.todaySky();
-  private readonly _todayKey = this.today.toFormat('yyyy-MM-dd');
-  readonly daysLeftSeason = this.season ? DateHelper.daysBetween(this.today, this.season.endDate!) : 0;
+  readonly daysLeftSeason = this.season
+    ? DateHelper.daysBetween(this.isUpcoming ? this.season.date : this.today, this.season.endDate!)
+    : 0;
 
   /** Bumped whenever unlocks or currencies change, since nodes are mutated in place. */
   private readonly _refresh = signal(0);
@@ -145,7 +152,7 @@ export class SeasonOptimizerComponent {
   });
 
   /** Today's season candles and today's spirit adventure are logged separately, so each counts its own days. */
-  readonly candleDaysLeft = computed(() => Math.max(0, this.daysLeftSeason - (this.checkedIn() ? 1 : 0)));
+  readonly candleDaysLeft = computed(() => Math.max(0, this.daysLeftSeason - (!this.isUpcoming && this.checkedIn() ? 1 : 0)));
   readonly accompanyDaysLeft = computed(() => Math.max(0, this.daysLeftSeason - (this.adventure()?.date === this._todayKey ? 1 : 0)));
   readonly candlesPerDay = computed(() => this.hasSeasonPass() ? 6 : 5);
   readonly candlesToEarn = computed(() => this.candleDaysLeft() * this.candlesPerDay());
@@ -205,7 +212,7 @@ export class SeasonOptimizerComponent {
     this.want.set(new Set(savedWant.filter(guid => this.nodeGuids.has(guid))));
     this.accompanyStored.set({ ...(this._storageService.getKey<{ [guid: string]: number }>(ACCOMPANY_KEY) ?? {}) });
     const adventure = this._storageService.getKey<Adventure>(ADVENTURE_KEY);
-    if (adventure?.date === this._todayKey) { this.adventure.set(adventure); }
+    if (!this.isUpcoming && adventure?.date === this._todayKey) { this.adventure.set(adventure); }
 
     this._eventService.itemToggled.pipe(takeUntilDestroyed()).subscribe(() => this._refresh.update(v => v + 1));
     this._storageService.events.pipe(takeUntilDestroyed()).subscribe(() => this._refresh.update(v => v + 1));
@@ -497,6 +504,7 @@ export class SeasonOptimizerComponent {
       season: this.season!.name,
       seasonIcon: this.season!.iconUrl,
       daysLeft: this.daysLeftSeason,
+      upcoming: this.isUpcoming,
       seasonPass: this.hasSeasonPass(),
       trees,
       candlesSpent: calcs.reduce((sum, c) => sum + c.candlesSpent, 0),

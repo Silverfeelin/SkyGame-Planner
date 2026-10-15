@@ -126,13 +126,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return s ? this.deriveSeasonCurrency(s) : [];
   });
 
-  /** The season planners only work for the active season. */
+  /** Only links a planner for the season it can plan, see SeasonHelper.getPlannedSeason. */
   readonly upcomingSeasonLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const s = this.upcomingSeason();
     if (!s) { return []; }
-    return [
-      { icon: 'dashboard', label: 'Overview', link: `/season/${s.guid}` }
-    ];
+    const links: Array<IFeatureLink> = [{ icon: 'dashboard', label: 'Overview', link: `/season/${s.guid}` }];
+    if (SeasonHelper.getPlannedSeason(this._dataService.seasonConfig.items)?.guid === s.guid) {
+      links.push({ icon: 'calculate', label: 'Optimizer', link: '/season/optimizer' });
+    }
+    return links;
   });
 
   readonly tsKicker = computed(() => {

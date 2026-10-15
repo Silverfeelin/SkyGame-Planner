@@ -57,7 +57,11 @@ export class SeasonComponent implements OnInit {
   readonly previousSeason = signal<ISeason | undefined>(undefined);
   readonly nextSeason = signal<ISeason | undefined>(undefined);
   readonly state = signal<'future' | 'active' | 'ended' | undefined>(undefined);
-  readonly planner = computed(() => this.state() === 'active' ? SeasonHelper.getPlanner(this.season()) : undefined);
+  private readonly _plannedSeason = SeasonHelper.getPlannedSeason(this._dataService.seasonConfig.items);
+  readonly planner = computed(() => {
+    const season = this.season();
+    return season && season.guid === this._plannedSeason?.guid ? SeasonHelper.getPlanner(season) : undefined;
+  });
 
   readonly guide = signal<ISpirit | undefined>(undefined);
   readonly guideTree = signal<ISpiritTree | undefined>(undefined);

@@ -1,5 +1,4 @@
 import { Params } from '@angular/router';
-import { DateHelper } from '@app/helpers/date-helper';
 import { SeasonHelper } from '@app/helpers/season-helper';
 import type { DataService } from '@app/services/data.service';
 
@@ -23,7 +22,7 @@ const WIKI = 'https://sky-children-of-the-light.fandom.com/wiki';
 
 const currentSeasonHasTiers = (data: DataService): boolean => {
   const seasons = data.seasonConfig.items;
-  return SeasonHelper.usesOptimizer(DateHelper.getActive(seasons) || seasons.at(-1));
+  return SeasonHelper.usesOptimizer(SeasonHelper.getPlannedSeason(seasons) || seasons.at(-1));
 };
 
 export const PAGES = {

@@ -23,6 +23,9 @@
     <div class="atmos-card__body">
       <p class="atmos-paragraph">
         Plan the items you want from the {{ season.name }}, and keep track of what you unlock as the season goes.
+        @if (isUpcoming) {
+          The season starts on {{ season.date | datetime }}; until then, your plan counts all {{ daysLeftSeason }} days of the season.
+        }
         It was inspired by StrangeStiffy's
         <a href="https://reddit.com/r/SkyGame/comments/1oc7s0a/psa_spirit_friendship_minmaxing/" target="_blank" rel="noopener" class="atmos-text-link">post on Reddit</a>.<br/>
         You can also have a look at
@@ -92,27 +95,29 @@
     </div>
   </details>
 
-  <section class="atmos-card">
-    <div class="atmos-card__body atmos-optimizer__today">
-      <h2 class="atmos-optimizer__heading">Today</h2>
-      <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="checkedIn()" [attr.aria-pressed]="checkedIn()"
-              (click)="toggleCheckin($event)">
-        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
-        {{ checkedIn() ? 'Collected +' + candlesPerDay() : 'Collect ' + candlesPerDay() + ' season candles' }}
-      </button>
-      <div class="atmos-optimizer__today-group">
-        <span class="atmos-optimizer__control-label">Accompany</span>
-        @for (tree of trees; track tree.guid; let iTree = $index) {
-          <button type="button" class="atmos-btn atmos-btn--sm atmos-optimizer__adventure"
-                  [class.is-active]="isAdventure(iTree)" [attr.aria-pressed]="isAdventure(iTree)"
-                  [disabled]="!isAdventure(iTree) && isReached(calcs()[iTree].friendship, MAX_FRIENDSHIP)"
-                  (click)="toggleAdventure(iTree)">
-            {{ spiritName(iTree) }}{{ isAdventure(iTree) ? ' +10' : '' }}
-          </button>
-        }
+  @if (!isUpcoming) {
+    <section class="atmos-card">
+      <div class="atmos-card__body atmos-optimizer__today">
+        <h2 class="atmos-optimizer__heading">Today</h2>
+        <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="checkedIn()" [attr.aria-pressed]="checkedIn()"
+                (click)="toggleCheckin($event)">
+          <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
+          {{ checkedIn() ? 'Collected +' + candlesPerDay() : 'Collect ' + candlesPerDay() + ' season candles' }}
+        </button>
+        <div class="atmos-optimizer__today-group">
+          <span class="atmos-optimizer__control-label">Accompany</span>
+          @for (tree of trees; track tree.guid; let iTree = $index) {
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-optimizer__adventure"
+                    [class.is-active]="isAdventure(iTree)" [attr.aria-pressed]="isAdventure(iTree)"
+                    [disabled]="!isAdventure(iTree) && isReached(calcs()[iTree].friendship, MAX_FRIENDSHIP)"
+                    (click)="toggleAdventure(iTree)">
+              {{ spiritName(iTree) }}{{ isAdventure(iTree) ? ' +10' : '' }}
+            </button>
+          }
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  }
 
   <div class="atmos-optimizer__trees">
     @for (tree of trees; track tree.guid; let iTree = $index) {
