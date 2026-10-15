@@ -60,15 +60,12 @@ const rotations: IRotations = [
   ],
   [
     { guid: '9ZDdv0TG9w', c: 16 },
-    { guid: 'ch-1pp8DuT', c: 20 },
-    { guid: 'i1RW5NFFGc', c: 8 },
     { guid: 'EQwb6KLMv5', ac: 15 }
   ],
   [
     { guid: 'QLPTcl6MON', c: 60 },
     { guid: 'whT_cZQrv5', c: 50 },
-    { guid: 'raTbmXIzTD', c: 12 },
-    { guid: 'uOQmeCxRGG', c: 12 }
+    { guid: 'raTbmXIzTD', c: 12 }
   ],
   [
     { guid: 'rMl2rj9Qgv', c: 45 },
@@ -117,15 +114,14 @@ const rotations: IRotations = [
   ],
   [
     { guid: 'PRSX9s-tGz', c: 40 },
+    { guid: 't3D6CbSY-E', c: 9 },
+    { guid: 'Kuo5r3BpFu', ac: 6 },
     { guid: 'srZq8IciYN', c: 80 }
   ],
   [
     { guid: '-_R3fzw7MF', ac: 25 },
     { guid: 'FpXfl3Dpff', h: 45 },
     { guid: 'cqPAxA0gAc', c: 90 }
-  ],
-  [
-    { guid: 'Kuo5r3BpFu', ac: 6 }
   ]
 ];
 
