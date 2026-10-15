@@ -85,6 +85,7 @@ const COLOR_EXPRESSIONS = {
   track: 'var(--optimizer-track)',
   markedBg: 'var(--optimizer-marked-bg)',
   markedBorder: 'var(--optimizer-marked-border)',
+  awaitingBg: 'var(--optimizer-awaiting-bg)',
   ownedBg: 'var(--optimizer-owned-bg)',
   ownedBorder: 'var(--optimizer-owned-border)',
   selectedA: 'oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.6)',
@@ -213,7 +214,8 @@ export class SeasonPlanRenderService {
     };
     const nodeMarker = (state: SeasonPlanNodeState): [string?, string?] => {
       switch (state) {
-        case 'marked': case 'awaiting': return [colors.markedBg, colors.markedBorder];
+        case 'marked': return [colors.markedBg, colors.markedBorder];
+        case 'awaiting': return [colors.awaitingBg];
         case 'owned': return [colors.ownedBg, colors.ownedBorder];
         default: return [];
       }
@@ -284,14 +286,14 @@ export class SeasonPlanRenderService {
       ctx.restore();
     };
     const legendTop = y + 16;
-    legendItem('Needs more friendship', legendTop, tile(colors.markedBg, colors.accent, true));
-    legendItem('Marked', legendTop, tile(colors.markedBg, colors.markedBorder));
+    legendItem('Needs more friendship', legendTop, tile(colors.awaitingBg, colors.accent, true));
+    legendItem('Planned', legendTop, tile(colors.markedBg, colors.markedBorder));
     legendItem('Owned', legendTop, tile(colors.ownedBg, colors.ownedBorder));
     legendItem('Items', legendTop);
     lx = width - PADDING;
     legendItem('Still needed', legendTop + 24, bar((x, by, w, h) => stripes(x, by, w, h, colors.neededA, colors.neededB)));
-    legendItem('From marked items', legendTop + 24, bar((x, by, w, h) => stripes(x, by, w, h, colors.selectedA, colors.selectedB)));
-    legendItem('From adventures', legendTop + 24, bar((x, by, w, h) => railFill('accompany', x, by, w, h)));
+    legendItem('From planned items', legendTop + 24, bar((x, by, w, h) => stripes(x, by, w, h, colors.selectedA, colors.selectedB)));
+    legendItem('From accompanying', legendTop + 24, bar((x, by, w, h) => railFill('accompany', x, by, w, h)));
     legendItem('From owned items', legendTop + 24, bar((x, by, w, h) => railFill('items', x, by, w, h)));
     legendItem('Friendship', legendTop + 24);
     y = HEADER_H;
@@ -307,8 +309,8 @@ export class SeasonPlanRenderService {
       if (entry.state === 'awaiting') {
         ctx.save();
         ctx.setLineDash([4, 3]);
-        ctx.lineWidth = 2;
-        roundRect(x + 1, y + 1, TILE_W - 2, TILE_H - 2, 6);
+        ctx.lineWidth = 1;
+        roundRect(x + 0.5, y + 0.5, TILE_W - 1, TILE_H - 1, 6);
         ctx.strokeStyle = colors.accent;
         ctx.stroke();
         ctx.restore();
@@ -379,7 +381,7 @@ export class SeasonPlanRenderService {
 
       const labelX = tx + TREE_PAD + RAIL_COL + 4;
       const labelEnd = tx + TREE_W - TREE_PAD;
-      const suffix = { reached: ' · reached', selected: ' · with marked items', none: '',
+      const suffix = { reached: ' · reached', selected: ' · with planned items', none: '',
         short: ` · ${Math.round(s.short)} short · ${s.days} ${s.days === 1 ? 'day' : 'days'}` }[s.state];
       setFont(12, 700);
       let x = labelX + text(`${s.points}`, labelX, sy + 17, 'left', color);
@@ -452,7 +454,7 @@ export class SeasonPlanRenderService {
       ctx.fillStyle = colors.lineSoft;
       ctx.fillRect(tx + TREE_PAD, fy + 4, TREE_W - TREE_PAD * 2, 1);
       setFont(13);
-      text('Marked items', tx + TREE_PAD + 2, fy + 24, 'left', colors.dim);
+      text('Planned items', tx + TREE_PAD + 2, fy + 24, 'left', colors.dim);
       text('Accompany', tx + TREE_PAD + 2, fy + 44, 'left', colors.dim);
       const right = tx + TREE_W - TREE_PAD - 2;
       setFont(13, 700);

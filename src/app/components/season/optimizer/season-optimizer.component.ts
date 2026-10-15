@@ -31,7 +31,7 @@ const WANT_KEY = 'migration.optimizer';
 const ACCOMPANY_KEY = 'optimizer.accompany';
 const ADVENTURE_KEY = 'optimizer.adventure';
 
-/** `plan` cycles an item through unmarked, marked and owned. */
+/** `plan` cycles an item through unplanned, planned and owned. */
 type NodeAction = 'plan' | 'navigate' | 'favourite';
 type ExportMode = 'clipboard' | 'share' | 'download';
 type RailKind = 'items' | 'accompany' | 'selected' | 'needed';
@@ -49,14 +49,12 @@ interface TreeCalc {
   friendship: number;
   /** Friendship needed to reach the highest tier with a selected item. */
   required: number;
-  /** Friendship once every marked item is bought and the shortfall is accompanied. */
+  /** Friendship once every planned item is bought and the shortfall is accompanied. */
   planned: number;
   missing: ReadonlyArray<number>;
   missingTotal: number;
   accompanyDays: number;
-  /** Friendship in the order it is earned, from 0 up to the highest selected tier. */
-  layers: ReadonlyArray<FriendshipLayer>;
-  /** Rail layers clipped to each tier's own stretch, indexed by tier. */
+  /** Rail layers for each tier's own stretch, indexed by tier. */
   rails: ReadonlyArray<ReadonlyArray<RailLayer>>;
   /** Star above each tier, indexed by tier; the top tier has none. */
   stars: ReadonlyArray<Star | undefined>;
@@ -169,7 +167,7 @@ export class SeasonOptimizerComponent {
     this._refresh();
     return this.nodes.filter(n => this.isSelected(n) && this.needsPass(n)).length;
   });
-  /** Season Pass items in tiers the plan reaches that are neither marked nor owned. */
+  /** Season Pass items in tiers the plan reaches that are neither planned nor owned. */
   readonly unmarkedPassItems = computed(() => {
     if (!this.hasSeasonPass()) { return []; }
     const want = this.want();
@@ -232,7 +230,8 @@ export class SeasonOptimizerComponent {
 
   /** Selected, but the tree's friendship doesn't reach the node's tier yet. */
   isAwaitingTier(node: INode, iTree: number): boolean {
-    return this.isSelected(node) && this.calcs()[iTree].friendship < TIER_CUMULATIVE[this._nodeTier.get(node.guid) ?? 0] - EPSILON;
+    const tier = this._nodeTier.get(node.guid) ?? 0;
+    return this.isSelected(node) && tier > 0 && this.calcs()[iTree].stars[tier - 1]?.state !== 'reached';
   }
 
   nodeTitle(node: INode, iTree: number): string {
@@ -246,10 +245,10 @@ export class SeasonOptimizerComponent {
     const refund = node.sc ? ` and get ${node.sc} season candles back` : '';
     if (node.unlocked) { return `${name}: owned. Click to lock it again${refund}.`; }
     if (this.isAwaitingTier(node, iTree)) {
-      return `${name}: marked, unlocks at ${TIER_CUMULATIVE[this._nodeTier.get(node.guid) ?? 0]} friendship. Click to unlock it${cost}.${pass}`;
+      return `${name}: planned, unlocks at ${TIER_CUMULATIVE[this._nodeTier.get(node.guid) ?? 0]} friendship. Click to unlock it${cost}.${pass}`;
     }
-    if (this.isSelected(node)) { return `${name}: marked. Click to unlock it${cost}.${pass}`; }
-    return `${name}: click to mark it.${pass}`;
+    if (this.isSelected(node)) { return `${name}: planned. Click to unlock it${cost}.${pass}`; }
+    return `${name}: click to plan it.${pass}`;
   }
 
   // #endregion
@@ -275,7 +274,7 @@ export class SeasonOptimizerComponent {
     this.setWant(new Set([...this.want(), node.guid]));
   }
 
-  /** Marked items become owned, owned items go back to unmarked. Costs are spent and refunded like on the season page. */
+  /** Planned items become owned, owned items go back to unplanned. Costs are spent and refunded like on the season page. */
   private toggleUnlock(node: INode, iTree: number): void {
     const tree = this.trees[iTree];
     const wasWanted = this.want().has(node.guid);
@@ -334,11 +333,11 @@ export class SeasonOptimizerComponent {
   meterPosition(points: number): number { return meterPosition(points); }
 
   meterLayers(iTree: number): Array<{ kind: RailKind; left: number; width: number }> {
-    const calc = this.calcs()[iTree];
-    return calc.layers.filter(l => l.to - l.from > EPSILON).map(l => {
-      const left = meterPosition(l.from);
-      return { kind: l.kind, left, width: meterPosition(Math.min(MAX_FRIENDSHIP, l.to)) - left };
-    });
+    return this.calcs()[iTree].rails.flatMap((rail, iTier) => rail.map(l => {
+      const from = TIER_CUMULATIVE[iTier] + l.bottom / 100 * TIER_COST[iTier + 1];
+      const left = meterPosition(from);
+      return { kind: l.kind, left, width: meterPosition(from + l.height / 100 * TIER_COST[iTier + 1]) - left };
+    }));
   }
 
   // #endregion
@@ -423,7 +422,7 @@ export class SeasonOptimizerComponent {
   }
 
   resetHighlight(): void {
-    if (!confirm('Unmark all items? Items you own stay unlocked.')) { return; }
+    if (!confirm('Clear your plan? Items you own stay unlocked.')) { return; }
     this.setWant(new Set());
   }
 
@@ -578,14 +577,17 @@ export class SeasonOptimizerComponent {
     const accompany = storedAccompany;
     const friendship = itemPoints + accompany;
 
-    // Friendship in the order it is earned: selected items only count once their tier is open.
+    // Friendship the user has fills from the bottom. Planned items can't count below their own tier,
+    // so each tier's planned points start where the line is once that tier opens.
     const layers: Array<FriendshipLayer> = [
       { kind: 'items', from: 0, to: itemPoints },
       { kind: 'accompany', from: itemPoints, to: friendship }
     ];
     const missing: number[] = [];
     const pools: INode[][] = [];
+    const stars: Array<Star | undefined> = [];
     let current = friendship;
+    let shortBy = 0;
     let candlesSelected = 0;
     let candlesSpent = 0;
     let candlesTotal = 0;
@@ -596,7 +598,7 @@ export class SeasonOptimizerComponent {
         if (n.unlocked) { candlesSpent += n.sc ?? 0; }
         candlesTotal += n.sc ?? 0;
       });
-      if (iTier === lastTier) { return; }
+      if (iTier === lastTier) { stars.push(undefined); return; }
 
       const before = current;
       const pool: INode[] = [];
@@ -608,16 +610,23 @@ export class SeasonOptimizerComponent {
       pools.push(pool);
 
       const next = TIER_CUMULATIVE[iTier + 1];
-      if (current >= required - EPSILON) {
-        missing.push(0);
-      } else {
-        missing.push(Math.max(0, next - current));
+      const short = current >= required - EPSILON ? 0 : Math.max(0, next - current);
+      missing.push(short);
+      if (short) {
         layers.push({ kind: 'needed', from: current, to: next });
-        current = Math.max(current, next);
+        current = next;
       }
-    });
+      // Days come from the running total, since a day's surplus carries into the next tier's shortfall.
+      const days = daysFor(shortBy + short) - daysFor(shortBy);
+      shortBy += short;
 
-    const missingTotal = missing.reduce((a, b) => a + b, 0);
+      let state: StarState;
+      if (friendship >= next - EPSILON) { state = 'reached'; }
+      else if (next > required) { state = current >= next - EPSILON ? 'selected' : 'none'; }
+      // Shortfalls below are treated as accompanied, so each star only shows what its own tier still needs.
+      else { state = days > 0 ? 'short' : 'selected'; }
+      stars.push({ points: next, state, short, days });
+    });
 
     const rails = tiers.map((_, iTier) => {
       if (iTier === lastTier) { return []; }
@@ -628,21 +637,11 @@ export class SeasonOptimizerComponent {
       });
     });
 
-    let shortBy = 0;
-    const stars = tiers.map((_, iTier): Star | undefined => {
-      if (iTier === lastTier) { return undefined; }
-      shortBy += missing[iTier];
-      const points = TIER_CUMULATIVE[iTier + 1];
-      let state: StarState;
-      if (friendship >= points - EPSILON) { state = 'reached'; }
-      else if (points > required) { state = current >= points - EPSILON ? 'selected' : 'none'; }
-      else { state = shortBy > EPSILON ? 'short' : 'selected'; }
-      return { points, state, short: shortBy, days: daysFor(shortBy) };
-    });
+    const missingTotal = shortBy;
 
     return {
       itemPoints, accompany, friendship, required, planned: current, missing, missingTotal,
-      accompanyDays: daysFor(missingTotal), layers, rails, stars, candlesSelected, candlesSpent, candlesTotal, pools
+      accompanyDays: daysFor(missingTotal), rails, stars, candlesSelected, candlesSpent, candlesTotal, pools
     };
   }
 

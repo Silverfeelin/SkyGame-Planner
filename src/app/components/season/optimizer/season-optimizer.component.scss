@@ -15,6 +15,7 @@
   --optimizer-track: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.08);
   --optimizer-marked-bg: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.16);
   --optimizer-marked-border: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.4);
+  --optimizer-awaiting-bg: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.07);
   --optimizer-owned-bg: oklch(0.80 0.13 150 / 0.14);
   --optimizer-owned-border: oklch(0.80 0.13 150 / 0.55);
 }
@@ -151,7 +152,11 @@
     box-shadow: inset 0 0 0 1px var(--optimizer-marked-border);
   }
 
-  &.is-awaiting { outline-color: var(--atmos-accent); }
+  &.is-awaiting {
+    background: var(--optimizer-awaiting-bg);
+    outline: 1px dashed var(--atmos-accent);
+    outline-offset: -1px;
+  }
 
   &.is-owned {
     background: var(--optimizer-owned-bg);
@@ -180,18 +185,6 @@
   &.is-accompany { background: var(--optimizer-accompany); }
   &.is-selected { background: var(--optimizer-selected); }
   &.is-needed { background: var(--optimizer-needed); }
-}
-
-.atmos-optimizer__legend-star {
-  &[data-state="reached"] { color: var(--optimizer-accompany); }
-  &[data-state="selected"] { color: var(--atmos-accent); }
-  &[data-state="short"] { color: var(--atmos-warm); }
-
-  mat-icon {
-    width: 18px;
-    height: 18px;
-    font-size: 18px;
-  }
 }
 
 // #endregion
@@ -432,13 +425,18 @@
   opacity: 0.6;
 }
 
-// Every node reserves the outline, so marking one only changes its colour.
+// Every node reserves the outline, so planning one never shifts the layout.
 .atmos-optimizer__node {
   border-radius: var(--atmos-radius-sm);
   outline: 2px dashed transparent;
   outline-offset: -2px;
 
-  &.is-awaiting { outline-color: var(--atmos-accent); }
+  // Planned but out of reach, so quieter than a planned item you can buy now.
+  &.is-awaiting {
+    background: var(--optimizer-awaiting-bg);
+    outline: 1px dashed var(--atmos-accent);
+    outline-offset: -1px;
+  }
 
   &.is-owned {
     background: var(--optimizer-owned-bg);
