@@ -45,7 +45,8 @@ body > .map { display: none !important; }
 .s-leaflet-grid {
   display: grid;
   gap: 6px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  // Not minmax(0, 1fr): Leaflet sizes popups to min-content, which a 0 minimum collapses.
+  grid-template-columns: repeat(2, 1fr);
   *:nth-child(n + 3) {
     grid-column: span 2;
   }
