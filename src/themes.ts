@@ -9,6 +9,7 @@ export const themes: Array<ITheme> = [
   { name: 'Prairie Peaks', value: 'peaks' },
   { name: 'Treasure Reef', value: 'reef' },
   { name: 'Village of Dreams', value: 'cold' },
+  { name: 'Pearl Village', value: 'pearl' },
   { name: 'Crescent Oasis', value: 'sandy' },
   { name: 'Days of Love', value: 'love' },
   { name: 'Moomin', value: 'moomin' },

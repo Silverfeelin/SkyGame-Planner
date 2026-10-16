@@ -57,6 +57,7 @@ export const backgroundImages: Array<INamedOption> = [
   { name: 'Golden Wasteland', value: 'wasteland' },
   { name: 'Golden Wasteland (shipwreck)', value: 'wasteland2' },
   { name: 'Crescent Oasis', value: 'oasis' },
+  { name: 'Pearl Village', value: 'pearl' },
   { name: 'Vault of Knowledge', value: 'vault' },
   { name: 'Aurora', value: 'aurora' },
   { name: 'Nesting Workshop', value: 'nesting' },

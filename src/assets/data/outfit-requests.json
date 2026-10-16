@@ -45,7 +45,8 @@
         { "guid": "kYtsHeX26P", "url": "/assets/game/background/moomin.webp", "filter": "brightness(1) blur(1px)" },
         { "guid": "thMcfkK8Zf", "url": "/assets/game/areas/vault/cackling.webp", "filter": "brightness(1) blur(1px)" },
         { "guid": "thMcfkK8Z1", "url": "/assets/game/background/feast2024.webp", "filter": "brightness(1) blur(1px)" },
-        { "guid": "ZeSe9wai1-", "url": "/assets/game/background/gogh.webp", "default": true, "filter": "brightness(1) blur(1px)" }
+        { "guid": "ZeSe9wai1-", "url": "/assets/game/background/gogh.webp", "filter": "brightness(1) blur(1px)" },
+        { "guid": "oik_AIhtYR", "url": "/assets/game/background/pearl.webp", "default": true, "filter": "brightness(1) blur(1px)" }
       ]
     }
   }

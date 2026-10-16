@@ -1166,6 +1166,12 @@ a.atmos-link:focus-visible {
   --atmos-bg-image: url(/assets/game/background/feast2024.webp);
 }
 
+:root[data-theme="pearl"] {
+  --atmos-hue: 260;
+  --atmos-bg-brightness: 100%;
+  --atmos-bg-image: url(/assets/game/background/pearl.webp);
+}
+
 :root[data-theme="gogh"] {
   --atmos-hue: 255;
   --atmos-chroma: 1.5;
