@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, effect, inject, input, OnDestroy, o
 import { NgTemplateOutlet } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { IconComponent } from '@app/components/icon/icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { INavSection, NavigationService } from '@app/navigation/navigation.service';
 import { SectionId } from '@app/navigation/pages';
@@ -19,7 +20,7 @@ const viewportMargin = 4;
   templateUrl: './nav-tree.component.html',
   styleUrl: './nav-tree.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, RouterLink, MatIcon, TooltipDirective],
+  imports: [NgTemplateOutlet, RouterLink, MatIcon, IconComponent, TooltipDirective],
   host: {
     '[class.is-rail]': `mode() === 'rail'`
   }

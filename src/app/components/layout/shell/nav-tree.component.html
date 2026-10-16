@@ -20,7 +20,7 @@
           (click)="onSectionClick(section)"
           [skyTooltip]="mode() === 'rail' && !hasPages ? section.label : ''">
           @if (section.iconUrl) {
-            <img class="atmos-nav-item__img" [src]="section.iconUrl" alt="" />
+            <app-icon class="atmos-nav-item__img" [src]="section.iconUrl" width="24px" height="24px"></app-icon>
           } @else if (section.svgIcon) {
             <mat-icon [svgIcon]="section.svgIcon"></mat-icon>
           } @else {
