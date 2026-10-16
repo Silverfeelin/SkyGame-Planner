@@ -179,10 +179,7 @@ export class ShopNestingComponent {
       this._workshopNodeMap[node.guid] = node;
     }
 
-    const start = DateTime.fromISO('2024-04-15');
-    const today = DateTime.now().startOf('week');
-    const weeksBetween = Math.ceil(today.diff(start, 'weeks').weeks);
-    this.iRotation = weeksBetween % rotations.length;
+    this.iRotation = this.getCurrentRotationIndex();
 
     this.itemLists = rotations.map<IItemList>((r, i) => ({
       guid: nanoid(10),
@@ -258,15 +255,7 @@ export class ShopNestingComponent {
   }
 
   private initializeRotations(): void {
-    const currentWeek = DateHelper.todaySky().startOf('week');
-    const date = DateTime.fromISO('2024-04-15T12:00:00').setZone(DateHelper.skyTimeZone).startOf('week');
-
-    const weeksBetween = Math.ceil(currentWeek.diff(date, 'weeks').weeks);
-    const iDate = weeksBetween % rotations.length;
-
-    for (const [rotationIndex, rotation] of rotations.entries()) {
-      let iNext = rotationIndex;
-      if (iNext < iDate) { iNext += rotations.length; }
+    for (const rotation of rotations) {
       rotation.forEach(r => {
         r.item = this._dataService.guidMap.get(r.guid) as IItem;
         this._rotationItemCostMap[r.item.guid] = r;
@@ -278,6 +267,13 @@ export class ShopNestingComponent {
       r.item = this._dataService.guidMap.get(r.guid) as IItem;
       this._rotationItemCostMap[r.item.guid] = r;
     }
+  }
+
+  /** Rotations change on Fridays (since 31.5); the anchor is a Friday that started rotation 1. */
+  private getCurrentRotationIndex(): number {
+    const anchor = DateHelper.fromStringSky('2026-10-09')!;
+    const weeks = Math.floor(Math.round(DateHelper.todaySky().diff(anchor, 'days').days) / 7);
+    return ((weeks % rotations.length) + rotations.length) % rotations.length;
   }
 
   private loadData(): void {
