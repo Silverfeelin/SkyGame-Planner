@@ -15,6 +15,7 @@
     "wrangle": "npx wrangler pages dev ./dist/sky-game-planner/browser --kv=REQUESTS",
     "sitemap-build": "node ./scripts/build/sitemap.js",
     "icon-sheet": "tsx ./scripts/icon-sheet.ts",
+    "icon-sheet-proxy": "tsx ./scripts/icon-sheet-proxy.ts",
     "item-id": "node ./scripts/item-id.js",
     "quick-start-verify": "tsx --conditions=import ./scripts/quick-start/verify.ts",
     "test": "ng test"

@@ -14,6 +14,7 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
+import { IconService } from '@app/services/icon.service';
 import { TabsComponent, TabDirective } from '@app/components/shared/shared-widgets';
 import { NodeComponent } from '@app/components/spirit/node/node.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
@@ -132,6 +133,7 @@ export class SpiritTreeEditorComponent {
   specialItems: Array<SpecialItem> = Object.values(this.specialItemMap);
 
   private readonly _storageService = inject(StorageService);
+  private readonly _iconService = inject(IconService);
 
   constructor(
     private readonly _dataService: DataService,
@@ -870,7 +872,7 @@ export class SpiritTreeEditorComponent {
   // #region Dragging
 
   draggingNode?: HTMLElement;
-  draggingPreview?: HTMLImageElement;
+  draggingPreview?: HTMLElement;
   onTreePointerDown(event: PointerEvent): void {
     const target = event.target as HTMLElement;
     const nodeEl = target.closest('app-node') as HTMLElement;
@@ -881,11 +883,23 @@ export class SpiritTreeEditorComponent {
     target.setPointerCapture(event.pointerId);
 
     const item = this.getDraggedNode(nodeEl.getAttribute('guid') || '')?.item;
-    if (item?.icon?.startsWith('http')) {
-      this.draggingPreview = document.createElement('img');
-      this.draggingPreview.src = item.icon;
-      this.draggingPreview.width = 64;
-      this.draggingPreview.height = 64;
+    const mappedIcon = item?.icon ? this._iconService.getIcon(item.icon) : undefined;
+    if (mappedIcon) {
+      // Draw from the icon sheet (128 px tiles) at half size.
+      this.draggingPreview = document.createElement('div');
+      this.draggingPreview.style.width = '64px';
+      this.draggingPreview.style.height = '64px';
+      this.draggingPreview.style.backgroundImage = `url(${mappedIcon.url})`;
+      this.draggingPreview.style.backgroundPosition = `-${mappedIcon.x / 2}px -${mappedIcon.y / 2}px`;
+      this.draggingPreview.style.backgroundSize = '1024px 1024px';
+    } else if (item?.icon?.startsWith('http')) {
+      const img = document.createElement('img');
+      img.src = item.icon;
+      img.width = 64;
+      img.height = 64;
+      this.draggingPreview = img;
+    }
+    if (this.draggingPreview) {
       document.body.appendChild(this.draggingPreview);
       this.draggingPreview.style.position = 'fixed';
       this.draggingPreview.style.zIndex = '1000';

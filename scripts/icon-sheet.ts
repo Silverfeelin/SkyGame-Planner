@@ -1,16 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as util from 'util';
 import * as jsonc from 'jsonc-parser';
-import * as Spritesmith from 'spritesmith';
 import { chromium } from 'playwright';
+import { createSprites, iconSize, iconsPerSheet, IIconSheet, isProxySheet, readIconsJson, writeIconsJson } from './icon-sheet-common';
 const sharp = require('sharp');
-
-const runSpritesmithAsync = util.promisify(Spritesmith.run);
-
-const iconSize = 128;
-const iconsPerSheet = 16 * 16;
-const sheetWidth = iconSize * 16;
 
 interface IItem { guid: string, id: number, icon?: string };
 const itemsPath = path.resolve(__dirname, '../node_modules/skygame-data/assets/items.json');
@@ -66,46 +59,11 @@ const iconUrlMap = new Map<number, string>();
   }
   await browser.close();
 
-  const coordinatePath = path.resolve(__dirname, '../src/assets/game/icons.json');
-  const coordinateData: any = { files: [] };
-
-  const createSprites = async (icons: Array<string>) => {
-    const options: any = { src: icons, algorithm: 'binary-tree', algorithmOpts: { sort: false } };
-    const result = await runSpritesmithAsync(options);
-    const coordinates: { [key: string]: { x: number, y: number }} = {};
-    for (const key in result.coordinates) {
-      if (!key || key === 'undefined') { continue; }
-      const id = +key.match(/(\d+)\.png/)[1];
-      const value = result.coordinates[key];
-      const url = iconUrlMap.get(id);
-      coordinates[url] = { x: value.x, y: value.y };
-    }
-
-    if (result.properties.width !== sheetWidth || result.properties.height !== sheetWidth) {
-      const sheetHeight = Math.ceil(result.properties.height / sheetWidth) * sheetWidth;
-      const resizedImage = await sharp(result.image).extend({
-        top: 0,
-        bottom: sheetHeight - result.properties.height,
-        left: 0,
-        right: sheetWidth - result.properties.width,
-        background: { r: 0, g: 0, b: 0, alpha: 0 }
-      }).toBuffer();
-      result.image = resizedImage;
-    }
-
-    const iFile = coordinateData.files.length;
-    const webpPath = path.resolve(__dirname, `../src/assets/game/icons_${iFile}.webp`);
-    console.log(webpPath);
-    // Quality 75 matches the cwebp CLI default the existing sheets were encoded with.
-    await sharp(result.image).webp({ quality: 75 }).toFile(webpPath);
-
-    coordinateData.files.push({
-      file: `icons_${iFile}.webp`,
-      coordinates,
-      width: result.properties.width,
-      height: result.properties.height
-    });
-  }
+  const sheets: Array<IIconSheet> = [];
+  const runBatch = async (icons: Array<string>) => {
+    const keyForPath = (srcPath: string) => iconUrlMap.get(+srcPath.match(/(\d+)\.png/)![1])!;
+    sheets.push(await createSprites(icons, keyForPath, `icons_${sheets.length}.webp`));
+  };
 
   const iconBatch = [];
   const mappedIconUrls = new Set<string>();
@@ -120,15 +78,17 @@ const iconUrlMap = new Map<number, string>();
 
     // Run batch
     if (iconBatch.length === iconsPerSheet) {
-      await createSprites(iconBatch);
+      await runBatch(iconBatch);
       iconBatch.length = 0;
     }
   }
 
   // Run remaining batch
   if (iconBatch.length) {
-    await createSprites(iconBatch);
+    await runBatch(iconBatch);
   }
 
-  fs.writeFileSync(coordinatePath, JSON.stringify(coordinateData));
+  // Keep the placeholder sheets from icon-sheet-proxy.
+  const proxySheets = readIconsJson().files.filter(f => isProxySheet(f.file));
+  writeIconsJson([...sheets, ...proxySheets]);
 })();
