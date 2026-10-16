@@ -203,8 +203,9 @@ export class SeasonOptimizerComponent {
       this._tierNodes[iTree].forEach((tierNodes, iTier) => {
         tierNodes.forEach(n => { this._nodeTier.set(n.guid, iTier); this._nodeTree.set(n.guid, iTree); });
         if (iTier >= TIER_COST.length - 1) { return; }
-        const paid = tierNodes.filter(n => n.sc);
-        paid.forEach(n => this.nodeValues[n.guid] = TIER_COST[iTier + 1] / paid.length);
+        // Free items give friendship too, except accompanying (counted separately) and the Season Pass gifts.
+        const earning = tierNodes.filter(n => n.sc || (!this.isAccompanyNode(n) && !isPassItem(n)));
+        earning.forEach(n => this.nodeValues[n.guid] = TIER_COST[iTier + 1] / earning.length);
       });
     });
 
@@ -239,23 +240,6 @@ export class SeasonOptimizerComponent {
   isAwaitingTier(node: INode, iTree: number): boolean {
     const tier = this._nodeTier.get(node.guid) ?? 0;
     return this.isSelected(node) && tier > 0 && this.calcs()[iTree].stars[tier - 1]?.state !== 'reached';
-  }
-
-  nodeTitle(node: INode, iTree: number): string {
-    const name = node.item?.name ?? '';
-    if (this.nodeAction() === 'navigate') { return `${name}: open the item page.`; }
-    if (this.nodeAction() === 'favourite') {
-      return node.item?.favourited ? `${name}: click to remove from your wishlist.` : `${name}: click to add to your wishlist.`;
-    }
-    const pass = this.needsPass(node) ? ' Needs the Season Pass.' : '';
-    const cost = node.sc ? ` for ${node.sc} season candles` : '';
-    const refund = node.sc ? ` and get ${node.sc} season candles back` : '';
-    if (node.unlocked) { return `${name}: owned. Click to lock it again${refund}.`; }
-    if (this.isAwaitingTier(node, iTree)) {
-      return `${name}: planned, unlocks at ${TIER_CUMULATIVE[this._nodeTier.get(node.guid) ?? 0]} friendship. Click to unlock it${cost}.${pass}`;
-    }
-    if (this.isSelected(node)) { return `${name}: planned. Click to unlock it${cost}.${pass}`; }
-    return `${name}: click to plan it.${pass}`;
   }
 
   // #endregion
@@ -610,7 +594,7 @@ export class SeasonOptimizerComponent {
 
       const before = current;
       const pool: INode[] = [];
-      tierNodes.filter(n => n.sc && !n.unlocked).forEach(n => {
+      tierNodes.filter(n => this.nodeValues[n.guid] && !n.unlocked).forEach(n => {
         if (wanted(n)) { current += this.nodeValues[n.guid]; }
         else if (!this.needsPass(n)) { pool.push(n); }
       });

@@ -218,7 +218,7 @@
                                       [node]="node" action="emit" [subIcons]="SUBICONS_NO_SEASON"
                                       [highlight]="isSelected(node) && !isAwaitingTier(node, iTree)" [opaque]="true"
                                       [showTooltips]="false" [overlayTemplate]="tNode"
-                                      [attr.title]="nodeTitle(node, iTree)"
+                                      [skyTooltip]="node.item?.name"
                                       (nodeClicked)="onNodeClicked(node, iTree)"></app-node>
                           }
                         }
@@ -370,7 +370,11 @@
             @for (node of ks.nodes; track node.guid) {
               <li>
                 {{ node.item!.name }} <span class="atmos-optimizer__value">{{ spiritName(treeOf(node)) }}</span>
-                <span>{{ node.sc }} <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon></span>
+                @if (node.sc) {
+                  <span>{{ node.sc }} <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon></span>
+                } @else {
+                  <span>Free</span>
+                }
                 <span class="atmos-optimizer__accompany">+{{ formatPoints(nodeValues[node.guid]) }}</span>
               </li>
             }
