@@ -68,7 +68,14 @@ export interface IGoalProjection {
   blockedBy?: Array<GoalBucketKey>;
   /** An earlier node in the spirit tree path costs event currency, which the projection does not count. */
   requiresEventCurrency?: boolean;
+  /** The item hasn't returned for regular currencies yet, so its cost is an estimate. */
+  estimated?: boolean;
+  /** Ended ultimate or limited item that will likely not return, so it reserves nothing. */
+  notReturning?: boolean;
 }
+
+/** Rough regular cost for an item whose price on return is not known. */
+export type GoalCostEstimator = (item: IItem) => ICost | undefined;
 
 /** Spirit types whose current tree can always be visited. */
 const PERMANENT_SPIRIT_TYPES = new Set<string>(['Regular', 'Elder', 'Guide']);
@@ -98,6 +105,8 @@ export class GoalHelper {
     if (item.unlocked) { return undefined; }
     const source = this.resolveSource(item);
     if (!source) { return undefined; }
+    // Ended season and event items return for regular currencies, so they wait in the projection like other unavailable items.
+    if (source.window.kind === 'unavailable') { return undefined; }
     // Season pass and tier requirements gate these nodes, which a currency projection cannot account for.
     if (source.type === 'node' && source.window.kind === 'limited' && this.isSeasonSpiritNode(source.node)) {
       return { kind: 'season', seasonGuid: this.sourceSeasonGuid(source) };
@@ -170,13 +179,15 @@ export class GoalHelper {
    * Projects when each goal can be afforded. Goals are paid for in order, so a goal's date includes
    * the costs of every goal above it; spirit-tree nodes shared between goals are only paid once.
    * Goals that are not available still hold back their cost, so the goals below them wait for it.
-   * Nothing is collected today or on skipped days.
+   * Nothing is collected today or on skipped days. Ended season and event items reserve an estimated cost,
+   * except ultimates and limited items, which will likely not return.
    */
   static project(
     items: ReadonlyArray<IItem>,
     buckets: ReadonlyMap<GoalBucketKey, IGoalBucket>,
     today: DateTime,
-    skipped: ReadonlySet<string> = new Set()
+    skipped: ReadonlySet<string> = new Set(),
+    estimate: GoalCostEstimator = () => undefined
   ): IGoalPlan {
     const paidNodes = new Map<INode, IGoalProjection>();
     const paidIaps = new Set<IIAP>();
@@ -190,26 +201,39 @@ export class GoalHelper {
       result.source = source;
       if (!source) { result.status = 'unknown'; return result; }
 
-      switch (source.type) {
-        case 'node':
-          result.includedIn = paidNodes.get(source.node);
-          for (const n of NodeHelper.trace(source.node)) {
-            if (n.unlocked || n.item?.unlocked) { continue; }
-            if (n !== source.node && n.ec) { result.requiresEventCurrency = true; }
-            if (paidNodes.has(n)) { continue; }
-            paidNodes.set(n, result);
-            CostHelper.add(result.cost, n);
-          }
-          break;
-        case 'list':
-          CostHelper.add(result.cost, source.listNode);
-          break;
-        case 'iap':
-          if (!paidIaps.has(source.iap) && !source.iap.bought) {
-            paidIaps.add(source.iap);
-            result.price = source.iap.price ?? 0;
-          }
-          break;
+      // Season and event currencies can't be earned once the source has ended, and the price on return is not known.
+      const ended = source.window.kind === 'unavailable';
+      if (ended && (item.group === 'Ultimate' || item.group === 'Limited')) {
+        result.notReturning = true;
+      } else if (ended && this.hasLimitedPrice(source)) {
+        const estimated = estimate(item);
+        if (estimated) {
+          CostHelper.add(result.cost, estimated);
+          result.estimated = true;
+        }
+      } else {
+        switch (source.type) {
+          case 'node':
+            result.includedIn = paidNodes.get(source.node);
+            for (const n of NodeHelper.trace(source.node)) {
+              if (n.unlocked || n.item?.unlocked) { continue; }
+              if (n !== source.node && n.ec && !ended) { result.requiresEventCurrency = true; }
+              if (paidNodes.has(n)) { continue; }
+              paidNodes.set(n, result);
+              CostHelper.add(result.cost, n);
+            }
+            if (ended) { Object.assign(result.cost, { sc: 0, sh: 0, ec: 0 }); }
+            break;
+          case 'list':
+            CostHelper.add(result.cost, source.listNode);
+            break;
+          case 'iap':
+            if (!paidIaps.has(source.iap) && !source.iap.bought) {
+              paidIaps.add(source.iap);
+              result.price = source.iap.price ?? 0;
+            }
+            break;
+        }
       }
 
       if (source.window.kind === 'unavailable') {
@@ -298,6 +322,16 @@ export class GoalHelper {
     if (cost.h) { entries.push(['h', cost.h]); }
     if (cost.ac) { entries.push(['ac', cost.ac]); }
     return entries;
+  }
+
+  private static hasLimitedPrice(source: GoalSource): boolean {
+    const hasLimitedCost = (cost: ICost) => !!(cost.sc || cost.sh || cost.ec);
+    switch (source.type) {
+      // Every node on a season spirit's own tree costs season candles or needs the season pass.
+      case 'node': return hasLimitedCost(source.node) || this.isSeasonSpiritNode(source.node);
+      case 'list': return hasLimitedCost(source.listNode);
+      case 'iap': return false;
+    }
   }
 
   private static isSeasonSpiritNode(node: INode): boolean {

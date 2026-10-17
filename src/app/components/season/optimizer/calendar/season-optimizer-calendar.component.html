@@ -1,0 +1,120 @@
+<div class="atmos-goals-cal__toolbar">
+  <div class="atmos-goals-cal__nav">
+    <button type="button" class="atmos-icon-btn" (click)="shiftMonth(-1)" aria-label="Previous month" [skyTooltip]="'Previous month'">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <h3 class="atmos-goals-cal__month">{{ month().toFormat('LLLL yyyy') }}</h3>
+    <button type="button" class="atmos-icon-btn" (click)="shiftMonth(1)" aria-label="Next month" [skyTooltip]="'Next month'">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="goToToday()"><mat-icon>today</mat-icon> Today</button>
+  </div>
+</div>
+
+<div class="atmos-goals-cal__layout">
+  <div class="atmos-goals-cal__grid" role="grid">
+    @for (w of WEEKDAYS; track w) {
+      <div class="atmos-goals-cal__weekday" role="columnheader">{{ w }}</div>
+    }
+    @for (day of days(); track day.key) {
+      <button type="button" class="atmos-goals-cal__day" role="gridcell"
+        [class.is-outside]="!day.inMonth || !day.inSeason" [class.is-today]="day.isToday" [class.is-past]="day.isPast"
+        [class.is-collecting]="day.planned" [class.is-selected]="day.key === selectedKey()"
+        [attr.aria-label]="dayLabel(day)" [attr.aria-selected]="day.key === selectedKey()"
+        (click)="select(day)">
+        <span class="atmos-goals-cal__date">
+          {{ day.date.day }}
+          @if (day.isLastDay) { <mat-icon class="atmos-goals-cal__mark is-leaving">flag</mat-icon> }
+          @if (day.accompanyIcon) {
+            <span class="atmos-season-cal__accompany"><app-item-icon [item]="day.accompanyIcon" size="small" [opaque]="true" /></span>
+          }
+        </span>
+
+        @if (day.buys.length) {
+          <span class="atmos-goals-cal__items">
+            @for (goal of day.buys.slice(0, 2); track goal.node.guid) {
+              <span class="atmos-goals-cal__item">
+                <app-item-icon [item]="goal.node.item!" size="small" [opaque]="true" />
+              </span>
+            }
+            @if (day.buys.length > 2) { <span class="atmos-goals-cal__more">+{{ day.buys.length - 2 }}</span> }
+          </span>
+        }
+      </button>
+    }
+  </div>
+
+  <aside class="atmos-goals-cal__detail">
+    <div class="atmos-goals-cal__detail-head">
+      <h3 class="atmos-goals-cal__detail-title">{{ selected().toFormat('cccc d LLLL yyyy') }}</h3>
+      @if (selectedIsToday()) { <span class="atmos-pill">Today</span> }
+    </div>
+
+    @if (!selectedInSeason()) {
+      <p class="atmos-goals-cal__hint">This day is outside the season.</p>
+    } @else {
+      @if (selectedCollect() || selectedAccompanied() !== undefined || selectedAccompany() !== undefined || selectedOptionalAccompany()) {
+        <section class="atmos-goals-cal__block">
+          <h4 class="atmos-goals-cal__block-title">To do</h4>
+          <ul class="atmos-goals-cal__goal-list">
+            @if (selectedCollect()) {
+              @if (checkedIn()) {
+                <li class="atmos-season-cal__logged">
+                  <mat-icon class="atmos-season-cal__icon" svgIcon="season-candle"></mat-icon>
+                  Collected {{ candlesPerDay() }} season candles
+                </li>
+              } @else {
+                <li>
+                  <mat-icon class="atmos-season-cal__icon seasonal" svgIcon="season-candle"></mat-icon>
+                  Collect {{ candlesPerDay() }} season candles
+                  <a class="atmos-text-link atmos-season-cal__done" (click)="checkIn.emit($event)">Done</a>
+                </li>
+              }
+            }
+            @let accompanied = selectedAccompanied();
+            @let iTree = selectedAccompany();
+            @if (accompanied !== undefined) {
+              <li class="atmos-season-cal__logged">
+                <mat-icon class="atmos-season-cal__icon">group</mat-icon>
+                Accompanied {{ spiritNames()[accompanied] }}
+              </li>
+            } @else if (iTree !== undefined) {
+              <li>
+                <mat-icon class="atmos-season-cal__icon">group</mat-icon>
+                Accompany {{ spiritNames()[iTree] }}
+                @if (selectedIsToday()) {
+                  <a class="atmos-text-link atmos-season-cal__done" (click)="accompany.emit(iTree)">Done</a>
+                }
+              </li>
+            } @else if (selectedOptionalAccompany()) {
+              <li>
+                <mat-icon class="atmos-season-cal__icon">group</mat-icon>
+                Accompany (not required)
+              </li>
+            }
+          </ul>
+        </section>
+      }
+
+      @if (selectedBuys().length) {
+        <section class="atmos-goals-cal__block">
+          <h4 class="atmos-goals-cal__block-title">Buy on this day</h4>
+          <ul class="atmos-goals-cal__goal-list">
+            @for (goal of selectedBuys(); track goal.node.guid) {
+              <li>
+                <app-item-icon [item]="goal.node.item!" size="small" [opaque]="true" />
+                {{ goal.node.item?.name }}
+                <span class="atmos-goals-cal__hint">{{ spiritNames()[goal.iTree] }} · tier {{ goal.tier + 1 }}</span>
+                <a class="atmos-text-link atmos-season-cal__done" (click)="bought.emit(goal)">Bought</a>
+              </li>
+            }
+          </ul>
+        </section>
+      }
+
+      @if (selectedIsLastDay()) {
+        <p class="atmos-goals-cal__hint">Last day of the season.</p>
+      }
+    }
+  </aside>
+</div>

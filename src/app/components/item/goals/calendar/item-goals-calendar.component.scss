@@ -291,6 +291,7 @@
 
 @media (max-width: 1023px) {
   .atmos-goals-cal__layout { grid-template-columns: minmax(0, 1fr); }
+  .atmos-goals-cal__month { margin: 0; min-width: 8em; }
   .atmos-goals-cal__day { min-height: 3.75em; }
   .atmos-goals-cal__item:nth-child(2), .atmos-goals-cal__more { display: none; }
 }

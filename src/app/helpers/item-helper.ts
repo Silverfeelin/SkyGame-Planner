@@ -1,4 +1,4 @@
-import { ItemType, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason, IShop, ISpiritTree } from 'skygame-data';
+import { ItemType, ICost, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason, IShop, ISpiritTree } from 'skygame-data';
 import { TreeHelper } from './tree-helper';
 import { DateHelper } from './date-helper';
 import type { DataService } from '@app/services/data.service';
@@ -14,6 +14,41 @@ export const itemTypeOrder: Map<ItemType, number> = new Map([
 ]);
 
 export class ItemHelper {
+  private static readonly _typeEstimates = new Map<ItemType, ICost | undefined>();
+
+  /**
+   * Rough cost for an item whose price on return is not known, based on the last price of
+   * non-regular spirit items of the same type, rounded up to 5.
+   */
+  static estimateCost(item: IItem, items: ReadonlyArray<IItem>): ICost | undefined {
+    const itemType = item.type;
+    if (itemType === ItemType.Emote) {
+      switch (item.level) {
+        case 1: return { c: 0 };
+        case 2: return { h: 4 };
+        case 3: return { h: 3 };
+        case 4: return { h: 6 };
+      }
+    }
+    if (itemType === ItemType.Spell) { return { c: 5 }; }
+    // Blessings return on spirit trees; shop-only specials such as event ticket dyes have no comparable price.
+    if (itemType === ItemType.Special && !item.nodes?.length) { return undefined; }
+    if (this._typeEstimates.has(itemType)) { return this._typeEstimates.get(itemType); }
+
+    const lastCosts = items
+      .filter(i => i.type === itemType && i.nodes?.at(0)?.root?.tree?.spirit?.type !== 'Regular')
+      .map(i => (i.nodes?.at(-1) ?? i.listNodes?.at(-1)) as ICost | undefined);
+    const candles = lastCosts.filter(c => c?.c).map(c => c!.c!);
+    const hearts = lastCosts.filter(c => c?.h).map(c => c!.h!);
+    const roundedAverage = (values: Array<number>) => Math.ceil(values.reduce((a, b) => a + b, 0) / values.length / 5) * 5;
+
+    const estimate: ICost | undefined = candles.length ? { c: roundedAverage(candles) }
+      : hearts.length ? { h: roundedAverage(hearts) }
+      : undefined;
+    this._typeEstimates.set(itemType, estimate);
+    return estimate;
+  }
+
   static getItemsByEvent(eventName: string, type?: ItemType): Array<IItem> {
     const events = (window as any).skyData.eventConfig.items as Array<IEvent>;
     const event = events.find(e => e.name === eventName);

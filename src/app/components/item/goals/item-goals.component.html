@@ -55,25 +55,34 @@
   <div class="atmos-card__body">
     <div class="atmos-goals__head">
       <h2 class="atmos-section__title">Goals</h2>
-      <div class="atmos-goals__buttons">
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addFavourites()">
-          <mat-icon>star</mat-icon> Add wishlist
-        </button>
-        @if (ownedCount()) {
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="clearOwned()">
-            <mat-icon>done_all</mat-icon> Clear owned ({{ ownedCount() }})
+      @if (!quickSorting()) {
+        <div class="atmos-goals__buttons">
+          @if (goals().length > 1) {
+            <button type="button" class="atmos-btn atmos-btn--sm" (click)="startQuickSort()">
+              <mat-icon>low_priority</mat-icon> Prioritize items
+            </button>
+          }
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addFavourites()">
+            <mat-icon>star</mat-icon> Add all from wishlist
           </button>
-        }
-        @if (goals().length) {
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="askClearAll()">
-            <mat-icon>delete</mat-icon> Clear
-          </button>
-        }
-      </div>
+          @if (ownedCount()) {
+            <button type="button" class="atmos-btn atmos-btn--sm" (click)="clearOwned()">
+              <mat-icon>done_all</mat-icon> Clear owned ({{ ownedCount() }})
+            </button>
+          }
+          @if (goals().length) {
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="askClearAll()">
+              <mat-icon>delete</mat-icon> Clear
+            </button>
+          }
+        </div>
+      }
     </div>
 
     @if (!goals().length) {
       <p class="atmos-paragraph">You have no goals yet. Add items below, or start from your wishlist.</p>
+    } @else if (quickSorting()) {
+      <ng-container [ngTemplateOutlet]="quickSort" [ngTemplateOutletContext]="{ $implicit: goals() }" />
     } @else {
       <ol class="atmos-goals__list" cdkDropList cdkDropListLockAxis="y" (cdkDropListDropped)="onGoalDropped($event)">
         @for (goal of goals(); track goal.item.guid; let first = $first; let last = $last) {
@@ -116,7 +125,7 @@
                 @case ('unavailable') {
                   <mat-icon>schedule</mat-icon> Not available right now
                   @if (holdsBack(goal)) {
-                    <span class="atmos-goals__days" [skyTooltip]="'Goals below this one wait until its cost is saved.'">· saving for it</span>
+                    <span class="atmos-goals__days" [skyTooltip]="'Goals below this one wait until this cost is saved up for.'">· saving for it</span>
                   }
                 }
                 @case ('unknown') { <mat-icon>help_outline</mat-icon> No source found }
@@ -126,8 +135,18 @@
                   <mat-icon>warning</mat-icon> {{ daysLate(goal) }} {{ daysLate(goal) === 1 ? 'day' : 'days' }} too late
                 </span>
               }
+              @if (goal.notReturning) {
+                <span class="atmos-goals__late" [skyTooltip]="'This item will likely not return, so it can\'t be planned.\nNo currencies are reserved for it.'">
+                  <mat-icon>update_disabled</mat-icon> Limited item
+                </span>
+              }
+              @if (goal.estimated) {
+                <span class="atmos-goals__late" [skyTooltip]="'This item has not returned.\nIts cost is estimated from similar items.'">
+                  <mat-icon>warning</mat-icon> Estimated cost
+                </span>
+              }
               @if (goal.requiresEventCurrency) {
-                <span class="atmos-goals__late" [skyTooltip]="'This item is locked behind another item that requires event currency.\nPlease check carefully if you can still get the required event currency.'">
+                <span class="atmos-goals__late" [skyTooltip]="'This item is locked behind another item that requires event currency.\nPlease check carefully.'">
                   <mat-icon>warning</mat-icon> Requires event currency
                 </span>
               }
@@ -159,7 +178,7 @@
         <app-cost [cost]="totalCost()" [price]="totalPrice()" [showZeroes]="false" />
       </div>
       <p class="atmos-goals__hint">
-        Goals are paid for from top to bottom, so each date includes the goals above it, even those that are not available right now.
+        Goals are paid for from top to bottom, and currencies are reserved for items even if they're not available yet.
       </p>
     }
   </div>
@@ -173,11 +192,11 @@
     </button>
     @if (showSeasonItems()) {
       <div class="atmos-card__body">
-        <p class="atmos-goals__hint atmos-goals__disclaimer">
+        <div>
           These items cost season candles or season hearts, or come from a season spirit that may need the season pass or earlier tiers.
           They are not included in the goals and calendar.
-          Plan them with the <a class="atmos-text-link" [routerLink]="seasonPlanner.link">season {{ seasonPlanner.label | lowercase }}</a>.
-        </p>
+          Plan them with the <a class="atmos-text-link" [routerLink]="seasonPlanner.link">season {{ seasonPlanner.label | lowercase }}</a> instead.
+        </div>
         <ng-container [ngTemplateOutlet]="simpleList" [ngTemplateOutletContext]="{ $implicit: seasonItems() }" />
       </div>
     }
@@ -192,18 +211,45 @@
     </button>
     @if (showEventItems()) {
       <div class="atmos-card__body">
-        <p class="atmos-goals__hint atmos-goals__disclaimer">
+        <div>
           These items cost event tickets, which are not included in the goals and calendar.
           Plan them with the event calculator{{ eventInstances().length ? ':' : '.' }}
           @for (instance of eventInstances(); track instance.guid; let lastInstance = $last) {
             <a class="atmos-text-link" routerLink="/event/calculator" [queryParams]="{ guid: instance.guid }">{{ instance.name ?? instance.event.name }}</a>{{ lastInstance ? '.' : ',' }}
           }
-        </p>
+        </div>
         <ng-container [ngTemplateOutlet]="simpleList" [ngTemplateOutletContext]="{ $implicit: eventItems() }" />
       </div>
     }
   </section>
 }
+
+<ng-template #quickSort let-goals>
+  <p class="atmos-paragraph">
+    Click the items you want most, in order. On apply, they move to the top in that order and the other goals keep their order below them.
+  </p>
+  <div class="atmos-goals__quick">
+    @for (goal of goals; track goal.item.guid) {
+      @let pick = quickSortPicks().indexOf(goal.item.guid);
+      <button type="button" class="atmos-goals__pick atmos-tile atmos-tile--selectable" [class.is-selected]="pick >= 0"
+        [attr.aria-pressed]="pick >= 0" [attr.aria-label]="goal.item.name" (click)="toggleQuickSortPick(goal.item.guid)">
+        <app-item-icon [item]="goal.item" [opaque]="true" [skyTooltip]="goal.item.name" placement="auto" />
+        @if (pick >= 0) { <span class="atmos-tile__check">{{ pick + 1 }}</span> }
+      </button>
+    }
+  </div>
+  <div class="atmos-goals__buttons">
+    <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="!quickSortPicks().length" (click)="applyQuickSort()">
+      <mat-icon>check</mat-icon> Apply
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" [disabled]="!quickSortPicks().length" (click)="quickSortPicks.set([])">
+      <mat-icon>restart_alt</mat-icon> Reset
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="cancelQuickSort()">
+      <mat-icon>close</mat-icon> Cancel
+    </button>
+  </div>
+</ng-template>
 
 <ng-template #simpleList let-items>
   <ul class="atmos-goals__list">

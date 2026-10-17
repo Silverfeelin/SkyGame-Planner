@@ -69,8 +69,33 @@
   gap: var(--atmos-gap-compact);
 }
 
-.atmos-optimizer__export {
-  margin-top: var(--atmos-gap);
+.atmos-optimizer__spirit-order {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-optimizer__spirit-pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 96px;
+  padding: 8px 4px;
+  border: 0;
+  border-radius: var(--atmos-radius-sm);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.atmos-optimizer__spirit-icon {
+  position: relative;
+}
+
+.atmos-optimizer__spirit-name {
+  font-size: var(--atmos-fs-sm);
+  text-align: center;
 }
 
 .atmos-optimizer__control-label {
@@ -91,11 +116,51 @@
   color: var(--optimizer-accompany);
 }
 
+.atmos-optimizer__today-goal {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+}
+
 // #endregion
 
-// #region Explainer
+// #region Schedule
 
-.atmos-optimizer__explainer-summary {
+[data-schedule] {
+  scroll-margin-top: calc(var(--atmos-sticky-top, 0px) + var(--atmos-gap));
+}
+
+.atmos-optimizer__goal-warn {
+  display: inline-flex;
+  margin: 0;
+  align-items: center;
+  gap: 4px;
+  color: var(--atmos-warn-accent);
+}
+
+.atmos-optimizer__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-optimizer__quick-pick {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: var(--atmos-radius-sm);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+// #endregion
+
+// #region Folds and explainer
+
+.atmos-optimizer__fold-summary {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -108,11 +173,11 @@
   mat-icon { transition: transform var(--atmos-transition); }
 }
 
-.atmos-optimizer__explainer:not([open]) .atmos-optimizer__explainer-summary mat-icon {
+.atmos-optimizer__fold:not([open]) .atmos-optimizer__fold-summary mat-icon {
   transform: rotate(-90deg);
 }
 
-.atmos-optimizer__explainer > .atmos-card__body {
+.atmos-optimizer__fold > .atmos-card__body {
   padding-top: 0;
 }
 
@@ -610,7 +675,6 @@
   &.is-met { background: oklch(0.80 0.13 150 / 0.10); }
   &.is-lacking { background: oklch(0.78 0.13 65 / 0.12); }
 
-  > mat-icon { flex: none; }
   > span { color: var(--atmos-text); }
 }
 

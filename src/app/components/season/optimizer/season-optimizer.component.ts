@@ -1,18 +1,23 @@
 import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
+import { NgTemplateOutlet } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IItem, INode, ISpiritTree, ItemType } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { SeasonHelper } from '@app/helpers/season-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import {
+  ACCOMPANY_POINTS, FRIENDSHIP_EPSILON as EPSILON, MAX_FRIENDSHIP, SeasonFriendshipHelper, TIER_COST, TIER_CUMULATIVE
+} from '@app/helpers/season-friendship-helper';
+import { ISeasonGoal, SeasonGoalHelper } from '@app/helpers/season-goal-helper';
 import { CurrencyService } from '@app/services/currency.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { NodeService } from '@app/services/node.service';
-import { SeasonPlan, SeasonPlanNode, SeasonPlanRenderService } from '@app/services/season-plan-render.service';
+import { SeasonPlan, SeasonPlanNode, SeasonPlanRenderService, SeasonSchedule } from '@app/services/season-plan-render.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
 import { StorageService } from '@app/services/storage.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
@@ -22,20 +27,19 @@ import { ItemIconComponent } from '@app/components/item/icon/item-icon.component
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DraftWarningComponent } from '@app/components/shared/shared-widgets';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
-
-const TIER_COST: ReadonlyArray<number> = [0, 40, 60, 80, 100];
-const TIER_CUMULATIVE: ReadonlyArray<number> = [0, 40, 100, 180, 280];
-const MAX_FRIENDSHIP = 280;
-/** A spirit adventure (accompanying a spirit) always gives 10 friendship. */
-const ACCOMPANY_POINTS = 10;
+import { SeasonOptimizerCalendarComponent } from './calendar/season-optimizer-calendar.component';
 
 const WANT_KEY = 'migration.optimizer';
 const ACCOMPANY_KEY = 'optimizer.accompany';
 const ADVENTURE_KEY = 'optimizer.adventure';
+const ORDER_KEY = 'optimizer.order';
+/** UI state only, so it stays in this browser instead of syncing through the storage service. */
+const SCHEDULE_OPEN_KEY = 'optimizer.scheduleOpen';
 
 /** `plan` cycles an item through unplanned, planned and owned. */
 type NodeAction = 'plan' | 'navigate' | 'favourite';
 type ExportMode = 'clipboard' | 'share' | 'download';
+type ExportTarget = 'plan' | 'schedule';
 type RailKind = 'items' | 'accompany' | 'selected' | 'needed';
 type StarState = 'reached' | 'selected' | 'short' | 'none';
 
@@ -43,6 +47,7 @@ interface FriendshipLayer { kind: RailKind; from: number; to: number; }
 interface RailLayer { kind: RailKind; bottom: number; height: number; }
 interface Star { points: number; state: StarState; short: number; days: number; }
 interface TierView { index: number; rows: ReadonlyArray<ReadonlyArray<INode | undefined>>; }
+interface Adventure { date: string; tree: string; }
 
 interface TreeCalc {
   itemPoints: number;
@@ -66,14 +71,12 @@ interface TreeCalc {
   pools: ReadonlyArray<ReadonlyArray<INode>>;
 }
 
-interface Adventure { date: string; tree: string; }
-
 @Component({
   selector: 'app-season-optimizer',
   templateUrl: './season-optimizer.component.html',
   styleUrl: './season-optimizer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, OverlayComponent, NodeComponent, DraftWarningComponent, TooltipDirective, ItemIconComponent, DateTimePipe]
+  imports: [NgTemplateOutlet, RouterLink, MatIcon, OverlayComponent, NodeComponent, DraftWarningComponent, TooltipDirective, ItemIconComponent, DateTimePipe, SeasonOptimizerCalendarComponent]
 })
 export class SeasonOptimizerComponent {
   /** Every tree here belongs to the season being optimized, so the season badge is noise. */
@@ -98,9 +101,9 @@ export class SeasonOptimizerComponent {
   readonly season = SeasonHelper.getPlannedSeason(this._dataService.seasonConfig.items);
   /** Before the season starts, today's check-in and adventure don't count towards it. */
   readonly isUpcoming = !!this.season && this.season.date > this.today;
-  readonly trees: ReadonlyArray<ISpiritTree> =
-    (this.season?.spirits.filter(s => s.type === 'Season').map(s => s.tree).filter(t => t?.tier) ?? []) as ISpiritTree[];
-  readonly nodes: ReadonlyArray<INode> = this.trees.flatMap(t => TreeHelper.getNodes(t)).filter(n => n) as INode[];
+  private readonly _model = SeasonFriendshipHelper.model(this.season);
+  readonly trees: ReadonlyArray<ISpiritTree> = this._model.trees;
+  readonly nodes: ReadonlyArray<INode> = this._model.nodes;
   readonly nodeGuids = new Set(this.nodes.map(n => n.guid));
 
   /** Tiers top to bottom with rows top to bottom, the order they are drawn in. */
@@ -109,11 +112,9 @@ export class SeasonOptimizerComponent {
       .map((tier, index) => ({ index, rows: tier.rows.map(r => [r[0] ?? undefined, r[1] ?? undefined, r[2] ?? undefined]).reverse() }))
       .reverse()
   );
-  private readonly _tierNodes: ReadonlyArray<ReadonlyArray<ReadonlyArray<INode>>> = this.trees.map(tree =>
-    TreeHelper.getTiers(tree).map(tier => tier.rows.flat().filter(n => n) as INode[])
-  );
-  private readonly _nodeTier = new Map<string, number>();
-  private readonly _nodeTree = new Map<string, number>();
+  private readonly _tierNodes = this._model.tierNodes;
+  private readonly _nodeTier = this._model.nodeTier;
+  private readonly _nodeTree = this._model.nodeTree;
 
   readonly isDraft = !!this.season?.draft;
   readonly daysLeftSeason = this.season
@@ -144,7 +145,7 @@ export class SeasonOptimizerComponent {
   readonly demoItems = this.createDemoItems();
 
   /** Friendship per node; nodes in a tier share the cost of the next tier. */
-  readonly nodeValues: { [guid: string]: number } = {};
+  readonly nodeValues = this._model.nodeValues;
 
   readonly candles = computed(() => {
     this._refresh();
@@ -198,19 +199,76 @@ export class SeasonOptimizerComponent {
     };
   });
 
-  constructor() {
-    this.trees.forEach((tree, iTree) => {
-      this._tierNodes[iTree].forEach((tierNodes, iTier) => {
-        tierNodes.forEach(n => { this._nodeTier.set(n.guid, iTier); this._nodeTree.set(n.guid, iTree); });
-        if (iTier >= TIER_COST.length - 1) { return; }
-        // Free items give friendship too, except accompanying (counted separately) and the Season Pass gifts.
-        const earning = tierNodes.filter(n => n.sc || (!this.isAccompanyNode(n) && !isPassItem(n)));
-        earning.forEach(n => this.nodeValues[n.guid] = TIER_COST[iTier + 1] / earning.length);
-      });
-    });
+  private readonly _planItemNodes = computed(() => {
+    this._refresh();
+    return this.nodes.filter(n => this.isSelected(n) && n.item && !this.isAccompanyNode(n));
+  });
+  /** Node guids in the order the user wants to buy them. */
+  readonly order = signal<ReadonlyArray<string>>([]);
+  /** Planned items in goal order; items planned since the last reorder follow by tier. */
+  private readonly _orderedNodes = computed(() => {
+    const rank = new Map(this.order().map((guid, i) => [guid, i]));
+    const tier = (n: INode) => this._nodeTier.get(n.guid) ?? 0;
+    return [...this._planItemNodes()].sort((a, b) =>
+      (rank.get(a.guid) ?? Infinity) - (rank.get(b.guid) ?? Infinity) || tier(a) - tier(b) || this.treeOf(a) - this.treeOf(b));
+  });
 
+  /** First day to play: today, or the start of an upcoming season. */
+  readonly scheduleStart = this.season && this.isUpcoming ? this.season.date.setZone(this.today.zone).startOf('day') : this.today;
+  readonly scheduleEnd = this.season?.endDate.setZone(this.today.zone) ?? this.today;
+  readonly scheduleDay = signal(this.scheduleStart);
+  readonly spiritNames = this.trees.map(tree => tree.spirit?.name ?? '');
+
+  readonly seasonGoalPlan = computed(() => {
+    if (!this.season) { return { goals: [], accompanies: new Map<string, number>() }; }
+    return SeasonGoalHelper.project(this._orderedNodes(), {
+      friendship: this._model,
+      current: this.calcs().map(c => c.friendship),
+      candles: this.candles(),
+      candlesPerDay: this.candlesPerDay(),
+      hasPass: this.hasSeasonPass(),
+      start: this.scheduleStart,
+      end: this.scheduleEnd,
+      checkedIn: !this.isUpcoming && this.checkedIn(),
+      accompanied: !!this.adventure()
+    });
+  });
+  readonly seasonGoals = computed<ReadonlyArray<ISeasonGoal>>(() => this.seasonGoalPlan().goals);
+  readonly outOfOrderCount = computed(() => this.seasonGoals().filter(g => g.outOfOrder).length);
+  readonly passGoals = computed(() => this.seasonGoals().filter(g => g.status === 'pass'));
+  readonly unreachableGoals = computed(() => this.seasonGoals().filter(g => g.status === 'unreachable'));
+  readonly hasSchedule = computed(() => this.order().length > 0);
+  /** Items were planned or unplanned since the schedule was last set; bought items don't count. */
+  readonly scheduleOutdated = computed(() => {
+    const order = this.order();
+    if (!order.length) { return false; }
+    const scheduled = new Set(order);
+    const want = this.want();
+    const nodes = new Map(this.nodes.map(n => [n.guid, n]));
+    return this._planItemNodes().some(n => !scheduled.has(n.guid))
+      || order.some(guid => !want.has(guid) && !nodes.get(guid)?.unlocked);
+  });
+  /** Spirit the season goals want accompanied today, until today's accompany is chosen. */
+  readonly accompanyToday = computed(() => this.isUpcoming || this.adventure() ? undefined : this.seasonGoalPlan().accompanyFirst);
+  readonly quickSorting = signal(false);
+  /** Node guids picked during a quick sort, in the order they were clicked. */
+  readonly quickSortPicks = signal<ReadonlyArray<string>>([]);
+  /** Trees with planned items, in their default order. */
+  readonly planTrees = computed(() => {
+    const trees = new Set(this._planItemNodes().map(n => this.treeOf(n)));
+    return this.trees.map((_, iTree) => iTree).filter(iTree => trees.has(iTree));
+  });
+  /** Accompany item per tree, used as the spirit's icon. */
+  readonly treeIcons: ReadonlyArray<IItem | undefined> = this.trees.map((_, iTree) =>
+    this.nodes.find(n => this.isAccompanyNode(n) && this.treeOf(n) === iTree)?.item);
+  readonly showingSpiritOrder = signal(false);
+  /** Tree indices picked in the spirit order overlay, in the order they were clicked. */
+  readonly spiritOrderPicks = signal<ReadonlyArray<number>>([]);
+
+  constructor() {
     const savedWant = JSON.parse(this._storageService.getKey<string>(WANT_KEY) || '[]') as string[];
     this.want.set(new Set(savedWant.filter(guid => this.nodeGuids.has(guid))));
+    this.order.set((this._storageService.getKey<Array<string>>(ORDER_KEY) ?? []).filter(guid => this.nodeGuids.has(guid)));
     this.accompanyStored.set({ ...(this._storageService.getKey<{ [guid: string]: number }>(ACCOMPANY_KEY) ?? {}) });
     const adventure = this._storageService.getKey<Adventure>(ADVENTURE_KEY);
     if (!this.isUpcoming && adventure?.date === this._todayKey) { this.adventure.set(adventure); }
@@ -225,11 +283,11 @@ export class SeasonOptimizerComponent {
   // #region Node state
 
   isAccompanyNode(node: INode): boolean {
-    return node.item?.type === ItemType.Special && !!node.item.name?.startsWith('Accompany ');
+    return SeasonFriendshipHelper.isAccompanyNode(node);
   }
 
   needsPass(node: INode): boolean {
-    return !this.hasSeasonPass() && isPassItem(node);
+    return !this.hasSeasonPass() && SeasonFriendshipHelper.isPassItem(node);
   }
 
   isSelected(node: INode): boolean {
@@ -276,6 +334,12 @@ export class SeasonOptimizerComponent {
     this._currencyService.addTreeCost(cost, tree);
 
     if (wasWanted) { this.setWant(new Set([...this.want()].filter(g => g !== node.guid))); }
+  }
+
+  /** Same as clicking a planned item in the trees: it becomes owned and its cost is spent. */
+  buyGoal(goal: ISeasonGoal): void {
+    if (goal.node.unlocked) { return; }
+    this.toggleUnlock(goal.node, goal.iTree);
   }
 
   // #endregion
@@ -361,6 +425,12 @@ export class SeasonOptimizerComponent {
     this.saveAdventure({ date: this._todayKey, tree: guid });
   }
 
+  /** Tree accompanied today, if any. */
+  readonly adventureTree = computed(() => {
+    const iTree = this.trees.findIndex(t => t.guid === this.adventure()?.tree);
+    return iTree >= 0 ? iTree : undefined;
+  });
+
   isAdventure(iTree: number): boolean {
     return this.adventure()?.tree === this.trees[iTree].guid;
   }
@@ -432,12 +502,101 @@ export class SeasonOptimizerComponent {
 
   // #endregion
 
+  // #region Schedule
+
+  readonly scheduleOpen = localStorage.getItem(SCHEDULE_OPEN_KEY) === '1';
+
+  onScheduleToggle(event: Event): void {
+    const open = (event.target as HTMLDetailsElement).open;
+    open ? localStorage.setItem(SCHEDULE_OPEN_KEY, '1') : localStorage.removeItem(SCHEDULE_OPEN_KEY);
+  }
+
+  /** Scrolls to the Today card, or the schedule when there is none, and opens the schedule. */
+  jumpToSchedule(): void {
+    const targets = this._elementRef.nativeElement.querySelectorAll<HTMLElement>('[data-schedule]');
+    targets.forEach(el => { if (el instanceof HTMLDetailsElement) { el.open = true; } });
+    targets[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /** Asks which spirits to finish first when there is more than one, then schedules the planned items. */
+  createSchedule(): void {
+    if (this.hasSchedule() && !confirm('This replaces your current schedule. Continue?')) { return; }
+    if (this.planTrees().length > 1) {
+      this.spiritOrderPicks.set([]);
+      this.showingSpiritOrder.set(true);
+    } else {
+      this.scheduleBySpirit([]);
+    }
+  }
+
+  /** Orders the planned items one spirit after another, picked spirits first, each from the bottom of its tree up. */
+  private scheduleBySpirit(picks: ReadonlyArray<number>): void {
+    const ranks = [...picks, ...this.planTrees().filter(i => !picks.includes(i))];
+    const rank = (n: INode) => ranks.indexOf(this.treeOf(n));
+    const position = new Map<string, number>();
+    for (const tiers of this.treeTiers) {
+      for (const tier of [...tiers].reverse()) {
+        for (const row of [...tier.rows].reverse()) {
+          row.forEach(node => node && position.set(node.guid, position.size));
+        }
+      }
+    }
+    this.setOrder([...this._planItemNodes()].sort((a, b) => rank(a) - rank(b) || position.get(a.guid)! - position.get(b.guid)!));
+  }
+
+  fixOrder(): void {
+    this.setOrder(SeasonGoalHelper.fixOrder(this.seasonGoals()).map(g => g.node));
+  }
+
+  goalNames(goals: ReadonlyArray<ISeasonGoal>): string {
+    return goals.map(g => g.node.item?.name).join(', ');
+  }
+
+  toggleSpiritOrderPick(iTree: number): void {
+    this.spiritOrderPicks.update(picks => picks.includes(iTree) ? picks.filter(i => i !== iTree) : [...picks, iTree]);
+  }
+
+  applySpiritOrder(): void {
+    this.scheduleBySpirit(this.spiritOrderPicks());
+    this.showingSpiritOrder.set(false);
+  }
+
+  startQuickSort(): void {
+    this.quickSortPicks.set([]);
+    this.quickSorting.set(true);
+  }
+
+  cancelQuickSort(): void {
+    this.quickSorting.set(false);
+  }
+
+  toggleQuickSortPick(guid: string): void {
+    this.quickSortPicks.update(picks => picks.includes(guid) ? picks.filter(g => g !== guid) : [...picks, guid]);
+  }
+
+  /** Moves the picked goals to the front in the order they were picked; the rest keep their order behind them. */
+  applyQuickSort(): void {
+    const picks = this.quickSortPicks();
+    const nodes = this.seasonGoals().map(g => g.node);
+    const picked = picks.map(guid => nodes.find(n => n.guid === guid)!).filter(n => n);
+    this.setOrder([...picked, ...nodes.filter(n => !picks.includes(n.guid))]);
+    this.quickSorting.set(false);
+  }
+
+  private setOrder(nodes: ReadonlyArray<INode>): void {
+    const order = nodes.map(n => n.guid);
+    this.order.set(order);
+    this._storageService.setKey(ORDER_KEY, order);
+  }
+
+  // #endregion
+
   // #region Export
 
   readonly exporting = signal(false);
   readonly canShare = typeof navigator.share === 'function';
 
-  async exportPlan(mode: ExportMode, tooltip?: TooltipDirective): Promise<void> {
+  async exportImage(target: ExportTarget, mode: ExportMode, tooltip?: TooltipDirective): Promise<void> {
     if (!this.season || this.exporting()) { return; }
     if (mode === 'clipboard' && typeof ClipboardItem === 'undefined') {
       alert('Copying to clipboard is not supported by this browser.');
@@ -446,8 +605,11 @@ export class SeasonOptimizerComponent {
 
     this.exporting.set(true);
     try {
-      const canvas = await this._planRenderService.render(this.createPlan(), this._elementRef.nativeElement);
-      const fileName = `${this.season.shortName}-plan.png`.replace(/\s+/g, '-').toLowerCase();
+      const host = this._elementRef.nativeElement;
+      const canvas = target === 'plan'
+        ? await this._planRenderService.render(this.createPlan(), host)
+        : await this._planRenderService.renderSchedule(this.createScheduleImage(), host);
+      const fileName = `${this.season.shortName}-${target}.png`.replace(/\s+/g, '-').toLowerCase();
       switch (mode) {
         case 'clipboard':
           await this._treeRenderService.copyCanvas(canvas);
@@ -461,7 +623,7 @@ export class SeasonOptimizerComponent {
           break;
       }
     } catch (e: any) {
-      alert(`Failed to export your plan: ${e?.message ?? e}`);
+      alert(`Failed to export your ${target}: ${e?.message ?? e}`);
     } finally {
       this.exporting.set(false);
     }
@@ -496,6 +658,34 @@ export class SeasonOptimizerComponent {
       candlesFinal: this.candlesFinal(),
       accompanyDays: this.accompanyDays(),
       accompanyDaysLeft: this.accompanyDaysLeft()
+    };
+  }
+
+  private createScheduleImage(): SeasonSchedule {
+    const buys = new Map<string, Array<IItem>>();
+    for (const goal of this.seasonGoals()) {
+      if (!goal.date || !goal.node.item) { continue; }
+      const key = goal.date.toISODate()!;
+      buys.set(key, [...(buys.get(key) ?? []), goal.node.item]);
+    }
+
+    const accompanies = new Map<string, { name: string; icon?: IItem }>();
+    const addAccompany = (key: string, iTree: number | undefined) => {
+      if (iTree !== undefined) { accompanies.set(key, { name: this.spiritName(iTree), icon: this.treeIcons[iTree] }); }
+    };
+    this.seasonGoalPlan().accompanies.forEach((iTree, key) => addAccompany(key, iTree));
+    // Today's logged accompany replaces the suggestion, like on the calendar.
+    addAccompany(this._todayKey, this.adventureTree());
+
+    return {
+      season: this.season!.name,
+      seasonIcon: this.season!.iconUrl,
+      start: this.season!.date.setZone(this.today.zone),
+      end: this.scheduleEnd,
+      today: this.today,
+      buys,
+      accompanies,
+      unreachable: this.unreachableGoals().flatMap(g => g.node.item ? [g.node.item] : [])
     };
   }
 
@@ -703,12 +893,7 @@ export class SeasonOptimizerComponent {
 type KnapsackOption = { points: number; cost: number; nodes: Array<INode> };
 type KnapsackState = KnapsackOption & { carry: number };
 
-/** Friendship per node is fractional (e.g. 40 / 3), so sums need a tolerance. */
-const EPSILON = 0.01;
-
-function isPassItem(node: INode): boolean {
-  return node.item?.group === 'SeasonPass' || node.item?.group === 'Ultimate';
-}
+const isPassItem = (node: INode) => SeasonFriendshipHelper.isPassItem(node);
 
 function daysFor(points: number): number {
   return Math.max(0, Math.ceil(points / ACCOMPANY_POINTS - EPSILON));

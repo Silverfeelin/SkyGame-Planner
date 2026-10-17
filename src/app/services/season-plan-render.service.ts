@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
-import { INode } from 'skygame-data';
+import { Injectable, inject } from '@angular/core';
+import { DateTime } from 'luxon';
+import { IItem, INode } from 'skygame-data';
+import { IconService } from './icon.service';
 
 export type SeasonPlanNodeState = 'none' | 'marked' | 'awaiting' | 'owned';
 export type SeasonPlanRailKind = 'items' | 'accompany' | 'selected' | 'needed';
@@ -44,6 +46,21 @@ export interface SeasonPlan {
   accompanyDaysLeft: number;
 }
 
+export interface SeasonSchedule {
+  season: string;
+  seasonIcon?: string;
+  /** First day of the season. */
+  start: DateTime;
+  end: DateTime;
+  today: DateTime;
+  /** Items to buy, keyed by ISO date. */
+  buys: ReadonlyMap<string, ReadonlyArray<IItem>>;
+  /** Spirit to accompany, keyed by ISO date. */
+  accompanies: ReadonlyMap<string, { name: string; icon?: IItem }>;
+  /** Planned items that can't be bought before the season ends. */
+  unreachable: ReadonlyArray<IItem>;
+}
+
 const SCALE = 2;
 const PADDING = 24;
 const MIN_WIDTH = 960;
@@ -63,9 +80,30 @@ const ROW_H = 88;
 const STAR_H = 26;
 const TREE_W = TREE_PAD * 2 + RAIL_COL + CELL_W * 3;
 
+const MONTH_GAP = 12;
+const MONTH_PAD = 14;
+const MONTH_TITLE_H = 34;
+const WEEKDAY_H = 22;
+const DAY_W = 112;
+const DAY_H = 136;
+const DAY_LINE_H = 13;
+/** Baseline of the accompany label's first line, below the date. */
+const DAY_LABEL_Y = 45;
+const DAY_ITEMS_Y = 66;
+const DAY_GAP = 4;
+const DAY_ICON = 32;
+const DAY_ICON_STEP = 36;
+const DAY_ICONS_PER_ROW = 3;
+const DAY_ICONS_MAX = 6;
+const ACCOMPANY_R = 13;
+const GRID_W = DAY_W * 7 + DAY_GAP * 6;
+const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 const SPRITE_URL = '/assets/icons/icons.svg';
 const BACKGROUND_URL = '/assets/game/background/peaks.webp';
 const QUESTION_URL = '/assets/icons/question.webp';
+/** Size of one icon on a sprite sheet from the icon service. */
+const SHEET_ICON = 128;
 
 /** CSS colour expressions, resolved against the optimizer so they follow the active theme. */
 const COLOR_EXPRESSIONS = {
@@ -76,6 +114,7 @@ const COLOR_EXPRESSIONS = {
   warm: 'var(--atmos-warm)',
   good: 'var(--atmos-good)',
   bad: 'oklch(0.75 0.14 25)',
+  warn: 'var(--atmos-warn-accent)',
   seasonal: 'var(--atmos-seasonal)',
   currency: 'var(--atmos-currency)',
   lineSoft: 'var(--atmos-line-soft)',
@@ -94,12 +133,17 @@ const COLOR_EXPRESSIONS = {
   neededA: 'oklch(0.78 0.13 65 / 0.75)',
   neededB: 'oklch(0.78 0.13 65 / 0.2)',
   badgeBg: 'oklch(0.16 0.03 var(--atmos-hue) / 0.92)',
-  checkInk: 'oklch(0.18 calc(0.03 * var(--atmos-chroma)) var(--atmos-hue))'
+  checkInk: 'oklch(0.18 calc(0.03 * var(--atmos-chroma)) var(--atmos-hue))',
+  chip: 'var(--atmos-chip-bg)',
+  collecting: 'color-mix(in oklch, var(--atmos-accent) 14%, var(--atmos-chip-bg))'
 };
 type Colors = { [K in keyof typeof COLOR_EXPRESSIONS]: string };
+type LoadedImage = { img: HTMLImageElement; crop?: { x: number; y: number } };
 
 @Injectable({ providedIn: 'root' })
 export class SeasonPlanRenderService {
+  private readonly _iconService = inject(IconService);
+
   /** `host` must carry the optimizer's `--optimizer-*` tokens. */
   async render(plan: SeasonPlan, host: HTMLElement): Promise<HTMLCanvasElement> {
     const colors = resolveColors(host);
@@ -113,21 +157,13 @@ export class SeasonPlanRenderService {
       + t.tiers.reduce((sum, tier) => sum + (tier.star ? STAR_H : 0) + tier.rows.length * ROW_H, 0)));
     const height = HEADER_H + treeRows * (treeH + TREE_GAP) + TOTALS_H - 12 + PADDING;
 
-    const canvas = document.createElement('canvas');
-    canvas.width = width * SCALE;
-    canvas.height = height * SCALE;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) { throw new Error('Failed to render image; no canvas context.'); }
-    ctx.scale(SCALE, SCALE);
+    const { canvas, ctx } = createCanvas(width, height);
 
     // #region Images
 
-    const background = getComputedStyle(document.body).getPropertyValue('--atmos-bg-image').match(/url\(['"]?([^'")\s]+)['"]?\)/)?.[1] || BACKGROUND_URL;
+    const background = backgroundUrl();
     const nodes = plan.trees.flatMap(t => t.tiers.flatMap(tier => tier.rows.flat())).filter(n => n) as SeasonPlanNode[];
-    const urls = new Set([background, plan.seasonIcon, ...nodes.map(n => n.node.item?.icon || QUESTION_URL)].filter(u => u) as string[]);
-    const images = new Map<string, HTMLImageElement>();
-    // A missing icon shouldn't fail the whole export.
-    await Promise.all([...urls].map(url => loadImage(url).then(img => images.set(url, img), () => undefined)));
+    const images = await loadImages(this._iconService, [background, plan.seasonIcon, ...nodes.map(n => n.node.item?.icon || QUESTION_URL)]);
 
     const sprite = await fetch(SPRITE_URL).then(r => r.text()).then(t => new DOMParser().parseFromString(t, 'image/svg+xml')).catch(() => undefined);
     const spriteImages = new Map<string, HTMLImageElement>();
@@ -149,24 +185,7 @@ export class SeasonPlanRenderService {
 
     // #region Primitives
 
-    const setFont = (size: number, weight = 400) => ctx.font = `${weight} ${size}px ${font}`;
-    const text = (value: string, x: number, y: number, align: CanvasTextAlign = 'left', color = colors.text) => {
-      ctx.fillStyle = color;
-      ctx.textAlign = align;
-      ctx.fillText(value, x, y);
-      return ctx.measureText(value).width;
-    };
-    const roundRect = (x: number, y: number, w: number, h: number, r: number, fill?: string, stroke?: string) => {
-      ctx.beginPath();
-      ctx.roundRect(x, y, w, h, r);
-      if (fill) { ctx.fillStyle = fill; ctx.fill(); }
-      if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1; ctx.stroke(); }
-    };
-    const panel = (x: number, y: number, w: number, h: number) => roundRect(x, y, w, h, 12, 'rgba(0, 0, 0, 0.35)');
-    const image = (url: string | undefined, x: number, y: number, size: number) => {
-      const img = url && images.get(url);
-      img && ctx.drawImage(img, x, y, size, size);
-    };
+    const { setFont, text, roundRect, panel, image } = createPainter(ctx, font, colors, images);
     const spriteIcon = (id: string, color: string, x: number, y: number, size: number) => {
       const img = spriteImages.get(spriteKey(id, color));
       img && ctx.drawImage(img, x, y, size, size);
@@ -226,17 +245,7 @@ export class SeasonPlanRenderService {
 
     // #region Background
 
-    const bg = images.get(background);
-    if (bg) {
-      const scale = Math.max(width / bg.naturalWidth, height / bg.naturalHeight);
-      const w = bg.naturalWidth * scale, h = bg.naturalHeight * scale;
-      ctx.filter = 'blur(4px) brightness(0.5)';
-      ctx.drawImage(bg, (width - w) / 2 - 10, (height - h) / 2 - 10, w + 20, h + 20);
-      ctx.filter = 'none';
-    } else {
-      ctx.fillStyle = '#1d2433';
-      ctx.fillRect(0, 0, width, height);
-    }
+    drawBackground(ctx, images.get(background)?.img, width, height);
 
     // #endregion
 
@@ -497,6 +506,153 @@ export class SeasonPlanRenderService {
     return canvas;
   }
 
+  /** Draws every month of the season as a calendar, with purchases and accompanies from today on. */
+  async renderSchedule(schedule: SeasonSchedule, host: HTMLElement): Promise<HTMLCanvasElement> {
+    const colors = resolveColors(host);
+    const font = getComputedStyle(document.body).fontFamily || 'sans-serif';
+    const start = schedule.start.startOf('day');
+    const today = schedule.today.startOf('day');
+
+    const months: Array<DateTime> = [];
+    for (let month = start.startOf('month'); month <= schedule.end; month = month.plus({ months: 1 })) { months.push(month); }
+    // Days that can't be played anymore only show their date.
+    const isActive = (date: DateTime, month: DateTime) => date.month === month.month && date >= start && date <= schedule.end && date >= today;
+    const weekHeights = (month: DateTime) => {
+      const heights: Array<number> = [];
+      for (let week = month.startOf('week'); week <= month.endOf('month'); week = week.plus({ weeks: 1 })) {
+        const days = Array.from({ length: 7 }, (_, i) => week.plus({ days: i }));
+        const most = Math.max(...days.map(d => isActive(d, month) ? schedule.buys.get(d.toISODate()!)?.length ?? 0 : 0));
+        const rows = Math.min(2, Math.ceil(most / DAY_ICONS_PER_ROW));
+        heights.push(DAY_H - (2 - rows) * DAY_ICON_STEP);
+      }
+      return heights;
+    };
+    const monthH = (month: DateTime) => MONTH_PAD * 2 + MONTH_TITLE_H + WEEKDAY_H + weekHeights(month).reduce((sum, h) => sum + h + DAY_GAP, 0) - DAY_GAP;
+
+    const width = GRID_W + MONTH_PAD * 2 + PADDING * 2;
+    const height = HEADER_H + months.reduce((sum, m) => sum + monthH(m) + MONTH_GAP, 0) - MONTH_GAP + PADDING;
+    const { canvas, ctx } = createCanvas(width, height);
+
+    const background = backgroundUrl();
+    const items = [...schedule.buys.values()].flat().concat([...schedule.accompanies.values()].flatMap(a => a.icon ? [a.icon] : []));
+    const images = await loadImages(this._iconService, [background, schedule.seasonIcon, ...items.map(i => i.icon || QUESTION_URL)]);
+    const { setFont, text, roundRect, panel, image } = createPainter(ctx, font, colors, images);
+
+    const plannedKeys = [...schedule.buys.keys(), ...schedule.accompanies.keys()];
+    const lastPlanned = plannedKeys.length ? plannedKeys.reduce((a, b) => a > b ? a : b) : undefined;
+
+    drawBackground(ctx, images.get(background)?.img, width, height);
+
+    // #region Header
+
+    let y = PADDING;
+    const titleX = schedule.seasonIcon && images.has(schedule.seasonIcon) ? PADDING + 54 : PADDING;
+    image(schedule.seasonIcon, PADDING, y, 46);
+    setFont(26, 600);
+    text(`My ${schedule.season} schedule`, titleX, y + 22);
+    setFont(15);
+    const periodW = text(`${start.toFormat('d LLLL')} – ${schedule.end.toFormat('d LLLL yyyy')}`, titleX, y + 44, 'left', colors.dim);
+    if (schedule.unreachable.length) {
+      text('Not every item is reachable before the season ends.', titleX + periodW + 12, y + 44, 'left', colors.warn);
+    }
+
+    setFont(11);
+    text('Item icons by contributors of the Sky: CotL Wiki', width - PADDING, y + 4, 'right', '#fff');
+    y = HEADER_H;
+
+    // #endregion
+
+    // #region Months
+
+    const drawDay = (date: DateTime, month: DateTime, x: number, dy: number, dayH: number) => {
+      const key = date.toISODate()!;
+      const inMonth = date.month === month.month;
+      const isToday = inMonth && date.hasSame(today, 'day');
+      const active = isActive(date, month);
+
+      ctx.save();
+      if (!active) { ctx.globalAlpha = 0.35; }
+      roundRect(x, dy, DAY_W, dayH, 8, active && lastPlanned && key <= lastPlanned ? colors.collecting : colors.chip);
+      if (isToday) {
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = colors.accent;
+        ctx.stroke();
+      }
+      setFont(14, 600);
+      const dateW = text(`${date.day}`, x + 8, dy + 20, 'left', isToday ? colors.accent : colors.text);
+      if (!active) { ctx.restore(); return; }
+
+      // Both labels don't fit beside the accompany icon; finishing the plan matters more on the last day.
+      if (key === lastPlanned) {
+        setFont(11);
+        text('Done', x + 8 + dateW + 6, dy + 19, 'left', colors.good);
+      } else if (date.hasSame(schedule.end, 'day')) {
+        setFont(11);
+        text('Last day', x + 8 + dateW + 6, dy + 19, 'left', colors.warn);
+      }
+
+      const spirit = schedule.accompanies.get(key);
+      if (spirit?.icon) {
+        const cx = x + DAY_W - 6 - ACCOMPANY_R, cy = dy + 6 + ACCOMPANY_R;
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(cx, cy, ACCOMPANY_R, 0, Math.PI * 2);
+        ctx.fillStyle = colors.badgeBg;
+        ctx.fill();
+        ctx.clip();
+        image(spirit.icon.icon || QUESTION_URL, cx - ACCOMPANY_R, cy - ACCOMPANY_R, ACCOMPANY_R * 2);
+        ctx.restore();
+        ctx.beginPath();
+        ctx.arc(cx, cy, ACCOMPANY_R, 0, Math.PI * 2);
+        ctx.strokeStyle = colors.seasonal;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+      if (spirit) {
+        setFont(11, 600);
+        const lines = ['Accompany', fitText(ctx, spirit.name, DAY_W - 12)];
+        lines.forEach((line, i) => text(line, x + 6, dy + DAY_LABEL_Y + i * DAY_LINE_H, 'left', '#fff'));
+      }
+
+      const buys = schedule.buys.get(key) ?? [];
+      const shown = buys.length > DAY_ICONS_MAX ? buys.slice(0, DAY_ICONS_MAX - 1) : buys;
+      const slotX = (i: number) => x + 4 + (i % DAY_ICONS_PER_ROW) * DAY_ICON_STEP;
+      const slotY = (i: number) => dy + DAY_ITEMS_Y + Math.floor(i / DAY_ICONS_PER_ROW) * DAY_ICON_STEP;
+      shown.forEach((item, i) => image(item.icon || QUESTION_URL, slotX(i), slotY(i), DAY_ICON));
+      if (shown.length < buys.length) {
+        setFont(13, 600);
+        text(`+${buys.length - shown.length}`, slotX(shown.length) + DAY_ICON / 2, slotY(shown.length) + DAY_ICON / 2 + 5, 'center', colors.dim);
+      }
+      ctx.restore();
+    };
+
+    for (const month of months) {
+      const h = monthH(month);
+      panel(PADDING, y, width - PADDING * 2, h);
+      const gx = PADDING + MONTH_PAD;
+      setFont(18, 600);
+      text(month.toFormat('LLLL yyyy'), gx, y + MONTH_PAD + 22);
+
+      setFont(12);
+      const weekdayY = y + MONTH_PAD + MONTH_TITLE_H;
+      WEEKDAYS.forEach((w, i) => text(w, gx + i * (DAY_W + DAY_GAP) + DAY_W / 2, weekdayY + 12, 'center', colors.dim));
+
+      let weekY = weekdayY + WEEKDAY_H;
+      weekHeights(month).forEach((weekH, iWeek) => {
+        const week = month.startOf('week').plus({ weeks: iWeek });
+        for (let i = 0; i < 7; i++) {
+          drawDay(week.plus({ days: i }), month, gx + i * (DAY_W + DAY_GAP), weekY, weekH);
+        }
+        weekY += weekH + DAY_GAP;
+      });
+      y += h + MONTH_GAP;
+    }
+
+    // #endregion
+
+    return canvas;
+  }
+
   downloadCanvas(canvas: HTMLCanvasElement, fileName: string): void {
     const link = document.createElement('a');
     link.download = fileName;
@@ -530,6 +686,75 @@ function resolveColors(host: HTMLElement): Colors {
   } finally {
     probe.remove();
   }
+}
+
+function createCanvas(width: number, height: number): { canvas: HTMLCanvasElement; ctx: CanvasRenderingContext2D } {
+  const canvas = document.createElement('canvas');
+  canvas.width = width * SCALE;
+  canvas.height = height * SCALE;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) { throw new Error('Failed to render image; no canvas context.'); }
+  ctx.scale(SCALE, SCALE);
+  return { canvas, ctx };
+}
+
+function backgroundUrl(): string {
+  return getComputedStyle(document.body).getPropertyValue('--atmos-bg-image').match(/url\(['"]?([^'")\s]+)['"]?\)/)?.[1] || BACKGROUND_URL;
+}
+
+/** Loads images by their original url; icons mapped to a sprite sheet load the sheet once and crop from it. */
+async function loadImages(iconService: IconService, urls: ReadonlyArray<string | undefined>): Promise<Map<string, LoadedImage>> {
+  const sources = new Map<string, Promise<HTMLImageElement | undefined>>();
+  const load = (src: string) => {
+    // A missing icon shouldn't fail the whole export.
+    if (!sources.has(src)) { sources.set(src, loadImage(src).catch(() => undefined)); }
+    return sources.get(src)!;
+  };
+
+  const images = new Map<string, LoadedImage>();
+  await Promise.all([...new Set(urls.filter(u => u) as string[])].map(async url => {
+    const mapped = iconService.getIcon(url);
+    const img = await load(mapped?.url ?? url);
+    if (img) { images.set(url, { img, crop: mapped && { x: mapped.x, y: mapped.y } }); }
+  }));
+  return images;
+}
+
+function drawBackground(ctx: CanvasRenderingContext2D, bg: HTMLImageElement | undefined, width: number, height: number): void {
+  if (bg) {
+    const scale = Math.max(width / bg.naturalWidth, height / bg.naturalHeight);
+    const w = bg.naturalWidth * scale, h = bg.naturalHeight * scale;
+    ctx.filter = 'blur(4px) brightness(0.5)';
+    ctx.drawImage(bg, (width - w) / 2 - 10, (height - h) / 2 - 10, w + 20, h + 20);
+    ctx.filter = 'none';
+  } else {
+    ctx.fillStyle = '#1d2433';
+    ctx.fillRect(0, 0, width, height);
+  }
+}
+
+function createPainter(ctx: CanvasRenderingContext2D, font: string, colors: Colors, images: ReadonlyMap<string, LoadedImage>) {
+  const setFont = (size: number, weight = 400) => ctx.font = `${weight} ${size}px ${font}`;
+  const text = (value: string, x: number, y: number, align: CanvasTextAlign = 'left', color = colors.text) => {
+    ctx.fillStyle = color;
+    ctx.textAlign = align;
+    ctx.fillText(value, x, y);
+    return ctx.measureText(value).width;
+  };
+  const roundRect = (x: number, y: number, w: number, h: number, r: number, fill?: string, stroke?: string) => {
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, r);
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1; ctx.stroke(); }
+  };
+  const panel = (x: number, y: number, w: number, h: number) => roundRect(x, y, w, h, 12, 'rgba(0, 0, 0, 0.35)');
+  const image = (url: string | undefined, x: number, y: number, size: number) => {
+    const loaded = url && images.get(url);
+    if (!loaded) { return; }
+    const { img, crop } = loaded;
+    crop ? ctx.drawImage(img, crop.x, crop.y, SHEET_ICON, SHEET_ICON, x, y, size, size) : ctx.drawImage(img, x, y, size, size);
+  };
+  return { setFont, text, roundRect, panel, image };
 }
 
 function loadImage(url: string): Promise<HTMLImageElement> {

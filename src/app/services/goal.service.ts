@@ -2,8 +2,10 @@ import { Injectable, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DateTime } from 'luxon';
 import { IItem } from 'skygame-data';
+import { DataService } from './data.service';
 import { StorageService } from './storage.service';
 import { DateHelper } from '@app/helpers/date-helper';
+import { ItemHelper } from '@app/helpers/item-helper';
 import { GOAL_DAY_FORMAT, GoalBucketKey, GoalHelper, IGoalBucket, IGoalPlan } from '@app/helpers/goal-helper';
 
 export interface IGoalIncome {
@@ -26,6 +28,7 @@ const DEFAULT_INCOME: IGoalIncome = { c: 15, h: 0, ac: 0 };
 
 @Injectable({ providedIn: 'root' })
 export class GoalService {
+  private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
 
   readonly items = signal<ReadonlyArray<string>>([]);
@@ -67,6 +70,14 @@ export class GoalService {
     this.save(items, this.income());
   }
 
+  /** Puts the given goals in this order, in the positions they already take up between the other goals. */
+  setOrder(guids: ReadonlyArray<string>): void {
+    const moved = new Set(guids);
+    const queue = [...guids];
+    const items = this.items().map(g => moved.has(g) ? queue.shift()! : g);
+    this.save(items, this.income());
+  }
+
   setIncome(income: IGoalIncome): void {
     this.save([...this.items()], income);
   }
@@ -90,7 +101,8 @@ export class GoalService {
       ['h', { balance: balance.hearts, perDay: income.h }],
       ['ac', { balance: balance.ascendedCandles, perDay: income.ac }]
     ]);
-    return GoalHelper.project(items, buckets, today, this.skipped());
+    const estimate = (item: IItem) => ItemHelper.estimateCost(item, this._dataService.itemConfig.items);
+    return GoalHelper.project(items, buckets, today, this.skipped(), estimate);
   }
 
   private load(): void {

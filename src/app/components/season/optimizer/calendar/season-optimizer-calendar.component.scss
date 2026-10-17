@@ -1,0 +1,34 @@
+.atmos-season-cal__icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.atmos-season-cal__accompany {
+  display: inline-flex;
+  width: var(--item-size-small);
+  height: var(--item-size-small);
+  margin-left: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--atmos-seasonal);
+}
+
+@media (max-width: 1023px) {
+  // Narrow cells can't fit the date and the circle on one line.
+  .atmos-goals-cal__date { flex-wrap: wrap; }
+  // Taller than the goals calendar, to fit the wrapped circle above the item.
+  .atmos-goals-cal__day { min-height: 5em; }
+  // Sprite icons are sized in pixels from the size input, so scale the whole circle.
+  .atmos-season-cal__accompany { zoom: 0.625; }
+}
+
+.atmos-season-cal__logged {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-text-link.atmos-season-cal__done {
+  margin-left: auto;
+  color: var(--atmos-text-mute);
+  font-size: var(--atmos-fs-sm);
+}

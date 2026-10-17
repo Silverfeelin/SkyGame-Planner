@@ -106,7 +106,6 @@ export class ItemUnlockCalculatorComponent {
   checkedTrees: { [key: string]: ISpiritTree } = {};
   checkedNodes: { [key: string]: INode } = {};
   checkedIaps: { [key: string]: IIAP } = {};
-  itemTypeAverages: { [key: string]: ICost } = {};
 
   treeRoots: { [key: string]: ISpiritTree } = {};
   treeOpaqueNodes: { [key: string]: Array<string> } = {};
@@ -531,51 +530,7 @@ export class ItemUnlockCalculatorComponent {
   }
 
   private findAverageByItem(item: IItem): ICost | undefined {
-    const itemType = item.type;
-    if (this.itemTypeAverages[itemType]) { return this.itemTypeAverages[itemType]; }
-
-    if (itemType === ItemType.Emote) {
-      switch (item.level) {
-        case 1: return { c: 0 };
-        case 2: return { h: 4 };
-        case 3: return { h: 3 };
-        case 4: return { h: 6 };
-      }
-    }
-    if (itemType === ItemType.Spell) { return { c: 5 }; }
-
-    const items = this._dataService.itemConfig.items.filter(i => {
-      if (i.type !== itemType) { return false; }
-      const node = i.nodes?.at(0);
-      const tree = node?.root?.tree;
-      return tree?.spirit?.type !== 'Regular';
-    });
-    let countCandles = 0;
-    const totalCandles = items.reduce((acc, item) => {
-      const lastNode: ICost | undefined = item?.nodes?.at(-1) ?? item?.listNodes?.at(-1);
-      if (!lastNode?.c) { return acc; }
-      countCandles++;
-      return acc + lastNode.c;
-    }, 0);
-    let countHearts = 0;
-    const totalHearts = items.reduce((acc, item) => {
-      const lastNode: ICost | undefined = item?.nodes?.at(-1) ?? item?.listNodes?.at(-1);
-      if (!lastNode?.h) { return acc; }
-      countCandles++;
-      return acc + lastNode.h;
-    }, 0);
-
-    if (countCandles) {
-      const avg = totalCandles / countCandles;
-      const roundedAvg = Math.ceil(avg / 5) * 5;
-      this.itemTypeAverages[itemType] = { c: roundedAvg };
-    } else if (countHearts) {
-      const avg = totalHearts / countHearts;
-      const roundedAvg = Math.ceil(avg / 5) * 5;
-      this.itemTypeAverages[itemType] = { h: roundedAvg };
-    }
-
-    return countCandles || countHearts ? this.itemTypeAverages[itemType] : undefined;
+    return ItemHelper.estimateCost(item, this._dataService.itemConfig.items);
   }
 
   private readItemsFromUrl(): void {

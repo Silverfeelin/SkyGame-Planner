@@ -52,6 +52,9 @@ export class ItemGoalsComponent {
   readonly today = DateHelper.todaySky();
   readonly selectedDay = signal(this.today);
   readonly focusedGoal = signal<string | undefined>(undefined);
+  readonly quickSorting = signal(false);
+  /** Guids picked during a quick sort, in the order they were clicked. */
+  readonly quickSortPicks = signal<ReadonlyArray<string>>([]);
 
   private readonly _calendar = viewChild('calendar', { read: ElementRef });
 
@@ -165,6 +168,27 @@ export class ItemGoalsComponent {
   askClearAll(): void {
     if (!confirm('Remove all goals?')) { return; }
     this._goalService.remove(...this._split().regular.map(i => i.guid));
+  }
+
+  startQuickSort(): void {
+    this.quickSortPicks.set([]);
+    this.quickSorting.set(true);
+  }
+
+  cancelQuickSort(): void {
+    this.quickSorting.set(false);
+  }
+
+  toggleQuickSortPick(guid: string): void {
+    this.quickSortPicks.update(picks => picks.includes(guid) ? picks.filter(g => g !== guid) : [...picks, guid]);
+  }
+
+  /** Moves the picked goals to the front in the order they were picked; the rest keep their order behind them. */
+  applyQuickSort(): void {
+    const picks = this.quickSortPicks();
+    const rest = this.goals().map(g => g.item.guid).filter(g => !picks.includes(g));
+    this._goalService.setOrder([...picks, ...rest]);
+    this.quickSorting.set(false);
   }
 
   setIncome(key: keyof IGoalIncome, evt: Event): void {

@@ -17,7 +17,6 @@
   font-size: var(--atmos-fs-md);
 
   mat-icon {
-    flex: none;
     font-size: 18px;
     width: 18px;
     height: 18px;
@@ -183,8 +182,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-
-  mat-icon { flex-shrink: 0; }
 }
 
 .atmos-goals__late {
@@ -224,6 +221,20 @@
   height: var(--item-size);
   border-radius: var(--atmos-radius-sm);
   cursor: pointer;
+}
+
+.atmos-goals__quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+  margin-bottom: 12px;
+
+  .atmos-goals__pick {
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+  }
 }
 
 @media (max-width: 1023px) {
