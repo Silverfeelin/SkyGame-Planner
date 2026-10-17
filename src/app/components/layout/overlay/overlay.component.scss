@@ -1,17 +1,27 @@
-
+/* Top-layer dialog, so it covers the sidebar and topbar. */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
+  inset: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  /* The top layer escapes the host's opacity, which callers like the loader fade. */
+  opacity: inherit;
   display: flex;
   background-color: oklch(0.04 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
   justify-content: center;
   align-items: center;
   text-wrap: balance;
   backdrop-filter: var(--atmos-blur);
+
+  &::backdrop {
+    background: transparent;
+  }
 }
 
 .overlay-body {

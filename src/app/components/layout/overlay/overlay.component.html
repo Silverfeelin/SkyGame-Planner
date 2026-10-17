@@ -1,4 +1,4 @@
-<div class="overlay" (click)="onClickOut($event)">
+<dialog #dialog class="overlay" (click)="onClickOut($event)" (cancel)="onCancel($event)">
   <div class="overlay-body">
     @if (title) { <h2 class="h3 overlay-title">{{ title }}</h2> }
     <div class="overlay-content">
@@ -11,4 +11,4 @@
       </div>
     }
   </div>
-</div>
+</dialog>
