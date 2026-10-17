@@ -61,6 +61,24 @@ export class ToolsComponent {
       ]
     },
     {
+      title: 'Sky Clock',
+      imageUrl: '/assets/images/sky-clock.webp',
+      icon: 'schedule',
+      description: 'A website by Chris Stead to view the time of events such as the geyser in Sky.',
+      links: [
+        { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-clock.netlify.app/' }
+      ]
+    },
+    {
+      title: 'Sky Event Calendar | FM',
+      imageUrl: '/assets/images/sky-event-calendar.webp',
+      icon: 'calendar_month',
+      description: 'A fan-made calendar to find information about current and upcoming Sky events.',
+      links: [
+        { icon: 'open_in_new', label: 'Go to website', href: PAGES.eventCalendar.link }
+      ]
+    },
+    {
       title: 'Sky Shards',
       imageUrl: '/assets/images/sky-shards.webp',
       icon: 'auto_awesome_motion',
@@ -68,15 +86,6 @@ export class ToolsComponent {
       description: 'A website by Plutoy to view the time and location of shards.',
       links: [
         { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-shards.pages.dev/' }
-      ]
-    },
-    {
-      title: 'Sky Clock',
-      imageUrl: '/assets/images/sky-clock.webp',
-      icon: 'schedule',
-      description: 'A website by Chris Stead to view the time of events such as the geyser in Sky.',
-      links: [
-        { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-clock.netlify.app/' }
       ]
     }
   ];

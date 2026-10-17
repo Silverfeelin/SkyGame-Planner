@@ -17,6 +17,7 @@
           Please visit the
           <a class="atmos-text-link" [routerLink]="'/outfit-request/closet'">Closet</a>
           page if you want to customize and share your closet.
+          <a class="atmos-text-link" role="button" tabindex="0" (click)="startTour()" (keydown.enter)="startTour()">Start the Tour</a> to learn how to use this page.
         </div>
       </div>
     </div>
@@ -30,8 +31,7 @@
       (resetRequest)="resetSelected()"
       (randomRequest)="randomSelection()"
       (copyLinkRequest)="copyLink()"
-      (calculateCostRequest)="calculateCost()"
-      (startTourRequest)="startTour()" />
+      (calculateCostRequest)="calculateCost()" />
 
     <!-- Background picker -->
     <app-closet-background-picker />

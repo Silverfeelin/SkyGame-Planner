@@ -34,7 +34,10 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
   templateUrl: './closet-request.component.html',
   styleUrl: './closet-request.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { 'class': 'atmospheric' },
+  host: {
+    'class': 'atmospheric',
+    '(document:click)': 'onDocumentClick($event)'
+  },
   standalone: true,
   providers: [ClosetStateService],
   imports: [
@@ -450,6 +453,14 @@ export class ClosetRequestComponent implements OnDestroy {
 
   toggleImagePicker(): void {
     this.state.showingImagePicker.update(v => !v);
+  }
+
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.state.showingImagePicker()) { return; }
+    const target = event.target as Element | null;
+    // The tour opens the picker itself, so its controls must not dismiss it.
+    if (target?.closest('.atmos-copy-controls, .introjs-tooltip, .introjs-overlay')) { return; }
+    this.state.showingImagePicker.set(false);
   }
 
   startTour(): void {

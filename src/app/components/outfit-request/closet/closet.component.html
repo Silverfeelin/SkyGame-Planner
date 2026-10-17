@@ -10,6 +10,7 @@
       Please visit the
       <a class="atmos-text-link" [routerLink]="'/outfit-request/request'">Request</a>
       page if you want to create an outfit request.
+      <a class="atmos-text-link" role="button" tabindex="0" (click)="startTour()" (keydown.enter)="startTour()">Start the Tour</a> to learn how to use this page.
     </p>
     <p class="atmos-paragraph atmos-page__hint">
       Got a one-fit image from a request? Paste it ({{ pasteKey }}) or drop it here to highlight its items.
@@ -23,7 +24,6 @@
     (randomRequest)="randomSelection()"
     (copyLinkRequest)="copyLink()"
     (calculateCostRequest)="calculateCost()"
-    (startTourRequest)="startTour()"
     (imageRequest)="readImage($event)" />
 
   <!-- Result of reading a one-fit image -->

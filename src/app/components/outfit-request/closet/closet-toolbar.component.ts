@@ -27,7 +27,6 @@ export class ClosetToolbarComponent {
   readonly copyImageRequest = output<string>();
   readonly shareImageRequest = output<string>();
   readonly calculateCostRequest = output<void>();
-  readonly startTourRequest = output<void>();
   readonly imageRequest = output<File>();
 
   search(text: string): void {

@@ -58,12 +58,9 @@ export class ClosetGridComponent {
 
   isItemHidden(item: IItem): boolean {
     const state = this.state;
-    const req = this.requesting();
-    if (req) { return false; }
-    const modifying = state.modifyingCloset();
-    if (modifying) { return false; }
-    const folded = state.typeFolded()[item.type];
-    if (folded) { return true; }
+    if (state.typeFolded()[item.type]) { return true; }
+    if (this.requesting()) { return false; }
+    if (state.modifyingCloset()) { return false; }
     if (state.closetMode() === 'closet' && state.hidden()[item.guid]
         && !state.selectedAll()[item.guid]
         && !(state.showOngoing() && state.ongoingItems()[item.guid])) {
