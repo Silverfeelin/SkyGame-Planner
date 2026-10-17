@@ -8,5 +8,5 @@ acknowledges the wiki contributions in both the website footer and the Info page
 
 All icon sources are found in the accompanying icons.json file.
 
-The icons_proxy_#.webp files hold placeholder icons for new items that are not on the wiki yet.
+The icons_hosted_#.webp files hold the icons hosted in assets/game/items, for items that are not on the wiki yet.
 They are replaced by wiki icons once those are available.

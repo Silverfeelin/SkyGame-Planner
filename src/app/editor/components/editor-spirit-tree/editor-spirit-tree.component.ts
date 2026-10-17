@@ -18,6 +18,7 @@ import { IconService } from '@app/services/icon.service';
 import { TabsComponent, TabDirective } from '@app/components/shared/shared-widgets';
 import { NodeComponent } from '@app/components/spirit/node/node.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { AssetUrlHelper } from '@app/helpers/asset-url-helper';
 import { INode, IItem, ICost, ISpiritTree, ISpiritTreeTier, SpiritTreeTierRow, ISpirit, ItemType, SpiritType } from 'skygame-data';
 import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
@@ -845,6 +846,7 @@ export class SpiritTreeEditorComponent {
     }).map(n => {
       const item: any = { ...n.item };
       delete item.id;
+      item.icon = AssetUrlHelper.toPublic(item.icon);
       return item;
     });
   }

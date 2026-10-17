@@ -11,6 +11,7 @@ import { ArrayHelper } from '../helpers/array-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { IArea, IEvent, IGuid, IIAP, IItem, IItemList, IMapShrine, INode, IRealm, ISeason, IShop, ISkyData, ISpecialVisit, ISpirit, ISpiritTree, ISpiritTreeTier, ITravelingSpirit, IWingedLight, SkyDataResolver } from 'skygame-data';
 import { environment } from 'src/environments/environment';
+import { AssetUrlHelper } from '@app/helpers/asset-url-helper';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -70,6 +71,10 @@ export class DataService {
       outfitRequestConfig: get('outfit-requests.json'),
     }).pipe(tap(data => {
       const parsed = SkyDataResolver.parse(data.everything);
+      if (environment.assetRewrite) {
+        for (const item of parsed.items.items) { item.icon = AssetUrlHelper.toLocal(item.icon); }
+        for (const season of parsed.seasons.items) { season.iconUrl = AssetUrlHelper.toLocal(season.iconUrl); }
+      }
       const resolved = SkyDataResolver.resolve(parsed);
       this.onConfigs(resolved, data);
       this.exposeData();

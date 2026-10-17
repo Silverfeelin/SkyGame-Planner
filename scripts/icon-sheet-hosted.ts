@@ -1,13 +1,13 @@
 /**
- * Packs the local placeholder icons of SkyGame-Data (`.local-icons`, referenced by items as `/proxy/icons/<file>`)
- * into icons_proxy_#.webp sheets, so they show without the proxy. Main icon sheets are left untouched.
+ * Packs the icons hosted by the Planner (src/assets/game/items, referenced by items as `https://sky-planner.com/assets/game/items/<file>`)
+ * into icons_hosted_#.webp sheets. These are icons for items that are not on the wiki yet. Main icon sheets are left untouched.
  *
- * Usage: npm run icon-sheet-proxy -- [--data ../SkyGame-Data] [--icons <data>/.local-icons]
+ * Usage: npm run icon-sheet-hosted -- [--data ../SkyGame-Data]
  */
 import * as fs from 'fs';
 import * as path from 'path';
 import * as jsonc from 'jsonc-parser';
-import { createSprites, gameAssetsPath, iconSize, iconsPerSheet, IIconSheet, isProxySheet, PROXY_PREFIX, readIconsJson, writeIconsJson } from './icon-sheet-common';
+import { createSprites, gameAssetsPath, HOSTED_PREFIX, iconSize, iconsPerSheet, IIconSheet, isHostedSheet, readIconsJson, writeIconsJson } from './icon-sheet-common';
 const sharp = require('sharp');
 
 const argValue = (name: string): string | undefined => {
@@ -16,7 +16,7 @@ const argValue = (name: string): string | undefined => {
 };
 
 const dataPath = path.resolve(argValue('--data') || path.resolve(__dirname, '../../SkyGame-Data'));
-const iconsPath = path.resolve(argValue('--icons') || path.resolve(dataPath, '.local-icons'));
+const iconsPath = path.resolve(gameAssetsPath, 'items');
 
 interface IItem { guid: string, id: number, name?: string, icon?: string };
 // Built output of SkyGame-Data (npm run build / serve), which includes unpublished items.
@@ -28,19 +28,19 @@ if (!fs.existsSync(itemsPath)) {
 const itemData: { items: Array<IItem> } = jsonc.parse(fs.readFileSync(itemsPath, 'utf8'));
 itemData.items.sort((a, b) => a.id - b.id);
 
-const tempPath = path.resolve(__dirname, 'temp/proxy');
+const tempPath = path.resolve(__dirname, 'temp/hosted');
 fs.mkdirSync(tempPath, { recursive: true });
 
 (async () => {
-  // Collect distinct proxy icons in item order.
+  // Collect distinct hosted icons in item order.
   const iconItems = new Map<string, Array<IItem>>();
   for (const item of itemData.items) {
-    if (!item.icon?.startsWith(PROXY_PREFIX)) { continue; }
+    if (!item.icon?.startsWith(HOSTED_PREFIX)) { continue; }
     if (!iconItems.has(item.icon)) { iconItems.set(item.icon, []); }
     iconItems.get(item.icon)!.push(item);
   }
 
-  const fileOf = (icon: string) => decodeURIComponent(icon.substring(PROXY_PREFIX.length));
+  const fileOf = (icon: string) => decodeURIComponent(icon.substring(HOSTED_PREFIX.length));
   const missing = Array.from(iconItems.keys()).filter(icon => !fs.existsSync(path.resolve(iconsPath, fileOf(icon))));
   if (missing.length) {
     console.error(`Missing ${missing.length} icon file(s) in ${iconsPath}:`);
@@ -52,7 +52,7 @@ fs.mkdirSync(tempPath, { recursive: true });
     process.exit(1);
   }
 
-  // Resize to the sheet tile size. Always redone, since local icons can change.
+  // Resize to the sheet tile size. Always redone, since hosted icons can change.
   const tempIcons = new Map<string, string>();
   for (const icon of Array.from(iconItems.keys())) {
     const file = fileOf(icon);
@@ -65,26 +65,27 @@ fs.mkdirSync(tempPath, { recursive: true });
   const tempPaths = Array.from(tempIcons.keys());
   for (let i = 0; i < tempPaths.length; i += iconsPerSheet) {
     const batch = tempPaths.slice(i, i + iconsPerSheet);
-    sheets.push(await createSprites(batch, p => tempIcons.get(path.resolve(p))!, `icons_proxy_${sheets.length}.webp`));
+    sheets.push(await createSprites(batch, p => tempIcons.get(path.resolve(p))!, `icons_hosted_${sheets.length}.webp`));
   }
 
-  // Replace the proxy sheets, keep the main sheets.
-  const mainSheets = readIconsJson().files.filter(f => !isProxySheet(f.file));
+  // Replace the hosted sheets, keep the main sheets.
+  const mainSheets = readIconsJson().files.filter(f => !isHostedSheet(f.file));
   writeIconsJson([...mainSheets, ...sheets]);
 
   const sheetFiles = new Set(sheets.map(s => s.file));
   for (const file of fs.readdirSync(gameAssetsPath)) {
-    if (isProxySheet(file) && !sheetFiles.has(file)) {
+    if (isHostedSheet(file) && !sheetFiles.has(file)) {
       fs.unlinkSync(path.resolve(gameAssetsPath, file));
       console.log(`Removed ${file}`);
     }
   }
 
-  console.log(`${iconItems.size} placeholder icon(s) in ${sheets.length} sheet(s)${sheets.length ? ': ' + sheets.map(s => s.file).join(', ') : ''}.`);
+  console.log(`${iconItems.size} hosted icon(s) in ${sheets.length} sheet(s)${sheets.length ? ': ' + sheets.map(s => s.file).join(', ') : ''}.`);
 
+  // The folder also holds images that aren't item icons, so this is informational only.
   const used = new Set(Array.from(iconItems.keys()).map(fileOf));
-  const unused = fs.existsSync(iconsPath) ? fs.readdirSync(iconsPath).filter(f => !used.has(f)) : [];
+  const unused = fs.readdirSync(iconsPath).filter(f => !used.has(f));
   if (unused.length) {
-    console.log(`Unused files in ${iconsPath}: ${unused.join(', ')}`);
+    console.log(`Files in ${iconsPath} not used by an item icon: ${unused.join(', ')}`);
   }
 })();

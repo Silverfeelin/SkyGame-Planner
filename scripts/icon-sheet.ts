@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as jsonc from 'jsonc-parser';
 import { chromium } from 'playwright';
-import { createSprites, iconSize, iconsPerSheet, IIconSheet, isProxySheet, readIconsJson, writeIconsJson } from './icon-sheet-common';
+import { createSprites, iconSize, iconsPerSheet, HOSTED_PREFIX, IIconSheet, isHostedSheet, readIconsJson, writeIconsJson } from './icon-sheet-common';
 const sharp = require('sharp');
 
 interface IItem { guid: string, id: number, icon?: string };
@@ -30,6 +30,8 @@ const iconUrlMap = new Map<number, string>();
     // Skip items without icon URL.
     if (!item.id) { continue; }
     if (!item.icon || !item.icon.startsWith('http')) { continue; }
+    // Hosted icons are packed by icon-sheet-hosted.
+    if (item.icon.startsWith(HOSTED_PREFIX)) { continue; }
     if (urlIconMap.has(item.icon)) { continue; }
 
     const outputPath = path.resolve(tempPath, `${item.id}.png`);
@@ -88,7 +90,7 @@ const iconUrlMap = new Map<number, string>();
     await runBatch(iconBatch);
   }
 
-  // Keep the placeholder sheets from icon-sheet-proxy.
-  const proxySheets = readIconsJson().files.filter(f => isProxySheet(f.file));
-  writeIconsJson([...sheets, ...proxySheets]);
+  // Keep the hosted sheets from icon-sheet-hosted.
+  const hostedSheets = readIconsJson().files.filter(f => isHostedSheet(f.file));
+  writeIconsJson([...sheets, ...hostedSheets]);
 })();

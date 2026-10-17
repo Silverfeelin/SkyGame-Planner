@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { AssetUrlHelper } from '@app/helpers/asset-url-helper';
 
 interface IIconConfig {
   files: Array<{
@@ -49,7 +50,7 @@ export class IconService {
       const url = `/assets/game/${entry.file}`;
       for (const key in entry.coordinates) {
         const value = entry.coordinates[key];
-        this.icons[key] = {
+        this.icons[AssetUrlHelper.toLocal(key)] = {
           file: entry.file,
           url,
           x: value.x,

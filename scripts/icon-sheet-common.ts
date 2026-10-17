@@ -10,9 +10,9 @@ export const iconSize = 128;
 export const iconsPerSheet = 16 * 16;
 export const sheetWidth = iconSize * 16;
 
-/** Icon path prefix of placeholder icons that are not on the wiki yet. */
-export const PROXY_PREFIX = '/proxy/icons/';
-export const isProxySheet = (file: string) => file.startsWith('icons_proxy_');
+/** Icon URL prefix of icons hosted by the Planner (src/assets/game/items), for items without a wiki icon yet. */
+export const HOSTED_PREFIX = 'https://sky-planner.com/assets/game/items/';
+export const isHostedSheet = (file: string) => file.startsWith('icons_hosted_');
 
 export const gameAssetsPath = path.resolve(__dirname, '../src/assets/game');
 const iconsJsonPath = path.resolve(gameAssetsPath, 'icons.json');

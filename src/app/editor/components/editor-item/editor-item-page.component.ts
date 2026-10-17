@@ -7,6 +7,7 @@ import { EditorItemComponent } from './editor-item.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
+import { AssetUrlHelper } from '@app/helpers/asset-url-helper';
 
 @Component({
   selector: 'app-editor-item-page',
@@ -36,6 +37,7 @@ export class EditorItemPageComponent {
 
   save(evt: IItem) {
     evt.id = this.item()?.id ?? 0;
+    evt.icon = AssetUrlHelper.toPublic(evt.icon);
     const json = JSON.stringify(evt, undefined, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const a = document.createElement('a');
