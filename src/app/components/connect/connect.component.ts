@@ -94,6 +94,7 @@ export class ConnectComponent {
       type: 'sky-planner:connect',
       nonce: this._nonce,
       status,
+      version: 1,
       dataVersion: CONNECT_DATA_VERSION,
       scopes
     };

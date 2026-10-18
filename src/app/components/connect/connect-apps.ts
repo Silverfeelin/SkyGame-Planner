@@ -23,6 +23,7 @@ export interface IConnectResponse {
   type: 'sky-planner:connect';
   nonce?: string;
   status: 'granted' | 'denied';
+  version: 1;
   dataVersion: string;
   scopes: Partial<Record<ConnectScopeKey, unknown>>;
 }
