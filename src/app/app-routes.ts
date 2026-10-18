@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { DropboxAuthComponent } from './components/dropbox-auth/dropbox-auth.component';
+import { ConnectComponent } from './components/connect/connect.component';
 import { StorageComponent } from './components/storage/storage.component';
 import { EditorLayoutComponent } from './editor/editor-layout/editor-layout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -99,6 +100,7 @@ export const routes: Routes = [
       /* Chromeless routes — rendered without the sidebar/footer. */
       { path: 'outfit-request/request', component: ClosetRequestComponent, data: { chrome: false }, title: title('Outfit request') },
       { path: 'dropbox-auth', component: DropboxAuthComponent, data: { chrome: false }, title: title('Dropbox') },
+      { path: 'connect', component: ConnectComponent, data: { chrome: false }, title: title('Share data') },
       /* Routes rendered with the full chrome. */
       { path: '', component: DashboardComponent, title: 'Sky Planner' },
       { path: 'privacy', component: PrivacyComponent, title: title('Privacy Policy') },

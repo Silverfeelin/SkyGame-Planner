@@ -1,0 +1,132 @@
+/* Chromeless popup host: recreate the backdrop and centre the card. */
+:host {
+  display: block;
+  color: var(--atmos-text);
+  font-family: 'Manrope', 'Roboto', system-ui, sans-serif;
+  background: var(--atmos-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.atmos-connect__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--atmos-bg-image, url(/assets/game/background/isle.webp));
+  background-size: cover;
+  background-position: center;
+  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
+  pointer-events: none;
+}
+
+.atmos-connect__vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    transparent 42%,
+    oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.55)
+  );
+  pointer-events: none;
+}
+
+.atmos-connect__main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--atmos-pad-compact);
+}
+
+.atmos-connect__card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.atmos-connect__body {
+  padding: 22px;
+  gap: 14px;
+}
+
+.atmos-connect__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.atmos-connect__icon {
+  color: var(--atmos-accent);
+
+  &.atmos-connect__icon--good { color: var(--atmos-good); }
+  &.atmos-connect__icon--warm { color: var(--atmos-warm); }
+}
+
+.atmos-connect__title {
+  margin: 0;
+  font-size: var(--atmos-fs-xl);
+  font-weight: 600;
+  text-shadow: var(--atmos-text-shadow-large);
+}
+
+.atmos-connect__scopes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atmos-connect__scope {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-pill-border);
+  border-radius: var(--atmos-radius-sm);
+}
+
+.atmos-connect__count,
+.atmos-connect__desc,
+.atmos-connect__muted {
+  color: var(--atmos-text-dim);
+}
+
+.atmos-connect__desc {
+  font-size: var(--atmos-fs-sm);
+}
+
+.atmos-connect__inline-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+}
+
+.atmos-connect__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.atmos-connect__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}

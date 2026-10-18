@@ -1,0 +1,86 @@
+<div class="atmos-connect__bg" aria-hidden="true"></div>
+<div class="atmos-connect__vignette" aria-hidden="true"></div>
+
+<main class="atmos-connect__main">
+  <article class="atmos-card atmos-connect__card">
+    <div class="atmos-card__body atmos-connect__body">
+      @switch (state()) {
+        @case ('request') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon">share</mat-icon>
+            <h1 class="atmos-connect__title">Share with {{ app!.name }}</h1>
+          </header>
+          <p class="atmos-paragraph">
+            <a class="atmos-text-link" [href]="app!.url" target="_blank" rel="noopener">{{ hostname }}</a>
+            would like a copy of your following Sky Planner data:
+          </p>
+
+          <ul class="atmos-connect__scopes">
+            @for (scope of scopes; track scope.key) {
+              <li class="atmos-connect__scope">
+                <mat-icon>{{ scope.icon }}</mat-icon>
+                <div>
+                  <strong>{{ scope.label }}</strong><span class="atmos-connect__count">&nbsp;({{ scope.count }})</span>
+                  <div class="atmos-connect__desc">{{ scope.description }}</div>
+                </div>
+              </li>
+            }
+          </ul>
+
+          @if (unavailableScopes.length) {
+            <p class="atmos-paragraph atmos-connect__muted">
+              Also requested but not shared: <code>{{ unavailableScopes.join(', ') }}</code>
+            </p>
+          }
+
+          <p class="atmos-paragraph atmos-connect__muted">
+            <mat-icon class="atmos-connect__inline-icon">lock</mat-icon>
+            This is a one-time copy sent from your browser.
+          </p>
+
+          <div class="atmos-connect__actions">
+            <button type="button" class="atmos-btn" (click)="deny()">
+              <mat-icon>close</mat-icon>
+              <span>Cancel</span>
+            </button>
+            <button type="button" class="atmos-btn atmos-btn--active" [disabled]="!canShare()" (click)="allow()">
+              <mat-icon>check</mat-icon>
+              <span>Share</span>
+            </button>
+          </div>
+        }
+        @case ('sent') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon atmos-connect__icon--good">check_circle</mat-icon>
+            <h1 class="atmos-connect__title">Shared</h1>
+          </header>
+          <p class="atmos-paragraph">Your data was sent to {{ app!.name }}. You can close this window.</p>
+          <div class="atmos-connect__actions">
+            <button type="button" class="atmos-btn" (click)="close()">
+              <mat-icon>close</mat-icon>
+              <span>Close</span>
+            </button>
+          </div>
+        }
+        @case ('denied') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon">block</mat-icon>
+            <h1 class="atmos-connect__title">Not shared</h1>
+          </header>
+          <p class="atmos-paragraph">Nothing was shared. You can close this window.</p>
+        }
+        @case ('error') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon atmos-connect__icon--warm">link_off</mat-icon>
+            <h1 class="atmos-connect__title">Can't share</h1>
+          </header>
+          <p class="atmos-paragraph">{{ error() }}</p>
+          <a class="atmos-text-link atmos-connect__home" routerLink="/">
+            <mat-icon>home</mat-icon>
+            <span>Go to Sky Planner</span>
+          </a>
+        }
+      }
+    </div>
+  </article>
+</main>
