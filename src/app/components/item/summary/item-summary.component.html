@@ -154,6 +154,11 @@
         <mat-icon>list</mat-icon> Show in item list
       </a>
     }
+    @if (tscUrl(); as url) {
+      <a class="atmos-summary__action" [href]="url" target="_blank">
+        <mat-icon>open_in_new</mat-icon> Find in That Sky Collection
+      </a>
+    }
     @if (itm._wiki?.href) {
       <app-wiki-link [wiki]="itm._wiki" aClass="atmos-summary__action"></app-wiki-link>
     }

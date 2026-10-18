@@ -87,6 +87,15 @@ export class ToolsComponent {
       links: [
         { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-shards.pages.dev/' }
       ]
+    },
+    {
+      title: 'That Sky Collection',
+      imageUrl: '/assets/images/that-sky-collection.webp',
+      icon: 'photo_library',
+      description: 'A community gallery to discover and share Sky outfits.',
+      links: [
+        { icon: 'open_in_new', label: 'Go to website', href: 'https://thatskycollection.com/' }
+      ]
     }
   ];
 }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, effect, inject, input, si
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { IEventInstance, IItem, ISeason, ItemGroup } from 'skygame-data';
+import { IEventInstance, IItem, ISeason, ItemGroup, ItemType } from 'skygame-data';
 import { NavigationHelper } from '@app/helpers/navigation-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { EventService } from '@app/services/event.service';
@@ -18,6 +18,12 @@ import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
 
 interface IItemGroupFact { label: string; icon: string; note: string; }
+
+const TSC_TYPES: ReadonlySet<ItemType> = new Set([
+  ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
+  ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
+  ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape
+]);
 
 const GROUP_FACTS: { [key in ItemGroup]: IItemGroupFact } = {
   Elder: { label: 'Elder', icon: 'auto_awesome', note: '' },
@@ -53,6 +59,12 @@ export class ItemSummaryComponent {
   readonly isGoal = computed(() => this._goalService.items().includes(this.item().guid));
   readonly navSource = computed(() => NavigationHelper.getItemSource(this.item()));
   readonly navList = computed(() => NavigationHelper.getItemListLink(this.item()));
+  readonly tscUrl = computed(() => {
+    const item = this.item();
+    return TSC_TYPES.has(item.type)
+      ? `https://thatskycollection.com/gallery?items=${encodeURIComponent(item.guid)}`
+      : undefined;
+  });
   readonly showPreview = signal(false);
   readonly debugVisible = this._settingService.debugVisible;
 
