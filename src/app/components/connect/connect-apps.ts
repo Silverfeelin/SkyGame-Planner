@@ -36,6 +36,11 @@ export interface IConnectCollection {
   items: Array<string>;
 }
 
+export interface IConnectCollectionAck {
+  type: 'sky-planner:collection:ack';
+  nonce?: string;
+}
+
 export interface IConnectResponse {
   type: 'sky-planner:connect';
   nonce?: string;

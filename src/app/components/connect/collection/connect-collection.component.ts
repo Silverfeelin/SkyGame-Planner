@@ -11,7 +11,7 @@ import { ImageOverlayComponent } from '@app/components/layout/image-overlay/imag
 import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import {
-  CONNECT_APPS, IConnectApp, IConnectCollection, IConnectCollectionReady
+  CONNECT_APPS, IConnectApp, IConnectCollection, IConnectCollectionAck, IConnectCollectionReady
 } from '../connect-apps';
 
 type CollectionState = 'waiting' | 'choose' | 'add' | 'saved' | 'error';
@@ -96,6 +96,7 @@ export class ConnectCollectionComponent {
     this.description.set(this._text(message.description, 2000));
     this.imageUrl.set(this._imageUrl(message.imageUrl));
     this.state.set('choose');
+    this._post<IConnectCollectionAck>({ type: 'sky-planner:collection:ack', nonce: this._nonce });
   }
 
   save(): void {
