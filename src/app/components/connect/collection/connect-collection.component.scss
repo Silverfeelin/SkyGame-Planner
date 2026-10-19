@@ -15,10 +15,26 @@
 }
 
 .atmos-connect-coll__image {
+  display: block;
   width: 100%;
-  max-height: 240px;
-  object-fit: cover;
+  padding: 0;
+  border: 0;
   border-radius: var(--atmos-radius-sm);
+  overflow: hidden;
+  background: var(--atmos-chip-bg);
+  cursor: zoom-in;
+
+  img {
+    display: block;
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
 }
 
 .atmos-connect-coll__items {
@@ -56,4 +72,39 @@
   font-size: var(--atmos-fs-md);
   font-weight: 500;
   color: var(--atmos-text-dim);
+}
+
+.atmos-connect-coll__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atmos-connect-coll__choice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-pill-border);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+
+  > mat-icon { color: var(--atmos-accent); flex-shrink: 0; }
+  > span { display: flex; flex-direction: column; gap: 2px; }
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: 2px;
+  }
+}
+
+.atmos-connect-coll__choice-title {
+  font-weight: 600;
 }

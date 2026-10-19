@@ -4,15 +4,17 @@ import { MatIcon } from '@angular/material/icon';
 import { nanoid } from 'nanoid';
 import { IGuid, IItem } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
+import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemCollectionService } from '@app/services/item-collection.service';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
+import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import {
-  CONNECT_APPS, IConnectApp, IConnectCollection, IConnectCollectionAck, IConnectCollectionReady
+  CONNECT_APPS, IConnectApp, IConnectCollection, IConnectCollectionReady
 } from '../connect-apps';
 
-type CollectionState = 'waiting' | 'received' | 'saved' | 'error';
+type CollectionState = 'waiting' | 'choose' | 'add' | 'saved' | 'error';
 
 const WAIT_MS = 5000;
 
@@ -22,7 +24,7 @@ const WAIT_MS = 5000;
   styleUrls: ['../connect.component.scss', './connect-collection.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { 'class': 'atmospheric', '(window:message)': 'onMessage($event)' },
-  imports: [RouterLink, MatIcon, ItemIconComponent, TooltipDirective]
+  imports: [RouterLink, MatIcon, ItemIconComponent, ImageOverlayComponent, TooltipDirective]
 })
 export class ConnectCollectionComponent {
   private readonly _dataService = inject(DataService);
@@ -37,12 +39,14 @@ export class ConnectCollectionComponent {
   readonly name = signal('');
   readonly description = signal('');
   readonly imageUrl = signal('');
+  readonly showImage = signal(false);
   readonly items = signal<Array<IItem>>([]);
   readonly unknownCount = signal(0);
   readonly existing = signal<{ guid: string, name: string } | undefined>(undefined);
   readonly savedGuid = signal<string | undefined>(undefined);
   readonly unlockedCount = computed(() => this.items().filter(i => i.unlocked).length);
-  readonly canSave = computed(() => this.state() === 'received' && this.items().length > 0 && !!this.name().trim());
+  readonly calculatorParams = computed(() => ({ items: ItemHelper.serializeQuery(this.items()) }));
+  readonly canSave = computed(() => this.state() === 'add' && this.items().length > 0 && !!this.name().trim());
 
   private readonly _nonce?: string;
   private _waitTimeout?: number;
@@ -91,8 +95,7 @@ export class ConnectCollectionComponent {
     this.name.set(this._text(message.name, 100) || `${this.app.name} outfit`);
     this.description.set(this._text(message.description, 2000));
     this.imageUrl.set(this._imageUrl(message.imageUrl));
-    this.state.set('received');
-    this._post<IConnectCollectionAck>({ type: 'sky-planner:collection:ack', nonce: this._nonce, status: 'received' });
+    this.state.set('choose');
   }
 
   save(): void {
@@ -107,7 +110,6 @@ export class ConnectCollectionComponent {
     });
     this.savedGuid.set(guid);
     this.state.set('saved');
-    this._post<IConnectCollectionAck>({ type: 'sky-planner:collection:ack', nonce: this._nonce, status: 'saved' });
   }
 
   close(): void {

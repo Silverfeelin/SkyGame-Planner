@@ -12,29 +12,20 @@
           </header>
           <p class="atmos-paragraph atmos-connect__muted">Receiving the outfit from {{ hostname }}…</p>
         }
-        @case ('received') {
+        @case ('choose') {
           <header class="atmos-connect__header">
-            <mat-icon class="atmos-connect__icon">collections</mat-icon>
-            <h1 class="atmos-connect__title">Add collection</h1>
+            <mat-icon class="atmos-connect__icon">checkroom</mat-icon>
+            <h1 class="atmos-connect__title">Outfit received</h1>
           </header>
           <p class="atmos-paragraph">
             <a class="atmos-text-link" [href]="app!.url" target="_blank" rel="noopener">{{ hostname }}</a>
-            sent {{ items().length }} item{{ items().length === 1 ? '' : 's' }}.<br/>
-            Do you want to save them as a collection in the Sky Planner?
+            sent {{ items().length }} item{{ items().length === 1 ? '' : 's' }}. What do you want to do with them?
           </p>
 
-          @if (existing(); as existing) {
-            <div class="atmos-connect-coll__warning" role="status">
-              <mat-icon>warning</mat-icon>
-              <div>
-                You already have a collection with these items: <strong>{{ existing.name }}</strong>.
-                <a class="atmos-text-link" routerLink="/item/collection" [queryParams]="{ focus: existing.guid }">View collection</a>
-              </div>
-            </div>
-          }
-
           @if (imageUrl()) {
-            <img class="atmos-connect-coll__image" [src]="imageUrl()" alt="" referrerpolicy="no-referrer">
+            <button type="button" class="atmos-connect-coll__image" (click)="showImage.set(true)" aria-label="View outfit image">
+              <img [src]="imageUrl()" alt="" referrerpolicy="no-referrer">
+            </button>
           }
 
           @if (items().length) {
@@ -53,8 +44,50 @@
 
           @if (unknownCount()) {
             <p class="atmos-paragraph atmos-connect__muted">
-              {{ unknownCount() }} item{{ unknownCount() === 1 ? ' is' : 's are' }} not known to the Sky Planner and won't be added.
+              {{ unknownCount() }} item{{ unknownCount() === 1 ? ' is' : 's are' }} not known to the Sky Planner and will be left out.
             </p>
+          }
+
+          @if (items().length) {
+            <div class="atmos-connect-coll__choices">
+              <button type="button" class="atmos-connect-coll__choice" (click)="state.set('add')">
+                <mat-icon>collections</mat-icon>
+                <span>
+                  <span class="atmos-connect-coll__choice-title">Add as collection</span>
+                  <span class="atmos-connect__desc">Save the items as a collection to track them.</span>
+                </span>
+              </button>
+              <a class="atmos-connect-coll__choice" routerLink="/item/unlock-calculator" [queryParams]="calculatorParams()">
+                <mat-icon>calculate</mat-icon>
+                <span>
+                  <span class="atmos-connect-coll__choice-title">Show unlock cost</span>
+                  <span class="atmos-connect__desc">Open the cost calculator with these items.</span>
+                </span>
+              </a>
+            </div>
+          }
+
+          <div class="atmos-connect__actions">
+            <button type="button" class="atmos-btn" (click)="close()">
+              <mat-icon>close</mat-icon>
+              <span>Cancel</span>
+            </button>
+          </div>
+        }
+        @case ('add') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon">collections</mat-icon>
+            <h1 class="atmos-connect__title">Add collection</h1>
+          </header>
+
+          @if (existing(); as existing) {
+            <div class="atmos-connect-coll__warning" role="status">
+              <mat-icon>warning</mat-icon>
+              <div>
+                You already have a collection with these items: <strong>{{ existing.name }}</strong>.
+                <a class="atmos-text-link" routerLink="/item/collection" [queryParams]="{ focus: existing.guid }">View collection</a>
+              </div>
+            </div>
           }
 
           <label class="atmos-connect-coll__label">
@@ -69,9 +102,9 @@
           </label>
 
           <div class="atmos-connect__actions">
-            <button type="button" class="atmos-btn" (click)="close()">
-              <mat-icon>close</mat-icon>
-              <span>Cancel</span>
+            <button type="button" class="atmos-btn" (click)="state.set('choose')">
+              <mat-icon>arrow_back</mat-icon>
+              <span>Back</span>
             </button>
             <button type="button" class="atmos-btn atmos-btn--active" [disabled]="!canSave()" (click)="save()">
               <mat-icon>add</mat-icon>
@@ -111,3 +144,7 @@
     </div>
   </article>
 </main>
+
+@if (showImage()) {
+  <app-image-overlay [src]="imageUrl()" [alt]="name()" (close)="showImage.set(false)"/>
+}
