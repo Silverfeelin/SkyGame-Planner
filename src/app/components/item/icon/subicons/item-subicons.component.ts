@@ -8,8 +8,8 @@ import { IItem, INode, IIAP, IItemListNode } from 'skygame-data';
 
 /**
  * Subicons drawn on top of item artwork. Deliberately not the `ItemSubicon`
- * union from skygame-data: the four mutually exclusive provenance markers
- * (ultimate, season pass, elder, IAP) collapse into one `source` slot, and
+ * union from skygame-data: the mutually exclusive provenance markers
+ * (ultimate, season pass, elder, loyalty points, IAP) collapse into one `source` slot, and
  * `level` is gated like every other marker instead of always rendering.
  */
 export type ItemSubicon = 'source' | 'season' | 'favourite' | 'level' | 'unlock' | 'limited';
@@ -178,8 +178,10 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
   }
 
   /**
-   * The four provenance markers are mutually exclusive: an item has at most one
-   * group, and the IAP marker only claims the corner when there is no group.
+   * The provenance markers are mutually exclusive: an item has at most one
+   * group, and the loyalty point and IAP markers only claim the corner when
+   * there is no group. Loyalty points are earned through web store purchases,
+   * so they win over the more general IAP marker.
    * A season IAP is tinted like the other seasonal markers, a regular one white.
    */
   private sourceBadge(item: IItem): ISubiconBadge | undefined {
@@ -187,6 +189,10 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
       case 'Ultimate':   return { src: '#season-heart',    cls: 'seasonal', tooltip: 'This item is a season ultimate.' };
       case 'SeasonPass': return { src: '#gift',            cls: 'seasonal', tooltip: 'This item is or was in a season pass.' };
       case 'Elder':      return { src: '#ascended-candle', tooltip: 'This item is from an Elder.' };
+    }
+
+    if (item.listNodes?.some(node => node.lp)) {
+      return { src: '#loyalty-point', cls: 'currency', tooltip: 'This item costs loyalty points.' };
     }
 
     if (!item.iaps?.length) { return undefined; }
