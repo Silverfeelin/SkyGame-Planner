@@ -1311,6 +1311,13 @@ a.atmos-link:focus-visible {
 
   &::-webkit-search-cancel-button { display: none; }
 
+  /* Chrome on Windows paints the open list white behind a translucent select,
+     while the options still inherit the light text colour. */
+  option, optgroup {
+    background: var(--atmos-card-bg-solid);
+    color: var(--atmos-text);
+  }
+
   /* background-color is locked during autofill, so the fill has to be
      repainted with an inset shadow instead. */
   &:-webkit-autofill {

@@ -4,6 +4,31 @@
   gap: var(--atmos-gap);
 }
 
+.atmos-coll__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--atmos-page-header-gap);
+}
+
+.atmos-coll__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 420px;
+  min-width: 0;
+
+  .atmos-page__title { margin: 0; }
+}
+
+.atmos-coll__lead {
+  margin: 0;
+  font-size: var(--atmos-fs-md);
+  line-height: 1.5;
+  color: var(--atmos-text-dim);
+}
+
 .atmos-coll__actions {
   display: flex;
   gap: 8px;
@@ -14,80 +39,268 @@
   font-size: 16px;
   width: 16px;
   height: 16px;
-  margin-right: 2px;
+  margin-left: 2px;
   vertical-align: -3px;
+}
+
+.atmos-coll__empty {
+  align-items: center;
+  text-align: center;
+}
+
+.atmos-coll__empty-title {
+  margin: 0;
+  font-size: var(--atmos-fs-2xl);
+  font-weight: 500;
 }
 
 .atmos-coll__empty-hint {
   margin: 0;
-  color: var(--atmos-text-mute);
+  color: var(--atmos-text-dim);
   font-size: var(--atmos-fs-md);
 }
 
-/* Collection list rows */
-.atmos-coll__card:focus {
+.atmos-coll__toolbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.atmos-coll__search {
+  position: relative;
+  display: flex;
+  flex: 1 1 240px;
+  min-width: 0;
+
+  input {
+    width: 100%;
+    padding-left: 38px;
+  }
+}
+
+.atmos-coll__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--atmos-text-mute);
+  pointer-events: none;
+}
+
+.atmos-coll__count {
+  color: var(--atmos-text-mute);
+  font-weight: 400;
+}
+
+.atmos-coll__sort {
+  width: auto;
+}
+
+.atmos-coll__no-results {
+  margin: 0;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--atmos-text-dim);
+  border: 1px dashed var(--atmos-line-soft);
+  border-radius: var(--atmos-card-radius);
+}
+
+.atmos-coll__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.atmos-coll__card.is-highlighted {
   outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
   outline-offset: var(--atmos-focus-offset);
 }
 
-.atmos-coll__row-header {
+.atmos-coll__card.cdk-drag-preview {
+  box-shadow: var(--atmos-card-shadow);
+  cursor: grabbing;
+}
+
+.atmos-coll__card.cdk-drag-placeholder { opacity: 0.3; }
+
+.atmos-coll__list.cdk-drop-list-dragging .atmos-coll__card:not(.cdk-drag-placeholder),
+.atmos-coll__card.cdk-drag-animating {
+  transition: transform 200ms ease;
+}
+
+.atmos-coll__row {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
 }
 
-.atmos-coll__row-info {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  flex: 1;
-  min-width: 0;
+.atmos-coll__handle {
+  display: inline-flex;
+  margin: 0 -8px 0 -10px;
+  color: var(--atmos-text-mute);
+  cursor: grab;
+  touch-action: none;
+
+  &:hover { color: var(--atmos-text); }
 }
 
-.atmos-coll__thumb {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  border-radius: var(--atmos-radius-sm);
+.atmos-coll__cover {
   flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--atmos-chip-bg);
 }
 
-.atmos-coll__row-text {
+button.atmos-coll__cover {
+  cursor: zoom-in;
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+}
+
+.atmos-coll__cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--atmos-transition);
+
+  button:hover > & { transform: scale(1.05); }
+}
+
+.atmos-coll__mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  place-items: center;
+  padding: 2px;
+}
+
+.atmos-coll__info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
+  flex: 1 1 300px;
   min-width: 0;
 }
 
-.atmos-coll__row-name {
-  font-weight: 600;
-  font-size: var(--atmos-fs-md);
+.atmos-coll__name {
+  margin: 0;
+  font-size: var(--atmos-fs-xl);
+  font-weight: 500;
 }
 
-.atmos-coll__row-desc {
+.atmos-coll__complete {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 4px;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.atmos-coll__desc {
+  margin: 0;
   font-size: var(--atmos-fs-md);
+  line-height: 1.45;
   color: var(--atmos-text-dim);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 400px;
 }
 
-.atmos-coll__chips {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+.atmos-coll__progress {
+  max-width: 420px;
 }
 
 .atmos-coll__row-actions {
   display: flex;
-  gap: 4px;
   flex-wrap: wrap;
-  flex-shrink: 0;
+  justify-content: flex-end;
+  align-self: flex-start;
+  gap: 4px;
+  margin-left: auto;
 }
 
-.atmos-coll__items-strip {
+.atmos-coll__menu {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  min-width: 200px;
+  padding: 6px;
+  flex-direction: column;
+  gap: 2px;
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-card-bg-solid);
+  color: var(--atmos-text);
+  box-shadow: var(--atmos-card-shadow);
+
+  &:popover-open { display: flex; }
+}
+
+.atmos-coll__menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--atmos-radius-sm);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: var(--atmos-fs-md);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--atmos-text-mute);
+  }
+
+  &:hover:not(:disabled) { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: -2px;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.atmos-coll__menu-item--danger,
+.atmos-coll__menu-item--danger mat-icon {
+  color: var(--atmos-danger);
+}
+
+.atmos-coll__menu-rule {
+  margin: 4px 6px;
+}
+
+.atmos-coll__items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -96,7 +309,7 @@
   padding-top: 14px;
 }
 
-.atmos-coll__strip-item {
+.atmos-coll__item {
   position: relative;
   display: flex;
   align-items: center;
@@ -107,4 +320,97 @@
   padding: 4px;
   width: 56px;
   height: 56px;
+
+  &.is-unlocked {
+    background: var(--atmos-tile-bg-unlocked);
+
+    &:hover { background: var(--atmos-tile-bg-unlocked-hover); }
+  }
+}
+
+.atmos-coll__more {
+  width: 56px;
+  height: 56px;
+  border: 1px dashed var(--atmos-line-soft);
+  border-radius: var(--atmos-radius-sm);
+  background: none;
+  color: var(--atmos-text-dim);
+  font: inherit;
+  font-size: var(--atmos-fs-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+}
+
+.atmos-coll__toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 10;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 8px 8px 18px;
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-card-bg-solid);
+  box-shadow: var(--atmos-card-shadow);
+  font-size: var(--atmos-fs-md);
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .atmos-coll__row-actions {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .atmos-coll__search { flex-basis: 150px; }
+
+  // Search and sort share the first row; the filters take the second.
+  .atmos-coll__toolbar .atmos-btn-group { order: 1; }
+
+  .atmos-coll__card { --atmos-card-pad: 14px; }
+
+  .atmos-coll__row { gap: 12px; }
+
+  .atmos-coll__handle { margin: 0 -6px 0 -4px; }
+
+  .atmos-coll__cover {
+    width: 56px;
+    height: 56px;
+    align-self: flex-start;
+  }
+
+  .atmos-coll__mosaic { padding: 0; }
+
+  // Keeps the text beside the cover instead of dropping below it.
+  .atmos-coll__info { flex: 1 1 0; }
+
+  .atmos-coll__name { font-size: var(--atmos-fs-lg); }
+
+  .atmos-coll__row-actions {
+    flex-basis: 100%;
+
+    .atmos-btn--sm { padding: 6px 10px; }
+  }
+
+  .atmos-coll__wide-label { display: none; }
+
+  .atmos-coll__items { gap: 6px; }
+
+  .atmos-coll__item,
+  .atmos-coll__more {
+    width: 52px;
+    height: 52px;
+    padding: 2px;
+  }
 }

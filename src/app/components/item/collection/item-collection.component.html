@@ -1,100 +1,165 @@
 <app-section-quick-actions section="item" />
 
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">Item collections</h1>
-</header>
-
-<p class="atmos-paragraph">
-  On this page you can save your own item collections. Use these to keep track of your favourite outfits, plan for upcoming items or anything else!<br/>
-  Looking for inspiration? Have a look at the outfits on
-  <a class="atmos-text-link" href="https://thatskycollection.com/" target="_blank" rel="noopener"><mat-icon class="atmos-coll__inline-icon">open_in_new</mat-icon>That Sky Collection</a>.
-</p>
-
-<div class="atmos-coll__actions">
-  <a class="atmos-btn" routerLink="/item/collection/add">
-    <mat-icon>add</mat-icon> Add collection
-  </a>
-  <button type="button" class="atmos-btn" (click)="importCollectionFile()">
-    <mat-icon>download</mat-icon> Import
-  </button>
-</div>
-
-@if (collections.length === 0) {
-  <section class="atmos-card atmos-card__body">
-    <p class="atmos-coll__empty-hint">No collections yet. Click <strong>Add collection</strong> to get started.</p>
-  </section>
-}
-
-@for (collection of collections; track collection.guid; let i = $index; let first = $first; let last = $last) {
-  <section class="atmos-card atmos-coll__card" [attr.data-collection]="collection.guid"
-    [attr.tabindex]="collection.guid === focusGuid ? -1 : null">
-    <div class="atmos-coll__row-header atmos-card__body">
-      <div class="atmos-coll__row-info">
-        @if (collection.imageUrl) {
-          <img class="atmos-coll__thumb" [src]="collection.imageUrl" alt="">
-        }
-        <div class="atmos-coll__row-text">
-          <span class="atmos-coll__row-name">{{ collection.name }}</span>
-          @if (collection.description) {
-            <span class="atmos-coll__row-desc">{{ collection.description }}</span>
-          }
-          <div class="atmos-coll__chips">
-            <span class="atmos-pill">{{ collection.items.length }} items</span>
-            <span class="atmos-pill atmos-pill--active">{{ collectionUnlockedCount(collection) }} unlocked</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="atmos-coll__row-actions">
-        <button type="button" class="atmos-btn atmos-btn--sm" [class.is-disabled]="first" (click)="moveCollectionUp(i)" skyTooltip="Move up" aria-label="Move up">
-          <mat-icon>arrow_upward</mat-icon>
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm" [class.is-disabled]="last" (click)="moveCollectionDown(i)" skyTooltip="Move down" aria-label="Move down">
-          <mat-icon>arrow_downward</mat-icon>
-        </button>
-        <a class="atmos-btn atmos-btn--sm" [routerLink]="['/item/collection/edit', collection.guid]" skyTooltip="Edit" aria-label="Edit">
-          <mat-icon>edit</mat-icon>
-        </a>
-        @if (collectionNeedsGoals(collection)) {
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="planAsGoals(collection)">
-            <mat-icon>savings</mat-icon> Plan as goals
-          </button>
-        } @else {
-          <a class="atmos-btn atmos-btn--sm" routerLink="/item/goals">
-            <mat-icon>savings</mat-icon> View goals
-          </a>
-        }
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="gotoCalculator(collection)" [disabled]="!collection.items.length">
-          <mat-icon>calculate</mat-icon> Calculate cost
-        </button>
-        <a class="atmos-btn atmos-btn--sm" routerLink="/item/collection/add" [queryParams]="{ copy: collection.guid }" skyTooltip="Copy" aria-label="Copy">
-          <mat-icon>content_copy</mat-icon>
-        </a>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="exportCollection(collection)" skyTooltip="Export" aria-label="Export">
-          <mat-icon>upload</mat-icon>
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="promptDeleteCollection(collection)" skyTooltip="Delete" aria-label="Delete">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </div>
-
-    @if (collection.items.length) {
-      <div class="atmos-coll__items-strip atmos-card__body">
-        @for (item of collection.items; track item.guid) {
-          <a class="atmos-coll__strip-item atmos-tile" [routerLink]="['/item', item.guid]" [skyTooltip]="item.name" [attr.aria-label]="item.name">
-            <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
-          </a>
-        }
-      </div>
-    }
-  </section>
-}
-
-@if (collections.length) {
+<header class="atmos-coll__header">
+  <div class="atmos-coll__intro">
+    <h1 class="atmos-page__title">Item collections</h1>
+    <p class="atmos-coll__lead">
+      Save outfits, wishlists and plans for upcoming items. Looking for ideas? Browse outfits on
+      <a class="atmos-text-link" href="https://thatskycollection.com/" target="_blank" rel="noopener">That Sky Collection<mat-icon class="atmos-coll__inline-icon">open_in_new</mat-icon></a>.
+    </p>
+  </div>
   <div class="atmos-coll__actions">
+    <button type="button" class="atmos-btn" (click)="importCollectionFile()">
+      <mat-icon>download</mat-icon> Import
+    </button>
     <a class="atmos-btn" routerLink="/item/collection/add">
-      <mat-icon>add</mat-icon> Add collection
+      <mat-icon>add</mat-icon> New collection
     </a>
   </div>
+</header>
+
+@if (collections().length === 0) {
+  <section class="atmos-card atmos-card__body atmos-coll__empty">
+    <h2 class="atmos-coll__empty-title">Start your first collection</h2>
+    <p class="atmos-coll__empty-hint">Group items into an outfit or wishlist, track what you've unlocked and see what's left to spend.</p>
+    <div class="atmos-coll__actions">
+      <a class="atmos-btn atmos-btn--active" routerLink="/item/collection/add"><mat-icon>add</mat-icon> Pick items</a>
+      <a class="atmos-btn" href="https://thatskycollection.com/" target="_blank" rel="noopener"><mat-icon>open_in_new</mat-icon> Find an outfit</a>
+      <button type="button" class="atmos-btn" (click)="importCollectionFile()"><mat-icon>download</mat-icon> Import a file</button>
+    </div>
+  </section>
+} @else {
+  <div class="atmos-card atmos-coll__toolbar">
+    <div class="atmos-coll__search">
+      <mat-icon class="atmos-coll__search-icon">search</mat-icon>
+      <input class="atmos-input atmos-input--pill" type="search" placeholder="Search collections or items" aria-label="Search collections"
+        [value]="query()" (input)="onSearch($event)">
+    </div>
+    <div class="atmos-btn-group" role="group" aria-label="Filter collections">
+      @for (f of filters; track f.id) {
+        <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="filter() === f.id"
+          [attr.aria-pressed]="filter() === f.id" (click)="filter.set(f.id)">
+          {{ f.label }} <span class="atmos-coll__count">{{ counts()[f.id] }}</span>
+        </button>
+      }
+    </div>
+    <select class="atmos-input atmos-input--pill atmos-coll__sort" aria-label="Sort collections" [value]="sort()" (change)="onSort($event)">
+      <option value="custom">Custom order</option>
+      <option value="name">Name</option>
+      <option value="progress">Progress</option>
+    </select>
+  </div>
+
+  @if (!visibleRows().length) {
+    <p class="atmos-coll__no-results">No collections match your search.</p>
+  }
+
+  <div class="atmos-coll__list" cdkDropList cdkDropListLockAxis="y" [cdkDropListDisabled]="!canReorder()" (cdkDropListDropped)="onDropped($event)">
+    @for (row of visibleRows(); track row.collection.guid) {
+      @let collection = row.collection;
+      <section class="atmos-card atmos-coll__card" cdkDrag [cdkDragData]="collection" [attr.data-collection]="collection.guid"
+        [class.is-highlighted]="collection.guid === focusGuid()">
+        <div class="atmos-coll__row atmos-card__body">
+          @if (canReorder()) {
+            <span class="atmos-coll__handle" cdkDragHandle aria-hidden="true" skyTooltip="Drag to reorder"><mat-icon>drag_indicator</mat-icon></span>
+          }
+
+          @if (collection.imageUrl) {
+            <button type="button" class="atmos-coll__cover" (click)="preview.set(collection)" [attr.aria-label]="'View image of ' + collection.name">
+              <img class="atmos-coll__cover-img" [src]="collection.imageUrl" alt="">
+            </button>
+          } @else if (collection.items.length) {
+            <div class="atmos-coll__cover atmos-coll__mosaic" aria-hidden="true">
+              @for (item of collection.items.slice(0, 4); track item.guid) {
+                <app-item-icon [item]="item" size="small" [opaque]="true" />
+              }
+            </div>
+          }
+
+          <div class="atmos-coll__info">
+            <h2 class="atmos-coll__name">{{ collection.name }}</h2>
+            @if (collection.description) {
+              <p class="atmos-coll__desc">{{ collection.description }}</p>
+            }
+            @if (row.complete) {
+              <span class="atmos-pill atmos-pill--active atmos-coll__complete"><mat-icon>check_circle</mat-icon> Complete</span>
+            } @else if (collection.items.length) {
+              <div class="atmos-progress atmos-coll__progress">
+                <div class="atmos-progress__fill" [style.width.%]="row.percent"></div>
+                <div class="atmos-progress__text">{{ row.unlocked }} / {{ collection.items.length }} unlocked</div>
+              </div>
+            }
+          </div>
+
+          <div class="atmos-coll__row-actions">
+            @if (row.needsGoals) {
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="planAsGoals(collection)">
+                <mat-icon>savings</mat-icon> Plan as goals
+              </button>
+            } @else if (!row.complete) {
+              <a class="atmos-btn atmos-btn--sm" routerLink="/item/goals">
+                <mat-icon>savings</mat-icon> View goals
+              </a>
+            }
+            <button type="button" class="atmos-btn atmos-btn--sm" (click)="gotoCalculator(collection)" [disabled]="!collection.items.length" aria-label="Calculate cost">
+              <mat-icon>calculate</mat-icon><span class="atmos-coll__wide-label">Calculate cost</span>
+            </button>
+            <a class="atmos-btn atmos-btn--sm" [routerLink]="['/item/collection/edit', collection.guid]" skyTooltip="Edit" aria-label="Edit">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <button #menuTrigger type="button" class="atmos-btn atmos-btn--sm" [attr.popovertarget]="'coll-menu-' + collection.guid"
+              skyTooltip="More actions" aria-label="More actions" aria-haspopup="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <div #menu class="atmos-coll__menu" popover="auto" role="menu" [id]="'coll-menu-' + collection.guid"
+              (toggle)="onMenuToggle($event, menuTrigger)">
+              <a class="atmos-coll__menu-item" role="menuitem" routerLink="/item/collection/add" [queryParams]="{ copy: collection.guid }">
+                <mat-icon>content_copy</mat-icon> Duplicate
+              </a>
+              <button type="button" class="atmos-coll__menu-item" role="menuitem" (click)="exportCollection(collection, menu)">
+                <mat-icon>upload</mat-icon> Export file
+              </button>
+              <button type="button" class="atmos-coll__menu-item" role="menuitem" [disabled]="isFirst(collection)" (click)="moveCollection(collection, -1, menu)">
+                <mat-icon>arrow_upward</mat-icon> Move up
+              </button>
+              <button type="button" class="atmos-coll__menu-item" role="menuitem" [disabled]="isLast(collection)" (click)="moveCollection(collection, 1, menu)">
+                <mat-icon>arrow_downward</mat-icon> Move down
+              </button>
+              <hr class="atmos-rule atmos-coll__menu-rule">
+              <button type="button" class="atmos-coll__menu-item atmos-coll__menu-item--danger" role="menuitem" (click)="deleteCollection(collection, menu)">
+                <mat-icon>delete</mat-icon> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+
+        @if (collection.items.length) {
+          <div class="atmos-coll__items atmos-card__body">
+            @for (item of shownItems(collection); track item.guid) {
+              <a class="atmos-coll__item atmos-tile" [class.is-unlocked]="item.unlocked" [routerLink]="['/item', item.guid]" [skyTooltip]="item.name" [attr.aria-label]="item.name">
+                <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
+              </a>
+            }
+            @if (shownItems(collection).length < collection.items.length) {
+              <button type="button" class="atmos-coll__more" (click)="showAllItems(collection)"
+                [attr.aria-label]="'Show all ' + collection.items.length + ' items'">
+                +{{ collection.items.length - VISIBLE_ITEMS }}
+              </button>
+            }
+          </div>
+        }
+      </section>
+    }
+  </div>
+}
+
+@if (deleted(); as d) {
+  <div class="atmos-coll__toast" role="status">
+    <span>Deleted "{{ d.collection.name }}"</span>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="undoDelete()"><mat-icon>undo</mat-icon> Undo</button>
+  </div>
+}
+
+@if (preview(); as p) {
+  <app-image-overlay [src]="p.imageUrl" [alt]="p.name" (close)="preview.set(undefined)"/>
 }
