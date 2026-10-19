@@ -3,14 +3,13 @@ import { MatIcon } from '@angular/material/icon';
 import { ISpirit } from 'skygame-data';
 import { ISearchItem, SearchService } from '@app/services/search.service';
 import { SpiritCardComponent } from '@app/components/shared/shared-widgets';
-import { FoldableCardComponent } from '@app/components/shared/foldable-card/foldable-card.component';
 
 @Component({
   selector: 'app-item-unlock-calculator-spirits',
   templateUrl: './item-unlock-calculator-spirits.component.html',
   styleUrl: './item-unlock-calculator-sub.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, SpiritCardComponent, FoldableCardComponent]
+  imports: [MatIcon, SpiritCardComponent]
 })
 export class ItemUnlockCalculatorSpiritsComponent {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;

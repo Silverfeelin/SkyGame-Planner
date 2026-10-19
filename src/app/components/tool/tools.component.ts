@@ -52,7 +52,7 @@ export class ToolsComponent {
       ]
     },
     {
-      title: 'Item unlock calculator',
+      title: 'Item cost calculator',
       imageUrl: '/assets/images/cost-calculator.webp',
       icon: 'calculate',
       description: 'Pick items to unlock and see exactly how much candle, heart and ascended-candle you still need.',

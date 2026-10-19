@@ -661,7 +661,7 @@ export class ClosetComponent implements OnDestroy {
     const items = Object.values(this.state.selectedAll());
     if (!items.length) { alert('There are no items selected.'); return; }
     let ids = this._serializer.serializeItems(items).substring(0, 1800);
-    const url = new URL(`${location.origin}/item/unlock-calculator`);
+    const url = new URL(`${location.origin}/item/cost-calculator`);
     url.searchParams.set('items', ids);
     window.open(url.href, '_blank');
   }

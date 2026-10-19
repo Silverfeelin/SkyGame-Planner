@@ -1,237 +1,345 @@
 <app-section-quick-actions section="item" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Unlock calculator</h1>
+  <h1 class="atmos-page__title">Cost calculator</h1>
 </header>
 
 <div class="atmos-page__intro">
   <p class="atmos-paragraph">
-    You can use this tool to calculate the cost of unlocking items.
-    For all your selected items, the most recent price will be used to calculate the currencies you need.<br/>
-    Items you already own will not be counted.<br/>
-    If you want to set items as a goal to save towards, have a look at at the <a class="atmos-text-link" routerLink="/item/goals">Goals</a> page.
+    Pick the items you want and see what they cost in total. Items you own aren't counted, and nodes shared between items are only counted once.
+    To save towards items over time, use <a class="atmos-text-link" routerLink="/item/goals">Goals</a>.
   </p>
 </div>
 
-<!-- Selection -->
-<section class="atmos-card">
-  <div class="atmos-card__body">
-    <h2 class="atmos-section__title">Selection</h2>
-    @if (!items.length) {
-      <p class="atmos-paragraph">No items selected. Search for items below.</p>
-    } @else {
-      <p class="atmos-paragraph">
-        You have selected the following items. Click on an item to view it in a new window.<br/>
-        You can share a link to this page with up to 100 items selected.
-      </p>
-      <div class="atmos-item-unlock-calc__buttons">
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="shareSelection()" [disabled]="!items.length">
-          <mat-icon>share</mat-icon> Share
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="createCollection()">
-          <mat-icon>collections_bookmark</mat-icon> Create collection
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="saveAsGoals()">
-          <mat-icon>savings</mat-icon> Save as goals
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="askRemoveItems()">
-          <mat-icon>delete</mat-icon> Clear
-        </button>
+<div class="atmos-item-unlock-calc__layout">
+  <div class="atmos-item-unlock-calc__main">
+    <section class="atmos-card atmos-item-unlock-calc__add" aria-labelledby="unlock-calc-add">
+      <div class="atmos-item-unlock-calc__card-head">
+        <h2 id="unlock-calc-add" class="atmos-section__title">Add items</h2>
       </div>
-      <div class="atmos-item-unlock-calc__selection">
-        @for (item of items; track item.guid) {
-          <div class="atmos-item-unlock-calc__selection-item atmos-tile atmos-tile--removable">
-            <app-item-icon (click)="viewItem(item)"
-              [item]="item" [opaque]="true" [subIcons]="SUBICONS_ALL"
-              [skyTooltip]="item.name" placement="top">
-            </app-item-icon>
-            <button type="button" class="atmos-tile__remove" (click)="removeItem(item)"
-              [attr.aria-label]="'Remove ' + item.name" [skyTooltip]="'Remove ' + item.name">✕</button>
+      <app-tabs [card]="false">
+        <ng-template appTab="Items">
+          <div class="atmos-item-unlock-calc__items-wrap">
+            <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl"
+              [initialCategory]="itemType" [syncCategoryToUrl]="false"
+              (categoryChanged)="onItemTypeChanged($event)"
+              (shownItemsChanged)="onItemsChanged($event)"/>
+            <ng-template #pickTpl let-item>
+              <div class="atmos-item-unlock-calc__pick atmos-tile atmos-tile--selectable"
+                [class.is-selected]="itemSet.has(item)" [class.is-unlocked]="item.unlocked" [class.is-limited]="limitedItems.has(item)"
+                (click)="onItemClicked({ event: $event, item })">
+                <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [skyTooltip]="getPickTooltip(item)" placement="auto"></app-item-icon>
+                @if (itemSet.has(item)) {
+                  <span class="atmos-tile__check">✓</span>
+                } @else if (limitedItems.has(item)) {
+                  <mat-icon class="atmos-item-unlock-calc__pick-lock">lock</mat-icon>
+                }
+              </div>
+            </ng-template>
+            <div class="atmos-item-unlock-calc__pick-foot">
+              <p class="atmos-item-unlock-calc__hint">Click an item to add or remove it. Locked items are limited and can't be calculated.</p>
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="addItemsFromList()" [disabled]="!itemListItems.length">
+                <mat-icon>playlist_add</mat-icon>
+                @if (itemListItems.length === 1) {
+                  Add this {{ itemType | itemType:false | lowercase }}
+                } @else {
+                  Add these {{ itemListItems.length }} {{ itemType | itemType:true | lowercase }}
+                }
+              </button>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template appTab="Wishlist">
+          <app-item-unlock-calculator-favourites
+            (itemClicked)="onItemClicked($event)" (itemsClicked)="onItemsClicked($event)">
+          </app-item-unlock-calculator-favourites>
+        </ng-template>
+        <ng-template appTab="Spirits">
+          <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)">
+          </app-item-unlock-calculator-spirits>
+        </ng-template>
+        <ng-template appTab="Seasons">
+          <app-item-unlock-calculator-seasons
+            (seasonSelected)="onSeasonSelected($event)" (guideSelected)="onSeasonGuideSelected($event)">
+          </app-item-unlock-calculator-seasons>
+        </ng-template>
+        <ng-template appTab="Events">
+          <app-item-unlock-calculator-events (eventSelected)="onEventSelected($event)">
+          </app-item-unlock-calculator-events>
+        </ng-template>
+      </app-tabs>
+    </section>
+
+    <section class="atmos-card" aria-labelledby="unlock-calc-selection">
+      <div class="atmos-card__body">
+        <div class="atmos-item-unlock-calc__sel-head">
+          <h2 id="unlock-calc-selection" class="atmos-section__title">
+            Selection
+            @if (items.length) {
+              <span class="atmos-item-unlock-calc__count">{{ items.length }} {{ items.length === 1 ? 'item' : 'items' }}</span>
+            }
+          </h2>
+          @if (results.length) {
+            <div class="atmos-item-unlock-calc__sel-tools">
+              @if (trees.length) {
+                <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="showAsTrees"
+                  [attr.aria-pressed]="showAsTrees" (click)="toggleShowAsTrees()">
+                  <mat-icon>account_tree</mat-icon> Spirit trees
+                </button>
+              }
+              <div class="atmos-btn-group" role="group" aria-label="Group selection by">
+                <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="groupMode() === 'source'"
+                  [attr.aria-pressed]="groupMode() === 'source'" (click)="setGroupMode('source')">By source</button>
+                <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="groupMode() === 'currency'"
+                  [attr.aria-pressed]="groupMode() === 'currency'" (click)="setGroupMode('currency')">By currency</button>
+              </div>
+            </div>
+          }
+        </div>
+
+        @if (!items.length) {
+          <div class="atmos-item-unlock-calc__empty">
+            <mat-icon>add_circle</mat-icon>
+            <p class="atmos-paragraph">Nothing selected yet. Add items, a spirit, a season or an event above and the cost adds up here.</p>
+          </div>
+        }
+
+        @if (ownedItems.length) {
+          <div class="atmos-item-unlock-calc__owned">
+            <mat-icon class="atmos-text-good">check_circle</mat-icon>
+            <span>{{ ownedItems.length }} owned, not counted</span>
+            <div class="atmos-item-unlock-calc__owned-items">
+              @for (item of ownedItems; track item.guid) {
+                <div class="atmos-item-unlock-calc__owned-item atmos-tile--removable">
+                  <app-item-icon [item]="item" [opaque]="true" size="small" [skyTooltip]="item.name" placement="top"></app-item-icon>
+                  <button type="button" class="atmos-tile__remove" (click)="removeItem(item)"
+                    [attr.aria-label]="'Remove ' + item.name">✕</button>
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        @if (showAsTrees && trees.length) {
+          <p class="atmos-item-unlock-calc__hint">The spirit trees show every node you need for your selection. Click an item in a tree to add or remove it.</p>
+          <div class="atmos-spirit-trees">
+            @for (tree of trees; track tree.guid) {
+              <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'"
+                [enableControls]="false"
+                [opaqueNodes]="treeOpaqueNodes[tree.guid]"
+                [highlightItem]="treeHighlightItems[tree.guid]"
+                (nodeClicked)="onTreeNodeClicked($event)">
+              </app-spirit-tree>
+            }
+          </div>
+        }
+
+        @for (group of groups; track group.key) {
+          <div class="atmos-item-unlock-calc__group">
+            <div class="atmos-item-unlock-calc__group-head">
+              @if (group.svgIcon) {
+                <mat-icon [svgIcon]="group.svgIcon" [class]="group.iconClass + ' atmos-item-unlock-calc__group-icon'"></mat-icon>
+              } @else {
+                <mat-icon class="atmos-item-unlock-calc__group-icon">{{ group.icon }}</mat-icon>
+              }
+              <span class="atmos-item-unlock-calc__group-name">{{ group.name }}</span>
+              <span class="atmos-item-unlock-calc__group-detail">{{ group.detail }}</span>
+              @if (group.estimated) {
+                <span class="atmos-pill atmos-pill--warn">Estimate</span>
+              }
+              @if (group.ongoing === 'season') {
+                <span class="atmos-pill">Ongoing season</span>
+              } @else if (group.ongoing === 'event') {
+                <span class="atmos-pill">Ongoing event</span>
+              }
+              <span class="atmos-item-unlock-calc__group-cost">
+                @if (group.estimated) { <span class="atmos-item-unlock-calc__approx">≈</span> }
+                <app-cost [cost]="group.cost" [price]="group.price" [showTooltip]="false"></app-cost>
+              </span>
+            </div>
+            <ul class="atmos-item-unlock-calc__rows">
+              @for (result of group.results; track result.item.guid) {
+                @let isOpen = expanded().has(result.item.guid);
+                <li class="atmos-item-unlock-calc__row" [class.is-open]="isOpen">
+                  <button type="button" class="atmos-item-unlock-calc__row-main" [attr.aria-expanded]="isOpen" (click)="toggleExpanded(result)">
+                    <app-item-icon [item]="result.item" [opaque]="true" size="medium" [subIcons]="SUBICONS_ALL"></app-item-icon>
+                    <span class="atmos-item-unlock-calc__row-text">
+                      <span class="atmos-item-unlock-calc__row-name">{{ result.item.name }}</span>
+                      <span class="atmos-item-unlock-calc__row-meta">{{ result.item.type | itemType }} · {{ getResultMeta(result) }}</span>
+                    </span>
+                    <span class="atmos-item-unlock-calc__row-cost">
+                      @if (!result.found || result.hasUnknownCost) {
+                        <span class="atmos-text-mute">Unknown</span>
+                      } @else if (result.estimatedCost) {
+                        <span class="atmos-item-unlock-calc__approx">≈</span>
+                        <app-cost [cost]="result.estimatedCost" [showTooltip]="false"></app-cost>
+                      } @else if (result.inPackWith) {
+                        <span class="atmos-text-mute">In pack</span>
+                      } @else if (result.iap) {
+                        <app-cost [price]="result.price" [showTooltip]="false"></app-cost>
+                      } @else if (result.isEmptyCost) {
+                        <span class="atmos-text-mute">Nothing extra</span>
+                      } @else if (result.cost) {
+                        <app-cost [cost]="result.cost" [showTooltip]="false"></app-cost>
+                      }
+                    </span>
+                    <mat-icon class="atmos-item-unlock-calc__row-chevron">expand_more</mat-icon>
+                  </button>
+                  <button type="button" class="atmos-icon-btn atmos-item-unlock-calc__row-remove" (click)="removeItem(result.item)"
+                    [attr.aria-label]="'Remove ' + result.item.name" [skyTooltip]="'Remove ' + result.item.name">
+                    <mat-icon>close</mat-icon>
+                  </button>
+
+                  @if (isOpen) {
+                    <div class="atmos-item-unlock-calc__row-detail">
+                      @if (result.path?.length) {
+                        <ol class="atmos-item-unlock-calc__path" aria-label="Nodes to unlock">
+                          @for (step of result.path; track step.node.guid; let last = $last) {
+                            <li [class.is-skipped]="step.owned || step.countedBy" [class.is-target]="last">
+                              <span class="atmos-item-unlock-calc__path-dot"></span>
+                              <span class="atmos-item-unlock-calc__path-name">{{ step.node.item?.name ?? 'Node' }}</span>
+                              @if (step.owned) {
+                                <span class="atmos-item-unlock-calc__path-note">Owned</span>
+                              } @else if (step.countedBy) {
+                                <span class="atmos-item-unlock-calc__path-note">Counted under {{ step.countedBy.name }}</span>
+                              } @else {
+                                <app-cost [cost]="step.node" [showTooltip]="false"></app-cost>
+                              }
+                            </li>
+                          }
+                        </ol>
+                      }
+                      @if (!result.found) {
+                        <p class="atmos-item-unlock-calc__note">Couldn't find where this item comes from, so it isn't counted.</p>
+                      } @else if (result.hasUnknownCost) {
+                        <p class="atmos-item-unlock-calc__note">This item hasn't returned yet, and there's no average cost for {{ result.item.type | itemType:true | lowercase }}, so it isn't counted.</p>
+                      } @else if (result.estimatedCost) {
+                        <p class="atmos-item-unlock-calc__note">
+                          This item hasn't returned yet. The estimate is the average cost of {{ result.item.type | itemType:true | lowercase }} that have,
+                          without blessings or other nodes on the way. Compare it to similar items or ask the community on Discord for a closer guess.
+                        </p>
+                      } @else if (result.inPackWith) {
+                        <p class="atmos-item-unlock-calc__note">Comes with the same purchase as {{ result.inPackWith.name }}, so the price is only counted once.</p>
+                      } @else if (result.iap) {
+                        <p class="atmos-item-unlock-calc__note">Bought with real money. Prices are in US dollars and may differ in your store.</p>
+                      } @else if (result.isEmptyCost && result.path) {
+                        <p class="atmos-item-unlock-calc__note">Nothing extra to pay: everything on the way is owned or already counted under another item.</p>
+                      }
+                      <a class="atmos-text-link atmos-item-unlock-calc__view" [routerLink]="['/item', result.item.guid]" target="_blank">
+                        View item <mat-icon>open_in_new</mat-icon>
+                      </a>
+                    </div>
+                  }
+                </li>
+              }
+            </ul>
           </div>
         }
       </div>
-    }
+    </section>
   </div>
-</section>
 
-<!-- Results -->
-@if (items.length) {
-  <section class="atmos-card">
-    <div class="atmos-card__body">
-      <h2 class="atmos-section__title">Breakdown</h2>
+  <aside class="atmos-card atmos-item-unlock-calc__summary" [class.is-open]="summaryOpen()" aria-labelledby="unlock-calc-total">
+    <div class="atmos-item-unlock-calc__summary-body">
+      <div class="atmos-item-unlock-calc__summary-head">
+        <h2 id="unlock-calc-total" class="atmos-item-unlock-calc__summary-title">Total to unlock</h2>
+        <button type="button" class="atmos-icon-btn atmos-item-unlock-calc__summary-toggle" (click)="toggleSummary()"
+          [attr.aria-expanded]="summaryOpen()" [attr.aria-label]="summaryOpen() ? 'Hide total details' : 'Show total details'">
+          <mat-icon>expand_less</mat-icon>
+        </button>
+      </div>
 
-      @if (ownedItems.length) {
-        <div>
-          <p class="atmos-paragraph">
-            You already own some of the selected items. These items will not be counted in the total cost.
+      <div class="atmos-item-unlock-calc__summary-compact">
+        @if (totalCurrencies.length || totalPrice) {
+          <app-cost [cost]="totalCost" [price]="totalPrice" [showTooltip]="false"></app-cost>
+        } @else {
+          <span class="atmos-text-mute">Nothing to pay</span>
+        }
+        @if (totalCostIncludesEstimates) {
+          <span class="atmos-pill atmos-pill--warn">Estimate</span>
+        }
+      </div>
+
+      <div class="atmos-item-unlock-calc__summary-full">
+        <div class="atmos-item-unlock-calc__totals">
+          @for (currency of totalCurrencies; track currency.key) {
+            <div class="atmos-item-unlock-calc__total">
+              <mat-icon [svgIcon]="currency.icon" [class]="currency.iconClass + ' atmos-item-unlock-calc__total-icon'"></mat-icon>
+              <span class="atmos-item-unlock-calc__total-label">{{ currency.label }}</span>
+              <span class="atmos-item-unlock-calc__total-value" [class.is-estimate]="totalEstimatedKeys.has(currency.key)">{{ totalCost[currency.key] }}</span>
+            </div>
+          }
+          @if (totalPrice) {
+            <div class="atmos-item-unlock-calc__total">
+              <mat-icon class="atmos-text-good atmos-item-unlock-calc__total-icon">attach_money</mat-icon>
+              <span class="atmos-item-unlock-calc__total-label">In-app purchases</span>
+              <span class="atmos-item-unlock-calc__total-value">{{ totalPrice | number: '1.2-2' }}</span>
+            </div>
+          }
+          @if (!totalCurrencies.length && !totalPrice) {
+            <p class="atmos-item-unlock-calc__hint">Nothing to pay{{ items.length ? '' : ' yet' }}.</p>
+          }
+        </div>
+
+        @if (items.length) {
+          <p class="atmos-item-unlock-calc__hint">
+            {{ results.length }} {{ results.length === 1 ? 'item' : 'items' }} counted
+            @if (ownedItems.length) { · {{ ownedItems.length }} owned left out }
           </p>
-          <div class="atmos-item-unlock-calc__owned">
-            @for (item of ownedItems; track item.guid) {
-              <div class="atmos-item-unlock-calc__owned-item">
-                <app-item-icon
-                  [item]="item" [opaque]="true"
-                  [skyTooltip]="item.name" placement="top"
-                  [subIcons]="SUBICONS_ALL">
-                </app-item-icon>
+        }
+
+        @if (totalCostIncludesEstimates || totalCostIncludesOngoingSeason || totalCostIncludesOngoingEvent) {
+          <div class="atmos-item-unlock-calc__notices">
+            @if (totalCostIncludesEstimates) {
+              <div class="atmos-item-unlock-calc__callout is-warn">
+                <mat-icon>warning</mat-icon>
+                <span><b>Includes estimates.</b> Some items haven't returned yet, so their price is the average of similar items without blessings.</span>
+              </div>
+            }
+            @if (totalCostIncludesOngoingSeason) {
+              <div class="atmos-item-unlock-calc__callout">
+                <mat-icon>info</mat-icon>
+                <span><b>Ongoing season items.</b> Check the <a class="atmos-text-link" [href]="seasonPlanner.link" target="_blank">season {{ seasonPlanner.label | lowercase }}</a> to see if you can still get them in time.</span>
+              </div>
+            }
+            @if (totalCostIncludesOngoingEvent) {
+              <div class="atmos-item-unlock-calc__callout">
+                <mat-icon>info</mat-icon>
+                <span><b>Ongoing event items.</b> The <a class="atmos-text-link" href="/event/calculator" target="_blank">event calculator</a> shows if you can still get them in time.</span>
               </div>
             }
           </div>
-        </div>
-      }
+        }
 
-      @if (trees.length) {
-        <div>
-          <button type="button" class="atmos-btn atmos-btn--sm"
-            [class.atmos-btn--active]="showAsTrees" (click)="toggleShowAsTrees()">
-            <mat-icon>account_tree</mat-icon> Show spirit trees
+        <div class="atmos-item-unlock-calc__actions">
+          <button type="button" class="atmos-btn atmos-btn--active" (click)="saveAsGoals()" [disabled]="!results.length">
+            <mat-icon>savings</mat-icon> Save as goals
           </button>
-          <p class="atmos-paragraph">
-            The spirit trees show the cost of all the items you need to get your selection.
-          </p>
-          @if (showAsTrees) {
-            <div class="atmos-spirit-trees">
-              @for (tree of trees; track tree.guid) {
-                <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'"
-                  [enableControls]="false"
-                  [opaqueNodes]="treeOpaqueNodes[tree.guid]"
-                  [highlightItem]="treeHighlightItems[tree.guid]"
-                  (nodeClicked)="onTreeNodeClicked($event)">
-                </app-spirit-tree>
-              }
-            </div>
-          }
+          <div class="atmos-item-unlock-calc__actions-row">
+            <button type="button" class="atmos-btn atmos-btn--sm" (click)="createCollection()" [disabled]="!items.length">
+              <mat-icon>collections_bookmark</mat-icon> Collection
+            </button>
+            <button type="button" class="atmos-btn atmos-btn--sm" (click)="shareSelection()" [disabled]="!items.length">
+              <mat-icon>link</mat-icon> Copy link
+            </button>
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="clearItems()" [disabled]="!items.length">
+              <mat-icon>delete</mat-icon> Clear
+            </button>
+          </div>
         </div>
-      }
-
-      @if (results.length) {
-        <div class="atmos-item-unlock-calc__results">
-          @for (result of results; track result.item.guid) {
-            <div class="atmos-item-unlock-calc__result">
-              <div class="atmos-item-unlock-calc__result-name">{{ result.item.name }}</div>
-              <div class="atmos-item-unlock-calc__result-icon">
-                <app-item-icon
-                  [item]="result.item" [opaque]="true"
-                  [skyTooltip]="result.item.name" placement="top"
-                  [subIcons]="SUBICONS_ALL">
-                </app-item-icon>
-              </div>
-              <div class="atmos-item-unlock-calc__result-detail">
-                @if (result.item.unlocked) {
-                  <span>You own this item.</span>
-                } @else if (!result.found) {
-                  <span>Couldn't find a way to calculate this item.</span>
-                } @else if (result.estimatedCost) {
-                  <span>
-                    This item hasn't returned before.<br/>
-                    @if (result.hasUnknownCost) {
-                      The average cost of '{{ result.item.type | itemType }}' is unknown.
-                    } @else {
-                      The average cost of '{{ result.item.type | itemType }}' is:
-                      <app-cost [cost]="result.estimatedCost" [showZeroes]="true" [showTooltip]="false"></app-cost>
-                    }
-                  </span>
-                } @else if (result.cost) {
-                  <span>Unlock cost</span>&ngsp;
-                  @if ((result.nodes?.length || 0) > 1) {
-                    <button type="button" class="atmos-text-link" (click)="showCostBreakdown(result)">(breakdown)</button>
-                  } @else if (result.isEmptyCost) {
-                    <button type="button" class="atmos-text-link" (click)="showNoCostInfo(result)">(?)</button>
-                  }
-                  <br/>
-                  <app-cost [cost]="result.cost" [showZeroes]="false" [showTooltip]="false"></app-cost>
-                } @else if ($any(result).price >= 0) {
-                  <span>Price (USD)</span><br/>
-                  $ {{ result.price | number: '1.2-2' }}
-                }
-              </div>
-            </div>
-          }
-        </div>
-      }
+      </div>
     </div>
-  </section>
-
-  <!-- Total -->
-  <section class="atmos-card">
-    <div class="atmos-card__body">
-      <h2 class="atmos-section__title">Total</h2>
-      <p class="atmos-paragraph">
-        Total cost:
-        <app-cost [cost]="totalCost" [showZeroes]="true" [showTooltip]="false" [price]="totalPrice || 0"></app-cost>
-      </p>
-      @if (totalCostIncludesOngoingSeason) {
-        <p class="atmos-paragraph">
-          The total cost includes items from the ongoing season.<br/>
-          To see if you can still get these items, please refer to the
-          <a class="atmos-text-link" [href]="seasonPlanner.link" target="_blank">season {{ seasonPlanner.label | lowercase }}</a>.
-        </p>
-      }
-      @if (totalCostIncludesOngoingEvent) {
-        <p class="atmos-paragraph">
-          The total cost includes items from the ongoing event.<br/>
-          To see if you can still get these items, please refer to the
-          <a class="atmos-text-link" href="/event/calculator" target="_blank">event calculator</a>.
-        </p>
-      }
-      @if (totalCostIncludesEstimates) {
-        <p class="atmos-paragraph">
-          This cost is an estimate as some items have never returned!<br/>
-          The estimated costs are based on the average cost of items in the same category.<br/>
-          Please keep in mind that additional costs such as blessings are not included in the estimated item prices!<br/>
-          For a more realistic price, compare the item to similar items that have returned, or ask the community on Discord!
-        </p>
-      }
-    </div>
-  </section>
-}
-
-<!-- Add wishlist items -->
-<app-item-unlock-calculator-favourites
-  (itemClicked)="onItemClicked($event)" (itemsClicked)="onItemsClicked($event)">
-</app-item-unlock-calculator-favourites>
-
-<!-- Add spirits -->
-<app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)">
-</app-item-unlock-calculator-spirits>
-
-<!-- Add seasons -->
-<app-item-unlock-calculator-seasons
-  (seasonSelected)="onSeasonSelected($event)" (guideSelected)="onSeasonGuideSelected($event)">
-</app-item-unlock-calculator-seasons>
-
-<!-- Add events -->
-<app-item-unlock-calculator-events (eventSelected)="onEventSelected($event)">
-</app-item-unlock-calculator-events>
-
-<!-- Add items -->
-<div class="atmos-item-unlock-calc__expand">
-  <button type="button" class="atmos-btn" [class.atmos-btn--active]="showAddItems()" (click)="toggleAddItems()">
-    <mat-icon>{{ showAddItems() ? 'expand_less' : 'add' }}</mat-icon> Add items
-  </button>
+  </aside>
 </div>
 
-@if (showAddItems()) {
-  <div class="atmos-item-unlock-calc__items-wrap">
-    <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl"
-      [initialCategory]="itemType" [syncCategoryToUrl]="false"
-      (categoryChanged)="onItemTypeChanged($event)"
-      (shownItemsChanged)="onItemsChanged($event)"/>
-    <ng-template #pickTpl let-item>
-      <div class="atmos-item-unlock-calc__pick atmos-tile atmos-tile--selectable"
-        [class.is-selected]="itemSet.has(item)" [class.is-unlocked]="item.unlocked"
-        (click)="onItemClicked({ event: $event, item })">
-        <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [skyTooltip]="item.name" placement="auto"></app-item-icon>
-        @if (itemSet.has(item)) { <span class="atmos-tile__check">✓</span> }
-      </div>
-    </ng-template>
-    <div class="atmos-item-unlock-calc__buttons">
-      <button type="button" class="atmos-btn atmos-btn--sm" (click)="addItemsFromList()">
-        @if (itemListItems.length === 1) {
-          Add this {{ itemType | itemType:false | lowercase }}
-        } @else {
-          Add these {{ itemListItems.length }} {{ itemType | itemType:true | lowercase }}
-        }
-      </button>
+<div class="atmos-item-unlock-calc__notice-slot" role="status" aria-live="polite">
+  @if (notice(); as current) {
+    <div class="atmos-item-unlock-calc__notice">
+      <span>{{ current.message }}</span>
+      @if (current.undo) {
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="undo()"><mat-icon>undo</mat-icon> Undo</button>
+      }
+      <button type="button" class="atmos-icon-btn" aria-label="Dismiss" (click)="dismissNotice()"><mat-icon>close</mat-icon></button>
     </div>
-  </div>
-}
+  }
+</div>

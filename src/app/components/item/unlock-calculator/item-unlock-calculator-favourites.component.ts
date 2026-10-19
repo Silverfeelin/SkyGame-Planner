@@ -7,7 +7,6 @@ import { StorageService } from '@app/services/storage.service';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemClickEvent } from '@app/components/item/grid/item-grid-layout.component';
-import { FoldableCardComponent } from '@app/components/shared/foldable-card/foldable-card.component';
 import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 @Component({
@@ -15,7 +14,7 @@ import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.c
   templateUrl: './item-unlock-calculator-favourites.component.html',
   styleUrl: './item-unlock-calculator-sub.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, MatIcon, ItemIconComponent, FoldableCardComponent]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent]
 })
 export class ItemUnlockCalculatorFavouritesComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

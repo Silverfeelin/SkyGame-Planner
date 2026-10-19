@@ -160,7 +160,7 @@ export class ItemCollectionComponent implements OnDestroy {
 
   gotoCalculator(collection: IItemCollection): void {
     const ids = ItemHelper.serializeQuery(collection.items);
-    void this._router.navigate(['/item/unlock-calculator'], { queryParams: { items: ids } });
+    void this._router.navigate(['/item/cost-calculator'], { queryParams: { items: ids } });
   }
 
   exportCollection(collection: IItemCollection, menu: HTMLElement): void {

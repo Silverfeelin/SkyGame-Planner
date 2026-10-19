@@ -41,7 +41,7 @@ export const PAGES = {
   itemCollection:   { label: 'Collections', link: '/item/collection', icon: 'collections', search: { name: 'Item collections' } },
   itemQuickUnlock:  { label: 'Quick unlock', link: '/quick-start', icon: 'lock_open', search: false },
   itemHearts:       { label: 'Hearts', link: '/item/heart', icon: 'favorite' },
-  itemCost:         { label: 'Cost calculator', link: '/item/unlock-calculator', icon: 'calculate', search: { name: 'Item unlock calculator' } },
+  itemCost:         { label: 'Cost calculator', link: '/item/cost-calculator', icon: 'calculate', search: { name: 'Item cost calculator' } },
   itemGoals:        { label: 'Goals', link: '/item/goals', icon: 'savings', search: { text: 'Goals saving planner' } },
   itemInflation:    { label: 'Item inflation', link: '/item/inflation', icon: 'trending_up' },
   suggestItem:      { label: 'Suggest new item', link: '/editor/item/add', icon: 'add_circle', search: false },

@@ -164,7 +164,9 @@ export const routes: Routes = [
           { path: 'inflation',  component: ItemInflationComponent,  title: title('Item inflation') },
           /* Legacy path: quick unlock was replaced by quick start. */
           { path: 'unlock',     redirectTo: '/quick-start', pathMatch: 'full' },
-          { path: 'unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Cost calculator') },
+          /* Legacy path: the unlock calculator was renamed to cost calculator. */
+          { path: 'unlock-calculator', redirectTo: 'cost-calculator', pathMatch: 'full' },
+          { path: 'cost-calculator', component: ItemUnlockCalculatorComponent, title: title('Cost calculator') },
           { path: 'goals',      component: ItemGoalsComponent,      title: title('Goals') },
           { path: ':guid',      component: ItemDetailComponent,    title: title('Item') },
         ]
