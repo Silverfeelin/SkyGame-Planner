@@ -75,7 +75,7 @@ export const CONNECT_APPS: Record<string, IConnectApp> = {
   tsc: {
     name: 'That Sky Collection',
     url: 'https://thatskycollection.com',
-    origins: ['https://thatskycollection.com', 'https://sc-fast.novaxeros.net', 'http://localhost:3000'],
+    origins: ['https://thatskycollection.com', 'https://sc-dev.novaxeros.net', 'https://sc-fast.novaxeros.net', 'http://localhost:3000'],
     scopes: ['items.unlocked'],
     collections: true
   }
