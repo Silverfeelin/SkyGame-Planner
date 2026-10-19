@@ -138,7 +138,7 @@ export class ItemUnlockCalculatorComponent {
   createCollection(): void {
     if (!this.items.length) { return alert('No items selected.'); }
     const queryParams = { items: ItemHelper.serializeQuery(this.items) };
-    this._router.navigate(['/item/collection'], { queryParams });
+    this._router.navigate(['/item/collection/add'], { queryParams });
   }
 
   saveAsGoals(): void {

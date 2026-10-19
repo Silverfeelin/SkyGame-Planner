@@ -3,6 +3,7 @@ import { MainLayoutComponent } from './components/layout/main-layout/main-layout
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { DropboxAuthComponent } from './components/dropbox-auth/dropbox-auth.component';
 import { ConnectComponent } from './components/connect/connect.component';
+import { ConnectCollectionComponent } from './components/connect/collection/connect-collection.component';
 import { StorageComponent } from './components/storage/storage.component';
 import { EditorLayoutComponent } from './editor/editor-layout/editor-layout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -14,6 +15,7 @@ import { ItemPreviewComponent } from './components/item/preview/item-preview.com
 import { ItemDyeComponent } from './components/item/dye/item-dye.component';
 import { ItemHeartsComponent } from './components/item/heart/item-hearts.component';
 import { ItemCollectionComponent } from './components/item/collection/item-collection.component';
+import { canLeaveCollectionEdit, ItemCollectionEditComponent } from './components/item/collection/edit/item-collection-edit.component';
 import { ItemDetailComponent } from './components/item/detail/item-detail.component';
 import { ItemInflationComponent } from './components/item/inflation/item-inflation.component';
 import { ItemUnlockCalculatorComponent } from './components/item/unlock-calculator/item-unlock-calculator.component';
@@ -101,6 +103,7 @@ export const routes: Routes = [
       { path: 'outfit-request/request', component: ClosetRequestComponent, data: { chrome: false }, title: title('Outfit request') },
       { path: 'dropbox-auth', component: DropboxAuthComponent, data: { chrome: false }, title: title('Dropbox') },
       { path: 'connect', component: ConnectComponent, data: { chrome: false }, title: title('Share data') },
+      { path: 'connect/collection', component: ConnectCollectionComponent, data: { chrome: false }, title: title('Add collection') },
       /* Routes rendered with the full chrome. */
       { path: '', component: DashboardComponent, title: 'Sky Planner' },
       { path: 'privacy', component: PrivacyComponent, title: title('Privacy Policy') },
@@ -154,6 +157,8 @@ export const routes: Routes = [
           { path: 'dye',        component: ItemDyeComponent,        title: title('Dye previews') },
           { path: 'heart',      component: ItemHeartsComponent,     title: title('Hearts') },
           { path: 'collection', component: ItemCollectionComponent, title: title('Collections') },
+          { path: 'collection/add', component: ItemCollectionEditComponent, canDeactivate: [canLeaveCollectionEdit], title: title('New collection') },
+          { path: 'collection/edit/:guid', component: ItemCollectionEditComponent, canDeactivate: [canLeaveCollectionEdit], title: title('Edit collection') },
           /* Legacy path: the field guide was replaced by the item previews page. */
           { path: 'field-guide', redirectTo: 'preview', pathMatch: 'full' },
           { path: 'inflation',  component: ItemInflationComponent,  title: title('Item inflation') },

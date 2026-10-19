@@ -1,0 +1,55 @@
+.atmos-connect-coll__card {
+  max-width: 560px;
+}
+
+.atmos-connect-coll__warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklch, var(--atmos-warn-accent) 40%, transparent);
+  border-radius: var(--atmos-radius-sm);
+  background: color-mix(in oklch, var(--atmos-warn-accent) 12%, transparent);
+
+  mat-icon { color: var(--atmos-warn-accent); flex-shrink: 0; }
+}
+
+.atmos-connect-coll__image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.atmos-connect-coll__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.atmos-connect-coll__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--atmos-radius-sm);
+  padding: 4px;
+  width: 56px;
+  height: 56px;
+}
+
+.atmos-connect-coll__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.atmos-connect-coll__label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--atmos-fs-md);
+  font-weight: 500;
+  color: var(--atmos-text-dim);
+}

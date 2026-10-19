@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { IPage, ISection, PAGES, SECTIONS } from './pages';
 
 /** Routes that are reached through app flows rather than navigation. */
-const UNLISTED = new Set(['/no-data', '/storage', '/dropbox-auth', '/connect']);
+const UNLISTED = new Set(['/no-data', '/storage', '/dropbox-auth', '/connect', '/connect/collection', '/item/collection/add']);
 
 const join = (...parts: Array<string | undefined>) =>
   '/' + parts.map(p => p?.replace(/^\/+|\/+$/g, '')).filter(Boolean).join('/');

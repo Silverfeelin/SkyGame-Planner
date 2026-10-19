@@ -1,0 +1,79 @@
+<app-section-quick-actions section="item" />
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">{{ guid ? 'Edit collection' : 'New collection' }}</h1>
+</header>
+
+@if (notFound()) {
+  <section class="atmos-card atmos-card__body">
+    <p class="atmos-coll__empty-hint">This collection could not be found. It may have been deleted.</p>
+    <div class="atmos-coll__form-actions">
+      <a class="atmos-btn atmos-btn--sm" routerLink="/item/collection">
+        <mat-icon>arrow_back</mat-icon> Back to collections
+      </a>
+    </div>
+  </section>
+} @else {
+  <section class="atmos-card atmos-card__body">
+    <div class="atmos-coll__form">
+      <div class="atmos-coll__form-fields">
+        <label class="atmos-coll__label">
+          Name
+          <input class="atmos-input" type="text" maxlength="100" placeholder="Collection name"
+            [value]="name()" (input)="name.set($any($event.target).value)">
+        </label>
+        <label class="atmos-coll__label">
+          Description
+          <textarea class="atmos-input atmos-input--textarea" maxlength="2000" placeholder="Optional description"
+            [value]="description()" (input)="description.set($any($event.target).value)"></textarea>
+        </label>
+        <label class="atmos-coll__label">
+          Image URL
+          <input class="atmos-input" type="text" placeholder="https://…"
+            [value]="imageUrl()" (input)="imageUrl.set($any($event.target).value)">
+          @if (imgError()) { <span class="atmos-coll__input-error">Please enter a valid https:// URL</span> }
+        </label>
+      </div>
+      @if (imgSrc()) {
+        <div class="atmos-coll__form-preview">
+          <img [src]="imgSrc()" class="atmos-coll__preview-img" alt="Preview">
+        </div>
+      }
+    </div>
+
+    <div>
+      <h2 class="atmos-coll__subsection-title">Selected items ({{ items().length }})</h2>
+      <div class="atmos-coll__selected">
+        @for (item of items(); track item.guid) {
+          <button type="button" class="atmos-coll__selected-item atmos-tile atmos-tile--removable" (click)="removeItem(item)" [attr.aria-label]="item.name" [skyTooltip]="item.name + ' — click to remove'">
+            <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
+            <span class="atmos-tile__remove">✕</span>
+          </button>
+        } @empty {
+          <p class="atmos-coll__empty-hint">No items selected. Pick items from the grid below.</p>
+        }
+      </div>
+    </div>
+
+    <div class="atmos-coll__form-actions">
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="save()">
+        <mat-icon>save</mat-icon> {{ guid ? 'Save changes' : 'Save collection' }}
+      </button>
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="cancel()">
+        <mat-icon>close</mat-icon> Cancel
+      </button>
+    </div>
+  </section>
+
+  <app-item-grid-layout [items]="allItems" [itemTemplate]="pickerTpl" [initialCategory]="initialCategory"/>
+  <ng-template #pickerTpl let-item>
+    <button type="button"
+            class="atmos-coll__picker-item atmos-tile atmos-tile--selectable"
+            [class.is-selected]="itemSet().has(item)"
+            [skyTooltip]="item.name" [attr.aria-label]="item.name"
+            (click)="toggleItem(item)">
+      <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
+      @if (itemSet().has(item)) { <span class="atmos-tile__check">✓</span> }
+    </button>
+  </ng-template>
+}

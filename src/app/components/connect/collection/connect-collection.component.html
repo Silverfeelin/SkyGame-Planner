@@ -1,0 +1,113 @@
+<div class="atmos-connect__bg" aria-hidden="true"></div>
+<div class="atmos-connect__vignette" aria-hidden="true"></div>
+
+<main class="atmos-connect__main">
+  <article class="atmos-card atmos-connect__card atmos-connect-coll__card">
+    <div class="atmos-card__body atmos-connect__body">
+      @switch (state()) {
+        @case ('waiting') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon">hourglass_top</mat-icon>
+            <h1 class="atmos-connect__title">Waiting for {{ app!.name }}</h1>
+          </header>
+          <p class="atmos-paragraph atmos-connect__muted">Receiving the outfit from {{ hostname }}…</p>
+        }
+        @case ('received') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon">collections</mat-icon>
+            <h1 class="atmos-connect__title">Add collection</h1>
+          </header>
+          <p class="atmos-paragraph">
+            <a class="atmos-text-link" [href]="app!.url" target="_blank" rel="noopener">{{ hostname }}</a>
+            sent {{ items().length }} item{{ items().length === 1 ? '' : 's' }}.<br/>
+            Do you want to save them as a collection in the Sky Planner?
+          </p>
+
+          @if (existing(); as existing) {
+            <div class="atmos-connect-coll__warning" role="status">
+              <mat-icon>warning</mat-icon>
+              <div>
+                You already have a collection with these items: <strong>{{ existing.name }}</strong>.
+                <a class="atmos-text-link" routerLink="/item/collection" [queryParams]="{ focus: existing.guid }">View collection</a>
+              </div>
+            </div>
+          }
+
+          @if (imageUrl()) {
+            <img class="atmos-connect-coll__image" [src]="imageUrl()" alt="" referrerpolicy="no-referrer">
+          }
+
+          @if (items().length) {
+            <div class="atmos-connect-coll__items">
+              @for (item of items(); track item.guid) {
+                <div class="atmos-connect-coll__item atmos-tile" [skyTooltip]="item.name" [attr.aria-label]="item.name">
+                  <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
+                </div>
+              }
+            </div>
+            <div class="atmos-connect-coll__chips">
+              <span class="atmos-pill">{{ items().length }} items</span>
+              <span class="atmos-pill atmos-pill--active">{{ unlockedCount() }} unlocked</span>
+            </div>
+          }
+
+          @if (unknownCount()) {
+            <p class="atmos-paragraph atmos-connect__muted">
+              {{ unknownCount() }} item{{ unknownCount() === 1 ? ' is' : 's are' }} not known to the Sky Planner and won't be added.
+            </p>
+          }
+
+          <label class="atmos-connect-coll__label">
+            Name
+            <input class="atmos-input" type="text" maxlength="100" placeholder="Collection name"
+              [value]="name()" (input)="name.set($any($event.target).value)">
+          </label>
+          <label class="atmos-connect-coll__label">
+            Description
+            <textarea class="atmos-input atmos-input--textarea" maxlength="2000" placeholder="Optional description"
+              [value]="description()" (input)="description.set($any($event.target).value)"></textarea>
+          </label>
+
+          <div class="atmos-connect__actions">
+            <button type="button" class="atmos-btn" (click)="close()">
+              <mat-icon>close</mat-icon>
+              <span>Cancel</span>
+            </button>
+            <button type="button" class="atmos-btn atmos-btn--active" [disabled]="!canSave()" (click)="save()">
+              <mat-icon>add</mat-icon>
+              <span>Save collection</span>
+            </button>
+          </div>
+        }
+        @case ('saved') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon atmos-connect__icon--good">check_circle</mat-icon>
+            <h1 class="atmos-connect__title">Saved</h1>
+          </header>
+          <p class="atmos-paragraph">"{{ name().trim() }}" was added to your collections.</p>
+          <div class="atmos-connect__actions">
+            <button type="button" class="atmos-btn" (click)="close()">
+              <mat-icon>close</mat-icon>
+              <span>Close</span>
+            </button>
+            <a class="atmos-btn atmos-btn--active" routerLink="/item/collection" [queryParams]="{ focus: savedGuid() }">
+              <mat-icon>collections</mat-icon>
+              <span>View collections</span>
+            </a>
+          </div>
+        }
+        @case ('error') {
+          <header class="atmos-connect__header">
+            <mat-icon class="atmos-connect__icon atmos-connect__icon--warm">link_off</mat-icon>
+            <h1 class="atmos-connect__title">Can't add collection</h1>
+          </header>
+          <p class="atmos-paragraph">{{ error() }}</p>
+          <a class="atmos-text-link atmos-connect__home" routerLink="/">
+            <mat-icon>home</mat-icon>
+            <span>Go to Sky Planner</span>
+          </a>
+        }
+      }
+    </div>
+  </article>
+</main>

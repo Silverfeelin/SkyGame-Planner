@@ -17,6 +17,29 @@ export interface IConnectApp {
   url: string;
   origins: Array<string>;
   scopes: Array<ConnectScopeKey>;
+  /** Whether the app may send item collections to /connect/collection. */
+  collections?: boolean;
+}
+
+export interface IConnectCollectionReady {
+  type: 'sky-planner:collection:ready';
+  nonce?: string;
+  version: 1;
+}
+
+export interface IConnectCollection {
+  type: 'sky-planner:collection';
+  nonce?: string;
+  name?: string;
+  description?: string;
+  imageUrl?: string;
+  items: Array<string>;
+}
+
+export interface IConnectCollectionAck {
+  type: 'sky-planner:collection:ack';
+  nonce?: string;
+  status: 'received' | 'saved';
 }
 
 export interface IConnectResponse {
@@ -53,7 +76,8 @@ export const CONNECT_APPS: Record<string, IConnectApp> = {
     name: 'That Sky Collection',
     url: 'https://thatskycollection.com',
     origins: ['https://thatskycollection.com', 'https://sc-fast.novaxeros.net', 'http://localhost:3000'],
-    scopes: ['items.unlocked']
+    scopes: ['items.unlocked'],
+    collections: true
   }
 };
 
