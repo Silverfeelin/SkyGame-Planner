@@ -37,6 +37,10 @@
   padding: 4px;
   width: 56px;
   height: 56px;
+
+  &.is-unlocked {
+    background: var(--atmos-tile-bg-unlocked);
+  }
 }
 
 .atmos-connect-coll__chips {

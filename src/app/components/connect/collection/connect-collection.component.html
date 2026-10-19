@@ -40,8 +40,8 @@
           @if (items().length) {
             <div class="atmos-connect-coll__items">
               @for (item of items(); track item.guid) {
-                <div class="atmos-connect-coll__item atmos-tile" [skyTooltip]="item.name" [attr.aria-label]="item.name">
-                  <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
+                <div class="atmos-connect-coll__item atmos-tile" [class.is-unlocked]="item.unlocked" [skyTooltip]="item.name" [attr.aria-label]="item.name">
+                  <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL" [opaque]="true"/>
                 </div>
               }
             </div>
