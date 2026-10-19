@@ -13,6 +13,9 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { ISeasonPlanner, SeasonHelper } from '@app/helpers/season-helper';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { DyeColor } from '@app/interfaces/dye.interface';
+import { DailyCheckinComponent } from '@app/components/daily/daily-checkin/daily-checkin.component';
+import { DailyCheckinService } from '@app/services/daily-checkin.service';
+import { EventCheckinService } from '@app/services/event-checkin.service';
 
 interface IGains {
   candles: string;
@@ -29,7 +32,7 @@ interface IGains {
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, SectionQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, SectionQuickActionsComponent, DailyCheckinComponent]
 })
 export class CurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;
@@ -62,6 +65,9 @@ export class CurrencyComponent implements OnDestroy {
 
   converted?: { candles: number };
 
+  readonly dailyCheckedIn = signal(false);
+  readonly eventCheckedIn = signal<Record<string, boolean>>({});
+
   readonly gains = signal<IGains>({ candles: '', hearts: '', ascendedCandles: '', loyaltyPoints: '', giftPasses: '', season: '', events: {} });
 
   private readonly _storageSub: Subscription;
@@ -69,7 +75,9 @@ export class CurrencyComponent implements OnDestroy {
   constructor(
     private readonly _currencyService: CurrencyService,
     private readonly _dataService: DataService,
-    private readonly _storageService: StorageService
+    private readonly _storageService: StorageService,
+    private readonly _dailyCheckinService: DailyCheckinService,
+    private readonly _eventCheckinService: EventCheckinService
   ) {
     this.inpCurrencies = this._storageService.getCurrencies();
     this.currencies = this._storageService.getCurrencies();
@@ -121,6 +129,9 @@ export class CurrencyComponent implements OnDestroy {
     if (changed) {
       this._storageService.setCurrencies(this.currencies);
     }
+
+    this.dailyCheckedIn.set(this._dailyCheckinService.isCheckedIn());
+    this.eventCheckedIn.set(this.getEventCheckins());
 
     this.gains.set(this.computeGains());
     this._storageSub = this._storageService.events.subscribe(() => {
@@ -282,8 +293,56 @@ export class CurrencyComponent implements OnDestroy {
     (evt.target as HTMLInputElement).value = (this.currencies.dyes![color] ?? 0).toString();
   }
 
+  onDailyCheckin(evt: MouseEvent): void {
+    this.dailyCheckedIn.set(this._dailyCheckinService.toggle(evt, this.ongoingSeason));
+    this.reloadCurrencies();
+  }
+
+  onEventCheckin(instance: IEventInstance, evt: MouseEvent): void {
+    this._eventCheckinService.toggle(evt, instance);
+    this.eventCheckedIn.set(this.getEventCheckins());
+    this.reloadCurrencies();
+  }
+
   dismissConverted(): void {
     this.converted = undefined;
+  }
+
+  private getEventCheckins(): Record<string, boolean> {
+    const checkins: Record<string, boolean> = {};
+    for (const instance of this.ongoingEventInstances) {
+      checkins[instance.guid] = this._eventCheckinService.isCheckedIn(instance.event.guid);
+    }
+    return checkins;
+  }
+
+  /** Check-ins write currencies through CurrencyService, so the local copy and inputs need to catch up. */
+  private reloadCurrencies(): void {
+    const currencies = this._storageService.getCurrencies();
+    currencies.dyes ??= {};
+    if (this.ongoingSeason) {
+      currencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
+    }
+    for (const instance of this.ongoingEventInstances) {
+      currencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
+    }
+    this.currencies = currencies;
+
+    this.inpC.nativeElement.value = currencies.candles.toString();
+    this.inpH.nativeElement.value = currencies.hearts.toString();
+    this.inpAc.nativeElement.value = currencies.ascendedCandles.toString();
+    this.inpLp.nativeElement.value = (currencies.loyaltyPoints ?? 0).toString();
+    this.inpSp.nativeElement.value = currencies.giftPasses.toString();
+    if (this.ongoingSeason && this.inpSc) {
+      this.inpSc.nativeElement.value = currencies.seasonCurrencies[this.ongoingSeason.guid].candles.toString();
+    }
+    const inpsEc = this.inpEc.toArray();
+    for (const [i, instance] of this.ongoingEventInstances.entries()) {
+      if (!inpsEc[i]) { continue; }
+      inpsEc[i].nativeElement.value = currencies.eventCurrencies[instance.guid].tickets.toString();
+    }
+
+    this.gains.set(this.computeGains());
   }
 
   private computeGains(): IGains {
