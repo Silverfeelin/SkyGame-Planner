@@ -59,7 +59,7 @@ export class ConnectCollectionComponent {
 
     this.hostname = new URL(this.app.url).hostname;
     if (window.top !== window) { this._fail('This page can not be embedded in another site.'); return; }
-    if (!this._opener()) { this._fail(`Open this page from ${this.app.name} to add a collection.`); return; }
+    if (!this._opener()) { this._fail(`If you got here from an app like Discord, go back to ${this.app.name}, open it in your browser app (usually from the ⋮ menu) and try again from there.`); return; }
 
     // The opener may post before this page has loaded, so announce when we're listening.
     this._post<IConnectCollectionReady>({ type: 'sky-planner:collection:ready', nonce: this._nonce, version: 1 });

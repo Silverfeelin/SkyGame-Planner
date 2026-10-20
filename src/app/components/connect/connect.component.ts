@@ -54,7 +54,7 @@ export class ConnectComponent {
     }
 
     if (window.top !== window) { this._fail('This page can not be embedded in another site.'); return; }
-    if (!this._opener()) { this._fail(`Open this page from ${this.app.name} to share your data.`); return; }
+    if (!this._opener()) { this._fail(`If you got here from an app like Discord, go back to ${this.app.name}, open it in your browser app (usually from the ⋮ menu) and try again from there.`); return; }
     if (!this.scopes.length) { this._fail(`${this.app.name} did not ask for any data Sky Planner can share.`); }
   }
 
