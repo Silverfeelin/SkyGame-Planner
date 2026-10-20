@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  computed,
   signal,
   viewChildren,
 } from '@angular/core';
@@ -25,6 +26,7 @@ const SIZES = {
 } as const;
 
 interface ICoord { x: number; y: number; }
+interface IBlock { index: number; col: number; row: number; }
 
 @Component({
   selector: 'app-collage',
@@ -34,12 +36,17 @@ interface ICoord { x: number; y: number; }
   imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent, CollageSlotComponent],
 })
 export class CollageComponent {
-  readonly blockCols = BLOCK_COLS;
   /** Every block of the maximum grid; slots outside the chosen size are dimmed. */
-  readonly blockIndices = Array.from({ length: BLOCK_COUNT }, (_, i) => i);
+  readonly blocks: ReadonlyArray<IBlock> = Array.from({ length: BLOCK_COUNT }, (_, index) => ({
+    index, col: index % BLOCK_COLS, row: Math.floor(index / BLOCK_COLS),
+  }));
 
   /** Chosen collage size, in blocks. */
   readonly collageSize = signal<ICoord>({ x: 4, y: 1 });
+
+  /** Size under the cursor in the size picker, previewed before it is chosen. */
+  readonly hoverSize = signal<ICoord | undefined>(undefined);
+  readonly displaySize = computed(() => this.hoverSize() ?? this.collageSize());
 
   readonly isRendering = signal<boolean>(false);
 
@@ -64,13 +71,24 @@ export class CollageComponent {
 
   /** True while the block at this index is part of the chosen collage size. */
   isInCollage(index: number): boolean {
-    const size = this.collageSize();
-    return index % BLOCK_COLS < size.x && Math.floor(index / BLOCK_COLS) < size.y;
+    return this._isInSize(index, this.collageSize());
   }
 
-  setCollageSize(x: number, y: number): void {
-    this.collageSize.set({ x, y });
+  isInDisplaySize(index: number): boolean {
+    return this._isInSize(index, this.displaySize());
+  }
+
+  setCollageSize(block: IBlock): void {
+    this.collageSize.set({ x: block.col + 1, y: block.row + 1 });
     this._stopPaste();
+  }
+
+  previewCollageSize(block?: IBlock): void {
+    this.hoverSize.set(block && { x: block.col + 1, y: block.row + 1 });
+  }
+
+  private _isInSize(index: number, size: ICoord): boolean {
+    return index % BLOCK_COLS < size.x && Math.floor(index / BLOCK_COLS) < size.y;
   }
 
   // ── Slot output handlers ────────────────────────────────────────────
@@ -163,9 +181,8 @@ export class CollageComponent {
 
   /** Moves paste mode to the next block inside the chosen collage size. */
   private _advanceBulkPaste(currentIndex: number): void {
-    const size = this.collageSize();
     for (let i = currentIndex + 1; i < BLOCK_COUNT; i++) {
-      if (i % BLOCK_COLS < size.x && Math.floor(i / BLOCK_COLS) < size.y) {
+      if (this.isInCollage(i)) {
         this._startPaste(i, true);
         return;
       }
@@ -183,7 +200,7 @@ export class CollageComponent {
     const _wBorder = 0;
     const size = this.collageSize();
     const iconUrls = this.iconUrls();
-    const hasIcons = this.blockIndices.some(i => this.isInCollage(i) && !!iconUrls[i]);
+    const hasIcons = this.blocks.some(b => this.isInCollage(b.index) && !!iconUrls[b.index]);
 
     const canvas = document.createElement('canvas');
     canvas.width  = SIZES.renderWidth  * size.x + _wBorder * (size.x + 1);

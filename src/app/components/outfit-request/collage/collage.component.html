@@ -8,13 +8,21 @@
 
   <!-- Size picker -->
   <div class="atmos-collage__size">
-    <span class="atmos-collage__size-label">Choose the size of your collage.</span>
-    <div class="atmos-collage__size-blocks">
-      @for (idx of blockIndices; track idx) {
+    <span class="atmos-collage__size-label">
+      Choose the size of your collage.
+      <span class="atmos-collage__size-value">{{ displaySize().x }} × {{ displaySize().y }}</span>
+    </span>
+    <div class="atmos-collage__size-blocks" (mouseleave)="previewCollageSize()">
+      @for (block of blocks; track block.index) {
         <button type="button" class="atmos-collage__size-block"
-          [class.is-active]="isInCollage(idx)"
-          [attr.aria-label]="(idx % blockCols + 1) + ' by ' + ((idx - idx % blockCols) / blockCols + 1)"
-          (click)="setCollageSize(idx % blockCols + 1, (idx - idx % blockCols) / blockCols + 1)">
+          [class.is-active]="isInCollage(block.index)"
+          [class.is-preview]="isInDisplaySize(block.index)"
+          [attr.aria-label]="(block.col + 1) + ' by ' + (block.row + 1)"
+          [attr.aria-pressed]="collageSize().x === block.col + 1 && collageSize().y === block.row + 1"
+          (mouseenter)="previewCollageSize(block)"
+          (focus)="previewCollageSize(block)"
+          (blur)="previewCollageSize()"
+          (click)="setCollageSize(block)">
         </button>
       }
     </div>
@@ -53,12 +61,12 @@
   <!-- Slot grid -->
   <div class="atmos-collage__scroll atmos-scroll-x">
     <div class="atmos-collage__grid">
-      @for (idx of blockIndices; track idx) {
+      @for (block of blocks; track block.index) {
         <app-collage-slot
           class="app-collage-slot"
-          [class.is-outside]="!isInCollage(idx)"
-          [attr.data-slot-index]="idx"
-          [slotIndex]="idx"
+          [class.is-outside]="!isInCollage(block.index)"
+          [attr.data-slot-index]="block.index"
+          [slotIndex]="block.index"
           (imageChanged)="onSlotImageChanged($event)"
           (iconChanged)="onSlotIconChanged($event)"
           (pasteRequested)="onSlotPasteRequested($event)"
