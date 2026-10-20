@@ -113,4 +113,4 @@ script `npm run icon-names` will report necessary changes.
 - `scripts/data/` — one-off data manipulation (add events, apply GUIDs, etc.)
 - `scripts/build/` — sitemap generation and license file post-processing
 - `scripts/icon-sheet.ts` — regenerates the SVG icon sprite sheet
-- `functions/api/` — Cloudflare Worker functions (dyes API, outfit vault, outfit requests)
+- `functions/api/` — Cloudflare Worker functions (dyes API, outfit requests)

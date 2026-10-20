@@ -47,8 +47,7 @@ export class ToolsComponent {
       links: [
         { icon: 'checkroom', label: 'Sky closet',     link: PAGES.closet.link },
         { icon: 'add',       label: 'Create request', link: PAGES.outfitRequest.link },
-        { icon: 'image',     label: 'Create collage', link: PAGES.collage.link },
-        { icon: 'link',      label: 'Outfit vault',   link: PAGES.outfitVault.link }
+        { icon: 'image',     label: 'Create collage', link: PAGES.collage.link }
       ]
     },
     {

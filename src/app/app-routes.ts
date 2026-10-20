@@ -63,7 +63,6 @@ import { FriendsComponent } from './components/friend/friends.component';
 import { ToolsComponent } from './components/tool/tools.component';
 import { ClosetComponent } from './components/outfit-request/closet/closet.component';
 import { CollageComponent } from './components/outfit-request/collage/collage.component';
-import { OutfitVaultComponent } from './components/outfit-request/vault/outfit-vault.component';
 import { ClosetRequestComponent } from './components/outfit-request/request/closet-request.component';
 import { NewsComponent } from './components/news/news.component';
 import { InfoComponent } from './components/info/info.component';
@@ -229,7 +228,6 @@ export const routes: Routes = [
         children: [
           { path: 'closet',  component: ClosetComponent,      title: title('Closet') },
           { path: 'collage', component: CollageComponent,     title: title('Collage') },
-          { path: 'vault',   component: OutfitVaultComponent, title: title('Outfit vault') },
         ]
       },
       {

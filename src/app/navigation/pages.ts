@@ -99,7 +99,6 @@ export const PAGES = {
   closet:           { label: 'Sky closet', link: '/outfit-request/closet', icon: 'checkroom', search: { name: 'Outfit request - Closet' } },
   outfitRequest:    { label: 'Create request', link: '/outfit-request/request', icon: 'add', search: { name: 'Outfit request - Request' } },
   collage:          { label: 'Collage', link: '/outfit-request/collage', icon: 'image', search: { name: 'Outfit request - Collage' } },
-  outfitVault:      { label: 'Outfit vault', link: '/outfit-request/vault', icon: 'link' },
 
   designFeedback:   { label: 'Design feedback', link: 'https://docs.google.com/forms/d/e/1FAIpQLScruTqCFHUENPekcpu4BzGmBjBKrf_1CTzT9_R8Yvr7DulDmQ/viewform?usp=publish-editor', icon: 'chat', external: true, search: false },
   news:             { label: `What's new`, link: '/news', icon: 'new_releases' },
@@ -147,7 +146,7 @@ export const SECTIONS = {
     'wikiShops'
   ] },
   friend:      { label: 'Friends', link: '/friend', icon: 'people', pages: [] },
-  tool:        { label: 'Tools', link: '/tool', icon: 'build', match: ['/quick-start'], pages: ['tools', 'quickStart', 'closet', 'collage', 'outfitVault'] },
+  tool:        { label: 'Tools', link: '/tool', icon: 'build', match: ['/quick-start'], pages: ['tools', 'quickStart', 'closet', 'collage'] },
 } satisfies Record<string, ISection>;
 
 export type SectionId = keyof typeof SECTIONS;
