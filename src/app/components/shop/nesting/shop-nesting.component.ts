@@ -59,6 +59,8 @@ const rotations: IRotations = [
     { guid: 'g0FAk-lWFi', c: 11 }
   ],
   [
+    { guid: 'uvahf8FSY0', c: 13 },
+    { guid: 'RPn3mJrGAD', c: 14 },
     { guid: '9ZDdv0TG9w', c: 16 },
     { guid: 'EQwb6KLMv5', ac: 15 }
   ],
@@ -125,6 +127,24 @@ const rotations: IRotations = [
   ]
 ];
 
+/** Workshop node GUIDs grouped by the rotations before patch 0.27.0. */
+const legacyRotations: Array<Array<string>> = [
+  ['0iQelpalwE', '_1CMnI0z7q'],
+  ['61QwB5Gvmb', 'SKJRIj6UGi', 'LOblsb8Xy8', 'mFU9vXpZnw'],
+  ['JAj51h9ADF', 'JlKjD5hs3P', 'boOtVX8xOQ', 'qI09t7cv9p'],
+  ['MxfERJwmT-', 'iyR8ZQF8zp', 'hK9E5Xx7z_'],
+  ['ouIgy1vs8u', '5WT0E79zPb', '-bEyb_KLGZ', 'Nl_1UAY9ne'],
+  ['w79-0393RP', 'ei0PSQya9D', 'BlDKABgLUs'],
+  ['VOTVFnu2xU', 'IkFbY4vzLc', '17g0W9pSH2', 'MTT1Y2Ibq_'],
+  ['utZ6QzTVHk', '5yH2-TICVS', 'BpGfIc7lLt', 'xvMHaOOubz'],
+  ['PtVlDl0TTf', 'XbVVugYC2B', '4eW_jMV5LJ', 'iJyJyw7GcC'],
+  ['STlGNDNBl8', '1b_Hw_a_q_', 'b2ve1nvRiG', '_j21aCZCWI'],
+  ['suOJe22yjj', 'uGnoVfNJsf', 'c6Brs_WtGO'],
+  ['TopAimB0gn', 'lTLzoY0irh'],
+  ['rk4HG2_Eft', 'Pps8nLoGHH', '59mKq-t1EY'],
+  ['z4Lu3Bc9zY']
+];
+
 @Component({
   selector: 'app-shop-nesting',
   templateUrl: './shop-nesting.component.html',
@@ -162,7 +182,6 @@ export class ShopNestingComponent {
   readonly data = signal<INestingStorageData>({ unlocked: {} });
 
   private readonly _rotationItemCostMap: { [guid: string]: ICost } = {};
-  private readonly _workshopItemNodeMap: { [guid: string]: IItemListNode } = {};
   private readonly _workshopNodeMap: { [guid: string]: IItemListNode } = {};
 
   constructor(route: ActivatedRoute) {
@@ -175,15 +194,14 @@ export class ShopNestingComponent {
 
     this.workshopItemList = this._dataService.guidMap.get('AKNI67tVW-') as IItemList;
     for (const node of this.workshopItemList.items) {
-      this._workshopItemNodeMap[node.item.guid] = node;
       this._workshopNodeMap[node.guid] = node;
     }
 
     this.iRotation = this.getCurrentRotationIndex();
 
-    this.itemLists = rotations.map<IItemList>((r, i) => ({
+    this.itemLists = legacyRotations.map<IItemList>((r, i) => ({
       guid: nanoid(10),
-      items: r.map(j => this._workshopItemNodeMap[j.guid]),
+      items: r.map(g => this._workshopNodeMap[g]),
       title: `Rotation ${i + 1}`
     }));
 

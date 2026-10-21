@@ -40,6 +40,9 @@
 <section class="atmos-card">
   <div class="atmos-card__body">
     <h2 class="atmos-currency__section-title"><mat-icon>paid</mat-icon> Regular currency</h2>
+    @if (!ongoingSeason) {
+      <app-daily-checkin [checkedIn]="dailyCheckedIn()" (checkin)="onDailyCheckin($event)"></app-daily-checkin>
+    }
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
@@ -144,6 +147,10 @@
         }
         {{ ongoingSeason.name }}
       </h2>
+      <app-daily-checkin
+        [checkedIn]="dailyCheckedIn()"
+        label="I have done my season dailies"
+        (checkin)="onDailyCheckin($event)"></app-daily-checkin>
       <div class="atmos-currency__row">
         <div class="atmos-currency__field">
           <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
@@ -175,6 +182,10 @@
       @for (instance of ongoingEventInstances; track instance.guid) {
         <div class="atmos-currency__event">
           <div class="atmos-currency__event-name">{{ instance.name ?? instance.event.name }}</div>
+          <app-daily-checkin
+            [checkedIn]="eventCheckedIn()[instance.guid]"
+            label="I have collected my daily event currency"
+            (checkin)="onEventCheckin(instance, $event)"></app-daily-checkin>
           <div class="atmos-currency__row">
             <div class="atmos-currency__field">
               <mat-icon svgIcon="ticket" [skyTooltip]="'Event currency'"></mat-icon>
