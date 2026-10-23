@@ -86,14 +86,6 @@
   mat-icon { color: var(--atmos-warm); }
 }
 
-// Used for the item-list row above; the spirit-tree row uses shared .atmos-spirit-trees.
-.atmos-event-calc__trees {
-  display: flex;
-  overflow-x: auto;
-  gap: var(--atmos-gap);
-  padding-bottom: 8px;
-}
-
 /* Node overlays — mirror legacy on-hover/click reveal */
 .atmos-event-calc__overlay {
   position: absolute;

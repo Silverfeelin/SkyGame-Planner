@@ -14,18 +14,7 @@
       <h2 class="atmos-section__title">Rewards</h2>
     </header>
     <div class="atmos-card__body atmos-shop-loyalty__section-body">
-      <div class="atmos-shop-loyalty__grid">
-        @for (shop of shops; track shop.guid) {
-          <div class="atmos-card atmos-shop-loyalty__shop">
-            <div class="atmos-card__body">
-              <h3 class="atmos-shop-loyalty__shop-title">{{ shop.name }}</h3>
-              <app-item-list
-                [itemList]="shop.itemList!"
-                [highlightNode]="highlightNode()"></app-item-list>
-            </div>
-          </div>
-        }
-      </div>
+      <app-shop-item-lists [shops]="shops" [highlightNode]="highlightNode()" />
     </div>
   </section>
 }

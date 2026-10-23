@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
-import { ItemListComponent } from '@app/components/shared/shared-widgets';
+import { ShopItemListsComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './shop-prairie-heights.component.html',
   styleUrl: './shop-prairie-heights.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemListComponent, SectionQuickActionsComponent]
+  imports: [MatIcon, ShopItemListsComponent, SectionQuickActionsComponent]
 })
 export class ShopPrairieHeightsComponent {
   readonly igcShops: ReadonlyArray<IShop>;

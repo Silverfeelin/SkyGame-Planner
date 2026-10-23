@@ -148,9 +148,7 @@
         <h2 class="atmos-section__title atmos-section__title--lg">Shops</h2>
       </header>
       <div class="atmos-card__body atmos-event-instance__section-body">
-        @for (shop of shops(); track shop.guid) {
-          <app-item-list [itemList]="shop.itemList!"></app-item-list>
-        }
+        <app-shop-item-lists [shops]="shops()" [highlightNode]="highlightNode()" />
       </div>
     </section>
   }

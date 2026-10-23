@@ -14,7 +14,7 @@ import { NodeService } from '@app/services/node.service';
 import { CurrencyService } from '@app/services/currency.service';
 import { StorageService } from '@app/services/storage.service';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
-import { CheckboxComponent, DraftWarningComponent, ItemListComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
+import { CheckboxComponent, DraftWarningComponent, ShopItemListsComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
@@ -22,7 +22,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './event-calculator.component.html',
   styleUrl: './event-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe, CheckboxComponent, SpiritTreeComponent, ItemListComponent, SectionQuickActionsComponent, DraftWarningComponent]
+  imports: [RouterLink, MatIcon, DateTimePipe, CheckboxComponent, SpiritTreeComponent, ShopItemListsComponent, SectionQuickActionsComponent, DraftWarningComponent]
 })
 export class EventCalculatorComponent implements OnInit {
   private readonly _currencyService = inject(CurrencyService);

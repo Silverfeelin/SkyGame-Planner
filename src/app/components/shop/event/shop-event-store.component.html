@@ -16,18 +16,7 @@
       <h2 class="atmos-section__title">In-game currency</h2>
     </header>
     <div class="atmos-card__body atmos-shop-event__section-body">
-      <div class="atmos-shop-event__igc-grid">
-        @for (shop of igcShops; track shop.guid) {
-          <div class="atmos-card atmos-shop-event__igc">
-            <div class="atmos-card__body">
-              <h3 class="atmos-shop-event__igc-title">{{ shop.name }}</h3>
-              <app-item-list
-                [itemList]="shop.itemList!"
-                [highlightNode]="highlightNode()"></app-item-list>
-            </div>
-          </div>
-        }
-      </div>
+      <app-shop-item-lists [shops]="igcShops" [highlightNode]="highlightNode()" />
       <app-spirit-tree
         [tree]="propShop"
         [highlightItem]="highlightItem()"></app-spirit-tree>

@@ -285,11 +285,7 @@
   @if (shops.length) {
     <section class="atmos-card atmos-event-calc__section">
       <div class="atmos-card__body">
-        <div class="atmos-event-calc__trees">
-          @for (shop of shops; track shop.guid) {
-            <app-item-list [itemList]="shop.itemList!" [opaqueNodes]="true" [nodeOverlayTemplate]="tShopNode"></app-item-list>
-          }
-        </div>
+        <app-shop-item-lists [shops]="shops" [opaqueNodes]="true" [nodeOverlayTemplate]="tShopNode" />
       </div>
     </section>
   }

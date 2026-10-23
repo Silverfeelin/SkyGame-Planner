@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { IIAP, IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
-import { IapCardComponent, ItemListComponent } from '@app/components/shared/shared-widgets';
+import { IapCardComponent, ShopItemListsComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 interface IVenue {
@@ -67,7 +67,7 @@ const VENUES: ReadonlyArray<IVenue> = [
   templateUrl: './shops.component.html',
   styleUrl: './shops.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, IapCardComponent, ItemListComponent, SectionQuickActionsComponent]
+  imports: [RouterLink, MatIcon, IapCardComponent, ShopItemListsComponent, SectionQuickActionsComponent]
 })
 export class ShopsComponent {
   private readonly _iapService = inject(IAPService);

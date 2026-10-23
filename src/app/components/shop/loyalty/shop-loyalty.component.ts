@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
-import { ItemListComponent } from '@app/components/shared/shared-widgets';
+import { ShopItemListsComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './shop-loyalty.component.html',
   styleUrl: './shop-loyalty.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ItemListComponent, SectionQuickActionsComponent]
+  imports: [ShopItemListsComponent, SectionQuickActionsComponent]
 })
 export class ShopLoyaltyComponent {
   readonly shops: ReadonlyArray<IShop>;

@@ -13,7 +13,7 @@ import { DateComponent } from '@app/components/util/date/date.component';
 import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
-import { DraftWarningComponent, IapCardComponent, ItemListComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
+import { DraftWarningComponent, IapCardComponent, ShopItemListsComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 
 @Component({
@@ -28,7 +28,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
     DaysLeftComponent,
     DurationComponent,
     SpiritTreeComponent,
-    ItemListComponent,
+    ShopItemListsComponent,
     IapCardComponent,
     DraftWarningComponent,
     SectionQuickActionsComponent
@@ -47,6 +47,7 @@ export class EventInstanceComponent implements OnDestroy {
   readonly iapShops = signal<IShop[]>([]);
   readonly highlightItem = signal<string | undefined>(undefined);
   readonly highlightIap = signal<string | undefined>(undefined);
+  readonly highlightNode = signal<string | undefined>(undefined);
   readonly previousInstance = signal<IEventInstance | undefined>(undefined);
   readonly nextInstance = signal<IEventInstance | undefined>(undefined);
 
@@ -82,6 +83,7 @@ export class EventInstanceComponent implements OnDestroy {
   private _onQuery(p: ParamMap): void {
     this.highlightItem.set(p.get('highlightItem') ?? undefined);
     this.highlightIap.set(p.get('highlightIap') ?? undefined);
+    this.highlightNode.set(p.get('highlightNode') ?? undefined);
   }
 
   private _onParams(params: ParamMap): void {

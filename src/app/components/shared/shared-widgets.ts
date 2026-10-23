@@ -63,6 +63,8 @@ export {
   type ItemListNodeClickEvent
 } from '../item/item-list/item-list.component';
 
+export { ShopItemListsComponent } from '../shop/item-lists/shop-item-lists.component';
+
 export {
   ItemGridLayoutComponent,
   type ItemClickEvent
