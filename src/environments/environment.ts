@@ -10,6 +10,6 @@ export const environment: {
   urls: {
     everything: `${dataUrl}/everything.json`,
     candles: `${dataUrl}/candles.json`,
-    tsc: 'https://sc-dev.novaxeros.net',
+    tsc: 'https://thatskycollection.com',
   }
 }
