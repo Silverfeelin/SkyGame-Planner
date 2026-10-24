@@ -25,6 +25,7 @@ export class AppComponent {
   showKeyboardShortcuts = false;
   isPagesDev = location.host === 'sky-planner.pages.dev'; // only target main deployment.
   isSandbox = isSandboxHost();
+  sandboxCollapsed = false;
 
   constructor(
     private readonly _broadcastService: BroadcastService,

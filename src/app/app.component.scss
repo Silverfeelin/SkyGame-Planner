@@ -29,6 +29,21 @@
   padding: var(--atmos-pad-compact) var(--atmos-pad);
   color: var(--atmos-text);
 
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--atmos-gap-compact);
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
   &__title { margin: 0; font-size: var(--atmos-fs-lg); font-weight: 500; }
   &__body { margin: 0; color: var(--atmos-text-dim); }
 
