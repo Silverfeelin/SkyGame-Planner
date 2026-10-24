@@ -23,7 +23,6 @@
     (resetRequest)="resetSelected()"
     (randomRequest)="randomSelection()"
     (copyLinkRequest)="copyLink()"
-    (calculateCostRequest)="calculateCost()"
     (imageRequest)="readImage($event)" />
 
   <!-- Result of reading a one-fit image -->
@@ -163,6 +162,9 @@
           </div>
         }
       </div>
+
+      <app-closet-search class="atmos-items-search" />
+      <app-closet-browse class="atmos-items-browse" [requesting]="requesting" />
     </div>
 
     <!-- Closet grid -->
@@ -170,6 +172,13 @@
       [requesting]="requesting"
       (itemToggled)="toggleItem($event)"
       (dyeClicked)="showDyePicker($event.item, $event.event)" />
+
+    <app-closet-selection
+      (removed)="removeItem($event.item, $event.color)"
+      (shareRequested)="shareImage($event)"
+      (copyImageRequested)="copyImage($event.mode, $event.tooltip)"
+      (copyLinkRequested)="copyLink($event)"
+      (costRequested)="calculateCost()" />
   </div>
 
   <!-- Dye picker overlay -->

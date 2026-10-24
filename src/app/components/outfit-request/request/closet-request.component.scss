@@ -42,21 +42,28 @@
   z-index: 1;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: var(--atmos-pad);
   display: flex;
   flex-direction: column;
-  gap: var(--atmos-gap);
 }
 
-@media (max-width: 720px) {
-  .atmos-closet-request__main { padding: var(--atmos-pad-compact); }
-}
-
-// Request page layout
+// Edge to edge: the cards span the page, the rest keeps an inset so its buttons don't touch the screen edge.
 .atmos-request-page {
   display: flex;
   flex-direction: column;
-  gap: var(--atmos-gap);
+  gap: var(--atmos-gap-compact);
+
+  > .atmos-card {
+    border-radius: 0;
+    border-inline: 0;
+
+    &:first-child { border-top: 0; }
+  }
+}
+
+app-closet-toolbar,
+app-closet-background-picker {
+  display: block;
+  padding-inline: var(--atmos-pad-compact);
 }
 
 .header-sticky {
@@ -65,6 +72,16 @@
   background: var(--atmos-card-bg-solid);
   z-index: 2;
   backdrop-filter: var(--atmos-blur);
+  flex-wrap: wrap;
+}
+
+// Wraps onto its own full-width row when the header gets narrow.
+.atmos-items-search {
+  flex: 1 1 260px;
+}
+
+.atmos-items-browse {
+  flex: 1 1 100%;
 }
 
 .atmos-copy-controls {
@@ -78,7 +95,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 240px;
+  width: min(240px, calc(100vw - 32px));
   background: var(--atmos-bg-elev);
   border: var(--atmos-card-border);
   border-radius: var(--atmos-card-radius);
@@ -87,8 +104,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  @media screen and (max-width: 480px) { width: 100%; }
 }
 
 .btn-group-img {
@@ -96,7 +111,13 @@
   .atmos-btn { justify-content: flex-start; }
 }
 
-.btn-copy-img { flex: 1; }
+.btn-copy-img { flex: 1; white-space: nowrap; }
+
+.atmos-closet-request__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 .atmos-closet-request__home {
   margin-left: auto;

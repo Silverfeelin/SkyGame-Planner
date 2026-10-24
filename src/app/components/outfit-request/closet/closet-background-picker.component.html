@@ -2,6 +2,10 @@
   <div class="atmos-card">
     <div class="atmos-card__header">
       <h2 class="atmos-section__title">Background</h2>
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-bg-picker__reset" [disabled]="!selected()" (click)="reset()">
+        <mat-icon>restart_alt</mat-icon>
+        <span>Use default</span>
+      </button>
     </div>
     <div class="atmos-card__body">
       <div class="atmos-bg-picker">
@@ -10,12 +14,12 @@
           <div class="atmos-bg-picker__items">
             <img src="/assets/game/background/random.webp"
               class="atmos-bg-picker__item"
-              [class.is-selected]="selected() === section.guid"
+              [class.is-selected]="current() === section.guid"
               (click)="select(section.guid)" />
             @for (bg of section.backgrounds; track bg.guid) {
               <img [src]="bg.url"
                 class="atmos-bg-picker__item"
-                [class.is-selected]="selected() === bg.guid"
+                [class.is-selected]="current() === bg.guid"
                 (click)="select(bg.guid)" />
             }
           </div>

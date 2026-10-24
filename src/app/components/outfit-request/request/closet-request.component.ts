@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, inject, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { MatIcon, MatIconRegistry } from '@angular/material/icon';
@@ -9,14 +9,16 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { IItem, ItemType } from 'skygame-data';
-import { ClosetStateService } from '../closet/closet-state.service';
+import { ClosetStateService, RequestColor } from '../closet/closet-state.service';
 import { ClosetSerializer, IOutfitRequest } from '../closet/closet-serializer';
 import { canvasToBlob, ClosetRenderer, CopyImageMode } from '../closet/closet-renderer';
 import { ClosetToolbarComponent } from '../closet/closet-toolbar.component';
 import { ClosetGridComponent } from '../closet/closet-grid.component';
+import { ClosetSearchComponent } from '../closet/closet-search.component';
+import { ClosetBrowseComponent } from '../closet/closet-browse.component';
+import { ClosetSelectionComponent } from '../closet/closet-selection.component';
 import { ClosetDyePickerComponent } from '../closet/closet-dye-picker.component';
 import { ClosetBackgroundPickerComponent } from '../closet/closet-background-picker.component';
-import { ClosetOngoingComponent } from '../closet/closet-ongoing.component';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { startClosetTour } from '../closet/closet-tour';
@@ -26,8 +28,7 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
 
 /**
  * Chromeless request-mode host. Provides its own ClosetStateService so each
- * page has independent state. Mode is 'request' — the ongoing spirit cards
- * appear alongside the grid.
+ * page has independent state.
  */
 @Component({
   selector: 'app-closet-request',
@@ -44,9 +45,11 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
     RouterLink, MatIcon,
     ClosetToolbarComponent,
     ClosetGridComponent,
+    ClosetSearchComponent,
+    ClosetBrowseComponent,
+    ClosetSelectionComponent,
     ClosetDyePickerComponent,
     ClosetBackgroundPickerComponent,
-    ClosetOngoingComponent,
     TooltipDirective
   ]
 })
@@ -58,6 +61,7 @@ export class ClosetRequestComponent implements OnDestroy {
   private readonly _http = inject(HttpClient);
   private readonly _route = inject(ActivatedRoute);
   private readonly _el = inject(ElementRef<HTMLElement>);
+  private readonly _selection = viewChild(ClosetSelectionComponent);
 
   private _bgImg!: HTMLImageElement;
   bgAttribution?: string;
@@ -265,6 +269,11 @@ export class ClosetRequestComponent implements OnDestroy {
     this._updateUrl();
   }
 
+  removeItem(item: IItem, color: RequestColor): void {
+    this.state.deselect(item, color);
+    this._updateUrl();
+  }
+
   private _updateUrl(): void {
     const state = this.state;
     const s = this._serializer;
@@ -444,6 +453,10 @@ export class ClosetRequestComponent implements OnDestroy {
     const url = new URL(`${location.origin}/item/unlock-calculator`);
     url.searchParams.set('items', ids);
     window.open(url.href, '_blank');
+  }
+
+  openSelection(): void {
+    this._selection()?.folded.set(false);
   }
 
   scrollToWarning(): void {

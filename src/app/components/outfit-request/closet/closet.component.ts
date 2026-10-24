@@ -12,6 +12,9 @@ import { ClosetSerializer, IOutfitRequest } from './closet-serializer';
 import { canvasToBlob, ClosetRenderer, CopyImageMode } from './closet-renderer';
 import { ClosetToolbarComponent } from './closet-toolbar.component';
 import { ClosetGridComponent } from './closet-grid.component';
+import { ClosetSearchComponent } from './closet-search.component';
+import { ClosetBrowseComponent } from './closet-browse.component';
+import { ClosetSelectionComponent } from './closet-selection.component';
 import { ClosetDyePickerComponent } from './closet-dye-picker.component';
 import { ClosetBackgroundPickerComponent } from './closet-background-picker.component';
 import { ClosetModifyPanelComponent } from './closet-modify-panel.component';
@@ -51,6 +54,9 @@ interface IImageRead {
     RouterLink, MatIcon,
     ClosetToolbarComponent,
     ClosetGridComponent,
+    ClosetSearchComponent,
+    ClosetBrowseComponent,
+    ClosetSelectionComponent,
     ClosetDyePickerComponent,
     ClosetBackgroundPickerComponent,
     ClosetModifyPanelComponent,
@@ -420,6 +426,11 @@ export class ClosetComponent implements OnDestroy {
         mapSignal.update(m => ({ ...m, [item.guid]: item }));
       }
     }
+    this._updateUrl();
+  }
+
+  removeItem(item: IItem, color: RequestColor): void {
+    this.state.deselect(item, color);
     this._updateUrl();
   }
 

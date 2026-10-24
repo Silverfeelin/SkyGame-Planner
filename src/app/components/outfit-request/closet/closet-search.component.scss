@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.atmos-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+
+  // The ring goes on the pill rather than the field so it follows the pill's rounding.
+  &:has(.atmos-search__field:focus-visible) {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+
+  &__icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--atmos-text-mute);
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    padding-left: 36px; // clears the absolutely positioned search icon
+    background: transparent;
+    border: 0;
+    font-weight: 400;
+
+    &:hover { background: transparent; }
+    &:focus-visible { outline: 0; }
+    &::-webkit-search-cancel-button { display: none; }
+  }
+}
+
+.atmos-search__clear {
+  flex: 0 0 auto;
+  display: inline-flex;
+  padding: 4px;
+  margin-right: 4px;
+  background: none;
+  border: 0;
+  border-radius: var(--atmos-radius-pill);
+  color: var(--atmos-text-mute);
+  cursor: pointer;
+
+  &:hover { color: var(--atmos-text); background: var(--atmos-hover-bg); }
+  mat-icon { font-size: 20px; width: 20px; height: 20px; }
+}

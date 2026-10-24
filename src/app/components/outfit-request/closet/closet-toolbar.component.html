@@ -29,15 +29,15 @@
       <mat-icon>wallpaper</mat-icon>
       <span>Background</span>
     </button>
-    <!-- Reset -->
-    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetRequest.emit()" data-step="124" data-position="bottom-left-aligned">
-      <mat-icon>delete_forever</mat-icon>
-      <span>Reset</span>
-    </button>
-    <!-- Random -->
-    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="randomRequest.emit()" data-step="125" data-position="bottom-left-aligned">
-      <mat-icon>shuffle</mat-icon>
-    </button>
+    <div class="atmos-btn-group">
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetRequest.emit()" data-step="124" data-position="bottom-left-aligned">
+        <mat-icon>delete_forever</mat-icon>
+        <span>Reset</span>
+      </button>
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="randomRequest.emit()" aria-label="Shuffle" data-step="125" data-position="bottom-left-aligned">
+        <mat-icon>shuffle</mat-icon>
+      </button>
+    </div>
     @if (!isRequesting()) {
       <!-- Highlight items from a one-fit image -->
       <button type="button" class="atmos-btn atmos-btn--sm" (click)="imageInput.click()"
@@ -47,38 +47,37 @@
       </button>
       <input #imageInput type="file" hidden [accept]="imageAccept" (change)="pickImage(imageInput)" />
     }
-    <!-- Calculate cost -->
-    <button type="button" class="atmos-btn atmos-btn--sm" (click)="calculateCostRequest.emit()" data-step="127" data-position="bottom-left-aligned">
-      <mat-icon>calculate</mat-icon>
-      <span>Costs</span>
-    </button>
-  </div>
-
-  <div class="atmos-toolbar__row atmos-toolbar__row--search">
-    <!-- Search -->
-    <div class="atmos-search" data-step="126" data-position="bottom-left-aligned">
-      <mat-icon class="atmos-search__icon">search</mat-icon>
-      <input class="atmos-input atmos-search__field" type="search" placeholder="Search items…"
-        (input)="search($any($event.target).value)" />
-    </div>
-
     <!-- Color picker -->
     <div class="atmos-color-picker" data-step="3" data-position="bottom-right-aligned">
-      <button type="button" class="atmos-color-btn atmos-color-btn--active"
-        [class.atmos-color-btn--r]="state.color() === 'r'"
-        [class.atmos-color-btn--y]="state.color() === 'y'"
-        [class.atmos-color-btn--g]="state.color() === 'g'"
-        [class.atmos-color-btn--b]="state.color() === 'b'"
+      <button type="button" class="atmos-btn atmos-btn--sm"
+        [class.atmos-btn--active]="state.showingColorPicker()"
+        [attr.aria-expanded]="state.showingColorPicker()" aria-haspopup="menu"
         (click)="toggleColorPicker($event)">
-        <mat-icon>border_color</mat-icon>
+        @if (state.color(); as color) {
+          <span [class]="'atmos-color-swatch atmos-color-swatch--' + color" aria-hidden="true"></span>
+        } @else {
+          <mat-icon>ink_eraser</mat-icon>
+        }
+        <span>{{ colorLabel() }}</span>
       </button>
       @if (state.showingColorPicker()) {
-        <div class="atmos-color-picker__dropdown">
-          <button type="button" class="atmos-color-btn atmos-color-btn--r atmos-color-btn--fill" (click)="setColor('r')"></button>
-          <button type="button" class="atmos-color-btn atmos-color-btn--y atmos-color-btn--fill" (click)="setColor('y')"></button>
-          <button type="button" class="atmos-color-btn atmos-color-btn--g atmos-color-btn--fill" (click)="setColor('g')"></button>
-          <button type="button" class="atmos-color-btn atmos-color-btn--b atmos-color-btn--fill" (click)="setColor('b')"></button>
-          <button type="button" class="atmos-color-btn" (click)="setColor(undefined)"><mat-icon>delete</mat-icon></button>
+        <div class="atmos-color-picker__dropdown" role="menu">
+          @for (option of colors; track option.color) {
+            <button type="button" role="menuitemradio" class="atmos-color-picker__option"
+              [class.atmos-color-picker__option--active]="state.color() === option.color"
+              [attr.aria-checked]="state.color() === option.color"
+              [attr.aria-label]="option.label" [title]="option.label"
+              (click)="setColor(option.color)">
+              <span [class]="'atmos-color-swatch atmos-color-swatch--' + option.color"></span>
+            </button>
+          }
+          <button type="button" role="menuitemradio" class="atmos-color-picker__option"
+            [class.atmos-color-picker__option--active]="!state.color()"
+            [attr.aria-checked]="!state.color()"
+            aria-label="Eraser" title="Eraser"
+            (click)="setColor(undefined)">
+            <mat-icon>ink_eraser</mat-icon>
+          </button>
         </div>
       }
     </div>

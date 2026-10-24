@@ -1,0 +1,33 @@
+<div class="closet-browse">
+  <!-- The grid shows the search results until the search is cleared. -->
+  @if (!state.searchResults()) {
+    <div class="atmos-btn-group" role="group" aria-label="Group items by" data-step="129" data-position="bottom-left-aligned">
+      @for (option of viewOptions; track option.value) {
+        <button type="button" class="atmos-btn atmos-btn--sm"
+          [class.atmos-btn--active]="state.groupBy() === option.value"
+          [attr.aria-pressed]="state.groupBy() === option.value"
+          [title]="option.value !== 'type' && state.groupBy() === option.value ? (state.allGroupsOpen() ? 'Fold all' : 'Unfold all') : ''"
+          (click)="setView(option.value)">
+          {{ option.label }}
+        </button>
+      }
+    </div>
+  }
+
+  <div class="closet-browse__types" role="group" [attr.aria-label]="filtering() ? 'Show only one type' : 'Jump to type'"
+    data-step="130" data-position="bottom-left-aligned">
+    @for (type of types; track type) {
+      @let pressed = filtering() && state.activeType() === type;
+      <button type="button" class="closet-browse__type"
+        [class.closet-browse__type--active]="pressed"
+        [class.closet-browse__type--empty]="!counts()[type]"
+        [attr.aria-pressed]="filtering() ? pressed : undefined"
+        [title]="(filtering() ? 'Show only ' : 'Jump to ') + (type | itemType: true).toLowerCase()"
+        [attr.aria-label]="(type | itemType: true) + ', ' + counts()[type]"
+        (click)="pickType(type)">
+        <mat-icon [svgIcon]="typeIcons[type]" />
+        <small>{{ counts()[type] }}</small>
+      </button>
+    }
+  </div>
+</div>

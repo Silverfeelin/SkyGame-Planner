@@ -5,33 +5,32 @@
   <div class="atmos-request-page">
     <!-- Page header -->
     <div class="atmos-card">
-      <div class="atmos-card__header">
-        <h1 class="atmos-section__title atmos-section__title--lg">Sky outfit request</h1>
-        <a class="atmos-btn atmos-btn--sm atmos-closet-request__home" [routerLink]="'/'" data-step="904" data-position="bottom-right-aligned">
-          <mat-icon>home</mat-icon>
-          <span>Home</span>
-        </a>
-      </div>
       <div class="atmos-card__body">
+        <div class="atmos-closet-request__head">
+          <h1 class="atmos-section__title atmos-section__title--lg">Sky outfit request</h1>
+          <a class="atmos-btn atmos-btn--sm atmos-closet-request__home" [routerLink]="'/'" data-step="904" data-position="bottom-right-aligned">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </a>
+        </div>
         <div data-step="0" data-position="bottom-left-aligned">
+          To create an outfit request, select items from the closet below. After that, share or copy from the
+          <a class="atmos-text-link" role="button" tabindex="0" (click)="openSelection()" (keydown.enter)="openSelection()">Your request</a>
+          panel at the bottom.<br/>
           Please visit the
           <a class="atmos-text-link" [routerLink]="'/outfit-request/closet'">Closet</a>
-          page if you want to customize and share your closet.
-          <a class="atmos-text-link" role="button" tabindex="0" (click)="startTour()" (keydown.enter)="startTour()">Start the Tour</a> to learn how to use this page.
+          page if you want to customize your own closet.
+          <a class="atmos-text-link" role="button" tabindex="0" (click)="startTour()" (keydown.enter)="startTour()">Start the Tour</a> to learn in detail how to use this page.
         </div>
       </div>
     </div>
-
-    <!-- Ongoing items (TS / RS / events) — request mode only -->
-    <app-closet-ongoing (itemToggled)="toggleItem($event)" />
 
     <!-- Toolbar -->
     <app-closet-toolbar
       [isRequesting]="requesting"
       (resetRequest)="resetSelected()"
       (randomRequest)="randomSelection()"
-      (copyLinkRequest)="copyLink()"
-      (calculateCostRequest)="calculateCost()" />
+      (copyLinkRequest)="copyLink()" />
 
     <!-- Background picker -->
     <app-closet-background-picker />
@@ -102,6 +101,9 @@
             </div>
           }
         </div>
+
+        <app-closet-search class="atmos-items-search" />
+        <app-closet-browse class="atmos-items-browse" [requesting]="requesting" />
       </div>
 
       <!-- Closet grid -->
@@ -109,6 +111,14 @@
         [requesting]="requesting"
         (itemToggled)="toggleItem($event)"
         (dyeClicked)="showDyePicker($event.item, $event.event)" />
+
+      <app-closet-selection
+        [alwaysShow]="true"
+        (removed)="removeItem($event.item, $event.color)"
+        (shareRequested)="shareImage($event)"
+        (copyImageRequested)="copyImage($event.mode, $event.tooltip)"
+        (copyLinkRequested)="copyLink($event)"
+        (costRequested)="calculateCost()" />
     </div>
 
     <!-- Dye picker overlay -->

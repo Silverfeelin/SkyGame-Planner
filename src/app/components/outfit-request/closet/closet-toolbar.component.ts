@@ -1,9 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject, output, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, output, input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ClosetStateService, RequestColor } from './closet-state.service';
-import { SearchService } from '@app/services/search.service';
-import { IItem } from 'skygame-data';
 import { PASTE_KEY, SCREENSHOT_ACCEPT } from '@app/components/quick-start/closet/closet-files';
+
+const COLORS: Array<{ color: RequestColor; label: string }> = [
+  { color: 'r', label: 'Red' },
+  { color: 'y', label: 'Yellow' },
+  { color: 'g', label: 'Green' },
+  { color: 'b', label: 'Blue' }
+];
 
 @Component({
   selector: 'app-closet-toolbar',
@@ -11,33 +16,26 @@ import { PASTE_KEY, SCREENSHOT_ACCEPT } from '@app/components/quick-start/closet
   styleUrl: './closet-toolbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
+  host: {
+    '(document:click)': 'onDocumentClick($event)'
+  },
   imports: [MatIcon]
 })
 export class ClosetToolbarComponent {
   readonly state = inject(ClosetStateService);
-  private readonly _search = inject(SearchService);
 
   readonly isRequesting = input(false);
   readonly pasteKey = PASTE_KEY;
   readonly imageAccept = SCREENSHOT_ACCEPT;
+  readonly colors = COLORS;
+  readonly colorLabel = computed(() => COLORS.find(c => c.color === this.state.color())?.label ?? 'Eraser');
 
   readonly resetRequest = output<void>();
   readonly randomRequest = output<void>();
   readonly copyLinkRequest = output<void>();
   readonly copyImageRequest = output<string>();
   readonly shareImageRequest = output<string>();
-  readonly calculateCostRequest = output<void>();
   readonly imageRequest = output<File>();
-
-  search(text: string): void {
-    if (!text || text.length < 3) {
-      this.state.searchResults.set(undefined);
-      return;
-    }
-    const results = this._search.searchItems(text, { limit: 100, hasIcon: true });
-    const map = results.reduce((m, r) => (m[r.data.guid] = r.data, m), {} as Record<string, IItem>);
-    this.state.searchResults.set(map);
-  }
 
   pickImage(input: HTMLInputElement): void {
     const file = input.files?.[0];
@@ -55,6 +53,12 @@ export class ClosetToolbarComponent {
     evt.preventDefault();
     evt.stopPropagation();
     this.state.showingColorPicker.update(v => !v);
+  }
+
+  onDocumentClick(evt: MouseEvent): void {
+    if (!this.state.showingColorPicker()) { return; }
+    if ((evt.target as Element | null)?.closest('.atmos-color-picker')) { return; }
+    this.state.showingColorPicker.set(false);
   }
 
   toggleItemSize(): void {
