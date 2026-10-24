@@ -17,6 +17,16 @@
   background: var(--atmos-card-bg-solid);
   z-index: 2;
   backdrop-filter: var(--atmos-blur);
+  flex-wrap: wrap;
+}
+
+// Wraps onto its own full-width row when the header gets narrow.
+.atmos-items-search {
+  flex: 1 1 260px;
+}
+
+.atmos-items-browse {
+  flex: 1 1 100%;
 }
 
 // Copy controls
@@ -31,7 +41,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 240px;
+  width: min(240px, calc(100vw - 32px));
   background: var(--atmos-bg-elev);
   border: var(--atmos-card-border);
   border-radius: var(--atmos-card-radius);
@@ -40,8 +50,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  @media screen and (max-width: 480px) { width: 100%; }
 }
 
 .btn-group-img {
@@ -49,7 +57,7 @@
   .atmos-btn { justify-content: flex-start; }
 }
 
-.btn-copy-img { flex: 1; }
+.btn-copy-img { flex: 1; white-space: nowrap; }
 
 // Warnings
 .atmos-warn-badge {

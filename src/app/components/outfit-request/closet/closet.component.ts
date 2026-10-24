@@ -12,6 +12,9 @@ import { ClosetSerializer, IOutfitRequest } from './closet-serializer';
 import { canvasToBlob, ClosetRenderer, CopyImageMode } from './closet-renderer';
 import { ClosetToolbarComponent } from './closet-toolbar.component';
 import { ClosetGridComponent } from './closet-grid.component';
+import { ClosetSearchComponent } from './closet-search.component';
+import { ClosetBrowseComponent } from './closet-browse.component';
+import { ClosetSelectionComponent } from './closet-selection.component';
 import { ClosetDyePickerComponent } from './closet-dye-picker.component';
 import { ClosetBackgroundPickerComponent } from './closet-background-picker.component';
 import { ClosetModifyPanelComponent } from './closet-modify-panel.component';
@@ -51,6 +54,9 @@ interface IImageRead {
     RouterLink, MatIcon,
     ClosetToolbarComponent,
     ClosetGridComponent,
+    ClosetSearchComponent,
+    ClosetBrowseComponent,
+    ClosetSelectionComponent,
     ClosetDyePickerComponent,
     ClosetBackgroundPickerComponent,
     ClosetModifyPanelComponent,
@@ -286,18 +292,13 @@ export class ClosetComponent implements OnDestroy {
 
     const dyes = s.deserializeDyes(data.d);
     const dyeMap: Record<string, any[]> = {};
-    const dyeClasses: Record<string, (string | undefined)[]> = {};
     const allSelected = [...r, ...y, ...g, ...b];
     const seen = new Set<string>();
     const unique = allSelected.filter(i => !seen.has(i.guid) && seen.add(i.guid));
     unique.forEach((item, i) => {
       dyeMap[item.guid] = dyes[i] || [{}];
-      dyeClasses[item.guid] = [];
-      if (dyes[i]?.[0]?.primary) { dyeClasses[item.guid]![0] = `dye-${dyes[i][0].primary}`; }
-      if (dyes[i]?.[1]?.primary) { dyeClasses[item.guid]![1] = `dye-${dyes[i][1].primary}`; }
     });
     state.dyes.set(dyeMap);
-    state.dyeClasses.set(dyeClasses);
   }
 
   // ── Read one-fit image ────────────────────────────────────────────────────
@@ -420,6 +421,11 @@ export class ClosetComponent implements OnDestroy {
         mapSignal.update(m => ({ ...m, [item.guid]: item }));
       }
     }
+    this._updateUrl();
+  }
+
+  removeItem(item: IItem, color: RequestColor): void {
+    this.state.deselect(item, color);
     this._updateUrl();
   }
 

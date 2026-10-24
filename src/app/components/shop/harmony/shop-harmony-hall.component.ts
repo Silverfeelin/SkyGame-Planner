@@ -6,7 +6,7 @@ import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import {
   IapCardComponent,
-  ItemListComponent,
+  ShopItemListsComponent,
   SpiritTreeComponent
 } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
@@ -16,7 +16,7 @@ import { SectionQuickActionsComponent } from '@app/components/shared/quick-actio
   templateUrl: './shop-harmony-hall.component.html',
   styleUrl: './shop-harmony-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, IapCardComponent, ItemListComponent, SpiritTreeComponent, SectionQuickActionsComponent]
+  imports: [MatIcon, IapCardComponent, ShopItemListsComponent, SpiritTreeComponent, SectionQuickActionsComponent]
 })
 export class ShopHarmonyHallComponent {
   private readonly _iapService = inject(IAPService);

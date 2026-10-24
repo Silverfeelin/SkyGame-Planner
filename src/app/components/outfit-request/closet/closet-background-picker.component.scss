@@ -35,10 +35,13 @@
     transform: translateY(-1px);
   }
 
-  /* Same treatment as .atmos-btn--active so the picked background reads as
-     selected alongside the rest of the toolbar. */
+  // An outline, since the image covers an inset ring and a thicker border would shift the grid.
   &.is-selected {
-    border-color: var(--atmos-active-border);
-    box-shadow: var(--atmos-active-ring);
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 1px;
   }
+}
+
+.atmos-bg-picker__reset {
+  margin-left: auto;
 }

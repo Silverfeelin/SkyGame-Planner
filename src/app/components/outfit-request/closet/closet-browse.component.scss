@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  min-width: 0;
+  font-weight: 400;
+}
+
+.closet-browse {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.closet-browse__types {
+  display: flex;
+  gap: 2px;
+  min-width: 0;
+  max-width: 100%;
+  // A single scrolling row keeps the sticky header short on phones.
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--atmos-line) transparent;
+}
+
+.closet-browse__type {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 6px 2px 4px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  cursor: pointer;
+  transition: background var(--atmos-transition), border-color var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: -2px;
+  }
+
+  mat-icon { width: 24px; height: 24px; }
+
+  small {
+    min-width: 2ch;
+    color: var(--atmos-text-dim);
+    font-size: var(--atmos-fs-sm);
+    font-variant-numeric: tabular-nums;
+    text-align: left;
+  }
+}
+
+.closet-browse__type--active {
+  background: var(--atmos-active-bg);
+  border-color: var(--atmos-active-border);
+
+  &:hover { background: var(--atmos-active-bg-hover); }
+  small { color: var(--atmos-accent); }
+}
+
+.closet-browse__type--empty {
+  opacity: 0.4;
+}

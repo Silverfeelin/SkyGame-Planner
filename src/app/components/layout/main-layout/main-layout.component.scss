@@ -107,6 +107,8 @@
 .loader {
   opacity: 0;
   transition: opacity 0.3s;
+  // Covers the page's top-right corner even while hidden; it has nothing to click.
+  pointer-events: none;
 }
 
 .loader-loading {

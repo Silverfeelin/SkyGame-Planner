@@ -1,0 +1,13 @@
+<div class="atmos-search" data-step="126" data-position="bottom-left-aligned">
+  <mat-icon class="atmos-search__icon">search</mat-icon>
+  <input #input class="atmos-input atmos-search__field" type="search" autocomplete="off"
+    placeholder="Item, spirit, season or event…" aria-label="Search items by name, spirit, season or event"
+    [value]="query()"
+    (input)="search($any($event.target).value)"
+    (keydown.escape)="onEscape($event)" />
+  @if (hasQuery()) {
+    <button type="button" class="atmos-search__clear" (click)="clear()" aria-label="Clear search">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</div>

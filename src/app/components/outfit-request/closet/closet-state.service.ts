@@ -1,9 +1,12 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, WritableSignal } from '@angular/core';
 import { IItem, ItemType, ItemSize } from 'skygame-data';
 import { IDye } from '@app/interfaces/dye.interface';
+import { slotSwatch } from '@app/components/item/dye-versions/dye-swatches';
 
 export type RequestColor = 'r' | 'y' | 'g' | 'b';
 export type ClosetMode = 'all' | 'closet';
+export type ClosetGroupBy = 'type' | 'season' | 'event' | 'realm';
+export type ClosetView = ClosetGroupBy | 'results';
 export type CopyImageMode = 'request' | 'square' | 'closet' | 'template';
 export interface ISelection {
   [guid: string]: IItem;
@@ -34,9 +37,17 @@ export class ClosetStateService {
     ...this.selectedG(),
     ...this.selectedB(),
   }));
+  readonly selections: Record<RequestColor, WritableSignal<ISelection>> = {
+    r: this.selectedR, y: this.selectedY, g: this.selectedG, b: this.selectedB
+  };
 
   readonly dyes = signal<Record<string, IDye[]>>({});
-  readonly dyeClasses = signal<Record<string, (string | undefined)[] | undefined>>({});
+  /** Per item, the color of each dye slot with its blend applied; undefined for undyed slots. */
+  readonly dyeSwatches = computed(() => {
+    const swatches: Record<string, (string | undefined)[]> = {};
+    for (const [guid, dyes] of Object.entries(this.dyes())) { swatches[guid] = dyes.map(slotSwatch); }
+    return swatches;
+  });
 
   // ── Availability (from shared closet link) ────────────────────────────────
   readonly available = signal<ISelection | undefined>(undefined);
@@ -67,6 +78,7 @@ export class ClosetStateService {
   readonly itemSizePx = computed(() => this.itemSize() === 'small' ? 32 : 64);
   readonly shouldSync = signal(localStorage.getItem('closet.sync') === '1');
   readonly hideIap = signal(false); // Not persisted (see legacy comment)
+  readonly groupBy = signal<ClosetGroupBy>((localStorage.getItem('closet.group-by') as ClosetGroupBy) || 'type');
 
   // ── Active color ──────────────────────────────────────────────────────────
   readonly color = signal<RequestColor | undefined>('r');
@@ -81,10 +93,57 @@ export class ClosetStateService {
   readonly isRendering = signal(0);
   readonly lastLink = signal<string | undefined>(undefined);
   readonly typeFolded = signal<Record<string, boolean>>({});
+  /** Groups the user opened (true) or closed (false), by view. */
+  readonly groupFolds = signal<Record<string, boolean>>({});
+  /** Per view, whether groups without their own fold state are open. Search results start open, the other views folded. */
+  readonly groupsOpenByDefault = signal<Partial<Record<ClosetView, boolean>>>({ results: true });
+  readonly allGroupsOpen = computed(() => {
+    const view = this.view();
+    if (!this.groupsOpenByDefault()[view]) { return false; }
+    const prefix = `${view}:`;
+    return !Object.entries(this.groupFolds()).some(([key, open]) => !open && key.startsWith(prefix));
+  });
 
   // ── Search ────────────────────────────────────────────────────────────────
   readonly searchText = signal('');
+  /** Matches in order of relevance. */
   readonly searchResults = signal<Record<string, IItem> | undefined>(undefined);
+  /** What the grid shows: the search results while searching, else the chosen grouping. */
+  readonly view = computed<ClosetView>(() => this.searchResults() ? 'results' : this.groupBy());
+
+  // ── Type bar ──────────────────────────────────────────────────────────────
+  readonly activeType = signal<ItemType | undefined>(undefined);
+  /** Grouped views have no type sections to jump to, so picking a type narrows the grid there instead. */
+  readonly typeFilter = computed(() => this.view() !== 'type' ? this.activeType() : undefined);
+
+  /** Whether the closet settings keep this item out of the grid, apart from folding, search and type filters. */
+  isHiddenFromCloset(item: IItem, requesting: boolean): boolean {
+    if (requesting || this.modifyingCloset()) { return false; }
+    return this.closetMode() === 'closet' && !!this.hidden()[item.guid]
+      && !this.selectedAll()[item.guid]
+      && !(this.showOngoing() && this.ongoingItems()[item.guid]);
+  }
+
+  isGroupOpen(key: string): boolean {
+    return this.groupFolds()[this._groupFoldKey(key)] ?? !!this.groupsOpenByDefault()[this.view()];
+  }
+
+  toggleGroup(key: string): void {
+    const open = this.isGroupOpen(key);
+    this.groupFolds.update(m => ({ ...m, [this._groupFoldKey(key)]: !open }));
+  }
+
+  setAllGroupsOpen(open: boolean): void {
+    const view = this.view();
+    const prefix = `${view}:`;
+    this.groupFolds.update(m => Object.fromEntries(Object.entries(m).filter(([key]) => !key.startsWith(prefix))));
+    this.groupsOpenByDefault.update(m => ({ ...m, [view]: open }));
+  }
+
+  /** Results reuse the season, event and realm keys, but fold separately from those views. */
+  private _groupFoldKey(key: string): string {
+    return `${this.view()}:${key}`;
+  }
 
   // ── Persist helpers ───────────────────────────────────────────────────────
 
@@ -98,6 +157,12 @@ export class ClosetStateService {
     localStorage.setItem('closet.show-mode', this.closetMode());
     localStorage.setItem('closet.item-size', this.itemSize());
     localStorage.setItem('closet.sync', this.shouldSync() ? '1' : '0');
+    localStorage.setItem('closet.group-by', this.groupBy());
+  }
+
+  deselect(item: IItem, color: RequestColor): void {
+    this.selections[color].update(m => { const n = { ...m }; delete n[item.guid]; return n; });
+    this.lastLink.set(undefined);
   }
 
   /** Reset selection maps */

@@ -20,7 +20,7 @@ type TooltipPlacement = 'top' | 'bottom' | 'bottom-start' | 'auto';
   standalone: true,
   host: {
     '(mouseenter)': 'onTrigger()',
-    '(focus)': 'onTrigger()',
+    '(focus)': 'onFocus()',
     '(mouseleave)': 'onUntrigger()',
     '(blur)': 'onUntrigger()',
   }
@@ -42,6 +42,16 @@ export class TooltipDirective implements OnDestroy {
   private _view?: EmbeddedViewRef<unknown>;
   private _closeTimer?: ReturnType<typeof setTimeout>;
 
+  private readonly _onDismiss = (): void => { this._hide(); };
+  // The host can be removed or hidden under the pointer without a mouseleave.
+  private readonly _onDocumentPointerOver = (evt: PointerEvent): void => {
+    if (this.manual() || evt.pointerType !== 'mouse') { return; }
+    if (!(evt.target instanceof Node) || !this._host.nativeElement.contains(evt.target)) { this._hide(); }
+  };
+  private readonly _onVisibilityChange = (): void => {
+    if (document.hidden) { this._hide(); }
+  };
+
   constructor() {
     // The text can change while the tooltip is on screen — a toggle button whose
     // label flips on click, for instance. Without this the popover would keep
@@ -62,6 +72,12 @@ export class TooltipDirective implements OnDestroy {
   onTrigger(): void {
     if (this.manual()) { return; }
     this._show();
+  }
+
+  onFocus(): void {
+    // Returning to the tab refocuses the last clicked element; only keyboard focus should open the tooltip.
+    if (!this._host.nativeElement.matches(':focus-visible')) { return; }
+    this.onTrigger();
   }
 
   onUntrigger(): void {
@@ -105,6 +121,11 @@ export class TooltipDirective implements OnDestroy {
 
     el.showPopover();
     this._position();
+
+    // Leave events don't fire reliably when the tab or window loses focus.
+    document.addEventListener('pointerover', this._onDocumentPointerOver, { capture: true });
+    document.addEventListener('visibilitychange', this._onVisibilityChange);
+    window.addEventListener('blur', this._onDismiss);
   }
 
   private _hide(): void {
@@ -115,6 +136,9 @@ export class TooltipDirective implements OnDestroy {
     const el = this._popover;
     if (!el) { return; }
     this._popover = undefined;
+    document.removeEventListener('pointerover', this._onDocumentPointerOver, { capture: true });
+    document.removeEventListener('visibilitychange', this._onVisibilityChange);
+    window.removeEventListener('blur', this._onDismiss);
     try { el.hidePopover(); } catch { /* already hidden */ }
     el.remove();
     if (this._view) {

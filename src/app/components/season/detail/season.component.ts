@@ -18,7 +18,7 @@ import { DurationComponent } from '@app/components/util/duration/duration.compon
 import {
   DraftWarningComponent,
   IapCardComponent,
-  ItemListComponent,
+  ShopItemListsComponent,
   SpiritTreeComponent
 } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
@@ -37,7 +37,7 @@ interface ITreeEntry {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink, MatIcon, LowerCasePipe, DateRangeComponent, DaysLeftComponent, DurationComponent,
-    SpiritTreeComponent, ItemListComponent, IapCardComponent,
+    SpiritTreeComponent, ShopItemListsComponent, IapCardComponent,
     SectionQuickActionsComponent, DraftWarningComponent
   ]
 })
@@ -82,6 +82,7 @@ export class SeasonComponent implements OnInit {
 
   readonly highlightIap = signal<string | undefined>(undefined);
   readonly highlightTree = signal<string | undefined>(undefined);
+  readonly highlightNode = signal<string | undefined>(undefined);
 
   readonly imageStyle = computed<string | undefined>(() => {
     const url = this.season()?.imageUrl;
@@ -121,6 +122,7 @@ export class SeasonComponent implements OnInit {
   private onQueryChanged(params: ParamMap): void {
     this.highlightIap.set(params.get('highlightIap') ?? undefined);
     this.highlightTree.set(params.get('highlightTree') ?? undefined);
+    this.highlightNode.set(params.get('highlightNode') ?? undefined);
   }
 
   private onParamsChanged(params: ParamMap): void {

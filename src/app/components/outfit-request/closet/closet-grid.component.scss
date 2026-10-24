@@ -1,7 +1,58 @@
-@use 'closet-item' as closet-item;
+@use 'closet-markers' as markers;
 
-:host { @include closet-item.tokens; }
-@include closet-item.styles;
+:host { @include markers.tokens; }
+
+.atmos-closet-item {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+  border: 3px solid transparent;
+  /* The marker rules below set only border-color, so the width has to win
+     against any border shorthand that lands on the element later. */
+  border-width: 3px !important;
+  cursor: pointer;
+  vertical-align: top;
+  user-select: none;
+  // Long-press opens the item info card instead of the image menu on iOS.
+  -webkit-touch-callout: none;
+
+  app-item-icon { vertical-align: top; }
+}
+
+.atmos-closet-item-container {
+  border-radius: var(--atmos-radius-sm);
+  vertical-align: top;
+  line-height: 0px;
+}
+
+/* One claim: a solid border. */
+.atmos-closet-item.r { border-color: var(--closet-marker-r) !important; }
+.atmos-closet-item.y { border-color: var(--closet-marker-y) !important; }
+.atmos-closet-item.g { border-color: var(--closet-marker-g) !important; }
+.atmos-closet-item.b { border-color: var(--closet-marker-b) !important; }
+
+/* Several claims: the border is sliced between them with a conic gradient. Painted as a
+   background behind a transparent border, since border-image ignores border-radius. */
+.atmos-closet-item.r.y { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-r) 90deg 180deg, var(--closet-marker-y) 180deg); }
+.atmos-closet-item.r.g { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-r) 90deg 180deg, var(--closet-marker-g) 180deg); }
+.atmos-closet-item.r.b { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-r) 90deg 180deg, var(--closet-marker-b) 180deg); }
+.atmos-closet-item.y.g { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-y) 90deg 180deg, var(--closet-marker-g) 180deg); }
+.atmos-closet-item.y.b { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-y) 90deg 180deg, var(--closet-marker-b) 180deg); }
+.atmos-closet-item.g.b { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-g) 90deg 180deg, var(--closet-marker-b) 180deg); }
+.atmos-closet-item.r.y.g { --closet-claims: conic-gradient(from -60deg, var(--closet-marker-r) 0deg 120deg, var(--closet-marker-y) 120deg 240deg, var(--closet-marker-g) 240deg 360deg); }
+.atmos-closet-item.r.y.b { --closet-claims: conic-gradient(from -60deg, var(--closet-marker-r) 0deg 120deg, var(--closet-marker-y) 120deg 240deg, var(--closet-marker-b) 240deg 360deg); }
+.atmos-closet-item.r.g.b { --closet-claims: conic-gradient(from -60deg, var(--closet-marker-r) 0deg 120deg, var(--closet-marker-g) 120deg 240deg, var(--closet-marker-b) 240deg 360deg); }
+.atmos-closet-item.y.g.b { --closet-claims: conic-gradient(from -60deg, var(--closet-marker-y) 0deg 120deg, var(--closet-marker-g) 120deg 240deg, var(--closet-marker-b) 240deg 360deg); }
+.atmos-closet-item.r.y.g.b { --closet-claims: conic-gradient(from -90deg, var(--closet-marker-r) 90deg, var(--closet-marker-y) 90deg 180deg, var(--closet-marker-g) 180deg 270deg, var(--closet-marker-b) 270deg); }
+
+.atmos-closet-item {
+  &.r.y, &.r.g, &.r.b, &.y.g, &.y.b, &.g.b {
+    border-color: transparent !important;
+    background: linear-gradient(var(--atmos-bg-elev), var(--atmos-bg-elev)) padding-box, var(--closet-claims) border-box;
+  }
+}
 
 // Closet grid layout
 .atmos-closet-container {
@@ -13,6 +64,7 @@
 .atmos-closet-grid {
   display: flex;
   gap: 8px;
+  padding: var(--atmos-pad-compact);
 }
 
 .atmos-closet-grid__section {
@@ -36,6 +88,93 @@
   user-select: none;
 }
 
+// Season / event / realm views
+.atmos-closet-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+  padding: var(--atmos-pad-compact);
+}
+
+.atmos-closet-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.atmos-closet-group__heading {
+  margin: 0;
+  font-size: var(--atmos-fs-lg);
+  font-weight: 600;
+}
+
+.atmos-closet-group__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 4px 4px 8px;
+  background-color: var(--atmos-bg-elev);
+  border: 0;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover { background-color: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+
+  small {
+    color: var(--atmos-text-mute);
+    font-size: var(--atmos-fs-sm);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.atmos-closet-group__fold {
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.atmos-closet-group__row {
+  display: grid;
+  grid-template-columns: minmax(0, 180px) minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+
+  @media (max-width: 720px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}
+
+.atmos-closet-group__label {
+  color: var(--atmos-text-dim);
+  font-size: var(--atmos-fs-sm);
+  overflow-wrap: anywhere;
+  padding: 8px 0 0 8px;
+}
+
+// Same fixed cells as the closet sections, so the dye slots can't widen a tile.
+.atmos-closet-group__items {
+  display: grid;
+  grid-column: -2;
+  grid-template-columns: repeat(auto-fill, var(--closet-cell));
+  gap: 4px;
+}
+
+.atmos-closet-groups__note {
+  margin: 0;
+  color: var(--atmos-text-mute);
+  font-size: var(--atmos-fs-sm);
+}
+
 .atmos-closet-type {
   position: relative;
   cursor: pointer;
@@ -53,37 +192,58 @@
   top: 4px;
 }
 
-// Dye icons
+// Dyes
+// Fixed height so tiles line up whether or not the item can be dyed.
 .atmos-closet-dye-row {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 24px;
 }
 
-.atmos-dye-icon {
-  vertical-align: top;
-  font-size: 24px !important;
-  line-height: 24px !important;
-  width: 24px !important;
-  height: 24px !important;
+.atmos-closet-dye {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 100%;
+  padding: 0 4px;
+  background: var(--atmos-chip-bg);
+  border: 0;
+  border-radius: var(--atmos-radius-pill);
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); color: var(--atmos-text); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: -2px;
+  }
 }
 
-.atmos-dye-icon:not(.atmos-dye-icon--inactive):hover {
-  filter: brightness(0.7);
+.atmos-closet-dye__icon {
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
 }
 
-.atmos-dye-icon--inactive {
-  color: var(--atmos-text-mute);
+.atmos-closet-dye__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--atmos-line-soft);
+}
+
+.atmos-closet-dye__swatch--empty {
+  box-shadow: none;
+  border: 1px dashed var(--atmos-line);
 }
 
 // Small item size
 .atmos-closet-container[data-size="small"] {
-  .atmos-dye-icon {
-    font-size: 16px !important;
-    line-height: 16px !important;
-    width: 16px !important;
-    height: 16px !important;
-  }
+  .atmos-closet-dye-row { height: 16px; }
+  .atmos-closet-dye { gap: 2px; padding: 0 3px; }
+  .atmos-closet-dye__swatch { width: 10px; height: 10px; }
 }
 
 // Fading for hidden/unavailable items

@@ -1,0 +1,16 @@
+<div class="atmos-shop-item-lists">
+  @for (shop of shops(); track shop.guid) {
+    @if (shop.itemList; as itemList) {
+      <div class="atmos-card atmos-shop-item-lists__shop">
+        <div class="atmos-card__body">
+          <h3 class="atmos-shop-item-lists__title">{{ shop.name ?? shop.spirit?.name ?? 'Shop' }}</h3>
+          <app-item-list
+            [itemList]="itemList"
+            [highlightNode]="highlightNode()"
+            [opaqueNodes]="opaqueNodes()"
+            [nodeOverlayTemplate]="nodeOverlayTemplate()"></app-item-list>
+        </div>
+      </div>
+    }
+  }
+</div>

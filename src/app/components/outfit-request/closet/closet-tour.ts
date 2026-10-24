@@ -19,7 +19,8 @@ const S = {
   OPTIONS: 100, CLOSET_ITEMS: 101, CLOSET_MODIFY: 102,
   CLOSET_COLUMNS: 103, CLOSET_ONGOING: 104, CLOSET_SYNC: 105, CLOSET_DONE: 106,
   OPTION_SIZE: 122, OPTION_IAP: 123, OPTION_RESET: 124, OPTION_SHUFFLE: 125,
-  OPTION_SEARCH: 126, OPTION_COST: 127, OPTION_BACKGROUND: 128,
+  OPTION_SEARCH: 126, OPTION_BACKGROUND: 128,
+  BROWSE_GROUP: 129, BROWSE_TYPES: 130,
   LINK_HOME: 904
 };
 
@@ -35,8 +36,10 @@ export interface IClosetTourOptions {
 export function startClosetTour(options: IClosetTourOptions): void {
   const { root, requesting, state } = options;
 
-  // The tour tooltips assume the compact grid fits on screen.
+  // The tour tooltips assume the compact grid fits on screen, and point at the type sections.
   state.itemSize.set('small');
+  state.groupBy.set('type');
+  state.activeType.set(undefined);
 
   const steps: Array<ISkyIntroStep> = [];
 
@@ -84,8 +87,9 @@ export function startClosetTour(options: IClosetTourOptions): void {
     { sStep: S.OPTION_BACKGROUND, title: 'Background', intro: 'Pick the background used for the images you share from this page.' },
     { sStep: S.OPTION_RESET, title: 'Reset', intro: 'Remove all items you\'ve selected.' },
     { sStep: S.OPTION_SHUFFLE, title: 'Shuffle', intro: 'Remove all items you\'ve selected and select one random item from each closet.' },
-    { sStep: S.OPTION_COST, title: 'Costs', intro: 'Calculate what the items in your selection cost in total.' },
-    { sStep: S.OPTION_SEARCH, title: 'Search', intro: 'You can search for items here. Matching items will have a purple border. Item names often include the spirit name, for example \'Spinning Mentor Cape\'.' }
+    { sStep: S.OPTION_SEARCH, title: 'Search', intro: 'Search by item, spirit, season, event or realm.' },
+    { sStep: S.BROWSE_GROUP, title: 'Group items', intro: 'Change the displayed items to find the right ones more easily.' },
+    { sStep: S.BROWSE_TYPES, title: 'Item types', intro: 'In the Closet view, scroll to an item type. In other views, only show that type.' }
   );
 
   if (requesting) {
@@ -132,7 +136,20 @@ export function startClosetTour(options: IClosetTourOptions): void {
       return new Promise<boolean>(res => setTimeout(() => { retarget(step); res(true); }, 0));
     });
 
+    // intro.js rewrites the tooltip position on every step and resize, so the shift has to follow.
+    const observer = new MutationObserver(records => keepTooltipOnScreen(records[0].target as HTMLElement));
+    let observed: HTMLElement | undefined;
+    intro.onafterchange(() => {
+      const tooltip = document.querySelector('.introjs-tooltip') as HTMLElement | null;
+      if (!tooltip || tooltip === observed) { return; }
+      observed = tooltip;
+      observer.disconnect();
+      observer.observe(tooltip, { attributes: true, attributeFilter: ['style', 'class'] });
+      keepTooltipOnScreen(tooltip);
+    });
+
     intro.onexit(() => {
+      observer.disconnect();
       state.showingImagePicker.set(false);
       state.showingBackgroundPicker.set(false);
       state.modifyingCloset.set(false);
@@ -140,4 +157,31 @@ export function startClosetTour(options: IClosetTourOptions): void {
 
     intro.start();
   });
+}
+
+const SCREEN_MARGIN = 8;
+
+/** The aligned positions are kept fixed (autoPosition is off), so on narrow screens the tooltip can stick out past the edge. */
+function keepTooltipOnScreen(tooltip: HTMLElement): void {
+  const layer = tooltip.offsetParent as HTMLElement | null;
+  if (!layer) { return; }
+  // Read the layer's target position rather than its rect, which is still animating towards it.
+  // offsetLeft ignores transforms, so the shift below never feeds back into this measurement.
+  const left = parseFloat(layer.style.left) - window.scrollX + tooltip.offsetLeft;
+  const right = left + tooltip.offsetWidth;
+  const viewport = document.documentElement.clientWidth;
+  let shift = 0;
+  if (right > viewport - SCREEN_MARGIN) { shift = viewport - SCREEN_MARGIN - right; }
+  if (left + shift < SCREEN_MARGIN) { shift = SCREEN_MARGIN - left; }
+  // Not margin-left: it has no effect on the right-aligned positions, which only set `right`.
+  const translate = shift ? `${Math.round(shift)}px` : '';
+  // Skipping an unchanged shift also stops the observer from looping on its own write.
+  if (tooltip.style.translate !== translate) { tooltip.style.translate = translate; }
+
+  const arrow = tooltip.querySelector('.introjs-arrow') as HTMLElement | null;
+  if (arrow) {
+    // Keep the arrow on the target, but inside the tooltip.
+    const arrowLeft = Math.min(Math.max(arrow.offsetLeft - shift, 8), tooltip.offsetWidth - 18);
+    arrow.style.transform = shift ? `translateX(${arrowLeft - arrow.offsetLeft}px)` : '';
+  }
 }

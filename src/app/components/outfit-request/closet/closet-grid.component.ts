@@ -1,8 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject, output, input, computed } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
+import { IconComponent } from '@app/components/icon/icon.component';
+import { DataService } from '@app/services/data.service';
 import { ClosetStateService } from './closet-state.service';
+import { ClosetItemInfoDirective } from './closet-item-info.directive';
+import { CLOSET_SECTIONS, CLOSET_TYPE_ICONS, groupClosetItems, IClosetGroup } from './closet-groups';
+import { getOngoingGroups } from './closet-ongoing';
 import { IItem, ItemType } from 'skygame-data';
 
 @Component({
@@ -11,37 +16,41 @@ import { IItem, ItemType } from 'skygame-data';
   styleUrl: './closet-grid.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgClass, MatIcon, ItemIconComponent]
+  imports: [NgTemplateOutlet, MatIcon, ItemIconComponent, IconComponent, ClosetItemInfoDirective]
 })
 export class ClosetGridComponent {
   readonly state = inject(ClosetStateService);
+  private readonly _data = inject(DataService);
 
   readonly requesting = input(false);
   readonly itemToggled = output<IItem>();
   readonly dyeClicked = output<{ item: IItem; event: MouseEvent }>();
 
-  readonly itemTypes: ItemType[] = [
-    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
-    ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
-    ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
-    ItemType.Cape,
-    ItemType.Held, ItemType.Furniture, ItemType.Prop
-  ];
+  readonly itemIcons = CLOSET_TYPE_ICONS;
 
-  readonly itemIcons: Record<string, string> = {
-    'Outfit': 'outfit', 'Shoes': 'shoes', 'OutfitShoes': 'outfit-shoes',
-    'Mask': 'mask', 'FaceAccessory': 'face-acc', 'Necklace': 'necklace',
-    'Hair': 'hair', 'HairAccessory': 'hair-acc', 'HeadAccessory': 'head-acc',
-    'Cape': 'cape', 'Held': 'held', 'Furniture': 'shelf', 'Prop': 'cup'
+  readonly gridSections = CLOSET_SECTIONS;
+
+  readonly grouping = computed<IClosetGroup[] | undefined>(() => {
+    const view = this.state.view();
+    if (view === 'type') { return undefined; }
+    const filter = this.state.typeFilter();
+    const requesting = this.requesting();
+    const shown = (item: IItem) => (!filter || item.type === filter) && !this.state.isHiddenFromCloset(item, requesting);
+    const source = view === 'results' ? Object.values(this.state.searchResults() ?? {}) : this.state.allItems();
+    const groups = groupClosetItems(source.filter(item => item.order !== -1 && shown(item)), view, this._data.realmConfig.items);
+    if (view !== 'season' && view !== 'event') { return groups; }
+
+    const ongoing = this._ongoing[view].map(group => {
+      const rows = group.rows.map(row => ({ ...row, items: row.items.filter(shown) })).filter(row => row.items.length);
+      return { ...group, rows, count: rows.reduce((n, r) => n + r.items.length, 0) };
+    }).filter(group => group.count);
+    return [...ongoing, ...groups];
+  });
+
+  private readonly _ongoing = {
+    season: getOngoingGroups(this._data, 'season'),
+    event: getOngoingGroups(this._data, 'event')
   };
-
-  readonly gridSections: ItemType[][] = [
-    [ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes],
-    [ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace],
-    [ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory],
-    [ItemType.Cape],
-    [ItemType.Held, ItemType.Furniture, ItemType.Prop]
-  ];
 
   toggleSection(type: ItemType): void {
     this.state.typeFolded.update(map => {
@@ -51,22 +60,10 @@ export class ClosetGridComponent {
     });
   }
 
-  scrollToType(type: ItemType): void {
-    const el = document.querySelector(`.atmos-closet-items[data-type="${type}"]`);
-    if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  }
-
   isItemHidden(item: IItem): boolean {
     const state = this.state;
     if (state.typeFolded()[item.type]) { return true; }
-    if (this.requesting()) { return false; }
-    if (state.modifyingCloset()) { return false; }
-    if (state.closetMode() === 'closet' && state.hidden()[item.guid]
-        && !state.selectedAll()[item.guid]
-        && !(state.showOngoing() && state.ongoingItems()[item.guid])) {
-      return true;
-    }
-    return false;
+    return state.isHiddenFromCloset(item, this.requesting());
   }
 
   isItemFaded(item: IItem): boolean {

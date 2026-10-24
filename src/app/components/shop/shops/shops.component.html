@@ -28,18 +28,7 @@
       <h2 class="atmos-section__title">Other shops for in-game currency</h2>
     </header>
     <div class="atmos-card__body atmos-shops__section-body">
-      <div class="atmos-shops__igc-grid">
-        @for (shop of igcShops; track shop.guid) {
-          <div class="atmos-card atmos-shops__igc">
-            <div class="atmos-card__body">
-              <h3 class="atmos-shops__igc-title">{{ shop.name }}</h3>
-              <app-item-list
-                [itemList]="shop.itemList!"
-                [highlightNode]="highlightNode()"></app-item-list>
-            </div>
-          </div>
-        }
-      </div>
+      <app-shop-item-lists [shops]="igcShops" [highlightNode]="highlightNode()" />
     </div>
   </section>
 }

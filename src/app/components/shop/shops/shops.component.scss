@@ -36,7 +36,6 @@
   gap: 8px;
 }
 
-
 .atmos-shops__venue-chevron {
   color: var(--atmos-text-mute);
   transition: color var(--atmos-transition), transform var(--atmos-transition);
@@ -58,28 +57,9 @@
   text-shadow: var(--atmos-text-shadow);
 }
 
-
 .atmos-shops__section-body {
   padding-top: 12px;
   gap: var(--atmos-gap);
-}
-
-.atmos-shops__igc-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--atmos-gap);
-}
-
-.atmos-shops__igc {
-  flex: 0 1 auto;
-  min-width: 240px;
-}
-
-.atmos-shops__igc-title {
-  margin: 0;
-  font-size: var(--atmos-fs-lg);
-  font-weight: 600;
-  color: var(--atmos-text);
 }
 
 .atmos-shops__iap-grid {
