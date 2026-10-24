@@ -48,6 +48,7 @@
 
 // Edge to edge: the cards span the page, the rest keeps an inset so its buttons don't touch the screen edge.
 .atmos-request-page {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap-compact);
@@ -58,6 +59,15 @@
 
     &:first-child { border-top: 0; }
   }
+}
+
+// The items card fills the remaining height so the request panel stays at the bottom of the screen.
+.atmos-card--sticky-host {
+  flex: 1 0 auto;
+}
+
+app-closet-selection {
+  margin-top: auto;
 }
 
 app-closet-toolbar,

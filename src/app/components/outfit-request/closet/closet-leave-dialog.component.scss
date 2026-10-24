@@ -1,0 +1,29 @@
+.closet-leave__url {
+  margin-top: 4px;
+  padding: 8px 12px;
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-chip-bg);
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--atmos-fs-sm);
+  color: var(--atmos-text-dim);
+  overflow-wrap: anywhere;
+
+  strong {
+    font-weight: 400;
+    color: var(--atmos-text);
+  }
+}
+
+.closet-leave__remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+// Projected before the overlay's own "Go back" button; keeps the primary action last.
+.closet-leave__continue {
+  order: 1;
+}

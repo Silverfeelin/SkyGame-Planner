@@ -11,6 +11,11 @@
               <span [class]="'closet-selection__dot closet-selection__dot--' + row.color"></span>
             }
           </span>
+          @if (tscFit()?.count; as posted) {
+            <small class="closet-selection__tsc-summary">
+              · <span class="closet-selection__tsc-mark">TSC</span> {{ posted }} {{ posted === 1 ? 'similar fit' : 'similar fits' }}
+            </small>
+          }
         }
       </button>
       <span class="closet-selection__menu">
@@ -63,6 +68,7 @@
     } @else if (!folded()) {
       <div class="closet-selection__rows" appClosetItemInfo>
         @for (row of rows(); track row.color) {
+          @let fit = row.color === 'r' ? tscFit() : undefined;
           <div class="closet-selection__row">
             <span [class]="'closet-selection__dot closet-selection__dot--' + row.color" [title]="row.label" role="img" [attr.aria-label]="row.label"></span>
             <ul class="closet-selection__chips">
@@ -79,6 +85,9 @@
                       }
                     </span>
                   }
+                  @if (fit && fit.unknown.has(item.guid)) {
+                    <span class="closet-selection__unknown" title="Not on That Sky Collection yet" aria-label="Not on That Sky Collection yet" role="img">?</span>
+                  }
                   <button type="button" class="closet-selection__remove"
                     [attr.aria-label]="'Remove ' + item.name + ' from ' + row.label.toLowerCase()"
                     (click)="removed.emit({ item, color: row.color })">
@@ -87,9 +96,26 @@
                 </li>
               }
             </ul>
+            @if (fit?.loading) {
+              <span class="closet-selection__tsc closet-selection__tsc--zero" role="status"><span class="closet-selection__tsc-mark">TSC</span> Loading...</span>
+            } @else if (fit) {
+              @if (fit.count && fit.link) {
+                <a class="closet-selection__tsc" [appClosetExternalLink]="fit.link"
+                  [attr.aria-label]="fit.count + (fit.count === 1 ? ' similar fit' : ' similar fits') + ' on That Sky Collection' + (fit.note ? ', ' + fit.note : '')">
+                  <span class="closet-selection__tsc-mark">TSC</span>
+                  {{ fit.count }} {{ fit.count === 1 ? 'similar fit' : 'similar fits' }}
+                  @if (fit.note) { <small>{{ fit.note }}</small> }
+                  <mat-icon>open_in_new</mat-icon>
+                </a>
+              } @else {
+                <span class="closet-selection__tsc closet-selection__tsc--zero"><span class="closet-selection__tsc-mark">TSC</span> no results</span>
+              }
+            }
           </div>
         }
       </div>
     }
   </div>
 }
+
+<app-closet-leave-dialog />

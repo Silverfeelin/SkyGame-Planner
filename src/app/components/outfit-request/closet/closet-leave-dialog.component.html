@@ -1,0 +1,15 @@
+@if (url()) {
+  <app-overlay [title]="'Leaving Sky Planner'" [closeText]="'Go back'" (close)="cancel()">
+    <p class="atmos-paragraph">
+      You're about to visit an external website that contains community-created content. Would you like to continue?
+    </p>
+    <div class="closet-leave__url">{{ urlParts().before }}<strong>{{ urlParts().host }}</strong>{{ urlParts().after }}</div>
+    @if (host()) {
+      <label class="closet-leave__remember">
+        <input type="checkbox" [checked]="remember()" (change)="remember.set($any($event.target).checked)" />
+        Don't ask again for {{ host() }}
+      </label>
+    }
+    <button overlayAction type="button" class="atmos-btn atmos-btn--sm atmos-btn--active closet-leave__continue" (click)="continue()">Continue</button>
+  </app-overlay>
+}
