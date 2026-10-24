@@ -1,4 +1,4 @@
-import { DyeColor } from '@app/interfaces/dye.interface';
+import { DyeColor, IDye } from '@app/interfaces/dye.interface';
 import { ItemDyeVersion } from '@app/services/item-dye-version.service';
 
 /** In-game dye swatch colors. */
@@ -16,14 +16,17 @@ export const DYE_SWATCHES: Record<DyeColor, { color: string; blend: Record<DyeCo
 const UNDYED_SWATCH = '#4b4b4b';
 const SLOT_SPLIT = '66.67%';
 
+/** Color of a dye slot with its blend applied, or undefined when the slot is undyed. */
+export function slotSwatch(dye: IDye | undefined): string | undefined {
+  if (!dye?.primary) { return undefined; }
+  return dye.secondary ? DYE_SWATCHES[dye.primary].blend[dye.secondary] : DYE_SWATCHES[dye.primary].color;
+}
+
 /** CSS background of the version circle, or undefined when no slot is dyed. */
 export function versionSwatch(version: ItemDyeVersion | undefined, slotCount: number): string | undefined {
   const slots = version?.slice(0, slotCount) ?? [];
   if (!slots.some(d => d.primary)) { return undefined; }
 
-  const [top, bottom = top] = slots.map(({ primary, secondary }) => {
-    if (!primary) { return UNDYED_SWATCH; }
-    return secondary ? DYE_SWATCHES[primary].blend[secondary] : DYE_SWATCHES[primary].color;
-  });
+  const [top, bottom = top] = slots.map(dye => slotSwatch(dye) ?? UNDYED_SWATCH);
   return `linear-gradient(to bottom, ${top} 0 ${SLOT_SPLIT}, ${bottom} ${SLOT_SPLIT} 100%)`;
 }

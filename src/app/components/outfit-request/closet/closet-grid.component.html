@@ -90,17 +90,23 @@
     [class.atmos-closet-hide]="isItemFaded(item)"
     [attr.data-guid]="item.guid">
     <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [lazy]="false" />
-    <div class="atmos-closet-dye-row" (click)="dyeClicked.emit({ item, event: $event })">
-      @if (!item.dye?.primary) {
-        <mat-icon class="atmos-dye-icon atmos-dye-icon--inactive">palette</mat-icon>
-      }
+    <div class="atmos-closet-dye-row">
       @if (item.dye?.primary) {
-        <mat-icon class="atmos-dye-icon atmos-dye-icon--active"
-          [ngClass]="state.dyeClasses()[item.guid]?.[0]">palette</mat-icon>
-      }
-      @if (item.dye?.secondary) {
-        <mat-icon class="atmos-dye-icon atmos-dye-icon--active"
-          [ngClass]="state.dyeClasses()[item.guid]?.[1]">palette</mat-icon>
+        @let swatches = state.dyeSwatches()[item.guid];
+        <button type="button" class="atmos-closet-dye" title="Change dyes" aria-label="Change dyes"
+          (click)="dyeClicked.emit({ item, event: $event })">
+          @if (swatches?.[0] || swatches?.[1]) {
+            <span class="atmos-closet-dye__swatch" [class.atmos-closet-dye__swatch--empty]="!swatches?.[0]" [style.background]="swatches?.[0]"></span>
+            @if (item.dye?.secondary) {
+              <span class="atmos-closet-dye__swatch" [class.atmos-closet-dye__swatch--empty]="!swatches?.[1]" [style.background]="swatches?.[1]"></span>
+            }
+          } @else {
+            <mat-icon class="atmos-closet-dye__icon">palette</mat-icon>
+            @if (item.dye?.secondary) {
+              <mat-icon class="atmos-closet-dye__icon">palette</mat-icon>
+            }
+          }
+        </button>
       }
     </div>
   </div>

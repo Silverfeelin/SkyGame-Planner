@@ -70,6 +70,15 @@
                 <li class="closet-selection__chip" [attr.data-guid]="item.guid">
                   <app-item-icon [item]="item" size="mini" [opaque]="true" [lazy]="false" />
                   <span class="closet-selection__name">{{ item.order === -1 ? 'No ' + (item.type | itemType).toLowerCase() : item.name }}</span>
+                  @let swatches = state.dyeSwatches()[item.guid];
+                  @if (swatches?.[0] || swatches?.[1]) {
+                    <span class="closet-selection__dyes" role="img" aria-label="Dyed" title="Dyed">
+                      <span class="closet-selection__dye" [class.closet-selection__dye--empty]="!swatches?.[0]" [style.background]="swatches?.[0]"></span>
+                      @if (item.dye?.secondary) {
+                        <span class="closet-selection__dye" [class.closet-selection__dye--empty]="!swatches?.[1]" [style.background]="swatches?.[1]"></span>
+                      }
+                    </span>
+                  }
                   <button type="button" class="closet-selection__remove"
                     [attr.aria-label]="'Remove ' + item.name + ' from ' + row.label.toLowerCase()"
                     (click)="removed.emit({ item, color: row.color })">

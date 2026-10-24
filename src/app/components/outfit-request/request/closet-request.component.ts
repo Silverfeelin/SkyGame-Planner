@@ -235,17 +235,12 @@ export class ClosetRequestComponent implements OnDestroy {
 
     const dyes = s.deserializeDyes(data.d);
     const dyeMap: Record<string, any[]> = {};
-    const dyeClasses: Record<string, (string | undefined)[]> = {};
     const seen = new Set<string>();
     [...r, ...y, ...g, ...b].filter(i => !seen.has(i.guid) && seen.add(i.guid))
       .forEach((item, i) => {
         dyeMap[item.guid] = dyes[i] || [{}];
-        dyeClasses[item.guid] = [];
-        if (dyes[i]?.[0]?.primary) { dyeClasses[item.guid]![0] = `dye-${dyes[i][0].primary}`; }
-        if (dyes[i]?.[1]?.primary) { dyeClasses[item.guid]![1] = `dye-${dyes[i][1].primary}`; }
       });
     state.dyes.set(dyeMap);
-    state.dyeClasses.set(dyeClasses);
   }
 
   toggleItem(item: IItem): void {

@@ -192,37 +192,58 @@
   top: 4px;
 }
 
-// Dye icons
+// Dyes
+// Fixed height so tiles line up whether or not the item can be dyed.
 .atmos-closet-dye-row {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 24px;
 }
 
-.atmos-dye-icon {
-  vertical-align: top;
-  font-size: 24px !important;
-  line-height: 24px !important;
-  width: 24px !important;
-  height: 24px !important;
+.atmos-closet-dye {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 100%;
+  padding: 0 4px;
+  background: var(--atmos-chip-bg);
+  border: 0;
+  border-radius: var(--atmos-radius-pill);
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); color: var(--atmos-text); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: -2px;
+  }
 }
 
-.atmos-dye-icon:not(.atmos-dye-icon--inactive):hover {
-  filter: brightness(0.7);
+.atmos-closet-dye__icon {
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
 }
 
-.atmos-dye-icon--inactive {
-  color: var(--atmos-text-mute);
+.atmos-closet-dye__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--atmos-line-soft);
+}
+
+.atmos-closet-dye__swatch--empty {
+  box-shadow: none;
+  border: 1px dashed var(--atmos-line);
 }
 
 // Small item size
 .atmos-closet-container[data-size="small"] {
-  .atmos-dye-icon {
-    font-size: 16px !important;
-    line-height: 16px !important;
-    width: 16px !important;
-    height: 16px !important;
-  }
+  .atmos-closet-dye-row { height: 16px; }
+  .atmos-closet-dye { gap: 2px; padding: 0 3px; }
+  .atmos-closet-dye__swatch { width: 10px; height: 10px; }
 }
 
 // Fading for hidden/unavailable items

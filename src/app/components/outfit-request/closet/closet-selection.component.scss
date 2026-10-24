@@ -190,6 +190,24 @@
   white-space: nowrap;
 }
 
+.closet-selection__dyes {
+  flex: 0 0 auto;
+  display: inline-flex;
+  gap: 2px;
+}
+
+.closet-selection__dye {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--atmos-line-soft);
+}
+
+.closet-selection__dye--empty {
+  box-shadow: none;
+  border: 1px dashed var(--atmos-line);
+}
+
 .closet-selection__remove {
   flex: 0 0 auto;
   display: inline-flex;

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, output, input, computed } from '@angular/core';
-import { NgClass, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { IconComponent } from '@app/components/icon/icon.component';
@@ -16,7 +16,7 @@ import { IItem, ItemType } from 'skygame-data';
   styleUrl: './closet-grid.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgClass, NgTemplateOutlet, MatIcon, ItemIconComponent, IconComponent, ClosetItemInfoDirective]
+  imports: [NgTemplateOutlet, MatIcon, ItemIconComponent, IconComponent, ClosetItemInfoDirective]
 })
 export class ClosetGridComponent {
   readonly state = inject(ClosetStateService);

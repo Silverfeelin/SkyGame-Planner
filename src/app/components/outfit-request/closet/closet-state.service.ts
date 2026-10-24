@@ -1,6 +1,7 @@
 import { Injectable, signal, computed, WritableSignal } from '@angular/core';
 import { IItem, ItemType, ItemSize } from 'skygame-data';
 import { IDye } from '@app/interfaces/dye.interface';
+import { slotSwatch } from '@app/components/item/dye-versions/dye-swatches';
 
 export type RequestColor = 'r' | 'y' | 'g' | 'b';
 export type ClosetMode = 'all' | 'closet';
@@ -41,7 +42,12 @@ export class ClosetStateService {
   };
 
   readonly dyes = signal<Record<string, IDye[]>>({});
-  readonly dyeClasses = signal<Record<string, (string | undefined)[] | undefined>>({});
+  /** Per item, the color of each dye slot with its blend applied; undefined for undyed slots. */
+  readonly dyeSwatches = computed(() => {
+    const swatches: Record<string, (string | undefined)[]> = {};
+    for (const [guid, dyes] of Object.entries(this.dyes())) { swatches[guid] = dyes.map(slotSwatch); }
+    return swatches;
+  });
 
   // ── Availability (from shared closet link) ────────────────────────────────
   readonly available = signal<ISelection | undefined>(undefined);

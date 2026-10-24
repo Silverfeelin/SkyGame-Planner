@@ -36,17 +36,6 @@ export class ClosetDyePickerComponent {
       next[item.guid] = arr;
       return next;
     });
-
-    if (type === 'primary') {
-      this.state.dyeClasses.update(c => {
-        const next = { ...c };
-        if (!next[item.guid]) { next[item.guid] = []; }
-        const arr = [...(next[item.guid] || [])];
-        arr[index] = color ? `dye-${color}` : '';
-        next[item.guid] = arr;
-        return next;
-      });
-    }
   }
 
   getDye(index: number): { primary?: DyeColor; secondary?: DyeColor } {
