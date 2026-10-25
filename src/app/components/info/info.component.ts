@@ -50,4 +50,12 @@ export class InfoComponent {
       'Backgrounds for the outfit request images generously provided by Laila.',
     people: [{ name: 'Laila', handle: '_laila__' }]
   };
+
+  readonly novaxerosCredit: ICreditGroup = {
+    intro:
+      'Special thanks to NovaXeros for building That Sky Collection (TSC) and for collaborating on several features.\n' +
+      'Thanks to this, you can see similar fits from TSC while creating an outfit request, receive outfits from TSC ' +
+      'as item collections and quickly find outfits that use an item directly from the item detail page.',
+    people: [{ name: 'NovaXeros', handle: 'novaxeros' }]
+  };
 }

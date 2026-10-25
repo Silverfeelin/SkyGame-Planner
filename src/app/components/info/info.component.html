@@ -124,7 +124,7 @@
       <a class="atmos-text-link" href="https://sky-children-of-the-light.fandom.com/wiki/Special:Community" target="_blank" rel="noopener">the wiki contributors here</a>.
     </p>
 
-    <p class="atmos-paragraph">{{ wikiCredits.intro }}</p>
+    <p class="atmos-paragraph atmos-info__credit-intro">{{ wikiCredits.intro }}</p>
     <ul class="atmos-info__credits">
       @for (person of wikiCredits.people; track person.handle) {
         <li class="atmos-info__credit">
@@ -149,7 +149,7 @@
       were used as a reference to find missing information for older events. Go check out their content!
     </p>
 
-    <p class="atmos-paragraph">{{ stoatCredit.intro }}</p>
+    <p class="atmos-paragraph atmos-info__credit-intro">{{ stoatCredit.intro }}</p>
     <ul class="atmos-info__credits">
       @for (person of stoatCredit.people; track person.handle) {
         <li class="atmos-info__credit">
@@ -162,7 +162,7 @@
       }
     </ul>
 
-    <p class="atmos-paragraph">{{ plutoyCredit.intro }}</p>
+    <p class="atmos-paragraph atmos-info__credit-intro">{{ plutoyCredit.intro }}</p>
     <ul class="atmos-info__credits">
       @for (person of plutoyCredit.people; track person.handle) {
         <li class="atmos-info__credit">
@@ -175,9 +175,22 @@
       }
     </ul>
 
-    <p class="atmos-paragraph">{{ lailaCredit.intro }}</p>
+    <p class="atmos-paragraph atmos-info__credit-intro">{{ lailaCredit.intro }}</p>
     <ul class="atmos-info__credits">
       @for (person of lailaCredit.people; track person.handle) {
+        <li class="atmos-info__credit">
+          <span class="atmos-info__credit-name">{{ person.name }}</span>
+          <span class="atmos-info__credit-handle">
+            <img class="atmos-info__credit-icon" src="assets/external/discord-mark-blue.svg" alt="Discord" loading="lazy"/>
+            <span>{{ person.handle }}</span>
+          </span>
+        </li>
+      }
+    </ul>
+
+    <p class="atmos-paragraph atmos-info__credit-intro">{{ novaxerosCredit.intro }}</p>
+    <ul class="atmos-info__credits">
+      @for (person of novaxerosCredit.people; track person.handle) {
         <li class="atmos-info__credit">
           <span class="atmos-info__credit-name">{{ person.name }}</span>
           <span class="atmos-info__credit-handle">
