@@ -65,6 +65,8 @@ const rotations: IRotations = [
     { guid: 'EQwb6KLMv5', ac: 15 }
   ],
   [
+    { guid: 'vnMfGBzpfb', c: 6 },
+    { guid: 'D30y2TxdjH', c: 22 },
     { guid: 'QLPTcl6MON', c: 60 },
     { guid: 'whT_cZQrv5', c: 50 },
     { guid: 'raTbmXIzTD', c: 12 }
@@ -150,7 +152,7 @@ const legacyRotations: Array<Array<string>> = [
   templateUrl: './shop-nesting.component.html',
   styleUrl: './shop-nesting.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, 
+  imports: [TooltipDirective,
     MatIcon,
     NgTemplateOutlet,
     RouterLink,
