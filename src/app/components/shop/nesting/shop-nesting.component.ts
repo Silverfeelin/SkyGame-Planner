@@ -72,6 +72,8 @@ const rotations: IRotations = [
     { guid: 'raTbmXIzTD', c: 12 }
   ],
   [
+    { guid: 'zbXlmVrwiY', c: 13 },
+    { guid: '-fO-Kn9Rd3', c: 8 },
     { guid: 'rMl2rj9Qgv', c: 45 },
     { guid: '9HXJ6pJTXa', c: 10 },
     { guid: 'y1UR_gd2PM', c: 18 }
