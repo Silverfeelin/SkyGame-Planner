@@ -379,6 +379,18 @@
   }
 }
 
+.atmos-calendar__goal-savings {
+  align-items: center;
+  justify-content: center;
+  width: var(--item-size-small);
+  height: var(--item-size-small);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev-2);
+  color: var(--atmos-text-dim);
+
+  mat-icon { font-size: 20px; width: 20px; height: 20px; }
+}
+
 @media (max-width: 1023px) {
   .atmos-calendar__detail { grid-template-columns: minmax(0, 1fr); }
   .atmos-calendar__section--ongoing,

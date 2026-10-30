@@ -94,7 +94,7 @@ Components use **`.scss`**. `src/styles/styles.scss` is the global base + design
 
 Three independent axes:
 
-- **Responsive breakpoint** — `@media (max-width: 1023px)` is the tablet/mobile layout, `min-width: 1024px` desktop.
+- **Responsive breakpoint** — `@media (max-width: 1023px)` is the tablet/mobile layout, `min-width: 1024px` desktop. The narrowest supported viewport is 360px.
 - **Colour theme** — `:root[data-theme="..."]` in the Themes region (default, sandy, dark, love, moomin, wonderland). Colour only.
 - **Density** — `:root[data-density="compact"]`, also in the Themes region. Geometry only (padding, gaps, media heights).
 

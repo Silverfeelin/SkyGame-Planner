@@ -211,6 +211,10 @@ export class ItemGoalsCalendarComponent {
     });
   }
 
+  goalName(goal: IGoalProjection): string {
+    return GoalHelper.goalName(goal);
+  }
+
   activityDates(activity: ICalendarActivity): string {
     return `${activity.date.toFormat(DateHelper.displayFormat)} – ${activity.endDate.toFormat(DateHelper.displayFormat)}`;
   }

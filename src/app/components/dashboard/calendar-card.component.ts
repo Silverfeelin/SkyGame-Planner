@@ -8,7 +8,7 @@ import { DateTime } from 'luxon';
 import { IItem } from 'skygame-data';
 import { CALENDAR_ACTIVITY_KINDS, CalendarHelper, ICalendarActivity } from '@app/helpers/calendar-helper';
 import { DateHelper } from '@app/helpers/date-helper';
-import { GoalHelper, IGoalProjection } from '@app/helpers/goal-helper';
+import { GoalHelper, GoalTarget, IGoalProjection } from '@app/helpers/goal-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ShardInfo, getShardInfo } from '@app/helpers/shard-helper';
 import { DataService } from '@app/services/data.service';
@@ -154,12 +154,12 @@ export class DashboardCalendarComponent {
   /** Goals keyed by the sky day on which they are projected to become affordable. */
   private readonly _goalTargets = computed(() => {
     this._revision();
-    const items = this._goalService.items()
-      .map(guid => this._dataService.guidMap.get(guid) as IItem | undefined)
-      .filter((item): item is IItem => !!item && !GoalHelper.limitedCurrency(item));
+    const targets = this._goalService.items()
+      .map(id => this._goalService.resolve(id))
+      .filter((t): t is GoalTarget => !!t && (GoalHelper.isSavings(t) || !GoalHelper.limitedCurrency(t)));
 
     const result = new Map<string, Array<IGoalProjection>>();
-    for (const goal of this._goalService.project(items, this.today).goals) {
+    for (const goal of this._goalService.project(targets, this.today).goals) {
       if (!goal.date) { continue; }
       const key = goal.date.toISODate()!;
       result.set(key, [...(result.get(key) ?? []), goal]);
@@ -274,7 +274,8 @@ export class DashboardCalendarComponent {
   }
 
   goalTooltip(goal: IGoalProjection): string {
-    return goal.late ? `${goal.item.name} · only affordable after it is gone` : goal.item.name;
+    const name = GoalHelper.goalName(goal);
+    return goal.late ? `${name} · only affordable after it is gone` : name;
   }
 
   barTooltip(bar: ICalendarBar): string {

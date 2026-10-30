@@ -77,11 +77,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap-compact);
+  // Rows follow the list width, which the sidebar narrows independently of the viewport.
+  container: goals-list / inline-size;
 }
 
 .atmos-goals__row {
   display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr) auto minmax(10em, auto) auto;
+  grid-template-columns: auto auto minmax(12em, 1fr) auto minmax(10em, auto) auto;
   align-items: center;
   gap: 12px;
   padding: var(--atmos-pad-compact);
@@ -125,6 +127,41 @@
   display: inline-flex;
   width: var(--item-size-medium);
   height: var(--item-size-medium);
+}
+
+.atmos-goals__savings-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev-2);
+  color: var(--atmos-text-dim);
+
+  mat-icon { font-size: 28px; width: 28px; height: 28px; }
+
+  .atmos-goals__pick & {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Spans the name and cost columns so the amounts can wrap below the name instead of squeezing it.
+.atmos-goals__savings-fields {
+  grid-column: 3 / span 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  min-width: 0;
+
+  .atmos-goals__info { flex: 1 1 14em; }
+  .atmos-goals__cost { margin-left: auto; }
+}
+
+.atmos-goals__savings-name {
+  width: 100%;
+  max-width: 20em;
+  font-weight: 600;
 }
 
 .atmos-goals__row--simple {
@@ -237,7 +274,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@container goals-list (max-width: 799px) {
   .atmos-goals__row {
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas:
@@ -251,9 +288,27 @@
   .atmos-goals__cost { grid-area: cost; }
   .atmos-goals__status { grid-area: status; }
   .atmos-goals__actions { grid-area: actions; }
+  .atmos-goals__savings-fields {
+    display: contents;
+    .atmos-goals__cost { margin-left: 0; }
+  }
   .atmos-goals__row--simple {
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: none;
     > * { grid-area: auto; align-self: center; }
+  }
+}
+
+@container goals-list (max-width: 419px) {
+  // The actions leave too little room for the name beside them.
+  .atmos-goals__row:not(.atmos-goals__row--simple) {
+    grid-template-areas:
+      "icon actions actions"
+      "handle info info"
+      "handle cost cost"
+      "handle status status";
+
+    .atmos-goals__actions { justify-self: end; }
+    .atmos-goals__savings-name { max-width: none; }
   }
 }

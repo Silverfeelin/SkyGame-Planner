@@ -65,6 +65,10 @@
           <button type="button" class="atmos-btn atmos-btn--sm" (click)="addFavourites()">
             <mat-icon>star</mat-icon> Add all from wishlist
           </button>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addSavings()"
+            [skyTooltip]="'Put currencies aside without picking an item, for example for the next Traveling Spirit.'">
+            <mat-icon>umbrella</mat-icon> Add savings
+          </button>
           @if (ownedCount()) {
             <button type="button" class="atmos-btn atmos-btn--sm" (click)="clearOwned()">
               <mat-icon>done_all</mat-icon> Clear owned ({{ ownedCount() }})
@@ -85,31 +89,62 @@
       <ng-container [ngTemplateOutlet]="quickSort" [ngTemplateOutletContext]="{ $implicit: goals() }" />
     } @else {
       <ol class="atmos-goals__list" cdkDropList cdkDropListLockAxis="y" (cdkDropListDropped)="onGoalDropped($event)">
-        @for (goal of goals(); track goal.item.guid; let first = $first; let last = $last) {
-          <li class="atmos-goals__row" cdkDrag [cdkDragData]="goal" [attr.data-goal]="goal.item.guid" [class.is-owned]="goal.status === 'owned'" [class.is-late]="goal.late"
-            [class.is-focused]="focusedGoal() === goal.item.guid">
+        @for (goal of goals(); track goal.id; let first = $first; let last = $last) {
+          <!-- The preview stays inside the list so it keeps the layout of the list's container query. -->
+          <li class="atmos-goals__row" cdkDrag [cdkDragData]="goal" cdkDragPreviewContainer="parent" [attr.data-goal]="goal.id" [class.is-owned]="goal.status === 'owned'" [class.is-late]="goal.late" [class.atmos-goals__row--savings]="!goal.item"
+            [class.is-focused]="focusedGoal() === goal.id">
             <span class="atmos-goals__handle" cdkDragHandle aria-hidden="true" [skyTooltip]="'Drag to reorder'"><mat-icon>drag_indicator</mat-icon></span>
-            <a class="atmos-goals__icon" [routerLink]="['/item', goal.item.guid]">
-              <app-item-icon [item]="goal.item" size="medium" [opaque]="true" [subIcons]="SUBICONS_ALL" />
-            </a>
+            @if (goal.item) {
+              <a class="atmos-goals__icon" [routerLink]="['/item', goal.item.guid]">
+                <app-item-icon [item]="goal.item" size="medium" [opaque]="true" [subIcons]="SUBICONS_ALL" />
+              </a>
 
-            <div class="atmos-goals__info">
-              <a class="atmos-goals__name atmos-text-link" [routerLink]="['/item', goal.item.guid]">{{ goal.item.name }}</a>
-              @if (windowLabel(goal); as label) {
-                <span class="atmos-goals__window">{{ label }}</span>
-              }
-            </div>
+              <div class="atmos-goals__info">
+                <a class="atmos-goals__name atmos-text-link" [routerLink]="['/item', goal.item.guid]">{{ goal.item.name }}</a>
+                @if (windowLabel(goal); as label) {
+                  <span class="atmos-goals__window">{{ label }}</span>
+                }
+              </div>
 
-            <div class="atmos-goals__cost">
-              @if (goal.status !== 'owned') {
-                <app-cost [cost]="goal.cost" [price]="goal.price" [showZeroes]="false" />
-              }
-            </div>
+              <div class="atmos-goals__cost">
+                @if (goal.status !== 'owned') {
+                  <app-cost [cost]="goal.cost" [price]="goal.price" [showZeroes]="false" />
+                }
+              </div>
+            } @else {
+              @let savings = goal.savings!;
+              <span class="atmos-goals__icon atmos-goals__savings-icon"><mat-icon>umbrella</mat-icon></span>
+
+              <div class="atmos-goals__savings-fields">
+                <div class="atmos-goals__info">
+                  <input class="atmos-input atmos-goals__savings-name" type="text" maxlength="50" aria-label="Savings name"
+                    [value]="savings.name" (change)="setSavingsName(goal, $event)" />
+                </div>
+
+                <div class="atmos-goals__cost atmos-goals__income">
+                  <label class="atmos-goals__income-field" [skyTooltip]="'Candles to save'">
+                    <mat-icon svgIcon="candle"></mat-icon>
+                    <input class="atmos-input atmos-input--narrow" type="number" min="0" step="1"
+                      [value]="savings.c" (change)="setSavingsAmount(goal, 'c', $event)" />
+                  </label>
+                  <label class="atmos-goals__income-field" [skyTooltip]="'Hearts to save'">
+                    <mat-icon svgIcon="heart"></mat-icon>
+                    <input class="atmos-input atmos-input--narrow" type="number" min="0" step="1"
+                      [value]="savings.h" (change)="setSavingsAmount(goal, 'h', $event)" />
+                  </label>
+                  <label class="atmos-goals__income-field" [skyTooltip]="'Ascended candles to save'">
+                    <mat-icon svgIcon="ascended-candle"></mat-icon>
+                    <input class="atmos-input atmos-input--narrow" type="number" min="0" step="1"
+                      [value]="savings.ac" (change)="setSavingsAmount(goal, 'ac', $event)" />
+                  </label>
+                </div>
+              </div>
+            }
 
             <div class="atmos-goals__status">
               @switch (goal.status) {
                 @case ('owned') { <mat-icon>check_circle</mat-icon> Owned }
-                @case ('included') { <mat-icon>link</mat-icon> Unlocked with {{ goal.includedIn!.item.name }} }
+                @case ('included') { <mat-icon>link</mat-icon> Unlocked with {{ goal.includedIn!.item!.name }} }
                 @case ('affordable') { <mat-icon>savings</mat-icon> Affordable now }
                 @case ('projected') {
                   <mat-icon>event</mat-icon>
@@ -158,16 +193,16 @@
             </div>
 
             <div class="atmos-goals__actions">
-              @if (itemSources().get(goal.item.guid); as src) {
+              @if (goal.item && itemSources().get(goal.item.guid); as src) {
                 <a class="atmos-icon-btn" [routerLink]="src.route" [queryParams]="src.extras?.queryParams"
-                  [attr.aria-label]="'Find ' + goal.item.name" [skyTooltip]="'Find item'"><mat-icon>search</mat-icon></a>
+                  [attr.aria-label]="'Find ' + goalName(goal)" [skyTooltip]="'Find item'"><mat-icon>search</mat-icon></a>
               }
               <button type="button" class="atmos-icon-btn" [class.is-hidden]="first" [disabled]="first" (click)="moveUp(goal)"
                 aria-label="Move up" [skyTooltip]="'Move up'"><mat-icon>arrow_upward</mat-icon></button>
               <button type="button" class="atmos-icon-btn" [class.is-hidden]="last" [disabled]="last" (click)="moveDown(goal)"
                 aria-label="Move down" [skyTooltip]="'Move down'"><mat-icon>arrow_downward</mat-icon></button>
               <button type="button" class="atmos-icon-btn" (click)="remove(goal)"
-                [attr.aria-label]="'Remove ' + goal.item.name" [skyTooltip]="'Remove'"><mat-icon>close</mat-icon></button>
+                [attr.aria-label]="'Remove ' + goalName(goal)" [skyTooltip]="'Remove'"><mat-icon>close</mat-icon></button>
             </div>
           </li>
         }
@@ -229,11 +264,15 @@
     Click the items you want most, in order. On apply, they move to the top in that order and the other goals keep their order below them.
   </p>
   <div class="atmos-goals__quick">
-    @for (goal of goals; track goal.item.guid) {
-      @let pick = quickSortPicks().indexOf(goal.item.guid);
+    @for (goal of goals; track goal.id) {
+      @let pick = quickSortPicks().indexOf(goal.id);
       <button type="button" class="atmos-goals__pick atmos-tile atmos-tile--selectable" [class.is-selected]="pick >= 0"
-        [attr.aria-pressed]="pick >= 0" [attr.aria-label]="goal.item.name" (click)="toggleQuickSortPick(goal.item.guid)">
-        <app-item-icon [item]="goal.item" [opaque]="true" [skyTooltip]="goal.item.name" placement="auto" />
+        [attr.aria-pressed]="pick >= 0" [attr.aria-label]="goalName(goal)" (click)="toggleQuickSortPick(goal.id)">
+        @if (goal.item) {
+          <app-item-icon [item]="goal.item" [opaque]="true" [skyTooltip]="goal.item.name" placement="auto" />
+        } @else {
+          <span class="atmos-goals__savings-icon" [skyTooltip]="goalName(goal)" placement="auto"><mat-icon>umbrella</mat-icon></span>
+        }
         @if (pick >= 0) { <span class="atmos-tile__check">{{ pick + 1 }}</span> }
       </button>
     }

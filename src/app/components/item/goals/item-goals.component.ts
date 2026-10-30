@@ -9,7 +9,7 @@ import { CostHelper } from '@app/helpers/cost-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { SeasonHelper } from '@app/helpers/season-helper';
 import { INavigationTarget, NavigationHelper } from '@app/helpers/navigation-helper';
-import { GoalBucketKey, GoalHelper, IGoalPlan, IGoalProjection } from '@app/helpers/goal-helper';
+import { GoalBucketKey, GoalHelper, GoalTarget, IGoalPlan, IGoalProjection, IGoalSavings } from '@app/helpers/goal-helper';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { GoalService, IGoalIncome } from '@app/services/goal.service';
@@ -53,7 +53,7 @@ export class ItemGoalsComponent {
   readonly selectedDay = signal(this.today);
   readonly focusedGoal = signal<string | undefined>(undefined);
   readonly quickSorting = signal(false);
-  /** Guids picked during a quick sort, in the order they were clicked. */
+  /** Goal ids picked during a quick sort, in the order they were clicked. */
   readonly quickSortPicks = signal<ReadonlyArray<string>>([]);
 
   private readonly _calendar = viewChild('calendar', { read: ElementRef });
@@ -63,23 +63,25 @@ export class ItemGoalsComponent {
 
   readonly goalSet = computed(() => new Set(this._goalService.items()));
 
-  readonly items = computed<ReadonlyArray<IItem>>(() => this._goalService.items()
-    .map(guid => this._dataService.guidMap.get(guid) as IItem | undefined)
-    .filter((i): i is IItem => !!i));
+  readonly targets = computed<ReadonlyArray<GoalTarget>>(() => this._goalService.items()
+    .map(id => this._goalService.resolve(id))
+    .filter((t): t is GoalTarget => !!t));
 
   readonly itemSources = computed(() => {
     this._revision();
-    return new Map<string, INavigationTarget | undefined>(this.items().map(i => [i.guid, NavigationHelper.getItemSource(i)]));
+    const items = this.targets().filter((t): t is IItem => !GoalHelper.isSavings(t));
+    return new Map<string, INavigationTarget | undefined>(items.map(i => [i.guid, NavigationHelper.getItemSource(i)]));
   });
 
   /** Season and event items are kept apart since they have their own calculators. */
   private readonly _split = computed(() => {
     this._revision();
-    const regular: Array<IItem> = [];
+    const regular: Array<GoalTarget> = [];
     const season: Array<IItem> = [];
     const event: Array<IItem> = [];
     const eventInstances = new Set<IEventInstance>();
-    for (const item of this.items()) {
+    for (const item of this.targets()) {
+      if (GoalHelper.isSavings(item)) { regular.push(item); continue; }
       const limited = GoalHelper.limitedCurrency(item);
       if (!limited) { regular.push(item); continue; }
       if (limited.kind === 'season') { season.push(item); continue; }
@@ -147,10 +149,24 @@ export class ItemGoalsComponent {
     this._goalService.add(...guids);
   }
 
+  addSavings(): void {
+    this._goalService.addSavings();
+  }
+
+  setSavingsName(goal: IGoalProjection, evt: Event): void {
+    const name = (evt.target as HTMLInputElement).value.trim();
+    this._goalService.updateSavings(goal.id, { name: name || 'Rainy day savings' });
+  }
+
+  setSavingsAmount(goal: IGoalProjection, key: keyof Omit<IGoalSavings, 'id' | 'name'>, evt: Event): void {
+    const value = Math.max(0, parseFloat((evt.target as HTMLInputElement).value) || 0);
+    this._goalService.updateSavings(goal.id, { [key]: value });
+  }
+
   moveUp(goal: IGoalProjection): void { this.moveTo(goal, this.goals().indexOf(goal) - 1); }
   moveDown(goal: IGoalProjection): void { this.moveTo(goal, this.goals().indexOf(goal) + 1); }
   onGoalDropped(evt: CdkDragDrop<unknown, unknown, IGoalProjection>): void { this.moveTo(evt.item.data, evt.currentIndex); }
-  remove(goal: IGoalProjection): void { this._goalService.remove(goal.item.guid); }
+  remove(goal: IGoalProjection): void { this._goalService.remove(goal.id); }
   removeItem(item: IItem): void { this._goalService.remove(item.guid); }
 
   /** Moves the goal to a position in the shown list, stepping over the season and event items stored between goals. */
@@ -158,16 +174,16 @@ export class ItemGoalsComponent {
     const neighbour = this.goals()[index];
     if (!neighbour || neighbour === goal) { return; }
     const stored = this._goalService.items();
-    this._goalService.move(goal.item.guid, stored.indexOf(neighbour.item.guid) - stored.indexOf(goal.item.guid));
+    this._goalService.move(goal.id, stored.indexOf(neighbour.id) - stored.indexOf(goal.id));
   }
 
   clearOwned(): void {
-    this._goalService.remove(...this.goals().filter(g => g.status === 'owned').map(g => g.item.guid));
+    this._goalService.remove(...this.goals().filter(g => g.status === 'owned').map(g => g.id));
   }
 
   askClearAll(): void {
     if (!confirm('Remove all goals?')) { return; }
-    this._goalService.remove(...this._split().regular.map(i => i.guid));
+    this._goalService.remove(...this.goals().map(g => g.id));
   }
 
   startQuickSort(): void {
@@ -179,14 +195,14 @@ export class ItemGoalsComponent {
     this.quickSorting.set(false);
   }
 
-  toggleQuickSortPick(guid: string): void {
-    this.quickSortPicks.update(picks => picks.includes(guid) ? picks.filter(g => g !== guid) : [...picks, guid]);
+  toggleQuickSortPick(id: string): void {
+    this.quickSortPicks.update(picks => picks.includes(id) ? picks.filter(g => g !== id) : [...picks, id]);
   }
 
   /** Moves the picked goals to the front in the order they were picked; the rest keep their order behind them. */
   applyQuickSort(): void {
     const picks = this.quickSortPicks();
-    const rest = this.goals().map(g => g.item.guid).filter(g => !picks.includes(g));
+    const rest = this.goals().map(g => g.id).filter(g => !picks.includes(g));
     this._goalService.setOrder([...picks, ...rest]);
     this.quickSorting.set(false);
   }
@@ -194,6 +210,10 @@ export class ItemGoalsComponent {
   setIncome(key: keyof IGoalIncome, evt: Event): void {
     const value = Math.max(0, parseFloat((evt.target as HTMLInputElement).value) || 0);
     this._goalService.setIncome({ ...this.income(), [key]: value });
+  }
+
+  goalName(goal: IGoalProjection): string {
+    return GoalHelper.goalName(goal);
   }
 
   windowLabel(goal: IGoalProjection): string | undefined {
@@ -215,7 +235,7 @@ export class ItemGoalsComponent {
   beforeHigherLabel(goal: IGoalProjection): string {
     const end = goal.source && GoalHelper.windowEnd(goal.source.window);
     const first = goal.beforeHigher?.[0];
-    return `Unavailable after ${end?.toFormat(DateHelper.displayFormat)}. You might want to move this item above ${first?.item.name}.`;
+    return `Unavailable after ${end?.toFormat(DateHelper.displayFormat)}. You might want to move this item above ${first && GoalHelper.goalName(first)}.`;
   }
 
   showInCalendar(goal: IGoalProjection): void {
@@ -225,11 +245,11 @@ export class ItemGoalsComponent {
   }
 
   showInList(goal: IGoalProjection): void {
-    const row = this._elementRef.nativeElement.querySelector(`[data-goal="${goal.item.guid}"]`);
+    const row = this._elementRef.nativeElement.querySelector(`[data-goal="${goal.id}"]`);
     row?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     // Reset first so clicking the same goal again replays the highlight.
     this.focusedGoal.set(undefined);
-    requestAnimationFrame(() => this.focusedGoal.set(goal.item.guid));
+    requestAnimationFrame(() => this.focusedGoal.set(goal.id));
   }
 
   /** Only candles, hearts and ascended candles are saved up; other currencies don't delay the goals below. */

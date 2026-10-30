@@ -40,9 +40,13 @@
 
         @if (day.affordable.length) {
           <span class="atmos-goals-cal__items">
-            @for (goal of day.affordable.slice(0, 2); track goal.item.guid) {
+            @for (goal of day.affordable.slice(0, 2); track goal.id) {
               <span class="atmos-goals-cal__item" [class.is-late]="goal.late">
-                <app-item-icon [item]="goal.item" size="small" [opaque]="true" />
+                @if (goal.item) {
+                  <app-item-icon [item]="goal.item" size="small" [opaque]="true" />
+                } @else {
+                  <span class="atmos-goals-cal__savings"><mat-icon>umbrella</mat-icon></span>
+                }
               </span>
             }
             @if (day.affordable.length > 2) { <span class="atmos-goals-cal__more">+{{ day.affordable.length - 2 }}</span> }
@@ -103,9 +107,10 @@
       <section class="atmos-goals-cal__block">
         <h4 class="atmos-goals-cal__block-title">Affordable from this day</h4>
         <ul class="atmos-goals-cal__goal-list">
-          @for (goal of selectedAffordable(); track goal.item.guid) {
+          @for (goal of selectedAffordable(); track goal.id) {
             <li>
-              <a class="atmos-text-link" (click)="goalClicked.emit(goal)">{{ goal.item.name }}</a>
+              @if (!goal.item) { <mat-icon class="atmos-goals-cal__savings-mark">umbrella</mat-icon> }
+              <a class="atmos-text-link" (click)="goalClicked.emit(goal)">{{ goalName(goal) }}</a>
               @if (goal.late) { <mat-icon class="atmos-goals-cal__warn" [skyTooltip]="'Only affordable after it is gone'">warning</mat-icon> }
             </li>
           }
@@ -117,9 +122,9 @@
       <section class="atmos-goals-cal__block">
         <h4 class="atmos-goals-cal__block-title">Last day to buy</h4>
         <ul class="atmos-goals-cal__goal-list">
-          @for (goal of selectedLeaving(); track goal.item.guid) {
+          @for (goal of selectedLeaving(); track goal.id) {
             <li [class.is-late]="goal.late">
-              <a class="atmos-text-link" (click)="goalClicked.emit(goal)">{{ goal.item.name }}</a>
+              <a class="atmos-text-link" (click)="goalClicked.emit(goal)">{{ goalName(goal) }}</a>
               @if (goal.late) { <mat-icon class="atmos-goals-cal__warn" [skyTooltip]="'You will not have saved enough by then'">warning</mat-icon> }
             </li>
           }

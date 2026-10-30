@@ -44,10 +44,24 @@ export interface IGoalPlan {
 /** Format of the day keys used for skipped days. */
 export const GOAL_DAY_FORMAT = 'yyyy-MM-dd';
 
+/** Currency put aside without an item, so the goals below it wait for it. */
+export interface IGoalSavings {
+  id: string;
+  name: string;
+  c: number;
+  h: number;
+  ac: number;
+}
+
+export type GoalTarget = IItem | IGoalSavings;
+
 export type GoalStatus = 'owned' | 'included' | 'unavailable' | 'purchase' | 'unknown' | 'affordable' | 'projected' | 'never';
 
 export interface IGoalProjection {
-  item: IItem;
+  /** Item guid or savings id. */
+  id: string;
+  item?: IItem;
+  savings?: IGoalSavings;
   source?: GoalSource;
   /** Cost not already covered by goals higher in the list. */
   cost: ICost;
@@ -81,6 +95,14 @@ export type GoalCostEstimator = (item: IItem) => ICost | undefined;
 const PERMANENT_SPIRIT_TYPES = new Set<string>(['Regular', 'Elder', 'Guide']);
 
 export class GoalHelper {
+  static isSavings(target: GoalTarget): target is IGoalSavings {
+    return !('guid' in target) && 'id' in target;
+  }
+
+  static goalName(goal: IGoalProjection): string {
+    return goal.item?.name ?? goal.savings!.name;
+  }
+
   /** Picks the source the item can be unlocked from soonest: permanent, then limited, then the earliest upcoming. */
   static resolveSource(item: IItem): GoalSource | undefined {
     const sources: Array<GoalSource> = [
@@ -180,10 +202,10 @@ export class GoalHelper {
    * the costs of every goal above it; spirit-tree nodes shared between goals are only paid once.
    * Goals that are not available still hold back their cost, so the goals below them wait for it.
    * Nothing is collected today or on skipped days. Ended season and event items reserve an estimated cost,
-   * except ultimates and limited items, which will likely not return.
+   * except ultimates and limited items, which will likely not return. Savings lines reserve their amounts like any other goal.
    */
   static project(
-    items: ReadonlyArray<IItem>,
+    targets: ReadonlyArray<GoalTarget>,
     buckets: ReadonlyMap<GoalBucketKey, IGoalBucket>,
     today: DateTime,
     skipped: ReadonlySet<string> = new Set(),
@@ -193,8 +215,15 @@ export class GoalHelper {
     const paidIaps = new Set<IIAP>();
     const needed = new Map<GoalBucketKey, number>();
 
-    const goals = items.map(item => {
-      const result: IGoalProjection = { item, cost: CostHelper.create(), price: 0, status: 'owned' };
+    const goals = targets.map(target => {
+      if (this.isSavings(target)) {
+        const result: IGoalProjection = { id: target.id, savings: target, cost: { c: target.c, h: target.h, ac: target.ac }, price: 0, status: 'affordable' };
+        this.schedule(result, needed, buckets, today, skipped);
+        return result;
+      }
+
+      const item = target;
+      const result: IGoalProjection = { id: item.guid, item, cost: CostHelper.create(), price: 0, status: 'owned' };
       if (item.unlocked) { return result; }
 
       const source = this.resolveSource(item);
@@ -244,30 +273,7 @@ export class GoalHelper {
       if (source.type === 'iap') { result.status = 'purchase'; return result; }
       if (result.includedIn) { result.status = 'included'; return result; }
 
-      // Currencies are saved independently, so only the pools this goal draws from delay it.
-      let collectDays = 0;
-      const blockedBy: Array<GoalBucketKey> = [];
-      for (const [key, amount] of this.costToBuckets(result.cost)) {
-        const total = (needed.get(key) ?? 0) + amount;
-        needed.set(key, total);
-        const bucket = buckets.get(key) ?? { balance: 0, perDay: 0 };
-        const shortfall = total - bucket.balance;
-        if (shortfall <= 0) { continue; }
-        if (bucket.perDay <= 0) { blockedBy.push(key); continue; }
-        collectDays = Math.max(collectDays, Math.ceil(shortfall / bucket.perDay));
-      }
-
-      if (blockedBy.length) { result.status = 'never'; result.blockedBy = blockedBy; return result; }
-      result.date = this.nthCollectDay(today, collectDays, skipped);
-      const start = this.windowStart(source.window)?.setZone(today.zone).startOf('day');
-      if (start && start > result.date) {
-        result.date = start;
-        result.waitsForStart = true;
-      }
-      result.days = Math.round(result.date.diff(today, 'days').days);
-      result.status = result.days ? 'projected' : 'affordable';
-      const end = this.windowEnd(source.window);
-      result.late = !!end && result.date > end;
+      this.schedule(result, needed, buckets, today, skipped, source.window);
       return result;
     });
 
@@ -302,6 +308,41 @@ export class GoalHelper {
       if (!skipped.has(d.toFormat(GOAL_DAY_FORMAT))) { count++; }
     }
     return count;
+  }
+
+  /** Reserves the goal's cost on top of what the goals above it need, and dates it from the collect days. */
+  private static schedule(
+    result: IGoalProjection,
+    needed: Map<GoalBucketKey, number>,
+    buckets: ReadonlyMap<GoalBucketKey, IGoalBucket>,
+    today: DateTime,
+    skipped: ReadonlySet<string>,
+    window?: GoalWindow
+  ): void {
+    // Currencies are saved independently, so only the pools this goal draws from delay it.
+    let collectDays = 0;
+    const blockedBy: Array<GoalBucketKey> = [];
+    for (const [key, amount] of this.costToBuckets(result.cost)) {
+      const total = (needed.get(key) ?? 0) + amount;
+      needed.set(key, total);
+      const bucket = buckets.get(key) ?? { balance: 0, perDay: 0 };
+      const shortfall = total - bucket.balance;
+      if (shortfall <= 0) { continue; }
+      if (bucket.perDay <= 0) { blockedBy.push(key); continue; }
+      collectDays = Math.max(collectDays, Math.ceil(shortfall / bucket.perDay));
+    }
+
+    if (blockedBy.length) { result.status = 'never'; result.blockedBy = blockedBy; return; }
+    result.date = this.nthCollectDay(today, collectDays, skipped);
+    const start = window && this.windowStart(window)?.setZone(today.zone).startOf('day');
+    if (start && start > result.date) {
+      result.date = start;
+      result.waitsForStart = true;
+    }
+    result.days = Math.round(result.date.diff(today, 'days').days);
+    result.status = result.days ? 'projected' : 'affordable';
+    const end = window && this.windowEnd(window);
+    result.late = !!end && result.date > end;
   }
 
   /** Flags limited goals that leave before a limited goal placed above them. IAPs don't compete for currency. */

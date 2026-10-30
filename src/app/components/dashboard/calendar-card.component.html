@@ -122,11 +122,17 @@
               <a class="atmos-calendar__block-link" routerLink="/item/goals">Goals · affordable</a>
             </h4>
             <span class="atmos-calendar__items">
-              @for (goal of detail().goals; track goal.item.guid) {
-                <a class="atmos-calendar__goal-item" [class.is-late]="goal.late"
-                  [routerLink]="['/item', goal.item.guid]" [skyTooltip]="goalTooltip(goal)">
-                  <app-item-icon [item]="goal.item" size="small" [opaque]="true" />
-                </a>
+              @for (goal of detail().goals; track goal.id) {
+                @if (goal.item) {
+                  <a class="atmos-calendar__goal-item" [class.is-late]="goal.late"
+                    [routerLink]="['/item', goal.item.guid]" [skyTooltip]="goalTooltip(goal)">
+                    <app-item-icon [item]="goal.item" size="small" [opaque]="true" />
+                  </a>
+                } @else {
+                  <a class="atmos-calendar__goal-item atmos-calendar__goal-savings" routerLink="/item/goals" [skyTooltip]="goalTooltip(goal)">
+                    <mat-icon>umbrella</mat-icon>
+                  </a>
+                }
               }
             </span>
           </section>
