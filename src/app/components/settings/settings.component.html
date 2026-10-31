@@ -138,7 +138,7 @@
     <div class="atmos-settings__btn-row">
       @for (theme of themes; track theme.value) {
         <button type="button" class="atmos-btn" [class.atmos-btn--active]="currentTheme === theme.value" (click)="selectTheme(theme)">
-          {{ theme.name }}
+          {{ t().THEME.NAMES[theme.value] || theme.name }}
         </button>
       }
     </div>
@@ -159,7 +159,7 @@
           @for (slider of themeSliders; track slider.key) {
             <label class="atmos-settings__slider">
               <span class="atmos-settings__slider-head">
-                <span>{{ slider.name }}</span>
+                <span>{{ t().THEME.SLIDERS[slider.key] || slider.name }}</span>
                 <span class="atmos-settings__slider-value" [class.is-overridden]="overrides()[slider.key] !== undefined">
                   {{ sliderValue(slider) }}{{ slider.suffix ?? slider.unit ?? '' }}
                 </span>
@@ -183,7 +183,7 @@
           {{ t().THEME.BACKGROUND_IMAGE }}
           <select class="atmos-input" (change)="setBackgroundImage($event)">
             @for (img of backgroundImages; track img.value) {
-              <option [value]="img.value" [selected]="img.value === (overrides().bgImage ?? '')">{{ img.name }}</option>
+              <option [value]="img.value" [selected]="img.value === (overrides().bgImage ?? '')">{{ t().THEME.BG_IMAGES[img.value] || img.name }}</option>
             }
           </select>
         </label>
@@ -199,7 +199,7 @@
           <div class="atmos-settings__btn-row">
             @for (preset of densityPresets; track preset.value) {
               <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().density ?? '') === preset.value" (click)="setOverride('density', preset.value)">
-                {{ preset.name }}
+                {{ t().THEME.DENSITY_PRESETS[preset.value] || preset.name }}
               </button>
             }
           </div>
@@ -210,7 +210,7 @@
           <div class="atmos-settings__btn-row">
             @for (preset of fontSizePresets; track preset.value) {
               <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().fontSize ?? '') === preset.value" (click)="setOverride('fontSize', preset.value)">
-                {{ preset.name }}
+                {{ t().THEME.FONT_SIZE_PRESETS[preset.value] || preset.name }}
               </button>
             }
           </div>
@@ -221,7 +221,7 @@
           <div class="atmos-settings__btn-row">
             @for (preset of menuPresets; track preset.value) {
               <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().menu ?? '') === preset.value" (click)="setOverride('menu', preset.value)">
-                {{ preset.name }}
+                {{ t().THEME.MENU_PRESETS[preset.value] || preset.name }}
               </button>
             }
           </div>

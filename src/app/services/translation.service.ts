@@ -61,6 +61,12 @@ interface Translations {
       FONT_SIZE: string;
       MENU_POSITION: string;
       BUTTON_RESET: string;
+      NAMES: Record<string, string>;
+      SLIDERS: Record<string, string>;
+      BG_IMAGES: Record<string, string>;
+      DENSITY_PRESETS: Record<string, string>;
+      FONT_SIZE_PRESETS: Record<string, string>;
+      MENU_PRESETS: Record<string, string>;
     };
     NAV: {
       TITLE: string;
@@ -206,7 +212,73 @@ export class TranslationService {
           DENSITY: "Density",
           FONT_SIZE: "Font size",
           MENU_POSITION: "Menu position",
-          BUTTON_RESET: "Reset tweaks"
+          BUTTON_RESET: "Reset all tweaks",
+          NAMES: {
+            '': "Default",
+            'cozy': "Aviary Village",
+            'peaks': "Prairie Peaks",
+            'reef': "Treasure Reef",
+            'cold': "Village of Dreams",
+            'pearl': "Pearl Village",
+            'sandy': "Crescent Oasis",
+            'love': "Days of Love",
+            'moomin': "Moomin",
+            'wonderland': "Wonderland",
+            'gogh': "Van Gogh",
+            'dark': "Void",
+            'surprise': "Surprise"
+          },
+          SLIDERS: {
+            'hue': "Hue",
+            'chroma': "Saturation",
+            'surface': "Surface tone",
+            'bgBrightness': "Background brightness",
+            'bgBlur': "Background blur"
+          },
+          BG_IMAGES: {
+            '': "Theme default",
+            'none': "None",
+            'isle': "Isle of Dawn",
+            'aviary': "Aviary Village",
+            'prairie': "Daylight Prairie",
+            'peaks': "Prairie Peaks",
+            'peaks2': "Prairie Peaks (dusk)",
+            'forest': "Hidden Forest",
+            'reef': "Treasure Reef",
+            'village': "Village of Dreams",
+            'concert_hall': "Concert Hall",
+            'wasteland': "Golden Wasteland",
+            'wasteland2': "Golden Wasteland (shipwreck)",
+            'oasis': "Crescent Oasis",
+            'pearl': "Pearl Village",
+            'vault': "Vault of Knowledge",
+            'aurora': "Aurora",
+            'nesting': "Nesting Workshop",
+            'trials': "Trials",
+            'void_jelly': "Void",
+            'bloom2024': "Days of Bloom",
+            'color2024': "Days of Color",
+            'feast2023': "Days of Feast 2023",
+            'feast2024': "Days of Feast 2024",
+            'fortune2024': "Days of Fortune",
+            'love2024': "Days of Love",
+            'firework': "Fireworks",
+            'moomin': "Moomin",
+            'gogh': "Van Gogh"
+          },
+          DENSITY_PRESETS: {
+            '': "Comfortable",
+            'compact': "Compact"
+          },
+          FONT_SIZE_PRESETS: {
+            '': "Default",
+            'large': "Large",
+            'larger': "Larger"
+          },
+          MENU_PRESETS: {
+            '': "Automatic",
+            'desktop': "Always sidebar"
+          }
         },
         NAV: {
           TITLE: "Navigation",
@@ -345,7 +417,73 @@ export class TranslationService {
           DENSITY: "Độ dày (Density)",
           FONT_SIZE: "Cỡ chữ",
           MENU_POSITION: "Vị trí menu",
-          BUTTON_RESET: "Đặt lại tùy chỉnh"
+          BUTTON_RESET: "Đặt lại tất cả tùy chỉnh",
+          NAMES: {
+            '': "Default",
+            'cozy': "Thành phố chim bồ câu",
+            'peaks': "Đồi Prairie",
+            'reef': "Hòn đảo kho báu",
+            'cold': "Thành phố mộng mơ",
+            'pearl': "Thị trấn Ngọc trai",
+            'sandy': "Khe Nước Trong",
+            'love': "Những ngày Yêu đời",
+            'moomin': "Moomin",
+            'wonderland': "Căn nhà Wonder",
+            'gogh': "Người họa sĩ Van Gogh",
+            'dark': "Vực",
+            'surprise': "Sự bất ngờ"
+          },
+          SLIDERS: {
+            'hue': "Màu sắc",
+            'chroma': "Độ bão hòa",
+            'surface': "Màu vùng nền",
+            'bgBrightness': "Sáng màn hình nền",
+            'bgBlur': "Độ mờ nền"
+          },
+          BG_IMAGES: {
+            '': "Mặc định của chủ đề",
+            'none': "Không có",
+            'isle': "Quần đảo Islet of Dawn",
+            'aviary': "Thành phố chim bồ câu",
+            'prairie': "Prairie Dài",
+            'peaks': "Prairie Tới cao",
+            'peaks2': "Praire Peaks (chiều tối)",
+            'forest': "Rừng ẩn",
+            'reef': "Hòn đảo Kho báu",
+            'village': "Thành phố Mộng",
+            'concert_hall': "Sảnh Hòa tấu",
+            'wasteland': "Vùng đất Vàng",
+            'wasteland2': "Vùng đất Vàng (đắm tàu)",
+            'oasis': "Khe Nước Trong",
+            'pearl': "Thị trấn Ngọc trai",
+            'vault': "Hầm Báu",
+            'aurora': "Xứ Mây",
+            'nesting': "Nhà bếp Nội bộ",
+            'trials': "Thử thách",
+            'void_jelly': "Vực",
+            'bloom2024': "Những ngày Huỳnh hoa",
+            'color2024': "Những ngày Hoa lệ",
+            'feast2023': "Những ngày Tốt nghiệp 2023",
+            'feast2024': "Những ngày Tốt nghiệp 2024",
+            'fortune2024': "Những ngày May mắn",
+            'love2024': "Những ngày Yêu",
+            'firework': "Lễ hội Lửa",
+            'moomin': "Moomin",
+            'gogh': "Van Gogh"
+          },
+          DENSITY_PRESETS: {
+            '': "Chân thật",
+            'compact': "Tiện lợi"
+          },
+          FONT_SIZE_PRESETS: {
+            '': "Mặc định",
+            'large': "Cỡ lớn",
+            'larger': "Cỡ rộng hơn"
+          },
+          MENU_PRESETS: {
+            '': "Tự động",
+            'desktop': "Luộc với thanh bên luôn"
+          }
         },
         NAV: {
           TITLE: "Điều hướng",
