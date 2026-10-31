@@ -18,7 +18,7 @@
           [attr.aria-current]="nav.currentSection() === section.id ? 'location' : null"
           [routerLink]="section.link"
           (click)="onSectionClick(section)"
-          [skyTooltip]="mode() === 'rail' && !hasPages ? section.label : ''">
+          [skyTooltip]="mode() === 'rail' && !hasPages ? (section.label | translate) : ''">
           @if (section.iconUrl) {
             <app-icon class="atmos-nav-item__img" [src]="section.iconUrl" width="24px" height="24px"></app-icon>
           } @else if (section.svgIcon) {
@@ -26,7 +26,7 @@
           } @else {
             <mat-icon>{{ section.icon }}</mat-icon>
           }
-          <span class="atmos-nav-item__label">{{ section.label }}</span>
+          <span class="atmos-nav-item__label">{{ section.label | translate }}</span>
         </a>
         @if (hasPages && mode() === 'full') {
           <button

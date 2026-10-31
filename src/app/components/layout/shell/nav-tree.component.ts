@@ -6,6 +6,7 @@ import { IconComponent } from '@app/components/icon/icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { INavSection, NavigationService } from '@app/navigation/navigation.service';
 import { SectionId } from '@app/navigation/pages';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 export type NavTreeMode = 'full' | 'rail';
 
@@ -20,7 +21,7 @@ const viewportMargin = 4;
   templateUrl: './nav-tree.component.html',
   styleUrl: './nav-tree.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, RouterLink, MatIcon, IconComponent, TooltipDirective],
+  imports: [NgTemplateOutlet, RouterLink, MatIcon, IconComponent, TooltipDirective, TranslatePipe],
   host: {
     '[class.is-rail]': `mode() === 'rail'`
   }

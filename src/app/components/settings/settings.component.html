@@ -23,24 +23,24 @@
 <!-- Storage -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>storage</mat-icon> Storage</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>storage</mat-icon> {{ t().STORAGE.TITLE }}</h2>
     <p class="atmos-paragraph">
-      Your data is currently stored in <strong>{{ storageProviderName }}</strong>.
-      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">Storage page</a>.
+      {{ t().STORAGE.DESCRIPTION | translate: { provider: storageProviderName } }}
+      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">{{ t().STORAGE.BUTTON_STORAGE | translate }}</a>.
       If you want to transfer your data, export it first, then switch storage and import it back.
     </p>
     <div class="atmos-settings__btn-row">
       <a class="atmos-btn" routerLink="/storage">
-        <mat-icon>database</mat-icon> Storage
+        <mat-icon>database</mat-icon> {{ t().STORAGE.BUTTON_STORAGE }}
       </a>
       <button type="button" class="atmos-btn" (click)="import()">
-        <mat-icon>download</mat-icon> Import
+        <mat-icon>download</mat-icon> {{ t().STORAGE.BUTTON_IMPORT }}
       </button>
       <button type="button" class="atmos-btn" (click)="export()">
-        <mat-icon>upload</mat-icon> Export
+        <mat-icon>upload</mat-icon> {{ t().STORAGE.BUTTON_EXPORT }}
       </button>
       <button type="button" class="atmos-btn atmos-btn--danger" (click)="clear()">
-        <mat-icon>delete</mat-icon> Clear
+        <mat-icon>delete</mat-icon> {{ t().STORAGE.BUTTON_CLEAR }}
       </button>
     </div>
   </div>
@@ -50,14 +50,13 @@
 @if (pwaInstallPrompt) {
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-settings__section-title"><mat-icon>apps</mat-icon> App</h2>
+      <h2 class="atmos-settings__section-title"><mat-icon>apps</mat-icon> {{ t().PWA.TITLE }}</h2>
       <p class="atmos-paragraph">
-        Sky Planner can be installed as a PWA (Progressive Web App) on supported browsers,
-        making it easier to access than a bookmark.
+        {{ t().PWA.DESCRIPTION }}
       </p>
       <div class="atmos-settings__btn-row">
         <button type="button" class="atmos-btn" (click)="promptPwa()">
-          <mat-icon>install_mobile</mat-icon> Install
+          <mat-icon>install_mobile</mat-icon> {{ t().PWA.BUTTON_INSTALL }}
         </button>
       </div>
     </div>
@@ -67,16 +66,12 @@
 <!-- Daily candles -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>wb_sunny</mat-icon> Daily candles</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>wb_sunny</mat-icon> {{ t().DAILY_CANDLES.TITLE }}</h2>
     <p class="atmos-paragraph">
-      Enter a number to add regular candles to your
-      <a class="atmos-text-link" routerLink="/currency">Currency</a> page
-      when you complete your (season) daily quests on the
-      <a class="atmos-text-link" routerLink="/">Dashboard</a> or <a class="atmos-text-link" routerLink="/daily">Daily tracker</a>.
-      Set to 0 to disable.
+      {{ t().DAILY_CANDLES.DESCRIPTION }}
     </p>
     <label class="atmos-settings__label">
-      Candles per daily check-in
+      {{ t().DAILY_CANDLES.LABEL }}
       <input class="atmos-input atmos-input--narrow" type="number" min="0" max="99"
         [value]="dailyCandleAmount"
         (change)="setDailyCandleAmount(+$any($event.target).value)">
