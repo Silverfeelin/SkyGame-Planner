@@ -1,0 +1,115 @@
+{
+  "SETTINGS": {
+    "TITLE": "Cài đặt",
+    "LANGUAGE": {
+      "TITLE": "Ngôn ngữ",
+      "DESCRIPTION": "Chọn ngôn ngữ hiển thị. Tự động nhận diện sử dụng ngôn ngữ trình duyệt hoặc múi giờ của bạn.",
+      "AUTO": "Tự động (Hệ thống/Múi giờ)",
+      "EN": "English",
+      "VI": "Tiếng Việt"
+    },
+    "STORAGE": {
+      "TITLE": "Lưu trữ dữ liệu",
+      "DESCRIPTION": "Dữ liệu của bạn hiện được lưu tại <strong>{{provider}}</strong>. Để thay đổi vị trí lưu trữ, hãy truy cập <a class=\"atmos-text-link\" href=\"/storage\">Trang lưu trữ</a>. Nếu muốn chuyển dữ liệu, hãy xuất file trước, sau đó chuyển bộ nhớ và nhập lại.",
+      "BUTTON_STORAGE": "Lưu trữ",
+      "BUTTON_IMPORT": "Nhập",
+      "BUTTON_EXPORT": "Xuất",
+      "BUTTON_CLEAR": "Xóa"
+    },
+    "PWA": {
+      "TITLE": "Ứng dụng (PWA)",
+      "DESCRIPTION": "Sky Planner có thể được cài đặt như một ứng dụng web (PWA) trên các trình duyệt hỗ trợ, giúp truy cập nhanh chóng hơn.",
+      "BUTTON_INSTALL": "Cài đặt"
+    },
+    "DAILY_CANDLES": {
+      "TITLE": "Nến hàng ngày",
+      "DESCRIPTION": "Nhập số lượng nến thường được thêm vào trang Tiền tệ khi bạn hoàn thành nhiệm vụ hàng ngày (mùa) trên Bảng điều khiển hoặc Trình theo dõi hàng ngày. Đặt bằng 0 để tắt.",
+      "LABEL": "Số nến mỗi lần điểm danh hàng ngày"
+    },
+    "SPIRIT_TREES": {
+      "TITLE": "Cây tổ tiên (Spirit Trees)",
+      "CONNECTED_ON": "Tất cả các vật phẩm dẫn đến vật phẩm bạn mở khóa cũng sẽ được mở khóa. Tương tự, khóa một vật phẩm sẽ khóa các vật phẩm phía sau nó.",
+      "CONNECTED_OFF": "Khi bạn mở khóa một vật phẩm, chỉ vật phẩm đó được mở khóa. Bạn có thể chọn mở khóa đồng thời tất cả các vật phẩm trước đó.",
+      "BUTTON_UNLOCK_CONNECTED": "Mở khóa vật phẩm liên kết"
+    },
+    "ITEMS": {
+      "TITLE": "Vật phẩm",
+      "DESCRIPTION": "Trang Vật phẩm hiển thị chi tiết vật phẩm ở khung bên cạnh danh sách. Nhấp vào vật phẩm sẽ hiển thị tại đó thay vì mở trang vật phẩm riêng. Chỉ khả dụng trên màn hình rộng ít nhất 1280 pixel.",
+      "BUTTON_SIDE_PANEL": "Hiển thị chi tiết vật phẩm ở khung bên"
+    },
+    "DATE": {
+      "TITLE": "Ngày tháng",
+      "DESCRIPTION": "Thay đổi định dạng ngày tháng. Hôm nay là {{date}}."
+    },
+    "TIME": {
+      "TITLE": "Thời gian",
+      "DESCRIPTION": "Thay đổi định dạng thời gian. Hiện tại là {{time}}.",
+      "HOUR_24": "24 giờ",
+      "HOUR_12": "12 giờ (AM/PM)"
+    },
+    "THEME": {
+      "TITLE": "Giao diện",
+      "ADVANCED": "Nâng cao",
+      "ADVANCED_DESC": "Các tùy chỉnh áp dụng đè lên giao diện đã chọn. Các thanh trượt chưa thay đổi sẽ tuân theo giao diện.",
+      "BACKGROUND_IMAGE": "Ảnh nền",
+      "VIGNETTE": "Hiệu ứng tối viền (Vignette)",
+      "DENSITY": "Độ dày (Density)",
+      "FONT_SIZE": "Cỡ chữ",
+      "MENU_POSITION": "Vị trí menu",
+      "BUTTON_RESET": "Đặt lại tùy chỉnh"
+    },
+    "NAV": {
+      "TITLE": "Điều hướng",
+      "WIKI_NEW_TAB": "Mở liên kết Wiki trong tab mới"
+    },
+    "SHORTCUTS": {
+      "TITLE": "Phím tắt",
+      "DESCRIPTION": "Xem các phím tắt nhanh để điều hướng và tìm kiếm dễ dàng.",
+      "BUTTON_VIEW": "Xem phím tắt"
+    },
+    "DEBUG": {
+      "TITLE": "Gỡ lỗi & Phát triển",
+      "BUTTON_SHOW_GUIDS": "Hiển thị GUID",
+      "BUTTON_COPY_COORDS": "Sao chép tọa độ khi nhấp vào bản đồ"
+    }
+  },
+  "NAV": {
+    "DAILY": "Hàng ngày",
+    "CR_TRACKER": "Theo dõi chạy nến",
+    "PNR_TRACKER": "Theo dõi tượng Eden",
+    "CURRENCY": "Tiền tệ",
+    "SPENT_CURRENCY": "Tiền tệ đã tiêu",
+    "ITEMS": "Vật phẩm",
+    "ITEM_GRID": "Lưới vật phẩm",
+    "ITEM_TABLE": "Bảng vật phẩm",
+    "ITEM_PREVIEWS": "Xem trước vật phẩm",
+    "DYE_PREVIEWS": "Xem trước thuốc nhuộm",
+    "COLLECTIONS": "Bộ sưu tập",
+    "SPIRITS": "Tổ tiên",
+    "ALL_SPIRITS": "Tất cả tổ tiên",
+    "REGULAR_SPIRITS": "Tổ tiên thường",
+    "ELDER_SPIRITS": "Tổ tiên trưởng lão",
+    "SEASON_SPIRITS": "Tổ tiên mùa",
+    "SEASON_GUIDES": "Hướng dẫn mùa",
+    "TRAVELING_SPIRITS": "Tổ tiên du mục (TS)",
+    "SPECIAL_VISITS": "Chuyến thăm đặc biệt",
+    "WINGED_LIGHT": "Ánh sáng có cánh (WL)",
+    "REALMS": "Vương quốc",
+    "SEASONS": "Các mùa",
+    "EVENTS": "Sự kiện",
+    "SHOPS": "Cửa hàng",
+    "FRIENDS": "Bạn bè",
+    "TOOLS": "Công cụ",
+    "SETTINGS": "Cài đặt"
+  },
+  "COMMON": {
+    "SAVE": "Lưu",
+    "CANCEL": "Hủy",
+    "DELETE": "Xóa",
+    "Sửa": "Sửa",
+    "CLOSE": "Đóng",
+    "SEARCH": "Tìm kiếm...",
+    "LOADING": "Đang tải...",
+    "CONFIRM": "Bạn có chắc chắn không?"
+  }
+}

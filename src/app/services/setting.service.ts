@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { TranslationService } from '@app/services/translation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,15 @@ export class SettingService {
   _debugMapCopyCoordinates = false;
   _dailyCandleAmount = 0;
   _itemPanel = false;
+  _language: 'en' | 'vi' = 'en';
 
-  constructor() {
+  constructor(private readonly _translationService: TranslationService) {
     this._wikiNewTab = localStorage.getItem('wiki.newtab') !== '0';
     this._debugVisible = localStorage.getItem('debug.visible') === '1';
     this._debugMapCopyCoordinates = localStorage.getItem('debug.map-copy-coordinates') === '1';
     this._dailyCandleAmount = parseInt(localStorage.getItem('setting.daily-candle-amount') || '0', 10) || 0;
     this._itemPanel = localStorage.getItem('setting.item-panel') === '1';
+    this._language = localStorage.getItem('setting.language') as 'en' | 'vi' || 'en';
   }
 
   get wikiNewTab(): boolean {
@@ -69,5 +72,16 @@ export class SettingService {
     this._itemPanel = value;
     localStorage.setItem('setting.item-panel', value ? '1' : '0');
     this.settingChanged.next();
+  }
+
+  get language(): 'en' | 'vi' {
+    return this._language;
+  }
+
+  set language(value: 'en' | 'vi') {
+    this._language = value;
+    localStorage.setItem('setting.language', value);
+    this.settingChanged.next();
+    this._translationService.setLanguage(value);
   }
 }

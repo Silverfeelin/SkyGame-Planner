@@ -1,0 +1,115 @@
+{
+  "SETTINGS": {
+    "TITLE": "Settings",
+    "LANGUAGE": {
+      "TITLE": "Language",
+      "DESCRIPTION": "Select your preferred language. Automatic detection uses your browser language or timezone.",
+      "AUTO": "Auto (System/Timezone)",
+      "EN": "English",
+      "VI": "Tiếng Việt"
+    },
+    "STORAGE": {
+      "TITLE": "Storage",
+      "DESCRIPTION": "Your data is currently stored in <strong>{{provider}}</strong>. To change the storage location, visit the <a class=\"atmos-text-link\" href=\"/storage\">Storage page</a>. If you want to transfer your data, export it first, then switch storage and import it back.",
+      "BUTTON_STORAGE": "Storage",
+      "BUTTON_IMPORT": "Import",
+      "BUTTON_EXPORT": "Export",
+      "BUTTON_CLEAR": "Clear"
+    },
+    "PWA": {
+      "TITLE": "App",
+      "DESCRIPTION": "Sky Planner can be installed as a PWA (Progressive Web App) on supported browsers, making it easier to access than a bookmark.",
+      "BUTTON_INSTALL": "Install"
+    },
+    "DAILY_CANDLES": {
+      "TITLE": "Daily candles",
+      "DESCRIPTION": "Enter a number to add regular candles to your Currency page when you complete your (season) daily quests on the Dashboard or Daily tracker. Set to 0 to disable.",
+      "LABEL": "Candles per daily check-in"
+    },
+    "SPIRIT_TREES": {
+      "TITLE": "Spirit trees",
+      "CONNECTED_ON": "All items leading up to the one you unlock will also be unlocked. Likewise, locking an item will lock the ones beyond it.",
+      "CONNECTED_OFF": "When you unlock an item only that item will be unlocked. You can choose to also unlock all preceding items.",
+      "BUTTON_UNLOCK_CONNECTED": "Unlock connected items"
+    },
+    "ITEMS": {
+      "TITLE": "Items",
+      "DESCRIPTION": "The Items page shows item details in a panel beside the list. Clicking an item shows it there instead of opening the item page. Only available on screens at least 1280 pixels wide.",
+      "BUTTON_SIDE_PANEL": "Show item details in a side panel"
+    },
+    "DATE": {
+      "TITLE": "Date",
+      "DESCRIPTION": "Change the date format. Today is {{date}}."
+    },
+    "TIME": {
+      "TITLE": "Time",
+      "DESCRIPTION": "Change the time format. It's now {{time}}.",
+      "HOUR_24": "24-hour",
+      "HOUR_12": "12-hour"
+    },
+    "THEME": {
+      "TITLE": "Theme",
+      "ADVANCED": "Advanced",
+      "ADVANCED_DESC": "Tweaks apply on top of the selected theme. Sliders you haven't moved follow the theme.",
+      "BACKGROUND_IMAGE": "Background image",
+      "VIGNETTE": "Vignette",
+      "DENSITY": "Density",
+      "FONT_SIZE": "Font size",
+      "MENU_POSITION": "Menu position",
+      "BUTTON_RESET": "Reset tweaks"
+    },
+    "NAV": {
+      "TITLE": "Navigation",
+      "WIKI_NEW_TAB": "Open Wiki links in a new tab"
+    },
+    "SHORTCUTS": {
+      "TITLE": "Shortcuts",
+      "DESCRIPTION": "Show quick keyboard shortcuts for fast navigation and search.",
+      "BUTTON_VIEW": "View shortcuts"
+    },
+    "DEBUG": {
+      "TITLE": "Debug & Dev",
+      "BUTTON_SHOW_GUIDS": "Show GUIDs",
+      "BUTTON_COPY_COORDS": "Copy coordinates on map click"
+    }
+  },
+  "NAV": {
+    "DAILY": "Daily",
+    "CR_TRACKER": "Candle Run Tracker",
+    "PNR_TRACKER": "Eden Statue Tracker",
+    "CURRENCY": "Currencies",
+    "SPENT_CURRENCY": "Spent currencies",
+    "ITEMS": "Items",
+    "ITEM_GRID": "Item grid",
+    "ITEM_TABLE": "Item table",
+    "ITEM_PREVIEWS": "Item previews",
+    "DYE_PREVIEWS": "Dye previews",
+    "COLLECTIONS": "Collections",
+    "SPIRITS": "Spirits",
+    "ALL_SPIRITS": "All spirits",
+    "REGULAR_SPIRITS": "Regular spirits",
+    "ELDER_SPIRITS": "Elder spirits",
+    "SEASON_SPIRITS": "Season spirits",
+    "SEASON_GUIDES": "Season guides",
+    "TRAVELING_SPIRITS": "Traveling spirits",
+    "SPECIAL_VISITS": "Special visits",
+    "WINGED_LIGHT": "Winged Light",
+    "REALMS": "Realms",
+    "SEASONS": "Seasons",
+    "EVENTS": "Events",
+    "SHOPS": "Shops",
+    "FRIENDS": "Friends",
+    "TOOLS": "Tools",
+    "SETTINGS": "Settings"
+  },
+  "COMMON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "EDIT": "Edit",
+    "CLOSE": "Close",
+    "SEARCH": "Search...",
+    "LOADING": "Loading...",
+    "CONFIRM": "Are you sure?"
+  }
+}

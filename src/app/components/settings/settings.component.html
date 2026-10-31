@@ -1,6 +1,24 @@
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Settings</h1>
+  <h1 class="atmos-page__title">{{ t().TITLE }}</h1>
 </header>
+
+<!-- Language -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>language</mat-icon> {{ t().LANGUAGE.TITLE }}</h2>
+    <p class="atmos-paragraph">
+      {{ t().LANGUAGE.DESCRIPTION }}
+    </p>
+    <div class="atmos-settings__btn-row">
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="lang() === 'en'" (click)="setLanguage('en')">
+        {{ t().LANGUAGE.EN }}
+      </button>
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="lang() === 'vi'" (click)="setLanguage('vi')">
+        {{ t().LANGUAGE.VI }}
+      </button>
+    </div>
+  </div>
+</section>
 
 <!-- Storage -->
 <section class="atmos-card">

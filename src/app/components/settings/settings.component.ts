@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, inject, OnDestroy, signal } from '@angular/core';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
@@ -9,6 +9,7 @@ import { DateTimePipe } from '../../pipes/date-time.pipe';
 import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { TranslationService, Language } from 'src/app/services/translation.service';
 import { ITheme, setTheme, themes } from 'src/themes';
 import {
   backgroundImages, clearThemeOverrides, densityPresets, fontSizePresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
@@ -32,6 +33,10 @@ export class SettingsComponent implements OnDestroy {
   dateFormats: Array<string>;
   currentTheme: string;
   themes = themes;
+
+  readonly translationService = inject(TranslationService);
+  readonly lang = computed(() => this.translationService.currentLanguage());
+  readonly t = computed(() => this.translationService.getNested<any>('SETTINGS'));
 
   readonly hour12 = signal(DateHelper.hour12);
   readonly timeNow = computed(() => this.today.toFormat(this.hour12() ? 'h:mm a' : 'HH:mm'));
@@ -68,12 +73,25 @@ export class SettingsComponent implements OnDestroy {
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
+    this._setupLanguage();
+
     addEventListener('beforeinstallprompt', this.beforeInstallPrompt);
 
     effect(() => {
       this.pwaInstallPrompt ??= signalPwa();
       _changeDetectorRef.markForCheck();
     });
+  }
+
+  private _setupLanguage() {
+    const savedLang = localStorage.getItem('setting.language');
+    if (savedLang) {
+      try {
+        this._settingService.language = savedLang as 'en' | 'vi';
+      } catch (e) {
+        // keep default
+      }
+    }
   }
 
   ngOnDestroy(): void {
@@ -205,6 +223,10 @@ export class SettingsComponent implements OnDestroy {
     this.hour12.set(hour12);
     DateHelper.hour12 = hour12;
     localStorage.setItem('time.format', hour12 ? '12' : '24');
+  }
+
+  setLanguage(lang: 'en' | 'vi'): void {
+    this._settingService.language = lang;
   }
 
   selectTheme(theme: ITheme): void {
