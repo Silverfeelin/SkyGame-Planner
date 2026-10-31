@@ -4,13 +4,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { NavigationService } from '@app/navigation/navigation.service';
 import { NavTreeComponent } from './nav-tree.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive, MatIcon, NavTreeComponent]
+  imports: [RouterLink, RouterLinkActive, MatIcon, NavTreeComponent, TranslatePipe]
 })
 export class TopbarComponent {
   private readonly location = inject(Location);

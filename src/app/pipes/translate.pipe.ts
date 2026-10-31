@@ -8,8 +8,16 @@ import { TranslationService } from '@app/services/translation.service';
 export class TranslatePipe implements PipeTransform {
   private readonly _translationService = inject(TranslationService);
 
-  transform(key: string): string {
+  transform(key: string, params?: Record<string, string>): string {
     if (!key) { return ''; }
-    return this._translationService.getNested<string>(key) || key;
+    let value = this._translationService.getNested<string>(key) || key;
+    
+    if (params) {
+      Object.entries(params).forEach(([k, v]) => {
+        value = value.replace(new RegExp(`{{${k}}}`, 'g'), v);
+      });
+    }
+    
+    return value;
   }
 }

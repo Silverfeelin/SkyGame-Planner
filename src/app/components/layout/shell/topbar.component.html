@@ -35,7 +35,7 @@
             rel="noopener"
             (click)="closeDrawer()">
             <mat-icon>{{ item.icon }}</mat-icon>
-            <span>{{ item.label }}</span>
+            <span>{{ item.label | translate }}</span>
           </a>
         } @else {
           <a
@@ -48,7 +48,7 @@
             } @else {
               <mat-icon>{{ item.icon }}</mat-icon>
             }
-            <span>{{ item.label }}</span>
+            <span>{{ item.label | translate }}</span>
           </a>
         }
       }

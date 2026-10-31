@@ -25,8 +25,8 @@
   <div class="atmos-card__body">
     <h2 class="atmos-settings__section-title"><mat-icon>storage</mat-icon> {{ t().STORAGE.TITLE }}</h2>
     <p class="atmos-paragraph">
-      {{ t().STORAGE.DESCRIPTION | translate: { provider: storageProviderName } }}
-      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">{{ t().STORAGE.BUTTON_STORAGE | translate }}</a>.
+      Your data is currently stored in <strong>{{ storageProviderName }}</strong>.
+      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">{{ t().STORAGE.BUTTON_STORAGE }}</a>.
       If you want to transfer your data, export it first, then switch storage and import it back.
     </p>
     <div class="atmos-settings__btn-row">

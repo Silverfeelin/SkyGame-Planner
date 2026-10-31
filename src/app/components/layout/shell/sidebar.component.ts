@@ -5,6 +5,7 @@ import { MatIcon } from '@angular/material/icon';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NavigationService } from '@app/navigation/navigation.service';
 import { NavTreeComponent } from './nav-tree.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 const collapsedKey = 'menu.collapsed';
 
@@ -13,7 +14,7 @@ const collapsedKey = 'menu.collapsed';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, RouterLink, RouterLinkActive, MatIcon, NavTreeComponent],
+  imports: [TooltipDirective, RouterLink, RouterLinkActive, MatIcon, NavTreeComponent, TranslatePipe],
   host: {
     '[class.is-collapsed]': 'collapsed()',
     '[class.is-animated]': 'animated()'

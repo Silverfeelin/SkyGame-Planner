@@ -53,9 +53,9 @@
         class="nav-tree__flyout"
         popover="manual"
         role="group"
-        [attr.aria-label]="section.label + ' pages'">
+        [attr.aria-label]="(section.label | translate) + ' pages'">
         @if (hasPages && mode() === 'rail') {
-          <div class="nav-tree__flyout-title">{{ section.label }}</div>
+          <div class="nav-tree__flyout-title">{{ section.label | translate }}</div>
           <ul class="nav-tree__pages">
             <ng-container *ngTemplateOutlet="pageList; context: { $implicit: section }" />
           </ul>
@@ -76,7 +76,7 @@
           rel="noopener"
           (mouseenter)="showTitleIfTruncated($event, page.label)"
           (click)="onPageClick()">
-          <span class="nav-tree__page-label">{{ page.label }}</span>
+          <span class="nav-tree__page-label">{{ page.label | translate }}</span>
           <mat-icon class="nav-tree__external">open_in_new</mat-icon>
         </a>
       } @else {
@@ -90,7 +90,7 @@
           [queryParams]="page.queryParams"
           (mouseenter)="showTitleIfTruncated($event, page.label)"
           (click)="onPageClick()">
-          <span class="nav-tree__page-label">{{ page.label }}</span>
+          <span class="nav-tree__page-label">{{ page.label | translate }}</span>
         </a>
       }
     </li>

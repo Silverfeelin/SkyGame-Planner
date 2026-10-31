@@ -105,6 +105,28 @@ interface Translations {
     FRIENDS: string;
     TOOLS: string;
     SETTINGS: string;
+    HOME: string;
+    QUICK_START: string;
+    CLOSET: string;
+    OUTOUTFIT_REQUEST: string;
+    INFO: string;
+    PRIVACY: string;
+    NEWS: string;
+    DESIGN_FEEDBACK: string;
+    COLLAGE: string;
+    AREAS: string;
+    SHARED_CREATIONS: string;
+    HISTORY: string;
+    CALCULATOR: string;
+    SHOP_EVENT: string;
+    SHOP_CINEMA: string;
+    SHOP_CONCERT_HALL: string;
+    SHOP_HARMONY_HALL: string;
+    SHOP_LOYALTY: string;
+    SHOP_NESTING: string;
+    SHOP_OFFICE: string;
+    SHOP_PRAIRIE: string;
+    SHOP_WONDERLAND: string;
   };
   COMMON: {
     SAVE: string;
@@ -226,7 +248,29 @@ export class TranslationService {
         SHOPS: "Shops",
         FRIENDS: "Friends",
         TOOLS: "Tools",
-        SETTINGS: "Settings"
+        SETTINGS: "Settings",
+        HOME: "Home",
+        QUICK_START: "Quick start",
+        CLOSET: "Sky closet",
+        OUTOUTFIT_REQUEST: "Create request",
+        INFO: "Info",
+        PRIVACY: "Privacy Policy",
+        NEWS: "What's new",
+        DESIGN_FEEDBACK: "Design feedback",
+        COLLAGE: "Collage",
+        AREAS: "Areas",
+        SHARED_CREATIONS: "Shared Creations",
+        HISTORY: "History",
+        CALCULATOR: "Calculator",
+        SHOP_EVENT: "Event Store",
+        SHOP_CINEMA: "Cinema",
+        SHOP_CONCERT_HALL: "Concert Hall",
+        SHOP_HARMONY_HALL: "Harmony Hall",
+        SHOP_LOYALTY: "Loyalty Store",
+        SHOP_NESTING: "Nesting Workshop",
+        SHOP_OFFICE: "Secret Area",
+        SHOP_PRAIRIE: "Prairie Heights",
+        SHOP_WONDERLAND: "Wonderland Café"
       },
       COMMON: {
         SAVE: "Save",
@@ -341,7 +385,29 @@ export class TranslationService {
         SHOPS: "Cửa hàng",
         FRIENDS: "Bạn bè",
         TOOLS: "Công cụ",
-        SETTINGS: "Cài đặt"
+        SETTINGS: "Cài đặt",
+        HOME: "Trang chủ",
+        QUICK_START: "Mở khóa nhanh",
+        CLOSET: "Tủ đồ Sky",
+        OUTOUTFIT_REQUEST: "Tạo yêu cầu",
+        INFO: "Thông tin",
+        PRIVACY: "Chính sách bảo mật",
+        NEWS: "Có gì mới",
+        DESIGN_FEEDBACK: "Góp ý thiết kế",
+        COLLAGE: "Collage",
+        AREAS: "Khu vực",
+        SHARED_CREATIONS: "Tác phẩm chung",
+        HISTORY: "Lịch sử",
+        CALCULATOR: "Máy tính",
+        SHOP_EVENT: "Cửa hàng sự kiện",
+        SHOP_CINEMA: "Rạp chiếu phim",
+        SHOP_CONCERT_HALL: "Phòng hòa nhạc",
+        SHOP_HARMONY_HALL: "Phòng giao hưởng",
+        SHOP_LOYALTY: "Cửa hàng Loyalty",
+        SHOP_NESTING: "Xưởng Nesting",
+        SHOP_OFFICE: "Khu vực bí mật",
+        SHOP_PRAIRIE: "Đồng cỏ cao",
+        SHOP_WONDERLAND: "Café Wonderland"
       },
       COMMON: {
         SAVE: "Lưu",
