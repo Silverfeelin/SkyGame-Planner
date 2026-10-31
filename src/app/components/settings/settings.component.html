@@ -134,7 +134,7 @@
 <!-- Theme -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>palette</mat-icon> Theme</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>palette</mat-icon> {{ t().THEME.TITLE }}</h2>
     <div class="atmos-settings__btn-row">
       @for (theme of themes; track theme.value) {
         <button type="button" class="atmos-btn" [class.atmos-btn--active]="currentTheme === theme.value" (click)="selectTheme(theme)">
@@ -145,14 +145,14 @@
 
     <button type="button" class="atmos-btn atmos-settings__advanced-toggle" [attr.aria-expanded]="advancedOpen()" (click)="toggleAdvanced()">
       <mat-icon>{{ advancedOpen() ? 'expand_less' : 'expand_more' }}</mat-icon>
-      Advanced
+      {{ t().THEME.ADVANCED }}
       @if (hasOverrides()) { <span class="atmos-settings__dot" title="Tweaks applied"></span> }
     </button>
 
     @if (advancedOpen()) {
       <div class="atmos-settings__advanced">
         <p class="atmos-paragraph">
-          Tweaks apply on top of the selected theme. Sliders you haven't moved follow the theme.
+          {{ t().THEME.ADVANCED_DESC }}
         </p>
 
         <div class="atmos-settings__sliders">
@@ -180,7 +180,7 @@
         </div>
 
         <label class="atmos-settings__label">
-          Background image
+          {{ t().THEME.BACKGROUND_IMAGE }}
           <select class="atmos-input" (change)="setBackgroundImage($event)">
             @for (img of backgroundImages; track img.value) {
               <option [value]="img.value" [selected]="img.value === (overrides().bgImage ?? '')">{{ img.name }}</option>
@@ -190,12 +190,12 @@
 
         <div class="atmos-settings__btn-row">
           <button type="button" class="atmos-btn" [class.atmos-btn--active]="overrides().vignette !== false" (click)="toggleVignette()">
-            <mat-icon>{{ overrides().vignette !== false ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Vignette
+            <mat-icon>{{ overrides().vignette !== false ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> {{ t().THEME.VIGNETTE }}
           </button>
         </div>
 
         <div class="atmos-settings__label">
-          Density
+          {{ t().THEME.DENSITY }}
           <div class="atmos-settings__btn-row">
             @for (preset of densityPresets; track preset.value) {
               <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().density ?? '') === preset.value" (click)="setOverride('density', preset.value)">
@@ -206,7 +206,7 @@
         </div>
 
         <div class="atmos-settings__label">
-          Font size
+          {{ t().THEME.FONT_SIZE }}
           <div class="atmos-settings__btn-row">
             @for (preset of fontSizePresets; track preset.value) {
               <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().fontSize ?? '') === preset.value" (click)="setOverride('fontSize', preset.value)">
@@ -217,7 +217,7 @@
         </div>
 
         <div class="atmos-settings__label">
-          Menu
+          {{ t().THEME.MENU_POSITION }}
           <div class="atmos-settings__btn-row">
             @for (preset of menuPresets; track preset.value) {
               <button type="button" class="atmos-btn" [class.atmos-btn--active]="(overrides().menu ?? '') === preset.value" (click)="setOverride('menu', preset.value)">
@@ -229,7 +229,7 @@
 
         <div class="atmos-settings__btn-row">
           <button type="button" class="atmos-btn atmos-btn--danger" [disabled]="!hasOverrides()" (click)="confirmResetOverrides()">
-            <mat-icon>restart_alt</mat-icon> Reset all tweaks
+            <mat-icon>restart_alt</mat-icon> {{ t().THEME.BUTTON_RESET }}
           </button>
         </div>
       </div>
@@ -240,10 +240,10 @@
 <!-- Wiki -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>menu_book</mat-icon> Wiki</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>menu_book</mat-icon> {{ t().NAV.TITLE }}</h2>
     <div class="atmos-settings__btn-row">
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="wikiNewTab" (click)="toggleWikiTab()">
-        <mat-icon>{{ wikiNewTab ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Open wiki in new tab
+        <mat-icon>{{ wikiNewTab ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> {{ t().NAV.WIKI_NEW_TAB }}
       </button>
     </div>
   </div>
@@ -252,10 +252,10 @@
 <!-- Keyboard shortcuts -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>keyboard</mat-icon> Keyboard shortcuts</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>keyboard</mat-icon> {{ t().SHORTCUTS.TITLE }}</h2>
     <div class="atmos-settings__btn-row">
       <button type="button" class="atmos-btn" (click)="viewKeyboardShortcuts()">
-        <mat-icon>keyboard</mat-icon> View shortcuts
+        <mat-icon>keyboard</mat-icon> {{ t().SHORTCUTS.BUTTON_VIEW }}
       </button>
     </div>
   </div>
@@ -264,20 +264,18 @@
 <!-- Debug info -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>bug_report</mat-icon> Debug info</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>bug_report</mat-icon> {{ t().DEBUG.TITLE }}</h2>
     <p class="atmos-paragraph">
-      Adds debugging information to various pages. Only relevant if you actively contribute to the project.
+      {{ t().DEBUG.DESCRIPTION }}
     </p>
     <div class="atmos-settings__btn-row">
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugVisible" (click)="toggleDebugInfo()">
-        <mat-icon>{{ debugVisible ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show debug info
+        <mat-icon>{{ debugVisible ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> {{ t().DEBUG.BUTTON_SHOW_GUIDS }}
       </button>
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugMapCopyCoordinates" (click)="toggleDebugMapCopyCoordinates()">
-        <mat-icon>{{ debugMapCopyCoordinates ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Copy map coordinates on click
+        <mat-icon>{{ debugMapCopyCoordinates ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> {{ t().DEBUG.BUTTON_COPY_COORDS }}
       </button>
     </div>
-    <p class="atmos-paragraph">
-      When enabled, clicking anywhere on a map copies the clicked <code class="atmos-code">[lat, lng]</code> position to your clipboard.
-    </p>
+    <p class="atmos-paragraph" [innerHTML]="t().DEBUG.COPY_COORDS_DESC"></p>
   </div>
 </section>
