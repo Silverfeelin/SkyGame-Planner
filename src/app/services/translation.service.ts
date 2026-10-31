@@ -75,6 +75,8 @@ interface Translations {
       TITLE: string;
       BUTTON_SHOW_GUIDS: string;
       BUTTON_COPY_COORDS: string;
+      DESCRIPTION: string;
+      COPY_COORDS_DESC: string;
     };
   };
   NAV: {
