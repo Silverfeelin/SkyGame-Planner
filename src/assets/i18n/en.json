@@ -45,7 +45,7 @@
       "TITLE": "Time",
       "DESCRIPTION": "Change the time format. It's now {{time}}.",
       "HOUR_24": "24-hour",
-      "HOUR_12": "12-hour"
+      "HOUR_12": "12-hour (AM/PM)"
     },
     "THEME": {
       "TITLE": "Theme",
@@ -56,7 +56,73 @@
       "DENSITY": "Density",
       "FONT_SIZE": "Font size",
       "MENU_POSITION": "Menu position",
-      "BUTTON_RESET": "Reset tweaks"
+      "BUTTON_RESET": "Reset all tweaks",
+      "NAMES": {
+        "": "Default",
+        "cozy": "Aviary Village",
+        "peaks": "Prairie Peaks",
+        "reef": "Treasure Reef",
+        "cold": "Village of Dreams",
+        "pearl": "Pearl Village",
+        "sandy": "Crescent Oasis",
+        "love": "Days of Love",
+        "moomin": "Moomin",
+        "wonderland": "Wonderland",
+        "gogh": "Van Gogh",
+        "dark": "Void",
+        "surprise": "Surprise"
+      },
+      "SLIDERS": {
+        "hue": "Hue",
+        "chroma": "Saturation",
+        "surface": "Surface tone",
+        "bgBrightness": "Background brightness",
+        "bgBlur": "Background blur"
+      },
+      "BG_IMAGES": {
+        "": "Theme default",
+        "none": "None",
+        "isle": "Isle of Dawn",
+        "aviary": "Aviary Village",
+        "prairie": "Daylight Prairie",
+        "peaks": "Prairie Peaks",
+        "peaks2": "Prairie Peaks (dusk)",
+        "forest": "Hidden Forest",
+        "reef": "Treasure Reef",
+        "village": "Village of Dreams",
+        "concert_hall": "Concert Hall",
+        "wasteland": "Golden Wasteland",
+        "wasteland2": "Golden Wasteland (shipwreck)",
+        "oasis": "Crescent Oasis",
+        "pearl": "Pearl Village",
+        "vault": "Vault of Knowledge",
+        "aurora": "Aurora",
+        "nesting": "Nesting Workshop",
+        "trials": "Trials",
+        "void_jelly": "Void",
+        "bloom2024": "Days of Bloom",
+        "color2024": "Days of Color",
+        "feast2023": "Days of Feast 2023",
+        "feast2024": "Days of Feast 2024",
+        "fortune2024": "Days of Fortune",
+        "love2024": "Days of Love",
+        "firework": "Fireworks",
+        "moomin": "Moomin",
+        "gogh": "Van Gogh"
+      },
+      "DENSITY_PRESETS": {
+        "": "Comfortable",
+        "compact": "Compact"
+      },
+      "FONT_SIZE_PRESETS": {
+        "": "Default",
+        "large": "Large",
+        "larger": "Larger"
+      },
+      "MENU_PRESETS": {
+        "": "Automatic",
+        "desktop": "Always sidebar"
+      }
     },
     "NAV": {
       "TITLE": "Navigation",
@@ -70,7 +136,9 @@
     "DEBUG": {
       "TITLE": "Debug & Dev",
       "BUTTON_SHOW_GUIDS": "Show GUIDs",
-      "BUTTON_COPY_COORDS": "Copy coordinates on map click"
+      "BUTTON_COPY_COORDS": "Copy coordinates when map click",
+      "DESCRIPTION": "Adds debugging information to various pages. Only relevant if you actively contribute to the project.",
+      "COPY_COORDS_DESC": "When enabled, clicking anywhere on a map copies the clicked <code class=\"atmos-code\">[lat, lng]</code> position to your clipboard."
     }
   },
   "NAV": {
@@ -100,7 +168,36 @@
     "SHOPS": "Shops",
     "FRIENDS": "Friends",
     "TOOLS": "Tools",
-    "SETTINGS": "Settings"
+    "SETTINGS": "Settings",
+    "HOME": "Home",
+    "QUICK_START": "Quick start",
+    "CLOSET": "Sky closet",
+    "OUTOUTFIT_REQUEST": "Create request",
+    "INFO": "Info",
+    "PRIVACY": "Privacy Policy",
+    "NEWS": "What's new",
+    "DESIGN_FEEDBACK": "Design feedback",
+    "COLLAGE": "Collage",
+    "AREAS": "Areas",
+    "SHARED_CREATIONS": "Shared Creations",
+    "HISTORY": "History",
+    "CALCULATOR": "Calculator",
+    "SHOP_EVENT": "Event Store",
+    "SHOP_CINEMA": "Cinema",
+    "SHOP_CONCERT_HALL": "Concert Hall",
+    "SHOP_HARMONY_HALL": "Harmony Hall",
+    "SHOP_LOYALTY": "Loyalty Store",
+    "SHOP_NESTING": "Nesting Workshop",
+    "SHOP_OFFICE": "Secret Area",
+    "SHOP_PRAIRIE": "Prairie Heights",
+    "SHOP_WONDERLAND": "Wonderland Café",
+    "COLLAPSE_MENU": "Collapse menu",
+    "EXPAND_MENU": "Expand menu",
+    "BACK": "Back",
+    "CLOSE_MENU": "Close menu",
+    "HIDE_PAGES": "Hide {{section}} pages",
+    "SHOW_PAGES": "Show {{section}} pages",
+    "PAGES": " pages"
   },
   "COMMON": {
     "SAVE": "Save",

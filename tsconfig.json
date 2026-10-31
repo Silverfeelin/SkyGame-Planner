@@ -23,6 +23,7 @@
     "useDefineForClassFields": false,
     "paths": {
       "@app/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"]
     },
     "types": [
       "@angular/localize"
