@@ -146,7 +146,7 @@
     <button type="button" class="atmos-btn atmos-settings__advanced-toggle" [attr.aria-expanded]="advancedOpen()" (click)="toggleAdvanced()">
       <mat-icon>{{ advancedOpen() ? 'expand_less' : 'expand_more' }}</mat-icon>
       {{ t().THEME.ADVANCED }}
-      @if (hasOverrides()) { <span class="atmos-settings__dot" title="Tweaks applied"></span> }
+      @if (hasOverrides()) { <span class="atmos-settings__dot" [attr.title]="t().THEME.BUTTON_RESET"></span> }
     </button>
 
     @if (advancedOpen()) {
