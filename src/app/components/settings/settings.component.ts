@@ -10,6 +10,7 @@ import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { TranslationService, Language } from 'src/app/services/translation.service';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 import { ITheme, setTheme, themes } from 'src/themes';
 import {
   backgroundImages, clearThemeOverrides, densityPresets, fontSizePresets, getEffectiveSliderValue, getThemeOverrides, hasThemeOverrides,
@@ -23,7 +24,7 @@ const signalPwa = signal<any>(undefined);
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, RouterLink, LowerCasePipe, DateTimePipe]
+  imports: [MatIcon, RouterLink, LowerCasePipe, DateTimePipe, TranslatePipe]
 })
 export class SettingsComponent implements OnDestroy {
   storageProviderName: string;

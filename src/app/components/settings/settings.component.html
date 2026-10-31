@@ -24,11 +24,7 @@
 <section class="atmos-card">
   <div class="atmos-card__body">
     <h2 class="atmos-settings__section-title"><mat-icon>storage</mat-icon> {{ t().STORAGE.TITLE }}</h2>
-    <p class="atmos-paragraph">
-      Your data is currently stored in <strong>{{ storageProviderName }}</strong>.
-      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">{{ t().STORAGE.BUTTON_STORAGE }}</a>.
-      If you want to transfer your data, export it first, then switch storage and import it back.
-    </p>
+    <p class="atmos-paragraph" [innerHTML]="'SETTINGS.STORAGE.DESCRIPTION' | translate: { provider: storageProviderName }"></p>
     <div class="atmos-settings__btn-row">
       <a class="atmos-btn" routerLink="/storage">
         <mat-icon>database</mat-icon> {{ t().STORAGE.BUTTON_STORAGE }}
@@ -79,38 +75,30 @@
   </div>
 </section>
 
-<!-- Spirit trees -->
-<section class="atmos-card">
-  <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>account_tree</mat-icon> Spirit trees</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>account_tree</mat-icon> {{ t().SPIRIT_TREES.TITLE }}</h2>
     <p class="atmos-paragraph">
       @if (unlockConnectedNodes) {
-        All items leading up to the one you unlock will also be unlocked.
-        Likewise, locking an item will lock the ones beyond it.
+        {{ t().SPIRIT_TREES.CONNECTED_ON }}
       } @else {
-        When you unlock an item only that item will be unlocked.
-        You can choose to also unlock all preceding items.
+        {{ t().SPIRIT_TREES.CONNECTED_OFF }}
       }
     </p>
     <div class="atmos-settings__btn-row">
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="unlockConnectedNodes" (click)="toggleConnectedNodes()">
-        <mat-icon>{{ unlockConnectedNodes ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Unlock connected items
+        <mat-icon>{{ unlockConnectedNodes ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> {{ t().SPIRIT_TREES.BUTTON_UNLOCK_CONNECTED }}
       </button>
     </div>
-  </div>
-</section>
 
 <!-- Items -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>checkroom</mat-icon> Items</h2>
+    <h2 class="atmos-settings__section-title"><mat-icon>checkroom</mat-icon> {{ t().ITEMS.TITLE }}</h2>
     <p class="atmos-paragraph">
-      The <a class="atmos-text-link" routerLink="/item">Items</a> page shows item details in a panel beside the list.
-      Clicking an item shows it there instead of opening the item page. Only available on screens at least 1280 pixels wide.
+      {{ t().ITEMS.DESCRIPTION }}
     </p>
     <div class="atmos-settings__btn-row">
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="itemPanel" (click)="toggleItemPanel()">
-        <mat-icon>{{ itemPanel ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show item details in a side panel
+        <mat-icon>{{ itemPanel ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> {{ t().ITEMS.BUTTON_SIDE_PANEL }}
       </button>
     </div>
   </div>
@@ -119,8 +107,8 @@
 <!-- Date -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>calendar_today</mat-icon> Date</h2>
-    <p class="atmos-paragraph">Change the date format. Today is {{ today | datetime: dateFormat }}.</p>
+    <h2 class="atmos-settings__section-title"><mat-icon>calendar_today</mat-icon> {{ t().DATE.TITLE }}</h2>
+    <p class="atmos-paragraph">{{ t().DATE.DESCRIPTION | translate: { date: (today | datetime: dateFormat) } }}</p>
     <div class="atmos-settings__btn-row">
       @for (format of dateFormats; track format) {
         <button type="button" class="atmos-btn" [class.atmos-btn--active]="dateFormat === format" (click)="setDateFormat(format)">
@@ -134,11 +122,11 @@
 <!-- Time -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-settings__section-title"><mat-icon>schedule</mat-icon> Time</h2>
-    <p class="atmos-paragraph">Change the time format. It's now {{ timeNow() }}.</p>
+    <h2 class="atmos-settings__section-title"><mat-icon>schedule</mat-icon> {{ t().TIME.TITLE }}</h2>
+    <p class="atmos-paragraph">{{ t().TIME.DESCRIPTION | translate: { time: timeNow() } }}</p>
     <div class="atmos-settings__btn-row">
-      <button type="button" class="atmos-btn" [class.atmos-btn--active]="!hour12()" (click)="setHour12(false)">24-hour</button>
-      <button type="button" class="atmos-btn" [class.atmos-btn--active]="hour12()" (click)="setHour12(true)">12-hour</button>
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="!hour12()" (click)="setHour12(false)">{{ t().TIME.HOUR_24 }}</button>
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="hour12()" (click)="setHour12(true)">{{ t().TIME.HOUR_12 }}</button>
     </div>
   </div>
 </section>

@@ -218,7 +218,9 @@ export class TranslationService {
         DEBUG: {
           TITLE: "Debug & Dev",
           BUTTON_SHOW_GUIDS: "Show GUIDs",
-          BUTTON_COPY_COORDS: "Copy coordinates when map click"
+          BUTTON_COPY_COORDS: "Copy coordinates when map click",
+          DESCRIPTION: "Adds debugging information to various pages. Only relevant if you actively contribute to the project.",
+          COPY_COORDS_DESC: "When enabled, clicking anywhere on a map copies the clicked <code class=\"atmos-code\">[lat, lng]</code> position to your clipboard."
         }
       },
       NAV: {
@@ -355,7 +357,9 @@ export class TranslationService {
         DEBUG: {
           TITLE: "Gỡ lỗi & Phát triển",
           BUTTON_SHOW_GUIDS: "Hiển thị GUID",
-          BUTTON_COPY_COORDS: "Sao chép tọa độ khi nhấp vào bản đồ"
+          BUTTON_COPY_COORDS: "Sao chép tọa độ khi nhấp vào bản đồ",
+          DESCRIPTION: "Thêm thông tin gỡ lỗi vào nhiều trang. Chỉ cần thiết nếu bạn tích cực đóng góp cho dự án.",
+          COPY_COORDS_DESC: "Khi được bật, nhấp vào bất kỳ đâu trên bản đồ sẽ sao chép vị trí <code class=\"atmos-code\">[lat, lng]</code> vào bảng nhớ tạm."
         }
       },
       NAV: {
