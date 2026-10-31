@@ -35,7 +35,7 @@
             [class.is-open]="expanded"
             [attr.aria-expanded]="expanded"
             [attr.aria-controls]="'nav-tree-' + section.id"
-            [attr.aria-label]="(expanded ? 'Hide ' : 'Show ') + section.label + ' pages'"
+            [attr.aria-label]="((expanded ? 'NAV.HIDE_PAGES' : 'NAV.SHOW_PAGES') | translate: { section: section.label | translate })"
             (click)="nav.toggle(section.id)">
             <mat-icon>expand_more</mat-icon>
           </button>
@@ -53,7 +53,7 @@
         class="nav-tree__flyout"
         popover="manual"
         role="group"
-        [attr.aria-label]="(section.label | translate) + ' pages'">
+        [attr.aria-label]="(section.label | translate) + ('NAV.PAGES' | translate)">
         @if (hasPages && mode() === 'rail') {
           <div class="nav-tree__flyout-title">{{ section.label | translate }}</div>
           <ul class="nav-tree__pages">

@@ -5,18 +5,18 @@
       type="button"
       (click)="toggleCollapsed()"
       [attr.aria-expanded]="!collapsed()"
-      [attr.aria-label]="collapsed() ? 'Expand menu' : 'Collapse menu'"
-      [skyTooltip]="collapsed() ? 'Expand menu' : ''">
+      [attr.aria-label]="(collapsed() ? 'NAV.EXPAND_MENU' : 'NAV.COLLAPSE_MENU') | translate"
+      [skyTooltip]="collapsed() ? ('NAV.EXPAND_MENU' | translate) : ''">
       <mat-icon>{{ collapsed() ? 'menu' : 'menu_open' }}</mat-icon>
-      <span class="atmos-nav-item__label">Collapse menu</span>
+      <span class="atmos-nav-item__label">{{ 'NAV.COLLAPSE_MENU' | translate }}</span>
     </button>
     <button
       class="atmos-nav-item atmos-nav-item--back"
       type="button"
       (click)="goBack()"
-      [skyTooltip]="collapsed() ? 'Go back' : ''">
+      [skyTooltip]="collapsed() ? ('NAV.BACK' | translate) : ''">
       <mat-icon>arrow_back</mat-icon>
-      <span class="atmos-nav-item__label">Back</span>
+      <span class="atmos-nav-item__label">{{ 'NAV.BACK' | translate }}</span>
     </button>
     <app-nav-tree [mode]="collapsed() ? 'rail' : 'full'" />
   </div>

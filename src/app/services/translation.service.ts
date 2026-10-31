@@ -135,6 +135,13 @@ interface Translations {
     SHOP_OFFICE: string;
     SHOP_PRAIRIE: string;
     SHOP_WONDERLAND: string;
+    COLLAPSE_MENU: string;
+    EXPAND_MENU: string;
+    BACK: string;
+    CLOSE_MENU: string;
+    HIDE_PAGES: string;
+    SHOW_PAGES: string;
+    PAGES: string;
   };
   COMMON: {
     SAVE: string;
@@ -346,7 +353,14 @@ export class TranslationService {
         SHOP_NESTING: "Nesting Workshop",
         SHOP_OFFICE: "Secret Area",
         SHOP_PRAIRIE: "Prairie Heights",
-        SHOP_WONDERLAND: "Wonderland Café"
+        SHOP_WONDERLAND: "Wonderland Café",
+        COLLAPSE_MENU: "Collapse menu",
+        EXPAND_MENU: "Expand menu",
+        BACK: "Back",
+        CLOSE_MENU: "Close menu",
+        HIDE_PAGES: "Hide {{section}} pages",
+        SHOW_PAGES: "Show {{section}} pages",
+        PAGES: " pages"
       },
       COMMON: {
         SAVE: "Save",
@@ -503,27 +517,27 @@ export class TranslationService {
         }
       },
       NAV: {
-        DAILY: "Hàng ngày",
-        CR_TRACKER: "Theo dõi chạy nến",
-        PNR_TRACKER: "Theo dõi tượng Eden",
-        CURRENCY: "Tiền tệ",
-        SPENT_CURRENCY: "Tiền tệ đã tiêu",
+        DAILY: "Nhiệm vụ hằng ngày",
+        CR_TRACKER: "Chạy nến (CR)",
+        PNR_TRACKER: "Check tượng Eden",
+        CURRENCY: "Nến & Trái tim",
+        SPENT_CURRENCY: "Lịch sử tiêu nến",
         ITEMS: "Vật phẩm",
-        ITEM_GRID: "Lưới vật phẩm",
-        ITEM_TABLE: "Bảng vật phẩm",
-        ITEM_PREVIEWS: "Xem trước vật phẩm",
-        DYE_PREVIEWS: "Xem trước thuốc nhuộm",
+        ITEM_GRID: "Xem dạng lưới",
+        ITEM_TABLE: "Xem dạng bảng",
+        ITEM_PREVIEWS: "Xem trước đồ",
+        DYE_PREVIEWS: "Xem trước màu nhuộm",
         COLLECTIONS: "Bộ sưu tập",
         SPIRITS: "Tổ tiên",
         ALL_SPIRITS: "Tất cả tổ tiên",
         REGULAR_SPIRITS: "Tổ tiên thường",
-        ELDER_SPIRITS: "Tổ tiên trưởng lão",
+        ELDER_SPIRITS: "Trưởng lão các cõi",
         SEASON_SPIRITS: "Tổ tiên mùa",
-        SEASON_GUIDES: "Hướng dẫn mùa",
+        SEASON_GUIDES: "Hướng dẫn viên mùa",
         TRAVELING_SPIRITS: "Tổ tiên du mục (TS)",
-        SPECIAL_VISITS: "Chuyến thăm đặc biệt",
-        WINGED_LIGHT: "Ánh sáng có cánh (WL)",
-        REALMS: "Vương quốc",
+        SPECIAL_VISITS: "Khách ghé thăm đặc biệt",
+        WINGED_LIGHT: "Ánh sáng cánh (WL)",
+        REALMS: "Các cõi (Realms)",
         SEASONS: "Các mùa",
         EVENTS: "Sự kiện",
         SHOPS: "Cửa hàng",
@@ -532,8 +546,8 @@ export class TranslationService {
         SETTINGS: "Cài đặt",
         HOME: "Trang chủ",
         QUICK_START: "Mở khóa nhanh",
-        CLOSET: "Tủ đồ Sky",
-        OUTOUTFIT_REQUEST: "Tạo yêu cầu",
+        CLOSET: "Tủ đồ",
+        OUTOUTFIT_REQUEST: "Lên đồ / Phối đồ",
         INFO: "Thông tin",
         PRIVACY: "Chính sách bảo mật",
         NEWS: "Có gì mới",
@@ -551,7 +565,14 @@ export class TranslationService {
         SHOP_NESTING: "Xưởng Nesting",
         SHOP_OFFICE: "Khu vực bí mật",
         SHOP_PRAIRIE: "Đồng cỏ cao",
-        SHOP_WONDERLAND: "Café Wonderland"
+        SHOP_WONDERLAND: "Café Wonderland",
+        COLLAPSE_MENU: "Thu gọn menu",
+        EXPAND_MENU: "Mở rộng menu",
+        BACK: "Quay lại",
+        CLOSE_MENU: "Đóng menu",
+        HIDE_PAGES: "Ẩn trang {{section}}",
+        SHOW_PAGES: "Hiện trang {{section}}",
+        PAGES: " trang"
       },
       COMMON: {
         SAVE: "Lưu",

@@ -1,12 +1,12 @@
 <header class="atmos-topbar">
-  <button class="atmos-topbar__button atmos-focus-ring" type="button" (click)="toggleDrawer()" aria-label="Menu">
+  <button class="atmos-topbar__button atmos-focus-ring" type="button" (click)="toggleDrawer()" [attr.aria-label]="'NAV.CLOSE_MENU' | translate">
     <mat-icon>menu</mat-icon>
   </button>
   <button
     class="atmos-topbar__button atmos-focus-ring"
     type="button"
     (click)="goBack()"
-    aria-label="Go back">
+    [attr.aria-label]="'NAV.BACK' | translate">
     <mat-icon>arrow_back</mat-icon>
   </button>
   <a class="atmos-topbar__title atmos-focus-ring" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
@@ -19,7 +19,7 @@
     <nav class="atmos-drawer__panel" (click)="$event.stopPropagation()" aria-label="Primary">
       <button class="atmos-drawer__item atmos-drawer__close" type="button" (click)="closeDrawer()">
         <mat-icon>close</mat-icon>
-        <span>Close menu</span>
+        <span>{{ 'NAV.CLOSE_MENU' | translate }}</span>
       </button>
 
       <app-nav-tree mode="full" (navigate)="closeDrawer()" />
