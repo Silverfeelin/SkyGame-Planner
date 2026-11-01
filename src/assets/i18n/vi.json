@@ -378,6 +378,18 @@
     "NAVIGATE": "Điều hướng",
     "RESTART": "Bắt đầu lại"
   },
+  "SEASONS_PAGE": {
+    "TITLE": "Mùa giải",
+    "NO_SEASONS": "Không có mùa giải nào",
+    "BROWSE_EVERY": "Duyệt qua tất cả các mùa giải Sky — quá khứ, hiện tại và sắp tới.",
+    "OPEN_SEASON": "Mở mùa giải",
+    "JUMP_TO": "Đến mùa giải",
+    "VIEW_SCHEDULE": "Xem lịch trình",
+    "SHARED_CREATIONS": "Ký ức & Thông điệp chia sẻ",
+    "NO_ONGOING": "Không có mùa giải nào đang diễn ra",
+    "CHECK_BACK_LATER": "Vui lòng quay lại sau.",
+    "UPCOMING_SEASON": "Mùa giải sắp tới"
+  },
   "COMMON": {
     "SAVE": "Lưu",
     "CANCEL": "Hủy",

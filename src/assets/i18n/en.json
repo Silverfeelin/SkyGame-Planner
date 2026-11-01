@@ -389,6 +389,18 @@
     "NAVIGATE": "Navigate",
     "RESTART": "Restart"
   },
+  "SEASONS_PAGE": {
+    "TITLE": "Seasons",
+    "NO_SEASONS": "No seasons available",
+    "BROWSE_EVERY": "Browse every Sky season — past, present, and upcoming.",
+    "OPEN_SEASON": "Open season",
+    "JUMP_TO": "Jump to season",
+    "VIEW_SCHEDULE": "View schedule",
+    "SHARED_CREATIONS": "Shared Creations",
+    "NO_ONGOING": "No ongoing season",
+    "CHECK_BACK_LATER": "Please check back later.",
+    "UPCOMING_SEASON": "Upcoming Season"
+  },
   "COMMON": {
     "SAVE": "Save",
     "CANCEL": "Cancel",

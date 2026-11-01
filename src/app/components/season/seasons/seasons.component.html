@@ -1,18 +1,17 @@
 <app-section-quick-actions section="season" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Seasons</h1>
+  <h1 class="atmos-page__title">{{ 'SEASONS_PAGE.TITLE' | translate }}</h1>
 </header>
 
 <p class="atmos-paragraph atmos-seasons__intro">
-  Browse every Sky season — past, present, and upcoming.
-  Open a season to see its spirit trees, cosmetics, and progress.
+  {{ 'SEASONS_PAGE.BROWSE_EVERY' | translate }}
 </p>
 
 <!-- Quick jump strip -->
 <section class="atmos-card atmos-seasons__jump">
   <div class="atmos-card__body">
-    <div class="atmos-seasons__jump-title">Jump to season</div>
+    <div class="atmos-seasons__jump-title">{{ 'SEASONS_PAGE.JUMP_TO' | translate }}</div>
     <div class="atmos-seasons__jump-list">
       @for (season of reverseSeasons; track season.guid) {
         <a class="atmos-seasons__jump-item atmos-focus-ring"
