@@ -1,6 +1,6 @@
 <section class="atmos-card atmos-dashboard__clocks">
-  <app-clock label="Local time" zone="local" />
-  <app-clock label="Sky time" zone="sky" [rightAlign]="true">
+  <app-clock label="NAV.DASHBOARD_LOCAL_TIME" zone="local" />
+  <app-clock label="NAV.DASHBOARD_SKY_TIME" zone="sky" [rightAlign]="true">
     <app-shard-indicator class="atmos-dashboard__shard" />
   </app-clock>
 </section>
@@ -30,7 +30,7 @@
       [timeRow]="seasonTimeRow()"
       [links]="seasonLinks()"
       [currency]="seasonCurrency()"
-      checkLabel="I have done my season dailies"
+      checkLabel="NAV.DASHBOARD_CHECK_SEASON"
       [checked]="checkedIn()"
       (checkToggle)="onSeasonCheckinToggle(s, $event)" />
   } @else {
@@ -58,7 +58,7 @@
 </section>
 
 @if (hasUpcoming()) {
-  <h2 class="atmos-section__title">Upcoming</h2>
+  <h2 class="atmos-section__title">{{ 'NAV.DASHBOARD_CALENDAR_UPCOMING' | translate }}</h2>
   <section class="atmos-dashboard__features">
     @if (upcomingSeason(); as s) {
       <app-feature-card

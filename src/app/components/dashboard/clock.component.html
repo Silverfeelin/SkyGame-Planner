@@ -1,5 +1,5 @@
 <div class="atmos-clock" [class.atmos-clock--right]="rightAlign()">
-  <div class="atmos-clock__label">{{ label() }}</div>
+  <div class="atmos-clock__label">{{ label() | translate }}</div>
   <div class="atmos-clock__time">
     {{ time() }}@if (meridiem()) {<span class="atmos-clock__meridiem">{{ meridiem() }}</span>}
   </div>

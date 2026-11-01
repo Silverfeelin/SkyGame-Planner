@@ -4,11 +4,11 @@
       <div class="atmos-favourites__heading">
         <div class="atmos-favourites__kicker">
           <mat-icon>new_releases</mat-icon>
-          <span>Available now</span>
+          <span>{{ 'NAV.DASHBOARD_FAV_AVAILABLE_NOW' | translate }}</span>
           <button
             type="button"
             class="atmos-favourites__help"
-            aria-label="What does this section show?"
+            [attr.aria-label]="'NAV.DASHBOARD_FAV_HELP' | translate"
             (click)="showHelp()">
             <mat-icon>help_outline</mat-icon>
           </button>
@@ -17,7 +17,7 @@
 
       <a class="atmos-btn atmos-favourites__cta" routerLink="/item/table" [queryParams]="{ favourite: 1 }">
         <mat-icon>table_rows</mat-icon>
-        <span>View wishlist</span>
+        <span>{{ 'NAV.DASHBOARD_FAV_VIEW_WISHLIST' | translate }}</span>
       </a>
     </div>
 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="atmos-favourites__foot">
-      <span class="atmos-favourites__foot-label">Price</span>
+      <span class="atmos-favourites__foot-label">{{ 'NAV.DASHBOARD_FAV_PRICE' | translate }}</span>
       <app-cost [cost]="cost()" [price]="price()" [showZeroes]="false" />
     </div>
   </article>

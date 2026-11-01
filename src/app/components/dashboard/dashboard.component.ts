@@ -26,6 +26,19 @@ import {
   IFeatureLink
 } from './feature-card.component';
 
+interface IEventCard {
+  instance: IEventInstance;
+  kicker: string;
+  title: string;
+  bannerUrl?: string;
+  bannerHue: number;
+  timeRow: string;
+  links: ReadonlyArray<IFeatureLink>;
+  currency: ReadonlyArray<IFeatureCurrency>;
+  showCheckin: boolean;
+  checked: boolean;
+}
+
 const DISCORD_DAILY_QUEST_LINK: IFeatureLink = {
   imgSrc: '/assets/external/discord-mark-white.svg',
   label: 'Daily quests (Sky:CoTL Infographics)',
@@ -52,12 +65,14 @@ interface IEventCard {
   checked: boolean;
 }
 
+import { TranslatePipe } from '@app/pipes/translate.pipe';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, DashboardQuickStartComponent, SearchBarComponent, DashboardFavouritesComponent, DashboardCalendarComponent, FeatureCardComponent, NgTemplateOutlet, RouterLink]
+  imports: [ClockComponent, ShardIndicatorComponent, DashboardAnnouncementComponent, DashboardQuickStartComponent, SearchBarComponent, DashboardFavouritesComponent, DashboardCalendarComponent, FeatureCardComponent, NgTemplateOutlet, RouterLink, TranslatePipe]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);
@@ -89,7 +104,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   readonly dailyLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const links: Array<IFeatureLink> = [
-      { icon: 'list_alt', label: 'Daily tracker', link: '/daily' }
+      { icon: 'list_alt', label: 'NAV.DASHBOARD_FEATURES_DAILY_TRACKER', link: '/daily' }
     ];
     const realm = this.dailyRealm();
     if (realm) { links.push({ icon: 'landscape', label: realm.name, link: `/realm/${realm.guid}` }); }
@@ -112,7 +127,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!s) { return []; }
     const planner = SeasonHelper.getPlanner(s);
     return [
-      { icon: 'dashboard',  label: 'Overview',   link: `/season/${s.guid}` },
+      { icon: 'dashboard',  label: 'NAV.DASHBOARD_FEATURES_OVERVIEW',   link: `/season/${s.guid}` },
       { icon: 'calculate', label: planner.label, link: planner.link },
       DISCORD_DAILY_QUEST_LINK,
       THATSKY_DAILY_QUEST_LINK
@@ -130,9 +145,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   readonly upcomingSeasonLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const s = this.upcomingSeason();
     if (!s) { return []; }
-    const links: Array<IFeatureLink> = [{ icon: 'dashboard', label: 'Overview', link: `/season/${s.guid}` }];
+    const links: Array<IFeatureLink> = [{ icon: 'dashboard', label: 'NAV.DASHBOARD_FEATURES_OVERVIEW', link: `/season/${s.guid}` }];
     if (SeasonHelper.getPlannedSeason(this._dataService.seasonConfig.items)?.guid === s.guid) {
-      links.push({ icon: 'calculate', label: 'Optimizer', link: '/season/optimizer' });
+      links.push({ icon: 'calculate', label: 'NAV.DASHBOARD_FEATURES_OPTIMIZER', link: '/season/optimizer' });
     }
     return links;
   });
@@ -155,7 +170,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     const t = this.ts();
     if (!t) { return []; }
     return [
-      { icon: 'dashboard',  label: 'Overview', link: `/spirit/${t.spirit.guid}` }
+      { icon: 'dashboard',  label: 'NAV.DASHBOARD_FEATURES_OVERVIEW', link: `/spirit/${t.spirit.guid}` }
     ];
   });
 
@@ -179,7 +194,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     const r = this.rs();
     if (!r) { return []; }
     return [
-      { icon: 'dashboard', label: 'Overview', link: `/rs/${r.guid}` }
+      { icon: 'dashboard', label: 'NAV.DASHBOARD_FEATURES_OVERVIEW', link: `/rs/${r.guid}` }
     ];
   });
   readonly rsCurrency = computed<ReadonlyArray<IFeatureCurrency>>(() => {
@@ -273,11 +288,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private toEventCard(instance: IEventInstance, isActive: boolean): IEventCard {
     const event = instance.event;
     const links: Array<IFeatureLink> = [
-      { icon: 'dashboard', label: 'Overview', link: `/event-instance/${instance.guid}` },
-      { icon: 'list',      label: 'List',     link: `/event/${event.guid}` }
+      { icon: 'dashboard', label: 'NAV.DASHBOARD_FEATURES_OVERVIEW', link: `/event-instance/${instance.guid}` },
+      { icon: 'list',      label: 'NAV.DASHBOARD_FEATURES_LIST',     link: `/event/${event.guid}` }
     ];
     if (isActive && instance.calculatorData) {
-      links.push({ icon: 'calculate', label: 'Calculator', link: '/event/calculator', queryParams: { guid: instance.guid } });
+      links.push({ icon: 'calculate', label: 'NAV.DASHBOARD_FEATURES_CALCULATOR', link: '/event/calculator', queryParams: { guid: instance.guid } });
     }
     if (isActive) {
       links.push(DISCORD_DAILY_QUEST_LINK);
@@ -286,7 +301,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     return {
       instance,
-      kicker: 'Event',
+      kicker: 'NAV.DASHBOARD_CHECK_EVENT',  // Will be translated in template
       title: instance.name ?? event.name,
       bannerUrl: event.imageUrl,
       bannerHue: 280,

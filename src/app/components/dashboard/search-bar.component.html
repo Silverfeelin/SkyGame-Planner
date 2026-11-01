@@ -7,12 +7,12 @@
         type="search"
         autocomplete="off"
         spellcheck="false"
-        placeholder="Search the realms…"
+        [placeholder]="'NAV.DASHBOARD_SEARCH_PLACEHOLDER' | translate"
         [value]="query()"
         (input)="onInput()"
         (keydown.escape)="clear()" />
       @if (query()) {
-        <button type="button" class="atmos-search__clear" tabindex="-1" (click)="clear()" aria-label="Clear search">
+        <button type="button" class="atmos-search__clear" tabindex="-1" (click)="clear()" [attr.aria-label]="'NAV.DASHBOARD_SEARCH_CLEAR' | translate">
           <mat-icon>close</mat-icon>
         </button>
       }
@@ -49,11 +49,11 @@
           }
         </ul>
         @if (r.length >= 25) {
-          <div class="atmos-search__refine">Refine your search for more results.</div>
+          <div class="atmos-search__refine">{{ 'NAV.DASHBOARD_SEARCH_REFINE' | translate }}</div>
         }
       } @else {
         <div class="atmos-search__empty">
-          No results. Try searching for
+          {{ 'NAV.DASHBOARD_SEARCH_NO_RESULTS' | translate }}
           <a class="atmos-text-link" (click)="searchDemo()">{{ demoText() }}</a>.
         </div>
       }

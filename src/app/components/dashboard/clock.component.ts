@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, input, signal } from '@angular/core';
 import { DateTime } from 'luxon';
 import { DateHelper } from '@app/helpers/date-helper';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
   styleUrl: './clock.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [TranslatePipe]
 })
 export class ClockComponent implements OnInit, OnDestroy {
   readonly label = input.required<string>();

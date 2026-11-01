@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { WindowHelper } from '@app/helpers/window-helper';
 import { DailyCheckinComponent } from '../daily/daily-checkin/daily-checkin.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 export interface IFeatureLink {
   icon?: string;
@@ -35,7 +36,7 @@ const KIND_ICON: Record<CurrencyMarkKind, string> = {
   templateUrl: './feature-card.component.html',
   styleUrl: './feature-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DailyCheckinComponent]
+  imports: [RouterLink, MatIcon, DailyCheckinComponent, TranslatePipe]
 })
 export class FeatureCardComponent {
   readonly isWindows = WindowHelper.isWindows();

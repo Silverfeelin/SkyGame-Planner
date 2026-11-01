@@ -15,6 +15,7 @@ import { ItemIconComponent } from '@app/components/item/icon/item-icon.component
 import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 /** One favourited item that is obtainable during an ongoing occasion. */
 interface IFavouriteRow {
@@ -38,7 +39,7 @@ interface ISourceBag {
   templateUrl: './favourites-card.component.html',
   styleUrl: './favourites-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ItemIconComponent, CostComponent, TooltipDirective]
+  imports: [RouterLink, MatIcon, ItemIconComponent, CostComponent, TooltipDirective, TranslatePipe]
 })
 export class DashboardFavouritesComponent {
   private readonly _dataService = inject(DataService);

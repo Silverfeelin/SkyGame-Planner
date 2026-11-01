@@ -4,6 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { IItem } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 export const QUICK_START_DISMISSED_KEY = 'quick-start.dismissed';
 
@@ -12,7 +13,7 @@ export const QUICK_START_DISMISSED_KEY = 'quick-start.dismissed';
   templateUrl: './quick-start-card.component.html',
   styleUrl: './quick-start-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, RouterLink]
+  imports: [MatIcon, RouterLink, TranslatePipe]
 })
 export class DashboardQuickStartComponent {
   private readonly _data = inject(DataService);

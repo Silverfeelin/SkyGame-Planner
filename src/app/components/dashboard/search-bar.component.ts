@@ -8,13 +8,14 @@ import { EventService } from '@app/services/event.service';
 import { ISearchItem, SearchService } from '@app/services/search.service';
 import { IconComponent } from '@app/components/icon/icon.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, IconComponent, ItemTypePipe]
+  imports: [RouterLink, MatIcon, IconComponent, ItemTypePipe, TranslatePipe]
 })
 export class SearchBarComponent {
   private readonly _searchService = inject(SearchService);

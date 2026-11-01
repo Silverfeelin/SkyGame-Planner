@@ -46,20 +46,20 @@
             <a class="atmos-link" [routerLink]="l.link" [queryParams]="l.queryParams ?? null">
               @if (l.imgSrc) { <img class="atmos-link__img" [src]="l.imgSrc" aria-hidden="true"> }
               @else if (l.icon) { <mat-icon>{{ l.icon }}</mat-icon> }
-              <span>{{ l.label }}</span>
+              <span>{{ l.label | translate }}</span>
             </a>
           } @else if (l.href) {
             <a class="atmos-link" [href]="isWindows && l.hrefDesktop || l.href"
               [attr.target]="isWindows && l.hrefDesktop ? undefined : '_blank'" rel="noopener">
               @if (l.imgSrc) { <img class="atmos-link__img" [src]="l.imgSrc" aria-hidden="true"> }
               @else if (l.icon) { <mat-icon>{{ l.icon }}</mat-icon> }
-              <span>{{ l.label }}</span>
+              <span>{{ l.label | translate }}</span>
             </a>
           } @else {
             <span class="atmos-link">
               @if (l.imgSrc) { <img class="atmos-link__img" [src]="l.imgSrc" aria-hidden="true"> }
               @else if (l.icon) { <mat-icon>{{ l.icon }}</mat-icon> }
-              <span>{{ l.label }}</span>
+              <span>{{ l.label | translate }}</span>
             </span>
           }
         }
