@@ -463,6 +463,16 @@
     "WIKI": "Wiki",
     "ALL_DONE": "Đã hoàn thành!"
   },
+  "FRIENDS_PAGE": {
+    "TITLE": "Friends",
+    "INTRO": "Track which friendship tree items you've unlocked with your in-game friends.",
+    "WIKI_LINK": "Wiki - Friendship Menu",
+    "FRIENDS": "Friends",
+    "SEARCH": "Search",
+    "ADD_FRIEND": "Add friend",
+    "RENAME": "Rename",
+    "DELETE": "Delete"
+  },
   "COMMON": {
     "SAVE": "Save",
     "CANCEL": "Cancel",

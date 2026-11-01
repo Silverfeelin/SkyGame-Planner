@@ -452,6 +452,16 @@
     "WIKI": "Wiki",
     "ALL_DONE": "Đã hoàn thành!"
   },
+  "FRIENDS_PAGE": {
+    "TITLE": "Bạn bè",
+    "INTRO": "Theo dõi các vật phẩm trên cây tình bạn bạn đã mở khóa với bạn bè trong trò chơi.",
+    "WIKI_LINK": "Wiki - Thực đơn Tình bạn",
+    "FRIENDS": "Bạn bè",
+    "SEARCH": "Tìm kiếm",
+    "ADD_FRIEND": "Thêm bạn",
+    "RENAME": "Đổi tên",
+    "DELETE": "Xóa"
+  },
   "COMMON": {
     "SAVE": "Lưu",
     "CANCEL": "Hủy",

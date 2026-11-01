@@ -9,6 +9,7 @@ import { NodeHelper } from '@app/helpers/node-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { FriendTiersComponent } from './friend-tiers/friend-tiers.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface IFriendshipData {
   friends: Array<{
@@ -88,7 +89,7 @@ const UPGRADE_NODES: ReadonlyArray<Omit<ISourceNode, 'item'> & { item: string }>
   templateUrl: './friends.component.html',
   styleUrl: './friends.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, WikiLinkComponent, FriendTiersComponent]
+  imports: [MatIcon, WikiLinkComponent, FriendTiersComponent, TranslatePipe]
 })
 export class FriendsComponent {
   private readonly _dataService = inject(DataService);
