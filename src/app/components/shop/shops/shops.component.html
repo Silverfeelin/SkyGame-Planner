@@ -1,11 +1,11 @@
 <app-section-quick-actions section="shop" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Permanent shops</h1>
+  <h1 class="atmos-page__title">{{ 'SHOPS_PAGE.TITLE' | translate }}</h1>
 </header>
 
 <p class="atmos-paragraph atmos-page__hint">
-  Permanent shops in Sky. Pick a venue to view its in-app purchases and item lists.
+  {{ 'SHOPS_PAGE.INTRO' | translate }}
 </p>
 
 <section class="atmos-shops__venues" aria-label="Shop venues">
@@ -25,7 +25,7 @@
 @if (igcShops.length) {
   <section class="atmos-card atmos-shops__section">
     <header class="atmos-shops__section-header">
-      <h2 class="atmos-section__title">Other shops for in-game currency</h2>
+      <h2 class="atmos-section__title">{{ 'SHOPS_PAGE.OTHER_IGC' | translate }}</h2>
     </header>
     <div class="atmos-card__body atmos-shops__section-body">
       <app-shop-item-lists [shops]="igcShops" [highlightNode]="highlightNode()" />
@@ -36,7 +36,7 @@
 @if (iapShops.length) {
   <section class="atmos-card atmos-shops__section">
     <header class="atmos-shops__section-header">
-      <h2 class="atmos-section__title">Other in-app purchases</h2>
+      <h2 class="atmos-section__title">{{ 'SHOPS_PAGE.OTHER_IAP' | translate }}</h2>
     </header>
     <div class="atmos-card__body atmos-shops__section-body">
       <div class="atmos-shops__iap-grid">

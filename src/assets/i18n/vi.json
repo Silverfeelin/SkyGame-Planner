@@ -405,6 +405,18 @@
     "SHOPS": "Cửa hàng",
     "IN_APP_PURCHASES": "Mua trong ứng dụng"
   },
+  "EVENTS_PAGE": {
+    "TITLE": "Sự kiện",
+    "INTRO": "Theo dõi các sự kiện đặc biệt của Sky, xem lịch sử của chúng và lên kế hoạch chi tiêu tiền tệ sự kiện của bạn.",
+    "RECURRING": "Sự kiện định kỳ",
+    "OTHER": "Sự kiện khác"
+  },
+  "SHOPS_PAGE": {
+    "TITLE": "Cửa hàng cố định",
+    "INTRO": "Các cửa hàng cố định trong Sky. Chọn một địa điểm để xem các mục mua trong ứng dụng và danh sách vật phẩm.",
+    "OTHER_IGC": "Các cửa hàng khác bằng tiền tệ trong trò chơi",
+    "OTHER_IAP": "Các vật phẩm mua trong ứng dụng khác"
+  },
   "COMMON": {
     "SAVE": "Lưu",
     "CANCEL": "Hủy",

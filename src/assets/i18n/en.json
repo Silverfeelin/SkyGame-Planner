@@ -416,6 +416,18 @@
     "SHOPS": "Shops",
     "IN_APP_PURCHASES": "In-App Purchases"
   },
+  "EVENTS_PAGE": {
+    "TITLE": "Events",
+    "INTRO": "Track Sky's special events, view their history, and plan your event currency spending.",
+    "RECURRING": "Recurring events",
+    "OTHER": "Other events"
+  },
+  "SHOPS_PAGE": {
+    "TITLE": "Permanent shops",
+    "INTRO": "Permanent shops in Sky. Pick a venue to view its in-app purchases and item lists.",
+    "OTHER_IGC": "Other shops for in-game currency",
+    "OTHER_IAP": "Other in-app purchases"
+  },
   "COMMON": {
     "SAVE": "Save",
     "CANCEL": "Cancel",

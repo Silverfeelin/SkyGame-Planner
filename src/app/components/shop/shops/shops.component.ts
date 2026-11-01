@@ -6,6 +6,7 @@ import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { IapCardComponent, ShopItemListsComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface IVenue {
   readonly link: string;
@@ -67,7 +68,7 @@ const VENUES: ReadonlyArray<IVenue> = [
   templateUrl: './shops.component.html',
   styleUrl: './shops.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, IapCardComponent, ShopItemListsComponent, SectionQuickActionsComponent]
+  imports: [RouterLink, MatIcon, IapCardComponent, ShopItemListsComponent, SectionQuickActionsComponent, TranslatePipe]
 })
 export class ShopsComponent {
   private readonly _iapService = inject(IAPService);
