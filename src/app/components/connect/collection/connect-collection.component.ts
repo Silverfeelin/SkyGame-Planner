@@ -13,6 +13,7 @@ import { TooltipDirective } from '@app/directives/tooltip.directive';
 import {
   CONNECT_APPS, IConnectApp, IConnectCollection, IConnectCollectionAck, IConnectCollectionReady
 } from '../connect-apps';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 type CollectionState = 'waiting' | 'choose' | 'add' | 'saved' | 'error';
 
@@ -24,7 +25,7 @@ const WAIT_MS = 5000;
   styleUrls: ['../connect.component.scss', './connect-collection.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { 'class': 'atmospheric', '(window:message)': 'onMessage($event)' },
-  imports: [RouterLink, MatIcon, ItemIconComponent, ImageOverlayComponent, TooltipDirective]
+  imports: [RouterLink, MatIcon, ItemIconComponent, ImageOverlayComponent, TooltipDirective, TranslatePipe]
 })
 export class ConnectCollectionComponent {
   private readonly _dataService = inject(DataService);

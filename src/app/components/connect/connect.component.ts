@@ -6,6 +6,7 @@ import { StorageService } from '@app/services/storage.service';
 import {
   CONNECT_APPS, CONNECT_DATA_VERSION, CONNECT_SCOPES, ConnectScopeKey, IConnectAck, IConnectApp, IConnectResponse
 } from './connect-apps';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 type ConnectState = 'request' | 'sent' | 'denied' | 'error';
 
@@ -23,7 +24,7 @@ interface IScopeView {
   styleUrl: './connect.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { 'class': 'atmospheric', '(window:message)': 'onMessage($event)' },
-  imports: [RouterLink, MatIcon]
+  imports: [RouterLink, MatIcon, TranslatePipe]
 })
 export class ConnectComponent {
   private readonly _dataService = inject(DataService);
