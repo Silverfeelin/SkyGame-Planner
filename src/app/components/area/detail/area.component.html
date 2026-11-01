@@ -10,7 +10,7 @@
     <div class="atmos-card__body atmos-summary__main">
       <div class="atmos-facts">
         <div class="atmos-fact">
-          <div class="atmos-fact__label">Realm</div>
+          <div class="atmos-fact__label">{{ 'AREA_DETAIL.REALM' | translate }}</div>
           <a class="atmos-fact__value" [routerLink]="['/realm', realm.guid]">
             <mat-icon class="atmos-fact__icon">map</mat-icon>
             <span class="atmos-fact__text atmos-text-link">{{ realm.name }}</span>
@@ -19,17 +19,17 @@
 
         @if (area.mapData?.position) {
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Map</div>
+            <div class="atmos-fact__label">{{ 'AREA_DETAIL.MAP' | translate }}</div>
             <a class="atmos-fact__value" routerLink="/realm" [queryParams]="{ map: 3, area: area.guid }">
               <mat-icon class="atmos-fact__icon">location_on</mat-icon>
-              <span class="atmos-fact__text atmos-text-link">View on map</span>
+              <span class="atmos-fact__text atmos-text-link">{{ 'AREA_DETAIL.VIEW_ON_MAP' | translate }}</span>
             </a>
           </div>
         }
 
         @if (spiritCount) {
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Spirits</div>
+            <div class="atmos-fact__label">{{ 'AREA_DETAIL.SPIRITS' | translate }}</div>
             <a class="atmos-fact__value" routerLink="/spirit" [queryParams]="{ type: 'Regular,Elder', area: area.guid }">
               <app-spirit-type-icon type="Regular"></app-spirit-type-icon>
               <span class="atmos-fact__text atmos-text-link">{{ spiritCount }}</span>
@@ -39,17 +39,17 @@
 
         @if (seasonSpiritCount || seasonGuideCount) {
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Season spirits</div>
+            <div class="atmos-fact__label">{{ 'AREA_DETAIL.SEASON_SPIRITS' | translate }}</div>
             <a class="atmos-fact__value" routerLink="/spirit" [queryParams]="{ type: 'Season,Guide', area: area.guid }">
               <app-spirit-type-icon type="Season"></app-spirit-type-icon>
-              <span class="atmos-fact__text atmos-text-link">{{ seasonSpiritCount }}@if (seasonGuideCount) { (+{{ seasonGuideCount }} guide{{ seasonGuideCount > 1 ? 's' : '' }})}</span>
+              <span class="atmos-fact__text atmos-text-link">{{ seasonSpiritCount }}@if (seasonGuideCount) { (+{{ seasonGuideCount }} {{ 'REALMS_PAGE.GUIDES' | translate }})}</span>
             </a>
           </div>
         }
 
         @if (area.wingedLights?.length) {
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Winged lights</div>
+            <div class="atmos-fact__label">{{ 'AREA_DETAIL.WINGED_LIGHTS' | translate }}</div>
             <a class="atmos-fact__value" routerLink="/col" [queryParams]="{ area: area.guid }">
               <mat-icon svgIcon="flaps"></mat-icon>
               <span class="atmos-fact__text atmos-text-link">{{ area.wingedLights!.length }}</span>
@@ -59,10 +59,10 @@
 
         @if (area._wiki?.href; as wikiHref) {
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Wiki</div>
+            <div class="atmos-fact__label">{{ 'AREA_DETAIL.WIKI' | translate }}</div>
             <a class="atmos-fact__value" [href]="wikiHref" target="_blank" rel="noopener">
               <mat-icon class="atmos-fact__icon">open_in_new</mat-icon>
-              <span class="atmos-fact__text atmos-text-link">Open wiki page</span>
+              <span class="atmos-fact__text atmos-text-link">{{ 'AREA_DETAIL.OPEN_WIKI' | translate }}</span>
             </a>
           </div>
         }
@@ -80,7 +80,7 @@
 @if (area.connections?.length) {
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-section__title">Connected Areas</h2>
+      <h2 class="atmos-section__title">{{ 'AREA_DETAIL.CONNECTED_AREAS' | translate }}</h2>
       <div class="atmos-card__links">
         @for (connection of area.connections; track connection.area.guid) {
           <a class="atmos-link" [routerLink]="['/area', connection.area.guid]">

@@ -6,13 +6,14 @@ import { TitleService } from '@app/services/title.service';
 import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit-type-icon.component';
 import { IArea, IRealm } from 'skygame-data';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 @Component({
   selector: 'app-area',
   templateUrl: './area.component.html',
   styleUrl: './area.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, SpiritTypeIconComponent, SectionQuickActionsComponent]
+  imports: [RouterLink, MatIcon, SpiritTypeIconComponent, SectionQuickActionsComponent, TranslatePipe]
 })
 export class AreaComponent {
   area!: IArea;

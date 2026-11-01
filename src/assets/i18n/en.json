@@ -416,6 +416,21 @@
     "SHOPS": "Shops",
     "IN_APP_PURCHASES": "In-App Purchases"
   },
+  "AREAS_PAGE": {
+    "TITLE": "Areas"
+  },
+  "AREA_DETAIL": {
+    "REALM": "Realm",
+    "MAP": "Map",
+    "VIEW_ON_MAP": "View on map",
+    "SPIRITS": "Spirits",
+    "SEASON_SPIRITS": "Season spirits",
+    "WINGED_LIGHTS": "Winged lights",
+    "WIKI": "Wiki",
+    "OPEN_WIKI": "Open wiki page",
+    "CONNECTED_AREAS": "Connected Areas",
+    "OVERVIEW": "Overview"
+  },
   "EVENTS_PAGE": {
     "TITLE": "Events",
     "INTRO": "Track Sky's special events, view their history, and plan your event currency spending.",
@@ -427,6 +442,26 @@
     "INTRO": "Permanent shops in Sky. Pick a venue to view its in-app purchases and item lists.",
     "OTHER_IGC": "Other shops for in-game currency",
     "OTHER_IAP": "Other in-app purchases"
+  },
+  "COL_PAGE": {
+    "TITLE": "Con Trẻ Cảm Hứng",
+    "FOUND": "Đã tìm thấy",
+    "AREA": "Khu vực",
+    "REALM": "Vương quốc",
+    "MARK_ALL_FOUND": "Đánh dấu tất cả đã tìm thấy",
+    "RESET": "Khởi động lại",
+    "LEFT_ORBIT": "Rời Quả Đất",
+    "SCROLL_TO_LIST": "Cuộn đến danh sách",
+    "FOUND_LABEL": "đã tìm thấy",
+    "CONFIRM_MARK_ALL": "Bạn có chắc chắn muốn đánh dấu tất cả Con Trẻ Cảm Hứng là đã tìm thấy?",
+    "CONFIRM_RESET": "Bạn có chắc chắn muốn khởi động lại danh sách Con Trẻ Cảm Hứng đã tìm thấy?",
+    "CONFIRM_ORBIT": "Bạn đã ra khỏi Quả Đất chưa? Điều này sẽ khóa tất cả trừ ánh sáng cánh từ Quả Đất.",
+    "MARK_AS_FOUND": "Đánh dấu là đã tìm thấy.",
+    "MARK_AND_NEXT": "Đánh dấu là đã tìm thấy và đi đến ánh sáng tiếp theo.",
+    "PREVIOUS_LIGHT": "Đi đến ánh sáng trước.",
+    "NEXT_LIGHT": "Đi đến ánh sáng tiếp theo.",
+    "WIKI": "Wiki",
+    "ALL_DONE": "Đã hoàn thành!"
   },
   "COMMON": {
     "SAVE": "Save",
