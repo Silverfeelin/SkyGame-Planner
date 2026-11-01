@@ -12,6 +12,7 @@ import { ItemPanelComponent } from '../panel/item-panel.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { IItem } from 'skygame-data';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 /** The panel only has room beside the grid on wide screens. */
 const PANEL_QUERY = '(min-width: 1280px)';
@@ -22,7 +23,7 @@ const PANEL_PARAM = 'item';
   templateUrl: './item-grid.component.html',
   styleUrl: './item-grid.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, ItemIconComponent, ItemGridLayoutComponent, ItemPanelComponent, SectionQuickActionsComponent]
+  imports: [TooltipDirective, ItemIconComponent, ItemGridLayoutComponent, ItemPanelComponent, SectionQuickActionsComponent, TranslatePipe]
 })
 export class ItemGridComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

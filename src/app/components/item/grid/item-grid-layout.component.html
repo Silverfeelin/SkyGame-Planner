@@ -1,7 +1,7 @@
 <section class="atmos-card atmos-item-grid__card">
   <div class="atmos-item-grid__rail-wrap">
   <nav class="atmos-item-grid__rail">
-    <div class="atmos-item-grid__rail-label">Category</div>
+    <div class="atmos-item-grid__rail-label">{{ 'ITEMS_PAGE.CATEGORY' | translate }}</div>
     @for (c of visibleCategories(); track c.type) {
       <button class="atmos-item-grid__rail-item atmos-focus-ring"
               [class.is-active]="active() === c.type"
@@ -27,14 +27,14 @@
         <div class="atmos-item-grid__count">
           <strong>{{ activeUnlocked() }}</strong>
           <span> / {{ activeItems().length }}</span>
-          <span> unlocked</span>
+          <span> {{ 'ITEMS_PAGE.UNLOCKED' | translate }}</span>
         </div>
         @if (filterable()) {
           <button type="button" class="atmos-btn atmos-btn--sm atmos-item-grid__filter-toggle"
             [class.atmos-btn--active]="showFilters()"
             [class.has-active-filters]="hasActiveFilters()"
             (click)="toggleFilters($event)">
-            <span>Filter</span>
+            <span>{{ 'ITEMS_PAGE.FILTER' | translate }}</span>
             <mat-icon>filter_alt</mat-icon>
           </button>
         }
@@ -48,16 +48,16 @@
 
       @if (!activeItems().length) {
         <p class="atmos-item-grid__summary">
-          No {{ activeCategory().type | itemType:true | lowercase }} match the selected filters.
+          {{ 'ITEMS_PAGE.NO_ITEMS_MATCH' | translate: { category: (activeCategory().type | itemType:true | lowercase) } }}
         </p>
       } @else if (isFiltered()) {
         <p class="atmos-item-grid__summary">
           @if (activeItems().length === 1) {
-            There is <b>1</b> {{ activeCategory().type | itemType | lowercase }}
+            {{ 'ITEMS_PAGE.MATCHING_ONE' | translate: { category: (activeCategory().type | itemType | lowercase) } }}
           } @else {
-            There are <b>{{ activeItems().length }}</b> {{ activeCategory().type | itemType:true | lowercase }}
+            {{ 'ITEMS_PAGE.MATCHING_MANY' | translate: { count: activeItems().length, category: (activeCategory().type | itemType:true | lowercase) } }}
           }
-          <span class="atmos-item-grid__summary-total">(out of {{ categoryItems().length }})</span> matching the selected filters.
+          <span class="atmos-item-grid__summary-total">{{ 'ITEMS_PAGE.OUT_OF_TOTAL' | translate: { total: categoryItems().length } }}</span> {{ 'ITEMS_PAGE.MATCHING_FILTERS' | translate }}
         </p>
       }
     }

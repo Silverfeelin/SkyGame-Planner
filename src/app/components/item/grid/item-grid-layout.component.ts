@@ -7,6 +7,7 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemTypeNavComponent } from '../type-nav/item-type-nav.component';
 import { ItemFiltersComponent } from '../filters/item-filters.component';
 import { IItem, ItemType } from 'skygame-data';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 /** Emitted by hosts that let their item template be clicked rather than followed. */
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -39,7 +40,7 @@ export const ITEM_GRID_TYPES: ReadonlySet<ItemType> = new Set(ITEM_GRID_CATEGORI
   templateUrl: './item-grid-layout.component.html',
   styleUrl: './item-grid-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, LowerCasePipe, MatIcon, ItemTypePipe, ItemTypeNavComponent, ItemFiltersComponent],
+  imports: [NgTemplateOutlet, LowerCasePipe, MatIcon, ItemTypePipe, ItemTypeNavComponent, ItemFiltersComponent, TranslatePipe],
   host: {
     '[class.is-narrow]': 'narrow()'
   }

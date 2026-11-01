@@ -1,12 +1,12 @@
 <app-section-quick-actions section="item" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Items</h1>
+  <h1 class="atmos-page__title">{{ 'ITEMS_PAGE.TITLE' | translate }}</h1>
   <div class="atmos-items__actions">
     <div class="atmos-items__count"aria-live="polite">
       <strong>{{ unlockedCount() }}</strong>
       <span class="atmos-items__count-sep"> / {{ totalCount() }}</span>
-      <span class="atmos-items__count-label"> unlocked</span>
+      <span class="atmos-items__count-label">{{ 'ITEMS_PAGE.UNLOCKED' | translate }}</span>
     </div>
   </div>
 </header>

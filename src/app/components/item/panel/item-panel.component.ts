@@ -5,6 +5,7 @@ import { IItem } from 'skygame-data';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { ItemSummaryComponent } from '../summary/item-summary.component';
 import { ItemDyeVersionsComponent } from '../dye-versions/item-dye-versions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 /**
  * Item details in a side panel beside a list of items, so the list can be browsed without leaving it.
@@ -14,7 +15,7 @@ import { ItemDyeVersionsComponent } from '../dye-versions/item-dye-versions.comp
   templateUrl: './item-panel.component.html',
   styleUrl: './item-panel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, TooltipDirective, ItemSummaryComponent, ItemDyeVersionsComponent]
+  imports: [RouterLink, MatIcon, TooltipDirective, ItemSummaryComponent, ItemDyeVersionsComponent, TranslatePipe]
 })
 export class ItemPanelComponent {
   readonly item = input.required<IItem>();

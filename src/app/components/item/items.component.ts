@@ -14,6 +14,7 @@ import { IItem, ItemType } from 'skygame-data';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 const itemTypePipe = new ItemTypePipe();
 const typeFilterValues = Object.values(ItemType).map(t => ({ value: t, label: itemTypePipe.transform(t) }));
@@ -34,7 +35,7 @@ const textFilterParams = {
   templateUrl: './items.component.html',
   styleUrl: './items.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent, TranslatePipe]
 })
 export class ItemsComponent {
   theme = getAgTheme();

@@ -6,16 +6,18 @@
 
     <div class="atmos-item-panel__actions">
       <a class="atmos-btn atmos-btn--sm" [routerLink]="['/item', itm.guid]">
-        <span>Open item page</span>
+        <span>{{ 'ITEMS_PAGE.OPEN_PAGE' | translate }}</span>
         <mat-icon>arrow_forward</mat-icon>
       </a>
       <div class="atmos-item-panel__steps">
         <button type="button" class="atmos-icon-btn" [disabled]="!previous()" (click)="select(previous())"
-          aria-label="Previous item" [skyTooltip]="previous()?.name">
+          [attr.aria-label]="'ITEMS_PAGE.PREVIOUS' | translate"
+          [skyTooltip]="previous()?.name">
           <mat-icon>chevron_left</mat-icon>
         </button>
         <button type="button" class="atmos-icon-btn" [disabled]="!next()" (click)="select(next())"
-          aria-label="Next item" [skyTooltip]="next()?.name">
+          [attr.aria-label]="'ITEMS_PAGE.NEXT' | translate"
+          [skyTooltip]="next()?.name">
           <mat-icon>chevron_right</mat-icon>
         </button>
       </div>
