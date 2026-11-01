@@ -18,14 +18,14 @@
         <div class="atmos-facts">
           <div class="atmos-fact-row">
             <div class="atmos-fact">
-              <div class="atmos-fact__label">Year</div>
+              <div class="atmos-fact__label">{{ 'SEASONS_PAGE.YEAR' | translate }}</div>
               <div class="atmos-fact__value">
                 <mat-icon class="atmos-fact__icon">event_repeat</mat-icon>
                 <span class="atmos-fact__text">{{ s.year }}</span>
               </div>
             </div>
             <div class="atmos-fact atmos-fact--wide">
-              <div class="atmos-fact__label">Duration</div>
+              <div class="atmos-fact__label">{{ 'SEASONS_PAGE.DURATION' | translate }}</div>
               <div class="atmos-fact__value atmos-fact__value--wrap">
                 <mat-icon class="atmos-fact__icon">calendar_month</mat-icon>
                 <span><app-date-range [start]="s.date" [end]="s.endDate"></app-date-range></span>
@@ -37,22 +37,22 @@
             </div>
           </div>
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Seasonal candles</div>
+            <div class="atmos-fact__label">{{ 'SEASONS_PAGE.SEASONAL_CANDLES' | translate }}</div>
             <div class="atmos-fact__value">
               <mat-icon svgIcon="season-candle" class="seasonal"></mat-icon>
               <span>{{ sc() }}</span>
               @if (scLeft()) {
-                <span class="atmos-fact__meta">({{ scLeft() }} needed)</span>
+                <span class="atmos-fact__meta">({{ scLeft() }} {{ 'SEASONS_PAGE.NEEDED' | translate }})</span>
               }
             </div>
           </div>
           <div class="atmos-fact">
-            <div class="atmos-fact__label">Seasonal hearts</div>
+            <div class="atmos-fact__label">{{ 'SEASONS_PAGE.SEASONAL_HEARTS' | translate }}</div>
             <div class="atmos-fact__value">
               <mat-icon svgIcon="season-heart" class="seasonal"></mat-icon>
               <span>{{ sh() }}</span>
               @if (shLeft()) {
-                <span class="atmos-fact__meta">({{ shLeft() }} needed)</span>
+                <span class="atmos-fact__meta">({{ shLeft() }} {{ 'SEASONS_PAGE.NEEDED' | translate }})</span>
               }
             </div>
           </div>
@@ -62,13 +62,13 @@
                   [class.atmos-btn--active]="hasBoughtSeasonPass()"
                   (click)="toggleSeasonPass(false)">
             <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-            Bought Season Pass
+            {{ 'SEASONS_PAGE.BOUGHT_SEASON_PASS' | translate }}
           </button>
           <button type="button" class="atmos-btn atmos-btn--sm"
                   [class.atmos-btn--active]="hasGiftedSeasonPass()"
                   (click)="toggleSeasonPass(true)">
             <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-            Received Season Pass
+            {{ 'SEASONS_PAGE.RECEIVED_SEASON_PASS' | translate }}
           </button>
         </div>
       </div>
@@ -87,12 +87,12 @@
         }
         @if (previousSeason(); as p) {
           <a class="atmos-summary__action" [routerLink]="['/season', p.guid]">
-            <mat-icon>arrow_back</mat-icon> Previous season
+            <mat-icon>arrow_back</mat-icon> {{ 'SEASONS_PAGE.PREVIOUS_SEASON' | translate }}
           </a>
         }
         @if (nextSeason(); as n) {
           <a class="atmos-summary__action" [routerLink]="['/season', n.guid]">
-            <mat-icon>arrow_forward</mat-icon> Next season
+            <mat-icon>arrow_forward</mat-icon> {{ 'SEASONS_PAGE.NEXT_SEASON' | translate }}
           </a>
         }
         @if (s._wiki?.href; as wikiHref) {
@@ -113,7 +113,7 @@
   @if (state() === 'ended' && guide() && guideTreePostSeason(); as postTree) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-section__title atmos-section__title--lg">Post-season guide tree</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">{{ 'SEASONS_PAGE.POST_SEASON_GUIDE' | translate }}</h2>
       </header>
       <div class="atmos-card__body atmos-spirit-trees">
         <div class="atmos-season__tree">
@@ -130,7 +130,7 @@
   <section class="atmos-card atmos-season__section">
     <header class="atmos-season__section-header">
       <h2 class="atmos-section__title atmos-section__title--lg">
-        {{ state() === 'ended' ? 'Season spirit trees' : 'Spirit trees' }}
+        {{ (state() === 'ended' ? 'SEASONS_PAGE.SEASON_SPIRIT_TREES' : 'SEASONS_PAGE.SPIRIT_TREES') | translate }}
       </h2>
     </header>
     <div class="atmos-card__body atmos-spirit-trees">
@@ -159,7 +159,7 @@
   @if (includedTrees()?.length) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-section__title atmos-section__title--lg">Related spirit trees</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">{{ 'SEASONS_PAGE.RELATED_SPIRIT_TREES' | translate }}</h2>
       </header>
       <div class="atmos-card__body atmos-spirit-trees">
         @for (tree of includedTrees(); track tree.guid) {
@@ -175,7 +175,7 @@
   @if (shops().length) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-section__title atmos-section__title--lg">Shops</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">{{ 'SEASONS_PAGE.SHOPS' | translate }}</h2>
       </header>
       <div class="atmos-card__body">
         <app-shop-item-lists [shops]="shops()" [highlightNode]="highlightNode()" />
@@ -186,7 +186,7 @@
   @if (iapShops().length) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-section__title atmos-section__title--lg">In-App Purchases</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">{{ 'SEASONS_PAGE.IN_APP_PURCHASES' | translate }}</h2>
       </header>
       <div class="atmos-card__body">
         <div class="atmos-season__iap-grid">

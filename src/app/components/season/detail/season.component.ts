@@ -22,6 +22,7 @@ import {
   SpiritTreeComponent
 } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 import { SUBICONS_NO_SEASON } from '@app/components/item/icon/subicons/item-subicons.component';
 
 interface ITreeEntry {
@@ -38,7 +39,7 @@ interface ITreeEntry {
   imports: [
     RouterLink, MatIcon, LowerCasePipe, DateRangeComponent, DaysLeftComponent, DurationComponent,
     SpiritTreeComponent, ShopItemListsComponent, IapCardComponent,
-    SectionQuickActionsComponent, DraftWarningComponent
+    SectionQuickActionsComponent, DraftWarningComponent, TranslatePipe
   ]
 })
 export class SeasonComponent implements OnInit {
