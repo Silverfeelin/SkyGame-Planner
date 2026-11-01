@@ -4,42 +4,42 @@
   <div class="atmos-currency-spent__costs">
     @if (data.cost.c) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="candle" [skyTooltip]="'Candles'"></mat-icon>
+        <mat-icon svgIcon="candle" [skyTooltip]="'CURRENCY.CANDLES' | translate"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.c | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.h) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="heart" [skyTooltip]="'Hearts'"></mat-icon>
+        <mat-icon svgIcon="heart" [skyTooltip]="'CURRENCY.HEARTS' | translate"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.h | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.ac) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="ascended-candle" [skyTooltip]="'Ascended candles'"></mat-icon>
+        <mat-icon svgIcon="ascended-candle" [skyTooltip]="'CURRENCY.ASCENDED_CANDLES' | translate"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.ac | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.ec) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="ticket" [skyTooltip]="'Event currency'"></mat-icon>
+        <mat-icon svgIcon="ticket" [skyTooltip]="'CURRENCY.EVENT_TITLE' | translate"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.ec | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.lp) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="loyalty-point" [skyTooltip]="'Loyalty points'"></mat-icon>
+        <mat-icon svgIcon="loyalty-point" [skyTooltip]="'CURRENCY.LOYALTY_POINTS' | translate"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.lp | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.sc) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="candle" class="atmos-currency-spent__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
+        <mat-icon svgIcon="candle" class="atmos-currency-spent__icon--seasonal" [skyTooltip]="'CURRENCY.SEASON_CANDLES' | translate"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.sc | number:'1.' }}</span>
       </div>
@@ -62,13 +62,13 @@
   <div class="atmos-currency-spent__btn-row">
     <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleBreakdown(data)">
       <mat-icon>{{ data.breakdownVisible ? 'unfold_less' : 'unfold_more' }}</mat-icon>
-      <span>Breakdown</span>
+      <span>{{ 'CURRENCY.BREAKDOWN' | translate }}</span>
     </button>
   </div>
   @if (data.breakdownVisible) {
     @if (data.nodes.length) {
       <div class="atmos-currency-spent__breakdown-group">
-        <h3 class="atmos-currency-spent__breakdown-title">Spirit trees</h3>
+        <h3 class="atmos-currency-spent__breakdown-title">{{ 'CURRENCY.SPIRIT_TREES' | translate }}</h3>
         <div class="atmos-currency-spent__breakdown-grid">
           @for (node of data.nodes; track node.guid) {
             @if (node.item && (node.c || node.h || node.ac || node.ec || node.lp || node.sc || node.sh)) {
@@ -89,7 +89,7 @@
     }
     @if (data.listNodes.length) {
       <div class="atmos-currency-spent__breakdown-group">
-        <h3 class="atmos-currency-spent__breakdown-title">Shops (in-game currency)</h3>
+        <h3 class="atmos-currency-spent__breakdown-title">{{ 'CURRENCY.SHOPS_IN_GAME' | translate }}</h3>
         <div class="atmos-currency-spent__breakdown-grid">
           @for (node of data.listNodes; track node.guid) {
             @if (node.item && (node.c || node.h || node.ac || node.ec || node.lp || node.sc || node.sh)) {
@@ -111,7 +111,7 @@
     }
     @if (data.iaps.length) {
       <div class="atmos-currency-spent__breakdown-group">
-        <h3 class="atmos-currency-spent__breakdown-title">In-app purchases</h3>
+        <h3 class="atmos-currency-spent__breakdown-title">{{ 'CURRENCY.IAPS' | translate }}</h3>
         <div class="atmos-currency-spent__breakdown-grid">
           @for (iap of data.iaps; track iap.guid) {
             <div class="atmos-currency-spent__breakdown-item">
@@ -124,7 +124,7 @@
     }
     @if (data.others?.length) {
       <div class="atmos-currency-spent__breakdown-group">
-        <h3 class="atmos-currency-spent__breakdown-title">Other</h3>
+        <h3 class="atmos-currency-spent__breakdown-title">{{ 'CURRENCY.OTHER' | translate }}</h3>
         <div class="atmos-currency-spent__breakdown-grid">
           @for (other of data.others; track $index) {
             <div class="atmos-currency-spent__breakdown-item">
@@ -147,33 +147,31 @@
 </ng-template>
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Spent currencies</h1>
+  <h1 class="atmos-page__title">{{ 'CURRENCY.SPENT_TITLE' | translate }}</h1>
 </header>
 
 <div class="atmos-page__intro">
   <p class="atmos-paragraph">
-    This page shows the total amount of currencies you have spent on items in Sky.
+    {{ 'CURRENCY.SPENT_INTRO_1' | translate }}
   </p>
   <p class="atmos-paragraph">
-    Items that specifically belong to a season, such as those from season spirits and guides, will be shown in the Seasons section.
-    Items that are not <strong>directly</strong> related to a season, such as items from the Nesting Workshop, will be shown in the Regular section.
+    {{ 'CURRENCY.SPENT_INTRO_2' | translate }}
   </p>
   <p class="atmos-paragraph">
-    In the breakdown the following abbreviations are used:
-    (c) for candles, (h) for hearts, (ac) for ascended candles, (ec) for event currency, (lp) for loyalty points, (sc) for season candles, and (sh) for season hearts.
+    {{ 'CURRENCY.SPENT_INTRO_3' | translate }}
   </p>
 </div>
 
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-currency-spent__section-title"><mat-icon>functions</mat-icon> Total</h2>
+    <h2 class="atmos-currency-spent__section-title"><mat-icon>functions</mat-icon> {{ 'CURRENCY.TOTAL' | translate }}</h2>
     <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: total }"></ng-container>
   </div>
 </section>
 
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-currency-spent__section-title"><mat-icon>paid</mat-icon> Regular</h2>
+    <h2 class="atmos-currency-spent__section-title"><mat-icon>paid</mat-icon> {{ 'CURRENCY.REGULAR' | translate }}</h2>
     <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: regular }"></ng-container>
   </div>
 </section>
@@ -183,7 +181,7 @@
     <button type="button" class="atmos-currency-spent__folder" (click)="toggleSeasons()">
       <h2 class="atmos-currency-spent__section-title">
         <mat-icon>{{ seasonsFolded() ? 'expand_more' : 'expand_less' }}</mat-icon>
-        Seasons
+        {{ 'CURRENCY.SEASONS' | translate }}
       </h2>
     </button>
     @if (!seasonsFolded()) {
@@ -205,7 +203,7 @@
     <button type="button" class="atmos-currency-spent__folder" (click)="toggleEvents()">
       <h2 class="atmos-currency-spent__section-title">
         <mat-icon>{{ eventsFolded() ? 'expand_more' : 'expand_less' }}</mat-icon>
-        Events
+        {{ 'CURRENCY.EVENTS' | translate }}
       </h2>
     </button>
     @if (!eventsFolded()) {
@@ -214,7 +212,7 @@
           <div class="atmos-currency-spent__group-title">
             <strong>{{ event.name }}</strong>
             @if (eventInstancesByEvent[event.guid].length > 1) {
-              <span class="atmos-currency-spent__muted">(all combined)</span>
+              <span class="atmos-currency-spent__muted">{{ 'CURRENCY.ALL_COMBINED' | translate }}</span>
             }
           </div>
           <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: eventUnlockedCost[event.guid] }"></ng-container>

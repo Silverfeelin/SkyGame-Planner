@@ -4,34 +4,33 @@
   <span class="atmos-currency__gain"
     [class.atmos-currency__gain--pos]="g && g.charAt(0) === '+' && g !== '+0'"
     [class.atmos-currency__gain--neg]="g && g.charAt(0) === '-'">
-    {{ g || '+0' }} today
+    {{ g || '+0' }} {{ 'CURRENCY.TODAY' | translate }}
   </span>
 </ng-template>
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">In-game currency</h1>
+  <h1 class="atmos-page__title">{{ 'CURRENCY.TITLE' | translate }}</h1>
 </header>
 
 <div class="atmos-page__intro">
   <p class="atmos-paragraph">
-    Keep track of your in-game currencies. These values change automatically when you unlock items,
-    check in your dailies, or use the calculator.
+    {{ 'CURRENCY.INTRO' | translate }}
   </p>
 </div>
 
 @if (converted) {
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-currency__section-title"><mat-icon>swap_horiz</mat-icon> Converted currencies</h2>
+      <h2 class="atmos-currency__section-title"><mat-icon>swap_horiz</mat-icon> {{ 'CURRENCY.CONVERTED_TITLE' | translate }}</h2>
       <p class="atmos-paragraph">
-        You had leftover season candles from the previous season. These have been converted into regular currencies.
+        {{ 'CURRENCY.CONVERTED_DESC' | translate }}
       </p>
       <div class="atmos-currency__row">
         <mat-icon svgIcon="candle"></mat-icon>
         <strong class="atmos-currency__gain atmos-currency__gain--pos">+ {{ converted.candles }}</strong>
       </div>
       <div class="atmos-currency__btn-row">
-        <button type="button" class="atmos-btn" (click)="dismissConverted()">Dismiss</button>
+        <button type="button" class="atmos-btn" (click)="dismissConverted()">{{ 'SETTINGS.STORAGE.BUTTON_CLEAR' | translate }}</button>
       </div>
     </div>
   </section>
@@ -39,14 +38,14 @@
 
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-currency__section-title"><mat-icon>paid</mat-icon> Regular currency</h2>
+    <h2 class="atmos-currency__section-title"><mat-icon>paid</mat-icon> {{ 'CURRENCY.REGULAR_TITLE' | translate }}</h2>
     @if (!ongoingSeason) {
       <app-daily-checkin [checkedIn]="dailyCheckedIn()" (checkin)="onDailyCheckin($event)"></app-daily-checkin>
     }
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="candle" [skyTooltip]="'Candles'"></mat-icon>
+        <mat-icon svgIcon="candle" [skyTooltip]="'CURRENCY.CANDLES' | translate"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpC class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -62,7 +61,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="heart" [skyTooltip]="'Hearts'"></mat-icon>
+        <mat-icon svgIcon="heart" [skyTooltip]="'CURRENCY.HEARTS' | translate"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpH class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -78,7 +77,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="ascended-candle" [skyTooltip]="'Ascended candles'"></mat-icon>
+        <mat-icon svgIcon="ascended-candle" [skyTooltip]="'CURRENCY.ASCENDED_CANDLES' | translate"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpAc class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="0.25"
           (blur)="onCurrencyInputBlur($event, true)" (input)="onCurrencyInput()"
@@ -94,7 +93,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="loyalty-point" [skyTooltip]="'Loyalty points'"></mat-icon>
+        <mat-icon svgIcon="loyalty-point" [skyTooltip]="'CURRENCY.LOYALTY_POINTS' | translate"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpLp class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -110,7 +109,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [skyTooltip]="'Gift season passes'"></mat-icon>
+        <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [skyTooltip]="'CURRENCY.GIFT_PASSES' | translate"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpSp class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -123,11 +122,11 @@
 
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-currency__section-title"><mat-icon>palette</mat-icon> Dyes</h2>
+    <h2 class="atmos-currency__section-title"><mat-icon>palette</mat-icon> {{ 'CURRENCY.DYES_TITLE' | translate }}</h2>
     <div class="atmos-currency__dyes">
       @for (dye of dyes; track dye.color) {
         <div class="atmos-currency__field">
-          <mat-icon [class]="'dye-' + dye.color" [svgIcon]="'dye-' + dye.color" [skyTooltip]="dye.name + ' dye'"></mat-icon>
+          <mat-icon [class]="'dye-' + dye.color" [svgIcon]="'dye-' + dye.color" [skyTooltip]="dye.name + ' ' + ('CURRENCY.DYE_SUFFIX' | translate)"></mat-icon>
           <span class="atmos-currency__times">x</span>
           <input class="atmos-input atmos-input--narrow" type="number" min="0" max="99999" step="1"
             [value]="inpCurrencies.dyes![dye.color] ?? 0"
@@ -149,11 +148,11 @@
       </h2>
       <app-daily-checkin
         [checkedIn]="dailyCheckedIn()"
-        label="I have done my season dailies"
+        label="NAV.DASHBOARD_CHECK_SEASON"
         (checkin)="onDailyCheckin($event)"></app-daily-checkin>
       <div class="atmos-currency__row">
         <div class="atmos-currency__field">
-          <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
+          <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [skyTooltip]="'CURRENCY.SEASON_CANDLES' | translate"></mat-icon>
           <span class="atmos-currency__times">x</span>
           <input #inpSc class="atmos-input atmos-input--narrow" type="number" min="0" max="99999"
             [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
@@ -168,7 +167,7 @@
       <div class="atmos-currency__btn-row">
         <a class="atmos-btn" [routerLink]="seasonPlanner?.link">
           <mat-icon>calculate</mat-icon>
-          <span>Go to {{ seasonPlanner?.label }}</span>
+          <span>{{ 'CURRENCY.GO_TO' | translate: { label: seasonPlanner?.label ?? '' } }}</span>
         </a>
       </div>
     </div>
@@ -178,17 +177,17 @@
 @if (ongoingEventInstances.length) {
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-currency__section-title"><mat-icon>celebration</mat-icon> Event currency</h2>
+      <h2 class="atmos-currency__section-title"><mat-icon>celebration</mat-icon> {{ 'CURRENCY.EVENT_TITLE' | translate }}</h2>
       @for (instance of ongoingEventInstances; track instance.guid) {
         <div class="atmos-currency__event">
           <div class="atmos-currency__event-name">{{ instance.name ?? instance.event.name }}</div>
           <app-daily-checkin
             [checkedIn]="eventCheckedIn()[instance.guid]"
-            label="I have collected my daily event currency"
+            label="NAV.DASHBOARD_CHECK_EVENT"
             (checkin)="onEventCheckin(instance, $event)"></app-daily-checkin>
           <div class="atmos-currency__row">
             <div class="atmos-currency__field">
-              <mat-icon svgIcon="ticket" [skyTooltip]="'Event currency'"></mat-icon>
+              <mat-icon svgIcon="ticket" [skyTooltip]="'CURRENCY.EVENT_TITLE' | translate"></mat-icon>
               <span class="atmos-currency__times">x</span>
               <input #inpEc class="atmos-input atmos-input--narrow" type="number" min="0" max="99999"
                 [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"
@@ -205,7 +204,7 @@
           <div class="atmos-currency__btn-row">
             <a class="atmos-btn" routerLink="/event/calculator" [queryParams]="{ guid: instance.guid }">
               <mat-icon>calculate</mat-icon>
-              <span>Go to Calculator</span>
+              <span>{{ 'CURRENCY.GO_TO_CALCULATOR' | translate }}</span>
             </a>
           </div>
         </div>

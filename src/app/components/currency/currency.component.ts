@@ -16,6 +16,7 @@ import { DyeColor } from '@app/interfaces/dye.interface';
 import { DailyCheckinComponent } from '@app/components/daily/daily-checkin/daily-checkin.component';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { EventCheckinService } from '@app/services/event-checkin.service';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface IGains {
   candles: string;
@@ -32,7 +33,7 @@ interface IGains {
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, SectionQuickActionsComponent, DailyCheckinComponent]
+  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, SectionQuickActionsComponent, DailyCheckinComponent, TranslatePipe]
 })
 export class CurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;

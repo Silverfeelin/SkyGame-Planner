@@ -9,6 +9,7 @@ import { StorageService } from '@app/services/storage.service';
 import { INestingStorageData, nestingStorageKey } from '@app/components/shop/nesting/shop-nesting.interface';
 import { ICost, INode, IItemListNode, IIAP, ISeason, IEvent, IEventInstance, IItem } from 'skygame-data';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface IOtherCost {
   name: string;
@@ -37,7 +38,7 @@ interface IInstanceCostData {
   templateUrl: './currency-spent.component.html',
   styleUrl: './currency-spent.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, NgTemplateOutlet, DecimalPipe, SectionQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, NgTemplateOutlet, DecimalPipe, SectionQuickActionsComponent, TranslatePipe]
 })
 export class CurrencySpentComponent {
   readonly total: IInstanceCost = { cost: CostHelper.create(), price: 0, nodes: [], listNodes: [], iaps: [] };
