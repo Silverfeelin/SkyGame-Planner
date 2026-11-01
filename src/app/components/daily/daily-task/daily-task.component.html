@@ -19,7 +19,7 @@
         <span class="atmos-pill atmos-daily-task__location">{{ task().location }}</span>
       }
       @if (light()) {
-        <span class="atmos-pill atmos-daily-task__light">{{ light() }} light</span>
+        <span class="atmos-pill atmos-daily-task__light">{{ light() }} {{ 'DAILY.LIGHT' | translate }}</span>
       }
     </div>
 
@@ -27,7 +27,7 @@
       <button
         type="button"
         class="atmos-daily-task__hide"
-        [attr.aria-label]="hidden() ? 'Show task' : 'Hide task'" [skyTooltip]="hidden() ? 'Show task' : 'Hide task'"
+        [attr.aria-label]="(hidden() ? 'DAILY.SHOW_TASK' : 'DAILY.HIDE_TASK') | translate" [skyTooltip]="(hidden() ? 'DAILY.SHOW_TASK' : 'DAILY.HIDE_TASK') | translate"
         (click)="onToggleHide($event)">
         <mat-icon>{{ hidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
       </button>
@@ -39,13 +39,13 @@
       @if (task().link) {
         <a class="atmos-text-link atmos-daily-task__link" [routerLink]="task().link" (click)="$event.stopPropagation()">
           <mat-icon>open_in_new</mat-icon>
-          <span>Open tracker</span>
+          <span>{{ 'DAILY.OPEN_TRACKER' | translate }}</span>
         </a>
       }
       @if (task().externalLink) {
         <a class="atmos-text-link atmos-daily-task__link" [href]="task().externalLink" target="_blank" rel="noopener" (click)="$event.stopPropagation()">
           <mat-icon>open_in_new</mat-icon>
-          <span>Open link</span>
+          <span>{{ 'DAILY.OPEN_LINK' | translate }}</span>
         </a>
       }
 

@@ -1,36 +1,36 @@
 <app-section-quick-actions section="daily" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Daily tracker</h1>
+  <h1 class="atmos-page__title">{{ 'NAV.DAILY' | translate }}</h1>
 </header>
 
 <p class="atmos-paragraph atmos-daily__intro">
-  Track your daily activities here. Don't forget to update your candles on the
-  <a routerLink="/currency" class="atmos-text-link">Currency</a> page!<br>
-  Find more recurring events on the
+  {{ 'DAILY.INTRO_1' | translate }}
+  <a routerLink="/currency" class="atmos-text-link">{{ 'NAV.CURRENCY' | translate }}</a> page!<br>
+  {{ 'DAILY.INTRO_2' | translate }}
   <a href="https://sky-clock.netlify.app/" target="_blank" rel="noopener" class="atmos-text-link">Sky Clock</a> by Chris Stead,
-  and shards on <a href="https://sky-shards.pages.dev/en" target="_blank" rel="noopener" class="atmos-text-link">Sky Shards</a> by Plutoy.
+  {{ 'DAILY.INTRO_3' | translate }} <a href="https://sky-shards.pages.dev/en" target="_blank" rel="noopener" class="atmos-text-link">Sky Shards</a> by Plutoy.
 </p>
 
 <!-- Timers -->
 <section class="atmos-daily__timers">
   <div class="atmos-card atmos-daily__timer">
     <div class="atmos-card__body">
-      <div class="atmos-daily__timer-label">Daily reset in</div>
+      <div class="atmos-daily__timer-label">{{ 'DAILY.RESET_DAILY' | translate }}</div>
       <div class="atmos-daily__countdown">{{ dailyCountdown() }}</div>
     </div>
   </div>
   <div class="atmos-card atmos-daily__timer">
     <div class="atmos-card__body">
       <div class="atmos-daily__timer-label">
-        {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | time }} Sky time
+        {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | time }} {{ 'DAILY.SKY_TIME' | translate }}
       </div>
       <div class="atmos-daily__countdown">{{ nextTimed().countdown }}</div>
     </div>
   </div>
   <div class="atmos-card atmos-daily__timer">
     <div class="atmos-card__body">
-      <div class="atmos-daily__timer-label">Eden (weekly) reset in</div>
+      <div class="atmos-daily__timer-label">{{ 'DAILY.RESET_EDEN' | translate }}</div>
       <div class="atmos-daily__countdown">{{ weeklyCountdown() }}</div>
     </div>
   </div>
@@ -67,20 +67,20 @@
 <section class="atmos-card atmos-daily__section">
   <header class="atmos-daily__section-header">
     <h2 class="atmos-daily__section-title">
-      Daily light  &middot; fixed light
+      {{ 'DAILY.FIXED_TITLE' | translate }}
       @if (hiddenFixedCount() > 0) {
         <button type="button" class="atmos-daily__toggle-hidden"
-                [attr.aria-label]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'" [skyTooltip]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                [attr.aria-label]="(showHidden() ? 'DAILY.HIDE_TASKS' : 'DAILY.SHOW_TASKS') | translate" [skyTooltip]="(showHidden() ? 'DAILY.HIDE_TASKS' : 'DAILY.SHOW_TASKS') | translate"
                 (click)="showHidden.set(!showHidden())">
           <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>
       }
     </h2>
     <div class="atmos-daily__section-meta">
-      Remaining: {{ remainingLight() }} / {{ totalLight() }} light
+      {{ 'DAILY.REMAINING' | translate }}: {{ remainingLight() }} / {{ totalLight() }} {{ 'DAILY.LIGHT' | translate }}
     </div>
     <p class="atmos-daily__section-note">
-      These activities always give the same amount of light. Tick them off as you do them; hide ones you skip.
+      {{ 'DAILY.FIXED_NOTE' | translate }}
     </p>
   </header>
   <div class="atmos-card__body atmos-daily__section-body">
@@ -105,18 +105,18 @@
 <section class="atmos-card atmos-daily__section">
   <header class="atmos-daily__section-header">
     <h2 class="atmos-daily__section-title">
-      Daily light  &middot; Variable light
+      {{ 'DAILY.VARIABLE_TITLE' | translate }}
       @if (hiddenVariableCount() > 0) {
         <button type="button" class="atmos-daily__toggle-hidden"
-                [attr.aria-label]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'" [skyTooltip]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                [attr.aria-label]="(showHidden() ? 'DAILY.HIDE_TASKS' : 'DAILY.SHOW_TASKS') | translate" [skyTooltip]="(showHidden() ? 'DAILY.HIDE_TASKS' : 'DAILY.SHOW_TASKS') | translate"
                 (click)="showHidden.set(!showHidden())">
           <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>
       }
     </h2>
-    <div class="atmos-daily__section-meta">Wax amounts vary per day</div>
+    <div class="atmos-daily__section-meta">{{ 'DAILY.VARIABLE_META' | translate }}</div>
     <p class="atmos-daily__section-note">
-      These activities aren't available every day or don't always give the same amount of light.
+      {{ 'DAILY.VARIABLE_NOTE' | translate }}
     </p>
   </header>
   <div class="atmos-card__body atmos-daily__section-body">
@@ -141,20 +141,20 @@
 <section class="atmos-card atmos-daily__section">
   <header class="atmos-daily__section-header">
     <h2 class="atmos-daily__section-title">
-      Timed events
+      {{ 'DAILY.TIMED_TITLE' | translate }}
       @if (hiddenTimedCount() > 0) {
         <button type="button" class="atmos-daily__toggle-hidden"
-                [attr.aria-label]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'" [skyTooltip]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                [attr.aria-label]="(showHidden() ? 'DAILY.HIDE_TASKS' : 'DAILY.SHOW_TASKS') | translate" [skyTooltip]="(showHidden() ? 'DAILY.HIDE_TASKS' : 'DAILY.SHOW_TASKS') | translate"
                 (click)="showHidden.set(!showHidden())">
           <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>
       }
     </h2>
     <div class="atmos-daily__section-meta">
-      Next: {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | time }} ({{ nextTimed().countdown }})
+      {{ 'DAILY.NEXT' | translate }}: {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | time }} ({{ nextTimed().countdown }})
     </div>
     <p class="atmos-daily__section-note">
-      These activities are available for a limited time on a repeating schedule.
+      {{ 'DAILY.TIMED_NOTE' | translate }}
     </p>
   </header>
   <div class="atmos-card__body atmos-daily__section-body">
@@ -178,8 +178,8 @@
 <!-- This week — Eden -->
 <section class="atmos-card atmos-daily__section">
   <header class="atmos-daily__section-header">
-    <h2 class="atmos-daily__section-title">This week</h2>
-    <div class="atmos-daily__section-meta">Resets Sunday in Sky time</div>
+    <h2 class="atmos-daily__section-title">{{ 'DAILY.WEEKLY_TITLE' | translate }}</h2>
+    <div class="atmos-daily__section-meta">{{ 'DAILY.WEEKLY_META' | translate }}</div>
   </header>
   <div class="atmos-card__body atmos-daily__section-body">
     <div class="atmos-daily__grid atmos-daily__grid--single">

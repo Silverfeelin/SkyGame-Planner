@@ -10,8 +10,8 @@
       }
       <div class="atmos-daily-card__fade"></div>
       <div class="atmos-daily-card__heading">
-        <div class="atmos-daily-card__kicker">Today</div>
-        <h2 class="atmos-daily-card__title">Daily quests</h2>
+        <div class="atmos-daily-card__kicker">{{ 'DAILY.TODAY' | translate }}</div>
+        <h2 class="atmos-daily-card__title">{{ 'DAILY.DAILY_QUESTS' | translate }}</h2>
       </div>
     </div>
   }
@@ -27,7 +27,7 @@
     @if (sections()['dailies']) {
       <a class="atmos-daily-card__row" routerLink="/daily">
         <mat-icon>list_alt</mat-icon>
-        <span>View daily tasks</span>
+        <span>{{ 'DAILY.VIEW_DAILY_TASKS' | translate }}</span>
       </a>
     }
 

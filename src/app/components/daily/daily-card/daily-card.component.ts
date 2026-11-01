@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IRealm } from 'skygame-data';
 import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 export type DailyCardSection = 'img' | 'realm' | 'dailies' | 'checkin';
 
@@ -20,7 +21,7 @@ export interface DailyCardOptions {
   templateUrl: './daily-card.component.html',
   styleUrl: './daily-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DailyCheckinComponent]
+  imports: [RouterLink, MatIcon, DailyCheckinComponent, TranslatePipe]
 })
 export class DailyCardComponent {
   readonly options = input<DailyCardOptions>({ show: ['img', 'realm', 'dailies', 'checkin'] });
