@@ -308,6 +308,38 @@
     },
     "SEASON_PASS": "Season Pass"
   },
+  "ITEMS_PAGE": {
+    "TITLE": "Items",
+    "UNLOCKED": "unlocked",
+    "CATEGORY": "Category",
+    "FILTER": "Filter",
+    "NO_ITEMS_MATCH": "No {{category}} match the selected filters.",
+    "MATCHING_ONE": "There is <b>1</b> {{category}}",
+    "MATCHING_MANY": "There are <b>{{count}}</b> {{category}}",
+    "OUT_OF_TOTAL": "(out of {{total}})",
+    "MATCHING_FILTERS": "matching the selected filters.",
+    "OPEN_PAGE": "Open item page",
+    "PREVIOUS": "Previous item",
+    "NEXT": "Next item"
+  },
+  "SPIRITS_PAGE": {
+    "TITLE": "Spirits",
+    "COUNT_LABEL": "spirit",
+    "COUNT_LABEL_PLURAL": "spirits",
+    "OF": "of",
+    "TYPE": "Type",
+    "SEASON": "Season",
+    "EVENT": "Event",
+    "REALM": "Realm",
+    "AREA": "Area",
+    "SPIRIT_TREES": "Spirit trees",
+    "TS_NUMBER": "TS #{{number}}",
+    "SPOILER_HIDDEN": "Spoiler hidden",
+    "VIEW_PREVIEW": "View {{name}} preview",
+    "ELUSIVE_TITLE": "Elusive Spirits",
+    "ELUSIVE_HINT_1": "On this page you can find the most elusive season spirits. The spirits that have been missing for the longest time are shown at the top.<br/>Please keep in mind that traveling spirit visits are mostly random, so use this data at your own discretion.",
+    "ELUSIVE_HINT_2": "A graph version of this data is available on the <a href=\"/graph/spirit\" class=\"atmos-text-link\">Graphs - Spirits</a> page."
+  },
   "COMMON": {
     "SAVE": "Save",
     "CANCEL": "Cancel",

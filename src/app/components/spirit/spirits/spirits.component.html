@@ -1,14 +1,14 @@
 <app-section-quick-actions section="spirit" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Spirits</h1>
+  <h1 class="atmos-page__title">{{ 'SPIRITS_PAGE.TITLE' | translate }}</h1>
   <div class="atmos-spirits__count" aria-live="polite">
     @if (filteredCount() !== totalCount()) {
       <strong>{{ filteredCount() }}</strong>
-      <span class="atmos-spirits__count-label"> of {{ totalCount() }} spirit{{ totalCount() === 1 ? '' : 's' }}</span>
+      <span class="atmos-spirits__count-label"> {{ 'SPIRITS_PAGE.OF' | translate }} {{ totalCount() }} {{ (totalCount() === 1 ? 'SPIRITS_PAGE.COUNT_LABEL' : 'SPIRITS_PAGE.COUNT_LABEL_PLURAL') | translate }}</span>
     } @else {
       <strong>{{ totalCount() }}</strong>
-      <span class="atmos-spirits__count-label"> spirit{{ totalCount() === 1 ? '' : 's' }}</span>
+      <span class="atmos-spirits__count-label"> {{ (totalCount() === 1 ? 'SPIRITS_PAGE.COUNT_LABEL' : 'SPIRITS_PAGE.COUNT_LABEL_PLURAL') | translate }}</span>
     }
   </div>
 </header>

@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DateTime } from 'luxon';
@@ -15,6 +14,7 @@ import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-rout
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { GridFilterShortcutDirective } from '@app/directives/grid-filter-shortcut.directive';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface ILastVisit {
   spirit: ISpirit;
@@ -32,7 +32,7 @@ interface ILastVisit {
   templateUrl: './elusive-spirits.component.html',
   styleUrl: './elusive-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, GridFilterShortcutDirective, RouterLink, SectionQuickActionsComponent]
+  imports: [AgGridAngular, GridFilterShortcutDirective, SectionQuickActionsComponent, TranslatePipe]
 })
 export class ElusiveSpiritsComponent {
   private readonly _dataService = inject(DataService);

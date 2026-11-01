@@ -49,7 +49,7 @@
         <div class="atmos-spirit-card__row">
           <mat-icon>flight_takeoff</mat-icon>
           @if (tsSpoiler()) {
-            <span class="atmos-spirit-card__spoiler">Spoiler hidden</span>
+            <span class="atmos-spirit-card__spoiler">{{ 'SPIRITS_PAGE.SPOILER_HIDDEN' | translate }}</span>
           } @else {
             <span>TS #{{ t.number }} · <app-date [date]="t.date"></app-date> · <app-days-left [date]="t.date"></app-days-left></span>
           }

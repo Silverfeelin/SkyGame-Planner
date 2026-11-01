@@ -9,6 +9,7 @@ import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateComponent } from '@app/components/util/date/date.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit-type-icon.component';
 
 export type SpiritCardSection =
@@ -30,7 +31,7 @@ export interface SpiritCardOptions {
   imports: [
     RouterLink, MatIcon,
     SpiritTypeIconComponent,
-    CostComponent, DateComponent, DaysLeftComponent, WikiLinkComponent
+    CostComponent, DateComponent, DaysLeftComponent, WikiLinkComponent, TranslatePipe
   ]
 })
 export class SpiritCardComponent {

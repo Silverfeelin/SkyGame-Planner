@@ -11,6 +11,7 @@ import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.comp
 import { SpiritTreeComponent } from '@app/components/shared/shared-widgets';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
 import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface ITree {
   date?: DateTime;
@@ -32,7 +33,7 @@ interface ITree {
   imports: [
     RouterLink, MatIcon,
     SpiritTypeIconComponent, WikiLinkComponent,
-    SpiritTreeComponent, SectionQuickActionsComponent, ImageOverlayComponent
+    SpiritTreeComponent, SectionQuickActionsComponent, ImageOverlayComponent, TranslatePipe
   ]
 })
 export class SpiritComponent {

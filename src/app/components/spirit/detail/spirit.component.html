@@ -12,7 +12,7 @@
         <div class="atmos-facts">
           @if (typeName(); as type) {
             <div class="atmos-fact">
-              <div class="atmos-fact__label">Type</div>
+              <div class="atmos-fact__label">{{ 'SPIRITS_PAGE.TYPE' | translate }}</div>
               <a class="atmos-fact__value" [routerLink]="['/spirit']" [queryParams]="{ type: s.type }">
                 <mat-icon class="atmos-fact__icon">person</mat-icon>
                 <span class="atmos-fact__text">{{ type }}</span>
@@ -22,7 +22,7 @@
 
           @if ((s.type === 'Season' || s.type === 'Guide') && s.season) {
             <div class="atmos-fact">
-              <div class="atmos-fact__label">Season</div>
+              <div class="atmos-fact__label">{{ 'SPIRITS_PAGE.SEASON' | translate }}</div>
               <a class="atmos-fact__value"
                  [routerLink]="['/season', s.season.guid]"
                  [queryParams]="{ highlightTree: s.tree?.guid }">
@@ -38,7 +38,7 @@
 
           @if (s.type === 'Event' && event(); as ev) {
             <div class="atmos-fact">
-              <div class="atmos-fact__label">Event</div>
+              <div class="atmos-fact__label">{{ 'SPIRITS_PAGE.EVENT' | translate }}</div>
               <a class="atmos-fact__value" [routerLink]="['/event', ev.guid]">
                 <mat-icon class="atmos-fact__icon">event</mat-icon>
                 <span class="atmos-fact__text">{{ ev.name }}</span>
@@ -48,7 +48,7 @@
 
           @if (s.area?.realm) {
             <div class="atmos-fact">
-              <div class="atmos-fact__label">Realm</div>
+              <div class="atmos-fact__label">{{ 'SPIRITS_PAGE.REALM' | translate }}</div>
               <a class="atmos-fact__value"
                  [routerLink]="['/realm', s.area!.realm!.guid]"
                  [queryParams]="{ highlightTree: s.tree?.guid }">
@@ -60,7 +60,7 @@
 
           @if (s.area) {
             <div class="atmos-fact">
-              <div class="atmos-fact__label">Area</div>
+              <div class="atmos-fact__label">{{ 'SPIRITS_PAGE.AREA' | translate }}</div>
               <a class="atmos-fact__value" [routerLink]="['/area', s.area.guid]">
                 <mat-icon class="atmos-fact__icon">location_on</mat-icon>
                 <span class="atmos-fact__text">{{ s.area.name }}</span>
@@ -73,7 +73,7 @@
       @if (s.imageUrl) {
         <div class="atmos-summary__art">
           <button type="button" class="atmos-summary__art-zoom"
-            [attr.aria-label]="'View ' + s.name + ' preview'"
+            [attr.aria-label]="'SPIRITS_PAGE.VIEW_PREVIEW' | translate:{ name: s.name }"
             (click)="showPreview.set(true)">
             <img [src]="s.imageUrl" [alt]="s.name" loading="lazy" />
           </button>
@@ -90,7 +90,7 @@
 
   <section class="atmos-card atmos-spirit__trees-card">
     <div class="atmos-card__body atmos-spirit__trees-body">
-      <h2 class="atmos-spirit__trees-title">Spirit trees</h2>
+      <h2 class="atmos-spirit__trees-title">{{ 'SPIRITS_PAGE.SPIRIT_TREES' | translate }}</h2>
       <div class="atmos-spirit-trees atmos-spirit__trees-scroll">
         @for (item of trees(); track item.tree.guid) {
           <div class="atmos-spirit__tree">

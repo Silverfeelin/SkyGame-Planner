@@ -297,6 +297,38 @@
     "OTHER": "Khác",
     "ALL_COMBINED": "(tất cả kết hợp)"
   },
+  "ITEMS_PAGE": {
+    "TITLE": "Vật phẩm",
+    "UNLOCKED": "đã mở khóa",
+    "CATEGORY": "Danh mục",
+    "FILTER": "Bộ lọc",
+    "NO_ITEMS_MATCH": "Không có {{category}} nào khớp với bộ lọc đã chọn.",
+    "MATCHING_ONE": "Có <b>1</b> {{category}}",
+    "MATCHING_MANY": "Có <b>{{count}}</b> {{category}}",
+    "OUT_OF_TOTAL": "(trong tổng số {{total}})",
+    "MATCHING_FILTERS": "khớp với bộ lọc đã chọn.",
+    "OPEN_PAGE": "Mở trang vật phẩm",
+    "PREVIOUS": "Vật phẩm trước",
+    "NEXT": "Vật phẩm tiếp theo"
+  },
+  "SPIRITS_PAGE": {
+    "TITLE": "Linh hồn",
+    "COUNT_LABEL": "linh hồn",
+    "COUNT_LABEL_PLURAL": "linh hồn",
+    "OF": "trong số",
+    "TYPE": "Loại",
+    "SEASON": "Mùa",
+    "EVENT": "Sự kiện",
+    "REALM": "Vương quốc",
+    "AREA": "Khu vực",
+    "SPIRIT_TREES": "Cây linh hồn",
+    "TS_NUMBER": "TS #{{number}}",
+    "SPOILER_HIDDEN": "Bí mật ẩn",
+    "VIEW_PREVIEW": "Xem hình ảnh {{name}}",
+    "ELUSIVE_TITLE": "Linh hồn hiếm gặp",
+    "ELUSIVE_HINT_1": "Trang này hiển thị những linh hồn mùa giải lâu rồi chưa xuất hiện. Linh hồn chưa vắng mặt lâu nhất được sắp xếp ở trên cùng.<br/>Lưu ý rằng sự xuất hiện của Linh hồn du hành phần lớn là ngẫu nhiên, hãy tham khảo dữ liệu này một cách cẩn thận.",
+    "ELUSIVE_HINT_2": "Phiên bản biểu đồ của dữ liệu này có sẵn tại trang <a href=\"/graph/spirit\" class=\"atmos-text-link\">Biểu đồ - Linh hồn</a>."
+  },
   "COMMON": {
     "SAVE": "Lưu",
     "CANCEL": "Hủy",
