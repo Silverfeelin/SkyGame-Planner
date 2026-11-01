@@ -1,11 +1,11 @@
 <app-section-quick-actions section="realm" />
 
 <header class="atmos-page__header">
-  <h1 class="atmos-page__title">Realms</h1>
+  <h1 class="atmos-page__title">{{ 'REALMS_PAGE.TITLE' | translate }}</h1>
   <button type="button" class="atmos-btn atmos-btn--sm"
     (click)="toggleShowMap()">
     <mat-icon>map</mat-icon>
-    <span>{{ showMap() ? 'Hide map' : 'Show map' }}</span>
+    <span>{{ showMap() ? ('REALMS_PAGE.HIDE_MAP' | translate) : ('REALMS_PAGE.SHOW_MAP' | translate) }}</span>
   </button>
 </header>
 
@@ -15,21 +15,21 @@
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="showAreas()"
-        [skyTooltip]="'Show areas'" placement="bottom-start"
+        [skyTooltip]="'REALMS_PAGE.SHOW_AREAS' | translate" placement="bottom-start"
         (click)="toggleShowAreas()">
         <mat-icon>location_on</mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="showMapShrines()"
-        [skyTooltip]="'Show map shrines'" placement="bottom-start"
+        [skyTooltip]="'REALMS_PAGE.SHOW_MAP_SHRINES' | translate" placement="bottom-start"
         (click)="toggleShowMapShrines()">
         <mat-icon svgIcon="map-shrine"></mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="showWingedLight()"
-        [skyTooltip]="'Show winged light'" placement="bottom-start"
+        [skyTooltip]="'REALMS_PAGE.SHOW_WINGED_LIGHT' | translate" placement="bottom-start"
         (click)="toggleShowWingedLight()">
         <mat-icon svgIcon="flaps"></mat-icon>
       </button>

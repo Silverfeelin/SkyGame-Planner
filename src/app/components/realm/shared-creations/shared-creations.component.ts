@@ -10,6 +10,7 @@ import { BroadcastService } from '@app/services/broadcast.service';
 import { MapService } from '@app/services/map.service';
 import { StorageService } from '@app/services/storage.service';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 type SharedCreationType = 'message' | 'memory' | 'space';
 
@@ -42,7 +43,7 @@ const TYPE_LABELS: Record<SharedCreationType, string> = {
   templateUrl: './shared-creations.component.html',
   styleUrl: './shared-creations.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent, TranslatePipe]
 })
 export class SharedCreationsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLElement>;

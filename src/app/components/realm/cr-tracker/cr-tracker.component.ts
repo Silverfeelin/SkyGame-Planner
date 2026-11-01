@@ -12,6 +12,7 @@ import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.serv
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { environment } from 'src/environments/environment';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 
 interface ICandlesData { items: Array<ICandleArea>; }
 interface ICandleArea {
@@ -77,7 +78,7 @@ const markerSwapIcon = L.icon({
   templateUrl: './cr-tracker.component.html',
   styleUrl: './cr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, ConfirmClickDirective, MatIcon, OverlayComponent, SectionQuickActionsComponent]
+  imports: [TooltipDirective, ConfirmClickDirective, MatIcon, OverlayComponent, SectionQuickActionsComponent, TranslatePipe]
 })
 export class CrTrackerComponent implements AfterViewInit {
   @ViewChild('map', { static: true }) private mapDiv!: ElementRef<HTMLDivElement>;

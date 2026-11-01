@@ -12,6 +12,7 @@ import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit
 import { SpiritTreeComponent } from '@app/components/spirit/spirit-tree/spirit-tree.component';
 import { RealmConstellationComponent } from '../constellation/realm-constellation.component';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 import { FeatureCardComponent, IFeatureLink } from '../../dashboard/feature-card.component';
 import { IArea, ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
 
@@ -28,7 +29,7 @@ interface ISpiritEntry {
   imports: [
     RouterLink, MatIcon, SpiritTypeIconComponent, SpiritTreeComponent,
     RealmConstellationComponent, SectionQuickActionsComponent, PercentagePipe,
-    FeatureCardComponent
+    FeatureCardComponent, TranslatePipe
   ]
 })
 export class RealmComponent implements OnInit, OnDestroy {

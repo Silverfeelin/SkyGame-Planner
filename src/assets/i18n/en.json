@@ -340,6 +340,55 @@
     "ELUSIVE_HINT_1": "On this page you can find the most elusive season spirits. The spirits that have been missing for the longest time are shown at the top.<br/>Please keep in mind that traveling spirit visits are mostly random, so use this data at your own discretion.",
     "ELUSIVE_HINT_2": "A graph version of this data is available on the <a href=\"/graph/spirit\" class=\"atmos-text-link\">Graphs - Spirits</a> page."
   },
+  "REALMS_PAGE": {
+    "TITLE": "Realms",
+    "SHOW_MAP": "Show map",
+    "HIDE_MAP": "Hide map",
+    "SHOW_AREAS": "Show areas",
+    "SHOW_MAP_SHRINES": "Show map shrines",
+    "SHOW_WINGED_LIGHT": "Show winged light",
+    "AREAS": "Areas",
+    "ELDER": "Elder",
+    "SPIRITS": "Spirits",
+    "SEASON_SPIRITS": "Season spirits",
+    "GUIDES": "guides",
+    "CONSTELLATION": "Constellation",
+    "TIER_1": "Tier 1",
+    "TIER_2": "Tier 2",
+    "LEFT_OUT_OF": "{{remaining}} left / {{cost}}",
+    "SPIRIT_TREES": "Spirit trees"
+  },
+  "SHARED_CREATIONS": {
+    "TITLE": "Shared Creations",
+    "INTRO": "Track where you placed your shared spells. Click a spell icon in the toolbar, then click the map to place a marker. Drag a marker to reposition. Markers expire after 7 days unless refreshed.",
+    "PLACE_MESSAGE": "Place Shared Message",
+    "PLACE_MEMORY": "Place Shared Memory",
+    "PLACE_SPACE": "Place Shared Space"
+  },
+  "CR_TRACKER": {
+    "TITLE": "Candle Run Tracker",
+    "RETURN_HOME": "Return to {{area}}",
+    "CHOOSE_MAP": "Choose map",
+    "UNDO": "Undo",
+    "NEXT": "Next: {{area}}",
+    "NEW_DAY_NOTICE": "A new Sky day has started, so your collected wax was cleared.",
+    "WAX": "wax",
+    "TOTAL": "total",
+    "MARK_AREA": "Mark all wax on this map",
+    "CLEAR_AREA": "Clear this map",
+    "CLEAR_ALL": "Clear all maps",
+    "MARK_ALL": "Mark all maps as collected",
+    "CONFIRM": "Press again to confirm",
+    "MAPS": "Maps",
+    "ALL_MAPS": "All maps",
+    "RESTART": "Restart"
+  },
+  "PNR_TRACKER": {
+    "TITLE": "Eden Statue Tracker",
+    "HELP": "Help",
+    "NAVIGATE": "Navigate",
+    "RESTART": "Restart"
+  },
   "COMMON": {
     "SAVE": "Save",
     "CANCEL": "Cancel",

@@ -329,6 +329,55 @@
     "ELUSIVE_HINT_1": "Trang này hiển thị những linh hồn mùa giải lâu rồi chưa xuất hiện. Linh hồn chưa vắng mặt lâu nhất được sắp xếp ở trên cùng.<br/>Lưu ý rằng sự xuất hiện của Linh hồn du hành phần lớn là ngẫu nhiên, hãy tham khảo dữ liệu này một cách cẩn thận.",
     "ELUSIVE_HINT_2": "Phiên bản biểu đồ của dữ liệu này có sẵn tại trang <a href=\"/graph/spirit\" class=\"atmos-text-link\">Biểu đồ - Linh hồn</a>."
   },
+  "REALMS_PAGE": {
+    "TITLE": "Vương quốc",
+    "SHOW_MAP": "Hiện bản đồ",
+    "HIDE_MAP": "Ẩn bản đồ",
+    "SHOW_AREAS": "Hiện khu vực",
+    "SHOW_MAP_SHRINES": "Hiện đền thờ bản đồ",
+    "SHOW_WINGED_LIGHT": "Hiện Ánh sáng có cánh",
+    "AREAS": "Khu vực",
+    "ELDER": "Trưởng lão",
+    "SPIRITS": "Linh hồn",
+    "SEASON_SPIRITS": "Linh hồn mùa giải",
+    "GUIDES": "hướng dẫn viên",
+    "CONSTELLATION": "Chòm sao",
+    "TIER_1": "Bậc 1",
+    "TIER_2": "Bậc 2",
+    "LEFT_OUT_OF": "Còn {{remaining}} / {{cost}}",
+    "SPIRIT_TREES": "Cây linh hồn"
+  },
+  "SHARED_CREATIONS": {
+    "TITLE": "Ký ức & Thông điệp chia sẻ",
+    "INTRO": "Theo dõi nơi bạn đã đặt các chú thuật chia sẻ. Nhấp vào biểu tượng chú thuật trên thanh công cụ, sau đó nhấp vào bản đồ để đặt một đánh dấu. Kéo một đánh dấu để thay đổi vị trí. Các đánh dấu hết hạn sau 7 ngày trừ khi được làm mới.",
+    "PLACE_MESSAGE": "Đặt Thông điệp chia sẻ",
+    "PLACE_MEMORY": "Đặt Ký ức chia sẻ",
+    "PLACE_SPACE": "Đặt Không gian chia sẻ"
+  },
+  "CR_TRACKER": {
+    "TITLE": "Theo dõi Candle Run",
+    "RETURN_HOME": "Trở về {{area}}",
+    "CHOOSE_MAP": "Chọn bản đồ",
+    "UNDO": "Hoàn tác",
+    "NEXT": "Tiếp theo: {{area}}",
+    "NEW_DAY_NOTICE": "Một ngày Sky mới đã bắt đầu, nên nến ánh sáng đã thu thập được của bạn đã được xóa.",
+    "WAX": "ánh sáng",
+    "TOTAL": "tổng số",
+    "MARK_AREA": "Đánh dấu tất cả ánh sáng trên bản đồ này",
+    "CLEAR_AREA": "Xóa bản đồ này",
+    "CLEAR_ALL": "Xóa tất cả bản đồ",
+    "MARK_ALL": "Đánh dấu tất cả bản đồ là đã thu thập",
+    "CONFIRM": "Nhấn lại lần nữa để xác nhận",
+    "MAPS": "Bản đồ",
+    "ALL_MAPS": "Tất cả bản đồ",
+    "RESTART": "Bắt đầu lại"
+  },
+  "PNR_TRACKER": {
+    "TITLE": "Theo dõi Tượng Eden",
+    "HELP": "Trợ giúp",
+    "NAVIGATE": "Điều hướng",
+    "RESTART": "Bắt đầu lại"
+  },
   "COMMON": {
     "SAVE": "Lưu",
     "CANCEL": "Hủy",

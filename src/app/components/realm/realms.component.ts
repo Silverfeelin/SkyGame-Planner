@@ -8,6 +8,7 @@ import { MapInstanceService } from '@app/services/map-instance.service';
 import { IMapInit } from '@app/services/map.service';
 import { IArea, IRealm } from 'skygame-data';
 import { SectionQuickActionsComponent } from '@app/components/shared/quick-actions/section-quick-actions.component';
+import { TranslatePipe } from '@app/pipes/translate.pipe';
 import { FeatureCardComponent, IFeatureLink } from '../dashboard/feature-card.component';
 
 @Component({
@@ -16,7 +17,7 @@ import { FeatureCardComponent, IFeatureLink } from '../dashboard/feature-card.co
   styleUrl: './realms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [MapInstanceService],
-  imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent, FeatureCardComponent]
+  imports: [MatIcon, TooltipDirective, SectionQuickActionsComponent, FeatureCardComponent, TranslatePipe]
 })
 export class RealmsComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef<HTMLElement>;
