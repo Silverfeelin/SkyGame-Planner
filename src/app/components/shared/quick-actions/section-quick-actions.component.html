@@ -4,13 +4,13 @@
     @if (page.external) {
       <a class="atmos-btn atmos-btn--sm" [href]="page.link" target="_blank" rel="noopener">
         @if (page.svgIcon) { <mat-icon [svgIcon]="page.svgIcon"></mat-icon> } @else { <mat-icon>{{ page.icon }}</mat-icon> }
-        {{ page.label }}
+        {{ page.label | translate }}
       </a>
     } @else {
       <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions(page)"
          [routerLink]="page.link" [queryParams]="page.queryParams">
         @if (page.svgIcon) { <mat-icon [svgIcon]="page.svgIcon"></mat-icon> } @else { <mat-icon>{{ page.icon }}</mat-icon> }
-        {{ page.label }}
+        {{ page.label | translate }}
       </a>
     }
   }

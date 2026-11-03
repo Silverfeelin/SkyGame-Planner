@@ -142,9 +142,9 @@
     }
   },
   "NAV": {
-    "DAILY": "Nhiệm vụ hằng ngày",
-    "CR_TRACKER": "Chạy nến (CR)",
-    "PNR_TRACKER": "Check tượng Eden",
+    "DAILY": "Nhiệm vụ",
+    "CR_TRACKER": "Theo dõi nến (CR)",
+    "PNR_TRACKER": "Theo dõi Thánh Eden",
     "CURRENCY": "Nến & Trái tim",
     "SPENT_CURRENCY": "Lịch sử tiêu nến",
     "ITEMS": "Vật phẩm",
