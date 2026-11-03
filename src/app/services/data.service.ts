@@ -1,7 +1,7 @@
 import { parse as jsoncParse} from 'jsonc-parser';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, isDevMode } from '@angular/core';
-import { forkJoin, Observable, ReplaySubject, tap } from 'rxjs';
+import { catchError, forkJoin, Observable, of, ReplaySubject, tap } from 'rxjs';
 import { DateHelper } from '../helpers/date-helper';
 import { NodeHelper } from '../helpers/node-helper';
 import { CostHelper } from '../helpers/cost-helper';
@@ -12,6 +12,8 @@ import { TreeHelper } from '@app/helpers/tree-helper';
 import { IArea, IEvent, IGuid, IIAP, IItem, IItemList, IMapShrine, INode, IRealm, ISeason, IShop, ISkyData, ISpecialVisit, ISpirit, ISpiritTree, ISpiritTreeTier, ITravelingSpirit, IWingedLight, SkyDataResolver } from 'skygame-data';
 import { environment } from 'src/environments/environment';
 import { AssetUrlHelper } from '@app/helpers/asset-url-helper';
+import { TranslationService } from './translation.service';
+import { Language } from '@app/services/translation.service';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -52,13 +54,20 @@ export class DataService {
   readonly onData = new ReplaySubject<void>();
 
   constructor(
-    private readonly _httpClient: HttpClient
+    private readonly _httpClient: HttpClient,
+    private readonly _translationService: TranslationService
   ) { }
 
   loadData(): Observable<{[k: string]: string}> {
     const get = (asset: string) => {
       return this._httpClient.get(`assets/data/${asset}`, { headers: { 'ngsw-bypass': '' }, responseType: 'text' });
     }
+    const getI18nGameData = (lang: string) => {
+      return this._httpClient.get(`assets/i18n/game-data/${lang}.json`, { headers: { 'ngsw-bypass': '' }, responseType: 'text' })
+        .pipe(catchError(() => of('{}')));
+    }
+
+    const currentLang = this._translationService.currentLanguage();
 
     const useBypassHeaders = !environment.urls.everything.startsWith('http');
     const headers = useBypassHeaders ? { 'ngsw-bypass': '' } : undefined;
@@ -69,6 +78,7 @@ export class DataService {
     return forkJoin({
       everything: $everything,
       outfitRequestConfig: get('outfit-requests.json'),
+      gameDataI18n: getI18nGameData(currentLang),
     }).pipe(tap(data => {
       const parsed = SkyDataResolver.parse(data.everything);
       if (environment.assetRewrite) {
@@ -76,7 +86,7 @@ export class DataService {
         for (const season of parsed.seasons.items) { season.iconUrl = AssetUrlHelper.toLocal(season.iconUrl); }
       }
       const resolved = SkyDataResolver.resolve(parsed);
-      this.onConfigs(resolved, data);
+      this.onConfigs(resolved, data, data.gameDataI18n);
       this.exposeData();
     }));
   }
@@ -118,7 +128,7 @@ export class DataService {
     }
   }
 
-  private onConfigs(data: ISkyData, configs: {[k: string]: string}): void {
+  private onConfigs(data: ISkyData, configs: {[k: string]: string}, gameDataI18n?: string): void {
     // Deserialize configs.
     const configArray = Object.keys(configs).filter(k => k !== 'everything').map(k => {
       const parsed = jsoncParse(configs[k]);
@@ -146,6 +156,9 @@ export class DataService {
     this.returningSpiritsConfig = data.specialVisits;
     this.wingedLightConfig = data.wingedLights;
 
+    // Patch item, spirit, and season names based on current language
+    this.patchLocalizedData(gameDataI18n);
+
     // Register all GUIDs.
     this.initializeGuids(configArray);
     console.debug(`Loaded ${configArray.length} configs.`);
@@ -155,6 +168,70 @@ export class DataService {
 
     this.onData.next();
     this.onData.complete();
+  }
+
+  private patchLocalizedData(gameDataI18n?: string): void {
+    if (!gameDataI18n) return;
+
+    const language = this._translationService.currentLanguage();
+    let translations: any = {};
+
+    try {
+      if (language === 'vi') {
+        const jsonString = gameDataI18n;
+        translations = JSON.parse(jsonString);
+      } else if (language === 'en') {
+        const jsonString = gameDataI18n;
+        translations = JSON.parse(jsonString);
+      }
+    } catch (e) {
+      console.error('Failed to parse gameData I18n', e);
+    }
+
+    // Patch items
+    if (translations.items) {
+      for (const item of this.itemConfig.items) {
+        if (translations.items[item.guid]) {
+          item.name = translations.items[item.guid];
+        }
+      }
+    }
+
+    // Patch spirits
+    if (translations.spirits) {
+      for (const spirit of this.spiritConfig.items) {
+        if (translations.spirits[spirit.guid]) {
+          spirit.name = translations.spirits[spirit.guid];
+        }
+      }
+    }
+
+    // Patch seasons
+    if (translations.seasons) {
+      for (const season of this.seasonConfig.items) {
+        if (translations.seasons[season.guid]) {
+          season.name = translations.seasons[season.guid];
+        }
+      }
+    }
+
+    // Patch areas
+    if (translations.areas) {
+      for (const area of this.areaConfig.items) {
+        if (translations.areas[area.guid]) {
+          area.name = translations.areas[area.guid];
+        }
+      }
+    }
+
+    // Patch realms
+    if (translations.realms) {
+      for (const realm of this.realmConfig.items) {
+        if (translations.realms[realm.guid]) {
+          realm.name = translations.realms[realm.guid];
+        }
+      }
+    }
   }
 
   private initializeOutfitRequests(): void {
