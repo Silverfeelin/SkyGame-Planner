@@ -69,7 +69,8 @@ const rotations: IRotations = [
     { guid: 'D30y2TxdjH', c: 22 },
     { guid: 'QLPTcl6MON', c: 60 },
     { guid: 'whT_cZQrv5', c: 50 },
-    { guid: 'raTbmXIzTD', c: 12 }
+    { guid: 'raTbmXIzTD', c: 12 },
+    { guid: 'uOQmeCxRGG', c: 13 }
   ],
   [
     { guid: 'zbXlmVrwiY', c: 13 },
@@ -79,6 +80,8 @@ const rotations: IRotations = [
     { guid: 'y1UR_gd2PM', c: 18 }
   ],
   [
+    { guid: 'DU3_FCip4I', c: 11 },
+    { guid: 'Dy5Jla6mAd', c: 12 },
     { guid: '2If2D4W1DF', h: 33 },
     { guid: 'wbzLOXS8C_', h: 18 },
     { guid: '2d5HB466-h', h: 12 },
