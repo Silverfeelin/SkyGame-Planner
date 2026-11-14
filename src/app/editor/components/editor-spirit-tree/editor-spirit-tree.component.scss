@@ -71,7 +71,7 @@
 
 .save-fields {
   display: grid;
-  grid-template-columns: auto minmax(0, 200px);
+  grid-template-columns: 80px 1fr;
   gap: var(--atmos-gap-compact) 8px;
   align-items: center;
 }

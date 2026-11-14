@@ -20,7 +20,7 @@
   </symbol>
   <symbol id="ascended-candle" viewBox="0 0 300 300">
     <defs>
-      <radialGradient id="ac-gradient" gradientUnits="userSpaceOnUse" cx="48%" cy="52%" r="100">
+      <radialGradient id="ac-gradient" gradientUnits="userSpaceOnUse" cx="144" cy="156" r="100">
         <stop offset="35%" stop-color="#9D3752"/>
         <stop offset="100%" stop-color="#FFDCCF"/>
       </radialGradient>

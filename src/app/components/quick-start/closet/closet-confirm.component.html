@@ -1,3 +1,11 @@
+@if (state().manual && store.screenshotsSupported) {
+  <div class="atmos-qs__row">
+    <span class="atmos-qs__sub">Have screenshots?</span>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.useScreenshots(tab().key)">
+      <mat-icon>upload</mat-icon>Use screenshots instead
+    </button>
+  </div>
+}
 @if (missedShots(); as missed) {
   <div class="atmos-qs__banner atmos-qs__banner--warn" role="alert">
     <mat-icon>warning</mat-icon>
@@ -103,13 +111,7 @@
 </div>
 
 <div class="atmos-qs__row">
-  @if (state().manual) {
-    @if (store.screenshotsSupported) {
-      <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.useScreenshots(tab().key)">
-        <mat-icon>upload</mat-icon>Use screenshots instead
-      </button>
-    }
-  } @else {
+  @if (!state().manual) {
     <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.changeShots(tab().key)">Change screenshots</button>
   }
   <span class="atmos-qs__spacer"></span>

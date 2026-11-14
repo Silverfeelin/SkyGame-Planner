@@ -1,3 +1,10 @@
+.gradient-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .atmos-shell {
   color: var(--atmos-text);
   font-family: 'Manrope', 'Roboto', system-ui, sans-serif;

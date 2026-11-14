@@ -1,4 +1,11 @@
 @if (store.screenshotsSupported) {
+  <div class="atmos-qs__row">
+    <span class="atmos-qs__sub">Rather not use screenshots?</span>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markByHand(tab().key)">
+      <mat-icon>edit</mat-icon>Mark items by hand
+    </button>
+  </div>
+
   <div class="atmos-qs__banner atmos-qs__banner--info">
     <mat-icon>info</mat-icon>
     <p>
@@ -39,13 +46,6 @@
     <button type="button" class="atmos-btn atmos-btn--sm" (click)="$event.stopPropagation(); fileInput.click()">Choose files</button>
     <input #fileInput type="file" class="input-hidden" tabindex="-1" aria-hidden="true" multiple [accept]="accept"
            (click)="$event.stopPropagation()" (change)="onFiles(fileInput)"/>
-  </div>
-
-  <div class="atmos-qs__row">
-    <span class="atmos-qs__sub">No screenshots?</span>
-    <button type="button" class="atmos-btn atmos-btn--sm" (click)="store.markByHand(tab().key)">
-      <mat-icon>edit</mat-icon>Mark items by hand
-    </button>
   </div>
 
   @if (showExample()) {
