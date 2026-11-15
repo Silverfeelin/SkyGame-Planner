@@ -14,11 +14,13 @@ export interface IConnectScope {
 
 export interface IConnectApp {
   name: string;
-  url: string;
+  url?: string;
   origins: Array<string>;
   scopes: Array<ConnectScopeKey>;
-  /** Whether the app may send item collections to /connect/collection. */
+  /** Whether the app may send item collections to /connect/collection through postMessage. */
   collections?: boolean;
+  /** Whether the app may send item collections through a link. */
+  collectionLinks?: boolean;
 }
 
 export interface IConnectCollectionReady {
@@ -77,6 +79,12 @@ export const CONNECT_APPS: Record<string, IConnectApp> = {
     origins: ['https://thatskycollection.com', 'https://sc-dev.novaxeros.net', 'https://sc-fast.novaxeros.net', 'http://localhost:3000'],
     scopes: ['items.unlocked'],
     collections: true
+  },
+  skybot: {
+    name: 'SkyBot',
+    origins: [],
+    scopes: [],
+    collectionLinks: true
   }
 };
 

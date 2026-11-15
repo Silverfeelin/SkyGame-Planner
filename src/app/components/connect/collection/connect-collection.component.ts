@@ -17,6 +17,7 @@ import {
 type CollectionState = 'waiting' | 'choose' | 'add' | 'saved' | 'error';
 
 const WAIT_MS = 5000;
+const MAX_LINK_IDS_LENGTH = 1800;
 
 @Component({
   selector: 'app-connect-collection',
@@ -35,6 +36,7 @@ export class ConnectCollectionComponent {
   readonly error = signal<string | undefined>(undefined);
   readonly app?: IConnectApp;
   readonly hostname: string = '';
+  readonly fromLink: boolean = false;
 
   readonly name = signal('');
   readonly description = signal('');
@@ -55,10 +57,20 @@ export class ConnectCollectionComponent {
     const query = inject(ActivatedRoute).snapshot.queryParamMap;
     this.app = CONNECT_APPS[query.get('app') ?? ''];
     this._nonce = query.get('nonce')?.substring(0, 256) || undefined;
-    if (!this.app?.collections) { this._fail('This link was not made by a site that can send collections to Sky Planner.'); return; }
+    if (!this.app?.collections && !this.app?.collectionLinks) { this._fail('This link was not made by a site that can send collections to Sky Planner.'); return; }
 
-    this.hostname = new URL(this.app.url).hostname;
+    this.hostname = this.app.url ? new URL(this.app.url).hostname : '';
     if (window.top !== window) { this._fail('This page can not be embedded in another site.'); return; }
+
+    if (this.app.collectionLinks && query.has('items')) {
+      this.fromLink = true;
+      const ids = ItemHelper.deserializeQuery(query.get('items')!.substring(0, MAX_LINK_IDS_LENGTH));
+      const items = ids.map(id => this._dataService.itemIdMap.get(id)).filter((i): i is IItem => !!i);
+      this._receive(items, ids.length - items.length, query.get('name'), query.get('description'), undefined);
+      return;
+    }
+
+    if (!this.app.collections) { this._fail(`This ${this.app.name} link does not contain any items.`); return; }
     if (!this._opener()) { this._fail(`If you got here from an app like Discord, go back to ${this.app.name}, open it in your browser app (usually from the ⋮ menu) and try again from there.`); return; }
 
     // The opener may post before this page has loaded, so announce when we're listening.
@@ -70,8 +82,8 @@ export class ConnectCollectionComponent {
   }
 
   onMessage(event: MessageEvent): void {
-    if (this.state() !== 'waiting') { return; }
-    if (!this.app?.origins.includes(event.origin) || event.source !== this._opener()) { return; }
+    if (this.state() !== 'waiting' || !this.app?.collections) { return; }
+    if (!this.app.origins.includes(event.origin) || event.source !== this._opener()) { return; }
     const message = event.data as Partial<IConnectCollection> | undefined;
     if (message?.type !== 'sky-planner:collection' || message.nonce !== this._nonce) { return; }
 
@@ -89,13 +101,7 @@ export class ConnectCollectionComponent {
       if (entity && knownItems.has(entity)) { items.push(entity as IItem); }
     }
 
-    this.items.set(items);
-    this.unknownCount.set(guids.size - items.length);
-    this.existing.set(this._collectionService.findByItems(items));
-    this.name.set(this._text(message.name, 100) || `${this.app.name} outfit`);
-    this.description.set(this._text(message.description, 2000));
-    this.imageUrl.set(this._imageUrl(message.imageUrl));
-    this.state.set('choose');
+    this._receive(items, guids.size - items.length, message.name, message.description, message.imageUrl);
     this._post<IConnectCollectionAck>({ type: 'sky-planner:collection:ack', nonce: this._nonce });
   }
 
@@ -115,6 +121,16 @@ export class ConnectCollectionComponent {
 
   close(): void {
     window.close();
+  }
+
+  private _receive(items: Array<IItem>, unknownCount: number, name: unknown, description: unknown, imageUrl: unknown): void {
+    this.items.set(items);
+    this.unknownCount.set(unknownCount);
+    this.existing.set(this._collectionService.findByItems(items));
+    this.name.set(this._text(name, 100) || `${this.app!.name} outfit`);
+    this.description.set(this._text(description, 2000));
+    this.imageUrl.set(this._imageUrl(imageUrl));
+    this.state.set('choose');
   }
 
   private _post<T>(message: T): void {

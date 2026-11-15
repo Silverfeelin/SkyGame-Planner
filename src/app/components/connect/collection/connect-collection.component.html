@@ -18,8 +18,13 @@
             <h1 class="atmos-connect__title">Outfit received</h1>
           </header>
           <p class="atmos-paragraph">
-            <a class="atmos-text-link" [href]="app!.url" target="_blank" rel="noopener">{{ hostname }}</a>
-            sent {{ items().length }} item{{ items().length === 1 ? '' : 's' }}. What do you want to do with them?
+            @if (fromLink) {
+              This link contains
+            } @else {
+              <a class="atmos-text-link" [href]="app!.url" target="_blank" rel="noopener">{{ hostname }}</a>
+              sent
+            }
+            {{ items().length }} item{{ items().length === 1 ? '' : 's' }}. What do you want to do with them?
           </p>
 
           @if (imageUrl()) {
@@ -68,10 +73,17 @@
           }
 
           <div class="atmos-connect__actions">
-            <button type="button" class="atmos-btn" (click)="close()">
-              <mat-icon>close</mat-icon>
-              <span>Cancel</span>
-            </button>
+            @if (fromLink) {
+              <a class="atmos-btn" routerLink="/">
+                <mat-icon>close</mat-icon>
+                <span>Cancel</span>
+              </a>
+            } @else {
+              <button type="button" class="atmos-btn" (click)="close()">
+                <mat-icon>close</mat-icon>
+                <span>Cancel</span>
+              </button>
+            }
           </div>
         }
         @case ('add') {
@@ -119,10 +131,17 @@
           </header>
           <p class="atmos-paragraph">"{{ name().trim() }}" was added to your collections.</p>
           <div class="atmos-connect__actions">
-            <button type="button" class="atmos-btn" (click)="close()">
-              <mat-icon>close</mat-icon>
-              <span>Close</span>
-            </button>
+            @if (fromLink) {
+              <a class="atmos-btn" routerLink="/">
+                <mat-icon>home</mat-icon>
+                <span>Sky Planner</span>
+              </a>
+            } @else {
+              <button type="button" class="atmos-btn" (click)="close()">
+                <mat-icon>close</mat-icon>
+                <span>Close</span>
+              </button>
+            }
             <a class="atmos-btn atmos-btn--active" routerLink="/item/collection" [queryParams]="{ focus: savedGuid() }">
               <mat-icon>collections</mat-icon>
               <span>View collections</span>

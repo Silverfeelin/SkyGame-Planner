@@ -43,7 +43,7 @@ export class ConnectComponent {
     const query = inject(ActivatedRoute).snapshot.queryParamMap;
     this.app = CONNECT_APPS[query.get('app') ?? ''];
     this._nonce = query.get('nonce')?.substring(0, 256) || undefined;
-    if (!this.app) { this._fail('This link was not made by a site that Sky Planner shares data with.'); return; }
+    if (!this.app?.url || !this.app.scopes.length) { this._fail('This link was not made by a site that Sky Planner shares data with.'); return; }
 
     this.hostname = new URL(this.app.url).hostname;
     const requested = new Set((query.get('scope') ?? '').split(/[\s,]+/).filter(Boolean));
