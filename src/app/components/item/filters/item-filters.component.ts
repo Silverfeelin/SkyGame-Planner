@@ -8,25 +8,18 @@ import { DataService } from '@app/services/data.service';
 import { SearchService } from '@app/services/search.service';
 import { Maybe } from '@app/types/maybe';
 import { CheckboxComponent } from '@app/components/shared/checkbox/checkbox.component';
-import { ICost, IEvent, IEventInstance, IIAP, IItem, IItemListNode, IItemSource, INode, IRealm, ISeason } from 'skygame-data';
+import { ICost, IEvent, IItem, IItemSource, IItemSourceNode, INode, IRealm, ISeason } from 'skygame-data';
 
 interface IItemSearchMetadata {
   item: IItem;
 
-  firstNode?: INode;
-  firstListNode?: IItemListNode;
-  firstIap?: IIAP;
-
-  lastNode?: INode;
-  lastListNode?: IItemListNode;
-  lastIap?: IIAP;
-
+  /** First and last source in release order. */
   origin?: IItemSource;
   last?: IItemSource;
+  lastNode?: INode;
 
   season?: ISeason;
-  event?: IEvent;
-  eventInstance?: IEventInstance;
+  events?: Array<IEvent>;
   realm?: IRealm;
 }
 
@@ -263,12 +256,13 @@ export class ItemFiltersComponent {
       }
 
       // Filter by IAP
-      if (this.filterCurrencies.first['iap'] === false && metadata.last?.type === 'iap') { return false; }
+      if (this.filterCurrencies.first['iap'] === false && metadata.origin?.type === 'iap') { return false; }
       if (this.filterCurrencies.last['iap'] === false && metadata.last?.type === 'iap') { return false; }
 
       // Filter by currencies
-      const costFirst = metadata.origin?.type === 'node' ? metadata.firstNode : metadata.origin?.type === 'list' ? metadata.firstListNode : undefined;
-      const costLast = metadata.last?.type === 'node' ? metadata.lastNode : metadata.last?.type === 'list' ? metadata.lastListNode : undefined;
+      const sourceCost = (source?: IItemSource): ICost | undefined => source?.type === 'iap' ? undefined : source?.source;
+      const costFirst = sourceCost(metadata.origin);
+      const costLast = sourceCost(metadata.last);
       const checkCost = (cost: ICost | undefined, filters: FilterMap): boolean => {
         if (filters['candles'] === false && cost?.c) { return false; }
         if (filters['hearts'] === false && cost?.h) { return false; }
@@ -294,13 +288,16 @@ export class ItemFiltersComponent {
       if (!checkCost(costFirst, this.filterCurrencies.first)) { return false; }
       if (!checkCost(costLast, this.filterCurrencies.last)) { return false; }
 
-      // Filter out unchecked season/event/realm.
-      if (metadata.season !== undefined && this.filterSeasons[metadata.season.guid] === false) { return false; }
-      if (metadata.event !== undefined && this.filterEvents[metadata.event.guid] === false) { return false; }
+      // Items from both a season and events (e.g. AURORA Encore) pass when any one of them is checked.
+      if (metadata.season || metadata.events) {
+        const seasonChecked = !!metadata.season && this.filterSeasons[metadata.season.guid] !== false;
+        const eventChecked = !!metadata.events?.some(e => this.filterEvents[e.guid] !== false);
+        if (!seasonChecked && !eventChecked) { return false; }
+      }
       if (metadata.realm !== undefined && this.filterRealms[metadata.realm.guid] === false) { return false; }
 
       if (this.filters['unsorted'] !== undefined) {
-        const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.event && !metadata.realm;
+        const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.events && !metadata.realm;
         if (isUnsorted !== this.filters['unsorted']) { return false; }
       }
 
@@ -321,32 +318,33 @@ export class ItemFiltersComponent {
     itemSearchMetadata = {};
     const items = this._dataService.itemConfig.items;
     for (const item of items) {
-      const origin = ItemHelper.getItemSource(item);
-      let originSource = ItemHelper.geSourceOrigin(origin);
-      const last = ItemHelper.getItemSource(item, true);
-      const lastSource = ItemHelper.geSourceOrigin(last);
-
-      // Account for new TS items. Consider them as season items.
-      if (!originSource && origin?.type === 'node' && origin.source.root?.tree?.travelingSpirit?.spirit?.season) {
-        originSource = { type: 'season', source: origin.source.root.tree.travelingSpirit.spirit.season };
-      }
+      const sources = ItemHelper.getItemSourcesByDate(item);
+      const origin = sources.at(0);
+      const last = sources.at(-1);
+      const lastNode = sources.filter((s): s is IItemSourceNode => s.type === 'node').at(-1)?.source;
 
       // Only apply realm filters to regular spirits & elders.
       const lastNodeSpirit = last?.type === 'node' ? last.source.root?.tree?.spirit : undefined;
       const realm = lastNodeSpirit?.type === 'Regular' || lastNodeSpirit?.type === 'Elder' ? lastNodeSpirit.area?.realm : undefined;
 
-      // Note: picking event by last instance, to account for the weird cases like all the different Summer events.
+      const nodes = [...(item.nodes ?? []), ...(item.hiddenNodes ?? [])];
+      // Items introduced on traveling or returning spirit trees count towards the spirit's season.
+      const season = item.season
+        ?? nodes.map(n => {
+          const tree = n.root?.tree;
+          return tree?.spirit?.season ?? tree?.travelingSpirit?.spirit?.season ?? tree?.specialVisitSpirit?.spirit?.season;
+        }).find(s => s)
+        ?? item.listNodes?.map(n => n.itemList?.shop?.season).find(s => s);
+
+      const events = new Set<IEvent>();
+      nodes.forEach(n => { const e = n.root?.tree?.eventInstanceSpirit?.eventInstance?.event; if (e) { events.add(e); } });
+      item.listNodes?.forEach(n => { const e = n.itemList?.shop?.event?.event; if (e) { events.add(e); } });
+      item.iaps?.forEach(iap => { const e = iap.shop?.event?.event; if (e) { events.add(e); } });
+
       itemSearchMetadata[item.guid] = {
-        item, origin, last,
-        firstNode: item.hiddenNodes?.at(0) ?? item.nodes?.at(0),
-        firstListNode: item.listNodes?.at(0),
-        firstIap: item.iaps?.at(0),
-        lastNode: item.nodes?.at(-1) ?? item.hiddenNodes?.at(-1),
-        lastListNode: item.listNodes?.at(-1),
-        lastIap: item.iaps?.at(-1),
-        event: lastSource?.type === 'event' ? lastSource.source.event : undefined,
-        eventInstance: lastSource?.type === 'event' ? lastSource.source : undefined,
-        season: originSource?.type === 'season' ? originSource.source : undefined,
+        item, origin, last, lastNode,
+        season,
+        events: events.size ? [...events] : undefined,
         realm
       };
     }

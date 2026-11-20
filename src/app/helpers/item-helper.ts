@@ -1,4 +1,4 @@
-import { ItemType, ICost, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason, IShop, ISpiritTree } from 'skygame-data';
+import { ItemType, ICost, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, IRevisedSpiritTree, ISeason, IShop, ISpiritTree } from 'skygame-data';
 import { TreeHelper } from './tree-helper';
 import { DateHelper } from './date-helper';
 import type { DataService } from '@app/services/data.service';
@@ -84,6 +84,58 @@ export class ItemHelper {
       || item.iaps?.at(i) && { type: 'iap', item, source: item.iaps.at(i)! }
       || item.hiddenNodes?.at(i) && { type: 'node', item, source: item.hiddenNodes.at(i)! }
       || undefined;
+  }
+
+  /**
+   * Returns every source of an item, including hidden nodes, in release order.
+   * @remarks The source arrays follow data file order and files are combined alphabetically, so sources are sorted by date.
+   * An undated source stays behind the sources listed before it, since entries within a data file are in release order.
+   */
+  static getItemSourcesByDate(item: IItem): Array<IItemSource> {
+    const sources: Array<IItemSource> = [
+      ...(item.nodes ?? []).map(source => ({ type: 'node' as const, item, source })),
+      ...(item.hiddenNodes ?? []).map(source => ({ type: 'node' as const, item, source })),
+      ...(item.listNodes ?? []).map(source => ({ type: 'list' as const, item, source })),
+      ...(item.iaps ?? []).map(source => ({ type: 'iap' as const, item, source }))
+    ];
+
+    let latest = -Infinity;
+    return sources
+      .map(source => {
+        const time = ItemHelper.getSourceTime(source);
+        if (time !== undefined) { latest = Math.max(latest, time); }
+        return { source, time: time ?? latest };
+      })
+      // No subtraction: two permanent sources would compare as NaN.
+      .sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0)
+      .map(s => s.source);
+  }
+
+  /** Release time of a source in milliseconds; Infinity for permanent locations and undefined when the data has no date. */
+  private static getSourceTime(itemSource: IItemSource): number | undefined {
+    switch (itemSource.type) {
+      case 'list': return ItemHelper.getShopTime(itemSource.source.itemList?.shop);
+      case 'iap': return ItemHelper.getShopTime(itemSource.source.shop);
+    }
+
+    const tree = itemSource.source.root?.tree;
+    if (!tree) { return undefined; }
+    const date = tree.travelingSpirit?.date ?? tree.specialVisitSpirit?.visit?.date ?? tree.eventInstanceSpirit?.eventInstance?.date;
+    if (date) { return date.toMillis(); }
+    if (tree.permanent) { return Infinity; }
+
+    const season = tree.spirit?.season;
+    if (!season) { return undefined; }
+    const revisionType = (tree as IRevisedSpiritTree).revisionType;
+    if (revisionType === 'AfterSeason') { return season.endDate.toMillis(); }
+    if (tree.spirit!.tree === tree || revisionType === 'DuringSeason') { return season.date.toMillis(); }
+    return undefined;
+  }
+
+  private static getShopTime(shop: IShop | undefined): number | undefined {
+    const date = shop?.date ?? shop?.event?.date ?? shop?.season?.date;
+    if (date) { return date.toMillis(); }
+    return shop?.permanent ? Infinity : undefined;
   }
 
   /** Returns the event or season the given item source was found in. */
